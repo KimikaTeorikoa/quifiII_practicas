@@ -1,0 +1,29 @@
+# Jupyter Book configuration — Química Física II: Prácticas de Ordenador (Parte 2)
+title: "Química Física II — Prácticas de Ordenador: Espectroscopía"
+author: "[TEXTO HUMANO: nombres de autores]"
+logo: ""  # [PROPUESTA: añadir logo UPV/EHU cuando esté disponible]
+
+# Language
+lang: es
+
+# Execution — notebooks off until content is ready
+execute:
+  execute_notebooks: "off"
+
+# HTML output
+html:
+  use_issues_button: false
+  use_repository_button: false  # [EXT: activar cuando T001 resuelto con URL repo]
+  use_edit_button: false        # [EXT: activar cuando T001 resuelto]
+
+# LaTeX / math
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - colon_fence
+
+# Sphinx
+sphinx:
+  config:
+    language: es

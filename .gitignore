@@ -1,0 +1,7 @@
+.agents/
+.claude/
+GEMINI.md
+book/_build/
+_build/
+*.chk
+*.fchk

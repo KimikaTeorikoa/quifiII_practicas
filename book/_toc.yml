@@ -1,0 +1,11 @@
+format: jb-book
+root: intro
+chapters:
+  - file: practices/atomos-koopmans
+    title: "P2-A: Átomos y Teorema de Koopmans"
+  - file: practices/moleculas-pes
+    title: "P2-B: Superficie de Energía Potencial"
+  - file: practices/modos-normales
+    title: "P2-C: Modos Normales de Vibración"
+  - file: practices/espectroscopia-uv
+    title: "P2-D: Espectroscopía UV de Cetonas"
