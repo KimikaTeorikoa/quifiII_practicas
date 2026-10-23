@@ -11,7 +11,12 @@ parts:
     - file: content/finitepython 
     - file: content/finitewellho
     - file: content/finitebond
-  - caption: Gaussview
+  - caption: "Cálculos con GaussView y Gaussian"
+    chapters:
+    - file: content/atomos-koopmans
+    - file: content/moleculas-pes
+    - file: content/modos-normales
+    - file: content/espectroscopia-uv
   - caption: Cuestionario
     chapters:
     - file: content/questionaire
