@@ -103,10 +103,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 5. Hacer clic sobre el átomo de carbono para añadir el átomo de oxígeno enlazado.
 6. Aplicar una limpieza geométrica preliminar mediante **Edit → Clean** (o pulsar el icono de escoba en la barra de herramientas).
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: molécula CO construida en GaussView con enlace simple o múltiple visible]
-```
+:::
 
 ### Paso 2: Configurar el cálculo combinado Opt+Freq
 
@@ -126,10 +126,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 4. En la pestaña **Title**, escribir: `CO opt freq B3LYP 6-311G`.
 5. En la pestaña **Additional Keywords**, escribir: `geom=connectivity`.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: ventana Gaussian Calculation Setup con Job Type Opt+Freq y Method B3LYP/6-311G seleccionados]
-```
+[CAPTURA: ventana Calculate → Gaussian Calculation Setup con Job Type Opt+Freq y Method B3LYP/6-311G seleccionados]
+:::
 
 ### Paso 3: Lanzar y verificar
 
@@ -140,6 +140,11 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 5. Abrir el archivo `.log` (`CO_opt_freq_B3LYP_6311G.log`) en el editor de texto y desplazarse al final con **Ctrl + Fin** para verificar la presencia de la línea: `{{termination_ok}}`.
 6. Confirmar que la etapa de frecuencias se ejecutó correctamente buscando la sección `Frequencies --`.
 
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: seccion final del archivo .log en el editor de texto mostrando la linea Normal termination of Gaussian 16 y el inicio del bloque de frecuencias]
+:::
+
 ### Paso 4: Leer la distancia de enlace optimizada
 
 1. En GaussView, abrir el archivo `.log` resultante mediante **File → Open**.
@@ -147,6 +152,11 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 3. Medir la longitud de enlace C–O optimizada seleccionando sucesivamente el átomo de carbono y el de oxígeno (el valor en Ångströms se muestra en la barra inferior de la ventana gráfica).
 4. Alternativamente, en el archivo `.log` abierto en el editor de texto, buscar con **Ctrl + F** el texto: `! R1    R(1,2)`. El valor numérico adyacente (1.1473 Å) es la distancia de enlace de equilibrio.
 5. Copiar la distancia calculada en la Tabla 1 de resultados.
+
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: ventana Results → Optimization en GaussView mostrando la estructura optimizada de CO y la distancia de enlace C-O en la barra inferior]
+:::
 
 ### Paso 5: Extraer parámetros vibracionales del .log
 
@@ -158,6 +168,11 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
    - `IR Inten    --`: intensidad de absorción infrarroja en km/mol (70.16 km/mol).
 3. Registrar estos valores en la Tabla 1 de resultados.
 
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: fragmento del archivo .log mostrando el bloque Frequencies con los valores de frecuencia, masa reducida, constante de fuerza e intensidad IR]
+:::
+
 ### Paso 6: Visualizar la animación del modo normal
 
 1. En GaussView, con el archivo `CO_opt_freq_B3LYP_6311G.log` abierto, acceder al menú **Results → Vibrations**.
@@ -166,10 +181,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 4. Activar la casilla **Show Vectors** para visualizar las flechas de desplazamiento nuclear y comprobar que los átomos se mueven a lo largo del eje del enlace (modo de estiramiento).
 5. Observar la amplitud relativa de las flechas: el carbono (átomo más ligero) experimenta un desplazamiento mayor que el oxígeno (átomo más pesado).
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: ventana Results → Vibrations en GaussView mostrando el modo de estiramiento de CO con vectores de desplazamiento y frecuencia asociada]
-```
+:::
 
 ### Paso 7: Repetir el procedimiento para CO₂
 
@@ -200,10 +215,10 @@ Clasificación de los modos esperados para CO₂:
 | 3 | Flexión en el plano | Activo |
 | 4 | Flexión fuera del plano | Activo |
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: molécula CO2 lineal en GaussView con la animación de un modo de flexión activada]
-```
+[CAPTURA: ventana Results → Vibrations en GaussView mostrando la lista de los cuatro modos normales de CO2 y la animacion de un modo de flexion activada]
+:::
 
 ---
 

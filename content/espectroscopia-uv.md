@@ -133,10 +133,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 9. Pulsar **Submit**, guardar el archivo como `acetona_MeCN_opt.gjf` en el directorio `{{practicas_folder}}EspectroscopiaUV/` y confirmar el envío.
 10. Abrir el archivo de salida `.log` (`acetona_MeCN_opt.log`) en el editor de texto y comprobar que la última línea coincide con: `{{termination_ok}}`.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: configuración de optimización de geometría de acetona en GaussView con palabra clave scrf]
-```
+[CAPTURA: ventana Calculate → Gaussian Calculation Setup con Job Type Optimization y Additional Keywords scrf=(solvent=acetonitrile)]
+:::
 
 #### Paso A2: Extraer autovalores HOMO y LUMO
 
@@ -147,10 +147,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 5. Estimar la longitud de onda de absorción: $\lambda_{\text{estimada}} = 1239.8 / \Delta E_{\text{gap}}\text{ (eV)}$ en nm.
 6. Copiar los valores numéricos obtenidos en la Tabla A de resultados.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: líneas de autovalores Alpha occ y virt en el archivo .log destacando las energías de HOMO y LUMO]
-```
+[CAPTURA: fragmento del archivo .log mostrando las lineas Alpha occ. y Alpha virt. con las energias orbitales de HOMO y LUMO destacadas]
+:::
 
 ---
 
@@ -167,10 +167,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 7. Pulsar **Submit**, guardar como `acetona_MeCN_td.gjf` en `{{practicas_folder}}EspectroscopiaUV/` y confirmar la ejecución.
 8. Verificar la terminación correcta (`{{termination_ok}}`) al final del archivo `.log`.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: pestaña Additional Keywords con las palabras clave td y scrf introducidas para el cálculo TD-DFT]
-```
+[CAPTURA: ventana Calculate → Gaussian Calculation Setup en pestana Additional Keywords con las opciones td y scrf introducidas para TD-DFT]
+:::
 
 #### Paso B2: Extraer datos de los estados excitados del .log
 
@@ -193,10 +193,10 @@ Campos del bloque de estado excitado:
 | Fuerza del oscilador ($f$) | Intensidad relativa de la banda espectral |
 | Contribución orbital | Índices de los orbitales ocupados y virtuales implicados |
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: bloque de Excited State 1 en el archivo .log con valores de energía, longitud de onda y fuerza de oscilador]
-```
+[CAPTURA: fragmento del archivo .log mostrando el bloque de Excited State 1 con valores de longitud de onda, energia y fuerza de oscilador]
+:::
 
 #### Paso B3: Visualizar el espectro en GaussView
 
@@ -207,10 +207,10 @@ Campos del bloque de estado excitado:
    - La curva continua muestra el perfil convolucionado.
 4. Identificar la banda débil $n \rightarrow \pi^*$ frente a la banda intensa $\pi \rightarrow \pi^*$ a longitudes de onda inferiores a 250 nm.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: ventana Results → UV-Vis en GaussView mostrando el espectro electrónico de acetona con bandas señaladas]
-```
+[CAPTURA: ventana Results → UV-Vis en GaussView mostrando el espectro electronico de acetona con las bandas n a pi* y pi a pi* senaladas]
+:::
 
 ---
 
@@ -238,6 +238,11 @@ Campos del bloque de estado excitado:
 | Etanol | 24.9 | `scrf=(solvent=ethanol)` |
 | Acetonitrilo | 37.5 | `scrf=(solvent=acetonitrile)` |
 | Agua | 78.4 | `scrf=(solvent=water)` |
+
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: comparacion de espectros en Results → UV-Vis o de lineas Excited State 1 en el .log mostrando el desplazamiento al azul de la banda n a pi* de acetona al pasar de ciclohexano a agua]
+:::
 
 ---
 
@@ -269,6 +274,11 @@ Campos del bloque de estado excitado:
 
 :::{warning}
 Cada molécula requiere una optimización geométrica previa en disolvente antes de ejecutar el cálculo TD-DFT correspondiente.
+:::
+
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: ventana principal de GaussView con la estructura tridimensional de una cetona sustituida (como acetofenona) y su correspondiente espectro en Results → UV-Vis]
 :::
 
 ---

@@ -111,10 +111,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 3. Seleccionar el elemento químico que se desea calcular (por ejemplo, carbono, **C**).
 4. Hacer un único clic sobre la ventana central de dibujo. Aparece un único centro atómico sin enlaces.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: ventana principal de GaussView con un único centro atómico sin enlaces]
-```
+[CAPTURA: ventana principal de GaussView con la paleta Element Fragments abierta y un unico centro atomico de carbono en la vista 3D]
+:::
 
 ### Paso 2: Configurar el cálculo del átomo neutro
 
@@ -147,10 +147,10 @@ Tabla de multiplicidades de referencia ($2S+1$):
 | F | 9 | [He] 2s² 2p⁵ | 2 |
 | Ne | 10 | [He] 2s² 2p⁶ | 1 |
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: ventana Gaussian Calculation Setup con pestaña Method y Additional Keywords pop=full]
-```
+[CAPTURA: ventana Calculate → Gaussian Calculation Setup con pestana Method, HF/STO-3G configurado y Additional Keywords pop=full]
+:::
 
 ### Paso 3: Lanzar el cálculo y guardar el archivo
 
@@ -159,16 +159,21 @@ Tabla de multiplicidades de referencia ($2S+1$):
 3. Confirmar el cuadro de diálogo pulsando **Save** y a continuación **Submit**.
 4. Observar el estado de ejecución en la barra inferior de GaussView hasta que el cálculo finalice (pocos segundos para elementos ligeros).
 
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: cuadro de dialogo para guardar el archivo .gjf y barra de estado de GaussView indicando la ejecucion del calculo]
+:::
+
 ### Paso 4: Verificar la terminación correcta
 
 1. Abrir el archivo `.log` generado (`C_neutro_HF_STO3G.log`) con el editor de texto del sistema (**File → Open** en el editor o clic derecho en el archivo).
 2. Desplazarse al final del archivo con **Ctrl + Fin**.
 3. Confirmar que la última línea del archivo coincide exactamente con: `{{termination_ok}}`. Si no aparece, el cálculo falló y no deben usarse sus datos.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
-[CAPTURA: sección final del archivo .log con el mensaje de terminación correcta de Gaussian]
-```
+[CAPTURA: seccion final del archivo .log en el editor de texto mostrando la linea Normal termination of Gaussian 16]
+:::
 
 ### Paso 5: Leer la energía total E(N)
 
@@ -177,12 +182,22 @@ Tabla de multiplicidades de referencia ($2S+1$):
 3. Localizar el autovalor de energía total en la línea `SCF Done:  E(RHF) = ...` (para sistemas de capa cerrada con multiplicidad 1) o `SCF Done:  E(ROHF) = ...` (para capa abierta con multiplicidad distinta de 1).
 4. Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna $E(N)$ de la tabla de resultados.
 
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: fragmento del archivo .log mostrando el resultado de busqueda de la linea SCF Done con el valor de energia total en Hartrees]
+:::
+
 ### Paso 6: Leer la energía orbital del HOMO
 
 1. En el mismo archivo `.log`, buscar con **Ctrl + F** el texto: `Alpha occ. eigenvalues`.
 2. Localizar el último número de la última línea `Alpha occ. eigenvalues --`. Ese valor numérico corresponde a la energía del orbital ocupado de mayor energía, $\varepsilon_{\text{HOMO}}$ (en Hartrees).
 3. Localizar el primer número de la línea inmediata siguiente `Alpha virt. eigenvalues --`, correspondiente al orbital desocupado de menor energía ($\varepsilon_{\text{LUMO}}$).
 4. Copiar el valor de $\varepsilon_{\text{HOMO}}$ (en Hartrees) en la columna correspondiente de la tabla de resultados.
+
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: fragmento del archivo .log mostrando las lineas Alpha occ. eigenvalues y Alpha virt. eigenvalues con los autovalores de HOMO y LUMO senalados]
+:::
 
 ### Paso 7: Configurar y calcular el catión A⁺
 
@@ -215,6 +230,11 @@ Tabla de multiplicidades para los cationes ($A^+$):
 | F⁺ | 9 | [He] 2s² 2p⁴ | 2 | 3 |
 | Ne⁺ | 10 | [He] 2s² 2p⁵ | 1 | 2 |
 
+:::{admonition} Captura de pantalla
+:class: captura
+[CAPTURA: ventana Calculate → Gaussian Calculation Setup para el cation mostrando la pestana Method con Charge=1 y multiplicidad correspondiente]
+:::
+
 ### Paso 8: Calcular las energías de ionización
 
 1. Calcular la energía de ionización por diferencia directa ($\text{IE}_{\Delta E}$):
@@ -246,10 +266,10 @@ Párrafo corto + tabla. Recopilación de los datos extraídos de los archivos `.
 
 Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Results → MOs**, selección de isosuperficie tridimensional del orbital HOMO y ajuste del valor de contorno para examinar simetrías tipo s frente a lóbulos nodales p.
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: isosuperficie tridimensional del orbital HOMO del carbono en GaussView Results → MOs]
-```
+:::
 
 :::{note}
 [TEXTO HUMANO: descripción comparativa de la morfología del HOMO a lo largo del período y presencia de planos nodales]
