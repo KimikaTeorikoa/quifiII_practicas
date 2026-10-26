@@ -3,8 +3,7 @@
 ## Introducción
 
 :::{note}
-[TEXTO HUMANO: Explicar la necesidad de emplear funciones de base debido a que los orbitales moleculares carecen de formulación analítica conocida, presentándolos como combinaciones lineales de funciones matemáticas predefinidas. Longitud: 3-4 frases.]
-[ECUACIÓN: aproximación LCAO-MO para orbitales moleculares, $\psi_i = \sum_\mu c_{\mu i} \phi_\mu$]
+[TEXTO HUMANO: Por qué necesitamos una base: los orbitales moleculares no tienen forma analítica conocida, los aproximamos como combinación de funciones matemáticas simples. La base es ese conjunto de funciones. Sin base, no hay cálculo. (Longitud: 3-4 frases)]
 :::
 
 ---
@@ -12,12 +11,12 @@
 ## La idea central: aproximar orbitales con funciones conocidas
 
 :::{note}
-[TEXTO HUMANO: Desarrollar la analogía del ajuste de curvas mediante polinomios para ilustrar cómo un orbital atómico tipo Slater se aproxima mediante combinaciones lineales de primitivas gaussianas, enfatizando la ganancia en precisión al aumentar el número de funciones. Longitud: 4-5 frases.]
+[TEXTO HUMANO: Analogía: igual que aproximamos una curva cualquiera con polinomios, aproximamos un orbital con una suma de funciones gaussianas. Cuantas más funciones, mejor la aproximación. Figura: curva exacta vs aproximación con pocas funciones vs aproximación con más funciones. (Longitud: 4-5 frases)]
 :::
 
-:::{admonition} Captura de pantalla
+:::{admonition} Figura
 :class: captura
-[CAPTURA: orbital 1s exacto frente a aproximación con pocas gaussianas y con base extendida mostrando tres curvas superpuestas]
+[FIGURA: orbital 1s exacto vs aproximación con pocas gaussianas vs aproximación con más gaussianas (tres curvas superpuestas)]
 :::
 
 ---
@@ -25,11 +24,11 @@
 ## Precisión vs coste computacional
 
 :::{note}
-[TEXTO HUMANO: Exponer el compromiso metodológico entre exactitud química y demanda de tiempo de cálculo, señalando que STO-3G y 6-311G son ejemplos ilustrativos dentro de un amplio abanico de bases disponibles. Longitud: 4-5 frases.]
+[TEXTO HUMANO: Relación directa: más funciones de base → más preciso → más tiempo de cálculo. La tabla muestra solo la idea cualitativa con dos ejemplos, no son las únicas bases posibles ni representan una escala completa. Aclaración en el texto: estos son dos ejemplos para ilustrar la idea; en la práctica existe una gran variedad de bases y cada cálculo indica cuál usar. (Longitud: 4-5 frases)]
 :::
 
 | Base | Tamaño relativo | Coste relativo |
-|---|---|---|
+|------|----------------|----------------|
 | STO-3G | Pequeña | Bajo |
 | 6-311G | Mayor | Mayor |
 
@@ -39,7 +38,7 @@
 
 - `[TEXTO HUMANO: manual de la asignatura si existe]`
 - Gaussian 16, Revision A.03, M. J. Frisch et al., Gaussian, Inc., Wallingford CT, 2016.
-- `[TEXTO HUMANO: referencia adicional : libro de texto de química cuántica o equivalente)]`
+- `[TEXTO HUMANO: referencia adicional (libro de texto de química cuántica o equivalente)]`
 
 ---
 
@@ -47,7 +46,7 @@
 :color: success
 
 :::{note}
-[TEXTO HUMANO: Desglosar la nomenclatura de bases de Pople, explicando la distribución de primitivas gaussianas entre capas internas y de valencia, así como la adición de funciones de polarización tipo d o difusas. Longitud: 4-5 frases.]
+[TEXTO HUMANO: Explicar los números: cuántas gaussianas por orbital del core y de valencia. Qué añade el asterisco o la "d" (funciones de polarización). Solo para el alumno que quiera entender qué está eligiendo en el menú de GaussView. (Longitud: 4-5 frases)]
 :::
 
 ::::
