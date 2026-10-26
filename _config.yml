@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Química Física II - Prácticas 
-author: David De Sancho 
+title: Química Física II - Prácticas
+author: David De Sancho
 #logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -21,15 +21,46 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/KimikaTeorikoa/quifiII_practicas  # Online location of your book
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/KimikaTeorikoa/quifiII_practicas
+  branch: master
 
 # Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
+  extra_css:
+    - _static/custom.css
 
 launch_buttons:
-  notebook_interface: "jupyterlab"  # or "classic"
+  notebook_interface: "jupyterlab"
   colab_url: "https://colab.research.google.com"
+
+# ----------------------------------------------------------------
+# MyST substitutions — texto reutilizable en todas las prácticas.
+# Uso en markdown: {{nombre_sustitucion}}
+# ----------------------------------------------------------------
+parse:
+  myst_enable_extensions:
+    - substitution
+    - colon_fence
+  myst_substitutions:
+    gaussian_version: "Gaussian 16, Revision A.03"
+    gaussian_cite: >
+      Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel
+      et al., Gaussian, Inc., Wallingford CT, 2016.
+    ha_to_ev: "27.2114"
+    ha_to_kcal: "627.509"
+    termination_ok: "`Normal termination of Gaussian 16`"
+    practicas_folder: "`/home/ikasle/Documentos/Practicas/`"
+    metodo_base: "HF/STO-3G"
+
+# ----------------------------------------------------------------
+# Sphinx extensions — sphinx-design activa {dropdown}, {card},
+# {badge}, etc. Incluido en JB >= 0.13; se declara explícitamente
+# para garantizar que esté activo.
+# ----------------------------------------------------------------
+sphinx:
+  extra_extensions:
+    - sphinx_design
+  config:
+    html_show_copyright: false

@@ -11,9 +11,17 @@ parts:
     - file: content/finitepython 
     - file: content/finitewellho
     - file: content/finitebond
+  - caption: "Introducción a la Química Computacional"
+    chapters:
+    - file: content/intro-gaussview
+    - file: content/intro-hartree-fock
+    - file: content/intro-bases
   - caption: "Cálculos con GaussView y Gaussian"
     chapters:
     - file: content/atomos-koopmans
+    - file: content/intro-born-oppenheimer
+    - file: content/intro-mas-alla-hf
+    - file: content/intro-energias
     - file: content/moleculas-pes
     - file: content/modos-normales
     - file: content/espectroscopia-uv

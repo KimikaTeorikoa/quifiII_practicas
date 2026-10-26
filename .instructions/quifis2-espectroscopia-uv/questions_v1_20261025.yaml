@@ -1,0 +1,39 @@
+metadata:
+  topic: "quifis2-espectroscopia-uv"
+  date: "2026-10-25"
+  round: 1
+  completeness_score: "82%"
+  critical_gaps:
+    - "Experimental λ values for solvents other than cyclohexane and water not confirmed"
+  notes: "The practice is structurally complete. The main gap is reference experimental
+    data for the solvatochromism table. Students generate all calculated values."
+
+questions:
+  - id: Q1_01
+    priority: critical
+    type: free_text
+    seeded_from_bracket: false
+    question: "Are there experimental n→π* λ values for acetone in chloroform, ethanol,
+      and acetonitrile available in the lab manual or a reference? If not, should the
+      experimental column in Table B be left empty (students fill) or removed entirely?"
+    answer: ___
+
+  - id: Q1_02
+    priority: optional
+    type: yes_no
+    default_if_unanswered: "yes"
+    seeded_from_bracket: false
+    question: "Should the practice include a 5-ketone × 5-solvent matrix (25+25 = 50
+      calculations total) as the main activity, or should it be reduced — e.g., only
+      acetone in all solvents + all ketones in one solvent?"
+    answer: ___
+
+  - id: Q1_03
+    priority: optional
+    type: yes_no
+    default_if_unanswered: "no"
+    seeded_from_bracket: false
+    question: "Should the practice mention that the reference log molecule is formaldehyde
+      (CH₂O), not acetone, as a deliberate comparison to show the effect of the carbonyl
+      environment? Or keep it as a silent methodological reference only?"
+    answer: ___

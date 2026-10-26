@@ -1,0 +1,41 @@
+metadata:
+  topic: "quifis2-moleculas-pes"
+  date: "2026-10-25"
+  round: 1
+  completeness_score: "72%"
+  critical_gaps:
+    - "Method and basis set for dihaloethane calculations unconfirmed"
+    - "Dihedral scan parameters (step, range) unconfirmed"
+
+questions:
+  - id: Q1_01
+    priority: critical
+    type: multiple_choice
+    seeded_from_bracket: true
+    bracket_source: "[CONFIRMAR CON PROFESOR] — method/basis for DCE/DBE/DIE"
+    question: "What method and basis set should students use for the 1,2-dihaloethane dihedral scan?"
+    options:
+      - "HF/STO-3G (same as H₂ scan)"
+      - "B3LYP/6-311G (same as P2-C/D)"
+      - "HF/6-31G*"
+      - "Other (specify in free text)"
+    answer: ___
+
+  - id: Q1_02
+    priority: critical
+    type: free_text
+    seeded_from_bracket: true
+    bracket_source: "[CONFIRMAR CON PROFESOR] — dihedral scan step/range"
+    question: "What dihedral scan range and step size should be used for DCE/DBE/DIE?
+      (e.g., 0° to 360°, step 10°, 36 points — or different?)"
+    answer: ___
+
+  - id: Q1_03
+    priority: optional
+    type: yes_no
+    default_if_unanswered: "no"
+    seeded_from_bracket: true
+    bracket_source: "[CONFIRMAR CON PROFESOR] — ethane optional comparison"
+    question: "Should the optional section include an ethane (no halogen) PES comparison?
+      If yes, same method/basis as Q1_01?"
+    answer: ___

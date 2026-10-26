@@ -1,0 +1,19 @@
+metadata:
+  topic: "quifis2-modos-normales"
+  date: "2026-10-25"
+  round: 1
+  completeness_score: "88%"
+  critical_gaps: []
+  notes: "CO data fully confirmed. CO₂ data is by design empty (student-generated).
+    One optional question about lab script availability."
+
+questions:
+  - id: Q1_01
+    priority: optional
+    type: yes_no
+    default_if_unanswered: "no"
+    seeded_from_bracket: false
+    question: "Is the script TheoEspRotBib.py available in the lab computers for the
+      optional rovibrational spectrum section? If no, the optional section remains as
+      a [TEXTO HUMANO] placeholder with no script reference."
+    answer: ___
