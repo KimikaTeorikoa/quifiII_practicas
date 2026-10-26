@@ -106,7 +106,10 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 
 ### Paso 1: Abrir GaussView y dibujar el átomo
 
-Párrafo muy corto + figura. Apertura de la interfaz gráfica, selección del elemento químico correspondiente en la tabla periódica (**View → Element Fragments**) e inserción de un único centro atómico aislado en el espacio de trabajo.
+1. Abrir GaussView desde el menú de aplicaciones o lanzador del sistema.
+2. Abrir la paleta de fragmentos atómicos mediante **View → Element Fragments** (o pulsando el icono de la tabla periódica en la barra de herramientas superior).
+3. Seleccionar el elemento químico que se desea calcular (por ejemplo, carbono, **C**).
+4. Hacer un único clic sobre la ventana central de dibujo. Aparece un único centro atómico sin enlaces.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -115,16 +118,19 @@ Párrafo muy corto + figura. Apertura de la interfaz gráfica, selección del el
 
 ### Paso 2: Configurar el cálculo del átomo neutro
 
-Párrafo medio + tabla + figura. Acceso al panel **Calculate → Gaussian Calculation Setup**. Selección de opciones: Job Type Energy, Method HF, Basis Set STO-3G, Charge 0, y asignación de multiplicidad de espín según el átomo. Inclusión de la palabra clave `pop=full` en la pestaña Additional Keywords para obtener la totalidad de energías orbitales.
+1. Acceder al menú **Calculate → Gaussian Calculation Setup**.
+2. En la pestaña **Job Type**, seleccionar **Energy**.
+3. En la pestaña **Method**, configurar los parámetros del cálculo:
 
 | Campo | Valor |
 |---|---|
-| Job Type | Energy |
-| Method | HF |
-| Basis Set | STO-3G |
-| Charge | 0 |
-| Spin (Multiplicity) | Según configuración electrónica (ver tabla) |
-| Additional Keywords | `pop=full` |
+| Method | **HF** |
+| Basis Set | **STO-3G** |
+| Charge | **0** |
+| Spin (Multiplicity) | Consultar la tabla de multiplicidades para cada átomo neutro |
+
+4. En la pestaña **Title**, escribir una descripción identificativa (por ejemplo, `C neutro HF STO-3G`).
+5. En la pestaña **Additional Keywords**, escribir exactamente: `pop=full`. Esta instrucción vuelca las energías de la totalidad de orbitales moleculares en el archivo de salida.
 
 Tabla de multiplicidades de referencia ($2S+1$):
 
@@ -148,13 +154,16 @@ Tabla de multiplicidades de referencia ($2S+1$):
 
 ### Paso 3: Lanzar el cálculo y guardar el archivo
 
-Párrafo corto. Envío mediante botón Submit, guardado del archivo `.gjf` en la ruta de trabajo `{{practicas_folder}}` bajo nomenclatura descriptiva (elemento, estado y método), y estimación de tiempo de cómputo en segundos.
-
-`[CONFIRMAR CON PROFESOR: ruta exacta del directorio de trabajo en las estaciones del laboratorio]`
+1. Pulsar el botón **Submit** en la parte inferior de la ventana **Gaussian Calculation Setup**.
+2. En el cuadro de diálogo para guardar, indicar el nombre del archivo de entrada `.gjf` (por ejemplo, `C_neutro_HF_STO3G.gjf`) y guardarlo en el directorio de trabajo del laboratorio: `{{practicas_folder}}`.
+3. Confirmar el cuadro de diálogo pulsando **Save** y a continuación **Submit**.
+4. Observar el estado de ejecución en la barra inferior de GaussView hasta que el cálculo finalice (pocos segundos para elementos ligeros).
 
 ### Paso 4: Verificar la terminación correcta
 
-Párrafo muy corto + figura. Apertura del archivo de salida `.log` en el editor de texto y desplazamiento a la última línea para comprobar la terminación normal.
+1. Abrir el archivo `.log` generado (`C_neutro_HF_STO3G.log`) con el editor de texto del sistema (**File → Open** en el editor o clic derecho en el archivo).
+2. Desplazarse al final del archivo con **Ctrl + Fin**.
+3. Confirmar que la última línea del archivo coincide exactamente con: `{{termination_ok}}`. Si no aparece, el cálculo falló y no deben usarse sus datos.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -163,32 +172,56 @@ Párrafo muy corto + figura. Apertura del archivo de salida `.log` en el editor 
 
 ### Paso 5: Leer la energía total E(N)
 
-Párrafo corto. Búsqueda de la cadena `SCF Done` en el `.log` y lectura del autovalor de energía total en Hartrees (`E(RHF)` para capa cerrada o `E(ROHF)` para capa abierta).
+1. En el archivo `.log` abierto en el editor de texto, pulsar **Ctrl + F** para activar la búsqueda.
+2. Escribir el texto de búsqueda: `SCF Done`.
+3. Localizar el autovalor de energía total en la línea `SCF Done:  E(RHF) = ...` (para sistemas de capa cerrada con multiplicidad 1) o `SCF Done:  E(ROHF) = ...` (para capa abierta con multiplicidad distinta de 1).
+4. Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna $E(N)$ de la tabla de resultados.
 
 ### Paso 6: Leer la energía orbital del HOMO
 
-Párrafo corto. Búsqueda de la sección `Alpha occ. eigenvalues` en el `.log`. Identificación del último autovalor ocupado ($\varepsilon_{\text{HOMO}}$) y del primer autovalor de la línea `Alpha virt.` ($\varepsilon_{\text{LUMO}}$).
+1. En el mismo archivo `.log`, buscar con **Ctrl + F** el texto: `Alpha occ. eigenvalues`.
+2. Localizar el último número de la última línea `Alpha occ. eigenvalues --`. Ese valor numérico corresponde a la energía del orbital ocupado de mayor energía, $\varepsilon_{\text{HOMO}}$ (en Hartrees).
+3. Localizar el primer número de la línea inmediata siguiente `Alpha virt. eigenvalues --`, correspondiente al orbital desocupado de menor energía ($\varepsilon_{\text{LUMO}}$).
+4. Copiar el valor de $\varepsilon_{\text{HOMO}}$ (en Hartrees) en la columna correspondiente de la tabla de resultados.
 
 ### Paso 7: Configurar y calcular el catión A⁺
 
-Párrafo medio + tabla. Duplicación del cálculo para la especie catiónica modificando los campos en la pestaña **Method**: Charge = +1 y ajuste de la multiplicidad de espín correspondiente al número de electrones resultante.
+1. Regresar a GaussView con el mismo centro atómico en pantalla.
+2. Abrir nuevamente el panel **Calculate → Gaussian Calculation Setup**.
+3. En la pestaña **Method**, modificar los siguientes parámetros:
+   - **Charge**: cambiar de `0` a `1`.
+   - **Spin**: ajustar a la multiplicidad correspondiente a la especie catiónica (ver tabla inferior). Al arrancar un electrón del HOMO, el número de electrones desapareados cambia.
+4. Mantener **Job Type** en `Energy`, **Method** en `HF`, **Basis Set** en `STO-3G` y la palabra clave `pop=full` en **Additional Keywords**.
+5. En la pestaña **Title**, escribir: `C cation HF STO-3G`.
+6. Pulsar **Submit**, guardar con nombre representativo (por ejemplo, `C_cation_HF_STO3G.gjf`) en `{{practicas_folder}}` y confirmar el envío.
+7. Verificar la terminación correcta en el nuevo `.log` y extraer la energía total $E(A^+)$ en la línea `SCF Done`.
 
 | Campo | Neutro | Catión |
 |---|:---:|:---:|
 | Charge | 0 | +1 |
 | Spin | Multiplicidad neutro | Multiplicidad catión |
 
-:::{note}
-[TEXTO HUMANO: explicación de la deducción de multiplicidad catiónica tras la extracción del electrón HOMO]
-:::
+Tabla de multiplicidades para los cationes ($A^+$):
+
+| Catión | $Z$ | Configuración | Electrones desapareados | Multiplicidad ($2S+1$) |
+|---|:---:|---|:---:|:---:|
+| He⁺ | 2 | 1s¹ | 1 | 2 |
+| Li⁺ | 3 | [He] | 0 | 1 |
+| Be⁺ | 4 | [He] 2s¹ | 1 | 2 |
+| B⁺ | 5 | [He] 2s² | 0 | 1 |
+| C⁺ | 6 | [He] 2s² 2p¹ | 1 | 2 |
+| N⁺ | 7 | [He] 2s² 2p² | 2 | 3 |
+| O⁺ | 8 | [He] 2s² 2p³ | 3 | 4 |
+| F⁺ | 9 | [He] 2s² 2p⁴ | 2 | 3 |
+| Ne⁺ | 10 | [He] 2s² 2p⁵ | 1 | 2 |
 
 ### Paso 8: Calcular las energías de ionización
 
-Párrafo corto. Aplicación de las expresiones de conversión para obtener las energías de ionización en electronvoltios (eV).
-
-$$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times {{ha_to_ev}} \quad [\text{eV}]$$
-
-$$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times {{ha_to_ev}} \quad [\text{eV}]$$
+1. Calcular la energía de ionización por diferencia directa ($\text{IE}_{\Delta E}$):
+   $$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times {{ha_to_ev}} \quad [\text{eV}]$$
+2. Calcular la estimación del teorema de Koopmans ($\text{IE}_{\text{Koopmans}}$):
+   $$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times {{ha_to_ev}} \quad [\text{eV}]$$
+3. Registrar ambos valores en electronvoltios en la tabla de datos y calcular la desviación porcentual respecto al valor experimental de referencia.
 
 ---
 

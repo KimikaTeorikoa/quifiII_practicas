@@ -96,7 +96,12 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 
 ### Paso 1: Dibujar CO en GaussView
 
-Párrafo muy corto + figura. Construcción de la molécula diatómica de monóxido de carbono en la ventana de dibujo de GaussView mediante la adición sucesiva de átomos de C y O enlazados.
+1. Abrir GaussView desde el menú de aplicaciones o lanzador del sistema.
+2. Abrir la paleta de elementos mediante **View → Element Fragments** (o haciendo clic en el icono de la tabla periódica en la barra superior).
+3. Seleccionar el elemento carbono (**C**) y hacer clic en el área central de dibujo.
+4. Seleccionar el elemento oxígeno (**O**) en la paleta de fragmentos.
+5. Hacer clic sobre el átomo de carbono para añadir el átomo de oxígeno enlazado.
+6. Aplicar una limpieza geométrica preliminar mediante **Edit → Clean** (o pulsar el icono de escoba en la barra de herramientas).
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -105,16 +110,21 @@ Párrafo muy corto + figura. Construcción de la molécula diatómica de monóxi
 
 ### Paso 2: Configurar el cálculo combinado Opt+Freq
 
-Párrafo medio + tabla + figura. Selección de opciones en **Calculate → Gaussian Calculation Setup**: Job Type Opt+Freq, Method B3LYP, Basis Set 6-311G, Charge 0, Spin 1, y palabra clave `geom=connectivity` en Additional Keywords.
+1. Acceder al menú **Calculate → Gaussian Calculation Setup**.
+2. En la pestaña **Job Type**, seleccionar la opción **Opt+Freq**. Comprobar que en la parte inferior quedan activadas simultáneamente las tareas de optimización de geometría y cálculo de constantes de fuerza armónicas.
+3. En la pestaña **Method**, configurar los parámetros de cálculo:
 
 | Campo | Valor |
 |---|---|
 | Job Type | Opt+Freq |
-| Method | B3LYP |
-| Basis Set | 6-311G |
-| Charge | 0 |
-| Spin (Multiplicity) | 1 |
+| Method | **B3LYP** |
+| Basis Set | **6-311G** |
+| Charge | **0** |
+| Spin (Multiplicity) | **1** (Singlet) |
 | Additional Keywords | `geom=connectivity` |
+
+4. En la pestaña **Title**, escribir: `CO opt freq B3LYP 6-311G`.
+5. En la pestaña **Additional Keywords**, escribir: `geom=connectivity`.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -123,19 +133,38 @@ Párrafo medio + tabla + figura. Selección de opciones en **Calculate → Gauss
 
 ### Paso 3: Lanzar y verificar
 
-Párrafo corto. Guardado del archivo como `CO_opt_freq_B3LYP_6311G.gjf` en `{{practicas_folder}}ModoNormales/`, seguimiento del cálculo en la barra de estado y confirmación de finalización correcta en el archivo `.log`.
+1. Pulsar el botón **Submit** en la ventana de configuración.
+2. En el cuadro de diálogo de guardado, escribir el nombre del archivo: `CO_opt_freq_B3LYP_6311G.gjf`. Guardarlo en el directorio de trabajo: `{{practicas_folder}}ModoNormales/`.
+3. Confirmar pulsando **Save** y seguidamente **Submit**.
+4. Esperar a que el cálculo finalice en la barra de estado de GaussView (tiempo aproximado: 1-2 minutos).
+5. Abrir el archivo `.log` (`CO_opt_freq_B3LYP_6311G.log`) en el editor de texto y desplazarse al final con **Ctrl + Fin** para verificar la presencia de la línea: `{{termination_ok}}`.
+6. Confirmar que la etapa de frecuencias se ejecutó correctamente buscando la sección `Frequencies --`.
 
 ### Paso 4: Leer la distancia de enlace optimizada
 
-Párrafo corto. Extracción del parámetro geométrico $R(1,2)$ correspondiente a la longitud de enlace C–O optimizada (en Ångströms) en la tabla final del archivo `.log` o mediante **Results → Optimization**.
+1. En GaussView, abrir el archivo `.log` resultante mediante **File → Open**.
+2. Acceder al menú **Results → Optimization** para visualizar la trayectoria de optimización y situarse en el último fotograma correspondiente al mínimo de energía.
+3. Medir la longitud de enlace C–O optimizada seleccionando sucesivamente el átomo de carbono y el de oxígeno (el valor en Ångströms se muestra en la barra inferior de la ventana gráfica).
+4. Alternativamente, en el archivo `.log` abierto en el editor de texto, buscar con **Ctrl + F** el texto: `! R1    R(1,2)`. El valor numérico adyacente (1.1473 Å) es la distancia de enlace de equilibrio.
+5. Copiar la distancia calculada en la Tabla 1 de resultados.
 
 ### Paso 5: Extraer parámetros vibracionales del .log
 
-Párrafo medio. Localización del bloque `Frequencies --` en el archivo `.log`. Registro de los cuatro parámetros característicos del modo de vibración: frecuencia ($\text{cm}^{-1}$), intensidad infrarroja (`IR Inten`), masa reducida (`Red. masses`) y constante de fuerza armónica (`Frc consts`).
+1. En el archivo `.log` abierto en el editor de texto, buscar con **Ctrl + F** el texto: `Frequencies --`.
+2. Localizar el bloque de datos correspondiente al único modo vibracional de la molécula de CO:
+   - `Frequencies --`: frecuencia vibracional armónica en $\text{cm}^{-1}$ (valor calculado: 2063.4 $\text{cm}^{-1}$).
+   - `Red. masses --`: masa reducida del oscilador en uma (13.44 uma).
+   - `Frc consts  --`: constante de fuerza del enlace en mdyne/Å (33.71 mdyne/Å).
+   - `IR Inten    --`: intensidad de absorción infrarroja en km/mol (70.16 km/mol).
+3. Registrar estos valores en la Tabla 1 de resultados.
 
 ### Paso 6: Visualizar la animación del modo normal
 
-Párrafo corto + figura. Apertura del panel **Results → Vibrations**, activación de la animación tridimensional e inspección del vector de desplazamiento para identificar el movimiento de estiramiento C–O.
+1. En GaussView, con el archivo `CO_opt_freq_B3LYP_6311G.log` abierto, acceder al menú **Results → Vibrations**.
+2. En la lista de modos normales, seleccionar la fila correspondiente a la frecuencia calculada (2063 $\text{cm}^{-1}$).
+3. Activar la casilla **Start Animation** para observar el movimiento oscilatorio de los núcleos.
+4. Activar la casilla **Show Vectors** para visualizar las flechas de desplazamiento nuclear y comprobar que los átomos se mueven a lo largo del eje del enlace (modo de estiramiento).
+5. Observar la amplitud relativa de las flechas: el carbono (átomo más ligero) experimenta un desplazamiento mayor que el oxígeno (átomo más pesado).
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -144,7 +173,23 @@ Párrafo corto + figura. Apertura del panel **Results → Vibrations**, activaci
 
 ### Paso 7: Repetir el procedimiento para CO₂
 
-Párrafo medio + tabla + figura. Construcción de dióxido de carbono en disposición lineal (O=C=O), ejecución del cálculo Opt+Freq bajo idénticas condiciones teóricas y caracterización de los 4 modos normales generados.
+1. En GaussView, abrir una nueva ventana de trabajo mediante **File → New → Molecule Group**.
+2. Abrir la paleta con **View → Element Fragments**, seleccionar carbono (**C**) y colocarlo en el centro de la ventana de dibujo.
+3. Seleccionar oxígeno (**O**) y hacer clic a ambos lados del carbono para formar la estructura lineal O=C=O.
+4. Aplicar **Edit → Clean** para orientar la geometría lineal preliminar con simetría $D_{\infty h}$.
+5. Acceder a **Calculate → Gaussian Calculation Setup**:
+   - Pestaña **Job Type**: seleccionar **Opt+Freq**.
+   - Pestaña **Method**: Method **B3LYP**, Basis Set **6-311G**, Charge **0**, Spin **1**.
+   - Pestaña **Title**: escribir `CO2 opt freq B3LYP 6-311G`.
+   - Pestaña **Additional Keywords**: escribir `geom=connectivity`.
+6. Pulsar **Submit**, guardar como `CO2_opt_freq_B3LYP_6311G.gjf` en `{{practicas_folder}}ModoNormales/` y confirmar el cálculo.
+7. Verificar la terminación normal en el archivo `.log` (`CO2_opt_freq_B3LYP_6311G.log`).
+8. Abrir el archivo `.log` en GaussView y acceder a **Results → Vibrations**.
+9. Seleccionar sucesivamente cada uno de los 4 modos normales para animarlos y caracterizarlos:
+   - Modo 1 (estiramiento simétrico, ~1388 $\text{cm}^{-1}$): los dos átomos de oxígeno se alejan y acercan al carbono en fase opuesta, manteniendo invariante el momento dipolar nulo (`IR Inten ≈ 0`, inactivo en IR).
+   - Modo 2 (estiramiento asimétrico, ~2349 $\text{cm}^{-1}$): un enlace C–O se contrae mientras el otro se estira, generando una variación periódica del momento dipolar (`IR Inten` elevada, activo en IR).
+   - Modos 3 y 4 (flexiones degeneradas, ~667 $\text{cm}^{-1}$): variación del ángulo de enlace O–C–O en dos planos mutuamente perpendiculares; ambas frecuencias presentan valores idénticos y son activas en IR.
+10. Registrar las frecuencias calculadas de los cuatro modos en la Tabla 2 de resultados.
 
 Clasificación de los modos esperados para CO₂:
 

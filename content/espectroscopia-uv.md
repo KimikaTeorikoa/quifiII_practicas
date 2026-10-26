@@ -112,16 +112,26 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 
 #### Paso A1: Optimizar la geometría en disolvente
 
-Párrafo corto + tabla + figura. Construcción de la molécula de acetona en GaussView. Configuración en **Calculate → Gaussian Calculation Setup**: Job Type Optimization, Method B3LYP, Basis Set 6-311G, Charge 0, Spin 1, y palabra clave `scrf=(solvent=acetonitrile)` en Additional Keywords.
+1. Iniciar GaussView desde el menú de aplicaciones o lanzador del sistema.
+2. Dibujar la molécula de acetona (CH₃–CO–CH₃): seleccionar el fragmento de carbonilo o añadir sucesivamente los átomos de C, O e hidrógenos.
+3. Aplicar **Edit → Clean** (o hacer clic en el icono de escoba) para obtener una geometría inicial razonable.
+4. Acceder al menú **Calculate → Gaussian Calculation Setup**.
+5. En la pestaña **Job Type**, seleccionar **Optimization**.
+6. En la pestaña **Method**, configurar los parámetros de cálculo:
 
 | Campo | Valor |
 |---|---|
 | Job Type | Optimization |
-| Method | B3LYP |
-| Basis Set | 6-311G |
-| Charge | 0 |
-| Spin (Multiplicity) | 1 |
-| Additional Keywords | `scrf=(solvent=acetonitrile)` |
+| Method | **B3LYP** |
+| Basis Set | **6-311G** |
+| Charge | **0** |
+| Spin (Multiplicity) | **1** |
+| Additional Keywords | `scrf=(solvent=acetonitrile) geom=connectivity` |
+
+7. En la pestaña **Title**, escribir: `Acetona opt B3LYP 6-311G MeCN`.
+8. En la pestaña **Additional Keywords**, escribir exactamente: `scrf=(solvent=acetonitrile) geom=connectivity`.
+9. Pulsar **Submit**, guardar el archivo como `acetona_MeCN_opt.gjf` en el directorio `{{practicas_folder}}EspectroscopiaUV/` y confirmar el envío.
+10. Abrir el archivo de salida `.log` (`acetona_MeCN_opt.log`) en el editor de texto y comprobar que la última línea coincide con: `{{termination_ok}}`.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -130,7 +140,12 @@ Párrafo corto + tabla + figura. Construcción de la molécula de acetona en Gau
 
 #### Paso A2: Extraer autovalores HOMO y LUMO
 
-Párrafo corto + figura. Búsqueda de las líneas `Alpha occ. eigenvalues` y `Alpha virt. eigenvalues` en el `.log` optimizado. Lectura de energías en Hartrees y cálculo de la longitud de onda estimada en nanómetros.
+1. En el archivo `.log` de la optimización (`acetona_MeCN_opt.log`), buscar con **Ctrl + F** el texto: `Alpha  occ. eigenvalues`.
+2. Identificar el último valor numérico de la última fila `Alpha occ.` correspondiente a la energía del orbital HOMO ($\varepsilon_{\text{HOMO}}$ en Hartrees).
+3. Identificar el primer valor numérico de la fila inmediata `Alpha virt. eigenvalues` correspondiente a la energía del orbital LUMO ($\varepsilon_{\text{LUMO}}$ en Hartrees).
+4. Calcular la diferencia energética $\Delta E_{\text{gap}} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times {{ha_to_ev}}$ en eV.
+5. Estimar la longitud de onda de absorción: $\lambda_{\text{estimada}} = 1239.8 / \Delta E_{\text{gap}}\text{ (eV)}$ en nm.
+6. Copiar los valores numéricos obtenidos en la Tabla A de resultados.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -143,7 +158,14 @@ Párrafo corto + figura. Búsqueda de las líneas `Alpha occ. eigenvalues` y `Al
 
 #### Paso B1: Configurar el cálculo TD-DFT
 
-Párrafo corto + figura. Apertura de la estructura optimizada previa en GaussView. Configuración de cálculo Job Type Energy con palabras clave `td scrf=(solvent=acetonitrile) geom=connectivity` en la pestaña Additional Keywords.
+1. En GaussView, abrir el archivo de geometría optimizada anterior (`acetona_MeCN_opt.log` o el correspondiente `.chk`) mediante **File → Open**.
+2. Acceder al menú **Calculate → Gaussian Calculation Setup**.
+3. En la pestaña **Job Type**, seleccionar **Energy** (cálculo de punto único sobre la estructura de equilibrio).
+4. En la pestaña **Method**, mantener Method **B3LYP**, Basis Set **6-311G**, Charge **0**, Spin **1**.
+5. En la pestaña **Title**, escribir: `Acetona TD-DFT B3LYP 6-311G MeCN`.
+6. En la pestaña **Additional Keywords**, escribir exactamente: `td scrf=(solvent=acetonitrile) geom=connectivity`.
+7. Pulsar **Submit**, guardar como `acetona_MeCN_td.gjf` en `{{practicas_folder}}EspectroscopiaUV/` y confirmar la ejecución.
+8. Verificar la terminación correcta (`{{termination_ok}}`) al final del archivo `.log`.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -152,7 +174,14 @@ Párrafo corto + figura. Apertura de la estructura optimizada previa en GaussVie
 
 #### Paso B2: Extraer datos de los estados excitados del .log
 
-Párrafo medio + tabla + figura. Búsqueda de la sección `Excited State 1` en el archivo `.log`. Registro de los cuatro parámetros característicos de la transición: energía en eV, longitud de onda ($\lambda$ en nm), fuerza del oscilador ($f$) y contribuciones orbitales.
+1. Abrir el archivo `.log` (`acetona_MeCN_td.log`) en el editor de texto.
+2. Buscar con **Ctrl + F** la cadena: `Excited State   1`.
+3. Extraer los datos cuantitativos del primer estado excitado singlete:
+   - Longitud de onda calculada ($\lambda$) en nanómetros (nm).
+   - Energía de excitación en electronvoltios (eV).
+   - Fuerza del oscilador ($f$).
+4. Observar las líneas de orbitales asociadas a la transición (origen y destino) para confirmar el tipo de excitación.
+5. Comprobar que la fuerza del oscilador es reducida ($f < 0.01$) y la longitud de onda se sitúa en el rango 270–300 nm, correspondiente a la banda prohibida por simetría $n \rightarrow \pi^*$.
 
 Campos del bloque de estado excitado:
 
@@ -171,7 +200,12 @@ Campos del bloque de estado excitado:
 
 #### Paso B3: Visualizar el espectro en GaussView
 
-Párrafo corto + figura. Apertura de **Results → UV-Vis** para observar la convolución de estados excitados y contrastar la banda débil $n \rightarrow \pi^*$ frente a la banda intensa $\pi \rightarrow \pi^*$.
+1. En GaussView, abrir el archivo `acetona_MeCN_td.log` mediante **File → Open**.
+2. Acceder al menú **Results → UV-Vis**.
+3. Examinar el espectro electrónico sintético generado:
+   - Las barras verticales indican las transiciones discretas, con altura proporcional a la fuerza del oscilador $f$.
+   - La curva continua muestra el perfil convolucionado.
+4. Identificar la banda débil $n \rightarrow \pi^*$ frente a la banda intensa $\pi \rightarrow \pi^*$ a longitudes de onda inferiores a 250 nm.
 
 ```{admonition} 📸 Captura de pantalla
 :class: captura
@@ -182,7 +216,19 @@ Párrafo corto + figura. Apertura de **Results → UV-Vis** para observar la con
 
 ### Parte C: Serie de disolventes y solvatocromismo
 
-Párrafo medio + tabla. Procedimiento para repetir el cálculo TD-DFT en acetona modificando la palabra clave de disolvente en `scrf=(solvent=...)` para seis medios de constante dieléctrica creciente.
+1. En GaussView, abrir nuevamente la geometría optimizada de la acetona.
+2. Configurar el cálculo TD-DFT mediante **Calculate → Gaussian Calculation Setup** (Job Type **Energy**, Method **B3LYP/6-311G**, Charge **0**, Spin **1**).
+3. Modificar la palabra clave en la pestaña **Additional Keywords** para cada disolvente de la serie:
+   - Vacío (gas): `td geom=connectivity` (sin palabra clave `scrf`)
+   - Ciclohexano: `td scrf=(solvent=cyclohexane) geom=connectivity`
+   - Cloroformo: `td scrf=(solvent=chloroform) geom=connectivity`
+   - Etanol: `td scrf=(solvent=ethanol) geom=connectivity`
+   - Acetonitrilo: `td scrf=(solvent=acetonitrile) geom=connectivity`
+   - Agua: `td scrf=(solvent=water) geom=connectivity`
+4. Guardar cada archivo con nombre descriptivo en `{{practicas_folder}}EspectroscopiaUV/` (por ejemplo, `acetona_ciclohexano_td.gjf`, `acetona_agua_td.gjf`).
+5. Ejecutar cada cálculo y verificar la línea `{{termination_ok}}` en los archivos `.log`.
+6. Extraer los valores de $\lambda$ y fuerza de oscilador $f$ para `Excited State 1` en cada `.log` y anotarlos en la Tabla B de resultados.
+7. Comparar la posición de la banda en ciclohexano ($\lambda \approx 279\text{ nm}$) frente al agua ($\lambda \approx 264\text{ nm}$) para cuantificar el desplazamiento hipsocrómico (al azul).
 
 | Disolvente | Constante dieléctrica ($\varepsilon$) | Palabra clave en Additional Keywords |
 |---|:---:|---|
@@ -197,7 +243,21 @@ Párrafo medio + tabla. Procedimiento para repetir el cálculo TD-DFT en acetona
 
 ### Parte D: Serie de cetonas sustituidas
 
-Párrafo medio + tabla. Protocolo de cálculo para optimizar y calcular el estado excitado $n \rightarrow \pi^*$ en cinco cetonas y derivados carbonílicos en medio acetonitrilo. Recomendación operativa de organización en subcarpetas para gestionar los archivos de cálculo.
+1. Construir en GaussView las cuatro moléculas carbonílicas complementarias:
+   - Cloruro de acetilo (CH₃–CO–Cl)
+   - Acetofenona (CH₃–CO–C₆H₅)
+   - Ácido acético (CH₃–CO–OH)
+   - Metil-etil-cetona (CH₃–CO–CH₂CH₃)
+2. Para cada compuesto, realizar primero la optimización de geometría en acetonitrilo:
+   - Menú **Calculate → Gaussian Calculation Setup** → Job Type **Optimization**, Method **B3LYP/6-311G**, Charge **0**, Spin **1**.
+   - Additional Keywords: `scrf=(solvent=acetonitrile) geom=connectivity`.
+   - Guardar como `[molecula]_MeCN_opt.gjf` y verificar terminación normal.
+3. Sobre cada estructura optimizada, configurar y lanzar el cálculo TD-DFT:
+   - Menú **Calculate → Gaussian Calculation Setup** → Job Type **Energy**, Method **B3LYP/6-311G**, Charge **0**, Spin **1**.
+   - Additional Keywords: `td scrf=(solvent=acetonitrile) geom=connectivity`.
+   - Guardar como `[molecula]_MeCN_td.gjf` y verificar terminación normal.
+4. Organizar los archivos en subcarpetas específicas dentro de `{{practicas_folder}}EspectroscopiaUV/` para facilitar la gestión.
+5. Localizar el bloque `Excited State 1` en el archivo `.log` de cada derivado, extraer $\lambda$ y la fuerza de oscilador $f$, y anotar los valores en la Tabla C de resultados para evaluar el efecto electrónico del sustituyente.
 
 | Compuesto | Estructura química | Denominación |
 |---|---|---|
