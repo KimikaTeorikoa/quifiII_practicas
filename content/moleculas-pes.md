@@ -311,11 +311,11 @@ $$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
 
 ## Preguntas
 
-1. Determinar el valor de la distancia internuclear de equilibrio ($R_{\text{eq}}$) para la curva del singlete de $\text{H}_2$ y calcular el error relativo porcentual respecto al valor experimental ($0.741\text{ \AA}$).
-2. Explicar por qué el estado triplete de la molécula de $\text{H}_2$ no presenta un pozo de potencial enlazante, justificando el resultado a partir de la simetría de la función de onda espacial y el principio de exclusión de Pauli.
-3. Analizar la diferencia de comportamiento asintótico entre las curvas del singlete y del triplete a distancias internucleares elevadas ($R \ge 3.0\text{ \AA}$) y explicar por qué el método Hartree-Fock restringido describe con deficiencias el límite de disociación de capa cerrada.
-4. En la curva de torsión conformacional del dihaloetano, contrastar la estabilidad energética relativa del confórmero anti frente al confórmero gauche y cuantificar la altura de la barrera rotacional correspondiente a la conformación eclipsada en kcal/mol.
-5. Comparar la barrera de rotación calculada para el dihaloetano con la energía térmica media a temperatura ambiente ($kT \approx 0.6\text{ kcal/mol}$ a 298 K) y deducir si el enlace simple C–C presenta rotación libre o restringida en la escala de tiempos experimental.
+1. ¿Qué valor de energía en Hartrees aparece en la tabla `Summary of Optimized Potential Surface Scan` del archivo `H2_singlete_scan.log` para el punto de menor energía, y a qué distancia internuclear $R_1$ en Ångstroms corresponde?
+2. A partir de la curva del estado singlete, determinar la energía de disociación teórica $D_e$ en eV restando la energía del mínimo de la energía en el límite asintótico ($R = 3.0\text{ \AA}$). Justificar la presencia del pozo de potencial enlazante en el singlete frente al perfil puramente repulsivo del triplete en función del espín electrónico y la densidad de carga internuclear.
+3. Comparar la distancia de equilibrio calculada para el singlete ($R_{\text{eq}} \approx 0.71\text{ \AA}$) con el valor experimental ($0.741\text{ \AA}$). ¿Por qué el método Hartree-Fock con base mínima STO-3G subestima la distancia de enlace y sobreestima la energía de disociación respecto al experimento?
+4. Comparar las curvas de energía potencial del estado singlete y del estado triplete de $\text{H}_2$ a distancias internucleares cortas ($R = 0.5\text{ \AA}$) y largas ($R = 3.0\text{ \AA}$). ¿A partir de qué distancia la diferencia de energía entre ambos estados se vuelve despreciable y por qué convergen hacia el mismo límite asintótico de dos átomos de hidrógeno neutros aislados?
+5. [PENDIENTE CONFIRMACIÓN PROFESOR: esta pregunta aplica cuando se complete la parte del dihaloetano] A partir de la curva del ángulo diedro en el dihaloetano, contrastar la barrera rotacional calculada con la energía térmica media a temperatura ambiente ($kT \approx 0.6\text{ kcal/mol}$ a 298 K) para deducir si la rotación alrededor del enlace C–C está libre o restringida.
 
 ---
 
