@@ -1,36 +1,40 @@
 # P2-A: Átomos y el Teorema de Koopmans
 
+<!-- ============================================================
+     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
+     Este archivo contiene el esqueleto de contenidos párrafo a
+     párrafo. Cada sección indica qué debe contener, longitud
+     orientativa y dónde van figuras. NO editar como texto final
+     hasta que el esquema esté aprobado por el supervisor.
+     ============================================================ -->
+
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: motivación química — ¿por qué nos interesa la energía de ionización?
-Conectar con las tendencias periódicas que el alumno ya conoce de Química General: la IE
-aumenta a lo largo de un período y disminuye al bajar un grupo. Explicar que en esta práctica
-comprobaremos si un modelo teórico sencillo (Hartree-Fock) reproduce esas tendencias, y
-aprenderemos a interpretar qué nos dice el orbital más alto ocupado (HOMO) sobre la
-reactividad del átomo.]
-:::
-
-## Objetivos
+Párrafo corto (3-4 líneas). Motivación química sobre la energía de ionización y su relación con las tendencias periódicas en la tabla periódica. Contraste del modelo teórico Hartree-Fock frente a datos experimentales e interpretación física del orbital más alto ocupado (HOMO).
 
 :::{note}
-[TEXTO HUMANO: lista numerada de objetivos de aprendizaje. Propuesta:]
-
-[PROPUESTA:
-1. Aprender a realizar cálculos de energía de átomos con GaussView y {{gaussian_version}}.
-2. Calcular la energía de ionización por dos métodos: diferencia de energías totales y
-   teorema de Koopmans.
-3. Comparar los valores calculados con los experimentales e identificar las tendencias
-   periódicas.
-4. Visualizar los orbitales atómicos HOMO en GaussView e interpretar su forma.
-]
+[TEXTO HUMANO: introducción y motivación química sobre tendencias periódicas de energía de ionización]
 :::
 
 ---
 
+## Objetivos
+
+Párrafo corto (lista numerada). Objetivos de aprendizaje de la sesión práctica:
+1. Realización de cálculos de energía electrónica en átomos aislados mediante GaussView y {{gaussian_version}}.
+2. Determinación de la energía de ionización por dos métodos: diferencia de energías totales ($\Delta E$) y teorema de Koopmans.
+3. Comparación sistemática de los valores calculados con datos experimentales para los elementos del primer y segundo período.
+4. Visualización tridimensional e interpretación de la simetría de los orbitales atómicos HOMO.
+
 :::{note}
-Antes de empezar, asegúrate de haber leído la introducción a GaussView.
+[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
 :::
+
+---
+
+## ¿Qué software vamos a usar?
+
+Párrafo muy corto. Referencia al uso combinado de GaussView como entorno gráfico interactivo y {{gaussian_version}} como motor de cálculo de estructura electrónica. Consulta previa obligatoria de la guía de introducción a GaussView.
 
 ---
 
@@ -38,388 +42,223 @@ Antes de empezar, asegúrate de haber leído la introducción a GaussView.
 
 ### ¿Por qué las energías son negativas?
 
-:::{admonition} Intuición física
+Párrafo corto. Explicación cualitativa del origen del signo negativo en sistemas ligados frente a partículas en reposo separadas en el infinito. Interpretación del pozo de potencial atractivo núcleo-electrón y comprobación de coherencia física en la salida del cálculo.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar en 3-4 frases, sin fórmulas, que un sistema ligado tiene menos
-energía que sus partes separadas — de ahí el signo negativo. Analogía: una pelota en el
-fondo de un pozo tiene menos energía que fuera del pozo. Gaussian siempre devuelve
-energías negativas para sistemas estables; si ves un número positivo, algo ha ido mal.]
+[TEXTO HUMANO: analogía del pozo de potencial y estabilidad de sistemas ligados, sin fórmulas matemáticas]
 :::
 
 ### El HOMO y el LUMO
 
-:::{admonition} Intuición física
+Párrafo corto + figura. Definición de orbitales frontera: orbital ocupado de mayor energía (HOMO) y primer orbital desocupado (LUMO). Relación entre el nivel energético del electrón más externo y la energía necesaria para su remoción.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que en un átomo o molécula, los electrones ocupan "pisos" de
-energía llamados orbitales. El HOMO (Highest Occupied Molecular Orbital) es el piso más
-alto que tiene electrones — y por tanto el electrón más fácil de arrancar. El LUMO
-(Lowest Unoccupied Molecular Orbital) es el primer piso vacío, y determina dónde irían
-nuevos electrones.]
+[TEXTO HUMANO: analogía de niveles energéticos discretos y extracción del electrón del nivel más externo]
 :::
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: diagrama esquemático de niveles de energía con HOMO y LUMO señalados,
-y flecha indicando IE = energía necesaria para sacar el electrón del HOMO]
-:::
+[CAPTURA: diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha indicando energía de ionización]
+```
 
-### La energía de ionización
+### La energía de ionización y el Teorema de Koopmans
 
-La energía de ionización (IE) es la energía mínima necesaria para arrancar un electrón
-de un átomo neutro en estado gaseoso:
+Párrafo medio. Definición de energía de ionización para un átomo neutro en fase gas ($A \rightarrow A^+ + e^-$). Formulación de las dos vías metodológicas de evaluación cuántica: cálculo autoconsistente del catión (vía $\Delta E$) y aproximación por energía orbital (teorema de Koopmans).
 
-$$
-\text{A} \rightarrow \text{A}^+ + e^-
-$$
+$$\text{IE}_{\Delta E} = E(A^+) - E(A)$$
 
-En esta práctica la calcularemos de **dos formas**:
+$$\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}$$
 
-**Vía 1 — Diferencia de energías totales:**
-
-$$
-\text{IE}_{\Delta E} = E(\text{A}^+) - E(\text{A})
-$$
-
-Hacemos dos cálculos separados: el átomo neutro A y el catión A⁺. La diferencia,
-convertida a eV, es la IE.
-
-**Vía 2 — Teorema de Koopmans:**
-
-$$
-\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}
-$$
-
-Con un único cálculo (el del átomo neutro) obtenemos una estimación de la IE.
-
-:::{admonition} Intuición física
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar por qué las dos vías no dan exactamente el mismo resultado.
-El teorema de Koopmans asume que los orbitales del catión son idénticos a los del neutro,
-lo cual no es del todo cierto porque al quitar un electrón los demás se reorganizan.
-Además, el método Hartree-Fock no incluye la correlación entre electrones. Mencionar que
-aun así la aproximación es sorprendentemente buena.]
+[TEXTO HUMANO: justificación de las discrepancias entre ambas vías, aproximación de orbitales congelados y ausencia de correlación electrónica instantánea en Hartree-Fock]
 :::
 
-### La multiplicidad
+### La multiplicidad de espín
 
-:::{admonition} Intuición física
+Párrafo corto + tabla. Regla $2S+1$ para la multiplicidad a partir de electrones desapareados. Importancia de la asignación exacta en capas abiertas para evitar estados de espín erróneos o fallos de convergencia SCF.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar en términos sencillos qué es el spin del electrón (↑ y ↓) y
-cómo se cuenta la multiplicidad: 2S+1, donde S es la suma de los spines no apareados.
-Ejemplos: H tiene 1 electrón desapareado → S=1/2 → mult=2. He tiene 2 electrones con
-spines opuestos → S=0 → mult=1. Si la multiplicidad es incorrecta, Gaussian calculará
-un estado excitado o devolverá un error.]
+[TEXTO HUMANO: explicación cualitativa de espines electrónicos paralelos y apareados]
 :::
 
-**Unidades de energía:** Gaussian trabaja en Hartrees (Ha). Para convertir a eV:
+:::{warning}
+Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF.
+:::
 
-$$
-1 \text{ Ha} = {{ha_to_ev}} \text{ eV}
-$$
+### Unidades de energía
+
+Párrafo muy corto. Uso de unidades atómicas (Hartrees) en el motor de cálculo y factor de conversión a electronvoltios (eV) para la comparación experimental.
+
+$$1\text{ Ha} = {{ha_to_ev}}\text{ eV}$$
 
 ---
 
 ## Procedimiento
 
 :::{danger}
-**Verificación obligatoria tras cada cálculo.**
-Antes de anotar ningún resultado, abre el archivo `.log` con el editor de texto y
-comprueba que la última línea dice exactamente:
-
+Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el editor de texto y confirmar la presencia de la línea final exacta:
 {{termination_ok}}
-
-Si no aparece esa línea, el cálculo ha fallado. No uses los resultados. Avisa al
-profesor.
 :::
 
 ### Paso 1: Abrir GaussView y dibujar el átomo
 
-1. Abre GaussView desde el escritorio o el menú de aplicaciones.
-2. En la barra de herramientas superior, haz clic en el icono de la **tabla periódica**
-   (o ve a **View → Element Fragments**).
-3. Selecciona el elemento que quieres calcular (por ejemplo, **C** para carbono).
-4. Haz clic **una sola vez** en el área de dibujo central. Aparecerá el átomo.
-5. No añadas ningún enlace ni ningún otro átomo.
+Párrafo muy corto + figura. Apertura de la interfaz gráfica, selección del elemento químico correspondiente en la tabla periódica (**View → Element Fragments**) e inserción de un único centro atómico aislado en el espacio de trabajo.
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: GaussView con un único átomo de carbono en el área de dibujo, sin enlaces]
-:::
-
-:::{tip}
-Un átomo aislado es simplemente una "molécula" de un solo centro. GaussView lo trata
-exactamente igual que cualquier molécula — no hay que hacer nada especial.
-:::
+[CAPTURA: ventana principal de GaussView con un único centro atómico sin enlaces]
+```
 
 ### Paso 2: Configurar el cálculo del átomo neutro
 
-1. Ve a **Calculate → Gaussian Calculation Setup**. Se abre una ventana con pestañas.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Gaussian Calculation Setup con las pestañas Job Type, Method,
-Title y Additional Keywords visibles]
-:::
-
-2. Pestaña **Job Type** → selecciona **Energy**.
-3. Pestaña **Method** → configura:
+Párrafo medio + tabla + figura. Acceso al panel **Calculate → Gaussian Calculation Setup**. Selección de opciones: Job Type Energy, Method HF, Basis Set STO-3G, Charge 0, y asignación de multiplicidad de espín según el átomo. Inclusión de la palabra clave `pop=full` en la pestaña Additional Keywords para obtener la totalidad de energías orbitales.
 
 | Campo | Valor |
-|-------|-------|
-| Method | **HF** |
-| Basis Set | **STO-3G** |
-| Charge | **0** |
-| Spin (Multiplicity) | ver tabla de multiplicidades |
+|---|---|
+| Job Type | Energy |
+| Method | HF |
+| Basis Set | STO-3G |
+| Charge | 0 |
+| Spin (Multiplicity) | Según configuración electrónica (ver tabla) |
+| Additional Keywords | `pop=full` |
 
-4. Pestaña **Additional Keywords** → escribe: `pop=full`
+Tabla de multiplicidades de referencia ($2S+1$):
 
-:::{admonition} ¿Para qué sirve `pop=full`?
-:class: intuicion
-Esta keyword le indica a Gaussian que incluya en el archivo `.log` las energías de
-**todos** los orbitales moleculares. Sin ella, solo aparecen los datos de la energía
-total y no podríamos leer $\varepsilon_{\text{HOMO}}$.
-:::
+| Átomo | $Z$ | Configuración | Multiplicidad |
+|---|:---:|---|:---:|
+| H | 1 | 1s¹ | 2 |
+| He | 2 | 1s² | 1 |
+| Li | 3 | [He] 2s¹ | 2 |
+| Be | 4 | [He] 2s² | 1 |
+| B | 5 | [He] 2s² 2p¹ | 2 |
+| C | 6 | [He] 2s² 2p² | 3 |
+| N | 7 | [He] 2s² 2p³ | 4 |
+| O | 8 | [He] 2s² 2p⁴ | 3 |
+| F | 9 | [He] 2s² 2p⁵ | 2 |
+| Ne | 10 | [He] 2s² 2p⁶ | 1 |
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: pestaña Method con HF/STO-3G seleccionado, Charge=0, y la multiplicidad
-correcta para el carbono (3)]
-:::
-
-**Multiplicidades (2S+1) para los tres primeros períodos:**
-
-| Átomo | Z | Configuración electrónica | Multiplicidad |
-|-------|---|--------------------------|:---:|
-| H  | 1  | 1s¹              | 2 |
-| He | 2  | 1s²              | 1 |
-| Li | 3  | [He] 2s¹         | 2 |
-| Be | 4  | [He] 2s²         | 1 |
-| B  | 5  | [He] 2s² 2p¹     | 2 |
-| C  | 6  | [He] 2s² 2p²     | 3 |
-| N  | 7  | [He] 2s² 2p³     | 4 |
-| O  | 8  | [He] 2s² 2p⁴     | 3 |
-| F  | 9  | [He] 2s² 2p⁵     | 2 |
-| Ne | 10 | [He] 2s² 2p⁶     | 1 |
-| Na | 11 | [Ne] 3s¹         | 2 |
-| Mg | 12 | [Ne] 3s²         | 1 |
-| Al | 13 | [Ne] 3s² 3p¹     | 2 |
-| Si | 14 | [Ne] 3s² 3p²     | 3 |
-| P  | 15 | [Ne] 3s² 3p³     | 4 |
-| S  | 16 | [Ne] 3s² 3p⁴     | 3 |
-| Cl | 17 | [Ne] 3s² 3p⁵     | 2 |
-| Ar | 18 | [Ne] 3s² 3p⁶     | 1 |
-
-:::{warning}
-La multiplicidad incorrecta es el error más frecuente en esta práctica. Consúltala
-en la tabla antes de lanzar cada cálculo.
-:::
+[CAPTURA: ventana Gaussian Calculation Setup con pestaña Method y Additional Keywords pop=full]
+```
 
 ### Paso 3: Lanzar el cálculo y guardar el archivo
 
-1. Haz clic en **Submit** en la ventana de configuración.
-2. GaussView te pedirá guardar el archivo `.gjf`. Guárdalo en
-   {{practicas_folder}}`Koopmans/` con un nombre como `C_neutro_HF_STO3G.gjf`.
-3. El cálculo comenzará; la barra de estado de GaussView lo indicará.
-4. Tiempo aproximado: átomos del 1er y 2º período → **segundos**;
-   3er período → menos de un minuto.
+Párrafo corto. Envío mediante botón Submit, guardado del archivo `.gjf` en la ruta de trabajo `{{practicas_folder}}` bajo nomenclatura descriptiva (elemento, estado y método), y estimación de tiempo de cómputo en segundos.
 
-:::{note}
-[TEXTO HUMANO: instrucciones específicas del laboratorio si el lanzamiento difiere
-del descrito — por ejemplo, si hay que usar un servidor remoto.]
-:::
+`[CONFIRMAR CON PROFESOR: ruta exacta del directorio de trabajo en las estaciones del laboratorio]`
 
 ### Paso 4: Verificar la terminación correcta
 
-1. Abre el archivo `.log` con el editor de texto
-   (clic derecho sobre el archivo → **Abrir con → Editor de texto**).
-2. Ve al final del archivo con **Ctrl + Fin**.
-3. La última línea debe ser exactamente: {{termination_ok}}
+Párrafo muy corto + figura. Apertura del archivo de salida `.log` en el editor de texto y desplazamiento a la última línea para comprobar la terminación normal.
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: final de un archivo .log mostrando la línea "Normal termination of Gaussian 16"]
-:::
+[CAPTURA: sección final del archivo .log con el mensaje de terminación correcta de Gaussian]
+```
 
 ### Paso 5: Leer la energía total E(N)
 
-Con el `.log` abierto, busca con **Ctrl + F** el texto: `SCF Done`
+Párrafo corto. Búsqueda de la cadena `SCF Done` en el `.log` y lectura del autovalor de energía total en Hartrees (`E(RHF)` para capa cerrada o `E(ROHF)` para capa abierta).
 
-Verás una línea como esta:
+### Paso 6: Leer la energía orbital del HOMO
 
-```
-SCF Done:  E(ROHF) =  -37.19864000     A.U. after    8 cycles
-```
+Párrafo corto. Búsqueda de la sección `Alpha occ. eigenvalues` en el `.log`. Identificación del último autovalor ocupado ($\varepsilon_{\text{HOMO}}$) y del primer autovalor de la línea `Alpha virt.` ($\varepsilon_{\text{LUMO}}$).
 
-El número después de `E(RHF) =` o `E(ROHF) =` es la energía total en **Hartrees**.
-Cópialo y pégalo en tu tabla de resultados.
+### Paso 7: Configurar y calcular el catión A⁺
 
-:::{tip}
-Usa `E(RHF)` para átomos con multiplicidad 1 (capa cerrada) y `E(ROHF)` para el
-resto. Ambos son energías totales — el nombre solo indica el tipo de cálculo HF.
-:::
-
-### Paso 6: Leer ε_HOMO
-
-En el mismo `.log`, busca: `Alpha occ. eigenvalues`
-
-```
-Alpha  occ. eigenvalues --  -11.32466  -0.82007  -0.45085  -0.45085  -0.45085
-Alpha virt. eigenvalues --    0.55445   0.60267
-```
-
-- Línea `occ.` → orbitales **ocupados**. El **último valor** es ε_HOMO.
-  En el ejemplo: ε_HOMO = −0.45085 Ha.
-- Línea `virt.` → orbitales **virtuales**. El **primer valor** es ε_LUMO.
-
-:::{tip}
-Anota también ε_LUMO — lo necesitarás en las preguntas.
-:::
-
-### Paso 7: Calcular el catión A⁺
-
-Repite los pasos 1–5 para el mismo átomo, cambiando solo en **Method**:
+Párrafo medio + tabla. Duplicación del cálculo para la especie catiónica modificando los campos en la pestaña **Method**: Charge = +1 y ajuste de la multiplicidad de espín correspondiente al número de electrones resultante.
 
 | Campo | Neutro | Catión |
-|-------|:------:|:------:|
-| Charge | 0 | **+1** |
-| Spin (Multiplicity) | ver tabla | **multiplicidad del catión** |
+|---|:---:|:---:|
+| Charge | 0 | +1 |
+| Spin | Multiplicidad neutro | Multiplicidad catión |
 
 :::{note}
-[TEXTO HUMANO: explicar cómo obtener la multiplicidad del catión. Al quitar el electrón
-HOMO cambia el número de electrones desapareados. Ejemplo: C neutro → [He]2s²2p²,
-mult=3. C⁺ → [He]2s²2p¹, mult=2.]
+[TEXTO HUMANO: explicación de la deducción de multiplicidad catiónica tras la extracción del electrón HOMO]
 :::
-
-Guarda con nombre distinto (p. ej. `C_cation_HF_STO3G.gjf`) y lee E(A⁺) igual que
-en el Paso 5.
 
 ### Paso 8: Calcular las energías de ionización
 
-**Vía ΔE:**
+Párrafo corto. Aplicación de las expresiones de conversión para obtener las energías de ionización en electronvoltios (eV).
 
-$$
-\text{IE}_{\Delta E} = \bigl[E(\text{A}^+) - E(\text{A})\bigr] \times {{ha_to_ev}}
-\quad [\text{eV}]
-$$
+$$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times {{ha_to_ev}} \quad [\text{eV}]$$
 
-**Vía Koopmans:**
-
-$$
-\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times {{ha_to_ev}}
-\quad [\text{eV}]
-$$
+$$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times {{ha_to_ev}} \quad [\text{eV}]$$
 
 ---
 
-## Resultados
+## Resultados y análisis
 
-Completa la tabla. Las tres primeras columnas de datos se copian del `.log`.
-Las dos IE las calculas con las fórmulas del Paso 8.
+Párrafo corto + tabla. Recopilación de los datos extraídos de los archivos `.log` y cálculo de las desviaciones porcentuales respecto a los valores experimentales tabulados.
 
-| Átomo | $E(N)$ (Ha) | $E(\text{A}^+)$ (Ha) | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\Delta E}$ (eV) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
-|:-----:|:-----------:|:--------------------:|:---:|:---:|:---:|:---:|:---:|
-| H  | — | — | — | — | — | 13.60 | — |
-| He | — | — | — | — | — | 24.59 | — |
-| Li | — | — | — | — | — | 5.39  | — |
-| Be | — | — | — | — | — | 9.32  | — |
-| B  | — | — | — | — | — | 8.30  | — |
-| C  | — | — | — | — | — | 11.26 | — |
-| N  | — | — | — | — | — | 14.53 | — |
-| O  | — | — | — | — | — | 13.62 | — |
-| F  | — | — | — | — | — | 17.42 | — |
-| Ne | — | — | — | — | — | 21.56 | — |
-| Na | — | — | — | — | — | 5.14  | — |
-| Mg | — | — | — | — | — | 7.65  | — |
-| Al | — | — | — | — | — | 5.99  | — |
-| Si | — | — | — | — | — | 8.15  | — |
-| P  | — | — | — | — | — | 10.49 | — |
-| S  | — | — | — | — | — | 10.36 | — |
-| Cl | — | — | — | — | — | 12.97 | — |
-| Ar | — | — | — | — | — | 15.76 | — |
+| Átomo | $E(N)$ (Ha) | $E(A^+)$ (Ha) | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\Delta E}$ (eV) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| H | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 13.60 | [TEXTO HUMANO] |
+| He | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 24.59 | [TEXTO HUMANO] |
+| Li | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 5.39 | [TEXTO HUMANO] |
+| Be | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 9.32 | [TEXTO HUMANO] |
+| B | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 8.30 | [TEXTO HUMANO] |
+| C | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
+| N | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 14.53 | [TEXTO HUMANO] |
+| O | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 13.62 | [TEXTO HUMANO] |
+| F | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 17.42 | [TEXTO HUMANO] |
+| Ne | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 21.56 | [TEXTO HUMANO] |
 
-:::{tip}
-Estrategia eficiente: lanza primero todos los cálculos de átomos neutros (columnas
-$E(N)$ y $\varepsilon_{\text{HOMO}}$), luego todos los cationes ($E(\text{A}^+)$).
-Así maximizas el tiempo que Gaussian está trabajando mientras tú preparas el siguiente.
-:::
+### Visualización de orbitales
 
-## Visualización de orbitales
+Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Results → MOs**, selección de isosuperficie tridimensional del orbital HOMO y ajuste del valor de contorno para examinar simetrías tipo s frente a lóbulos nodales p.
 
-:::{tip}
-Tras el cálculo del átomo neutro, ve a **Results → MOs** en GaussView. Verás un diagrama
-de niveles. Haz **doble clic** sobre el HOMO (el ocupado de mayor energía) para verlo
-en 3D. Ajusta **Isovalue = 0.02** a.u. en el panel lateral para una buena visualización.
-:::
-
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: ventana Results → MOs con el HOMO del carbono visualizado como isosuperficie
-3D — dos lóbulos de orbital p, uno rojo y otro azul]
-:::
+[CAPTURA: isosuperficie tridimensional del orbital HOMO del carbono en GaussView Results → MOs]
+```
 
 :::{note}
-[TEXTO HUMANO: instrucciones para visualizar el HOMO de al menos tres átomos (H, C, Ne)
-y describir cómo cambia la forma a lo largo del período. ¿Es esférico o tiene lóbulos?]
+[TEXTO HUMANO: descripción comparativa de la morfología del HOMO a lo largo del período y presencia de planos nodales]
 :::
 
 ---
 
 ## Preguntas y pruebas
 
-:::{note}
-[TEXTO HUMANO: preguntas de reflexión. Propuesta:]
+Párrafo corto (preguntas de reflexión e interpretación). Batería de cuestiones para consolidar la comprensión física de los resultados:
+1. Grado de concordancia entre IE$_{\Delta E}$ e IE$_{\text{Koopmans}}$ a lo largo de la serie y causas físicas de las mayores divergencias.
+2. Reproducción de las tendencias periódicas generales e interpretación de anomalías locales (como la caída de IE entre N y O según la regla de Hund, o entre Be y B).
+3. Comparación morfológica entre el orbital HOMO del hidrógeno (simetría esférica) y del carbono (lóbulos con plano nodal).
+4. Magnitud relativa de los errores asociados a cada vía y factores no considerados por Hartree-Fock.
+5. Consecuencias operativas de introducir una multiplicidad de espín incorrecta y mecanismos de detección en el archivo `.log`.
 
-[PROPUESTA:
-1. ¿En qué átomos coinciden mejor IE$_{\Delta E}$ e IE$_{\text{Koopmans}}$?
-   ¿En cuáles difieren más? ¿Qué suposición del teorema de Koopmans se viola en esos casos?
-2. ¿Se reproduce la tendencia periódica esperada? ¿Hay algún átomo que rompe la tendencia?
-   Explícalo con la configuración electrónica.
-3. La IE del O es menor que la del N. ¿Cómo lo explica la regla de Hund?
-4. ¿Qué forma tiene el HOMO del hidrógeno? ¿Y el del carbono? ¿Por qué son distintos?
-5. ¿Cuál de las dos vías (ΔE o Koopmans) da mayor error? Propón una razón.
-6. ¿Qué le pasaría al resultado si introdujeras una multiplicidad incorrecta?
-   ¿Cómo detectarías el error sin conocer el resultado experimental?
-]
+:::{note}
+[TEXTO HUMANO: formulación detallada de preguntas y criterios de corrección]
 :::
 
 ---
 
 ## Bibliografía
 
-:::{note}
-[TEXTO HUMANO: añadir referencia al manual interno de la asignatura si existe.]
-:::
-
+- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
-- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018.
-  Cap. 9 (Estructura electrónica atómica).
-
-[PROPUESTA: Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*, Dover, 1996, cap. 1–3,
-como lectura opcional para alumnos con más curiosidad matemática.]
+- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 9 (Estructura electrónica atómica).
 
 ---
 
-::::{dropdown} Para ir más lejos *(opcional — solo si terminas antes de tiempo)*
+::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-Esta sección es completamente **opcional** y no entra en la nota. Si has terminado
-todo lo anterior y te queda tiempo, prueba el siguiente ejercicio.
-
-### Efecto del tamaño de la base
-
-Hasta ahora hemos usado **STO-3G**, la base más sencilla disponible. Repite el cálculo
-del **carbono neutro** cambiando únicamente el campo **Basis Set** en
-**Calculate → Gaussian Calculation Setup → Method**:
+Párrafo medio + tabla. Exploración voluntaria sobre el efecto del conjunto de base en el átomo de carbono neutro. Comparación sistemática de la energía del HOMO y la IE calculada al ampliar la base desde STO-3G hacia 3-21G y 6-311G.
 
 | Base | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
-|:----:|:---:|:---:|:---:|:---:|
-| STO-3G  | — *(ya lo tienes)* | — | 11.26 | — |
-| 3-21G   | — | — | 11.26 | — |
-| 6-311G  | — | — | 11.26 | — |
+|:---:|:---:|:---:|:---:|:---:|
+| STO-3G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
+| 3-21G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
+| 6-311G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
 
 :::{note}
-[TEXTO HUMANO: preguntas para esta subsección — ¿mejora el acuerdo con el experimento
-al ampliar la base? ¿A partir de qué base el error se estabiliza? No hace falta entender
-qué significa cada base — basta con observar la tendencia numérica.]
+[TEXTO HUMANO: preguntas de profundización sobre la convergencia del error respecto al tamaño de la base]
 :::
 ::::

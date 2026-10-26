@@ -1,309 +1,230 @@
 # P2-C: Modos Normales de Vibración
 
+<!-- ============================================================
+     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
+     Este archivo contiene el esqueleto de contenidos párrafo a
+     párrafo. Cada sección indica qué debe contener, longitud
+     orientativa y dónde van figuras. NO editar como texto final
+     hasta que el esquema esté aprobado por el supervisor.
+     ============================================================ -->
+
 ## Introducción
 
+Párrafo corto (3-4 líneas). Motivación sobre la espectroscopía infrarroja como método experimental de identificación estructural. Interpretación física del movimiento oscilatorio de los núcleos en torno a sus posiciones de equilibrio molecular. Estudio comparativo de dos moléculas lineales modelo: monóxido de carbono (CO) y dióxido de carbono (CO₂).
+
 :::{note}
-[TEXTO HUMANO: motivación — la espectroscopía IR como herramienta analítica cotidiana.
-¿Qué mide un espectrómetro de IR? Conectar con que los átomos de una molécula no están
-quietos: vibran alrededor de sus posiciones de equilibrio. En esta práctica calcularemos
-esas vibraciones para el CO y el CO₂ y compararemos con los espectros experimentales.]
+[TEXTO HUMANO: introducción y motivación sobre espectroscopía infrarroja y frecuencias de vibración molecular]
 :::
+
+---
 
 ## Objetivos
 
-:::{note}
-[TEXTO HUMANO: lista numerada. Propuesta:]
+Párrafo corto (lista numerada). Objetivos de aprendizaje de la práctica:
+1. Comprensión conceptual de los modos normales de vibración y cálculo de grados de libertad independientes.
+2. Optimización geométrica y cálculo de frecuencias armónicas mediante el método combinado Opt+Freq con B3LYP/6-311G.
+3. Visualización dinámica y caracterización del tipo de movimiento (estiramiento y flexión) en GaussView.
+4. Aplicación de las reglas de selección de actividad infrarroja según la derivada del momento dipolar.
+5. Contraste cuantitativo de las frecuencias armónicas calculadas frente a datos espectroscópicos experimentales.
 
-[PROPUESTA:
-1. Entender qué es un modo normal de vibración y cuántos tiene cada molécula.
-2. Calcular la geometría optimizada y las frecuencias vibracionales del CO con
-   B3LYP/6-311G.
-3. Visualizar los modos normales en GaussView e identificar su tipo (estiramiento,
-   flexión).
-4. Aplicar las reglas de selección IR para determinar qué modos son activos.
-5. Comparar las frecuencias calculadas con los valores experimentales.
-6. Repetir el análisis para el CO₂ y contrastar el número de modos activos.
-]
+:::{note}
+[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
 :::
+
+---
+
+## ¿Qué software vamos a usar?
+
+Párrafo muy corto. Referencia al uso coordinado de GaussView para el modelado tridimensional y animación de vectores de desplazamiento, y {{gaussian_version}} para la evaluación de derivadas segundas de la energía respecto a coordenadas nucleares.
 
 ---
 
 ## Conceptos clave
 
-### Las moléculas vibran
+### Las moléculas vibran: modelo del oscilador armónico
 
-:::{admonition} Intuición física
+Párrafo medio. Aproximación armónica de la superficie de energía potencial en las proximidades del mínimo. Expresión de la frecuencia vibracional en función de la constante de fuerza ($k$) del enlace y la masa reducida ($\mu$) del sistema.
+
+$$\tilde{\nu} = \frac{1}{2\pi c}\sqrt{\frac{k}{\mu}}$$
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que los átomos de una molécula no están quietos aunque la
-molécula esté "optimizada". Vibran alrededor del mínimo de energía como masas unidas
-por muelles. La frecuencia de vibración depende de la rigidez del enlace (constante de
-fuerza) y de la masa de los átomos. Un enlace rígido y átomos ligeros → frecuencia alta.
-Un enlace blando y átomos pesados → frecuencia baja.]
+[TEXTO HUMANO: analogía mecánica de bolas unidas por muelles y relación entre rigidez de enlace, masa atómica y frecuencia]
 :::
 
-### Modos normales
+### Modos normales y grados de libertad vibracionales
 
-:::{admonition} Intuición física
+Párrafo medio + tabla. Definición de modo normal como coordenada colectiva en la que todos los núcleos oscilan en fase a una única frecuencia característica. Deducción del número de grados de libertad vibracionales independientes: $3N-5$ para moléculas lineales y $3N-6$ para no lineales.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que una molécula con N átomos tiene muchos movimientos posibles,
-pero todos se pueden descomponer en combinaciones de movimientos más simples llamados
-"modos normales", en los que todos los átomos oscilan en fase con la misma frecuencia.
-Número de modos: 3N−5 para moléculas lineales, 3N−6 para no lineales. Dar ejemplos:
-CO (N=2, lineal) → 1 modo; CO₂ (N=3, lineal) → 4 modos.]
+[TEXTO HUMANO: explicación de desacoplamiento de movimientos moleculares complejos en patrones independientes elementales]
 :::
 
-**Número de modos normales para las moléculas de esta práctica:**
+Tabla de grados de libertad vibracionales:
 
-| Molécula | N | Lineal | Fórmula | Modos vibracionales |
-|----------|---|:------:|---------|:-------------------:|
-| CO       | 2 | Sí  | 3N − 5 | **1** |
-| CO₂      | 3 | Sí  | 3N − 5 | **4** |
+| Molécula | $N$ | Geometría | Expresión | Modos vibracionales |
+|---|:---:|---|:---:|:---:|
+| CO | 2 | Lineal | $3N-5$ | 1 |
+| CO₂ | 3 | Lineal | $3N-5$ | 4 |
 
-### Reglas de selección IR
+### Reglas de selección en espectroscopía infrarroja
 
-:::{admonition} Intuición física
+Párrafo medio. Condición de absorción de radiación infrarroja: variación neta del momento dipolar molecular a lo largo de la coordenada normal ($\partial \vec{\mu}/\partial Q \neq 0$). Explicación de por qué el estiramiento simétrico en CO₂ resulta inactivo en IR mientras que el asimétrico y las flexiones son activos.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que no todos los modos normales absorben luz infrarroja. Solo
-los modos que cambian el momento dipolar de la molécula son "activos en IR". Ejemplo:
-el estiramiento simétrico del CO₂ no cambia el dipolo (los dos extremos se mueven igual
-y opuesto) → inactivo IR. El estiramiento asimétrico sí lo cambia → activo IR.
-Esta regla permite identificar la simetría molecular a partir del espectro.]
+[TEXTO HUMANO: explicación cualitativa de simetría molecular, cancelación de momentos dipolares y acoplamiento con el campo electromagnético]
 :::
 
-### Primer paso obligatorio: optimizar la geometría
+### Requisito operativo: optimización previa de geometría
+
+Párrafo corto + advertencia. Justificación mecanocuántica de calcular derivadas segundas de la energía exclusivamente sobre geometrías optimizadas en el mínimo de la PES. Significado de autovalores imaginarios (frecuencias negativas) como indicativo de geometrías fuera de equilibrio o puntos de silla.
 
 :::{warning}
-**Siempre hay que optimizar la geometría antes de calcular frecuencias.**
-Si calculas frecuencias sobre una geometría no optimizada, obtendrás frecuencias
-imaginarias (valores negativos) que no tienen significado físico. En esta práctica
-usaremos `opt freq` para hacer los dos pasos en un solo cálculo.
+Es imprescindible optimizar la geometría antes de calcular frecuencias. El cálculo sobre geometrías no estacionarias genera frecuencias imaginarias carentes de significado físico. En esta práctica se emplea la opción combinada `Opt+Freq` para garantizar que el cálculo vibracional parte del mínimo exacto.
 :::
 
 ---
 
 ## Procedimiento
 
-### Paso 1: Dibujar el CO en GaussView
-
-1. Abre GaussView. Selecciona **C** (carbono) en la tabla periódica y haz clic en el
-   área de dibujo.
-2. Selecciona **O** (oxígeno) y haz clic sobre el carbono para añadirlo con un enlace.
-3. La distancia inicial no importa — la optimización la ajustará.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: GaussView con la molécula CO dibujada — dos átomos con un enlace]
+:::{danger}
+Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el editor de texto y confirmar la presencia de la línea final exacta y la sección de frecuencias:
+{{termination_ok}}
 :::
 
-### Paso 2: Configurar el cálculo opt+freq
+### Paso 1: Dibujar CO en GaussView
 
-1. Ve a **Calculate → Gaussian Calculation Setup**.
-2. Pestaña **Job Type** → selecciona **Opt+Freq**.
+Párrafo muy corto + figura. Construcción de la molécula diatómica de monóxido de carbono en la ventana de dibujo de GaussView mediante la adición sucesiva de átomos de C y O enlazados.
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: pestaña Job Type con Opt+Freq seleccionado]
-:::
+[CAPTURA: molécula CO construida en GaussView con enlace simple o múltiple visible]
+```
 
-3. Pestaña **Method** (valores confirmados en los logs de referencia):
+### Paso 2: Configurar el cálculo combinado Opt+Freq
+
+Párrafo medio + tabla + figura. Selección de opciones en **Calculate → Gaussian Calculation Setup**: Job Type Opt+Freq, Method B3LYP, Basis Set 6-311G, Charge 0, Spin 1, y palabra clave `geom=connectivity` en Additional Keywords.
 
 | Campo | Valor |
-|-------|-------|
-| Method | **B3LYP** |
-| Basis Set | **6-311G** |
-| Charge | **0** |
-| Spin (Multiplicity) | **1** |
+|---|---|
+| Job Type | Opt+Freq |
+| Method | B3LYP |
+| Basis Set | 6-311G |
+| Charge | 0 |
+| Spin (Multiplicity) | 1 |
+| Additional Keywords | `geom=connectivity` |
 
-4. Pestaña **Additional Keywords** → escribe: `geom=connectivity`
-
-:::{tip}
-`Opt+Freq` realiza primero la optimización de geometría y luego, sobre la geometría
-optimizada, calcula las frecuencias vibracionales. Es más eficiente que hacerlo en dos
-cálculos separados — y garantiza que las frecuencias se calculan siempre en el mínimo.
-:::
+```{admonition} 📸 Captura de pantalla
+:class: captura
+[CAPTURA: ventana Gaussian Calculation Setup con Job Type Opt+Freq y Method B3LYP/6-311G seleccionados]
+```
 
 ### Paso 3: Lanzar y verificar
 
-1. Haz clic en **Submit**. Guarda como `CO_opt_freq_B3LYP_6311G.gjf` en
-   {{practicas_folder}}`ModoNormales/`.
-2. Este cálculo tarda más que un simple `Energy`: primero optimiza y luego calcula las
-   derivadas segundas. Espera a que termine.
+Párrafo corto. Guardado del archivo como `CO_opt_freq_B3LYP_6311G.gjf` en `{{practicas_folder}}ModoNormales/`, seguimiento del cálculo en la barra de estado y confirmación de finalización correcta en el archivo `.log`.
 
-:::{danger}
-Verifica la terminación correcta: {{termination_ok}}
+### Paso 4: Leer la distancia de enlace optimizada
 
-Un cálculo `opt+freq` con terminación incorrecta puede haber completado la optimización
-pero fallado en el paso de frecuencias. Comprueba que la sección de frecuencias esté
-presente en el `.log` (busca `Frequencies --`).
-:::
+Párrafo corto. Extracción del parámetro geométrico $R(1,2)$ correspondiente a la longitud de enlace C–O optimizada (en Ångströms) en la tabla final del archivo `.log` o mediante **Results → Optimization**.
 
-### Paso 4: Leer la geometría optimizada
+### Paso 5: Extraer parámetros vibracionales del .log
 
-Abre el `.log` y busca (Ctrl+F): `R1    R(1,2)`
+Párrafo medio. Localización del bloque `Frequencies --` en el archivo `.log`. Registro de los cuatro parámetros característicos del modo de vibración: frecuencia ($\text{cm}^{-1}$), intensidad infrarroja (`IR Inten`), masa reducida (`Red. masses`) y constante de fuerza armónica (`Frc consts`).
 
-Encontrarás una línea como:
+### Paso 6: Visualizar la animación del modo normal
 
-```
-! R1    R(1,2)                  1.1473         -DE/DX =    0.0                 !
-```
+Párrafo corto + figura. Apertura del panel **Results → Vibrations**, activación de la animación tridimensional e inspección del vector de desplazamiento para identificar el movimiento de estiramiento C–O.
 
-El valor `1.1473` es la distancia C–O optimizada en **Ångströms**.
-
-:::{tip}
-También puedes ver la geometría optimizada en GaussView: ve a **Results → Optimization**
-y haz clic en el último fotograma de la animación para ver la estructura final.
-:::
-
-### Paso 5: Leer la frecuencia vibracional
-
-En el mismo `.log`, busca: `Frequencies --`
-
-Verás un bloque como este (datos reales del log de referencia):
-
-```
- Frequencies --   2063.3674
- Red. masses --     13.4388
- Frc consts  --     33.7103
- IR Inten    --     70.1641
-```
-
-- `Frequencies --` → frecuencia en **cm⁻¹**
-- `IR Inten` → intensidad IR (proporcional a la absorbancia). Si es cero o muy pequeña,
-  el modo es inactivo en IR.
-- `Red. masses` → masa reducida del oscilador (en uma)
-- `Frc consts` → constante de fuerza del enlace (en mdyne/Å)
-
-:::{tip}
-Para el CO (1 modo), habrá un único bloque `Frequencies --`. Para el CO₂ (4 modos),
-habrá cuatro.
-:::
-
-### Paso 6: Visualizar el modo normal en GaussView
-
-:::{tip}
-Ve a **Results → Vibrations**. Verás una lista de los modos normales con sus frecuencias.
-Haz clic sobre un modo para ver la animación: los átomos se moverán mostrando el patrón
-de vibración. Identifica si el movimiento es un **estiramiento** (los átomos se acercan
-y alejan a lo largo del enlace) o una **flexión** (el ángulo cambia).
-:::
-
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: ventana Results → Vibrations de GaussView mostrando el único modo del CO
-con la animación de estiramiento C–O y la frecuencia 2063 cm⁻¹ visible]
-:::
+[CAPTURA: ventana Results → Vibrations en GaussView mostrando el modo de estiramiento de CO con vectores de desplazamiento y frecuencia asociada]
+```
 
-### Paso 7: Repetir para el CO₂
+### Paso 7: Repetir el procedimiento para CO₂
 
-:::{note}
-[TEXTO HUMANO: instrucciones para dibujar CO₂ en GaussView (O=C=O lineal) y configurar
-el mismo tipo de cálculo opt+freq con B3LYP/6-311G, multiplicidad 1.]
-:::
+Párrafo medio + tabla + figura. Construcción de dióxido de carbono en disposición lineal (O=C=O), ejecución del cálculo Opt+Freq bajo idénticas condiciones teóricas y caracterización de los 4 modos normales generados.
 
-:::{admonition} Captura de pantalla
+Clasificación de los modos esperados para CO₂:
+
+| Modo | Tipo de movimiento | Actividad IR esperada |
+|:---:|---|:---:|
+| 1 | Estiramiento simétrico | Inactivo |
+| 2 | Estiramiento asimétrico | Activo |
+| 3 | Flexión en el plano | Activo |
+| 4 | Flexión fuera del plano | Activo |
+
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: GaussView con la molécula CO₂ dibujada en su geometría lineal]
-:::
-
-El CO₂ tiene **4 modos normales**. Búscalos en el `.log` y clasifícalos:
-
-| Modo | Descripción esperada | IR activo |
-|:----:|---------------------|:---------:|
-| 1 | Estiramiento simétrico (O←C→O) | No |
-| 2 | Estiramiento asimétrico (O←C–O) | Sí |
-| 3 | Flexión en el plano | Sí |
-| 4 | Flexión fuera del plano | Sí |
-
-:::{note}
-[TEXTO HUMANO: guiar al alumno a identificar qué modo corresponde a qué número en el
-output de Gaussian. Los modos degenerados (flexión ×2) aparecen con la misma frecuencia.]
-:::
+[CAPTURA: molécula CO2 lineal en GaussView con la animación de un modo de flexión activada]
+```
 
 ---
 
-## Resultados
+## Resultados y análisis
 
-### Tabla de frecuencias: CO
+### Tabla 1: Geometría y frecuencias de CO
+
+Párrafo corto + tabla. Registro de la distancia de enlace optimizada y de la frecuencia vibracional calculada frente a los datos experimentales de referencia para CO.
 
 | Magnitud | Calculado (B3LYP/6-311G) | Experimental | Error (%) |
-|----------|:------------------------:|:------------:|:---------:|
-| R(C–O) (Å) | — | 1.128 | — |
-| ν̃ CO (cm⁻¹) | — | 2143 | — |
+|---|:---:|:---:|:---:|
+| $R(\text{C–O})$ (Å) | [TEXTO HUMANO] | 1.128 | [TEXTO HUMANO] |
+| $\tilde{\nu}$ CO ($\text{cm}^{-1}$) | [TEXTO HUMANO] | 2143 | [TEXTO HUMANO] |
 
-### Tabla de frecuencias: CO₂
+### Tabla 2: Modos normales de vibración de CO₂
 
-Completa la tabla con los valores que obtengas del `.log`:
+Párrafo corto + tabla. Vaciado sistemático de frecuencias calculadas para los cuatro modos normales de CO₂, identificación del tipo de movimiento vibracional, verificación de actividad IR e indicación del error relativo porcentual.
 
-| Modo | Tipo | ν̃ calculada (cm⁻¹) | ν̃ experimental (cm⁻¹) | IR activo | Error (%) |
-|:----:|------|:-------------------:|:---------------------:|:---------:|:---------:|
-| 1 | Estiramiento simétrico | — | 1388 | No | — |
-| 2 | Estiramiento asimétrico | — | 2349 | Sí | — |
-| 3 | Flexión (×2) | — | 667 | Sí | — |
+| Modo | Tipo de movimiento | $\tilde{\nu}$ calculada ($\text{cm}^{-1}$) | $\tilde{\nu}$ experimental ($\text{cm}^{-1}$) | Actividad IR | Error (%) |
+|:---:|---|:---:|:---:|:---:|:---:|
+| 1 | Estiramiento simétrico | [TEXTO HUMANO] | 1388 | Inactivo | [TEXTO HUMANO] |
+| 2 | Estiramiento asimétrico | [TEXTO HUMANO] | 2349 | Activo | [TEXTO HUMANO] |
+| 3 | Flexión (degenerada) | [TEXTO HUMANO] | 667 | Activo | [TEXTO HUMANO] |
+| 4 | Flexión (degenerada) | [TEXTO HUMANO] | 667 | Activo | [TEXTO HUMANO] |
 
-:::{note}
-[TEXTO HUMANO: preguntas guiadas para interpretar las tablas — ¿en qué porcentaje difiere
-la frecuencia calculada de la experimental? ¿Es el error sistemático (siempre en el mismo
-sentido)? ¿Qué aproximación del cálculo explica esa diferencia?]
-:::
+### Interpretación de resultados
 
-:::{admonition} Captura de pantalla
+Párrafo corto + figura. Pautas para el análisis de discrepancias sistemáticas entre el cálculo armónico DFT y las frecuencias fundamentales experimentales (efecto de la anarmonicidad y elección del funcional).
+
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: ventana Results → Vibrations del CO₂ mostrando los 4 modos listados con sus
-frecuencias, con uno de los modos de flexión animado]
-:::
+[CAPTURA: espectro IR sintetizado en GaussView Results → Vibrations para la molécula de CO2 con picos activos identificados]
+```
 
 ---
 
 ## Preguntas y pruebas
 
-:::{note}
-[TEXTO HUMANO: preguntas de reflexión. Propuesta:]
+Párrafo corto (cuestionario de discusión conceptual). Cuestiones orientadas a evaluar la asimilación física del contenido:
+1. Comprobación del número de modos calculados frente a la relación teórica $3N-5$ en moléculas lineales.
+2. Justificación rigurosa de la inactividad infrarroja del estiramiento simétrico de CO₂ mediante el análisis del momento dipolar.
+3. Magnitud y signo del error relativo en las frecuencias calculadas de CO y CO₂: papel de la aproximación armónica frente al potencial real de Morse.
+4. Consecuencias teóricas e interpretación práctica de la aparición eventual de frecuencias imaginarias en un archivo de salida.
+5. Análisis de los vectores de desplazamiento en el estiramiento de CO: relación de amplitudes de desplazamiento entre carbono y oxígeno en función de sus masas atómicas relativas.
 
-[PROPUESTA:
-1. ¿Cuántos modos normales tiene el CO? ¿Y el CO₂? ¿Coincide con la fórmula 3N−5?
-2. ¿Por qué el estiramiento simétrico del CO₂ no es activo en IR? Explícalo en términos
-   del momento dipolar.
-3. La frecuencia calculada del CO es 2063 cm⁻¹ y la experimental es 2143 cm⁻¹.
-   ¿En qué sentido se equivoca el cálculo? ¿Qué aproximación es responsable de ese error?
-4. ¿Qué significaría encontrar una frecuencia imaginaria (negativa) en el output?
-   ¿Cómo lo interpretarías?
-5. Mira los vectores de desplazamiento del modo de estiramiento del CO en GaussView.
-   ¿Cuál de los dos átomos se desplaza más? ¿Tiene sentido en términos de su masa?
-]
+:::{note}
+[TEXTO HUMANO: formulación detallada de preguntas y criterios de corrección]
 :::
 
 ---
 
 ## Bibliografía
 
-:::{note}
-[TEXTO HUMANO: añadir referencia al manual interno de la asignatura si existe.]
-:::
-
+- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
-- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018.
-  Cap. 12 (Espectroscopía vibracional).
-- NIST Chemistry WebBook, https://webbook.nist.gov — valores experimentales de
-  frecuencias vibracionales de CO y CO₂.
+- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 12 (Espectroscopía vibracional).
+- NIST Chemistry WebBook, https://webbook.nist.gov (datos experimentales de frecuencias vibracionales para CO y CO₂).
 
 ---
 
-::::{dropdown} Para ir más lejos *(opcional — solo si terminas antes de tiempo)*
+::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-
-Esta sección es completamente **opcional** y no entra en la nota.
-
-### Espectro rovibracional del CO
-
-El CO no solo vibra — también rota. El espectro IR real del CO muestra una estructura
-fina formada por las transiciones rotacionales superpuestas a la vibracional: son las
-**ramas P y R** del espectro rovibracional.
+Párrafo medio. Ampliación voluntaria sobre el acoplamiento rovibracional en moléculas diatómicas. Estudio de la estructura fina de ramas P y R en el espectro infrarrojo de CO y determinación de la constante rotacional $B$.
 
 :::{note}
-[TEXTO HUMANO: instrucciones para esta extensión — qué datos adicionales hay que extraer
-del log (constante rotacional B), cómo se calculan las posiciones de las líneas P y R,
-y cómo comparar con el espectro experimental del NIST. Si el laboratorio dispone del
-script `TheoEspRotBib.py`, indicar cómo usarlo.]
+[TEXTO HUMANO: instrucciones para la extracción de constantes rotacionales del archivo .log y comparación con el espectro experimental]
 :::
 ::::

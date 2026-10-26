@@ -1,31 +1,41 @@
 # P2-B: Superficie de Energía Potencial
 
+<!-- ============================================================
+     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
+     Este archivo contiene el esqueleto de contenidos párrafo a
+     párrafo. Cada sección indica qué debe contener, longitud
+     orientativa y dónde van figuras. NO editar como texto final
+     hasta que el esquema esté aprobado por el supervisor.
+     ============================================================ -->
+
 ## Introducción
 
+Párrafo corto (3-4 líneas). Motivación química sobre el origen de las fuerzas que mantienen unidos los átomos en una molécula. Dependencia de la energía electrónica respecto a las coordenadas nucleares (aproximación de Born-Oppenheimer). Estudio de la disociación en H₂ y de la rotación conformacional en dihaloetanos.
+
 :::{note}
-[TEXTO HUMANO: motivación — ¿qué mantiene unidos los átomos en una molécula? La energía
-total del sistema depende de la distancia entre los núcleos. Si acercamos demasiado dos
-átomos se repelen; si los alejamos demasiado el enlace se rompe. Entre esos extremos hay
-un mínimo: la distancia de enlace. En esta práctica calcularemos esa curva de energía para
-el H₂ y veremos por qué solo el estado singlete forma enlace. Después aplicaremos el mismo
-concepto a una coordenada diferente: el ángulo diedro de un dihaloetano.]
+[TEXTO HUMANO: introducción y motivación química sobre superficies de energía potencial y enlace químico]
 :::
+
+---
 
 ## Objetivos
 
-:::{note}
-[TEXTO HUMANO: lista numerada. Propuesta:]
+Párrafo corto (lista numerada). Objetivos formativos de la práctica:
+1. Comprensión conceptual de una superficie de energía potencial (PES) en sistemas moleculares.
+2. Cálculo de la PES de H₂ en función de la distancia internuclear $R(\text{H–H})$ para estados singlete y triplete.
+3. Determinación de la distancia de equilibrio y contraste con el valor experimental.
+4. Cálculo de la curva de torsión diedro en 1,2-dihaloetanos e identificación de confórmeros estables.
+5. Representación gráfica y comparación de barreras rotacionales relativas.
 
-[PROPUESTA:
-1. Entender qué es una superficie de energía potencial (PES) y cómo se calcula.
-2. Calcular la PES de H₂ en función de la distancia R(H–H) para el estado singlete y el
-   triplete, e interpretar la diferencia.
-3. Identificar la distancia de equilibrio calculada y compararla con el valor experimental.
-4. Calcular la PES del 1,2-dicloroetano en función del ángulo diedro Cl–C–C–Cl e
-   identificar los confórmeros estables.
-5. Representar gráficamente las curvas de energía obtenidas.
-]
+:::{note}
+[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
 :::
+
+---
+
+## ¿Qué software vamos a usar?
+
+Párrafo muy corto. Referencia al uso de GaussView para la preparación gráfica de coordenadas internas de barrido y {{gaussian_version}} para la ejecución de cálculos tipo Scan.
 
 ---
 
@@ -33,432 +43,245 @@ concepto a una coordenada diferente: el ángulo diedro de un dihaloetano.]
 
 ### ¿Qué es una superficie de energía potencial?
 
-:::{admonition} Intuición física
+Párrafo medio + figura. Concepto de paisaje energético en el marco de la aproximación de Born-Oppenheimer. Significado físico de mínimos locales y globales (geometrías de equilibrio), estados de transición (barreras) y asíntotas de disociación.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar la PES como un "paisaje energético". Si movemos los núcleos, la
-energía electrónica cambia. Un mínimo en ese paisaje corresponde a una estructura estable
-(molécula o confórmero). Una barrera es la energía que hay que superar para pasar de una
-estructura a otra. La disociación es el límite cuando los átomos se separan infinitamente.]
+[TEXTO HUMANO: analogía del paisaje topográfico y movimiento en valles de energía estable]
 :::
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: diagrama esquemático de una PES en 1D mostrando: zona de repulsión (izquierda),
-mínimo (distancia de equilibrio), zona de disociación (derecha) con la energía de
-disociación D₀ marcada]
-:::
+[CAPTURA: curva esquemática unidimensional de PES con mínimo, barrera y asíntota de disociación anotados]
+```
 
-### Singlete y triplete: por qué importa el spin
+### Singlete y triplete: por qué importa el espín
 
-:::{admonition} Intuición física
+Párrafo medio. Contraste entre estados de espín en la molécula de H₂: singlete (espines antiparalelos, densidad electrónica internuclear compartida y formación de enlace) frente a triplete (espines paralelos, repulsión cuántica de Pauli y curva puramente repulsiva).
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: retomar el concepto de multiplicidad de P2-A. En H₂, dos electrones con
-spines opuestos (↑↓, singlete) pueden formar un enlace covalente porque su función de
-onda puede concentrarse entre los núcleos. Dos electrones con el mismo spin (↑↑, triplete)
-no pueden ocupar el mismo orbital — el principio de exclusión de Pauli los repele, y la
-curva de energía no tiene mínimo. Por eso el estado fundamental del H₂ es singlete.]
+[TEXTO HUMANO: explicación cualitativa de espines paralelos y principio de exclusión de Pauli en la interacción interatómica]
 :::
 
-### ¿Qué es un diedro?
+### Ángulo diedro y análisis conformacional
 
-:::{admonition} Intuición física
+Párrafo medio + figura. Definición geométrica del ángulo diedro de torsión entre cuatro átomos enlazados (X–C–C–X). Relación con proyecciones de Newman y clasificación conformacional: confórmero anti (mínimo global), confórmero gauche (mínimo local) y conformaciones eclipsadas (máximos de barrera).
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar el ángulo diedro (también llamado ángulo de torsión) como el
-ángulo entre dos planos: el plano formado por los átomos A–B–C y el plano formado por
-B–C–D. En el 1,2-dicloroetano, el diedro Cl–C–C–Cl describe la rotación alrededor del
-enlace C–C. Diferentes valores del diedro corresponden a distintos confórmeros (gauche,
-anti, eclipsado). Usar un diagrama de Newman.]
+[TEXTO HUMANO: analogía de rotación de aspas o hélices y proyecciones de Newman para confórmeros rotacionales]
 :::
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: diagrama de Newman del 1,2-dicloroetano mostrando los confórmeros anti
-(diedro=180°, más estable) y gauche (diedro=60°), con sus energías relativas]
-:::
+[CAPTURA: diagrama de Newman de 1,2-dicloroetano con confórmeros anti y gauche identificados]
+```
 
 ---
 
-## Parte 1: PES del H₂
-
-En esta primera parte calcularemos cómo varía la energía del H₂ al cambiar la distancia
-entre los dos átomos. Lo haremos para el estado **singlete** (multiplicidad 1) y el
-**triplete** (multiplicidad 3) y compararemos las dos curvas.
-
-### Paso 1: Dibujar H₂ en GaussView
-
-1. Abre GaussView. En la barra de herramientas selecciona el elemento **H**.
-2. Haz clic en el área de dibujo para añadir el primer hidrógeno.
-3. Haz clic sobre el átomo para añadir el segundo hidrógeno conectado con un enlace simple.
-4. Aparecerán dos átomos H unidos por un enlace. La distancia inicial exacta no importa
-   — el scan la variará automáticamente.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: GaussView con la molécula H₂ dibujada — dos átomos H con un enlace]
-:::
-
-### Paso 2: Configurar el scan en GaussView
-
-1. Ve a **Calculate → Gaussian Calculation Setup**.
-2. Pestaña **Job Type** → selecciona **Relaxed Potential Energy Surface Scan**.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Gaussian Calculation Setup con Job Type = Relaxed PES Scan]
-:::
-
-3. Pestaña **Method**:
-
-| Campo | Valor (singlete) | Valor (triplete) |
-|-------|:---:|:---:|
-| Method | **HF** | **HF** |
-| Basis Set | **STO-3G** | **STO-3G** |
-| Charge | **0** | **0** |
-| Spin (Multiplicity) | **1** | **3** |
-
-4. Pestaña **Additional Keywords** → escribe: `geom=connectivity`
-
-:::{note}
-[TEXTO HUMANO: instrucciones para definir la coordenada de scan dentro de GaussView —
-cómo seleccionar el enlace R(H-H) en el panel de la pestaña de scan, y cómo introducir
-los parámetros: valor inicial, incremento y número de puntos.]
-:::
-
-**Parámetros del scan confirmados en los logs de referencia:**
-
-| Parámetro | Valor |
-|-----------|-------|
-| Coordenada | R(H₁–H₂) — distancia del enlace |
-| Valor inicial | **0.55 Å** |
-| Incremento | **0.05 Å** |
-| Número de puntos | **21** |
-| Valor final | 1.55 Å |
-
-:::{warning}
-Introduce los parámetros del scan exactamente como aparecen en la tabla. Un número de
-puntos incorrecto o un incremento equivocado producirá una curva incompleta o deformada.
-:::
-
-### Paso 3: Lanzar y verificar
-
-1. Haz clic en **Submit**.
-2. Guarda el archivo `.gjf` en {{practicas_folder}}`PES/` con el nombre
-   `H2_singlete_scan_STO3G.gjf`.
-3. El scan tarda más que un cálculo de punto único: calcula 21 geometrías.
-   Espera a que la barra de estado indique que ha terminado.
+## Procedimiento
 
 :::{danger}
-Verifica la terminación correcta en el `.log` antes de leer cualquier resultado:
-
+Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el editor de texto y confirmar la presencia de la línea final exacta:
 {{termination_ok}}
 :::
 
-4. Repite los pasos 1–3 para el **triplete** (multiplicidad 3). Guarda el archivo
-   como `H2_triplete_scan_STO3G.gjf`.
+### Parte 1: PES de la molécula de H₂
 
-### Paso 4: Ver la curva en GaussView
+#### Paso 1: Dibujar H₂ en GaussView
 
-:::{tip}
-Tras el cálculo, GaussView puede mostrar la curva PES directamente: ve a
-**Results → Scan**. Verás un gráfico interactivo con la energía en función de la
-coordenada de scan. Haz clic en cada punto para ver la geometría correspondiente.
-:::
+Párrafo muy corto + figura. Adición de dos centros de hidrógeno unidos por enlace simple en la ventana de dibujo de GaussView.
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: ventana Results → Scan de GaussView mostrando la curva PES del H₂ singlete
-con el mínimo marcado alrededor de 0.70 Å]
-:::
+[CAPTURA: molécula H2 dibujada en GaussView con enlace simple visible]
+```
 
-### Paso 5: Extraer la tabla de energías del `.log`
+#### Paso 2: Configurar el cálculo de barrido (Scan)
 
-Abre el archivo `.log` con el editor de texto y busca (Ctrl+F): `SCF Done`
+Párrafo medio + tabla + figura. Acceso a **Calculate → Gaussian Calculation Setup**. Selección de Job Type Relaxed PES Scan, Method HF/STO-3G, Charge 0, Spin 1 (singlete) y repetición con Spin 3 (triplete). Configuración de la coordenada internuclear $R(\text{H–H})$ y sus límites.
 
-Cada aparición corresponde a un punto del scan. Copia el valor de energía de cada
-una de las 21 líneas `SCF Done` en tu tabla.
+| Campo | Singlete | Triplete |
+|---|:---:|:---:|
+| Job Type | Relaxed PES Scan | Relaxed PES Scan |
+| Method | HF | HF |
+| Basis Set | STO-3G | STO-3G |
+| Charge | 0 | 0 |
+| Spin (Multiplicity) | 1 | 3 |
+| Additional Keywords | `geom=connectivity` | `geom=connectivity` |
 
-La energía en Hartrees es muy negativa y varía poco entre puntos. Para visualizar mejor
-la curva, convierte a **energía relativa** restando el mínimo:
-
-$$
-\Delta E(R) = \bigl[E(R) - E_{\min}\bigr] \times {{ha_to_kcal}} \quad [\text{kcal/mol}]
-$$
-
----
-
-## Parte 2: PES diedro de los dihaloetanos
-
-Ahora aplicamos el mismo concepto a una coordinada diferente: la rotación alrededor
-del enlace C–C de los 1,2-dihaloetanos (XCH₂–CH₂X). El ángulo diedro X–C–C–X va
-de 0° a 360° y describe todos los confórmeros posibles.
-
-Calcularás los tres compuestos siguientes, **en este orden de peso creciente del halógeno**:
-
-| Compuesto | Halógeno | Fórmula | Abreviatura |
-|-----------|----------|---------|-------------|
-| 1,2-dicloroetano  | Cl | ClCH₂–CH₂Cl | DCE |
-| 1,2-dibromoetano  | Br | BrCH₂–CH₂Br | DBE |
-| 1,2-diyodoetano   | I  | ICH₂–CH₂I   | DIE |
-
-El procedimiento es idéntico para los tres. Descríbelo una vez (con DCE) y repítelo
-cambiando solo el halógeno.
-
-### Paso 1: Dibujar el 1,2-dicloroetano en GaussView
-
-:::{note}
-[TEXTO HUMANO: instrucciones para construir ClCH₂–CH₂Cl en GaussView. Sugerencia:
-empezar por el esqueleto C–C, añadir los átomos H y Cl sobre cada carbono usando
-la tabla periódica, y usar **Edit → Clean** para ajustar la geometría inicial.
-Para el DBE y el DIE: mismo procedimiento, solo cambiar el elemento del halógeno.]
-:::
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: GaussView con el 1,2-dicloroetano dibujado en 3D, mostrando los dos átomos Cl]
-:::
-
-### Paso 2: Configurar el scan diedro
-
-1. Ve a **Calculate → Gaussian Calculation Setup → Job Type → Relaxed PES Scan**.
-2. Pestaña **Method**:
-
-| Campo | Valor |
-|-------|-------|
-| Method | [CONFIRMAR CON PROFESOR] |
-| Basis Set | [CONFIRMAR CON PROFESOR] |
-| Charge | **0** |
-| Spin (Multiplicity) | **1** |
-
-3. Pestaña **Additional Keywords**:
-
-:::{note}
-[TEXTO HUMANO: keywords necesarias para el scan diedro y cualquier otra opción
-específica que indique el profesor.]
-:::
-
-:::{note}
-[TEXTO HUMANO: instrucciones detalladas para seleccionar el diedro X–C–C–X en
-GaussView y configurar los parámetros del scan — valor inicial, incremento y número
-de puntos indicados por el profesor.]
-:::
-
-**Parámetros del scan diedro:**
+Parámetros de barrido internuclear:
 
 | Parámetro | Valor |
-|-----------|:-----:|
-| Coordenada | D(X–C–C–X) — ángulo diedro |
-| Valor inicial | [CONFIRMAR] |
-| Incremento | [CONFIRMAR] |
-| Número de puntos | [CONFIRMAR] |
+|---|---|
+| Coordenada | $R(\text{H}_1\text{–H}_2)$ |
+| Valor inicial | 0.55 Å |
+| Incremento de paso | 0.05 Å |
+| Número de pasos | 21 |
+| Valor final | 1.55 Å |
 
 :::{warning}
-El scan diedro de una molécula con halógenos tarda más que el scan de H₂.
-Lanza los tres cálculos (DCE, DBE, DIE) seguidos y espera los resultados.
+Introducir los parámetros de incremento y número de pasos con exactitud para asegurar una malla geométrica homogénea en ambos estados de espín.
 :::
 
-### Paso 3: Lanzar, verificar y leer resultados
+```{admonition} 📸 Captura de pantalla
+:class: captura
+[CAPTURA: ventana Gaussian Calculation Setup con selección de Job Type Relaxed PES Scan y parámetros del enlace H-H]
+```
 
-1. Guarda los archivos en {{practicas_folder}}`PES/` con nombres descriptivos,
-   por ejemplo: `DCE_diedro.gjf`, `DBE_diedro.gjf`, `DIE_diedro.gjf`.
-2. Verifica la terminación de cada cálculo: {{termination_ok}}
-3. Ve a **Results → Scan** en GaussView para ver la curva de torsión de cada compuesto.
+#### Paso 3: Lanzar y verificar
+
+Párrafo corto. Guardado de archivos `.gjf` en `{{practicas_folder}}PES/` con nombres descriptivos (`H2_singlete_scan_STO3G.gjf` y `H2_triplete_scan_STO3G.gjf`), supervisión de los 21 puntos calculados y verificación de salida normal.
+
+#### Paso 4: Visualizar la curva en GaussView
+
+Párrafo muy corto + figura. Acceso a la herramienta interactiva **Results → Scan** para examinar la curva energética resultante y la localización del mínimo.
+
+```{admonition} 📸 Captura de pantalla
+:class: captura
+[CAPTURA: gráfica interactiva en GaussView Results → Scan mostrando la curva del singlete de H2 con su mínimo]
+```
+
+#### Paso 5: Extraer energías y calcular valores relativos
+
+Párrafo corto. Búsqueda secuencial de las 21 líneas `SCF Done` en el `.log`, anotación de energías en Hartrees y cálculo de la energía potencial relativa referida al mínimo en kcal/mol.
+
+$$\Delta E(R) = \bigl[E(R) - E_{\min}\bigr] \times {{ha_to_kcal}} \quad [\text{kcal/mol}]$$
 
 ---
 
-## Resultados
+### Parte 2: PES diedro de los dihaloetanos
 
-### Tabla 1: PES de H₂ — energías calculadas
+Párrafo corto + tabla. Extensión metodológica del barrido unidimensional al ángulo de torsión en 1,2-dihaloetanos homólogos con halógenos de volumen creciente.
 
-Completa las columnas de energía copiando los valores de `SCF Done` del `.log`.
-La columna ΔE la calculas tú con la fórmula anterior.
+| Compuesto | Halógeno | Fórmula molecular | Código |
+|---|---|---|:---:|
+| 1,2-dicloroetano | Cl | ClCH₂–CH₂Cl | DCE |
+| 1,2-dibromoetano | Br | BrCH₂–CH₂Br | DBE |
+| 1,2-diyodoetano | I | ICH₂–CH₂I | DIE |
 
-| Punto | R (Å) | E singlete (Ha) | E triplete (Ha) | ΔE singlete (kcal/mol) | ΔE triplete (kcal/mol) |
-|:-----:|:-----:|:---------------:|:---------------:|:----------------------:|:----------------------:|
-| 1  | 0.55 | — | — | — | — |
-| 2  | 0.60 | — | — | — | — |
-| 3  | 0.65 | — | — | — | — |
-| 4  | 0.70 | — | — | — | — |
-| 5  | 0.75 | — | — | — | — |
-| 6  | 0.80 | — | — | — | — |
-| 7  | 0.85 | — | — | — | — |
-| 8  | 0.90 | — | — | — | — |
-| 9  | 0.95 | — | — | — | — |
-| 10 | 1.00 | — | — | — | — |
-| 11 | 1.05 | — | — | — | — |
-| 12 | 1.10 | — | — | — | — |
-| 13 | 1.15 | — | — | — | — |
-| 14 | 1.20 | — | — | — | — |
-| 15 | 1.25 | — | — | — | — |
-| 16 | 1.30 | — | — | — | — |
-| 17 | 1.35 | — | — | — | — |
-| 18 | 1.40 | — | — | — | — |
-| 19 | 1.45 | — | — | — | — |
-| 20 | 1.50 | — | — | — | — |
-| 21 | 1.55 | — | — | — | — |
+#### Paso 1: Dibujar el dihaloetano en GaussView
 
-### Representación gráfica de la PES del H₂
+Párrafo corto + figura. Construcción del esqueleto C–C, adición de halógenos e hidrógenos correspondientes y optimización estructural inicial con **Edit → Clean**.
 
-Una vez rellena la tabla, representa ΔE (kcal/mol) frente a R (Å) para ambas curvas
-en el mismo gráfico. Puedes hacerlo con **LibreOffice Calc**:
-
-1. Copia las columnas R, ΔE singlete y ΔE triplete a una hoja de cálculo.
-2. Selecciona las tres columnas y ve a **Insertar → Gráfico**.
-3. Elige tipo **Línea con puntos**. Pon R (Å) en el eje X y ΔE (kcal/mol) en el eje Y.
-4. Añade título y etiquetas de ejes.
-
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: gráfico con las dos curvas PES superpuestas — singlete con mínimo y triplete
-monotónicamente creciente (o con asíntota), ambas llegando a un valor similar a R grande]
+[CAPTURA: estructura tridimensional de 1,2-dicloroetano construida en GaussView]
+```
+
+#### Paso 2: Configurar el barrido del ángulo diedro
+
+Párrafo medio + tabla. Definición de la coordenada de torsión X–C–C–X en el panel de cálculo y especificación de parámetros angulares de 0° a 360°.
+
+| Parámetro | Valor |
+|---|---|
+| Coordenada | Diedro X–C–C–X |
+| Valor inicial | 0° `[CONFIRMAR CON PROFESOR]` |
+| Incremento angular | 10° `[CONFIRMAR CON PROFESOR]` |
+| Número de puntos | 36 `[CONFIRMAR CON PROFESOR]` |
+| Método y base | `[CONFIRMAR CON PROFESOR: método y base recomendados para halógenos]` |
+
+:::{warning}
+El cálculo de barrido conformacional en moléculas poliatómicas requiere mayor tiempo de procesador. Ejecutar secuencialmente para DCE, DBE y DIE.
 :::
 
-### Tablas 2–4: PES diedro de los dihaloetanos
+#### Paso 3: Lanzar, verificar y extraer datos
 
-Para cada compuesto, extrae las 36 energías del `.log` (una por línea `SCF Done`) y
-calcula ΔE restando el mínimo de cada serie. Usa la misma fórmula que en la Parte 1.
+Párrafo corto. Guardado de los inputs en `{{practicas_folder}}PES/`, verificación de terminación normal en cada archivo `.log` y extracción de las energías relativas frente al ángulo diedro.
 
-**Tabla 2 — 1,2-dicloroetano (DCE, X = Cl)**
+---
 
-| Diedro (°) | E (Ha) | ΔE (kcal/mol) | | Diedro (°) | E (Ha) | ΔE (kcal/mol) |
-|:----------:|:------:|:-------------:|-|:----------:|:------:|:-------------:|
-| 0   | — | — | | 190 | — | — |
-| 10  | — | — | | 200 | — | — |
-| 20  | — | — | | 210 | — | — |
-| 30  | — | — | | 220 | — | — |
-| 40  | — | — | | 230 | — | — |
-| 50  | — | — | | 240 | — | — |
-| 60  | — | — | | 250 | — | — |
-| 70  | — | — | | 260 | — | — |
-| 80  | — | — | | 270 | — | — |
-| 90  | — | — | | 280 | — | — |
-| 100 | — | — | | 290 | — | — |
-| 110 | — | — | | 300 | — | — |
-| 120 | — | — | | 310 | — | — |
-| 130 | — | — | | 320 | — | — |
-| 140 | — | — | | 330 | — | — |
-| 150 | — | — | | 340 | — | — |
-| 160 | — | — | | 350 | — | — |
-| 170 | — | — | | | | |
-| 180 | — | — | | | | |
+## Resultados y análisis
 
-**Tabla 3 — 1,2-dibromoetano (DBE, X = Br)** *(misma estructura)*
+### Tabla 1: PES de H₂ (energías calculadas)
 
-| Diedro (°) | E (Ha) | ΔE (kcal/mol) | | Diedro (°) | E (Ha) | ΔE (kcal/mol) |
-|:----------:|:------:|:-------------:|-|:----------:|:------:|:-------------:|
-| 0   | — | — | | 190 | — | — |
-| 10  | — | — | | 200 | — | — |
-| 20  | — | — | | 210 | — | — |
-| 30  | — | — | | 220 | — | — |
-| 40  | — | — | | 230 | — | — |
-| 50  | — | — | | 240 | — | — |
-| 60  | — | — | | 250 | — | — |
-| 70  | — | — | | 260 | — | — |
-| 80  | — | — | | 270 | — | — |
-| 90  | — | — | | 280 | — | — |
-| 100 | — | — | | 290 | — | — |
-| 110 | — | — | | 300 | — | — |
-| 120 | — | — | | 310 | — | — |
-| 130 | — | — | | 320 | — | — |
-| 140 | — | — | | 330 | — | — |
-| 150 | — | — | | 340 | — | — |
-| 160 | — | — | | 350 | — | — |
-| 170 | — | — | | | | |
-| 180 | — | — | | | | |
+Párrafo corto + tabla. Registro de las energías absolutas de `SCF Done` y evaluación de las energías relativas $\Delta E$ en kcal/mol para los 21 puntos calculados.
 
-**Tabla 4 — 1,2-diyodoetano (DIE, X = I)** *(misma estructura)*
+| Punto | $R$ (Å) | $E$ singlete (Ha) | $E$ triplete (Ha) | $\Delta E$ singlete (kcal/mol) | $\Delta E$ triplete (kcal/mol) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | 0.55 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 2 | 0.60 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 3 | 0.65 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 4 | 0.70 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 5 | 0.75 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 6 | 0.80 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 7 | 0.85 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 8 | 0.90 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 9 | 0.95 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 10 | 1.00 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 11 | 1.05 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 12 | 1.10 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 13 | 1.15 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 14 | 1.20 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 15 | 1.25 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 16 | 1.30 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 17 | 1.35 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 18 | 1.40 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 19 | 1.45 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 20 | 1.50 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 21 | 1.55 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
 
-| Diedro (°) | E (Ha) | ΔE (kcal/mol) | | Diedro (°) | E (Ha) | ΔE (kcal/mol) |
-|:----------:|:------:|:-------------:|-|:----------:|:------:|:-------------:|
-| 0   | — | — | | 190 | — | — |
-| 10  | — | — | | 200 | — | — |
-| 20  | — | — | | 210 | — | — |
-| 30  | — | — | | 220 | — | — |
-| 40  | — | — | | 230 | — | — |
-| 50  | — | — | | 240 | — | — |
-| 60  | — | — | | 250 | — | — |
-| 70  | — | — | | 260 | — | — |
-| 80  | — | — | | 270 | — | — |
-| 90  | — | — | | 280 | — | — |
-| 100 | — | — | | 290 | — | — |
-| 110 | — | — | | 300 | — | — |
-| 120 | — | — | | 310 | — | — |
-| 130 | — | — | | 320 | — | — |
-| 140 | — | — | | 330 | — | — |
-| 150 | — | — | | 340 | — | — |
-| 160 | — | — | | 350 | — | — |
-| 170 | — | — | | | | |
-| 180 | — | — | | | | |
+### Gráfico de la PES de H₂
 
-:::{tip}
-Representa las tres curvas en el **mismo gráfico** en LibreOffice Calc: columna de
-diedros en el eje X (0–360°), ΔE de los tres compuestos en el eje Y (kcal/mol).
-Usa colores o estilos de línea distintos para cada halógeno. Esto permite comparar
-visualmente cómo cambia la barrera de rotación con el tamaño del halógeno.
-:::
+Párrafo corto + figura. Procedimiento para representar $\Delta E$ (kcal/mol) frente a $R$ (Å) superponiendo singlete y triplete en un mismo gráfico mediante LibreOffice Calc u hoja de cálculo externa.
+
+```{admonition} 📸 Captura de pantalla
+:class: captura
+[CAPTURA: gráfico con las dos curvas superpuestas de H2: singlete con pozo de potencial y triplete repulsivo]
+```
+
+### Tablas 2 a 4: Curvas de torsión diedro en dihaloetanos
+
+Párrafo corto + tabla de estructura modelo. Organización de datos para el vaciado de energías en función del ángulo diedro (0° a 360°) para DCE, DBE y DIE.
+
+| Diedro (°) | $E$ DCE (Ha) | $\Delta E$ DCE (kcal/mol) | $E$ DBE (Ha) | $\Delta E$ DBE (kcal/mol) | $E$ DIE (Ha) | $\Delta E$ DIE (kcal/mol) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 60 (gauche) | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 120 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 180 (anti) | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 240 (gauche) | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 300 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| 360 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+
+### Gráfico comparativo de barreras rotacionales
+
+Párrafo corto. Representación gráfica superpuesta de las tres curvas de energía potencial conformacional frente al ángulo diedro (0°–360°) para evidenciar el incremento de la barrera con el radio de Van der Waals del halógeno.
 
 ---
 
 ## Preguntas y pruebas
 
+Párrafo corto (cuestionario de análisis e interpretación). Cuestiones clave para la discusión en el informe:
+1. Posición del mínimo de energía en la curva del singlete de H₂ y comparación con el valor experimental (0.74 Å).
+2. Justificación mecanocuántica de la ausencia de enlace estable en el triplete de H₂.
+3. Comportamiento asintótico de ambas curvas de H₂ a distancias internucleares elevadas y su límite de disociación.
+4. Identificación de los ángulos diedro correspondientes a los confórmeros anti, gauche y eclipsado en el 1,2-dicloroetano.
+5. Efecto del tamaño del átomo de halógeno (Cl vs Br vs I) sobre la altura de la barrera de rotación conformacional.
+6. Estimación de la probabilidad de rotación libre a temperatura ambiente considerando la energía térmica media ($kT \approx 0.6\text{ kcal/mol}$ a 300 K).
+
 :::{note}
-[TEXTO HUMANO: preguntas de reflexión. Propuesta:]
-
-[PROPUESTA:
-**Sobre la PES del H₂:**
-1. ¿A qué distancia R(H–H) aparece el mínimo de la curva singlete? ¿Coincide con el
-   valor experimental de 0.74 Å? ¿Por qué hay diferencia?
-2. ¿Por qué la curva triplete no tiene mínimo (o tiene un mínimo muy poco pronunciado)?
-   ¿Qué significa físicamente?
-3. ¿Qué representa la energía a R muy grande (límite de disociación)? ¿Por qué las dos
-   curvas convergen al mismo valor?
-4. ¿En qué región de la curva la energía crece más rápidamente? ¿A qué interacción física
-   se debe?
-
-**Sobre el diedro de los dihaloetanos:**
-5. ¿Cuántos mínimos tiene la curva de torsión del DCE? ¿A qué ángulos aparecen?
-   ¿Cómo se llaman esos confórmeros (anti, gauche, eclipsado)?
-6. ¿Cuál es el confórmero más estable del DCE? ¿Por qué lo esperas a partir de la
-   disposición espacial de los átomos de Cl?
-7. Al comparar DCE, DBE y DIE: ¿cómo cambia la altura de la barrera de rotación con
-   el tamaño del halógeno? ¿Y la posición del mínimo más estable?
-8. ¿Crees que a temperatura ambiente el 1,2-dicloroetano puede rotar libremente
-   alrededor del enlace C–C? Estima si la barrera es superable con energía térmica
-   (kT ≈ 0.6 kcal/mol a 300 K).
-]
+[TEXTO HUMANO: formulación detallada de preguntas y criterios de evaluación]
 :::
 
 ---
 
 ## Bibliografía
 
-:::{note}
-[TEXTO HUMANO: añadir referencia al manual interno de la asignatura si existe.]
-:::
-
+- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
-- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018.
-  Cap. 11 (Estructura molecular — superficies de energía potencial).
-- Clayden, J.; Greeves, N.; Warren, S. *Organic Chemistry*, 2ª ed.; Oxford University
-  Press, 2012. Cap. 18 (Conformational analysis).
+- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 11 (Estructura molecular y superficies de energía potencial).
+- Clayden, J.; Greeves, N.; Warren, S. *Organic Chemistry*, 2ª ed.; Oxford University Press, 2012. Cap. 18 (Conformational analysis).
 
 ---
 
-::::{dropdown} Para ir más lejos *(opcional — solo si terminas antes de tiempo)*
+::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-
-Esta sección es completamente **opcional** y no entra en la nota.
-
-### El etano sin halógenos: ¿cuánto vale la barrera de rotación C–C?
-
-Has calculado la barrera de rotación de los dihaloetanos con dos halógenos voluminosos.
-¿Cómo es la barrera del **etano** (CH₃–CH₃), que solo tiene hidrógenos?
-
-Repite el scan diedro para el etano usando los mismos parámetros de método y base
-que el profesor indique para los dihaloetanos. Compara la altura de la barrera.
+Párrafo medio. Estudio opcional de la barrera de rotación interna en el etano no sustituido (CH₃–CH₃). Comparación de la magnitud energética de la barrera debida exclusivamente a repulsiones C–H frente a la presencia de halógenos voluminosos.
 
 :::{note}
-[TEXTO HUMANO: preguntas de extensión — ¿por qué la barrera del etano es distinta
-a la del DCE? ¿Qué tipo de interacciones dominan en cada caso?]
+[TEXTO HUMANO: pautas para configurar el cálculo de torsión en etano e interpretar la contribución estérica e hiperconjugativa]
 :::
 ::::

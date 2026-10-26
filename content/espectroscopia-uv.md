@@ -1,389 +1,292 @@
 # P2-D: Espectroscopía UV-Vis de Cetonas
 
+<!-- ============================================================
+     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
+     Este archivo contiene el esqueleto de contenidos párrafo a
+     párrafo. Cada sección indica qué debe contener, longitud
+     orientativa y dónde van figuras. NO editar como texto final
+     hasta que el esquema esté aprobado por el supervisor.
+     ============================================================ -->
+
 ## Introducción
 
+Párrafo corto (3-4 líneas). Motivación sobre la espectroscopía electrónica ultravioleta-visible en la caracterización de cromóforos orgánicos. Absorción de fotones mediante transiciones de capa de valencia en compuestos carbonílicos y sensibilidad espectral frente a la polaridad del medio disolvente (solvatocromismo).
+
 :::{note}
-[TEXTO HUMANO: motivación — la espectroscopía UV-Vis como herramienta de identificación
-de cromóforos orgánicos. Conectar con el color de compuestos orgánicos cotidianos.
-Las cetonas son un ejemplo modelo porque tienen dos tipos de transiciones electrónicas
-bien separadas y responden de forma característica al disolvente.]
+[TEXTO HUMANO: introducción y motivación sobre espectroscopía UV-Vis de cromóforos carbonílicos]
 :::
+
+---
 
 ## Objetivos
 
-:::{note}
-[TEXTO HUMANO: lista numerada. Propuesta:]
+Párrafo corto (lista numerada). Objetivos formativos de la sesión:
+1. Estimación preliminar de longitudes de onda de absorción a partir de la diferencia energética orbital HOMO-LUMO.
+2. Cálculo de estados electrónicos excitados singlete mediante el método TD-DFT con funcional híbrido B3LYP/6-311G.
+3. Caracterización y asignación de transiciones $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ mediante energías de transición y fuerza del oscilador ($f$).
+4. Evaluación del desplazamiento solvatocrómico en acetona utilizando el modelo continuo de polarización del disolvente (PCM).
+5. Análisis del efecto electrónico de sustituyentes sobre el grupo carbonilo en una serie homóloga de cetonas.
 
-[PROPUESTA:
-1. Calcular el espectro UV-Vis de la acetona y otras cetonas mediante TD-DFT.
-2. Identificar las transiciones n→π* y π→π* en el output de Gaussian.
-3. Estimar la primera transición a partir del gap HOMO-LUMO y comparar con TD-DFT.
-4. Estudiar el efecto del disolvente (solvatocromismo) sobre la banda n→π*.
-5. Comparar los resultados calculados con los valores experimentales.
-]
+:::{note}
+[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
 :::
+
+---
+
+## ¿Qué software vamos a usar?
+
+Párrafo muy corto. Referencia al uso combinado de GaussView para la parametrización de cálculos de estados excitados y solvatación continua, y {{gaussian_version}} para la resolución de las ecuaciones TD-DFT y PCM.
 
 ---
 
 ## Conceptos clave
 
-### Transiciones electrónicas en cetonas
+### Transiciones electrónicas en compuestos carbonílicos
 
-:::{admonition} Intuición física
+Párrafo medio + figura. Promoción de electrones de valencia desde orbitales ocupados a orbitales virtuales desocupados. Distinción entre la transición $n \rightarrow \pi^*$ (electrón no enlazante del oxígeno al orbital antienlazante $\pi^*$ del carbonilo, prohibida por simetría, baja fuerza de oscilador, $\lambda \approx 280-300\text{ nm}$) y la transición $\pi \rightarrow \pi^*$ (orbital enlazante $\pi$ al antienlazante $\pi^*$, permitida, alta fuerza de oscilador, $\lambda < 250\text{ nm}$).
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que cuando una molécula absorbe luz UV-Vis, un electrón "salta"
-de un orbital ocupado a un orbital vacío. En las cetonas (grupo C=O) hay dos saltos
-importantes: el n→π* (electrón no enlazante del oxígeno al π* del carbonilo, banda débil
-alrededor de 280-300 nm) y el π→π* (del enlace π del carbonilo al π*, banda intensa
-por debajo de 250 nm). La longitud de onda de absorción nos dice qué energía separa
-esos orbitales — y eso depende del entorno químico.]
+[TEXTO HUMANO: analogía de orbitales moleculares y saltos cuánticos inducidos por absorción de radiación ultravioleta]
 :::
 
-### El gap HOMO-LUMO como primera aproximación
+```{admonition} 📸 Captura de pantalla
+:class: captura
+[CAPTURA: diagrama de niveles de orbitales moleculares del grupo carbonilo con flechas de transición n a pi* y pi a pi*]
+```
 
-:::{admonition} Intuición física
-:class: intuicion
-La diferencia de energía entre el HOMO y el LUMO da una idea aproximada de la energía
-de la primera transición electrónica. Si esa diferencia es grande → el compuesto absorbe
-en el UV lejano (aparece incoloro). Si es pequeña → absorbe en el visible (aparece
-coloreado).
+### El gap HOMO-LUMO como estimación preliminar
 
-La conversión es:
-- ΔE (Ha) × {{ha_to_ev}} = ΔE en eV
-- λ (nm) = 1239.8 / ΔE (eV)
+Párrafo medio + tabla. Relación directa entre la diferencia de energías orbitales y la energía de excitación elemental. Expresiones de conversión de unidades atómicas a electronvoltios y longitud de onda en nanómetros. Discusión de aproximaciones implícitas (orbitales no relajados e ignorancia de repulsión entre estados excitados).
 
-Esta estimación es solo orientativa: el TD-DFT es más preciso.
-:::
+$$\Delta E_{\text{gap}}\text{ (eV)} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times {{ha_to_ev}}$$
 
-**Ejemplo con los datos del log de referencia (formaldehído, CH₂O, en MeCN):**
+$$\lambda_{\text{estimada}}\text{ (nm)} = \frac{1239.8}{\Delta E_{\text{gap}}\text{ (eV)}}$$
 
-:::{note}
-El log de referencia disponible corresponde al **formaldehído** (un aldehído, no una cetona),
-pero el procedimiento de cálculo e interpretación es idéntico. Los alumnos obtendrán sus
-propios valores para las cetonas de la práctica.
-:::
+Ejemplo metodológico de referencia con autovalores del formaldehído en acetonitrilo:
 
-| Orbital | Energía (Ha) |
-|---------|:------------:|
-| HOMO    | −0.27636 |
-| LUMO    | −0.06005 |
-| Gap     | 0.21631 |
+| Nivel | Energía (Ha) |
+|---|:---:|
+| HOMO | −0.27636 |
+| LUMO | −0.06005 |
+| Gap (Ha) | 0.21631 |
 | Gap (eV) | 5.89 |
-| λ estimada (nm) | 210 |
+| $\lambda$ estimada (nm) | 210 |
 
-### TD-DFT: cálculo de estados excitados
+### Fundamento del método TD-DFT
 
-:::{admonition} Intuición física
+Párrafo medio. Descripción del formalismo de DFT dependiente del tiempo para evaluar respuestas a perturbaciones electromagnéticas dinámicas. Concepto de fuerza del oscilador ($f$) como magnitud proporcional a la probabilidad de transición y a la intensidad de la banda observada.
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que el DFT normal solo describe el estado fundamental. Para
-calcular las energías de los estados excitados (los que absorben luz), se usa una
-extensión llamada TD-DFT (DFT dependiente del tiempo). Gaussian la activa con la
-palabra clave `td`. El resultado es una lista de estados excitados con su energía
-en eV y en nm, y una "fuerza del oscilador" f que indica qué tan intensa es esa
-absorción (f ≈ 0 → banda débil; f > 0.1 → banda intensa).]
+[TEXTO HUMANO: explicación de fuerza del oscilador como probabilidad de absorción cuántica y su correlación con la intensidad de pico]
 :::
 
 ### Efecto del disolvente: solvatocromismo
 
-:::{admonition} Intuición física
+Párrafo medio + tabla. Modelo de polarización continua (PCM) para el disolvente. Mecanismo de estabilización diferencial del estado fundamental dipolar frente al estado excitado menos polar en la transición $n \rightarrow \pi^*$, con el consiguiente ensanchamiento del gap energético y desplazamiento hacia longitudes de onda menores (desplazamiento al azul o hipsocrómico).
+
+Valores experimentales de referencia para acetona:
+
+| Disolvente | $\lambda\ (n \rightarrow \pi^*)$ experimental (nm) |
+|---|:---:|
+| Ciclohexano (apolar) | 279 |
+| Agua (muy polar) | 264 |
+| Variación ($\Delta \lambda$) | −15 nm (desplazamiento al azul) |
+
+:::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicar que el disolvente estabiliza o desestabiliza de forma distinta
-el estado fundamental y el estado excitado. Para la banda n→π*: en disolventes polares,
-el estado fundamental (con el par no enlazante del O) se estabiliza más que el excitado
-→ el gap aumenta → la banda se desplaza hacia longitudes de onda menores (blue shift).
-Para la banda π→π* ocurre lo contrario (red shift). Este fenómeno se llama
-solvatocromismo y es muy útil para identificar el tipo de transición.]
+[TEXTO HUMANO: explicación intuitiva de solvatación preferente del par solitario en estado fundamental y aumento del gap en disolventes próticos polares]
 :::
-
-**Efecto experimental conocido para la acetona:**
-
-| Disolvente | λ n→π* experimental (nm) |
-|-----------|:------------------------:|
-| Ciclohexano | 279 |
-| Agua | 264 |
-| Δ (blue shift) | −15 nm |
-
-El modelo PCM de Gaussian (`scrf=`) simula este efecto.
 
 ---
 
 ## Procedimiento
 
-La práctica tiene **dos partes**: (A) estimar el gap HOMO-LUMO y (B) calcular el espectro TD-DFT.
+:::{danger}
+Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el editor de texto y confirmar la presencia de la línea final exacta:
+{{termination_ok}}
+:::
 
-### Parte A: Estimación por gap HOMO-LUMO
+### Parte A: Estimación preliminar con el gap HOMO-LUMO
 
-#### Paso A1: Calcular la geometría optimizada
+#### Paso A1: Optimizar la geometría en disolvente
 
-1. Dibuja la acetona en GaussView (CH₃-CO-CH₃).
-2. Ve a **Calculate → Gaussian Calculation Setup**.
-3. Pestaña **Job Type** → **Optimization**.
-4. Pestaña **Method**:
+Párrafo corto + tabla + figura. Construcción de la molécula de acetona en GaussView. Configuración en **Calculate → Gaussian Calculation Setup**: Job Type Optimization, Method B3LYP, Basis Set 6-311G, Charge 0, Spin 1, y palabra clave `scrf=(solvent=acetonitrile)` en Additional Keywords.
 
 | Campo | Valor |
-|-------|-------|
-| Method | **B3LYP** |
-| Basis Set | **6-311G** |
-| Charge | **0** |
-| Spin (Multiplicity) | **1** |
+|---|---|
+| Job Type | Optimization |
+| Method | B3LYP |
+| Basis Set | 6-311G |
+| Charge | 0 |
+| Spin (Multiplicity) | 1 |
+| Additional Keywords | `scrf=(solvent=acetonitrile)` |
 
-5. En **Additional Keywords** escribe: `scrf=(solvent=acetonitrile)`
-
-:::{tip}
-`scrf=(solvent=acetonitrile)` activa el modelo PCM para simular el disolvente
-acetonitrilo. Gaussian elige automáticamente los parámetros dieléctricos del disolvente.
-Para estudiar otro disolvente, basta con cambiar el nombre: `solvent=water`,
-`solvent=cyclohexane`, etc.
-:::
-
-6. Haz clic en **Submit**. Guarda como `acetona_MeCN_opt.gjf` en
-   {{practicas_folder}}`EspectroscopiaUV/`.
-
-:::{danger}
-Verifica la terminación correcta: {{termination_ok}}
-:::
-
-#### Paso A2: Leer el HOMO y el LUMO
-
-Abre el `.log` y busca (Ctrl+F): `Alpha  occ. eigenvalues`
-
-Verás algo como:
-
-```
- Alpha  occ. eigenvalues --  ...   -0.27636
- Alpha virt. eigenvalues --   -0.06005   ...
-```
-
-- El **último número** de la última línea `Alpha  occ.` → **HOMO** (energía en Ha)
-- El **primer número** de la primera línea `Alpha virt.` → **LUMO** (energía en Ha)
-
-:::{warning}
-Los valores de energía orbital en Ha son negativos para orbitales enlazantes.
-El HOMO y el LUMO de la acetona en MeCN son ambos negativos — el LUMO también puede
-serlo si el método incluye efectos de correlación (como B3LYP). Esto es normal.
-:::
-
-Anota los valores y calcula el gap:
-
-$$\Delta E_\text{gap} \text{ (eV)} = (\varepsilon_\text{LUMO} - \varepsilon_\text{HOMO}) \times \text{{{ha_to_ev}}}$$
-
-$$\lambda_\text{estimada} \text{ (nm)} = \frac{1239.8}{\Delta E_\text{gap} \text{ (eV)}}$$
-
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: fragmento del log mostrando las líneas Alpha occ. y Alpha virt. con el HOMO
-y LUMO marcados]
-:::
+[CAPTURA: configuración de optimización de geometría de acetona en GaussView con palabra clave scrf]
+```
+
+#### Paso A2: Extraer autovalores HOMO y LUMO
+
+Párrafo corto + figura. Búsqueda de las líneas `Alpha occ. eigenvalues` y `Alpha virt. eigenvalues` en el `.log` optimizado. Lectura de energías en Hartrees y cálculo de la longitud de onda estimada en nanómetros.
+
+```{admonition} 📸 Captura de pantalla
+:class: captura
+[CAPTURA: líneas de autovalores Alpha occ y virt en el archivo .log destacando las energías de HOMO y LUMO]
+```
 
 ---
 
-### Parte B: Cálculo TD-DFT del espectro UV
+### Parte B: Cálculo TD-DFT del espectro de absorción
 
 #### Paso B1: Configurar el cálculo TD-DFT
 
-Sobre la geometría ya optimizada (o partir del archivo `.chk`):
+Párrafo corto + figura. Apertura de la estructura optimizada previa en GaussView. Configuración de cálculo Job Type Energy con palabras clave `td scrf=(solvent=acetonitrile) geom=connectivity` en la pestaña Additional Keywords.
 
-1. En GaussView: **File → Open** → abre el `.log` de la optimización.
-2. Ve a **Calculate → Gaussian Calculation Setup**.
-3. Pestaña **Job Type** → **Energy**.
-4. Pestaña **Method** (mismo que antes: B3LYP/6-311G, mult=1).
-5. En **Additional Keywords** escribe: `td scrf=(solvent=acetonitrile) geom=connectivity`
-
-:::{tip}
-La keyword `td` es todo lo que necesitas para activar TD-DFT. Gaussian calcula
-automáticamente los primeros 3 estados excitados. Si necesitas más, escribe `td=(nstates=10)`.
-:::
-
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: pestaña Additional Keywords del Gaussian Calculation Setup con `td
-scrf=(solvent=acetonitrile)` escrito]
-:::
-
-6. Guarda como `acetona_MeCN_td.gjf` y lanza.
-
-#### Paso B2: Leer los estados excitados
-
-En el `.log`, busca: `Excited State`
-
-Verás un bloque como este (ejemplo del log de referencia procesado):
-
-```
- Excited State   1:      Singlet-A"     4.2871 eV  289.23 nm  f=0.0003
-       8 -> 9         0.70711
+[CAPTURA: pestaña Additional Keywords con las palabras clave td y scrf introducidas para el cálculo TD-DFT]
 ```
 
-| Campo | Significado |
-|-------|-------------|
-| `Singlet-A"` | Simetría del estado excitado |
-| `4.2871 eV` | Energía de la transición |
-| `289.23 nm` | Longitud de onda de absorción |
-| `f=0.0003` | Fuerza del oscilador (intensidad relativa) |
-| `8 -> 9` | Orbital de origen → orbital de destino |
+#### Paso B2: Extraer datos de los estados excitados del .log
 
-:::{tip}
-Para identificar si es n→π* o π→π*, visualiza los orbitales 8 y 9 en GaussView:
-**Results → MOs**. Si el orbital de origen tiene forma de par solitario en el oxígeno →
-transición n→π*.
-:::
+Párrafo medio + tabla + figura. Búsqueda de la sección `Excited State 1` en el archivo `.log`. Registro de los cuatro parámetros característicos de la transición: energía en eV, longitud de onda ($\lambda$ en nm), fuerza del oscilador ($f$) y contribuciones orbitales.
 
-:::{admonition} Captura de pantalla
+Campos del bloque de estado excitado:
+
+| Campo | Significado físico |
+|---|---|
+| Simetría de estado | Representación irreducible del estado excitado |
+| Energía (eV) | Diferencia energética entre estado fundamental y excitado |
+| Longitud de onda (nm) | Posición del máximo de absorción en el espectro |
+| Fuerza del oscilador ($f$) | Intensidad relativa de la banda espectral |
+| Contribución orbital | Índices de los orbitales ocupados y virtuales implicados |
+
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: fragmento del log mostrando los primeros estados excitados con sus energías,
-longitudes de onda y fuerzas del oscilador]
-:::
+[CAPTURA: bloque de Excited State 1 en el archivo .log con valores de energía, longitud de onda y fuerza de oscilador]
+```
 
 #### Paso B3: Visualizar el espectro en GaussView
 
-:::{tip}
-Ve a **Results → UV-Vis**. GaussView representa el espectro calculado como barras
-(una por cada estado excitado, con altura proporcional a f) y como una envolvente
-gaussiana. Identifica la banda n→π* (f muy pequeño, ~290 nm) y la π→π* (f mayor,
-<250 nm).
-:::
+Párrafo corto + figura. Apertura de **Results → UV-Vis** para observar la convolución de estados excitados y contrastar la banda débil $n \rightarrow \pi^*$ frente a la banda intensa $\pi \rightarrow \pi^*$.
 
-:::{admonition} Captura de pantalla
+```{admonition} 📸 Captura de pantalla
 :class: captura
-[CAPTURA: ventana Results → UV-Vis de GaussView mostrando el espectro de la acetona
-en MeCN con las dos bandas identificadas]
-:::
+[CAPTURA: ventana Results → UV-Vis en GaussView mostrando el espectro electrónico de acetona con bandas señaladas]
+```
 
 ---
 
-### Parte C: Efecto del disolvente (5 disolventes)
+### Parte C: Serie de disolventes y solvatocromismo
 
-Repite el cálculo TD-DFT cambiando únicamente el disolvente en `scrf=`:
+Párrafo medio + tabla. Procedimiento para repetir el cálculo TD-DFT en acetona modificando la palabra clave de disolvente en `scrf=(solvent=...)` para seis medios de constante dieléctrica creciente.
 
-| Disolvente | Keyword |
-|-----------|---------|
-| Vacío | *(no escribir `scrf=`)* |
-| Ciclohexano | `scrf=(solvent=cyclohexane)` |
-| Cloroformo | `scrf=(solvent=chloroform)` |
-| Etanol | `scrf=(solvent=ethanol)` |
-| Acetonitrilo | `scrf=(solvent=acetonitrile)` |
-| Agua | `scrf=(solvent=water)` |
+| Disolvente | Constante dieléctrica ($\varepsilon$) | Palabra clave en Additional Keywords |
+|---|:---:|---|
+| Vacío (gas) | 1.0 | *(sin palabra clave scrf)* |
+| Ciclohexano | 2.0 | `scrf=(solvent=cyclohexane)` |
+| Cloroformo | 4.8 | `scrf=(solvent=chloroform)` |
+| Etanol | 24.9 | `scrf=(solvent=ethanol)` |
+| Acetonitrilo | 37.5 | `scrf=(solvent=acetonitrile)` |
+| Agua | 78.4 | `scrf=(solvent=water)` |
 
-Guarda cada cálculo con un nombre diferente:
-`acetona_vacio_td.gjf`, `acetona_ciclohexano_td.gjf`, etc.
+---
 
-### Parte D: Otras cetonas (5 cetonas)
+### Parte D: Serie de cetonas sustituidas
 
-Repite el procedimiento completo (opt + TD-DFT) para cada cetona:
+Párrafo medio + tabla. Protocolo de cálculo para optimizar y calcular el estado excitado $n \rightarrow \pi^*$ en cinco cetonas y derivados carbonílicos en medio acetonitrilo. Recomendación operativa de organización en subcarpetas para gestionar los archivos de cálculo.
 
-| Cetona | Fórmula |
-|--------|---------|
-| Acetona | CH₃-CO-CH₃ |
-| Cloruro de acetilo | CH₃-CO-Cl |
-| Acetofenona | CH₃-CO-C₆H₅ |
-| Ácido acético | CH₃-CO-OH |
-| Metil-etil-cetona | CH₃-CO-CH₂CH₃ |
+| Compuesto | Estructura química | Denominación |
+|---|---|---|
+| Acetona | CH₃–CO–CH₃ | Propanona |
+| Cloruro de acetilo | CH₃–CO–Cl | Cloruro de etanoilo |
+| Acetofenona | CH₃–CO–C₆H₅ | 1-feniletanona |
+| Ácido acético | CH₃–CO–OH | Ácido etanoico |
+| Metil-etil-cetona | CH₃–CO–CH₂CH₃ | Butanona |
 
 :::{warning}
-Cada cetona debe optimizarse en cada disolvente antes del cálculo TD-DFT.
-En total son 25 cálculos de optimización + 25 TD-DFT = 50 cálculos.
-Organiza los archivos en subcarpetas por cetona para no confundirlos.
+Cada molécula requiere una optimización geométrica previa en disolvente antes de ejecutar el cálculo TD-DFT correspondiente.
 :::
 
 ---
 
-## Resultados
+## Resultados y análisis
 
-### Tabla A: Gap HOMO-LUMO (acetona)
+### Tabla A: Estimación del gap HOMO-LUMO para acetona
 
-| Disolvente | HOMO (Ha) | LUMO (Ha) | Gap (Ha) | Gap (eV) | λ estimada (nm) |
-|-----------|:---------:|:---------:|:--------:|:--------:|:---------------:|
-| Vacío | — | — | — | — | — |
-| Ciclohexano | — | — | — | — | — |
-| Acetonitrilo | — | — | — | — | — |
-| Agua | — | — | — | — | — |
+Párrafo corto + tabla. Registro de autovalores de energía orbital y cálculo de longitud de onda estimada para acetona en los diferentes disolventes.
 
-### Tabla B: λ n→π* calculada por TD-DFT vs. experimental (acetona)
+| Disolvente | HOMO (Ha) | LUMO (Ha) | Gap (Ha) | Gap (eV) | $\lambda$ estimada (nm) |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Vacío | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Ciclohexano | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Acetonitrilo | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Agua | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
 
-| Disolvente | λ calculada (nm) | f | λ experimental (nm) | Error (nm) |
-|-----------|:----------------:|:---:|:-------------------:|:----------:|
-| Ciclohexano | — | — | 279 | — |
-| Agua | — | — | 264 | — |
-| Acetonitrilo | — | — | — | — |
-| Etanol | — | — | — | — |
-| Cloroformo | — | — | — | — |
+### Tabla B: Solvatocromismo de acetona por TD-DFT
 
-### Tabla C: λ n→π* por cetona (en acetonitrilo)
+Párrafo corto + tabla. Vaciado de longitudes de onda calculadas por TD-DFT y fuerzas de oscilador frente a datos experimentales disponibles.
 
-| Cetona | λ calculada (nm) | f | Comentario |
-|--------|:----------------:|:---:|------------|
-| Acetona | — | — | |
-| Cloruro de acetilo | — | — | |
-| Acetofenona | — | — | |
-| Ácido acético | — | — | |
-| Metil-etil-cetona | — | — | |
+| Disolvente | $\lambda$ calculada (nm) | $f$ calculada | $\lambda$ experimental (nm) | Desviación (nm) |
+|---|:---:|:---:|:---:|:---:|
+| Ciclohexano | [TEXTO HUMANO] | [TEXTO HUMANO] | 279 | [TEXTO HUMANO] |
+| Agua | [TEXTO HUMANO] | [TEXTO HUMANO] | 264 | [TEXTO HUMANO] |
+| Acetonitrilo | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Etanol | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Cloroformo | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
 
-:::{note}
-[TEXTO HUMANO: instrucciones de recogida de datos — dónde copiar los valores de λ y f
-desde el log o desde la ventana Results → UV-Vis de GaussView.]
-:::
+### Tabla C: Efecto del sustituyente en la banda n a pi*
+
+Párrafo corto + tabla. Comparación sistemática de longitudes de onda y fuerzas de oscilador para las cinco cetonas evaluadas en medio acetonitrilo.
+
+| Compuesto | $\lambda$ calculada (nm) | $f$ calculada | Comentario sobre el desplazamiento |
+|---|:---:|:---:|---|
+| Acetona | [TEXTO HUMANO] | [TEXTO HUMANO] | Referencia |
+| Cloruro de acetilo | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Acetofenona | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Ácido acético | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+| Metil-etil-cetona | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
+
+### Directrices de recogida de datos
+
+Párrafo corto. Pautas metodológicas para transferir con exactitud los valores de $\lambda$ y $f$ desde el archivo `.log` o desde el panel de visualización espectral de GaussView hacia las tablas del informe.
 
 ---
 
 ## Preguntas y pruebas
 
-:::{note}
-[TEXTO HUMANO: preguntas de reflexión. Propuesta:]
+Párrafo corto (cuestionario de análisis e interpretación). Cuestiones formativas para consolidar la interpretación fotofísica de los resultados:
+1. Magnitud del error y dirección de la discrepancia sistemática entre la estimación estática del gap HOMO-LUMO y el cálculo TD-DFT de estados excitados.
+2. Sentido del desplazamiento de la banda $n \rightarrow \pi^*$ al incrementar la polaridad del medio disolvente y justificación mediante interacción soluto-disolvente.
+3. Influencia del sustituyente en posición alfa sobre el máximo de absorción carbonílico: correlación con conjugación electrónica del anillo aromático en acetofenona o efectos inductivos en cloruro de acetilo.
+4. Diferencia de magnitud en la fuerza del oscilador entre la transición $n \rightarrow \pi^*$ ($f \approx 10^{-4}$) y $\pi \rightarrow \pi^*$ ($f > 0.1$) y su reflejo en la absorbancia experimental.
+5. Grado de acuerdo entre los resultados calculados por TD-DFT en disolventes próticos y las mediciones de laboratorio reportadas en literatura.
 
-[PROPUESTA:
-1. ¿Cuál es la diferencia entre la λ estimada por el gap HOMO-LUMO y la obtenida por
-   TD-DFT? ¿En qué sentido falla la estimación del gap?
-2. ¿Cómo cambia la λ de la banda n→π* al pasar de ciclohexano a agua? ¿Es un
-   desplazamiento al azul o al rojo? ¿Por qué?
-3. ¿Qué sustituyente en R produce el mayor desplazamiento de λ respecto a la acetona?
-   ¿Lo puedes relacionar con la capacidad de ese sustituyente para extender la
-   conjugación o estabilizar el par solitario?
-4. La banda n→π* tiene f ≈ 0.0003 y la π→π* tiene f > 0.1. ¿Qué significa esto para
-   la intensidad observada en un espectro real?
-5. Si mides el espectro UV de la acetona en etanol y observas que la banda n→π*
-   aparece a 268 nm, ¿está de acuerdo con tu cálculo TD-DFT?
-]
+:::{note}
+[TEXTO HUMANO: formulación detallada de preguntas y criterios de corrección]
 :::
 
 ---
 
 ## Bibliografía
 
-:::{note}
-[TEXTO HUMANO: añadir referencia al manual interno de la asignatura si existe.]
-:::
-
+- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
-- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018.
-  Cap. 13 (Espectroscopía electrónica).
-- Casida, M. E. *Time-Dependent Density Functional Theory for Molecules*. In *Recent
-  Advances in Density Functional Methods*; World Scientific, 1995.
-- NIST Chemistry WebBook, https://webbook.nist.gov — espectros UV-Vis experimentales.
+- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 13 (Espectroscopía electrónica).
+- Casida, M. E. *Time-Dependent Density Functional Theory for Molecules*. In *Recent Advances in Density Functional Methods*; World Scientific, 1995.
+- NIST Chemistry WebBook, https://webbook.nist.gov (espectros de absorción ultravioleta-visible de referencia).
 
 ---
 
-::::{dropdown} Para ir más lejos *(opcional — solo si terminas antes de tiempo)*
+::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-
-Esta sección es completamente **opcional** y no entra en la nota.
-
-### Simular el espectro UV con ensanchamiento gaussiano
-
-El espectro que muestra GaussView usa barras discretas (una por estado excitado).
-Un espectro experimental muestra bandas anchas porque cada transición está ensanchada
-por las vibraciones moleculares. Podemos simular este efecto aplicando una función
-gaussiana centrada en cada λ calculada y sumándolas todas.
+Párrafo medio. Ejercicio opcional sobre la simulación de espectros UV-Vis continuos mediante convolución gaussiana de los estados discretos calculados, y contraste gráfico entre la aproximación estática de gap y TD-DFT para la serie de cetonas.
 
 :::{note}
-[TEXTO HUMANO: instrucciones para esta extensión — cómo exportar la lista de estados
-excitados desde el log (tabla λ, f), cómo representar el espectro convolucionado en
-LibreOffice Calc o Python, y cómo comparar visualmente con el espectro experimental
-del NIST.]
+[TEXTO HUMANO: instrucciones para exportar estados excitados y generar el perfil de absorbancia espectral convolucionado]
 :::
-
-### Comparar gap HOMO-LUMO vs. TD-DFT para las 5 cetonas
-
-Representa en un gráfico el λ estimado por HOMO-LUMO vs. el λ calculado por TD-DFT
-para las 5 cetonas en acetonitrilo. ¿Es la desviación sistemática? ¿Hay alguna cetona
-donde el gap HOMO-LUMO sea una buena aproximación?
 ::::
