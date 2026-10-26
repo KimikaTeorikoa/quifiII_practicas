@@ -326,18 +326,13 @@ Párrafo corto. Pautas metodológicas para transferir con exactitud los valores 
 
 ---
 
-## Preguntas y pruebas
+## Preguntas
 
-Párrafo corto (cuestionario de análisis e interpretación). Cuestiones formativas para consolidar la interpretación fotofísica de los resultados:
-1. Magnitud del error y dirección de la discrepancia sistemática entre la estimación estática del gap HOMO-LUMO y el cálculo TD-DFT de estados excitados.
-2. Sentido del desplazamiento de la banda $n \rightarrow \pi^*$ al incrementar la polaridad del medio disolvente y justificación mediante interacción soluto-disolvente.
-3. Influencia del sustituyente en posición alfa sobre el máximo de absorción carbonílico: correlación con conjugación electrónica del anillo aromático en acetofenona o efectos inductivos en cloruro de acetilo.
-4. Diferencia de magnitud en la fuerza del oscilador entre la transición $n \rightarrow \pi^*$ ($f \approx 10^{-4}$) y $\pi \rightarrow \pi^*$ ($f > 0.1$) y su reflejo en la absorbancia experimental.
-5. Grado de acuerdo entre los resultados calculados por TD-DFT en disolventes próticos y las mediciones de laboratorio reportadas en literatura.
-
-:::{note}
-[TEXTO HUMANO: formulación detallada de preguntas y criterios de corrección]
-:::
+1. Extraer del archivo `.log` de la acetona los autovalores orbitales de frontera y calcular la diferencia estática $\Delta \varepsilon = \varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}$ en electronvoltios. Comparar este valor numérico con la energía de excitación vertical del primer estado singlete (`Excited State 1`) e indicar la magnitud de la desviación.
+2. La transición electrónica $n \rightarrow \pi^*$ en la acetona presenta una fuerza de oscilador muy baja ($f \approx 0.0001$), mientras que las transiciones $\pi \rightarrow \pi^*$ muestran típicamente $f > 0.1$. Justificar esta marcada diferencia a partir del solapamiento espacial entre el orbital del par solitario no enlazante del oxígeno y el orbital antienlazante $\pi^*$.
+3. El cálculo TD-DFT en disolución mediante el modelo continuo PCM predice un desplazamiento hipsobrómico (hacia el azul) de la banda $n \rightarrow \pi^*$ en agua menor que el medido experimentalmente. Justificar por qué la aproximación de medio dieléctrico homogéneo no reproduce con exactitud la estabilización producida por enlaces de hidrógeno discretos soluto-disolvente.
+4. Comparar la longitud de onda de absorción máxima ($\lambda_{\text{max}}$) calculada para la acetona con la obtenida para la acetofenona. Explicar el desplazamiento batocrómico (hacia el rojo) observado en la acetofenona a partir de la deslocalización electrónica y conjugación del grupo carbonilo con el anillo aromático.
+5. En el cálculo TD-DFT se solicitaron 10 estados excitados (`nstates=10`). A partir de los parámetros listados en la salida de Gaussian (energía de excitación, longitud de onda y fuerza de oscilador $f$), detallar qué criterio cuantitativo permite identificar cuál de esos estados es el responsable directo del color observable de una sustancia en el espectro visible.
 
 ---
 

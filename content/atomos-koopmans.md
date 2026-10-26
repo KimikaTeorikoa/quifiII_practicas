@@ -277,18 +277,13 @@ Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Resu
 
 ---
 
-## Preguntas y pruebas
+## Preguntas
 
-Párrafo corto (preguntas de reflexión e interpretación). Batería de cuestiones para consolidar la comprensión física de los resultados:
-1. Grado de concordancia entre IE$_{\Delta E}$ e IE$_{\text{Koopmans}}$ a lo largo de la serie y causas físicas de las mayores divergencias.
-2. Reproducción de las tendencias periódicas generales e interpretación de anomalías locales (como la caída de IE entre N y O según la regla de Hund, o entre Be y B).
-3. Comparación morfológica entre el orbital HOMO del hidrógeno (simetría esférica) y del carbono (lóbulos con plano nodal).
-4. Magnitud relativa de los errores asociados a cada vía y factores no considerados por Hartree-Fock.
-5. Consecuencias operativas de introducir una multiplicidad de espín incorrecta y mecanismos de detección en el archivo `.log`.
-
-:::{note}
-[TEXTO HUMANO: formulación detallada de preguntas y criterios de corrección]
-:::
+1. A partir de los valores en eV calculados para el átomo de carbono, calcular la discrepancia porcentual de la energía de ionización según el teorema de Koopmans ($\text{IE}_{\text{Koopmans}}$) respecto a la diferencia directa ($\text{IE}_{\Delta E}$). Indicar cuál de los dos valores resulta superior y especificar las unidades empleadas en la conversión.
+2. Analizar la evolución de la energía de ionización a lo largo del período litio-neón. Justificar la caída observada al pasar del nitrógeno ($Z=7$) al oxígeno ($Z=8$) relacionando la ocupación de los orbitales $2p$ con la repulsión coulómbica interelectrónica.
+3. El teorema de Koopmans asume que los orbitales moleculares permanecen invariables tras la ionización (aproximación de orbitales congelados). Explicar por qué la relajación orbital reduce la energía real del catión y describir cómo la falta de correlación electrónica en Hartree-Fock compensa parcialmente esta desviación.
+4. Comparar los valores de $\text{IE}_{\Delta E}$ obtenidos con la base STO-3G para helio y neón frente a los datos experimentales ($24.6\text{ eV}$ y $21.6\text{ eV}$ respectivamente). Justificar por qué una base mínima describe con menor fidelidad los sistemas compactos o con mayor densidad electrónica frente a bases extendidas con funciones difusas.
+5. Si en GaussView se configurase el cálculo del átomo de boro neutro ($Z=5$) con multiplicidad 1 en lugar de 2, ¿qué inconsistencia numérica registraría Gaussian en el reparto de electrones $\alpha$ y $\beta$? Explicar por qué el formalismo RHF resulta inaplicable a sistemas atómicos de capa abierta.
 
 ---
 

@@ -255,18 +255,13 @@ Párrafo corto + figura. Pautas para el análisis de discrepancias sistemáticas
 
 ---
 
-## Preguntas y pruebas
+## Preguntas
 
-Párrafo corto (cuestionario de discusión conceptual). Cuestiones orientadas a evaluar la asimilación física del contenido:
-1. Comprobación del número de modos calculados frente a la relación teórica $3N-5$ en moléculas lineales.
-2. Justificación rigurosa de la inactividad infrarroja del estiramiento simétrico de CO₂ mediante el análisis del momento dipolar.
-3. Magnitud y signo del error relativo en las frecuencias calculadas de CO y CO₂: papel de la aproximación armónica frente al potencial real de Morse.
-4. Consecuencias teóricas e interpretación práctica de la aparición eventual de frecuencias imaginarias en un archivo de salida.
-5. Análisis de los vectores de desplazamiento en el estiramiento de CO: relación de amplitudes de desplazamiento entre carbono y oxígeno en función de sus masas atómicas relativas.
-
-:::{note}
-[TEXTO HUMANO: formulación detallada de preguntas y criterios de corrección]
-:::
+1. Con la frecuencia de vibración ($\nu$) y la constante de fuerza ($k$) del monóxido de carbono extraídas del archivo `.log`, verificar la relación analítica del oscilador armónico $\nu = \frac{1}{2\pi c}\sqrt{\frac{k}{\mu}}$. Calcular la masa reducida teórica a partir de las masas atómicas de $^{12}\text{C}$ y $^{16}\text{O}$ y contrastarla con el valor impreso por Gaussian.
+2. En el dióxido de carbono ($\text{CO}_2$), el modo de estiramiento simétrico presenta una intensidad infrarroja nula (`IR Inten = 0.0000`). Justificar esta ausencia de absorción a partir de la derivada del momento dipolar respecto a la coordenada normal ($\partial \vec{\mu} / \partial Q$).
+3. La frecuencia calculada para el estiramiento de CO mediante B3LYP/6-311G supera sistemáticamente el valor medido en el laboratorio ($2143\text{ cm}^{-1}$). Explicar el origen de esta sobreestimación relacionando la parábola del oscilador armónico con el perfil asimétrico del potencial real de Morse.
+4. Comparar la constante de fuerza ($k$) y la longitud de enlace de equilibrio del monóxido de carbono ($R \approx 1.15\text{ \AA}$) con los valores calculados para el enlace $\text{C=O}$ en el dióxido de carbono ($R \approx 1.16\text{ \AA}$). Relacionar estas magnitudes con el orden de enlace formal de cada molécula.
+5. Si un cálculo de frecuencias arroja un valor negativo o imaginario en el archivo de salida (por ejemplo, $-180\text{ cm}^{-1}$), ¿qué tipo de punto estacionario representa dicha estructura en la superficie de energía potencial? Explicar cómo orienta el vector de desplazamiento de ese modo imaginario la búsqueda de un mínimo real.
 
 ---
 
