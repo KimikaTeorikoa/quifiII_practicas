@@ -6,25 +6,25 @@ root: intro
 parts:
   - caption: Modelos sencillos con Python
     chapters:
-    - file: content/python 
-    - file: content/finitedifferences
-    - file: content/finitepython 
-    - file: content/finitewellho
-    - file: content/finitebond
+    - file: content/parte1-python/python
+    - file: content/parte1-python/finitedifferences
+    - file: content/parte1-python/finitepython
+    - file: content/parte1-python/finitewellho
+    - file: content/parte1-python/finitebond
   - caption: "Introducción a la Química Computacional"
     chapters:
-    - file: content/intro-gaussview
-    - file: content/intro-hartree-fock
-    - file: content/intro-bases
+    - file: content/parte2-gaussian/intros/intro-gaussview
+    - file: content/parte2-gaussian/intros/intro-hartree-fock
+    - file: content/parte2-gaussian/intros/intro-bases
   - caption: "Cálculos con GaussView y Gaussian"
     chapters:
-    - file: content/atomos-koopmans
-    - file: content/intro-born-oppenheimer
-    - file: content/intro-mas-alla-hf
-    - file: content/intro-energias
-    - file: content/moleculas-pes
-    - file: content/modos-normales
-    - file: content/espectroscopia-uv
+    - file: content/parte2-gaussian/practicas/atomos-koopmans
+    - file: content/parte2-gaussian/intros/intro-born-oppenheimer
+    - file: content/parte2-gaussian/intros/intro-mas-alla-hf
+    - file: content/parte2-gaussian/intros/intro-energias
+    - file: content/parte2-gaussian/practicas/moleculas-pes
+    - file: content/parte2-gaussian/practicas/modos-normales
+    - file: content/parte2-gaussian/practicas/espectroscopia-uv
   - caption: Cuestionario
     chapters:
     - file: content/questionaire
