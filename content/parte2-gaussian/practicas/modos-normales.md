@@ -16,16 +16,11 @@ La absorción de radiación infrarroja por la materia surge de la interacción e
 
 ## Objetivos
 
-Párrafo corto (lista numerada). Objetivos de aprendizaje de la práctica:
-1. Comprensión conceptual de los modos normales de vibración y cálculo de grados de libertad independientes.
-2. Optimización geométrica y cálculo de frecuencias armónicas mediante el método combinado Opt+Freq con B3LYP/6-311G.
-3. Visualización dinámica y caracterización del tipo de movimiento (estiramiento y flexión) en GaussView.
-4. Aplicación de las reglas de selección de actividad infrarroja según la derivada del momento dipolar.
-5. Contraste cuantitativo de las frecuencias armónicas calculadas frente a datos espectroscópicos experimentales.
-
-:::{note}
-[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
-:::
+1. Calcular los grados de libertad vibracionales independientes de moléculas lineales modelo ($\text{CO}$ y $\text{CO}_2$).
+2. Optimizar la geometría molecular y calcular las frecuencias armónicas mediante el método combinado `Opt+Freq` con B3LYP/6-311G.
+3. Visualizar y clasificar los desplazamientos atómicos correspondientes a modos de estiramiento y flexión mediante animaciones en GaussView.
+4. Evaluar la actividad espectral en el infrarrojo comprobando la variación del momento dipolar molecular ($\partial \vec{\mu}/\partial Q$) y el valor de intensidad calculada (`IR Inten`).
+5. Comparar las frecuencias armónicas teóricas con las bandas de absorción experimentales para cuantificar el efecto de la anarmonicidad.
 
 ---
 

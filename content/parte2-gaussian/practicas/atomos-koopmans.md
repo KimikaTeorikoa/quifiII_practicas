@@ -10,21 +10,16 @@
 
 ## Introducción
 
-La energía de ionización refleja la fuerza con la que el núcleo retiene a los electrones más externos y determina la reactividad química y las tendencias periódicas en la tabla periódica. Mediante cálculos mecanocuánticos con el método Hartree-Fock implementado en Gaussian, este fenómeno se analiza a través de dos aproximaciones teóricas complementarias. La primera vía determina la diferencia de energía total entre el átomo neutro y su catión correspondiente, mientras que la segunda aplica el teorema de Koopmans para estimar el potencial a partir del autovalor del orbital ocupado de mayor energía (HOMO).
+La energía de ionización refleja la fuerza con la que el núcleo retiene a los electrones más externos y determina la reactividad química y las tendencias a lo largo de la tabla periódica. Mediante cálculos mecanocuánticos con el método Hartree-Fock implementado en Gaussian, dos aproximaciones teóricas complementarias permiten cuantificar este proceso. El primer método determina la diferencia de energía total entre el átomo neutro y su catión correspondiente, mientras que el segundo aplica el teorema de Koopmans para estimar el potencial a partir del autovalor del orbital ocupado de mayor energía (HOMO).
 
 ---
 
 ## Objetivos
 
-Párrafo corto (lista numerada). Objetivos de aprendizaje de la sesión práctica:
-1. Realización de cálculos de energía electrónica en átomos aislados mediante GaussView y {{gaussian_version}}.
-2. Determinación de la energía de ionización por dos métodos: diferencia de energías totales ($\Delta E$) y teorema de Koopmans.
-3. Comparación sistemática de los valores calculados con datos experimentales para los elementos del primer y segundo período.
-4. Visualización tridimensional e interpretación de la simetría de los orbitales atómicos HOMO.
-
-:::{note}
-[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
-:::
+1. Calcular la energía electrónica total de átomos neutros y cationes monocargados mediante el método Hartree-Fock en {{gaussian_version}}.
+2. Determinar la energía de ionización por diferencia autoconsistente ($\Delta E$) y por estimación orbital mediante el teorema de Koopmans ($-\varepsilon_{\text{HOMO}}$).
+3. Comparar las energías de ionización calculadas frente a valores experimentales a lo largo del primer y segundo período.
+4. Visualizar la distribución espacial y la simetría de los orbitales atómicos ocupados de mayor energía (HOMO) en GaussView.
 
 ---
 

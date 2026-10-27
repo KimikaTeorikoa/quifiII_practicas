@@ -8,11 +8,10 @@ La estabilidad del enlace covalente y las preferencias conformacionales molecula
 
 ## Objetivos
 
-1. Comprender el concepto de superficie de energía potencial (PES) en sistemas moleculares diatómicos y poliatómicos.
-2. Calcular la curva de energía potencial de la molécula de H₂ en función de la distancia internuclear $R(\text{H–H})$ para los estados singlete y triplete mediante HF/STO-3G.
-3. Determinar la distancia internuclear de equilibrio ($R_{\text{eq}}$) y la energía de disociación de H₂, contrastando los resultados calculados con el valor experimental.
-4. Realizar el barrido conformacional del ángulo diedro en dihaloetanos para identificar los confórmeros anti y gauche.
-5. Cuantificar y comparar las barreras rotacionales relativas frente a las conformaciones eclipsadas.
+1. Construir la curva de energía potencial de la molécula de $\text{H}_2$ mediante un barrido de la distancia internuclear $R(\text{H–H})$ para los estados singlete y triplete con HF/STO-3G.
+2. Determinar la distancia internuclear de equilibrio ($R_{\text{eq}}$) y la energía de disociación de $\text{H}_2$, contrastando los valores calculados con datos experimentales.
+3. Realizar el barrido conformacional del ángulo diedro en dihaloetanos para identificar los confórmeros anti y gauche en la superficie de energía potencial.
+4. Cuantificar las barreras de rotación conformacional evaluando la diferencia de energía frente a las conformaciones eclipsadas.
 
 ---
 

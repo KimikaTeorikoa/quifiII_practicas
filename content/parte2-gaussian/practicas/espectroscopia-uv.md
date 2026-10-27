@@ -16,16 +16,11 @@ La interacción entre la radiación ultravioleta-visible y las moléculas orgán
 
 ## Objetivos
 
-Párrafo corto (lista numerada). Objetivos formativos de la sesión:
-1. Estimación preliminar de longitudes de onda de absorción a partir de la diferencia energética orbital HOMO-LUMO.
-2. Cálculo de estados electrónicos excitados singlete mediante el método TD-DFT con funcional híbrido B3LYP/6-311G.
-3. Caracterización y asignación de transiciones $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ mediante energías de transición y fuerza del oscilador ($f$).
-4. Evaluación del desplazamiento solvatocrómico en acetona utilizando el modelo continuo de polarización del disolvente (PCM).
-5. Análisis del efecto electrónico de sustituyentes sobre el grupo carbonilo en una serie homóloga de cetonas.
-
-:::{note}
-[TEXTO HUMANO: lista de objetivos formativos adaptada al guion del curso]
-:::
+1. Estimar la longitud de onda de absorción preliminar a partir de la diferencia de energías orbitales ($\Delta E_{\text{gap}}$ HOMO-LUMO).
+2. Calcular las energías de excitación vertical hacia estados singlete empleando la metodología TD-DFT con B3LYP/6-311G.
+3. Asignar las transiciones electrónicas $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en función de su energía y su fuerza del oscilador ($f$).
+4. Cuantificar el desplazamiento solvatocrómico de la acetona en agua mediante el modelo de polarización continua del disolvente (PCM).
+5. Comparar los espectros de absorción calculados frente a valores experimentales en función de la polaridad del medio y los sustituyentes alquílicos.
 
 ---
 
