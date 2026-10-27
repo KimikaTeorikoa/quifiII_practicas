@@ -15,7 +15,7 @@
 :::
 
 :::{admonition} Intuición
-:class: intuicion
+:class: intuicion [revisar: no me convence]
 Piensa en una fotografía nocturna de larga exposición en una plaza: los edificios inmóviles aparecen con bordes perfectamente nítidos, mientras que los peatones en movimiento forman una estela difusa continua. La aproximación de Born-Oppenheimer aprovecha que los núcleos son miles de veces más pesados que los electrones para tratarlos como postes fijos mientras la nube electrónica se ajusta de inmediato a su alrededor. Esta división te permite calcular la energía de una molécula congelando sus coordenadas atómicas en una geometría concreta. En GaussView comprobarás que cada punto de una superficie energética corresponde a una foto estática de los núcleos.
 :::
 

@@ -15,7 +15,7 @@
 :::
 
 :::{admonition} Intuición
-:class: intuicion
+:class: intuicion [revisar: no quiero metaforas o analogias tan tontas. no corresponden al texto escrito, sino a la parte hablada. el texto debe ser profesional y no infantilizador. son estudiantes y estan iniciando pero no significa tratarles de tondos]
 Imagina dos personas en una habitación pequeña que intentan no cruzarse la mirada ni tropezar: ninguna puede dar un paso sin mirar de reojo dónde se encuentra la otra. En un sistema con varios electrones sucede lo mismo, porque la repulsión mutua acopla sus movimientos y te impide resolver la ecuación de uno sin conocer la posición exacta del resto. Esa interdependencia instantánea rompe cualquier intento de solución matemática exacta para átomos más pesados que el hidrógeno. Por ese motivo, cuando ejecutes Gaussian verás que el programa recurre obligatoriamente a métodos numéricos aproximados.
 :::
 
@@ -28,7 +28,7 @@ Imagina dos personas en una habitación pequeña que intentan no cruzarse la mir
 :::
 
 :::{admonition} Intuición
-:class: intuicion
+:class: intuicion [reviasr: lo mismo, sin analogias tan tontas. mejores explicaciones]
 Es como planificar una ruta en coche guiándote por el mapa de tráfico de tu aplicación móvil: no sigues la posición de cada vehículo individual, sino la densidad media de la circulación en cada avenida. Hartree-Fock aplica esta misma simplificación al sustituir la posición instantánea de los electrones por una nube de carga continua y promediada en el espacio. Gracias a esta aproximación las ecuaciones se desacoplan y Gaussian puede calcular los orbitales uno a uno de forma rápida. La contrapartida visible en tus resultados es que la energía total de Hartree-Fock siempre quedará ligeramente por encima de la energía real exacta.
 :::
 
@@ -85,7 +85,7 @@ La energía que aparece en el log de Gaussian es la energía total, no la energ�
 ## Limitaciones de HF: la correlación electrónica
 
 :::{note}
-[TEXTO HUMANO: HF trata la repulsión electrónica de forma promediada, ignora que los electrones se evitan instantáneamente. Esta diferencia entre la energía HF y la energía exacta se llama energía de correlación. Es pequeña en términos absolutos pero importante para propiedades químicas. Por eso en las prácticas usamos B3LYP, no HF. (Longitud: 3-4 frases)]
+[TEXTO HUMANO: HF trata la repulsión electrónica de forma promediada, ignora que los electrones se evitan instantáneamente. Esta diferencia entre la energía HF y la energía exacta se llama energía de correlación. Es pequeña en términos absolutos pero importante para propiedades químicas. Por eso en las prácticas usamos B3LYP, no HF. (Longitud: 3-4 frases)] [revisar:no decir en concreto b3lyp, creo que lia el mensaje, mejor en terminos generales hablar de metodos mas desarrolaldos post-HF]
 :::
 
 ---

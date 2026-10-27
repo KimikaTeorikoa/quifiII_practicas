@@ -15,7 +15,7 @@
 :::
 
 :::{admonition} Intuición
-:class: intuicion
+:class: intuicion  [revisar de nuevo]
 Imagina una pelota que rueda hacia el interior de un pozo seco: si tomas el nivel del suelo como altura cero, la pelota tendrá una cota negativa mientras permanezca atrapada en el fondo. En química cuántica el cero de referencia corresponde a núcleos y electrones completamente separados e inmóviles a distancia infinita, de modo que cualquier enlace o atracción los sitúa por debajo de ese umbral. Por esta razón, la energía de `SCF Done` en tu archivo `.log` siempre llevará un signo negativo delante. Cuanto mayor sea su valor absoluto, más hondo será el pozo energético y más estable resultará la molécula que acabas de calcular.
 :::
 

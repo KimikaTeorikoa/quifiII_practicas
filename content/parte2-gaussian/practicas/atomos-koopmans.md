@@ -44,7 +44,7 @@ Párrafo muy corto. Referencia al uso combinado de GaussView como entorno gráfi
 
 Párrafo corto. Explicación cualitativa del origen del signo negativo en sistemas ligados frente a partículas en reposo separadas en el infinito. Interpretación del pozo de potencial atractivo núcleo-electrón y comprobación de coherencia física en la salida del cálculo.
 
-:::{admonition} 💡 Intuición física
+:::{admonition} 💡 Intuición física 
 :class: intuicion
 Piensa en una canica atrapada en el fondo de un cuenco hondo: necesitas empujarla y gastar energía para sacarla a la mesa, donde su energía relativa sería cero. En un átomo estable ocurre lo mismo, porque la atracción del núcleo crea una trampa energética que mantiene a los electrones confinados en un estado ligado. Por eso verás que el valor de `SCF Done` en tu archivo `.log` aparece precedido de un signo menos. Cuanto más negativo sea ese número, más fuertemente retenidos estarán los electrones y más estable será el átomo.
 :::

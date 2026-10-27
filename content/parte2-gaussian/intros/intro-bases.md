@@ -10,7 +10,7 @@
 
 ## La idea central: aproximar orbitales con funciones conocidas
 
-:::{note}
+:::{note} [revisar, de nuevo, cuidado con las analogias]
 [TEXTO HUMANO: Analogía: igual que aproximamos una curva cualquiera con polinomios, aproximamos un orbital con una suma de funciones gaussianas. Cuantas más funciones, mejor la aproximación. Figura: curva exacta vs aproximación con pocas funciones vs aproximación con más funciones. (Longitud: 4-5 frases)]
 :::
 
