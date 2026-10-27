@@ -32,9 +32,7 @@ La disposición espacial de una estructura molecular queda unívocamente determi
 
 ## Energía puntual: calcular sin mover
 
-:::{note}
-[TEXTO HUMANO: Dado una geometría fija, Gaussian calcula la energía electrónica. Es como tomar una fotografía: la molécula no se mueve. En GaussView: Job Type → **Single Point**. Resultado: un número en Hartrees. (Longitud: 3-4 frases)]
-:::
+En un cálculo de energía puntual (*Single Point*), las posiciones relativas de los núcleos atómicos permanecen fijas según las coordenadas indicadas en el archivo de entrada. Bajo esta geometría nuclear constante, Gaussian resuelve la estructura electrónica evaluando las integrales mecanocuánticas de forma autoconsistente. El valor devuelto al finalizar el cálculo es la energía electrónica total del sistema en hartrees correspondiente a esa configuración geométrica precisa. En el panel de configuración de GaussView, este cálculo se selecciona en la pestaña **Job Type → Single Point** (etiquetada como *Energy* en el menú principal).
 
 ---
 

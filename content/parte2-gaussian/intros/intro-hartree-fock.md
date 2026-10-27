@@ -32,9 +32,7 @@ La aproximación de campo medio sustituye la interacción electrostática instan
 
 ## Orbitales: la solución para un electrón
 
-:::{note}
-[TEXTO HUMANO: En HF cada electrón ocupa un orbital, una función matemática que describe su distribución en el espacio. Para He: dos electrones en el mismo orbital 1s, con espines opuestos. Figura: dibujo del orbital 1s del He (esfera). (Longitud: 4-5 frases)]
-:::
+En el formalismo de Hartree-Fock, el estado espacial de cada electrón se describe mediante un orbital molecular monoelectrónico que depende únicamente de las coordenadas espaciales de esa partícula. En el caso del átomo de helio, los dos electrones se alojan en el mismo orbital espacial 1s con funciones de espín opuestas ($\alpha$ y $\beta$), satisfaciendo el principio de exclusión de Pauli. Para resolver numéricamente estos estados en sistemas moleculares o atómicos, cada orbital se expande matemáticamente como una combinación lineal de funciones de base predefinidas. La figura adjunta representa el orbital 1s del helio como una superficie de contorno esférica que delimita la región de mayor densidad de probabilidad electrónica.
 
 :::{admonition} Figura
 :class: captura

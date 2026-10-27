@@ -34,9 +34,7 @@ La interfaz gráfica de GaussView se estructura principalmente en cuatro áreas 
 
 ## Construir una molécula
 
-:::{note}
-[TEXTO HUMANO: Cómo usar el panel de fragmentos para añadir átomos. Construir H₂O como ejemplo mínimo. Mencionar que GaussView conecta los enlaces automáticamente. (Longitud: 4-5 frases)]
-:::
+Para construir una molécula en GaussView, se selecciona en primer lugar el elemento químico correspondiente en el panel interactivo de fragmentos y se pulsa con el botón izquierdo sobre la ventana de visualización central para colocar el átomo. Al incorporar átomos adicionales en la proximidad de los existentes, el programa genera automáticamente los enlaces químicos correspondientes según los radios covalentes estándar. En el caso del agua ($\text{H}_2\text{O}$), el procedimiento consiste en situar un átomo de oxígeno central y acoplar a continuación dos átomos de hidrógeno en posiciones angulares aproximadas. La estructura espacial definitiva y las distancias exactas se ajustarán numéricamente durante el cálculo de optimización de geometría en Gaussian. Por este motivo, el dibujo inicial en pantalla solo requiere reproducir de forma orientativa la conectividad química del sistema sin necesidad de una precisión métrica estricta.
 
 :::{warning}
 No hacer doble clic accidental sobre el fondo: duplica átomos sin avisar.

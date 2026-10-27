@@ -40,8 +40,6 @@ El tamaño y la complejidad del conjunto de base determinan el límite superior 
 ::::{dropdown} Qué significa la notación: 6-31G, 6-311G y funciones de polarización
 :color: success
 
-:::{note}
-[TEXTO HUMANO: Explicar los números: cuántas gaussianas por orbital del core y de valencia. Qué añade el asterisco o la "d" (funciones de polarización). Solo para el alumno que quiera entender qué está eligiendo en el menú de GaussView. (Longitud: 4-5 frases)]
-:::
+En la notación estándar de bases de valencia dividida de Pople, los dígitos indican el número de funciones gaussianas primitivas empleadas para describir los orbitales internos del núcleo y los orbitales de valencia. Por ejemplo, la base 6-311G contrae seis gaussianas para representar cada orbital del núcleo interno, mientras que divide la capa de valencia en tres funciones independientes formadas por contracciones de tres, una y una función gaussiana respectivamente. El asterisco o sufijo `*` denota la incorporación de funciones de polarización de tipo d sobre los átomos pesados distintos del hidrógeno. Estas funciones adicionales aportan flexibilidad angular para describir con fidelidad las deformaciones espaciales de la densidad de carga durante la formación del enlace químico. Su inclusión no modifica el modo de trabajo en GaussView, donde el conjunto de base completo se escoge de forma directa en el menú desplegable de la pestaña Method.
 
 ::::

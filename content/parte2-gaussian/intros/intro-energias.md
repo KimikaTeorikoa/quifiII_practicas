@@ -36,9 +36,7 @@ Nunca comparar dos energías en unidades distintas. Convertir siempre antes de r
 
 ## Diferencias de energía: lo que realmente importa
 
-:::{note}
-[TEXTO HUMANO: La energía absoluta en Ha no tiene significado físico directo, lo que importa es la diferencia entre dos geometrías o dos estados. Por eso en las prácticas siempre se trabaja con ΔE respecto a un punto de referencia. (Longitud: 3-4 frases)]
-:::
+El valor numérico absoluto de la energía total reportado en hartrees depende del convenio de referencia adoptado ($V = 0$ a separación infinita) y carece de un significado experimental directo. Por este motivo, no resulta válido comparar valores absolutos obtenidos con métodos mecanocuánticos o conjuntos de base diferentes. La magnitud observable relevante en química es siempre la diferencia relativa de energía ($\Delta E$) entre dos estados o dos disposiciones geométricas del mismo sistema calculadas con idéntico nivel de teoría. En las sesiones del curso, todos los análisis termodinámicos, alturas de barrera o curvas de potencial se expresan sistemáticamente como incrementos $\Delta E$ calculados respecto a una estructura de referencia.
 
 ---
 
