@@ -40,9 +40,7 @@ Los mínimos de esta hipersuperficie corresponden a geometrías moleculares de e
 
 ### Singlete y triplete: por qué importa el espín
 
-:::{note}
-[TEXTO HUMANO: Contraste mecanocuántico entre estados de espín en H₂: estado singlete con espines antiparalelos (multiplicidad 1) que genera densidad electrónica en la región internuclear permitiendo el enlace covalente, frente al estado triplete con espines paralelos (multiplicidad 3) donde el principio de exclusión de Pauli impide la acumulación de carga internuclear originando una curva puramente repulsiva. Longitud: 4-5 frases.]
-:::
+En el estado singlete los dos electrones presentan espines antiparalelos asociados a una multiplicidad de espín unitaria, lo que les permite compartir la misma región orbital y favorecer la acumulación de densidad electrónica en el espacio internuclear. Esta concentración de carga apantalla la repulsión mutua entre los núcleos y estabiliza termodinámicamente el enlace covalente, generando una curva de energía potencial con un pozo y un mínimo de energía bien definido a la distancia de enlace de equilibrio. Por el contrario, en el estado triplete los dos electrones poseen espines paralelos con multiplicidad 3, por lo que el principio de exclusión de Pauli prohíbe que ambas partículas ocupen simultáneamente la región interatómica. Como consecuencia directa, la curva de energía potencial del triplete resulta estrictamente repulsiva en todo el rango internuclear y carece de mínimo, impidiendo la formación de una molécula químicamente ligada.
 
 :::{admonition} Nota
 :class: note
@@ -51,9 +49,7 @@ En el estado singlete ($^1\Sigma_g^+$), la función de onda espacial es simétri
 
 ### Ángulo diedro y análisis conformacional
 
-:::{note}
-[TEXTO HUMANO: Definición geométrica del ángulo diedro de torsión entre cuatro átomos enlazados (X–C–C–X). Relación directa con las proyecciones de Newman y clasificación de confórmeros: anti (mínimo global a 180°), gauche (mínimos locales a 60° y 300°) y conformaciones eclipsadas correspondientes a las crestas de la barrera de rotación. Longitud: 4-5 frases.]
-:::
+El ángulo diedro de torsión cuantifica la rotación geométrica relativa entre dos grupos moleculares unidos por un enlace simple central y se define formalmente como el ángulo diedro delimitado por los planos atómicos X-C-C y C-C-X en un rango angular de 0° a 360°. En la representación de proyecciones de Newman, las conformaciones moleculares se ordenan sistemáticamente según este valor angular. La conformación anti (180°) sitúa los sustituyentes voluminosos en posiciones espaciales opuestas, reduciendo las interacciones estéricas y electrostáticas para configurar el mínimo de energía global. En cambio, los confórmeros gauche (60° y 300°) definen mínimos locales de energía caracterizados por una mayor proximidad repulsiva entre sustituyentes. Las crestas y máximos del perfil de torsión corresponden a las conformaciones eclipsadas, en las que el solapamiento angular entre enlaces genera la barrera de energía requerida para la rotación interna molecular.
 
 :::{admonition} Captura de pantalla
 :class: captura

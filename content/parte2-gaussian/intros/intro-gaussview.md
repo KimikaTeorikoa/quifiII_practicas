@@ -8,11 +8,7 @@ La química computacional moderna requiere traducir geometrías moleculares trid
 
 ## Abrir GaussView
 
-[CONFIRMAR CON PROFESOR: ruta/icono para abrir GaussView en el aula]
-
-:::{note}
-[TEXTO HUMANO: Instrucciones para abrir GaussView en el aula. (Longitud: 1-2 frases)]
-:::
+GaussView se abre desde el escritorio del ordenador del aula o desde el menú de aplicaciones del sistema. [CONFIRMAR CON PROFESOR: ruta o icono exacto en el equipo del aula]
 
 :::{admonition} Captura de pantalla
 :class: captura
