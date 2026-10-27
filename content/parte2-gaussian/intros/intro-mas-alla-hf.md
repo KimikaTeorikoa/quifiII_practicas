@@ -8,9 +8,7 @@ El tratamiento de campo medio en el método de Hartree-Fock ignora que los elect
 
 ## Más allá del campo medio: añadir configuraciones
 
-:::{note}
-[TEXTO HUMANO: La limitación de HF es que usa una sola configuración electrónica. CISD (Configuration Interaction Singles and Doubles) mejora esto mezclando la configuración del estado fundamental con configuraciones excitadas. Más preciso, pero mucho más costoso computacionalmente. (Longitud: 3-4 frases)]
-:::
+La aproximación de Hartree-Fock describe el estado electrónico del sistema mediante una única configuración, es decir, mediante una asignación estricta de electrones a orbitales moleculares ocupados. Los métodos de interacción de configuraciones superan esta limitación incorporando en la función de onda multielectrónica combinaciones lineales de configuraciones donde uno o más electrones se promocionan hacia orbitales virtuales desocupados. En particular, el método CISD evalúa todas las excitaciones simples y dobles generadas a partir del determinante de referencia del estado fundamental. Este tratamiento recupera una fracción sustancial de la correlación electrónica, aunque a expensas de un incremento notable en el coste computacional y de memoria frente a Hartree-Fock.
 
 ---
 

@@ -8,9 +8,7 @@ La ecuación de Schrödinger no admite una resolución matemática exacta para �
 
 ## El problema: electrones que se repelen
 
-:::{note}
-[TEXTO HUMANO: Para He: 2 electrones, 1 núcleo. El problema es que cada electrón "siente" al otro, y ese término de repulsión acopla las ecuaciones, no se puede resolver un electrón sin saber dónde está el otro. Aquí está la dificultad central. (Longitud: 4-5 frases)]
-:::
+El átomo de helio contiene dos electrones y un núcleo atómico. La energía cinética de cada electrón y su atracción electrostática hacia el núcleo se describen de forma exacta mediante operadores monoelectrónicos, pero la repulsión coulómbica entre los dos electrones acopla sus ecuaciones de movimiento. La determinación de la distribución espacial de un electrón exige conocer simultáneamente la del otro y viceversa, de modo que no existe una solución matemática analítica exacta para este sistema. Esta dificultad intrínseca se extiende a cualquier átomo o molécula con más de un electrón y constituye el desafío central de la estructura electrónica cuántica.
 
 :::{admonition} Nota
 :class: note

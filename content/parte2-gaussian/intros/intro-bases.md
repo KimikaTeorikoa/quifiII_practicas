@@ -8,9 +8,7 @@ Los orbitales atómicos y moleculares de sistemas con múltiples electrones pres
 
 ## La idea central: aproximar orbitales con funciones conocidas
 
-:::{note} [revisar, de nuevo, cuidado con las analogias]
-[TEXTO HUMANO: Analogía: igual que aproximamos una curva cualquiera con polinomios, aproximamos un orbital con una suma de funciones gaussianas. Cuantas más funciones, mejor la aproximación. Figura: curva exacta vs aproximación con pocas funciones vs aproximación con más funciones. (Longitud: 4-5 frases)]
-:::
+En los métodos computacionales de estructura electrónica, los orbitales moleculares no se resuelven como funciones continuas arbitrarias, sino como combinaciones lineales de un conjunto finito de funciones predefinidas denominadas funciones de base. Las funciones de base de tipo gaussiano constituyen el estándar habitual en programas como Gaussian debido a que permiten evaluar con gran rapidez matemática las integrales analíticas de atracción y repulsión. Al incorporar un mayor número de funciones primitivas al conjunto, se incrementa la flexibilidad numérica para reproducir con fidelidad la distribución espacial de la densidad electrónica. Por tanto, la selección del conjunto de base establece un compromiso directo entre la exactitud física del cálculo y el tiempo de cómputo requerido.
 
 :::{admonition} Figura
 :class: captura

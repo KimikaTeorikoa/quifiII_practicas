@@ -8,9 +8,7 @@ La determinación de cualquier propiedad físico-química en una molécula parte
 
 ## La aproximación de Born-Oppenheimer
 
-:::{note}
-[TEXTO HUMANO: Idea central: los núcleos son mucho más pesados que los electrones, se mueven mucho más despacio. En la práctica: tratamos los núcleos como fijos y calculamos cómo se distribuyen los electrones alrededor de ellos. Sin esta aproximación el problema sería irresoluble. (Longitud: 4-5 frases)]
-:::
+La masa de un protón es aproximadamente 1836 veces superior a la masa del electrón, por lo que los núcleos atómicos se desplazan en una escala temporal varios órdenes de magnitud más lenta que los electrones. La aproximación de Born-Oppenheimer aprovecha esta disparidad dinámica tratando a los núcleos como centros de carga fijos en el espacio mientras se resuelve el movimiento electrónico. De este modo, la energía electrónica total se obtiene como un valor que depende de manera paramétrica de las coordenadas nucleares fijadas. Sin este desacoplamiento entre las variables nucleares y electrónicas, el problema mecanocuántico de muchos cuerpos resultaría computacionalmente inabordable para sistemas moleculares.
 
 :::{admonition} Nota
 :class: note

@@ -25,10 +25,13 @@ En esta práctica empleamos GaussView como interfaz gráfica para la construcci�
 
 ### ¿Qué es una superficie de energía potencial?
 
-:::{note}
-[TEXTO HUMANO: Concepto de paisaje energético en el marco de la aproximación de Born-Oppenheimer. Significado físico de mínimos de energía (geometrías estables), estados de transición (barreras de energía) y asíntotas de disociación a distancias internucleares infinitas. Longitud: 4-5 frases.]
-[ECUACIÓN: energía electrónica como función paramétrica de las coordenadas nucleares, $E = E(\mathbf{R})$]
-:::
+En el marco de la aproximación de Born-Oppenheimer, la energía electrónica constituye una función continua de las coordenadas espaciales de los núcleos, lo que define formalmente la superficie de energía potencial (SEP) del sistema:
+
+$$
+E = E(\mathbf{R})
+$$
+
+Los mínimos de esta hipersuperficie corresponden a geometrías moleculares de equilibrio estables, en las que el gradiente de energía sobre cada núcleo es nulo y cualquier deformación espacial incrementa la energía potencial. Los puntos de silla de primer orden conectan pares de mínimos contiguos y definen los estados de transición de las transformaciones químicas y los procesos conformacionales. A distancias internucleares grandes la energía potencial converge hacia el límite asintótico de disociación, región en la que los fragmentos atómicos o moleculares dejan de interaccionar entre sí.
 
 :::{admonition} Captura de pantalla
 :class: captura

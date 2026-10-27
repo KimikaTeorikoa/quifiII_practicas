@@ -8,9 +8,7 @@ Los cálculos de estructura electrónica proporcionan una amplia variedad de val
 
 ## La energía total: qué es y por qué es negativa
 
-:::{note}
-[TEXTO HUMANO: Qué incluye la energía electrónica total: energía cinética de los electrones, atracción núcleo-electrón, repulsión electrón-electrón, repulsión nuclear. Por qué siempre es negativa para sistemas estables. Dónde aparece en el log: línea `SCF Done` o `E(RHF)=`. (Longitud: 4-5 frases)]
-:::
+La energía total reportada por Gaussian agrupa cuatro contribuciones físicas: la energía cinética de los electrones, la atracción electrostática entre los electrones y los núcleos, la repulsión coulómbica entre pares de electrones y la repulsión electrostática entre los núcleos. En sistemas atómicos y moleculares estables, la magnitud de las interacciones atractivas supera a la de los términos repulsivos, por lo que la energía electrónica total adopta valores negativos respecto al estado de partículas aisladas en reposo. Este valor global se notifica en el archivo de salida bajo la línea `SCF Done` en cálculos Hartree-Fock y DFT, o en el encabezado correspondiente al método correlacionado ejecutado. En todos los casos, la magnitud se expresa numéricamente en unidades atómicas de energía (hartrees).
 
 :::{admonition} Nota
 :class: note
