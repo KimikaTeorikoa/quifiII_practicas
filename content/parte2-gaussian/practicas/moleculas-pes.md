@@ -33,11 +33,6 @@ En esta práctica empleamos GaussView como interfaz gráfica para la construcci�
 [ECUACIÓN: energía electrónica como función paramétrica de las coordenadas nucleares, $E = E(\mathbf{R})$]
 :::
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Imagina una pista montañosa con valles profundos, puertos estrechos y laderas escarpadas. La superficie de energía potencial es ese mismo mapa topográfico, donde la altitud representa la energía del sistema según cambian las posiciones relativas de los núcleos. Cuando optimizas una estructura en GaussView, el algoritmo busca descender por la ladera hasta detenerse en el fondo de un valle. El valor más bajo de esa depresión corresponde a la distancia internuclear estable que medirás en tu tabla de resultados.
-:::
-
 :::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: curva esquemática unidimensional de energía potencial con mínimo, barrera y asíntota de disociación anotados]
@@ -49,20 +44,15 @@ Imagina una pista montañosa con valles profundos, puertos estrechos y laderas e
 [TEXTO HUMANO: Contraste mecanocuántico entre estados de espín en H₂: estado singlete con espines antiparalelos (multiplicidad 1) que genera densidad electrónica en la región internuclear permitiendo el enlace covalente, frente al estado triplete con espines paralelos (multiplicidad 3) donde el principio de exclusión de Pauli impide la acumulación de carga internuclear originando una curva puramente repulsiva. Longitud: 4-5 frases.]
 :::
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Es como juntar dos imanes potentes: si enfrentas polos opuestos se atraen firmemente, pero si encaras polos idénticos notas una resistencia insalvable que los separa. En el singlete de $\text{H}_2$, los espines opuestos permiten concentrar carga negativa entre ambos núcleos y formar un enlace covalente, mientras que en el triplete los espines paralelos obligan a las cargas a esquivarse. Al examinar la ventana **Results → Scan**, verás que el singlete dibuja un pozo estable con un mínimo claro. En cambio, la curva del triplete desciende de forma continua sin formar ningún pozo de enlace.
+:::{admonition} Nota
+:class: note
+En el estado singlete ($^1\Sigma_g^+$), la función de onda espacial es simétrica respecto a la permutación electrónica, lo que permite acumular densidad de carga entre los núcleos y estabilizar el enlace covalente a distancias cortas. En el estado triplete ($^3\Sigma_u^+$), el principio de Pauli impone una función de onda espacial antisimétrica con un nodo internuclear donde la densidad electrónica se anula. Al carecer de apantallamiento electrónico entre protones, las fuerzas repulsivas nucleares dominan a cualquier distancia, produciendo una curva potencial monótonamente decreciente hacia la disociación.
 :::
 
 ### Ángulo diedro y análisis conformacional
 
 :::{note}
 [TEXTO HUMANO: Definición geométrica del ángulo diedro de torsión entre cuatro átomos enlazados (X–C–C–X). Relación directa con las proyecciones de Newman y clasificación de confórmeros: anti (mínimo global a 180°), gauche (mínimos locales a 60° y 300°) y conformaciones eclipsadas correspondientes a las crestas de la barrera de rotación. Longitud: 4-5 frases.]
-:::
-
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Piensa en dos hélices giratorias montadas sobre el mismo eje, una detrás de la otra. Cuando las palas de ambos extremos coinciden alineadas chocan entre sí y aumentan la resistencia estérica, mientras que si quedan desfasadas a lados opuestos disponen del máximo espacio libre. Esa rotación alrededor del enlace simple genera crestas de alta energía en las conformaciones eclipsadas y valles estables en las alternadas. En la gráfica del barrido diedro comprobarás que la conformación anti a 180 grados constituye el mínimo global absoluto de energía.
 :::
 
 :::{admonition} Captura de pantalla

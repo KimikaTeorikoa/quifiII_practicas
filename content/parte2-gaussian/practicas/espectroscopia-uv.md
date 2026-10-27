@@ -45,11 +45,6 @@ Párrafo muy corto. Referencia al uso combinado de GaussView para la parametriza
 
 Párrafo medio + figura. Promoción de electrones de valencia desde orbitales ocupados a orbitales virtuales desocupados. Distinción entre la transición $n \rightarrow \pi^*$ (electrón no enlazante del oxígeno al orbital antienlazante $\pi^*$ del carbonilo, prohibida por simetría, baja fuerza de oscilador, $\lambda \approx 280-300\text{ nm}$) y la transición $\pi \rightarrow \pi^*$ (orbital enlazante $\pi$ al antienlazante $\pi^*$, permitida, alta fuerza de oscilador, $\lambda < 250\text{ nm}$).
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Imagina una persona saltando entre dos peldaños fijos de una escalera: solo logrará subir al peldaño superior si recibe un impulso con la altura exacta entre ambos niveles, ni más ni menos. En la molécula, un fotón ultravioleta aporta el paquete de energía justo para promover un electrón desde un nivel ocupado hasta un orbital desocupado de mayor energía. Si la separación energética entre esos dos orbitales es grande, necesitarás fotones de menor longitud de onda para conseguir el salto. En tu espectro simulado de GaussView, esa brecha determina la posición exacta de la banda de absorción $\lambda_{\text{max}}$.
-:::
-
 ```{admonition} 📸 Captura de pantalla
 :class: captura
 [CAPTURA: diagrama de niveles de orbitales moleculares del grupo carbonilo con flechas de transición n a pi* y pi a pi*]
@@ -77,9 +72,9 @@ Ejemplo metodológico de referencia con autovalores del formaldehído en acetoni
 
 Párrafo medio. Descripción del formalismo de DFT dependiente del tiempo para evaluar respuestas a perturbaciones electromagnéticas dinámicas. Concepto de fuerza del oscilador ($f$) como magnitud proporcional a la probabilidad de transición y a la intensidad de la banda observada.
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Es como lanzar dardos a una diana: aunque tengas energía suficiente para tirar, la probabilidad de acertar dependerá del tamaño efectivo de la zona de impacto. La fuerza del oscilador $f$ mide esa probabilidad intrínseca de absorción según cuánto solapan en el espacio los orbitales de partida y de llegada. Por eso la transición $n \rightarrow \pi^*$ de la acetona tiene un valor de $f$ pequeñísimo comparado con una transición $\pi \rightarrow \pi^*$. En la gráfica de **Results → UV-Vis** comprobarás que la altura de la banda refleja con fidelidad ese número diminuto.
+:::{admonition} Nota
+:class: note
+La fuerza del oscilador ($f$) es una magnitud adimensional proporcional al cuadrado del momento dipolar de transición electromagnético, indicando la probabilidad intrínseca de absorción y la intensidad de la banda observada. En la transición $n \rightarrow \pi^*$, el orbital no enlazante del oxígeno reside en el plano molecular mientras que el orbital $\pi^*$ es perpendicular a dicho plano; esta ortogonalidad espacial provoca que la integral de transición sea casi nula, dando un valor de $f$ muy reducido. Por el contrario, transiciones con fuerte solapamiento espacial entre orbitales de simetría compatible presentan valores de $f$ órdenes de magnitud mayores.
 :::
 
 ### Efecto del disolvente: solvatocromismo
@@ -94,9 +89,9 @@ Valores experimentales de referencia para acetona:
 | Agua (muy polar) | 264 |
 | Variación ($\Delta \lambda$) | −15 nm (desplazamiento al azul) |
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Piensa en alguien cómodo y bien arropado bajo una manta pesada en invierno: costará mucho más esfuerzo levantarlo de la cama que si estuviera listo para salir por la puerta. En agua, las moléculas del disolvente rodean fuertemente al par libre de oxígeno mediante enlaces de hidrógeno en el estado fundamental, reteniéndolo con firmeza en el fondo del pozo energético. Como el estado excitado no retiene esa envoltura protectora con la misma eficacia, la energía necesaria para arrancar la transición aumenta de golpe. Al contrastar tus cálculos con agua frente al vacío, comprobarás que la banda se desplaza hacia longitudes de onda más cortas.
+:::{admonition} Nota
+:class: note
+El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \rightarrow \pi^*$ deriva de la diferente polaridad de los estados electrónicos involucrados. En el estado fundamental ($S_0$), el grupo carbonilo posee un momento dipolar elevado y los pares electrónicos del oxígeno establecen enlaces de hidrógeno eficaces con disolventes polares próticos como el agua. Durante la transición electrónica, la transferencia de densidad de carga hacia el sistema $\pi^*$ disminuye el momento dipolar en el estado excitado ($S_1$), reduciendo la estabilización por solvatación y aumentando la energía necesaria para la excitación vertical.
 :::
 
 ---

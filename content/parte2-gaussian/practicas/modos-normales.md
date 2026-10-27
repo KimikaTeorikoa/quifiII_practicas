@@ -47,19 +47,14 @@ Párrafo medio. Aproximación armónica de la superficie de energía potencial e
 
 $$\tilde{\nu} = \frac{1}{2\pi c}\sqrt{\frac{k}{\mu}}$$
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Imagina dos bolas de billar pesadas unidas por un muelle de acero muy rígido. Si estiras el conjunto y lo sueltas oscilará a un ritmo muy rápido, pero si sustituyes el muelle por una goma blanda o aumentas el peso de las bolas el vaivén se volverá visiblemente más lento. En tus moléculas ocurre lo mismo: enlaces fuertes y átomos ligeros producen frecuencias elevadas en el infrarrojo. Al comparar tus cálculos de CO y $\text{CO}_2$, comprobarás que la constante de fuerza refleja numéricamente esa rigidez del enlace.
+:::{admonition} Nota
+:class: note
+Gaussian calcula las constantes de fuerza mediante las segundas derivadas de la energía potencial respecto a los desplazamientos nucleares (matriz hessiana) en la geometría optimizada. Esta aproximación trunca el desarrollo en serie de Taylor en el término cuadrático, asumiendo un pozo de potencial armónico perfecto. Como los enlaces moleculares reales presentan anarmonicidad intrínseca a mayores distancias internucleares, las frecuencias calculadas suelen sobreestimar de manera sistemática los valores experimentales obtenidos por espectroscopía infrarroja.
 :::
 
 ### Modos normales y grados de libertad vibracionales
 
 Párrafo medio + tabla. Definición de modo normal como coordenada colectiva en la que todos los núcleos oscilan en fase a una única frecuencia característica. Deducción del número de grados de libertad vibracionales independientes: $3N-5$ para moléculas lineales y $3N-6$ para no lineales.
-
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Es como escuchar un acorde musical de piano: tus oídos perciben un sonido conjunto complejo, pero ese sonido se descompone exactamente en notas puras individuales con frecuencias fijas. Un modo normal es una de esas notas elementales, donde todos los núcleos de la molécula oscilan al unísono y con la misma fase temporal. Cuando abras la ventana **Results → Vibrations** en GaussView y selecciones un modo específico, verás a los átomos moverse en perfecta sincronía. Cada pico de absorción en el espectro experimental corresponde a la activación de uno de esos patrones independientes.
-:::
 
 Tabla de grados de libertad vibracionales:
 
@@ -72,9 +67,9 @@ Tabla de grados de libertad vibracionales:
 
 Párrafo medio. Condición de absorción de radiación infrarroja: variación neta del momento dipolar molecular a lo largo de la coordenada normal ($\partial \vec{\mu}/\partial Q \neq 0$). Explicación de por qué el estiramiento simétrico en CO₂ resulta inactivo en IR mientras que el asimétrico y las flexiones son activos.
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Piensa en dos personas de la misma fuerza tirando a la vez de los extremos opuestos de una cuerda: por mucho que tiren, el centro de la cuerda no se moverá ni un milímetro de su sitio. En el estiramiento simétrico del $\text{CO}_2$, los dos átomos de oxígeno se alejan del carbono al mismo tiempo, de modo que las dos cargas opuestas se compensan y el dipolo molecular total permanece en cero durante toda la vibración. Como la radiación infrarroja necesita una oscilación neta del momento dipolar para interactuar con la molécula, ese modo resulta completamente ciego a la luz. En tu archivo `.log` verificarás que el valor de `IR Inten` para este movimiento es estrictamente 0.0000.
+:::{admonition} Nota
+:class: note
+La absorción de radiación infrarroja requiere que el movimiento vibracional altere el momento dipolar molecular ($\partial \vec{\mu}/\partial Q \neq 0$). En el estiramiento simétrico del $\text{CO}_2$, la simetría de inversión se conserva de forma continua y la variación neta del dipolo es estrictamente nula, por lo que el modo no acopla con el campo electromagnético incidente. En el archivo `.log`, esta inactividad se manifiesta con un valor de intensidad infrarroja (`IR Inten`) exactamente igual a 0.0000.
 :::
 
 ### Requisito operativo: optimización previa de geometría

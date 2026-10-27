@@ -14,9 +14,9 @@
 [TEXTO HUMANO: Idea central: los núcleos son mucho más pesados que los electrones, se mueven mucho más despacio. En la práctica: tratamos los núcleos como fijos y calculamos cómo se distribuyen los electrones alrededor de ellos. Sin esta aproximación el problema sería irresoluble. (Longitud: 4-5 frases)]
 :::
 
-:::{admonition} Intuición
-:class: intuicion [revisar: no me convence]
-Piensa en una fotografía nocturna de larga exposición en una plaza: los edificios inmóviles aparecen con bordes perfectamente nítidos, mientras que los peatones en movimiento forman una estela difusa continua. La aproximación de Born-Oppenheimer aprovecha que los núcleos son miles de veces más pesados que los electrones para tratarlos como postes fijos mientras la nube electrónica se ajusta de inmediato a su alrededor. Esta división te permite calcular la energía de una molécula congelando sus coordenadas atómicas en una geometría concreta. En GaussView comprobarás que cada punto de una superficie energética corresponde a una foto estática de los núcleos.
+:::{admonition} Nota
+:class: note
+La masa de los núcleos atómicos supera en más de tres órdenes de magnitud a la masa del electrón, por lo que las velocidades nucleares son muy inferiores a las electrónicas. Esta diferencia de escalas temporales permite desacoplar los movimientos y resolver la ecuación de Schrödinger electrónica considerando a los núcleos en posiciones fijas. La energía electrónica resultante para cada disposición nuclear genera la superficie de energía potencial sobre la cual se estudia posteriormente el movimiento de los núcleos.
 :::
 
 ---
@@ -46,11 +46,6 @@ Piensa en una fotografía nocturna de larga exposición en una plaza: los edific
 
 :::{note}
 [TEXTO HUMANO: Gaussian no conoce la geometría real, la busca. Parte de la geometría que dibujó el alumno, calcula el gradiente (la pendiente de la energía respecto a cada coordenada), y mueve los átomos cuesta abajo. Repite hasta que el gradiente es prácticamente cero. (Longitud: 4-5 frases)]
-:::
-
-:::{admonition} Intuición
-:class: intuicion
-Imagina soltar una pelota de tenis en la parte alta de un cuenco cóncavo: la gravedad la empuja cuesta abajo por la pendiente hasta que se detiene quieta en el fondo. Un cálculo de optimización de geometría reproduce ese mismo descenso guiándose por el gradiente de energía, moviendo los átomos paso a paso en la dirección donde las fuerzas se reducen. Cuando abras el archivo de salida con **Results → Optimization**, podrás reproducir la animación de ese trayecto. Verás cómo la molécula ajusta sus ángulos y distancias hasta que las fuerzas sobre cada átomo se anulan por completo.
 :::
 
 :::{admonition} Figura

@@ -14,9 +14,9 @@
 [TEXTO HUMANO: Qué incluye la energía electrónica total: energía cinética de los electrones, atracción núcleo-electrón, repulsión electrón-electrón, repulsión nuclear. Por qué siempre es negativa para sistemas estables. Dónde aparece en el log: línea `SCF Done` o `E(RHF)=`. (Longitud: 4-5 frases)]
 :::
 
-:::{admonition} Intuición
-:class: intuicion  [revisar de nuevo]
-Imagina una pelota que rueda hacia el interior de un pozo seco: si tomas el nivel del suelo como altura cero, la pelota tendrá una cota negativa mientras permanezca atrapada en el fondo. En química cuántica el cero de referencia corresponde a núcleos y electrones completamente separados e inmóviles a distancia infinita, de modo que cualquier enlace o atracción los sitúa por debajo de ese umbral. Por esta razón, la energía de `SCF Done` en tu archivo `.log` siempre llevará un signo negativo delante. Cuanto mayor sea su valor absoluto, más hondo será el pozo energético y más estable resultará la molécula que acabas de calcular.
+:::{admonition} Nota
+:class: note
+El convenio mecanocuántico fija el cero de energía en el estado de partículas aisladas en reposo y a distancia infinita ($V = 0$ cuando $r \rightarrow \infty$). En un átomo o molécula estable, la atracción electrostática entre los electrones y los núcleos supera a las repulsiones mutuas, situando la energía total en valores negativos. Un valor de `SCF Done` con mayor magnitud negativa indica una estabilización termodinámica más pronunciada respecto a los componentes infinitamente separados.
 :::
 
 ---

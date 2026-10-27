@@ -44,18 +44,13 @@ Párrafo muy corto. Referencia al uso combinado de GaussView como entorno gráfi
 
 Párrafo corto. Explicación cualitativa del origen del signo negativo en sistemas ligados frente a partículas en reposo separadas en el infinito. Interpretación del pozo de potencial atractivo núcleo-electrón y comprobación de coherencia física en la salida del cálculo.
 
-:::{admonition} 💡 Intuición física 
-:class: intuicion
-Piensa en una canica atrapada en el fondo de un cuenco hondo: necesitas empujarla y gastar energía para sacarla a la mesa, donde su energía relativa sería cero. En un átomo estable ocurre lo mismo, porque la atracción del núcleo crea una trampa energética que mantiene a los electrones confinados en un estado ligado. Por eso verás que el valor de `SCF Done` en tu archivo `.log` aparece precedido de un signo menos. Cuanto más negativo sea ese número, más fuertemente retenidos estarán los electrones y más estable será el átomo.
-:::
-
 ### El HOMO y el LUMO
 
 Párrafo corto + figura. Definición de orbitales frontera: orbital ocupado de mayor energía (HOMO) y primer orbital desocupado (LUMO). Relación entre el nivel energético del electrón más externo y la energía necesaria para su remoción.
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Imagina una estantería vertical donde vas colocando libros desde la balda inferior hasta que llenas las baldas intermedias. Si alguien quiere llevarse un libro con el menor esfuerzo posible, tirará del que descansa en la balda más alta alcanzada, que equivale exactamente a tu orbital HOMO. En tu cálculo, ese autovalor HOMO es el último número que aparece en la línea `Alpha occ. eigenvalues`. Ese nivel energético determina directamente la energía mínima necesaria para arrancar el primer electrón del átomo.
+:::{admonition} Nota
+:class: note
+Los orbitales moleculares se ordenan por energía creciente según el principio de Aufbau. El orbital ocupado de mayor energía (HOMO) contiene los electrones de valencia más lábiles del átomo y determina su reactividad nucleófila o potencial de ionización, mientras que el primer orbital desocupado (LUMO) define la capacidad aceptora electrónica. En la salida de Gaussian con `pop=full`, la energía del HOMO corresponde al último valor tabulado bajo `Alpha occ. eigenvalues`.
 :::
 
 ```{admonition} 📸 Captura de pantalla
@@ -71,19 +66,14 @@ $$\text{IE}_{\Delta E} = E(A^+) - E(A)$$
 
 $$\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}$$
 
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Es como hacer una foto de grupo en un autobús lleno y asumir que, si una persona se baja de golpe, nadie cambiará de asiento para ponerse más cómodo. El teorema de Koopmans congela la distribución espacial del resto de partículas, olvidando que al perder una carga negativa las demás se reacomodan y relajan su energía. Por esta razón, comprobarás que el valor de $\text{IE}_{\text{Koopmans}}$ no coincide de forma exacta con la diferencia directa $\text{IE}_{\Delta E}$. Aunque ambas aproximaciones difieren ligeramente, los dos números siguen la misma tendencia ascendente a lo largo de la tabla periódica.
+:::{admonition} Nota
+:class: note
+El teorema de Koopmans adopta la aproximación de orbitales congelados, asumiendo que los orbitales del catión $A^+$ son idénticos a los del átomo neutro $A$. En un proceso físico de ionización, la pérdida de un electrón reduce la repulsión interelectrónica global y provoca la contracción de la nube electrónica restante hacia el núcleo (relajación orbital). Como la aproximación de Koopmans ignora tanto esta relajación estabilizadora como las diferencias de energía de correlación, $-\varepsilon_{\text{HOMO}}$ discrepa ligeramente del valor calculado por diferencia autoconsistente $\text{IE}_{\Delta E}$.
 :::
 
 ### La multiplicidad de espín
 
 Párrafo corto + tabla. Regla $2S+1$ para la multiplicidad a partir de electrones desapareados. Importancia de la asignación exacta en capas abiertas para evitar estados de espín erróneos o fallos de convergencia SCF.
-
-:::{admonition} 💡 Intuición física
-:class: intuicion
-Piensa en los asientos dobles de un tren de cercanías: los pasajeros prefieren sentarse solos en filas libres antes de compartir asiento con un desconocido. La multiplicidad refleja ese ordenamiento natural de la regla de Hund, distinguiendo si quedan flechas de espín desapareadas en orbitales independientes o si viajan forzosamente en parejas opuestas. Si calculas el átomo de carbono con multiplicidad 1 en lugar de 3, obligarás a dos electrones a ocupar el mismo espacio innecesariamente. En tu archivo `.log` verás de inmediato que esa configuración forzada dispara la energía total hacia valores mucho menos estables.
-:::
 
 :::{warning}
 Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF.

@@ -14,9 +14,9 @@
 [TEXTO HUMANO: Para He: 2 electrones, 1 núcleo. El problema es que cada electrón "siente" al otro, y ese término de repulsión acopla las ecuaciones, no se puede resolver un electrón sin saber dónde está el otro. Aquí está la dificultad central. (Longitud: 4-5 frases)]
 :::
 
-:::{admonition} Intuición
-:class: intuicion [revisar: no quiero metaforas o analogias tan tontas. no corresponden al texto escrito, sino a la parte hablada. el texto debe ser profesional y no infantilizador. son estudiantes y estan iniciando pero no significa tratarles de tondos]
-Imagina dos personas en una habitación pequeña que intentan no cruzarse la mirada ni tropezar: ninguna puede dar un paso sin mirar de reojo dónde se encuentra la otra. En un sistema con varios electrones sucede lo mismo, porque la repulsión mutua acopla sus movimientos y te impide resolver la ecuación de uno sin conocer la posición exacta del resto. Esa interdependencia instantánea rompe cualquier intento de solución matemática exacta para átomos más pesados que el hidrógeno. Por ese motivo, cuando ejecutes Gaussian verás que el programa recurre obligatoriamente a métodos numéricos aproximados.
+:::{admonition} Nota
+:class: note
+El término de repulsión interelectrónica $1/r_{12}$ en el operador hamiltoniano acopla simultáneamente las coordenadas espaciales de ambos electrones. Esta dependencia mutua impide la separación de variables y bloquea la obtención de una solución analítica exacta para sistemas con dos o más electrones. En consecuencia, el cálculo de la estructura electrónica requiere aproximar este potencial de interacción mediante métodos numéricos iterativos.
 :::
 
 ---
@@ -27,9 +27,9 @@ Imagina dos personas en una habitación pequeña que intentan no cruzarse la mir
 [TEXTO HUMANO: Solución aproximada: cada electrón no ve al otro electrón individualmente, sino un campo medio promediado. Así las ecuaciones se desacoplan y se pueden resolver una a una. Precio: es una aproximación, ignora la correlación electrónica instantánea. (Longitud: 4-5 frases)]
 :::
 
-:::{admonition} Intuición
-:class: intuicion [reviasr: lo mismo, sin analogias tan tontas. mejores explicaciones]
-Es como planificar una ruta en coche guiándote por el mapa de tráfico de tu aplicación móvil: no sigues la posición de cada vehículo individual, sino la densidad media de la circulación en cada avenida. Hartree-Fock aplica esta misma simplificación al sustituir la posición instantánea de los electrones por una nube de carga continua y promediada en el espacio. Gracias a esta aproximación las ecuaciones se desacoplan y Gaussian puede calcular los orbitales uno a uno de forma rápida. La contrapartida visible en tus resultados es que la energía total de Hartree-Fock siempre quedará ligeramente por encima de la energía real exacta.
+:::{admonition} Nota
+:class: note
+La aproximación de campo medio sustituye la interacción electrostática instantánea entre electrones puntuales por el potencial promediado de la nube electrónica restante. Al desacoplar las coordenadas de cada partícula, las ecuaciones de Hartree-Fock se resuelven de forma independiente para cada orbital molecular. Al ignorar la correlación instantánea entre electrones, la energía total calculada constituye siempre una cota superior a la energía no relativista exacta, de acuerdo con el teorema variacional.
 :::
 
 ---

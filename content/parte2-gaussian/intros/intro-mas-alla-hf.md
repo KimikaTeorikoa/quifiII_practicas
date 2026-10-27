@@ -22,9 +22,9 @@
 [TEXTO HUMANO: DFT no trabaja con la función de onda sino con la densidad electrónica, una función de 3 variables en lugar de 3N. Idea central: la energía del sistema queda determinada por la densidad. El funcional de intercambio-correlación recoge todo lo que HF ignora. B3LYP es el funcional más usado en química orgánica: buen equilibrio entre precisión y coste. (Longitud: 4-5 frases)]
 :::
 
-:::{admonition} Intuición
-:class: intuicion
-Piensa en un dron sobrevolando un concierto multitudinario: para saber dónde se acumula la fiesta no necesita registrar el nombre de cada asistente, sino medir cuánta gente hay reunida por metro cuadrado. La teoría del funcional de la densidad (DFT) cambia el enfoque tradicional y calcula la energía molecular completa a partir de la densidad electrónica total en cada punto del espacio tridimensional. Al reducir el problema de muchas variables a solo tres coordenadas espaciales, el coste computacional disminuye drásticamente sin renunciar a una gran precisión química. En tus prácticas notarás que cálculos complejos con B3LYP tardan apenas unos segundos en tu pantalla.
+:::{admonition} Nota
+:class: note
+Para un sistema polielectrónico, la función de onda mecanocuántica depende de $3N$ coordenadas espaciales, lo que encarece de forma exponencial el tratamiento de sistemas moleculares grandes. Los teoremas de Hohenberg y Kohn demuestran que la energía del estado fundamental queda determinada de manera unívoca por la densidad electrónica $\rho(\mathbf{r})$, una magnitud física observable que depende únicamente de tres variables espaciales. Esta reducción dimensional permite incorporar efectos de correlación electrónica con un coste computacional similar al de Hartree-Fock.
 :::
 
 ---
