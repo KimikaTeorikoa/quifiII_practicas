@@ -112,9 +112,7 @@ Tras completar los parámetros de configuración se inicia la ejecución del cá
 
 ## Verificar que el cálculo ha terminado bien
 
-:::{note}
-[TEXTO HUMANO: Cómo saber si terminó correctamente: buscar {{termination_ok}} en el output. Qué significa "Error termination" (no entrar en detalle, solo avisar al profesor). (Longitud: 3-4 frases)]
-:::
+Al culminar la ejecución computacional, la última línea del archivo de salida debe contener {{termination_ok}}. Si en su lugar aparece el mensaje `Error termination`, el programa no ha completado el cálculo con éxito. En tal circunstancia se debe notificar la incidencia al profesor de prácticas, puesto que los motivos del fallo pueden originarse en una geometría inicial defectuosa, una parametrización incompatible o la superación de los límites de memoria asignados.
 
 :::{danger}
 Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminado correctamente buscando la línea: {{termination_ok}}
@@ -126,17 +124,13 @@ Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminad
 
 [CONFIRMAR CON PROFESOR: cómo se llama y dónde aparece el archivo .log en el aula]
 
-:::{note}
-[TEXTO HUMANO: Dos vías: (a) en GaussView directamente para geometría y orbitales (**Results → ...** según lo que se busque), (b) abrir el archivo `.log` con el editor de texto para copiar energías a la tabla del guión. (Longitud: 4-5 frases)]
-:::
+La inspección de los resultados se realiza a través de dos procedimientos complementarios según el tipo de información requerida. Para visualizar la geometría de equilibrio final, las superficies de densidad electrónica o los orbitales moleculares, se recurre a la interfaz de GaussView mediante las opciones del menú **Results**. Por el contrario, para extraer datos cuantitativos como energías electrónicas o frecuencias vibracionales e incluirlos en el cuaderno de trabajo, resulta más directo abrir el archivo `.log` con un editor de texto convencional y localizar los epígrafes pertinentes. En el protocolo de cada práctica se especifica el término exacto de búsqueda y el formato en que deben transcribirse los valores numéricos.
 
 ---
 
 ## Guardar el trabajo
 
-:::{note}
-[TEXTO HUMANO: **File → Save**. Formato `.gjf` para el input, `.log` para los resultados. Recomendación de nombrar los archivos con criterio claro (molécula + método, p. ej. `h2o_hf_sto3g.gjf`). (Longitud: 1-2 frases)]
-:::
+Las instrucciones de cálculo y las estructuras moleculares se guardan accediendo a **File → Save** bajo la extensión `.gjf`. Conviene emplear una nomenclatura estructurada que identifique la molécula y el nivel de teoría seleccionado (por ejemplo, `h2o_b3lyp_6311g.gjf`), evitando pérdidas de datos y facilitando la organización de los cálculos generados a lo largo de la sesión.
 
 ---
 
@@ -150,9 +144,7 @@ Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminad
 :color: success
 :icon: gear
 
-:::{note}
-[TEXTO HUMANO: Cómo cambiar el color de fondo (negro → blanco, útil para capturas más limpias en el informe), tamaño de átomos, esquema de colores CPK. No es necesario para las prácticas, solo para el alumno que quiera cuidar la presentación. (Longitud: 3-4 frases)]
-:::
+La tonalidad de fondo del espacio tridimensional se modifica en la ruta **View → Display Format → Background Color**. En esta misma ventana de configuración es posible personalizar el tamaño relativo de las esferas atómicas y su esquema de colores en los apartados **Atom Size** y **Atom Colors**. Estos ajustes visuales no alteran los cálculos mecanocuánticos ni son obligatorios para el seguimiento de la asignatura, pero la selección de un fondo blanco facilita la obtención de capturas nítidas y legibles para su inserción en las memorias de prácticas.
 
 :::{admonition} Captura de pantalla
 :class: captura
