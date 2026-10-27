@@ -24,7 +24,7 @@
 
 :::{admonition} Intuición
 :class: intuicion
-[TEXTO HUMANO: analogía: en lugar de seguir a cada persona en una multitud, describes la densidad de gente en cada zona]
+Piensa en un dron sobrevolando un concierto multitudinario: para saber dónde se acumula la fiesta no necesita registrar el nombre de cada asistente, sino medir cuánta gente hay reunida por metro cuadrado. La teoría del funcional de la densidad (DFT) cambia el enfoque tradicional y calcula la energía molecular completa a partir de la densidad electrónica total en cada punto del espacio tridimensional. Al reducir el problema de muchas variables a solo tres coordenadas espaciales, el coste computacional disminuye drásticamente sin renunciar a una gran precisión química. En tus prácticas notarás que cálculos complejos con B3LYP tardan apenas unos segundos en tu pantalla.
 :::
 
 ---

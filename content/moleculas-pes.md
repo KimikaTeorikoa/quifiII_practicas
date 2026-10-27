@@ -35,7 +35,7 @@ En esta práctica empleamos GaussView como interfaz gráfica para la construcci�
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: Analogía de un relieve topográfico donde las moléculas se desplazan y reposan en los valles de menor altura energética. Longitud: 2-3 frases.]
+Imagina una pista montañosa con valles profundos, puertos estrechos y laderas escarpadas. La superficie de energía potencial es ese mismo mapa topográfico, donde la altitud representa la energía del sistema según cambian las posiciones relativas de los núcleos. Cuando optimizas una estructura en GaussView, el algoritmo busca descender por la ladera hasta detenerse en el fondo de un valle. El valor más bajo de esa depresión corresponde a la distancia internuclear estable que medirás en tu tabla de resultados.
 :::
 
 :::{admonition} Captura de pantalla
@@ -51,7 +51,7 @@ En esta práctica empleamos GaussView como interfaz gráfica para la construcci�
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: Analogía de dos imanes orientados en oposición frente a orientación en paralelo, explicando cómo la simetría de espín determina la atracción enlazante o la repulsión estérica. Longitud: 2-3 frases.]
+Es como juntar dos imanes potentes: si enfrentas polos opuestos se atraen firmemente, pero si encaras polos idénticos notas una resistencia insalvable que los separa. En el singlete de $\text{H}_2$, los espines opuestos permiten concentrar carga negativa entre ambos núcleos y formar un enlace covalente, mientras que en el triplete los espines paralelos obligan a las cargas a esquivarse. Al examinar la ventana **Results → Scan**, verás que el singlete dibuja un pozo estable con un mínimo claro. En cambio, la curva del triplete desciende de forma continua sin formar ningún pozo de enlace.
 :::
 
 ### Ángulo diedro y análisis conformacional
@@ -62,7 +62,7 @@ En esta práctica empleamos GaussView como interfaz gráfica para la construcci�
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: Analogía del giro de una hélice de dos palas enfrentada a otra, identificando los puntos de mínimo rozamiento e interferencia espacial. Longitud: 2-3 frases.]
+Piensa en dos hélices giratorias montadas sobre el mismo eje, una detrás de la otra. Cuando las palas de ambos extremos coinciden alineadas chocan entre sí y aumentan la resistencia estérica, mientras que si quedan desfasadas a lados opuestos disponen del máximo espacio libre. Esa rotación alrededor del enlace simple genera crestas de alta energía en las conformaciones eclipsadas y valles estables en las alternadas. En la gráfica del barrido diedro comprobarás que la conformación anti a 180 grados constituye el mínimo global absoluto de energía.
 :::
 
 :::{admonition} Captura de pantalla

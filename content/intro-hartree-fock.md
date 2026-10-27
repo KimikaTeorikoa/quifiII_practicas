@@ -16,7 +16,7 @@
 
 :::{admonition} Intuición
 :class: intuicion
-[TEXTO HUMANO: analogía: dos personas que se evitan en una habitación; no puedes predecir dónde está una sin saber dónde está la otra]
+Imagina dos personas en una habitación pequeña que intentan no cruzarse la mirada ni tropezar: ninguna puede dar un paso sin mirar de reojo dónde se encuentra la otra. En un sistema con varios electrones sucede lo mismo, porque la repulsión mutua acopla sus movimientos y te impide resolver la ecuación de uno sin conocer la posición exacta del resto. Esa interdependencia instantánea rompe cualquier intento de solución matemática exacta para átomos más pesados que el hidrógeno. Por ese motivo, cuando ejecutes Gaussian verás que el programa recurre obligatoriamente a métodos numéricos aproximados.
 :::
 
 ---
@@ -29,7 +29,7 @@
 
 :::{admonition} Intuición
 :class: intuicion
-[TEXTO HUMANO: analogía: en lugar de modelar cada coche en el tráfico, usas la densidad media de tráfico]
+Es como planificar una ruta en coche guiándote por el mapa de tráfico de tu aplicación móvil: no sigues la posición de cada vehículo individual, sino la densidad media de la circulación en cada avenida. Hartree-Fock aplica esta misma simplificación al sustituir la posición instantánea de los electrones por una nube de carga continua y promediada en el espacio. Gracias a esta aproximación las ecuaciones se desacoplan y Gaussian puede calcular los orbitales uno a uno de forma rápida. La contrapartida visible en tus resultados es que la energía total de Hartree-Fock siempre quedará ligeramente por encima de la energía real exacta.
 :::
 
 ---

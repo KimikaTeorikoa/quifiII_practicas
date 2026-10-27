@@ -16,7 +16,7 @@
 
 :::{admonition} Intuición
 :class: intuicion
-[TEXTO HUMANO: analogía: p.ej. fotografía de larga exposición donde los núcleos salen nítidos y los electrones borrosos]
+Piensa en una fotografía nocturna de larga exposición en una plaza: los edificios inmóviles aparecen con bordes perfectamente nítidos, mientras que los peatones en movimiento forman una estela difusa continua. La aproximación de Born-Oppenheimer aprovecha que los núcleos son miles de veces más pesados que los electrones para tratarlos como postes fijos mientras la nube electrónica se ajusta de inmediato a su alrededor. Esta división te permite calcular la energía de una molécula congelando sus coordenadas atómicas en una geometría concreta. En GaussView comprobarás que cada punto de una superficie energética corresponde a una foto estática de los núcleos.
 :::
 
 ---
@@ -50,7 +50,7 @@
 
 :::{admonition} Intuición
 :class: intuicion
-[TEXTO HUMANO: analogía: una bola rodando por un valle hasta detenerse en el punto más bajo]
+Imagina soltar una pelota de tenis en la parte alta de un cuenco cóncavo: la gravedad la empuja cuesta abajo por la pendiente hasta que se detiene quieta en el fondo. Un cálculo de optimización de geometría reproduce ese mismo descenso guiándose por el gradiente de energía, moviendo los átomos paso a paso en la dirección donde las fuerzas se reducen. Cuando abras el archivo de salida con **Results → Optimization**, podrás reproducir la animación de ese trayecto. Verás cómo la molécula ajusta sus ángulos y distancias hasta que las fuerzas sobre cada átomo se anulan por completo.
 :::
 
 :::{admonition} Figura

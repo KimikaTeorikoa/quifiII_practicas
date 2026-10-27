@@ -46,7 +46,7 @@ Párrafo corto. Explicación cualitativa del origen del signo negativo en sistem
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: analogía del pozo de potencial y estabilidad de sistemas ligados, sin fórmulas matemáticas]
+Piensa en una canica atrapada en el fondo de un cuenco hondo: necesitas empujarla y gastar energía para sacarla a la mesa, donde su energía relativa sería cero. En un átomo estable ocurre lo mismo, porque la atracción del núcleo crea una trampa energética que mantiene a los electrones confinados en un estado ligado. Por eso verás que el valor de `SCF Done` en tu archivo `.log` aparece precedido de un signo menos. Cuanto más negativo sea ese número, más fuertemente retenidos estarán los electrones y más estable será el átomo.
 :::
 
 ### El HOMO y el LUMO
@@ -55,7 +55,7 @@ Párrafo corto + figura. Definición de orbitales frontera: orbital ocupado de m
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: analogía de niveles energéticos discretos y extracción del electrón del nivel más externo]
+Imagina una estantería vertical donde vas colocando libros desde la balda inferior hasta que llenas las baldas intermedias. Si alguien quiere llevarse un libro con el menor esfuerzo posible, tirará del que descansa en la balda más alta alcanzada, que equivale exactamente a tu orbital HOMO. En tu cálculo, ese autovalor HOMO es el último número que aparece en la línea `Alpha occ. eigenvalues`. Ese nivel energético determina directamente la energía mínima necesaria para arrancar el primer electrón del átomo.
 :::
 
 ```{admonition} 📸 Captura de pantalla
@@ -73,7 +73,7 @@ $$\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}$$
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: justificación de las discrepancias entre ambas vías, aproximación de orbitales congelados y ausencia de correlación electrónica instantánea en Hartree-Fock]
+Es como hacer una foto de grupo en un autobús lleno y asumir que, si una persona se baja de golpe, nadie cambiará de asiento para ponerse más cómodo. El teorema de Koopmans congela la distribución espacial del resto de partículas, olvidando que al perder una carga negativa las demás se reacomodan y relajan su energía. Por esta razón, comprobarás que el valor de $\text{IE}_{\text{Koopmans}}$ no coincide de forma exacta con la diferencia directa $\text{IE}_{\Delta E}$. Aunque ambas aproximaciones difieren ligeramente, los dos números siguen la misma tendencia ascendente a lo largo de la tabla periódica.
 :::
 
 ### La multiplicidad de espín
@@ -82,7 +82,7 @@ Párrafo corto + tabla. Regla $2S+1$ para la multiplicidad a partir de electrone
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicación cualitativa de espines electrónicos paralelos y apareados]
+Piensa en los asientos dobles de un tren de cercanías: los pasajeros prefieren sentarse solos en filas libres antes de compartir asiento con un desconocido. La multiplicidad refleja ese ordenamiento natural de la regla de Hund, distinguiendo si quedan flechas de espín desapareadas en orbitales independientes o si viajan forzosamente en parejas opuestas. Si calculas el átomo de carbono con multiplicidad 1 en lugar de 3, obligarás a dos electrones a ocupar el mismo espacio innecesariamente. En tu archivo `.log` verás de inmediato que esa configuración forzada dispara la energía total hacia valores mucho menos estables.
 :::
 
 :::{warning}

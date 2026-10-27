@@ -47,7 +47,7 @@ Párrafo medio + figura. Promoción de electrones de valencia desde orbitales oc
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: analogía de orbitales moleculares y saltos cuánticos inducidos por absorción de radiación ultravioleta]
+Imagina una persona saltando entre dos peldaños fijos de una escalera: solo logrará subir al peldaño superior si recibe un impulso con la altura exacta entre ambos niveles, ni más ni menos. En la molécula, un fotón ultravioleta aporta el paquete de energía justo para promover un electrón desde un nivel ocupado hasta un orbital desocupado de mayor energía. Si la separación energética entre esos dos orbitales es grande, necesitarás fotones de menor longitud de onda para conseguir el salto. En tu espectro simulado de GaussView, esa brecha determina la posición exacta de la banda de absorción $\lambda_{\text{max}}$.
 :::
 
 ```{admonition} 📸 Captura de pantalla
@@ -79,7 +79,7 @@ Párrafo medio. Descripción del formalismo de DFT dependiente del tiempo para e
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicación de fuerza del oscilador como probabilidad de absorción cuántica y su correlación con la intensidad de pico]
+Es como lanzar dardos a una diana: aunque tengas energía suficiente para tirar, la probabilidad de acertar dependerá del tamaño efectivo de la zona de impacto. La fuerza del oscilador $f$ mide esa probabilidad intrínseca de absorción según cuánto solapan en el espacio los orbitales de partida y de llegada. Por eso la transición $n \rightarrow \pi^*$ de la acetona tiene un valor de $f$ pequeñísimo comparado con una transición $\pi \rightarrow \pi^*$. En la gráfica de **Results → UV-Vis** comprobarás que la altura de la banda refleja con fidelidad ese número diminuto.
 :::
 
 ### Efecto del disolvente: solvatocromismo
@@ -96,7 +96,7 @@ Valores experimentales de referencia para acetona:
 
 :::{admonition} 💡 Intuición física
 :class: intuicion
-[TEXTO HUMANO: explicación intuitiva de solvatación preferente del par solitario en estado fundamental y aumento del gap en disolventes próticos polares]
+Piensa en alguien cómodo y bien arropado bajo una manta pesada en invierno: costará mucho más esfuerzo levantarlo de la cama que si estuviera listo para salir por la puerta. En agua, las moléculas del disolvente rodean fuertemente al par libre de oxígeno mediante enlaces de hidrógeno en el estado fundamental, reteniéndolo con firmeza en el fondo del pozo energético. Como el estado excitado no retiene esa envoltura protectora con la misma eficacia, la energía necesaria para arrancar la transición aumenta de golpe. Al contrastar tus cálculos con agua frente al vacío, comprobarás que la banda se desplaza hacia longitudes de onda más cortas.
 :::
 
 ---
