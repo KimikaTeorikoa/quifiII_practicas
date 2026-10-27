@@ -10,11 +10,7 @@
 
 ## Introducción
 
-Párrafo corto (3-4 líneas). Motivación sobre la espectroscopía electrónica ultravioleta-visible en la caracterización de cromóforos orgánicos. Absorción de fotones mediante transiciones de capa de valencia en compuestos carbonílicos y sensibilidad espectral frente a la polaridad del medio disolvente (solvatocromismo).
-
-:::{note}
-[TEXTO HUMANO: introducción y motivación sobre espectroscopía UV-Vis de cromóforos carbonílicos]
-:::
+La interacción entre la radiación ultravioleta-visible y las moléculas orgánicas induce transiciones electrónicas desde orbitales ocupados de valencia hacia orbitales virtuales de mayor energía. El formalismo de la teoría del funcional de la densidad dependiente del tiempo (TD-DFT) en Gaussian 16 permite modelar estas excitaciones considerando la reorganización de la densidad de carga. A través de estos cálculos se determinan las longitudes de onda de absorción, las fuerzas de oscilador de transiciones tipo $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en cetonas, y el desplazamiento espectral producido por el entorno dieléctrico del disolvente.
 
 ---
 

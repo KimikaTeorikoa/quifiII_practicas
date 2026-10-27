@@ -10,11 +10,7 @@
 
 ## Introducción
 
-Párrafo corto (3-4 líneas). Motivación química sobre la energía de ionización y su relación con las tendencias periódicas en la tabla periódica. Contraste del modelo teórico Hartree-Fock frente a datos experimentales e interpretación física del orbital más alto ocupado (HOMO).
-
-:::{note}
-[TEXTO HUMANO: introducción y motivación química sobre tendencias periódicas de energía de ionización]
-:::
+La energía de ionización refleja la fuerza con la que el núcleo retiene a los electrones más externos y determina la reactividad química y las tendencias periódicas en la tabla periódica. Mediante cálculos mecanocuánticos con el método Hartree-Fock implementado en Gaussian, este fenómeno se analiza a través de dos aproximaciones teóricas complementarias. La primera vía determina la diferencia de energía total entre el átomo neutro y su catión correspondiente, mientras que la segunda aplica el teorema de Koopmans para estimar el potencial a partir del autovalor del orbital ocupado de mayor energía (HOMO).
 
 ---
 

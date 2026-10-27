@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: Gaussian devuelve varios números: energías, frecuencias, energías orbitales. Este archivo explica qué es cada uno, en qué unidades viene y cuándo se usa. Sin esto los alumnos copian el número equivocado. (Longitud: 3-4 frases)]
-:::
+Los cálculos de estructura electrónica proporcionan una amplia variedad de valores numéricos asociados a la estabilidad, la reactividad y las vibraciones moleculares. El archivo de salida generado por Gaussian 16 recopila estas magnitudes físicas utilizando convenciones teóricas y unidades atómicas propias del formalismo mecanocuántico. La adecuada lectura de estos resultados requiere diferenciar con claridad entre la energía electrónica total, los autovalores orbitales individuales y las frecuencias vibracionales, aplicando las conversiones correctas hacia electronvoltios o unidades termodinámicas.
 
 ---
 

@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: Motivación: para calcular cualquier propiedad de una molécula, lo primero que necesitamos es saber dónde están los átomos. La geometría es el punto de partida de todo. (Longitud: 2-3 frases)]
-:::
+La determinación de cualquier propiedad físico-química en una molécula parte del conocimiento preciso de las coordenadas relativas de sus átomos. La aproximación de Born-Oppenheimer aprovecha la gran diferencia de masa entre núcleos y electrones para desacoplar sus dinámicas, permitiendo que Gaussian resuelva la distribución electrónica sobre disposiciones nucleares fijas. Este marco teórico establece la base operativa para distinguir entre cálculos de energía puntual a coordenadas constantes y procedimientos de optimización geométrica dirigidos a localizar mínimos de energía estables.
 
 ---
 

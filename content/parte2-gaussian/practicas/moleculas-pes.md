@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: Motivación química sobre el origen de las fuerzas que mantienen unidos los átomos en una molécula. Dependencia de la energía electrónica respecto a las coordenadas nucleares según la aproximación de Born-Oppenheimer. Presentación del estudio de la disociación en H₂ y de la rotación conformacional en dihaloetanos. Longitud: 3-4 frases.]
-:::
+La estabilidad del enlace covalente y las preferencias conformacionales moleculares dependen de la variación de la energía electrónica frente a cambios en las posiciones relativas de los núcleos. La aproximación de Born-Oppenheimer permite representar estas variaciones como una superficie de energía potencial que se cartografía mediante barridos geométricos sistemáticos en Gaussian 16. Este procedimiento genera tanto la curva de disociación internuclear de la molécula de hidrógeno para diferentes multiplicidades de espín como el perfil energético de rotación del ángulo diedro en dihaloetanos.
 
 ---
 

@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: Por qué necesitamos un método: la ecuación de Schrödinger no tiene solución analítica para sistemas con más de un electrón. Necesitamos aproximaciones. HF es la más fundamental, no la más precisa, pero la base de todo lo demás. (Longitud: 3-4 frases)]
-:::
+La ecuación de Schrödinger no admite una resolución matemática exacta para átomos o moléculas con más de un electrón debido al acoplamiento continuo originado por la repulsión electrostática entre cargas negativas. El método de Hartree-Fock aborda esta dificultad mediante la aproximación de campo medio, sustituyendo las interacciones instantáneas individuales por un potencial promediado en el espacio. Esta simplificación permite que programas como Gaussian resuelvan el sistema orbital a orbital mediante algoritmos iterativos autoconsistentes, proporcionando orbitales moleculares definidos y la energía electrónica total.
 
 ---
 

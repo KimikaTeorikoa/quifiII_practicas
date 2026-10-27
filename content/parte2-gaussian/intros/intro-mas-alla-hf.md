@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: HF es el punto de partida, pero no el final. Este archivo presenta brevemente los métodos que mejoran sobre HF, el alumno los verá nombrados en las prácticas y en la literatura. (Longitud: 1-2 frases)]
-:::
+El tratamiento de campo medio en el método de Hartree-Fock ignora que los electrones se evitan instantáneamente debido a su repulsión coulómbica, omitiendo la denominada energía de correlación electrónica. Para superar este límite físico, la química computacional moderna emplea metodologías avanzadas post-Hartree-Fock y la teoría del funcional de la densidad (DFT), ampliamente implementadas en Gaussian. Estas alternativas permiten calcular energías moleculares y propiedades reactivas con una exactitud química muy superior, ya sea combinando múltiples configuraciones electrónicas o evaluando funcionales de intercambio y correlación como B3LYP.
 
 ---
 

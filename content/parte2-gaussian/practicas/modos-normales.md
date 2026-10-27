@@ -10,11 +10,7 @@
 
 ## Introducción
 
-Párrafo corto (3-4 líneas). Motivación sobre la espectroscopía infrarroja como método experimental de identificación estructural. Interpretación física del movimiento oscilatorio de los núcleos en torno a sus posiciones de equilibrio molecular. Estudio comparativo de dos moléculas lineales modelo: monóxido de carbono (CO) y dióxido de carbono (CO₂).
-
-:::{note}
-[TEXTO HUMANO: introducción y motivación sobre espectroscopía infrarroja y frecuencias de vibración molecular]
-:::
+La absorción de radiación infrarroja por la materia surge de la interacción entre el campo electromagnético y el movimiento vibracional de los núcleos atómicos. El método de cálculo de frecuencias implementado en Gaussian 16 evalúa la matriz hessiana de la energía potencial para descomponer este movimiento molecular en oscilaciones armónicas independientes. El análisis conjunto de estos modos normales proporciona las frecuencias teóricas de vibración, la visualización de los desplazamientos atómicos en GaussView y la asignación de actividad en el espectro infrarrojo según las reglas de simetría molecular.
 
 ---
 

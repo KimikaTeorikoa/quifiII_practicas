@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: Por qué necesitamos una base: los orbitales moleculares no tienen forma analítica conocida, los aproximamos como combinación de funciones matemáticas simples. La base es ese conjunto de funciones. Sin base, no hay cálculo. (Longitud: 3-4 frases)]
-:::
+Los orbitales atómicos y moleculares de sistemas con múltiples electrones presentan geometrías espaciales continuas que no pueden describirse mediante funciones analíticas simples. Para resolver computacionalmente estos estados, la teoría cuántica recurre a conjuntos de funciones matemáticas conocidas, habitualmente combinaciones de gaussianas, denominadas funciones de base. La elección del conjunto de base en Gaussian define la flexibilidad numérica para modelar la distribución electrónica, condicionando directamente el grado de aproximación física y el coste de cálculo requerido.
 
 ---
 

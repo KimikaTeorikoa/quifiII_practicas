@@ -2,9 +2,7 @@
 
 ## Introducción
 
-:::{note}
-[TEXTO HUMANO: Qué es GaussView (interfaz gráfica) y qué es Gaussian (motor de cálculo). Que son dos programas distintos pero que trabajan juntos. Sin esto los alumnos confunden los dos nombres durante toda la asignatura. (Longitud: 3-4 frases)]
-:::
+La química computacional moderna requiere traducir geometrías moleculares tridimensionales a instrucciones numéricas precisas que puedan ser procesadas por algoritmos de estructura electrónica. GaussView cumple la función de interfaz gráfica interactiva diseñada para asistir en la preparación de archivos de entrada y en la comunicación fluida con el motor de cálculo Gaussian 16. El uso coordinado de este entorno permite construir modelos atómicos en tres dimensiones, seleccionar los métodos teóricos de cálculo e interpretar de forma directa los resultados energéticos y espectroscópicos generados.
 
 ---
 
