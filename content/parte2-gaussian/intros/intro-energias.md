@@ -42,9 +42,7 @@ El valor numérico absoluto de la energía total reportado en hartrees depende d
 
 ## Energías orbitales: no confundir con la energía total
 
-:::{note}
-[TEXTO HUMANO: Los autovalores de Fock (energías del HOMO, LUMO...) son distintos de la energía total. Aparecen en una sección diferente del log. Unidades: también Hartrees. La energía total no es la suma de las energías orbitales. (Longitud: 3-4 frases)]
-:::
+Los autovalores calculados al diagonalizar la matriz de Fock corresponden a las energías orbitales monoelectrónicas, tabuladas en el archivo de salida bajo los epígrafes `Alpha occ. eigenvalues` para los niveles ocupados y `Alpha virt. eigenvalues` para los desocupados. Estos autovalores no representan la energía total del sistema bajo estudio. Sumar directamente las energías de todos los orbitales ocupados generaría una sobreestimación física grave de la energía electrónica, debido a que el término de repulsión coulómbica entre cada par de electrones se computaría por duplicado. Por esta razón termodinámica, la energía electrónica total del sistema se evalúa mediante una expresión independiente y se notifica de forma separada en la línea `SCF Done` del archivo `.log`.
 
 ---
 

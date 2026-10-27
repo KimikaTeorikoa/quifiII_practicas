@@ -49,9 +49,7 @@ No hacer doble clic accidental sobre el fondo: duplica átomos sin avisar.
 
 ## Corregir errores y deshacer
 
-:::{note}
-[TEXTO HUMANO: Cómo deshacer el último paso (**Edit → Undo** o atajo de teclado). Cómo eliminar un átomo seleccionado (tecla Delete). Cómo limpiar toda la molécula y empezar de cero. Sección pequeña pero importante: los novatos se bloquean aquí. (Longitud: 3-4 frases)]
-:::
+Para revertir la última acción realizada sobre el espacio de trabajo se emplea la ruta de menú **Edit → Undo** o el atajo de teclado estándar Ctrl+Z. En caso de requerir la eliminación de un átomo o fragmento específico, basta con pulsar sobre él con el ratón para seleccionarlo y presionar a continuación la tecla Supr (o Delete). Si resulta necesario limpiar la ventana por completo y reiniciar el modelado desde cero, se puede utilizar la opción **Edit → Select All** seguida de la tecla Supr. De forma alternativa, es posible generar un espacio de trabajo limpio acudiendo a **File → New** para abrir una nueva ventana interactiva vacía.
 
 ---
 

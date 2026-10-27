@@ -38,9 +38,7 @@ En un cálculo de energía puntual (*Single Point*), las posiciones relativas de
 
 ## Optimización de geometría: encontrar el mínimo
 
-:::{note}
-[TEXTO HUMANO: Gaussian no conoce la geometría real, la busca. Parte de la geometría que dibujó el alumno, calcula el gradiente (la pendiente de la energía respecto a cada coordenada), y mueve los átomos cuesta abajo. Repite hasta que el gradiente es prácticamente cero. (Longitud: 4-5 frases)]
-:::
+En un cálculo de optimización de geometría, Gaussian evalúa en primer lugar la energía electrónica total sobre la estructura tridimensional inicial introducida por el usuario y calcula las primeras derivadas espaciales de dicha energía respecto a cada coordenada nuclear, magnitud denominada vector gradiente. A partir de las fuerzas resultantes, los núcleos atómicos se desplazan colectivamente en la dirección geométrica que reduce la energía potencial del sistema. Tras cada desplazamiento nuclear, el programa recalcula la función de onda electrónica y el nuevo gradiente sobre las coordenadas actualizadas. Este procedimiento se repite iterativamente paso a paso hasta que tanto las fuerzas residuales como los desplazamientos atómicos caen simultáneamente por debajo de los umbrales de convergencia numéricos establecidos. En el entorno gráfico de GaussView, este cálculo se activa seleccionando la opción **Job Type → Optimization**.
 
 :::{admonition} Figura
 :class: captura

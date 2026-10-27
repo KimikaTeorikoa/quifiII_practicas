@@ -43,9 +43,7 @@ En el formalismo de Hartree-Fock, el estado espacial de cada electrón se descri
 
 ## El ciclo SCF: resolver por iteración
 
-:::{note}
-[TEXTO HUMANO: Como no sabemos el campo medio antes de conocer los orbitales, y no conocemos los orbitales antes de conocer el campo medio, se resuelve iterativamente. Pasos: (1) adivinamos los orbitales iniciales, (2) calculamos el campo medio, (3) resolvemos los nuevos orbitales, (4) repetimos hasta convergencia. Figura: diagrama de flujo del ciclo SCF. (Longitud: 4-5 frases)]
-:::
+El potencial de campo medio depende de la forma de los orbitales ocupados, pero a su vez los orbitales moleculares solo pueden calcularse si se conoce de antemano dicho potencial, generando una dependencia circular que impide una solución directa. Para superar este bucle, las ecuaciones mecanocuánticas se resuelven mediante un procedimiento numérico iterativo. El cálculo parte de un conjunto inicial estimado de orbitales (*guess*), a partir del cual se construye el primer operador de campo medio. A continuación, se resuelven las ecuaciones matriciales de Fock para obtener nuevos coeficientes orbitales y se evalúa si la diferencia energética o de densidad respecto al paso anterior cae por debajo del umbral de tolerancia fijado. Este ciclo de refinamiento sucesivo se repite hasta alcanzar la estabilidad numérica, denominándose formalmente método del campo autoconsistente (SCF, *Self-Consistent Field*), cuyo esquema lógico resume el diagrama de flujo adjunto.
 
 :::{admonition} Figura
 :class: captura
