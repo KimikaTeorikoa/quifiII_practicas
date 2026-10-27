@@ -233,9 +233,7 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 
 ### Tabla 1: Parámetros característicos de la PES de H₂
 
-:::{note}
-[TEXTO HUMANO: Comparación entre la distancia de enlace de equilibrio calculada para H₂ y el dato experimental de referencia, junto con la determinación de la energía de disociación teórica frente al valor empírico. Longitud: 3-4 frases.]
-:::
+La siguiente tabla recoge los valores calculados para la distancia de enlace de equilibrio ($R_{\text{eq}}$) y la energía de disociación ($D_e$) de la molécula de $\text{H}_2$, confrontándolos de forma directa con los datos experimentales de referencia. En condiciones empíricas de laboratorio, la distancia de equilibrio es de 0.741 Å y la energía de disociación alcanza 4.75 eV (equivalentes a 109.5 kcal/mol). La comparación sistemática entre ambos conjuntos de valores permite evaluar cuantitativamente el error relativo porcentual derivado del método Hartree-Fock y del empleo de la base mínima STO-3G.
 
 | Parámetro | Valor calculado (HF/STO-3G) | Valor experimental | Error (%) |
 |---|:---:|:---:|:---:|
@@ -251,9 +249,7 @@ $$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
 
 ### Tabla 2: Barrido internuclear de H₂ (singlete y triplete)
 
-:::{note}
-[TEXTO HUMANO: Tabla completa de energías absolutas en Hartrees y energías relativas en kcal/mol referidas al mínimo del singlete para cada una de las distancias internucleares calculadas. Longitud: 2-3 frases.]
-:::
+La tabla siguiente recopila las energías electrónicas absolutas expresadas en hartrees para los estados singlete y triplete a lo largo de cada una de las distancias internucleares evaluadas. Asimismo, se incluyen las energías relativas ($\Delta E$) calculadas en kilocalorías por mol tomando como nivel de referencia cero el mínimo energético del estado singlete. Esta serie de datos tabulados suministra las coordenadas numéricas necesarias para construir y analizar la representación gráfica de las curvas de potencial en el siguiente apartado.
 
 | Punto | $R$ (Å) | $E$ singlete (Ha) | $E$ triplete (Ha) | $\Delta E$ singlete (kcal/mol) | $\Delta E$ triplete (kcal/mol) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -268,9 +264,7 @@ $$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
 
 ### Gráfico de la PES de H₂
 
-:::{note}
-[TEXTO HUMANO: Instrucciones para exportar los datos numéricos de la tabla a una hoja de cálculo o entorno gráfico y trazar las dos curvas superpuestas en función de R con unidades de kcal/mol respecto al mínimo. Longitud: 3-4 frases.]
-:::
+A partir de los valores de la tabla precedente, se deben representar en una misma gráfica las curvas de energía relativa en kilocalorías por mol frente a la distancia internuclear $R$ en ángstroms para los estados singlete y triplete. El eje de abscisas debe abarcar el intervalo completo de distancias calculado entre 0.5 y 3.0 Å, mientras que el eje de ordenadas ha de mostrar con claridad el cero de referencia fijado en el mínimo del singlete. Ambas curvas deben diferenciarse con nitidez en la leyenda mediante su respectiva multiplicidad de espín. Para generar esta figura se pueden transferir los valores a una hoja de cálculo estándar o emplear las herramientas gráficas disponibles en los equipos del aula.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -318,8 +312,6 @@ $$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
 :color: success
 :icon: rocket
 
-:::{note}
-[TEXTO HUMANO: Propuesta opcional para calcular la barrera de torsión interna en el etano no sustituido (CH₃–CH₃) y comparar la contribución de repulsión estérica C–H e hiperconjugación frente al efecto estérico de los átomos de halógeno. Longitud: 3-4 frases.]
-:::
+Como actividad de extensión opcional, se propone repetir el barrido del ángulo diedro en la molécula de etano ($\text{CH}_3\text{-CH}_3$) aplicando idéntico nivel de teoría mecanocuántica. La barrera de rotación interna calculada para el etano, próxima a 3 kcal/mol, es notablemente inferior a la determinada en el dihaloetano y permite contrastar el impacto estérico de los enlaces carbono-hidrógeno frente al volumen de los átomos de halógeno. La comparación directa de ambos perfiles conformacionales evidencia cómo el radio atómico, la polaridad de enlace y la electronegatividad de los sustituyentes condicionan las preferencias conformacionales en sistemas orgánicos sencillos.
 
 ::::
