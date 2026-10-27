@@ -160,9 +160,7 @@ Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminad
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
-- Gaussian 16, Revision A.03, M. J. Frisch et al., Gaussian, Inc., Wallingford CT, 2016.
-- `[TEXTO HUMANO: referencia adicional (manual oficial de GaussView o equivalente)]`
+- {{gaussian_cite}}
 
 ---
 

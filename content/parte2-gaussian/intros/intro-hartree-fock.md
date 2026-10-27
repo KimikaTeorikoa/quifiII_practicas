@@ -90,9 +90,8 @@ La energía que aparece en el log de Gaussian es la energía total, no la energ�
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
-- Gaussian 16, Revision A.03, M. J. Frisch et al., Gaussian, Inc., Wallingford CT, 2016.
-- `[TEXTO HUMANO: libro de texto de química cuántica recomendado (p.ej. Szabo & Ostlund, Levine, o equivalente)]`
+- {{gaussian_cite}}
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
 
 ---
 

@@ -270,9 +270,10 @@ Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Resu
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
 - Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 9 (Estructura electrónica atómica).
+- NIST Chemistry WebBook, https://webbook.nist.gov (datos experimentales de energía de ionización).
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
 
 ---
 

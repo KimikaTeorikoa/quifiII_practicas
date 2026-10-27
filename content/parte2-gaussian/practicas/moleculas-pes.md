@@ -308,10 +308,10 @@ $$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
 - Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 11 (Estructura molecular y superficies de energía potencial).
 - Clayden, J.; Greeves, N.; Warren, S. *Organic Chemistry*, 2ª ed.; Oxford University Press, 2012. Cap. 18 (Conformational analysis).
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
 
 ---
 

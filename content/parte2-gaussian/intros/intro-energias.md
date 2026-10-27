@@ -66,6 +66,5 @@ Si ves frecuencias negativas en el log, la geometría no ha convergido correctam
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
-- Gaussian 16, Revision A.03, M. J. Frisch et al., Gaussian, Inc., Wallingford CT, 2016.
-- `[TEXTO HUMANO: referencia adicional (libro de texto de química cuántica o equivalente)]`
+- {{gaussian_cite}}
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.

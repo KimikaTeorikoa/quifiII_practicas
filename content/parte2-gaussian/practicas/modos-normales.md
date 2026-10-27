@@ -253,7 +253,6 @@ Párrafo corto + figura. Pautas para el análisis de discrepancias sistemáticas
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
 - Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 12 (Espectroscopía vibracional).
 - NIST Chemistry WebBook, https://webbook.nist.gov (datos experimentales de frecuencias vibracionales para CO y CO₂).

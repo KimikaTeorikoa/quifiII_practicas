@@ -324,7 +324,6 @@ Párrafo corto. Pautas metodológicas para transferir con exactitud los valores 
 
 ## Bibliografía
 
-- `[TEXTO HUMANO: manual de la asignatura si existe]`
 - {{gaussian_cite}}
 - Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 13 (Espectroscopía electrónica).
 - Casida, M. E. *Time-Dependent Density Functional Theory for Molecules*. In *Recent Advances in Density Functional Methods*; World Scientific, 1995.
