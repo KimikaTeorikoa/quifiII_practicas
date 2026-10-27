@@ -78,17 +78,13 @@ Para medir una distancia de enlace en GaussView se seleccionan secuencialmente l
 
 ## Abrir un archivo existente
 
-:::{note}
-[TEXTO HUMANO: **File → Open**. Formatos habituales: `.gjf` (input que ya tenían guardado) y `.log` (resultado de un cálculo anterior). Útil para retomar trabajo entre sesiones o abrir los archivos de referencia que proporcione el profesor. (Longitud: 1-2 frases)]
-:::
+Para abrir un archivo existente en el entorno de trabajo se utiliza la ruta de menú **File → Open**. Los formatos habituales de trabajo son `.gjf` para cargar archivos de entrada de cálculo previamente guardados y `.log` para examinar salidas generadas por Gaussian, facilitando la reanudación del trabajo entre sesiones de laboratorio o el análisis de estructuras de referencia.
 
 ---
 
 ## Configurar un cálculo
 
-:::{note}
-[TEXTO HUMANO: **Calculate → Gaussian Calculation Setup**. Explicar las pestañas principales: Job Type (qué tipo de cálculo), Method (método y base), Title, Charge/Multiplicity. Para cada campo: qué es en una frase, qué valor poner por defecto. (Longitud: 4-5 frases)]
-:::
+El panel de configuración del cálculo se abre acudiendo a **Calculate → Gaussian Calculation Setup**. En la pestaña **Job Type** se selecciona la tarea computacional que se desea ejecutar, tal como una energía puntual (*Energy* o *Single Point*), una optimización de geometría (*Optimization*) o el cálculo de modos vibracionales (*Frequency*). La pestaña **Method** permite definir el nivel de aproximación electrónica especificando tanto el método mecanocuántico (como Hartree-Fock o B3LYP) como el conjunto de funciones de base asignado en cada práctica. En la sección **Title Card** se introduce una breve descripción identificativa del cálculo sin caracteres especiales. Finalmente, el apartado **Charge & Multiplicity** fija la carga neta del sistema molecular (cero en especies neutras) y su multiplicidad de espín (uno en sistemas de capa cerrada).
 
 :::{warning}
 Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aquí invalida todo el cálculo.
@@ -105,9 +101,7 @@ Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aqu
 
 [CONFIRMAR CON PROFESOR: el cálculo se lanza en local o se envía a un servidor?]
 
-:::{note}
-[TEXTO HUMANO: Botón Submit. Qué pasa en pantalla cuando el cálculo empieza. Que puede tardar segundos o minutos según la molécula. (Longitud: 3-4 frases)]
-:::
+Tras completar los parámetros de configuración se inicia la ejecución del cálculo pulsando el botón **Submit** situado en la parte inferior de la ventana. A continuación, GaussView despliega un panel de monitorización que reporta las líneas de texto generadas por Gaussian en tiempo real. La duración del proceso oscila entre unos pocos segundos en moléculas sencillas tratadas con bases mínimas y varios minutos cuando se abordan sistemas moleculares más extensos o métodos correlacionados. Durante este intervalo de cómputo el usuario solo debe esperar a que el proceso culmine de forma automática.
 
 :::{admonition} Captura de pantalla
 :class: captura

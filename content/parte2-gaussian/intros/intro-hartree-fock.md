@@ -86,17 +86,13 @@ Al fundamentarse en una aproximación de campo medio, el método Hartree-Fock no
 ::::{dropdown} La función de onda antisimétrica y el determinante de Slater
 :color: success
 
-:::{note}
-[TEXTO HUMANO: Por qué la función de onda total no es simplemente el producto de orbitales, el principio de exclusión de Pauli exige antisimetría. El determinante de Slater como solución formal. Sin desarrollo matemático. (Longitud: 3-4 frases)]
-:::
+El principio de exclusión de Pauli impone que la función de onda electrónica total sea antisimétrica, de modo que debe cambiar de signo ante el intercambio de las coordenadas espaciales y de espín de dos electrones cualesquiera. Un producto simple de orbitales monoelectrónicos independientes (producto de Hartree) no satisface este requisito mecánico cuántico de indistinguibilidad. Para garantizar rigurosamente dicha propiedad se recurre al determinante de Slater, una construcción matricial donde las filas representan los orbitales y las columnas las coordenadas electrónicas. Al intercambiar dos electrones se permutan dos columnas de la matriz, provocando que el determinante resultante invierta automáticamente su signo algebraico.
 
 ::::
 
 ::::{dropdown} Energía de correlación y métodos post-HF
 :color: success
 
-:::{note}
-[TEXTO HUMANO: MP2, CCSD como correcciones a HF. Solo nombres y la idea de que recuperan parte de la correlación ignorada. Enlaza con intro-mas-alla-hf.md. (Longitud: 3-4 frases)]
-:::
+A partir de la función de onda de referencia de Hartree-Fock se han formulado diversos métodos de correlación electrónica diseñados para superar la aproximación de campo medio. La teoría de perturbaciones de Møller-Plesset de segundo orden (MP2) incorpora correcciones dinámicas a la energía con un incremento computacional moderado. Por su parte, metodologías más avanzadas como *Coupled Cluster* con excitaciones simples y dobles (CCSD) proporcionan una precisión energética notablemente superior a expensas de una exigencia computacional elevada. Estos esquemas teóricos y sus aplicaciones prácticas se exponen con mayor detalle en la siguiente guía.
 
 ::::
