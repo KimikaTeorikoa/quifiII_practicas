@@ -68,17 +68,13 @@ Se realiza un cálculo de energía puntual (*Single Point*) cuando la geometría
 ::::{dropdown} ¿Qué pasa si la geometría inicial es muy mala?
 :color: success
 
-:::{note}
-[TEXTO HUMANO: Si el alumno dibuja una geometría muy alejada del mínimo real, la optimización puede no converger o acabar en un mínimo equivocado. Señales de alerta en el log. Consejo práctico: usar siempre fragmentos de GaussView en lugar de dibujar átomos sueltos. (Longitud: 3-4 frases)]
-:::
+Si la geometría inicial propuesta se encuentra excesivamente apartada de la estructura de equilibrio real, el algoritmo de búsqueda puede requerir un número excesivo de pasos, quedar atrapado en un mínimo local o no converger. En el archivo `.log`, esta dificultad se reconoce cuando el número de ciclos alcanza el límite permitido sin que los criterios numéricos de fuerza y desplazamiento queden satisfechos. Para prevenir este fallo computacional, se aconseja ensamblar las moléculas partiendo de la biblioteca de fragmentos estándar de GaussView, que suministran distancias y ángulos iniciales químicamente coherentes, en vez de incorporar átomos individuales en coordenadas arbitrarias.
 
 ::::
 
 ::::{dropdown} Más sobre gradientes y algoritmos de optimización
 :color: success
 
-:::{note}
-[TEXTO HUMANO: Nombres de los algoritmos más comunes (gradient descent, quasi-Newton) sin entrar en matemáticas. Por qué Gaussian necesita varias iteraciones. Para el alumno que quiera entender por qué a veces el cálculo tarda mucho. (Longitud: 3-4 frases)]
-:::
+Los procedimientos de optimización implementados por defecto en Gaussian emplean algoritmos de tipo quasi-Newton, como el método Berny, los cuales actualizan progresivamente una aproximación numérica de la matriz de segundas derivadas (hessiano) para proyectar el desplazamiento geométrico óptimo hacia el mínimo. Cada iteración de optimización exige evaluar de forma completa la energía electrónica y el vector gradiente en las nuevas coordenadas nucleares, lo que conlleva un coste de cálculo acumulativo. El número total de ciclos requeridos depende estrechamente de la complejidad topológica de la superficie de potencial y del grado de proximidad de la estructura inicial, pudiendo prolongarse durante decenas de iteraciones en moléculas conformacionalmente flexibles.
 
 ::::

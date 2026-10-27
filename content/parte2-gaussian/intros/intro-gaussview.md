@@ -61,17 +61,13 @@ La opción de menú **Edit → Add Hydrogens** permite completar de forma autom�
 
 ## Moverse por la molécula
 
-:::{note}
-[TEXTO HUMANO: Rotar (clic + arrastrar), zoom (rueda del ratón), centrar (botón específico o atajo). Solo los tres gestos imprescindibles. (Longitud: 3-4 frases)]
-:::
+Para inspeccionar la estructura molecular se rota la vista manteniendo presionado el botón izquierdo del ratón mientras se desplaza el cursor sobre el espacio de trabajo. El acercamiento o alejamiento visual (zoom) se gradúa de forma directa mediante la rueda de desplazamiento del ratón. En caso de perder de vista el objeto o desear reencuadrar el modelo en la ventana central, se recurre al botón de centrado situado en la barra de herramientas principal o al atajo de teclado correspondiente. El dominio coordinado de estos tres movimientos básicos basta para orientar la geometría con soltura durante las etapas de modelado e interpretación de resultados.
 
 ---
 
 ## Ver y ajustar geometría
 
-:::{note}
-[TEXTO HUMANO: Cómo seleccionar dos átomos para ver la distancia de enlace, tres para el ángulo. Dónde aparece el valor en pantalla. No se pide modificar a mano, solo saber leerlo. (Longitud: 3-4 frases)]
-:::
+Para medir una distancia de enlace en GaussView se seleccionan secuencialmente los dos átomos implicados haciendo clic sobre ellos mientras se mantiene pulsada la tecla Ctrl. El valor numérico de la separación interatómica calculada en ángstroms ($\text{Å}$) se muestra de inmediato en la barra de estado situada en el borde inferior de la ventana. Si se seleccionan tres átomos consecutivos se visualiza el ángulo de enlace en grados sexagesimales, y con cuatro átomos se obtiene el ángulo diedro correspondiente. Esta funcionalidad opera exclusivamente en modalidad de lectura para comprobar las dimensiones de la estructura, por lo que no se requiere modificar manualmente ninguno de estos parámetros.
 
 :::{admonition} Captura de pantalla
 :class: captura

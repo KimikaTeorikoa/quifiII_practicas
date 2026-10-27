@@ -62,9 +62,7 @@ El ciclo SCF se formula algebraicamente como el problema de autovalores generali
 
 [CONFIRMAR CON PROFESOR: E(He) HF/STO-3G]
 
-:::{note}
-[TEXTO HUMANO: Diferencia crítica: la energía orbital (autovalor de Fock) no es la energía total. La energía total no es la suma de energías orbitales, se estaría contando la repulsión dos veces. Gaussian reporta la energía total HF. Unidades: Hartrees. (Longitud: 4-5 frases)]
-:::
+Los autovalores obtenidos al resolver las ecuaciones de Fock representan las energías monoelectrónicas de cada orbital por separado y no la energía electrónica total del sistema. Sumar directamente las energías de todos los orbitales ocupados genera una sobreestimación física sustancial, ya que la energía de repulsión coulómbica entre cada par de electrones se contabilizaría por duplicado. Por consiguiente, la expresión formal de la energía total en el método Hartree-Fock incorpora un término corrector que sustrae de forma exacta esta interacción repetida. Gaussian calcula dicha magnitud global y la reporta en unidades de hartrees en la línea identificada como `SCF Done` del archivo de salida.
 
 :::{warning}
 La energía que aparece en el log de Gaussian es la energía total, no la energía de un orbital individual.
@@ -74,9 +72,7 @@ La energía que aparece en el log de Gaussian es la energía total, no la energ�
 
 ## Limitaciones de HF: la correlación electrónica
 
-:::{note}
-[TEXTO HUMANO: HF trata la repulsión electrónica de forma promediada, ignora que los electrones se evitan instantáneamente. Esta diferencia entre la energía HF y la energía exacta se llama energía de correlación. Es pequeña en términos absolutos pero importante para propiedades químicas. Por eso en las prácticas usamos B3LYP, no HF. (Longitud: 3-4 frases)] [revisar:no decir en concreto b3lyp, creo que lia el mensaje, mejor en terminos generales hablar de metodos mas desarrolaldos post-HF]
-:::
+Al fundamentarse en una aproximación de campo medio, el método Hartree-Fock no contempla que el movimiento instantáneo de cada electrón correlaciona con la posición de los restantes. La discrepancia energética resultante entre la energía propia del límite Hartree-Fock y la solución exacta no relativista de la ecuación de Schrödinger se define formalmente como energía de correlación electrónica. Aunque esta magnitud suele representar una fracción porcentual reducida de la energía total, resulta determinante para describir con exactitud magnitudes químicas como afinidades electrónicas, longitudes de enlace y barreras cinéticas de reacción. Por este motivo, la química cuántica contemporánea recurre a metodologías post-Hartree-Fock y a la teoría del funcional de la densidad para recuperar dicha correlación.
 
 ---
 
