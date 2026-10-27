@@ -48,9 +48,7 @@ Los autovalores calculados al diagonalizar la matriz de Fock corresponden a las 
 
 ## Frecuencias vibracionales: un resultado distinto
 
-:::{note}
-[TEXTO HUMANO: Los cálculos `freq` devuelven frecuencias en cm⁻¹, no en Ha. Son un tipo de resultado completamente distinto, no son energías sino modos de vibración. Dónde aparecen en el log: líneas `Frequencies --`. Un valor negativo (frecuencia imaginaria) indica que la geometría no es un mínimo real. (Longitud: 4-5 frases)]
-:::
+Los cálculos de frecuencias vibracionales (`freq`) reportan los valores correspondientes a los modos normales de vibración molecular expresados en centímetros inversos ($\text{cm}^{-1}$), magnitud física y dimensionalmente distinta a los hartrees de la energía total. Estos valores se localizan en el archivo de salida `.log` bajo los encabezados identificados como `Frequencies --`. La presencia de una frecuencia imaginaria, indicada en Gaussian como un valor numérico negativo, señala que la estructura optimizada no corresponde a un mínimo real en la superficie de energía potencial, sino a un punto de silla. En esa situación, la geometría molecular debe revisarse y reoptimizarse antes de extraer o analizar cualquier otra propiedad fisicoquímica.
 
 :::{warning}
 Si ves frecuencias negativas en el log, la geometría no ha convergido correctamente. Avisar al profesor.

@@ -54,9 +54,7 @@ El potencial de campo medio depende de la forma de los orbitales ocupados, pero 
 
 ## La matriz de Fock: lo que Gaussian resuelve
 
-:::{note}
-[TEXTO HUMANO: El problema SCF se formula como un problema de autovalores: FC = SCε. Para He con una base mínima: matriz 1×1 (trivial). Con dos funciones de base: matriz 2×2. Mostrar la matriz explícitamente con los elementos nombrados (F₁₁, F₁₂, S₁₂) sin derivarlos, solo que Gaussian los calcula y resuelve el sistema. Los autovalores son las energías orbitales. (Longitud: 4-5 frases)]
-:::
+El ciclo SCF se formula algebraicamente como el problema de autovalores generalizado **FC = SCε**, donde **F** es la matriz de Fock, **C** la matriz de coeficientes orbitales, **S** la matriz de solapamiento y **ε** la matriz diagonal de energías orbitales. Para un conjunto de base compuesto por dos funciones, **F** y **S** adoptan la forma de matrices de dimensión 2×2 con elementos $F_{11}, F_{12}, F_{22}$ y $S_{11}, S_{12}, S_{22}$ que Gaussian evalúa calculando las integrales analíticas sobre las funciones de base atómicas. La resolución y diagonalización de este sistema de ecuaciones matriciales proporciona los coeficientes que definen cada orbital molecular junto con sus correspondientes energías asociadas. Al extender el cálculo a bases con mayor número de funciones la dimensión de las matrices se incrementa proporcionalmente, pero la formulación matemática y el procedimiento numérico de resolución se mantienen idénticos.
 
 ---
 

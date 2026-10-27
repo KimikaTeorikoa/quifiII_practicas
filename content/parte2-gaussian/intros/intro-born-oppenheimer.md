@@ -49,9 +49,7 @@ En un cálculo de optimización de geometría, Gaussian evalúa en primer lugar 
 
 ## ¿Cuándo usar Single Point y cuándo Optimization?
 
-:::{note}
-[TEXTO HUMANO: Criterios para elegir entre cálculo puntual (Single Point) y optimización de geometría según el objetivo. (Longitud: 2-3 frases)]
-:::
+Se realiza un cálculo de energía puntual (*Single Point*) cuando la geometría molecular ya es conocida o se desea evaluar la energía electrónica en una configuración nuclear fija sin alterar las coordenadas espaciales. Por el contrario, se recurre a un cálculo de optimización cuando se parte de una estructura tridimensional aproximada y resulta indispensable determinar la disposición nuclear de mínima energía potencial antes de calcular cualquier propiedad fisicoquímica. La siguiente tabla resume la correspondencia directa entre el objetivo planteado y la modalidad de cálculo que debe seleccionarse en Gaussian.
 
 | Situación | Job Type |
 |-----------|----------|

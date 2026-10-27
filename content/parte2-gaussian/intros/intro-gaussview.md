@@ -55,9 +55,7 @@ Para revertir la última acción realizada sobre el espacio de trabajo se emplea
 
 ## Añadir hidrógenos automáticamente
 
-:::{note}
-[TEXTO HUMANO: GaussView puede completar los hidrógenos implícitos con **Edit → Add Hydrogens**. Útil cuando se dibuja solo el esqueleto pesado. Advertencia: revisar siempre el resultado antes de continuar. (Longitud: 1-2 frases)]
-:::
+La opción de menú **Edit → Add Hydrogens** permite completar de forma automática los átomos de hidrógeno implícitos necesarios para saturar la valencia del esqueleto atómico dibujado. Conviene revisar siempre la estructura tridimensional resultante tras aplicar esta acción, ya que la asignación automática puede no coincidir con el estado de protonación o la distribución de valencias deseada.
 
 ---
 
