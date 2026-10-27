@@ -21,9 +21,7 @@ El convenio mecanocuántico fija el cero de energía en el estado de partículas
 
 ## Unidades: Hartrees, eV y kcal/mol
 
-:::{note}
-[TEXTO HUMANO: Gaussian trabaja en Hartrees. Para comparar con experimento o con otras disciplinas hay que convertir. Cuándo usar cada una: eV para propiedades electrónicas (IE, HOMO/LUMO), kcal/mol para barreras y diferencias de energía, Ha en el log de Gaussian. (Longitud: 4-5 frases)]
-:::
+El motor de cálculo de Gaussian reporta de manera sistemática todas las energías electrónicas en unidades atómicas denominadas hartrees (Ha). Para conectar estos autovalores teóricos con la escala de las medidas de laboratorio es imprescindible aplicar factores de conversión estándar: un hartree equivale a 27,21 electronvoltios, 627,51 kilocalorías por mol o 2625,5 kilojulios por mol. En el análisis químico, los electronvoltios se emplean de forma preferente para expresar potenciales de ionización, afinidades electrónicas y diferencias energéticas entre orbitales HOMO y LUMO. Por su parte, las kilocalorías por mol y los kilojulios por mol constituyen las unidades estándar para cuantificar barreras de activación, calores de reacción y diferencias termodinámicas de estabilidad entre confórmeros. Conocer el orden de magnitud de cada propiedad evita errores numéricos graves al transferir los datos del archivo de salida hacia los informes de prácticas.
 
 | De | A | Factor |
 |----|---|--------|

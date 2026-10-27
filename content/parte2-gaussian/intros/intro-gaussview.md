@@ -23,9 +23,7 @@ La química computacional moderna requiere traducir geometrías moleculares trid
 
 ## La interfaz: qué ves al abrir
 
-:::{note}
-[TEXTO HUMANO: Descripción de las 3-4 zonas principales: barra de menús, barra de herramientas, ventana de visualización 3D, panel de resultados (si existe). Sin entrar en cada botón, solo orientación espacial. (Longitud: 4-5 frases)]
-:::
+La interfaz gráfica de GaussView se estructura principalmente en cuatro áreas de trabajo coordinadas. En la parte superior se sitúa la barra de menús principal, que proporciona acceso ordenado a la totalidad de las herramientas de configuración y visualización del programa. Inmediatamente debajo se ubica la barra de herramientas gráficas, donde se agrupan los iconos de acceso directo más frecuentes para seleccionar elementos, ajustar enlaces y manipular fragmentos moleculares. El área central está dominada por la ventana de visualización tridimensional, espacio interactivo en el que se construye, desplaza y rota la estructura bajo estudio mediante el ratón. Finalmente, un panel secundario situado en la región inferior muestra información contextual en tiempo real sobre los átomos seleccionados, distancias interatómicas y estados de los cálculos ejecutados.
 
 :::{admonition} Captura de pantalla
 :class: captura

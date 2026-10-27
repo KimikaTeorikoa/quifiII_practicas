@@ -21,9 +21,7 @@ La masa de los núcleos atómicos supera en más de tres órdenes de magnitud a 
 
 ## Geometría molecular: distancias, ángulos y diedros
 
-:::{note}
-[TEXTO HUMANO: Los tres parámetros que definen una geometría: distancia de enlace (Å), ángulo de enlace (°), ángulo diedro (°). Figura esquemática con H₂O (distancia + ángulo) y una molécula sencilla con diedro (p.ej. etano). Los diedros se introducen aquí brevemente, aparecerán en detalle en P2-B. (Longitud: 4-5 frases)]
-:::
+La disposición espacial de una estructura molecular queda unívocamente determinada por tres parámetros geométricos elementales: distancias de enlace (medidas en ángstroms, Å), ángulos de valencia (en grados sexagesimales) y ángulos diedros de torsión (en grados sexagesimales). Mientras que las distancias y los ángulos definen la conectividad local entre átomos contiguos, los ángulos diedros describen la rotación relativa entre dos planos que comparten un enlace químico central. Este conjunto de coordenadas internas constituye la base sobre la que los algoritmos de Gaussian evalúan los gradientes de energía y ejecutan la optimización estructural. Asimismo, el entorno gráfico de GaussView ofrece herramientas específicas para medir, modificar y visualizar directamente cada uno de estos tres parámetros sobre el modelo tridimensional.
 
 :::{admonition} Captura de pantalla
 :class: captura

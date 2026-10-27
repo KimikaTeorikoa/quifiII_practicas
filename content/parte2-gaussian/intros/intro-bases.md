@@ -21,9 +21,7 @@ Los orbitales atómicos y moleculares de sistemas con múltiples electrones pres
 
 ## Precisión vs coste computacional
 
-:::{note}
-[TEXTO HUMANO: Relación directa: más funciones de base → más preciso → más tiempo de cálculo. La tabla muestra solo la idea cualitativa con dos ejemplos, no son las únicas bases posibles ni representan una escala completa. Aclaración en el texto: estos son dos ejemplos para ilustrar la idea; en la práctica existe una gran variedad de bases y cada cálculo indica cuál usar. (Longitud: 4-5 frases)]
-:::
+El tamaño y la complejidad del conjunto de base determinan el límite superior de precisión física que puede alcanzar un cálculo cuántico. Al incrementar el número de funciones matemáticas por átomo se describe con mayor fidelidad la relajación de la densidad electrónica, aunque el tiempo de cómputo y el consumo de memoria aumentan notablemente. La tabla comparativa resume esta tendencia cualitativa utilizando dos bases representativas habituales, sin pretender constituir un catálogo exhaustivo. En la práctica cotidiana existe una gran variedad de conjuntos adaptados a diferentes niveles de teoría y tipos de átomos. Para evitar ambigüedades operativas, el protocolo de cada sesión práctica especifica con claridad el conjunto exacto que debe seleccionarse en GaussView.
 
 | Base | Tamaño relativo | Coste relativo |
 |------|----------------|----------------|

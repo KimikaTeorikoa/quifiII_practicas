@@ -21,9 +21,7 @@ El término de repulsión interelectrónica $1/r_{12}$ en el operador hamiltonia
 
 ## La idea de Hartree-Fock: el campo medio
 
-:::{note}
-[TEXTO HUMANO: Solución aproximada: cada electrón no ve al otro electrón individualmente, sino un campo medio promediado. Así las ecuaciones se desacoplan y se pueden resolver una a una. Precio: es una aproximación, ignora la correlación electrónica instantánea. (Longitud: 4-5 frases)]
-:::
+La aproximación de campo medio simplifica el problema polielectrónico al sustituir las interacciones repulsivas instantáneas entre pares de partículas por un potencial electrostático promedio originado por el conjunto de la nube electrónica. Bajo este tratamiento, las ecuaciones mecanocuánticas se desacoplan formalmente, permitiendo calcular la distribución espacial de cada electrón de forma individual e independiente. El operador de Fock incorpora este potencial promediado para construir orbitales monoelectrónicos a través de un procedimiento autoconsistente. Como contrapartida teórica, el método ignora que los electrones tienden a evitarse dinámicamente en cada instante, fenómeno denominado correlación electrónica. Esta omisión condiciona la exactitud cuantitativa de la energía total, situándola siempre por encima del valor exacto no relativista.
 
 :::{admonition} Nota
 :class: note

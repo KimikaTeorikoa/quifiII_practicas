@@ -16,9 +16,7 @@ El tratamiento de campo medio en el método de Hartree-Fock ignora que los elect
 
 ## DFT: un enfoque diferente
 
-:::{note}
-[TEXTO HUMANO: DFT no trabaja con la función de onda sino con la densidad electrónica, una función de 3 variables en lugar de 3N. Idea central: la energía del sistema queda determinada por la densidad. El funcional de intercambio-correlación recoge todo lo que HF ignora. B3LYP es el funcional más usado en química orgánica: buen equilibrio entre precisión y coste. (Longitud: 4-5 frases)]
-:::
+La teoría del funcional de la densidad (DFT) reformula el tratamiento mecanocuántico sustituyendo la función de onda multielectrónica por la densidad electrónica espacial. Según los teoremas de Hohenberg y Kohn, la energía total del estado electrónico queda unívocamente determinada por esta densidad tridimensional. El componente central del método es el funcional de intercambio y correlación, encargado de cuantificar los efectos electrónicos que Hartree-Fock omite o aproxima de forma incompleta. Entre las diversas formulaciones existentes, los funcionales híbridos como B3LYP combinan una fracción del intercambio exacto de Hartree-Fock con términos de correlación propios de DFT. Esta combinación proporciona un equilibrio adecuado entre precisión fisicoquímica y coste computacional para el estudio de sistemas orgánicos.
 
 :::{admonition} Nota
 :class: note
