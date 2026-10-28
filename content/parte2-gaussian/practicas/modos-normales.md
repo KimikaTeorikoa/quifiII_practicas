@@ -1,4 +1,4 @@
-# P2-C: Modos Normales de Vibración
+# Modos normales de vibración
 
 ## Introducción
 

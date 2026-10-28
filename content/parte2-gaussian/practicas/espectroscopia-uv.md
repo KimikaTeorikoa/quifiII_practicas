@@ -1,4 +1,4 @@
-# P2-D: Espectroscopía UV-Vis de Cetonas
+# Espectroscopía UV-Vis de cetonas
 
 ## Introducción
 

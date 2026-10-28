@@ -1,4 +1,4 @@
-# P2-B: Superficie de Energía Potencial
+# Superficie de energía potencial
 
 ## Introducción
 

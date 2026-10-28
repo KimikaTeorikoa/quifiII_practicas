@@ -27,8 +27,34 @@ Genera un SVG científico (viewBox="0 0 500 320", fondo transparente) que muestr
 **Archivo destino:** `_static/figures/homo_lumo_ionizacion.svg`
 **Usado en:** atomos-koopmans.md
 
+**Diseño de referencia (resultado del prototipo):**
+El diagrama tiene viewBox="0 0 320 420", fondo transparente, fuente sans-serif 11px. Estructura de arriba a abajo:
+
+- Eje vertical de energía en x=48, de y=390 a y=22, con flecha en la punta. Etiqueta "E" en cursiva arriba.
+- Línea discontinua horizontal en y=50 etiquetada "e⁻ libre (E = 0)" en rojo tenue (#c0392b, stroke-dasharray). Es el cero de referencia.
+- Nivel 1s en y=370: línea continua gris (#888), ancho 2. Electrones: dos flechas ↑↓ centradas (x≈130, 148), texto fill #34495e.
+- Nivel 2s en y=310: ídem, con ↑↓.
+- Nivel 2p en y=255: ídem, con un solo ↑ (ejemplo: átomo de capa abierta).
+- Nivel HOMO en y=200: línea azul (#2471a3), ancho 3 (más gruesa que el resto). Etiqueta "HOMO" en negrita azul a la derecha (x=218). Un electrón ↑ centrado. Pequeña etiqueta "ε_HOMO" en cursiva junto a la línea (x=72, tamaño 9).
+- Nivel LUMO en y=148: línea naranja (#d35400), ancho 2, stroke-dasharray="7 3". Etiqueta "LUMO" en negrita naranja a la derecha.
+- Nivel virtual en y=100: línea gris muy tenue (#ccc), discontinua.
+- Corchete en x=57–63 entre y=200 e y=148 con etiqueta "gap" en gris (x=35, centrado verticalmente).
+- Flecha roja ascendente desde x=155, y=197 hasta x=155, y=55 con marcador de punta de flecha relleno rojo. Etiqueta "IE" en negrita roja (x=163, y=132) y "≈ −ε_HOMO" debajo (y=144/148, tamaño 9).
+
 **Prompt:**
-Genera un SVG científico (viewBox="0 0 320 420", fondo transparente) que muestre un diagrama de niveles de energía orbital para ilustrar el HOMO y el LUMO y la relación con la energía de ionización. El diagrama debe contener: (1) Un eje vertical en el lado izquierdo etiquetado "Energía" con una flecha apuntando hacia arriba. (2) Varios niveles de energía horizontales (líneas) distribuidos verticalmente: dos o tres niveles ocupados en la parte inferior (representados como líneas grises o negras con una o dos flechas verticales indicando electrones con espín opuesto, siguiendo la convención de flechas arriba/abajo), el nivel HOMO claramente marcado como el último nivel ocupado (línea más gruesa o con color azul), un nivel LUMO encima del HOMO (línea discontinua, color naranja o rojo), y uno o dos niveles virtuales por encima del LUMO (líneas discontinuas más tenues). (3) Un corchete o flecha de doble punta entre el HOMO y el LUMO etiquetada "gap HOMO-LUMO". (4) Una flecha roja larga apuntando hacia arriba desde el HOMO hasta un nivel superior etiquetado "vacío" (o un símbolo de ionización) con la etiqueta "IE = -epsilon_HOMO". (5) Etiquetas "HOMO" y "LUMO" con flechas señalando los niveles correspondientes. (6) El diagrama debe ser limpio, estilo manual de química, sin elementos decorativos. Fuente sans-serif, tamaño 11-12. Todo inline.
+Genera un SVG científico (viewBox="0 0 320 420", fondo transparente) que muestre un diagrama de niveles de energía orbital para ilustrar el HOMO y el LUMO y su relación con la energía de ionización. Fuente: 'Helvetica Neue', Arial, sans-serif, tamaño base 11px.
+
+Elementos obligatorios, de abajo arriba:
+(1) Eje vertical de energía en x=48, desde y=390 hasta y=22, con punta de flecha abierta en el extremo superior. Etiqueta "E" en cursiva tamaño 13 encima de la flecha.
+(2) Cuatro niveles de energía ocupados representados como líneas horizontales entre x=72 y x=210, con etiquetas a la derecha (x=218): "1s" (y=370), "2s" (y=310), "2p" (y=255), todos en gris #888, ancho de trazo 2. Sobre cada línea, un par de flechas ↑↓ (texto unicode) centradas, fill #34495e, para representar electrones apareados; en 2p solo una flecha ↑ (electrón desapareado).
+(3) Nivel HOMO en y=200: línea azul #2471a3, ancho 3. Etiqueta "HOMO" en negrita azul a la derecha. Un electrón ↑ sobre la línea. Etiqueta pequeña "ε_HOMO" en cursiva junto al extremo izquierdo de la línea.
+(4) Nivel LUMO en y=148: línea naranja #d35400, ancho 2, trazo discontinuo stroke-dasharray="7 3". Etiqueta "LUMO" en negrita naranja a la derecha. Sin electrones.
+(5) Un nivel virtual adicional en y=100: línea gris #ccc, discontinua, sin etiqueta de nombre.
+(6) Línea horizontal roja discontinua en y=50 etiquetada "e⁻ libre (E = 0)" en rojo #c0392b, tamaño 9, centrada. Representa el cero de energía de referencia (electrón libre en el infinito).
+(7) Flecha roja vertical ascendente desde (x=155, y=197) hasta (x=155, y=55) con marcador de punta de flecha relleno rojo en la punta superior. Representa la ionización. Etiqueta "IE" en negrita roja tamaño 10 a la derecha de la flecha (x=163, y=132) y "≈ −ε_HOMO" en tamaño 9 debajo (x=163, y=144).
+(8) Corchete vertical en x=57–63 entre y=200 e y=148 (indicando el gap HOMO-LUMO). Trazos horizontales en los extremos del corchete. Etiqueta "gap" centrada en x=35, tamaño 8.5, fill #999.
+
+Sin fondos de relleno en los niveles. Sin imágenes externas. Sin fuentes externas. Todo inline. El resultado debe funcionar en modo claro y oscuro (usar colores que contrasten sobre fondo blanco y negro).
 
 ---
 

@@ -1,4 +1,4 @@
-# P2-A: Átomos y el Teorema de Koopmans
+# Átomos y el teorema de Koopmans
 
 ## Introducción
 
