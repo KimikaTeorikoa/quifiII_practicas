@@ -205,16 +205,6 @@ Para cada átomo calculado, se registran las dos energías extraídas del archiv
 
 ---
 
-## Preguntas
-
-1. ¿Qué valor numérico de energía en Hartrees reporta la línea `SCF Done` para el átomo de carbono neutro y cuál es el autovalor del orbital HOMO en la línea `Alpha occ. eigenvalues`? Convertir ambos valores a electronvoltios mediante el factor {{ha_to_ev}}.
-2. Analizar la evolución de la energía de ionización a lo largo del período litio-neón. Justificar la caída observada al pasar del nitrógeno ($Z=7$) al oxígeno ($Z=8$) relacionando la ocupación de los orbitales $2p$ con la repulsión coulómbica interelectrónica.
-3. El teorema de Koopmans asume que los orbitales moleculares permanecen invariables tras la ionización (aproximación de orbitales congelados). Explicar por qué la relajación orbital reduce la energía real del catión y describir cómo la falta de correlación electrónica en Hartree-Fock compensa parcialmente esta desviación.
-4. Comparar los valores de $\text{IE}_{\Delta E}$ y $\text{IE}_{\text{Koopmans}}$ obtenidos con la base STO-3G para helio y neón frente a los datos experimentales ($24.59\text{ eV}$ y $21.56\text{ eV}$ respectivamente). Justificar por qué una base mínima describe con menor fidelidad los sistemas compactos o con mayor densidad electrónica frente a bases extendidas con funciones difusas.
-5. Si en GaussView se configurase el cálculo del átomo de boro neutro ($Z=5$) con multiplicidad 1 en lugar de 2, ¿qué inconsistencia numérica registraría Gaussian en el reparto de electrones $\alpha$ y $\beta$? Explicar por qué el formalismo RHF resulta inaplicable a sistemas atómicos de capa abierta.
-
----
-
 ## Bibliografía
 
 - {{gaussian_cite}}

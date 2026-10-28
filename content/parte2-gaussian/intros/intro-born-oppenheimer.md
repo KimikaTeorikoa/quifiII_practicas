@@ -21,9 +21,10 @@ Al fijar los núcleos en diferentes disposiciones espaciales y calcular la energ
 
 La geometría de una molécula queda definida por tres parámetros geométricos principales: distancias de enlace (en ángstroms, Å), ángulos de enlace (en grados) y ángulos diedros de torsión (en grados). Las distancias y los ángulos determinan la conectividad local entre átomos contiguos, mientras que los diedros describen la rotación espacial entre planos que comparten un enlace central. Estas coordenadas internas constituyen la base con la que Gaussian calcula gradientes y realiza optimizaciones de estructura. En GaussView, estos tres parámetros pueden medirse y visualizarse directamente sobre el modelo molecular.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA o FIGURA: molécula con los tres parámetros geométricos anotados]
+:::{figure} /_static/figures/geometria_molecular.svg
+:alt: Diagrama de una cadena de cuatro átomos con distancia de enlace, ángulo de enlace y ángulo diedro anotados
+:width: 70%
+:align: center
 :::
 
 ---
@@ -42,17 +43,6 @@ En un cálculo de optimización de geometría, Gaussian calcula la energía sobr
 :class: captura
 [FIGURA: curva E vs coordenada con 3-4 pasos de optimización marcados y flecha al mínimo]
 :::
-
----
-
-## ¿Cuándo usar Single Point y cuándo Optimization?
-
-El cálculo de energía puntual (*Single Point*) se utiliza cuando la geometría molecular ya es conocida experimentalmente, o bien cuando se desea evaluar la energía en una serie de configuraciones fijas (por ejemplo, al trazar manualmente una curva de energía potencial variando una distancia). Por el contrario, la optimización (*Optimization*) se emplea cuando se parte de una estructura aproximada y se necesita encontrar la geometría de equilibrio estable de la molécula antes de calcular otras propiedades. La tabla resume ambos casos:
-
-| Situación | Job Type |
-|-----------|----------|
-| Quiero la energía de una geometría específica (p.ej. escanear distancias a mano) | Single Point |
-| Quiero la geometría de equilibrio real de la molécula | Optimization |
 
 ---
 
