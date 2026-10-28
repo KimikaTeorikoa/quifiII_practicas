@@ -2,23 +2,23 @@
 
 ## Introducción
 
-El tratamiento de campo medio en el método de Hartree-Fock ignora que los electrones se evitan instantáneamente debido a su repulsión coulómbica, omitiendo la denominada energía de correlación electrónica. Para superar este límite físico, la química computacional moderna emplea metodologías avanzadas post-Hartree-Fock y la teoría del funcional de la densidad (DFT), ampliamente implementadas en Gaussian. Estas alternativas permiten calcular energías moleculares y propiedades reactivas con una exactitud química muy superior, ya sea combinando múltiples configuraciones electrónicas o evaluando funcionales de intercambio y correlación como B3LYP.
+El tratamiento de campo medio de Hartree-Fock no considera que los electrones se repelen instantáneamente debido a su interacción coulómbica, omitiendo la energía de correlación electrónica. Para superar esta limitación, la química computacional recurre a métodos post-Hartree-Fock y a la teoría del funcional de la densidad (DFT). Ambos enfoques permiten calcular energías moleculares y propiedades químicas con mayor precisión: los primeros incorporan múltiples configuraciones electrónicas a partir de una función de onda de referencia, mientras que DFT modela la correlación mediante funcionales de intercambio y correlación como B3LYP.
 
 ---
 
 ## Más allá del campo medio: añadir configuraciones
 
-La aproximación de Hartree-Fock describe el estado electrónico del sistema mediante una única configuración, es decir, mediante una asignación estricta de electrones a orbitales moleculares ocupados. Los métodos de interacción de configuraciones superan esta limitación incorporando en la función de onda multielectrónica combinaciones lineales de configuraciones donde uno o más electrones se promocionan hacia orbitales virtuales desocupados. En particular, el método CISD evalúa todas las excitaciones simples y dobles generadas a partir del determinante de referencia del estado fundamental. Este tratamiento recupera una fracción sustancial de la correlación electrónica, aunque a expensas de un incremento notable en el coste computacional y de memoria frente a Hartree-Fock.
+La aproximación de Hartree-Fock describe el estado electrónico mediante una única configuración, es decir, una asignación fija de electrones a orbitales ocupados. Los métodos de interacción de configuraciones mejoran esta descripción incorporando combinaciones lineales de configuraciones donde uno o más electrones se promueven a orbitales virtuales. En particular, el método CISD incluye todas las excitaciones simples y dobles a partir del determinante de referencia. Este enfoque recupera una parte sustancial de la correlación electrónica, aunque con un coste computacional y de memoria muy superior al de Hartree-Fock.
 
 ---
 
 ## DFT: un enfoque diferente
 
-La teoría del funcional de la densidad (DFT) reformula el tratamiento mecanocuántico sustituyendo la función de onda multielectrónica por la densidad electrónica espacial. Según los teoremas de Hohenberg y Kohn, la energía total del estado electrónico queda unívocamente determinada por esta densidad tridimensional. El componente central del método es el funcional de intercambio y correlación, encargado de cuantificar los efectos electrónicos que Hartree-Fock omite o aproxima de forma incompleta. Entre las diversas formulaciones existentes, los funcionales híbridos como B3LYP combinan una fracción del intercambio exacto de Hartree-Fock con términos de correlación propios de DFT. Esta combinación proporciona un equilibrio adecuado entre precisión fisicoquímica y coste computacional para el estudio de sistemas orgánicos.
+La teoría del funcional de la densidad (DFT) aborda el problema de la estructura electrónica desde una perspectiva distinta: sustituye la función de onda multielectrónica por la densidad electrónica espacial. Según los teoremas de Hohenberg y Kohn, la energía del estado fundamental queda determinada de forma exacta por esta densidad tridimensional. La pieza central del método es el funcional de intercambio y correlación, responsable de modelar los efectos electrónicos que Hartree-Fock omite o aproxima de forma incompleta. Entre las diversas opciones disponibles, los funcionales híbridos como B3LYP combinan una fracción del intercambio exacto de Hartree-Fock con términos de correlación propios de DFT, ofreciendo un excelente equilibrio entre precisión química y coste computacional en sistemas moleculares.
 
 :::{admonition} Nota
 :class: note
-Para un sistema polielectrónico, la función de onda mecanocuántica depende de $3N$ coordenadas espaciales, lo que encarece de forma exponencial el tratamiento de sistemas moleculares grandes. Los teoremas de Hohenberg y Kohn demuestran que la energía del estado fundamental queda determinada de manera unívoca por la densidad electrónica $\rho(\mathbf{r})$, una magnitud física observable que depende únicamente de tres variables espaciales. Esta reducción dimensional permite incorporar efectos de correlación electrónica con un coste computacional similar al de Hartree-Fock.
+Mientras que la función de onda de un sistema de $N$ electrones depende de $3N$ coordenadas espaciales (lo que hace inviable su cálculo exacto para moléculas medianas o grandes), la densidad electrónica $\rho(\mathbf{r})$ es una magnitud observable que solo depende de tres variables espaciales $(x, y, z)$. Esta drástica reducción dimensional permite a DFT incluir efectos de correlación electrónica con un coste computacional comparable al del método Hartree-Fock.
 :::
 
 ---

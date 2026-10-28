@@ -2,7 +2,7 @@
 
 ## Introducción
 
-La química computacional moderna requiere traducir geometrías moleculares tridimensionales a instrucciones numéricas precisas que puedan ser procesadas por algoritmos de estructura electrónica. GaussView cumple la función de interfaz gráfica interactiva diseñada para asistir en la preparación de archivos de entrada y en la comunicación fluida con el motor de cálculo Gaussian 16. El uso coordinado de este entorno permite construir modelos atómicos en tres dimensiones, seleccionar los métodos teóricos de cálculo e interpretar de forma directa los resultados energéticos y espectroscópicos generados.
+La química computacional requiere transformar geometrías moleculares tridimensionales en coordenadas e instrucciones numéricas procesables por algoritmos de estructura electrónica. GaussView es la interfaz gráfica que facilita preparar los archivos de entrada y comunicarse con el motor de cálculo Gaussian 16. Con este entorno se pueden construir modelos atómicos en tres dimensiones, seleccionar el método teórico adecuado e interpretar directamente los resultados energéticos y espectroscópicos obtenidos.
 
 ---
 
@@ -19,7 +19,7 @@ GaussView se abre desde el escritorio del ordenador del aula o desde el menú de
 
 ## La interfaz: qué ves al abrir
 
-La interfaz gráfica de GaussView se estructura principalmente en cuatro áreas de trabajo coordinadas. En la parte superior se sitúa la barra de menús principal, que proporciona acceso ordenado a la totalidad de las herramientas de configuración y visualización del programa. Inmediatamente debajo se ubica la barra de herramientas gráficas, donde se agrupan los iconos de acceso directo más frecuentes para seleccionar elementos, ajustar enlaces y manipular fragmentos moleculares. El área central está dominada por la ventana de visualización tridimensional, espacio interactivo en el que se construye, desplaza y rota la estructura bajo estudio mediante el ratón. Finalmente, un panel secundario situado en la región inferior muestra información contextual en tiempo real sobre los átomos seleccionados, distancias interatómicas y estados de los cálculos ejecutados.
+La interfaz de GaussView consta de cuatro áreas principales de trabajo. En la parte superior se encuentra la barra de menús, que da acceso a las herramientas de configuración y visualización. Debajo se sitúa la barra de herramientas, con iconos de acceso rápido para seleccionar elementos, modificar enlaces y manipular fragmentos. El área central contiene la ventana de visualización tridimensional, donde se construye, desplaza y rota la molécula con el ratón. Por último, un panel inferior muestra información en tiempo real sobre los átomos seleccionados, distancias interatómicas y el estado de los cálculos.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -30,7 +30,7 @@ La interfaz gráfica de GaussView se estructura principalmente en cuatro áreas 
 
 ## Construir una molécula
 
-Para construir una molécula en GaussView, se selecciona en primer lugar el elemento químico correspondiente en el panel interactivo de fragmentos y se pulsa con el botón izquierdo sobre la ventana de visualización central para colocar el átomo. Al incorporar átomos adicionales en la proximidad de los existentes, el programa genera automáticamente los enlaces químicos correspondientes según los radios covalentes estándar. En el caso del agua ($\text{H}_2\text{O}$), el procedimiento consiste en situar un átomo de oxígeno central y acoplar a continuación dos átomos de hidrógeno en posiciones angulares aproximadas. La estructura espacial definitiva y las distancias exactas se ajustarán numéricamente durante el cálculo de optimización de geometría en Gaussian. Por este motivo, el dibujo inicial en pantalla solo requiere reproducir de forma orientativa la conectividad química del sistema sin necesidad de una precisión métrica estricta.
+Para construir una molécula en GaussView, primero se selecciona el elemento químico en el panel de fragmentos y se hace clic con el botón izquierdo en la ventana central para situar el átomo. Al añadir átomos adicionales cerca de los existentes, el programa genera los enlaces de forma automática a partir de los radios covalentes estándar. Para el agua ($\text{H}_2\text{O}$), basta con colocar un átomo de oxígeno central y enlazar dos átomos de hidrógeno en posiciones angulares aproximadas. La estructura definitiva y las distancias exactas se ajustarán durante la optimización de geometría en Gaussian, por lo que el dibujo inicial solo necesita representar la conectividad química del sistema sin exigir precisión métrica rigurosa.
 
 :::{warning}
 No hacer doble clic accidental sobre el fondo: duplica átomos sin avisar.
@@ -45,25 +45,25 @@ No hacer doble clic accidental sobre el fondo: duplica átomos sin avisar.
 
 ## Corregir errores y deshacer
 
-Para revertir la última acción realizada sobre el espacio de trabajo se emplea la ruta de menú **Edit → Undo** o el atajo de teclado estándar Ctrl+Z. En caso de requerir la eliminación de un átomo o fragmento específico, basta con pulsar sobre él con el ratón para seleccionarlo y presionar a continuación la tecla Supr (o Delete). Si resulta necesario limpiar la ventana por completo y reiniciar el modelado desde cero, se puede utilizar la opción **Edit → Select All** seguida de la tecla Supr. De forma alternativa, es posible generar un espacio de trabajo limpio acudiendo a **File → New** para abrir una nueva ventana interactiva vacía.
+Para deshacer la última acción realizada se utiliza el menú **Edit → Undo** o el atajo de teclado Ctrl+Z. Si se desea eliminar un átomo o fragmento específico, basta con seleccionarlo con el ratón y pulsar la tecla Supr (o Delete). Para limpiar la ventana por completo y reiniciar el modelo, se puede recurrir a **Edit → Select All** seguido de Supr, o bien abrir un área de trabajo nueva desde **File → New**.
 
 ---
 
 ## Añadir hidrógenos automáticamente
 
-La opción de menú **Edit → Add Hydrogens** permite completar de forma automática los átomos de hidrógeno implícitos necesarios para saturar la valencia del esqueleto atómico dibujado. Conviene revisar siempre la estructura tridimensional resultante tras aplicar esta acción, ya que la asignación automática puede no coincidir con el estado de protonación o la distribución de valencias deseada.
+La opción de menú **Edit → Add Hydrogens** completa automáticamente los átomos de hidrógeno implícitos necesarios para saturar la valencia del esqueleto atómico dibujado. Se recomienda revisar siempre la estructura tridimensional resultante, ya que la asignación automática puede diferir del estado de protonación o la distribución de valencias deseada.
 
 ---
 
 ## Moverse por la molécula
 
-Para inspeccionar la estructura molecular se rota la vista manteniendo presionado el botón izquierdo del ratón mientras se desplaza el cursor sobre el espacio de trabajo. El acercamiento o alejamiento visual (zoom) se gradúa de forma directa mediante la rueda de desplazamiento del ratón. En caso de perder de vista el objeto o desear reencuadrar el modelo en la ventana central, se recurre al botón de centrado situado en la barra de herramientas principal o al atajo de teclado correspondiente. El dominio coordinado de estos tres movimientos básicos basta para orientar la geometría con soltura durante las etapas de modelado e interpretación de resultados.
+Para inspeccionar la estructura molecular, la vista se rota manteniendo presionado el botón izquierdo del ratón mientras se desplaza el cursor. El zoom se ajusta de forma directa con la rueda del ratón. Si se pierde de vista la molécula o se necesita centrar el modelo en la ventana, se utiliza el botón de centrado en la barra de herramientas o su atajo correspondiente. El manejo de estos tres movimientos permite orientar la geometría con soltura durante el modelado y la inspección de resultados.
 
 ---
 
 ## Ver y ajustar geometría
 
-Para medir una distancia de enlace en GaussView se seleccionan secuencialmente los dos átomos implicados haciendo clic sobre ellos mientras se mantiene pulsada la tecla Ctrl. El valor numérico de la separación interatómica calculada en ángstroms ($\text{Å}$) se muestra de inmediato en la barra de estado situada en el borde inferior de la ventana. Si se seleccionan tres átomos consecutivos se visualiza el ángulo de enlace en grados sexagesimales, y con cuatro átomos se obtiene el ángulo diedro correspondiente. Esta funcionalidad opera exclusivamente en modalidad de lectura para comprobar las dimensiones de la estructura, por lo que no se requiere modificar manualmente ninguno de estos parámetros.
+Para medir una distancia de enlace en GaussView se seleccionan los dos átomos implicados manteniendo pulsada la tecla Ctrl. La distancia interatómica en ángstroms ($\text{Å}$) aparece de inmediato en la barra de estado, en el borde inferior de la ventana. Al seleccionar tres átomos consecutivos se visualiza el ángulo de enlace en grados, y con cuatro átomos se obtiene el ángulo diedro correspondiente. Esta función opera exclusivamente en modo de lectura para verificar las dimensiones de la estructura, por lo que no es necesario modificar estos parámetros manualmente.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -74,13 +74,13 @@ Para medir una distancia de enlace en GaussView se seleccionan secuencialmente l
 
 ## Abrir un archivo existente
 
-Para abrir un archivo existente en el entorno de trabajo se utiliza la ruta de menú **File → Open**. Los formatos habituales de trabajo son `.gjf` para cargar archivos de entrada de cálculo previamente guardados y `.log` para examinar salidas generadas por Gaussian, facilitando la reanudación del trabajo entre sesiones de laboratorio o el análisis de estructuras de referencia.
+Para abrir un archivo existente se accede al menú **File → Open**. Los formatos habituales son `.gjf`, correspondiente a archivos de entrada de cálculo, y `.log`, que contiene las salidas generadas por Gaussian. Esto permite retomar el trabajo entre sesiones de laboratorio o analizar estructuras de referencia.
 
 ---
 
 ## Configurar un cálculo
 
-El panel de configuración del cálculo se abre acudiendo a **Calculate → Gaussian Calculation Setup**. En la pestaña **Job Type** se selecciona la tarea computacional que se desea ejecutar, tal como una energía puntual (*Energy* o *Single Point*), una optimización de geometría (*Optimization*) o el cálculo de modos vibracionales (*Frequency*). La pestaña **Method** permite definir el nivel de aproximación electrónica especificando tanto el método mecanocuántico (como Hartree-Fock o B3LYP) como el conjunto de funciones de base asignado en cada práctica. En la sección **Title Card** se introduce una breve descripción identificativa del cálculo sin caracteres especiales. Finalmente, el apartado **Charge & Multiplicity** fija la carga neta del sistema molecular (cero en especies neutras) y su multiplicidad de espín (uno en sistemas de capa cerrada).
+El panel de configuración del cálculo se abre desde **Calculate → Gaussian Calculation Setup**. En la pestaña **Job Type** se selecciona la tarea a ejecutar: una energía puntual (*Energy* o *Single Point*), una optimización de geometría (*Optimization*) o el cálculo de modos vibracionales (*Frequency*). La pestaña **Method** permite definir el nivel de teoría especificando el método mecanocuántico (como Hartree-Fock o B3LYP) y la base de funciones asignada en cada práctica. En **Title Card** se introduce una breve descripción identificativa del cálculo sin caracteres especiales. Por último, en **Charge & Multiplicity** se establece la carga neta del sistema (cero en especies neutras) y su multiplicidad de espín (uno en sistemas de capa cerrada).
 
 :::{warning}
 Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aquí invalida todo el cálculo.
@@ -97,7 +97,7 @@ Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aqu
 
 [CONFIRMAR CON PROFESOR: el cálculo se lanza en local o se envía a un servidor?]
 
-Tras completar los parámetros de configuración se inicia la ejecución del cálculo pulsando el botón **Submit** situado en la parte inferior de la ventana. A continuación, GaussView despliega un panel de monitorización que reporta las líneas de texto generadas por Gaussian en tiempo real. La duración del proceso oscila entre unos pocos segundos en moléculas sencillas tratadas con bases mínimas y varios minutos cuando se abordan sistemas moleculares más extensos o métodos correlacionados. Durante este intervalo de cómputo el usuario solo debe esperar a que el proceso culmine de forma automática.
+Una vez configurados los parámetros, el cálculo se lanza pulsando el botón **Submit** en la parte inferior de la ventana. GaussView abre entonces una ventana de seguimiento que muestra las líneas de salida generadas por Gaussian en tiempo real. La duración del proceso oscila entre unos segundos para moléculas sencillas con bases mínimas y varios minutos cuando se tratan sistemas más extensos o métodos con correlación electrónica. Durante este tiempo no es necesario realizar ninguna acción adicional hasta que el cálculo finalice.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -108,7 +108,7 @@ Tras completar los parámetros de configuración se inicia la ejecución del cá
 
 ## Verificar que el cálculo ha terminado bien
 
-Al culminar la ejecución computacional, la última línea del archivo de salida debe contener {{termination_ok}}. Si en su lugar aparece el mensaje `Error termination`, el programa no ha completado el cálculo con éxito. En tal circunstancia se debe notificar la incidencia al profesor de prácticas, puesto que los motivos del fallo pueden originarse en una geometría inicial defectuosa, una parametrización incompatible o la superación de los límites de memoria asignados.
+Al terminar el cálculo, la última línea del archivo de salida debe contener {{termination_ok}}. Si en su lugar aparece `Error termination`, el cálculo no se ha completado correctamente. En ese caso se debe avisar al profesor de prácticas, ya que el error puede deberse a una geometría inicial inadecuada, una configuración incompatible o a haber superado el límite de memoria asignado.
 
 :::{danger}
 Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminado correctamente buscando la línea: {{termination_ok}}
@@ -120,13 +120,13 @@ Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminad
 
 [CONFIRMAR CON PROFESOR: cómo se llama y dónde aparece el archivo .log en el aula]
 
-La inspección de los resultados se realiza a través de dos procedimientos complementarios según el tipo de información requerida. Para visualizar la geometría de equilibrio final, las superficies de densidad electrónica o los orbitales moleculares, se recurre a la interfaz de GaussView mediante las opciones del menú **Results**. Por el contrario, para extraer datos cuantitativos como energías electrónicas o frecuencias vibracionales e incluirlos en el cuaderno de trabajo, resulta más directo abrir el archivo `.log` con un editor de texto convencional y localizar los epígrafes pertinentes. En el protocolo de cada práctica se especifica el término exacto de búsqueda y el formato en que deben transcribirse los valores numéricos.
+Los resultados se consultan por dos vías según la información que se necesite. Para visualizar la geometría optimizada, la densidad electrónica o los orbitales moleculares, se utiliza el menú **Results** de GaussView. Para extraer valores numéricos como la energía total o las frecuencias vibracionales y anotarlos en el cuaderno de trabajo, es más directo abrir el archivo `.log` con un editor de texto y localizar las líneas pertinentes. En el guión de cada práctica se indica qué término buscar y cómo anotar cada valor.
 
 ---
 
 ## Guardar el trabajo
 
-Las instrucciones de cálculo y las estructuras moleculares se guardan accediendo a **File → Save** bajo la extensión `.gjf`. Conviene emplear una nomenclatura estructurada que identifique la molécula y el nivel de teoría seleccionado (por ejemplo, `h2o_b3lyp_6311g.gjf`), evitando pérdidas de datos y facilitando la organización de los cálculos generados a lo largo de la sesión.
+El archivo de entrada se guarda desde **File → Save** con la extensión `.gjf`. Se recomienda utilizar una nomenclatura clara que identifique la molécula y el nivel de teoría empleado (por ejemplo, `h2o_b3lyp_6311g.gjf`), lo que evita pérdidas de datos y facilita organizar los cálculos durante la sesión.
 
 ---
 
@@ -140,7 +140,7 @@ Las instrucciones de cálculo y las estructuras moleculares se guardan accediend
 :color: success
 :icon: gear
 
-La tonalidad de fondo del espacio tridimensional se modifica en la ruta **View → Display Format → Background Color**. En esta misma ventana de configuración es posible personalizar el tamaño relativo de las esferas atómicas y su esquema de colores en los apartados **Atom Size** y **Atom Colors**. Estos ajustes visuales no alteran los cálculos mecanocuánticos ni son obligatorios para el seguimiento de la asignatura, pero la selección de un fondo blanco facilita la obtención de capturas nítidas y legibles para su inserción en las memorias de prácticas.
+El color de fondo del espacio tridimensional se modifica desde **View → Display Format → Background Color**. En esta misma ventana se puede personalizar el tamaño de las esferas atómicas y su esquema de colores en los apartados **Atom Size** y **Atom Colors**. Estos ajustes no alteran los cálculos ni son obligatorios, pero usar un fondo blanco facilita obtener capturas nítidas para la memoria de prácticas.
 
 :::{admonition} Captura de pantalla
 :class: captura

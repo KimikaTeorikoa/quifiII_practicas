@@ -10,7 +10,7 @@
 
 ## Introducción
 
-La interacción entre la radiación ultravioleta-visible y las moléculas orgánicas induce transiciones electrónicas desde orbitales ocupados de valencia hacia orbitales virtuales de mayor energía. El formalismo de la teoría del funcional de la densidad dependiente del tiempo (TD-DFT) en Gaussian 16 permite modelar estas excitaciones considerando la reorganización de la densidad de carga. A través de estos cálculos se determinan las longitudes de onda de absorción, las fuerzas de oscilador de transiciones tipo $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en cetonas, y el desplazamiento espectral producido por el entorno dieléctrico del disolvente.
+La absorción de radiación ultravioleta-visible induce transiciones electrónicas en las moléculas orgánicas al promover electrones desde orbitales ocupados de valencia hacia orbitales virtuales de mayor energía. Mediante la teoría del funcional de la densidad dependiente del tiempo (TD-DFT) en Gaussian, es posible simular estas excitaciones teniendo en cuenta la reorganización de la densidad electrónica. En esta práctica se calculan las longitudes de onda de absorción y las fuerzas de oscilador para las transiciones $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en cetonas, analizando además cómo la polaridad del disolvente desplaza las bandas del espectro.
 
 ---
 
@@ -65,7 +65,7 @@ Párrafo medio. Descripción del formalismo de DFT dependiente del tiempo para e
 
 :::{admonition} Nota
 :class: note
-La fuerza del oscilador ($f$) es una magnitud adimensional proporcional al cuadrado del momento dipolar de transición electromagnético, indicando la probabilidad intrínseca de absorción y la intensidad de la banda observada. En la transición $n \rightarrow \pi^*$, el orbital no enlazante del oxígeno reside en el plano molecular mientras que el orbital $\pi^*$ es perpendicular a dicho plano; esta ortogonalidad espacial provoca que la integral de transición sea casi nula, dando un valor de $f$ muy reducido. Por el contrario, transiciones con fuerte solapamiento espacial entre orbitales de simetría compatible presentan valores de $f$ órdenes de magnitud mayores.
+La fuerza del oscilador ($f$) es una magnitud adimensional proporcional al cuadrado del momento dipolar de transición que cuantifica la probabilidad de absorción y la intensidad de la banda observada. En la transición $n \rightarrow \pi^*$, el orbital no enlazante del oxígeno reside en el plano molecular mientras que el orbital $\pi^*$ es perpendicular a dicho plano; esta ortogonalidad espacial hace que la integral de transición sea casi nula, lo que produce un valor de $f$ muy reducido. En cambio, las transiciones con marcado solapamiento espacial entre orbitales de simetría compatible presentan valores de $f$ varios órdenes de magnitud mayores.
 :::
 
 ### Efecto del disolvente: solvatocromismo
@@ -82,7 +82,7 @@ Valores experimentales de referencia para acetona:
 
 :::{admonition} Nota
 :class: note
-El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \rightarrow \pi^*$ deriva de la diferente polaridad de los estados electrónicos involucrados. En el estado fundamental ($S_0$), el grupo carbonilo posee un momento dipolar elevado y los pares electrónicos del oxígeno establecen enlaces de hidrógeno eficaces con disolventes polares próticos como el agua. Durante la transición electrónica, la transferencia de densidad de carga hacia el sistema $\pi^*$ disminuye el momento dipolar en el estado excitado ($S_1$), reduciendo la estabilización por solvatación y aumentando la energía necesaria para la excitación vertical.
+El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \rightarrow \pi^*$ deriva de la diferente polaridad de los estados electrónicos implicados. En el estado fundamental ($S_0$), el grupo carbonilo posee un momento dipolar elevado y los pares solitarios del oxígeno forman enlaces de hidrógeno con disolventes polares próticos como el agua. Durante la transición electrónica, la redistribución de carga hacia el sistema $\pi^*$ disminuye el momento dipolar en el estado excitado ($S_1$), lo que reduce la estabilización por solvatación y aumenta la energía necesaria para la excitación vertical.
 :::
 
 ---
@@ -115,9 +115,9 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 | Additional Keywords | `scrf=(solvent=acetonitrile) geom=connectivity` |
 
 7. En la pestaña **Title**, escribir: `Acetona opt B3LYP 6-311G MeCN`.
-8. En la pestaña **Additional Keywords**, escribir exactamente: `scrf=(solvent=acetonitrile) geom=connectivity`.
-9. Pulsar **Submit**, guardar el archivo como `acetona_MeCN_opt.gjf` en el directorio `{{practicas_folder}}EspectroscopiaUV/` y confirmar el envío.
-10. Abrir el archivo de salida `.log` (`acetona_MeCN_opt.log`) en el editor de texto y comprobar que la última línea coincide con: `{{termination_ok}}`.
+8. En el campo inferior **Additional Keywords**, escribir: `scrf=(solvent=acetonitrile) geom=connectivity`.
+9. Pulsar **Submit**, guardar el archivo como `acetona_MeCN_opt.gjf` en el directorio `{{practicas_folder}}EspectroscopiaUV/` y confirmar el cálculo con **Save** y **Submit**.
+10. Abrir el archivo de salida `.log` (`acetona_MeCN_opt.log`) en el editor de texto y comprobar la línea final: `{{termination_ok}}`.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -127,11 +127,11 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 #### Paso A2: Extraer autovalores HOMO y LUMO
 
 1. En el archivo `.log` de la optimización (`acetona_MeCN_opt.log`), buscar con **Ctrl + F** el texto: `Alpha  occ. eigenvalues`.
-2. Identificar el último valor numérico de la última fila `Alpha occ.` correspondiente a la energía del orbital HOMO ($\varepsilon_{\text{HOMO}}$ en Hartrees).
-3. Identificar el primer valor numérico de la fila inmediata `Alpha virt. eigenvalues` correspondiente a la energía del orbital LUMO ($\varepsilon_{\text{LUMO}}$ en Hartrees).
+2. Identificar el último valor numérico de la última fila `Alpha occ.` correspondiente a la energía del orbital HOMO ($\varepsilon_{\text{HOMO}}$ en hartrees).
+3. Identificar el primer valor numérico de la fila siguiente `Alpha virt. eigenvalues` correspondiente a la energía del orbital LUMO ($\varepsilon_{\text{LUMO}}$ en hartrees).
 4. Calcular la diferencia energética $\Delta E_{\text{gap}} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times {{ha_to_ev}}$ en eV.
 5. Estimar la longitud de onda de absorción: $\lambda_{\text{estimada}} = 1239.8 / \Delta E_{\text{gap}}\text{ (eV)}$ en nm.
-6. Copiar los valores numéricos obtenidos en la Tabla A de resultados.
+6. Anotar los valores numéricos obtenidos en la Tabla A de resultados.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -149,9 +149,9 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 3. En la pestaña **Job Type**, seleccionar **Energy** (cálculo de punto único sobre la estructura de equilibrio).
 4. En la pestaña **Method**, mantener Method **B3LYP**, Basis Set **6-311G**, Charge **0**, Spin **1**.
 5. En la pestaña **Title**, escribir: `Acetona TD-DFT B3LYP 6-311G MeCN`.
-6. En la pestaña **Additional Keywords**, escribir exactamente: `td scrf=(solvent=acetonitrile) geom=connectivity`.
-7. Pulsar **Submit**, guardar como `acetona_MeCN_td.gjf` en `{{practicas_folder}}EspectroscopiaUV/` y confirmar la ejecución.
-8. Verificar la terminación correcta (`{{termination_ok}}`) al final del archivo `.log`.
+6. En el campo inferior **Additional Keywords**, escribir: `td scrf=(solvent=acetonitrile) geom=connectivity`.
+7. Pulsar **Submit**, guardar como `acetona_MeCN_td.gjf` en `{{practicas_folder}}EspectroscopiaUV/` y confirmar el cálculo con **Save** y **Submit**.
+8. Verificar la presencia de la línea final `{{termination_ok}}` en el archivo `.log`.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -204,7 +204,7 @@ Campos del bloque de estado excitado:
 
 1. En GaussView, abrir nuevamente la geometría optimizada de la acetona.
 2. Configurar el cálculo TD-DFT mediante **Calculate → Gaussian Calculation Setup** (Job Type **Energy**, Method **B3LYP/6-311G**, Charge **0**, Spin **1**).
-3. Modificar la palabra clave en la pestaña **Additional Keywords** para cada disolvente de la serie:
+3. Modificar la palabra clave en el campo **Additional Keywords** para cada disolvente de la serie:
    - Vacío (gas): `td geom=connectivity` (sin palabra clave `scrf`)
    - Ciclohexano: `td scrf=(solvent=cyclohexane) geom=connectivity`
    - Cloroformo: `td scrf=(solvent=chloroform) geom=connectivity`
@@ -213,8 +213,8 @@ Campos del bloque de estado excitado:
    - Agua: `td scrf=(solvent=water) geom=connectivity`
 4. Guardar cada archivo con nombre descriptivo en `{{practicas_folder}}EspectroscopiaUV/` (por ejemplo, `acetona_ciclohexano_td.gjf`, `acetona_agua_td.gjf`).
 5. Ejecutar cada cálculo y verificar la línea `{{termination_ok}}` en los archivos `.log`.
-6. Extraer los valores de $\lambda$ y fuerza de oscilador $f$ para `Excited State 1` en cada `.log` y anotarlos en la Tabla B de resultados.
-7. Comparar la posición de la banda en ciclohexano ($\lambda \approx 279\text{ nm}$) frente al agua ($\lambda \approx 264\text{ nm}$) para cuantificar el desplazamiento hipsocrómico (al azul).
+6. Extraer los valores de $\lambda$ y de fuerza de oscilador $f$ para `Excited State 1` en cada `.log` y anotarlos en la Tabla B de resultados.
+7. Comparar la posición de la banda en ciclohexano ($\lambda \approx 279\text{ nm}$) con la observada en agua ($\lambda \approx 264\text{ nm}$) para cuantificar el desplazamiento hipsocrómico (al azul).
 
 | Disolvente | Constante dieléctrica ($\varepsilon$) | Palabra clave en Additional Keywords |
 |---|:---:|---|
@@ -243,9 +243,9 @@ Campos del bloque de estado excitado:
    - Menú **Calculate → Gaussian Calculation Setup** → Job Type **Optimization**, Method **B3LYP/6-311G**, Charge **0**, Spin **1**.
    - Additional Keywords: `scrf=(solvent=acetonitrile) geom=connectivity`.
    - Guardar como `[molecula]_MeCN_opt.gjf` y verificar terminación normal.
-3. Sobre cada estructura optimizada, configurar y lanzar el cálculo TD-DFT:
+3. Sobre cada estructura optimizada, configurar y ejecutar el cálculo TD-DFT:
    - Menú **Calculate → Gaussian Calculation Setup** → Job Type **Energy**, Method **B3LYP/6-311G**, Charge **0**, Spin **1**.
-   - Additional Keywords: `td scrf=(solvent=acetonitrile) geom=connectivity`.
+   - Campo **Additional Keywords**: `td scrf=(solvent=acetonitrile) geom=connectivity`.
    - Guardar como `[molecula]_MeCN_td.gjf` y verificar terminación normal.
 4. Organizar los archivos en subcarpetas específicas dentro de `{{practicas_folder}}EspectroscopiaUV/` para facilitar la gestión.
 5. Localizar el bloque `Excited State 1` en el archivo `.log` de cada derivado, extraer $\lambda$ y la fuerza de oscilador $f$, y anotar los valores en la Tabla C de resultados para evaluar el efecto electrónico del sustituyente.
@@ -316,8 +316,8 @@ Párrafo corto. Pautas metodológicas para transferir con exactitud los valores 
 
 1. ¿Qué valor de energía de excitación en eV, longitud de onda en nm y fuerza de oscilador $f$ reporta la línea `Excited State 1` en el archivo `.log` de la acetona? Comparar dicha energía vertical con la diferencia estática de autovalores de frontera $\Delta \varepsilon = \varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}$ e indicar la desviación numérica entre ambas aproximaciones.
 2. La transición electrónica $n \rightarrow \pi^*$ en la acetona presenta una fuerza de oscilador muy baja ($f \approx 0.0001$), mientras que las transiciones $\pi \rightarrow \pi^*$ muestran típicamente $f > 0.1$. Justificar esta marcada diferencia a partir del solapamiento espacial entre el orbital del par solitario no enlazante del oxígeno y el orbital antienlazante $\pi^*$.
-3. El cálculo TD-DFT en disolución mediante el modelo continuo PCM predice un desplazamiento hipsobrómico (hacia el azul) de la banda $n \rightarrow \pi^*$ en agua menor que el medido experimentalmente. Justificar por qué la aproximación de medio dieléctrico homogéneo no reproduce con exactitud la estabilización producida por enlaces de hidrógeno discretos soluto-disolvente.
-4. Comparar la longitud de onda de absorción máxima ($\lambda_{\text{max}}$) calculada para la acetona en fase gas con la obtenida en disolución acuosa mediante PCM. Deducir el signo y la magnitud del desplazamiento solvatocrómico ($\Delta \lambda$) y explicar si corresponde a un efecto batocrómico o hipsobrómico.
+3. El cálculo TD-DFT en disolución mediante el modelo continuo PCM predice un desplazamiento hipsocrómico (hacia el azul) de la banda $n \rightarrow \pi^*$ en agua menor que el medido experimentalmente. Justificar por qué la aproximación de medio dieléctrico homogéneo no reproduce con exactitud la estabilización producida por enlaces de hidrógeno discretos soluto-disolvente.
+4. Comparar la longitud de onda de absorción máxima ($\lambda_{\text{max}}$) calculada para la acetona en fase gas con la obtenida en disolución acuosa mediante PCM. Deducir el signo y la magnitud del desplazamiento solvatocrómico ($\Delta \lambda$) y explicar si corresponde a un efecto batocrómico o hipsocrómico.
 5. Al comparar el espectro de la acetona con el de la acetofenona, el grupo carbonilo experimenta un desplazamiento hacia el rojo ($\lambda_{\text{max}}$ mayor). Explicar cómo la deslocalización electrónica entre el grupo carbonilo y los orbitales $\pi$ del anillo aromático reduce la separación energética entre los estados electrónicos fundamental y excitado.
 
 ---

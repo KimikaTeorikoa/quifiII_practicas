@@ -10,7 +10,7 @@
 
 ## Introducción
 
-La energía de ionización refleja la fuerza con la que el núcleo retiene a los electrones más externos y determina la reactividad química y las tendencias a lo largo de la tabla periódica. Mediante cálculos mecanocuánticos con el método Hartree-Fock implementado en Gaussian, dos aproximaciones teóricas complementarias permiten cuantificar este proceso. El primer método determina la diferencia de energía total entre el átomo neutro y su catión correspondiente, mientras que el segundo aplica el teorema de Koopmans para estimar el potencial a partir del autovalor del orbital ocupado de mayor energía (HOMO).
+La energía de ionización mide la fuerza de atracción que ejerce el núcleo sobre los electrones más externos y determina la reactividad química y las tendencias periódicas de los elementos. Mediante cálculos de Hartree-Fock en Gaussian, se aplican dos aproximaciones complementarias para evaluar esta propiedad: la diferencia directa de energía total entre el átomo neutro y su catión ($\Delta E$), y la estimación a partir del orbital ocupado de mayor energía mediante el teorema de Koopmans ($-\varepsilon_{\text{HOMO}}$).
 
 ---
 
@@ -90,7 +90,7 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 1. Abrir GaussView desde el menú de aplicaciones o lanzador del sistema.
 2. Abrir la paleta de fragmentos atómicos mediante **View → Element Fragments** (o pulsando el icono de la tabla periódica en la barra de herramientas superior).
 3. Seleccionar el elemento químico que se desea calcular (por ejemplo, carbono, **C**).
-4. Hacer un único clic sobre la ventana central de dibujo. Aparece un único centro atómico sin enlaces.
+4. Hacer un único clic con el botón izquierdo sobre la ventana central de dibujo. Aparecerá un centro atómico aislado sin enlaces.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -111,7 +111,7 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 | Spin (Multiplicity) | Consultar la tabla de multiplicidades para cada átomo neutro |
 
 4. En la pestaña **Title**, escribir una descripción identificativa (por ejemplo, `C neutro HF STO-3G`).
-5. En la pestaña **Additional Keywords**, escribir exactamente: `pop=full`. Esta instrucción vuelca las energías de la totalidad de orbitales moleculares en el archivo de salida.
+5. En la pestaña **Additional Keywords**, escribir exactamente: `pop=full`. Esta instrucción incluye las energías de todos los orbitales moleculares en el archivo de salida.
 
 Tabla de multiplicidades de referencia ($2S+1$):
 
@@ -160,7 +160,7 @@ Tabla de multiplicidades de referencia ($2S+1$):
 
 1. En el archivo `.log` abierto en el editor de texto, pulsar **Ctrl + F** para activar la búsqueda.
 2. Escribir el texto de búsqueda: `SCF Done`.
-3. Localizar el autovalor de energía total en la línea `SCF Done:  E(RHF) = ...` (para sistemas de capa cerrada con multiplicidad 1) o `SCF Done:  E(ROHF) = ...` (para capa abierta con multiplicidad distinta de 1).
+3. Localizar la energía total en la línea `SCF Done:  E(RHF) = ...` (para sistemas de capa cerrada con multiplicidad 1) o `SCF Done:  E(ROHF) = ...` (para capa abierta con multiplicidad distinta de 1).
 4. Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna $E(N)$ de la tabla de resultados.
 
 :::{admonition} Captura de pantalla

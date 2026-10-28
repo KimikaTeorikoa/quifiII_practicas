@@ -10,7 +10,7 @@
 
 ## Introducción
 
-La absorción de radiación infrarroja por la materia surge de la interacción entre el campo electromagnético y el movimiento vibracional de los núcleos atómicos. El método de cálculo de frecuencias implementado en Gaussian 16 evalúa la matriz hessiana de la energía potencial para descomponer este movimiento molecular en oscilaciones armónicas independientes. El análisis conjunto de estos modos normales proporciona las frecuencias teóricas de vibración, la visualización de los desplazamientos atómicos en GaussView y la asignación de actividad en el espectro infrarrojo según las reglas de simetría molecular.
+La absorción de radiación infrarroja surge de la interacción entre el campo electromagnético y las vibraciones nucleares. Para modelar este fenómeno, Gaussian calcula las frecuencias vibracionales diagonalizando la matriz hessiana de la energía potencial, lo que descompone el movimiento molecular en oscilaciones armónicas independientes. El análisis de los modos normales resultantes proporciona las frecuencias teóricas, permite visualizar los desplazamientos atómicos en GaussView y determina su actividad en el espectro infrarrojo según las reglas de simetría molecular.
 
 ---
 
@@ -40,7 +40,7 @@ $$\tilde{\nu} = \frac{1}{2\pi c}\sqrt{\frac{k}{\mu}}$$
 
 :::{admonition} Nota
 :class: note
-Gaussian calcula las constantes de fuerza mediante las segundas derivadas de la energía potencial respecto a los desplazamientos nucleares (matriz hessiana) en la geometría optimizada. Esta aproximación trunca el desarrollo en serie de Taylor en el término cuadrático, asumiendo un pozo de potencial armónico perfecto. Como los enlaces moleculares reales presentan anarmonicidad intrínseca a mayores distancias internucleares, las frecuencias calculadas suelen sobreestimar de manera sistemática los valores experimentales obtenidos por espectroscopía infrarroja.
+Gaussian calcula las constantes de fuerza mediante las segundas derivadas de la energía potencial respecto a los desplazamientos nucleares (matriz hessiana) en la geometría optimizada. Esta aproximación trunca el desarrollo en serie de Taylor en el término cuadrático y asume un potencial armónico ideal. Como los enlaces moleculares reales presentan anarmonicidad a mayores distancias internucleares, las frecuencias calculadas suelen sobreestimar de forma sistemática los valores experimentales obtenidos por espectroscopía infrarroja.
 :::
 
 ### Modos normales y grados de libertad vibracionales
@@ -60,7 +60,7 @@ Párrafo medio. Condición de absorción de radiación infrarroja: variación ne
 
 :::{admonition} Nota
 :class: note
-La absorción de radiación infrarroja requiere que el movimiento vibracional altere el momento dipolar molecular ($\partial \vec{\mu}/\partial Q \neq 0$). En el estiramiento simétrico del $\text{CO}_2$, la simetría de inversión se conserva de forma continua y la variación neta del dipolo es estrictamente nula, por lo que el modo no acopla con el campo electromagnético incidente. En el archivo `.log`, esta inactividad se manifiesta con un valor de intensidad infrarroja (`IR Inten`) exactamente igual a 0.0000.
+La absorción de radiación infrarroja requiere que el movimiento vibracional altere el momento dipolar molecular ($\partial \vec{\mu}/\partial Q \neq 0$). En el estiramiento simétrico del $\text{CO}_2$, la simetría de inversión se conserva y la variación neta del dipolo es nula, por lo que el modo no se acopla con el campo electromagnético incidente. En el archivo `.log`, esta inactividad se manifiesta con un valor de intensidad infrarroja (`IR Inten`) de 0.0000.
 :::
 
 ### Requisito operativo: optimización previa de geometría
@@ -83,9 +83,9 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 ### Paso 1: Dibujar CO en GaussView
 
 1. Abrir GaussView desde el menú de aplicaciones o lanzador del sistema.
-2. Abrir la paleta de elementos mediante **View → Element Fragments** (o haciendo clic en el icono de la tabla periódica en la barra superior).
-3. Seleccionar el elemento carbono (**C**) y hacer clic en el área central de dibujo.
-4. Seleccionar el elemento oxígeno (**O**) en la paleta de fragmentos.
+2. Desplegar la paleta de elementos mediante **View → Element Fragments** (o haciendo clic en el icono de la tabla periódica en la barra superior).
+3. Seleccionar carbono (**C**) y hacer clic en el área central de dibujo.
+4. Seleccionar oxígeno (**O**) en la paleta de fragmentos.
 5. Hacer clic sobre el átomo de carbono para añadir el átomo de oxígeno enlazado.
 6. Aplicar una limpieza geométrica preliminar mediante **Edit → Clean** (o pulsar el icono de escoba en la barra de herramientas).
 
@@ -110,7 +110,7 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 | Additional Keywords | `geom=connectivity` |
 
 4. En la pestaña **Title**, escribir: `CO opt freq B3LYP 6-311G`.
-5. En la pestaña **Additional Keywords**, escribir: `geom=connectivity`.
+5. En el campo inferior **Additional Keywords**, escribir: `geom=connectivity`.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -122,8 +122,8 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 1. Pulsar el botón **Submit** en la ventana de configuración.
 2. En el cuadro de diálogo de guardado, escribir el nombre del archivo: `CO_opt_freq_B3LYP_6311G.gjf`. Guardarlo en el directorio de trabajo: `{{practicas_folder}}ModoNormales/`.
 3. Confirmar pulsando **Save** y seguidamente **Submit**.
-4. Esperar a que el cálculo finalice en la barra de estado de GaussView (tiempo aproximado: 1-2 minutos).
-5. Abrir el archivo `.log` (`CO_opt_freq_B3LYP_6311G.log`) en el editor de texto y desplazarse al final con **Ctrl + Fin** para verificar la presencia de la línea: `{{termination_ok}}`.
+4. Esperar a que el cálculo finalice (el avance se muestra en la barra de estado de GaussView; tiempo estimado: 1–2 minutos).
+5. Abrir el archivo `.log` (`CO_opt_freq_B3LYP_6311G.log`) en el editor de texto y desplazarse al final con **Ctrl + Fin** para comprobar la línea: `{{termination_ok}}`.
 6. Confirmar que la etapa de frecuencias se ejecutó correctamente buscando la sección `Frequencies --`.
 
 :::{admonition} Captura de pantalla
@@ -135,8 +135,8 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 
 1. En GaussView, abrir el archivo `.log` resultante mediante **File → Open**.
 2. Acceder al menú **Results → Optimization** para visualizar la trayectoria de optimización y situarse en el último fotograma correspondiente al mínimo de energía.
-3. Medir la longitud de enlace C–O optimizada seleccionando sucesivamente el átomo de carbono y el de oxígeno (el valor en Ångströms se muestra en la barra inferior de la ventana gráfica).
-4. Alternativamente, en el archivo `.log` abierto en el editor de texto, buscar con **Ctrl + F** el texto: `! R1    R(1,2)`. El valor numérico adyacente (1.1473 Å) es la distancia de enlace de equilibrio.
+3. Medir la longitud de enlace C–O optimizada seleccionando sucesivamente el átomo de carbono y el de oxígeno (el valor en Å se muestra en la barra inferior de la ventana gráfica).
+4. Alternativamente, en el archivo `.log` abierto en el editor de texto, buscar con **Ctrl + F** el texto: `! R1    R(1,2)`. El valor adyacente (1.1473 Å) corresponde a la distancia de enlace de equilibrio.
 5. Copiar la distancia calculada en la Tabla 1 de resultados.
 
 :::{admonition} Captura de pantalla
@@ -164,8 +164,8 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 1. En GaussView, con el archivo `CO_opt_freq_B3LYP_6311G.log` abierto, acceder al menú **Results → Vibrations**.
 2. En la lista de modos normales, seleccionar la fila correspondiente a la frecuencia calculada (2063 $\text{cm}^{-1}$).
 3. Activar la casilla **Start Animation** para observar el movimiento oscilatorio de los núcleos.
-4. Activar la casilla **Show Vectors** para visualizar las flechas de desplazamiento nuclear y comprobar que los átomos se mueven a lo largo del eje del enlace (modo de estiramiento).
-5. Observar la amplitud relativa de las flechas: el carbono (átomo más ligero) experimenta un desplazamiento mayor que el oxígeno (átomo más pesado).
+4. Marcar la casilla **Show Vectors** para visualizar las flechas de desplazamiento nuclear y comprobar que los átomos se mueven a lo largo del eje del enlace (modo de estiramiento).
+5. Comprobar la amplitud relativa de las flechas: el átomo de carbono, al ser más ligero, experimenta un desplazamiento mayor que el de oxígeno.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -182,14 +182,14 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
    - Pestaña **Job Type**: seleccionar **Opt+Freq**.
    - Pestaña **Method**: Method **B3LYP**, Basis Set **6-311G**, Charge **0**, Spin **1**.
    - Pestaña **Title**: escribir `CO2 opt freq B3LYP 6-311G`.
-   - Pestaña **Additional Keywords**: escribir `geom=connectivity`.
+   - Campo **Additional Keywords**: escribir `geom=connectivity`.
 6. Pulsar **Submit**, guardar como `CO2_opt_freq_B3LYP_6311G.gjf` en `{{practicas_folder}}ModoNormales/` y confirmar el cálculo.
 7. Verificar la terminación normal en el archivo `.log` (`CO2_opt_freq_B3LYP_6311G.log`).
 8. Abrir el archivo `.log` en GaussView y acceder a **Results → Vibrations**.
 9. Seleccionar sucesivamente cada uno de los 4 modos normales para animarlos y caracterizarlos:
-   - Modo 1 (estiramiento simétrico, ~1388 $\text{cm}^{-1}$): los dos átomos de oxígeno se alejan y acercan al carbono en fase opuesta, manteniendo invariante el momento dipolar nulo (`IR Inten ≈ 0`, inactivo en IR).
-   - Modo 2 (estiramiento asimétrico, ~2349 $\text{cm}^{-1}$): un enlace C–O se contrae mientras el otro se estira, generando una variación periódica del momento dipolar (`IR Inten` elevada, activo en IR).
-   - Modos 3 y 4 (flexiones degeneradas, ~667 $\text{cm}^{-1}$): variación del ángulo de enlace O–C–O en dos planos mutuamente perpendiculares; ambas frecuencias presentan valores idénticos y son activas en IR.
+   - Modo 1 (estiramiento simétrico, ~1388 $\text{cm}^{-1}$): ambos átomos de oxígeno se alejan o se acercan simultáneamente al carbono central, manteniendo invariante el momento dipolar nulo (`IR Inten ≈ 0`, inactivo en IR).
+   - Modo 2 (estiramiento asimétrico, ~2349 $\text{cm}^{-1}$): un enlace C–O se contrae mientras el otro se alarga, rompiendo la simetría y generando una variación periódica del momento dipolar (`IR Inten` elevada, activo en IR).
+   - Modos 3 y 4 (flexiones degeneradas, ~667 $\text{cm}^{-1}$): deformación angular del enlace O–C–O en dos planos mutuamente perpendiculares; ambas frecuencias presentan valores idénticos y son activas en IR.
 10. Registrar las frecuencias calculadas de los cuatro modos en la Tabla 2 de resultados.
 
 Clasificación de los modos esperados para CO₂:

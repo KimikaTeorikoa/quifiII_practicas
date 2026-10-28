@@ -2,7 +2,7 @@
 
 ## Introducción
 
-La estabilidad del enlace covalente y las preferencias conformacionales moleculares dependen de la variación de la energía electrónica frente a cambios en las posiciones relativas de los núcleos. La aproximación de Born-Oppenheimer permite representar estas variaciones como una superficie de energía potencial que se cartografía mediante barridos geométricos sistemáticos en Gaussian 16. Este procedimiento genera tanto la curva de disociación internuclear de la molécula de hidrógeno para diferentes multiplicidades de espín como el perfil energético de rotación del ángulo diedro en dihaloetanos.
+La estabilidad del enlace químico y las preferencias conformacionales de las moléculas dependen de cómo varía la energía electrónica al modificar las posiciones de los núcleos. Gracias a la aproximación de Born-Oppenheimer, estas variaciones pueden representarse como una superficie de energía potencial calculada mediante barridos geométricos sistemáticos en Gaussian. En esta práctica se analiza la curva de disociación de la molécula de hidrógeno para diferentes estados de espín y el perfil energético de rotación del ángulo diedro en derivados halogenados del etano.
 
 ---
 
@@ -25,13 +25,13 @@ En esta práctica empleamos GaussView como interfaz gráfica para la construcci�
 
 ### ¿Qué es una superficie de energía potencial?
 
-En el marco de la aproximación de Born-Oppenheimer, la energía electrónica constituye una función continua de las coordenadas espaciales de los núcleos, lo que define formalmente la superficie de energía potencial (SEP) del sistema:
+Bajo la aproximación de Born-Oppenheimer, la energía electrónica es una función continua de las coordenadas nucleares que define la superficie de energía potencial (SEP) del sistema:
 
 $$
 E = E(\mathbf{R})
 $$
 
-Los mínimos de esta hipersuperficie corresponden a geometrías moleculares de equilibrio estables, en las que el gradiente de energía sobre cada núcleo es nulo y cualquier deformación espacial incrementa la energía potencial. Los puntos de silla de primer orden conectan pares de mínimos contiguos y definen los estados de transición de las transformaciones químicas y los procesos conformacionales. A distancias internucleares grandes la energía potencial converge hacia el límite asintótico de disociación, región en la que los fragmentos atómicos o moleculares dejan de interaccionar entre sí.
+Los mínimos de esta superficie corresponden a geometrías de equilibrio estables, en las que las fuerzas sobre cada núcleo son nulas y cualquier deformación incrementa la energía. Los puntos de silla de primer orden conectan mínimos contiguos y representan los estados de transición de reacciones químicas o cambios conformacionales. A distancias internucleares grandes, la energía potencial alcanza el límite de disociación, donde los átomos dejan de interaccionar entre sí.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -40,16 +40,16 @@ Los mínimos de esta hipersuperficie corresponden a geometrías moleculares de e
 
 ### Singlete y triplete: por qué importa el espín
 
-En el estado singlete los dos electrones presentan espines antiparalelos asociados a una multiplicidad de espín unitaria, lo que les permite compartir la misma región orbital y favorecer la acumulación de densidad electrónica en el espacio internuclear. Esta concentración de carga apantalla la repulsión mutua entre los núcleos y estabiliza termodinámicamente el enlace covalente, generando una curva de energía potencial con un pozo y un mínimo de energía bien definido a la distancia de enlace de equilibrio. Por el contrario, en el estado triplete los dos electrones poseen espines paralelos con multiplicidad 3, por lo que el principio de exclusión de Pauli prohíbe que ambas partículas ocupen simultáneamente la región interatómica. Como consecuencia directa, la curva de energía potencial del triplete resulta estrictamente repulsiva en todo el rango internuclear y carece de mínimo, impidiendo la formación de una molécula químicamente ligada.
+En el estado singlete, los dos electrones de H₂ tienen espines antiparalelos (multiplicidad 1). Esto les permite compartir la misma región del espacio y concentrar densidad electrónica entre los dos núcleos, apantallando su repulsión mutua y estabilizando el enlace covalente en un mínimo de energía a la distancia de equilibrio. En cambio, en el estado triplete los espines son paralelos (multiplicidad 3) y el principio de exclusión de Pauli impide que ambos electrones se sitúen simultáneamente en la región internuclear. Por este motivo, la curva de energía potencial del triplete es puramente repulsiva en todo el recorrido y no presenta ningún mínimo de enlace.
 
 :::{admonition} Nota
 :class: note
-En el estado singlete ($^1\Sigma_g^+$), la función de onda espacial es simétrica respecto a la permutación electrónica, lo que permite acumular densidad de carga entre los núcleos y estabilizar el enlace covalente a distancias cortas. En el estado triplete ($^3\Sigma_u^+$), el principio de Pauli impone una función de onda espacial antisimétrica con un nodo internuclear donde la densidad electrónica se anula. Al carecer de apantallamiento electrónico entre protones, las fuerzas repulsivas nucleares dominan a cualquier distancia, produciendo una curva potencial monótonamente decreciente hacia la disociación.
+Desde el punto de vista mecanocuántico, la función de onda espacial del singlete ($^1\Sigma_g^+$) es simétrica ante la permutación de electrones, lo que favorece la acumulación de carga internuclear. En el triplete ($^3\Sigma_u^+$), la función espacial es antisimétrica y presenta un plano nodal internuclear donde la densidad de probabilidad es nula. Al no haber densidad electrónica que apantalle a los protones, la repulsión internuclear domina a cualquier distancia.
 :::
 
 ### Ángulo diedro y análisis conformacional
 
-El ángulo diedro de torsión cuantifica la rotación geométrica relativa entre dos grupos moleculares unidos por un enlace simple central y se define formalmente como el ángulo diedro delimitado por los planos atómicos X-C-C y C-C-X en un rango angular de 0° a 360°. En la representación de proyecciones de Newman, las conformaciones moleculares se ordenan sistemáticamente según este valor angular. La conformación anti (180°) sitúa los sustituyentes voluminosos en posiciones espaciales opuestas, reduciendo las interacciones estéricas y electrostáticas para configurar el mínimo de energía global. En cambio, los confórmeros gauche (60° y 300°) definen mínimos locales de energía caracterizados por una mayor proximidad repulsiva entre sustituyentes. Las crestas y máximos del perfil de torsión corresponden a las conformaciones eclipsadas, en las que el solapamiento angular entre enlaces genera la barrera de energía requerida para la rotación interna molecular.
+El ángulo diedro describe la rotación relativa entre dos grupos unidos por un enlace simple central y se define a través de los cuatro átomos que forman la secuencia X–C–C–X en un rango de 0° a 360°. En una proyección de Newman, cada conformación queda determinada por este ángulo. La conformación *anti* (180°) sitúa los sustituyentes más voluminosos en posiciones opuestas, minimizando las repulsiones estéricas y configurando el mínimo global de energía. Los confórmeros *gauche* (60° y 300°) constituyen mínimos locales con mayor repulsión mutua. Los máximos de la curva corresponden a las conformaciones eclipsadas, cuyo solapamiento determina la barrera de rotación interna.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -173,7 +173,7 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 
 ### Parte 2: PES diedro del dihaloetano
 
-[CONFIRMAR CON PROFESOR: qué dihaloetano usar — 1,2-dicloroetano, 1,2-difluoroetano u otro]
+[CONFIRMAR CON PROFESOR: qué dihaloetano usar (1,2-dicloroetano, 1,2-difluoroetano u otro)]
 
 #### Paso 1: Dibujar el dihaloetano en GaussView
 
@@ -233,7 +233,7 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 
 ### Tabla 1: Parámetros característicos de la PES de H₂
 
-La siguiente tabla recoge los valores calculados para la distancia de enlace de equilibrio ($R_{\text{eq}}$) y la energía de disociación ($D_e$) de la molécula de $\text{H}_2$, confrontándolos de forma directa con los datos experimentales de referencia. En condiciones empíricas de laboratorio, la distancia de equilibrio es de 0.741 Å y la energía de disociación alcanza 4.75 eV (equivalentes a 109.5 kcal/mol). La comparación sistemática entre ambos conjuntos de valores permite evaluar cuantitativamente el error relativo porcentual derivado del método Hartree-Fock y del empleo de la base mínima STO-3G.
+La siguiente tabla recoge los valores calculados de la distancia de equilibrio ($R_{\text{eq}}$) y la energía de disociación ($D_e$) de $\text{H}_2$ junto a los datos experimentales de referencia: $0.741\text{ \AA}$ y $4.75\text{ eV}$ ($109.5\text{ kcal/mol}$). La comparación permite cuantificar el error introducido por el método Hartree-Fock con base mínima STO-3G.
 
 | Parámetro | Valor calculado (HF/STO-3G) | Valor experimental | Error (%) |
 |---|:---:|:---:|:---:|
@@ -249,7 +249,7 @@ $$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
 
 ### Tabla 2: Barrido internuclear de H₂ (singlete y triplete)
 
-La tabla siguiente recopila las energías electrónicas absolutas expresadas en hartrees para los estados singlete y triplete a lo largo de cada una de las distancias internucleares evaluadas. Asimismo, se incluyen las energías relativas ($\Delta E$) calculadas en kilocalorías por mol tomando como nivel de referencia cero el mínimo energético del estado singlete. Esta serie de datos tabulados suministra las coordenadas numéricas necesarias para construir y analizar la representación gráfica de las curvas de potencial en el siguiente apartado.
+La tabla siguiente recoge las energías absolutas en hartrees del estado singlete y del triplete para cada distancia internuclear, junto con las energías relativas en kcal/mol referidas al mínimo del singlete. Estos datos cuantitativos son los que se trasladarán a la gráfica de la sección siguiente.
 
 | Punto | $R$ (Å) | $E$ singlete (Ha) | $E$ triplete (Ha) | $\Delta E$ singlete (kcal/mol) | $\Delta E$ triplete (kcal/mol) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -264,7 +264,7 @@ La tabla siguiente recopila las energías electrónicas absolutas expresadas en 
 
 ### Gráfico de la PES de H₂
 
-A partir de los valores de la tabla precedente, se deben representar en una misma gráfica las curvas de energía relativa en kilocalorías por mol frente a la distancia internuclear $R$ en ángstroms para los estados singlete y triplete. El eje de abscisas debe abarcar el intervalo completo de distancias calculado entre 0.5 y 3.0 Å, mientras que el eje de ordenadas ha de mostrar con claridad el cero de referencia fijado en el mínimo del singlete. Ambas curvas deben diferenciarse con nitidez en la leyenda mediante su respectiva multiplicidad de espín. Para generar esta figura se pueden transferir los valores a una hoja de cálculo estándar o emplear las herramientas gráficas disponibles en los equipos del aula.
+Los datos de la tabla se trasladan a una hoja de cálculo o entorno gráfico para trazar ambas curvas de energía relativa en función de la distancia internuclear $R$. La energía se expresa en kcal/mol referida al mínimo del singlete, lo que fija el cero en el punto de máxima estabilidad.
 
 :::{admonition} Captura de pantalla
 :class: captura
