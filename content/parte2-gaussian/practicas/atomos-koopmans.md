@@ -1,13 +1,5 @@
 # P2-A: Átomos y el Teorema de Koopmans
 
-<!-- ============================================================
-     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
-     Este archivo contiene el esqueleto de contenidos párrafo a
-     párrafo. Cada sección indica qué debe contener, longitud
-     orientativa y dónde van figuras. NO editar como texto final
-     hasta que el esquema esté aprobado por el supervisor.
-     ============================================================ -->
-
 ## Introducción
 
 La energía de ionización mide la fuerza de atracción que ejerce el núcleo sobre los electrones más externos y determina la reactividad química y las tendencias periódicas de los elementos. Mediante cálculos de Hartree-Fock en Gaussian, se aplican dos aproximaciones complementarias para evaluar esta propiedad: la diferencia directa de energía total entre el átomo neutro y su catión ($\Delta E$), y la estimación a partir del orbital ocupado de mayor energía mediante el teorema de Koopmans ($-\varepsilon_{\text{HOMO}}$).
@@ -44,10 +36,10 @@ Párrafo corto + figura. Definición de orbitales frontera: orbital ocupado de m
 Los orbitales moleculares se ordenan por energía creciente según el principio de Aufbau. El orbital ocupado de mayor energía (HOMO) contiene los electrones de valencia más lábiles del átomo y determina su reactividad nucleófila o potencial de ionización, mientras que el primer orbital desocupado (LUMO) define la capacidad aceptora electrónica. En la salida de Gaussian con `pop=full`, la energía del HOMO corresponde al último valor tabulado bajo `Alpha occ. eigenvalues`.
 :::
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha indicando energía de ionización]
-```
+:::
 
 ### La energía de ionización y el Teorema de Koopmans
 

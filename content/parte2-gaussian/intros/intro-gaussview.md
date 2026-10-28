@@ -136,7 +136,7 @@ El archivo de entrada se guarda desde **File → Save** con la extensión `.gjf`
 
 ---
 
-::::{dropdown} ⚙️ Personalizar colores y apariencia
+::::{dropdown} Personalizar colores y apariencia
 :color: success
 :icon: gear
 

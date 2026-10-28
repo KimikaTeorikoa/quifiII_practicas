@@ -308,7 +308,7 @@ Los datos de la tabla se trasladan a una hoja de cálculo o entorno gráfico par
 
 ---
 
-::::{dropdown} 🚀 Para ir más lejos (opcional)
+::::{dropdown} Para ir más lejos (opcional)
 :color: success
 :icon: rocket
 

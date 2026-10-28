@@ -1,13 +1,5 @@
 # P2-D: Espectroscopía UV-Vis de Cetonas
 
-<!-- ============================================================
-     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
-     Este archivo contiene el esqueleto de contenidos párrafo a
-     párrafo. Cada sección indica qué debe contener, longitud
-     orientativa y dónde van figuras. NO editar como texto final
-     hasta que el esquema esté aprobado por el supervisor.
-     ============================================================ -->
-
 ## Introducción
 
 La absorción de radiación ultravioleta-visible induce transiciones electrónicas en las moléculas orgánicas al promover electrones desde orbitales ocupados de valencia hacia orbitales virtuales de mayor energía. Mediante la teoría del funcional de la densidad dependiente del tiempo (TD-DFT) en Gaussian, es posible simular estas excitaciones teniendo en cuenta la reorganización de la densidad electrónica. En esta práctica se calculan las longitudes de onda de absorción y las fuerzas de oscilador para las transiciones $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en cetonas, analizando además cómo la polaridad del disolvente desplaza las bandas del espectro.
@@ -36,10 +28,10 @@ Párrafo muy corto. Referencia al uso combinado de GaussView para la parametriza
 
 Párrafo medio + figura. Promoción de electrones de valencia desde orbitales ocupados a orbitales virtuales desocupados. Distinción entre la transición $n \rightarrow \pi^*$ (electrón no enlazante del oxígeno al orbital antienlazante $\pi^*$ del carbonilo, prohibida por simetría, baja fuerza de oscilador, $\lambda \approx 280-300\text{ nm}$) y la transición $\pi \rightarrow \pi^*$ (orbital enlazante $\pi$ al antienlazante $\pi^*$, permitida, alta fuerza de oscilador, $\lambda < 250\text{ nm}$).
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: diagrama de niveles de orbitales moleculares del grupo carbonilo con flechas de transición n a pi* y pi a pi*]
-```
+:::
 
 ### El gap HOMO-LUMO como estimación preliminar
 

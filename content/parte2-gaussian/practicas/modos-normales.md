@@ -1,13 +1,5 @@
 # P2-C: Modos Normales de Vibración
 
-<!-- ============================================================
-     VERSIÓN ESQUEMÁTICA - NO ES TEXTO FINAL
-     Este archivo contiene el esqueleto de contenidos párrafo a
-     párrafo. Cada sección indica qué debe contener, longitud
-     orientativa y dónde van figuras. NO editar como texto final
-     hasta que el esquema esté aprobado por el supervisor.
-     ============================================================ -->
-
 ## Introducción
 
 La absorción de radiación infrarroja surge de la interacción entre el campo electromagnético y las vibraciones nucleares. Para modelar este fenómeno, Gaussian calcula las frecuencias vibracionales diagonalizando la matriz hessiana de la energía potencial, lo que descompone el movimiento molecular en oscilaciones armónicas independientes. El análisis de los modos normales resultantes proporciona las frecuencias teóricas, permite visualizar los desplazamientos atómicos en GaussView y determina su actividad en el espectro infrarrojo según las reglas de simetría molecular.
@@ -234,10 +226,10 @@ Párrafo corto + tabla. Vaciado sistemático de frecuencias calculadas para los 
 
 Párrafo corto + figura. Pautas para el análisis de discrepancias sistemáticas entre el cálculo armónico DFT y las frecuencias fundamentales experimentales (efecto de la anarmonicidad y elección del funcional).
 
-```{admonition} 📸 Captura de pantalla
+:::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: espectro IR sintetizado en GaussView Results → Vibrations para la molécula de CO2 con picos activos identificados]
-```
+:::
 
 ---
 

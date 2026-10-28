@@ -58,8 +58,6 @@ El ciclo SCF se formula algebraicamente como el problema de autovalores generali
 
 ## Energías: orbital vs total
 
-[CONFIRMAR CON PROFESOR: E(He) HF/STO-3G]
-
 Los autovalores obtenidos al resolver las ecuaciones de Fock corresponden a las energías de cada orbital y no a la energía electrónica total del sistema. Si se sumaran directamente las energías de todos los orbitales ocupados, se sobreestimaría la energía real porque la repulsión coulómbica entre cada par de electrones se contabilizaría dos veces. Por esta razón, la energía total en el método de Hartree-Fock incluye un término corrector que resta exactamente esa interacción duplicada. Gaussian calcula esta energía global y la muestra en hartrees en la línea `SCF Done` del archivo de salida.
 
 :::{warning}
