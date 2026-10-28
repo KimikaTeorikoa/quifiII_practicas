@@ -17,7 +17,7 @@ La energía de ionización mide la fuerza de atracción que ejerce el núcleo so
 
 ## ¿Qué software vamos a usar?
 
-Párrafo muy corto. Referencia al uso combinado de GaussView como entorno gráfico interactivo y {{gaussian_version}} como motor de cálculo de estructura electrónica. Consulta previa obligatoria de la guía de introducción a GaussView.
+En esta práctica se trabaja con GaussView como entorno gráfico de construcción y visualización, y {{gaussian_version}} como motor de cálculo de estructura electrónica. Antes de comenzar, conviene haber revisado la guía de introducción a GaussView.
 
 ---
 
@@ -25,25 +25,26 @@ Párrafo muy corto. Referencia al uso combinado de GaussView como entorno gráfi
 
 ### ¿Por qué las energías son negativas?
 
-Párrafo corto. Explicación cualitativa del origen del signo negativo en sistemas ligados frente a partículas en reposo separadas en el infinito. Interpretación del pozo de potencial atractivo núcleo-electrón y comprobación de coherencia física en la salida del cálculo.
+La energía electrónica de un átomo se mide respecto al estado de referencia en que el núcleo y todos los electrones se encuentran en reposo y separados en el infinito, con interacción nula. Como el átomo ligado es más estable que ese estado de referencia, su energía es siempre negativa. Cuanto más negativo es el valor que aparece en la línea `SCF Done`, mayor es la estabilidad del sistema. Un resultado positivo en la energía total indicaría un error en la configuración del cálculo.
 
 ### El HOMO y el LUMO
 
-Párrafo corto + figura. Definición de orbitales frontera: orbital ocupado de mayor energía (HOMO) y primer orbital desocupado (LUMO). Relación entre el nivel energético del electrón más externo y la energía necesaria para su remoción.
+Los orbitales moleculares se ordenan de menor a mayor energía. El orbital ocupado de mayor energía recibe el nombre de HOMO (del inglés *Highest Occupied Molecular Orbital*) y contiene los electrones más fáciles de extraer. El primer orbital desocupado, el LUMO (*Lowest Unoccupied Molecular Orbital*), es el orbital disponible para recibir electrones. La diferencia entre el nivel del HOMO y el nivel de vacío constituye una primera estimación de la energía necesaria para arrancar un electrón del sistema.
 
 :::{admonition} Nota
 :class: note
-Los orbitales moleculares se ordenan por energía creciente según el principio de Aufbau. El orbital ocupado de mayor energía (HOMO) contiene los electrones de valencia más lábiles del átomo y determina su reactividad nucleófila o potencial de ionización, mientras que el primer orbital desocupado (LUMO) define la capacidad aceptora electrónica. En la salida de Gaussian con `pop=full`, la energía del HOMO corresponde al último valor tabulado bajo `Alpha occ. eigenvalues`.
+En la salida de Gaussian con `pop=full`, la energía del HOMO corresponde al último valor numérico de la última línea `Alpha occ. eigenvalues`. El primer valor de la línea siguiente `Alpha virt. eigenvalues` corresponde al LUMO.
 :::
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha indicando energía de ionización]
+:::{figure} /_static/figures/homo_lumo_ionizacion.svg
+:alt: Diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha de energía de ionización
+:width: 60%
+:align: center
 :::
 
 ### La energía de ionización y el Teorema de Koopmans
 
-Párrafo medio. Definición de energía de ionización para un átomo neutro en fase gas ($A \rightarrow A^+ + e^-$). Formulación de las dos vías metodológicas de evaluación cuántica: cálculo autoconsistente del catión (vía $\Delta E$) y aproximación por energía orbital (teorema de Koopmans).
+La energía de ionización de un átomo neutro $A$ en fase gas es la energía mínima necesaria para extraer un electrón y generar el catión $A^+$ según el proceso $A \rightarrow A^+ + e^-$. En esta práctica se calcula por dos vías independientes. La primera es la diferencia directa de energías SCF entre el catión y el átomo neutro, lo que exige dos cálculos separados. La segunda se basa en el teorema de Koopmans, que permite estimar ese valor a partir únicamente de la energía del orbital HOMO del átomo neutro, sin necesidad de calcular el catión.
 
 $$\text{IE}_{\Delta E} = E(A^+) - E(A)$$
 
@@ -56,7 +57,7 @@ El teorema de Koopmans adopta la aproximación de orbitales congelados, asumiend
 
 ### La multiplicidad de espín
 
-Párrafo corto + tabla. Regla $2S+1$ para la multiplicidad a partir de electrones desapareados. Importancia de la asignación exacta en capas abiertas para evitar estados de espín erróneos o fallos de convergencia SCF.
+La multiplicidad de espín indica cuántos estados cuánticos de espín son accesibles para el sistema y se calcula como $2S+1$, donde $S$ es la suma de los espines de los electrones desapareados. Un átomo con todos los electrones apareados tiene $S=0$ y multiplicidad 1 (singlete). Un electrón desapareado da $S=1/2$ y multiplicidad 2 (doblete). Asignar un valor de multiplicidad incorrecto provoca que Gaussian distribuya mal los electrones entre los orbitales $\alpha$ y $\beta$, lo que invalida el resultado o impide la convergencia del ciclo SCF.
 
 :::{warning}
 Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF.
@@ -64,7 +65,7 @@ Verificar siempre el valor de multiplicidad de espín antes de enviar el cálcul
 
 ### Unidades de energía
 
-Párrafo muy corto. Uso de unidades atómicas (Hartrees) en el motor de cálculo y factor de conversión a electronvoltios (eV) para la comparación experimental.
+Gaussian reporta todas las energías en unidades atómicas (Hartrees, Ha). Para comparar con los datos experimentales, que habitualmente se expresan en electronvoltios (eV), se aplica el factor de conversión siguiente:
 
 $$1\text{ Ha} = {{ha_to_ev}}\text{ eV}$$
 
@@ -220,7 +221,7 @@ Tabla de multiplicidades para los cationes ($A^+$):
 
 ## Resultados y análisis
 
-Párrafo corto + tabla. Recopilación de los datos extraídos de los archivos `.log` y cálculo de las desviaciones porcentuales respecto a los valores experimentales tabulados.
+Para cada átomo calculado, se registran las dos energías extraídas del archivo `.log` y se calculan ambas estimaciones de la energía de ionización. La tabla siguiente recoge los valores en Hartrees y los resultados ya convertidos a eV. Los valores experimentales de referencia se incluyen para calcular el error porcentual.
 
 | Átomo | $E(N)$ (Ha) | $E(A^+)$ (Ha) | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\Delta E}$ (eV) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -237,7 +238,7 @@ Párrafo corto + tabla. Recopilación de los datos extraídos de los archivos `.
 
 ### Visualización de orbitales
 
-Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Results → MOs**, selección de isosuperficie tridimensional del orbital HOMO y ajuste del valor de contorno para examinar simetrías tipo s frente a lóbulos nodales p.
+Para visualizar el HOMO de un átomo calculado, se abre el archivo `.log` en GaussView desde **File → Open** y se accede al menú **Results → MOs**. En el panel de orbitales moleculares, se selecciona el orbital de mayor energía marcado como ocupado y se genera la isosuperficie tridimensional ajustando el valor de contorno a 0.04 unidades atómicas. Para orbitales de tipo $s$, la isosuperficie adopta forma esférica sin planos nodales. Para orbitales de tipo $p$, aparecen dos lóbulos separados por un plano nodal perpendicular al eje de simetría.
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -245,7 +246,7 @@ Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Resu
 :::
 
 :::{note}
-[TEXTO HUMANO: descripción comparativa de la morfología del HOMO a lo largo del período y presencia de planos nodales]
+A lo largo del período Li-Ne, la morfología del HOMO cambia de un orbital 2s esférico (Li, Be) a un orbital 2p con un plano nodal (B hasta Ne). En los átomos con la subcapa 2p semillena (N) o completa (Ne), la distribución de densidad resultante es especialmente compacta. Observar estos cambios de forma en GaussView permite relacionar la geometría del orbital con la energía de ionización calculada.
 :::
 
 ---
@@ -272,7 +273,7 @@ Párrafo corto + figura. Procedimiento en GaussView para acceder al menú **Resu
 ::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-Párrafo medio + tabla. Exploración voluntaria sobre el efecto del conjunto de base en el átomo de carbono neutro. Comparación sistemática de la energía del HOMO y la IE calculada al ampliar la base desde STO-3G hacia 3-21G y 6-311G.
+Esta exploración estudia cómo varía la calidad del resultado al ampliar el conjunto de funciones de base. Se repite el cálculo del átomo de carbono neutro con tres bases de diferente tamaño y se comparan la energía del HOMO y la energía de ionización estimada por Koopmans frente al valor experimental de referencia. El procedimiento es idéntico al de la práctica principal, cambiando únicamente el campo **Basis Set** en la pestaña **Method** de **Gaussian Calculation Setup**.
 
 | Base | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
 |:---:|:---:|:---:|:---:|:---:|
@@ -281,6 +282,6 @@ Párrafo medio + tabla. Exploración voluntaria sobre el efecto del conjunto de 
 | 6-311G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
 
 :::{note}
-[TEXTO HUMANO: preguntas de profundización sobre la convergencia del error respecto al tamaño de la base]
+¿En qué sentido varía $\varepsilon_{\text{HOMO}}$ al aumentar el tamaño de la base? ¿Disminuye el error respecto al valor experimental de forma monótona, o hay algún caso en que una base mayor no mejora el resultado? Relaciona las diferencias con la capacidad de cada base para describir la densidad electrónica en la región de valencia.
 :::
 ::::
