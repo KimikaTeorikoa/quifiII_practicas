@@ -108,7 +108,7 @@ Una vez configurados los parámetros, el cálculo se lanza pulsando el botón **
 
 ## Verificar que el cálculo ha terminado bien
 
-Al terminar el cálculo, la última línea del archivo de salida debe contener {{termination_ok}}. Si en su lugar aparece `Error termination`, el cálculo no se ha completado correctamente. En ese caso se debe avisar al profesor de prácticas, ya que el error puede deberse a una geometría inicial inadecuada, una configuración incompatible o a haber superado el límite de memoria asignado.
+Al terminar el cálculo, la última línea del archivo de salida debe contener {{termination_ok}}. Si en su lugar aparece `Error termination`, el cálculo no ha terminado correctamente. Las causas más habituales son una geometría inicial inadecuada, una configuración incompatible o haber superado el límite de memoria asignado.
 
 :::{danger}
 Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminado correctamente buscando la línea: {{termination_ok}}
