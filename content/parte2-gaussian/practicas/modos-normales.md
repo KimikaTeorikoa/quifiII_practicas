@@ -134,5 +134,5 @@ Buscar `Frequencies --` en el `.log` con **Ctrl + F**. Para cada modo, anotar:
 ::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-El espectro infrarrojo del CO en fase gas muestra, además de la banda de vibración fundamental, una estructura de líneas finas debida al acoplamiento entre vibración y rotación. Al medir la separación entre líneas adyacentes de las ramas P y R ($\Delta\tilde{\nu} \approx 2B$) se puede determinar el momento de inercia de la molécula y, a partir de él, la distancia de equilibrio C–O con precisión espectroscópica. Los datos de referencia están disponibles en el NIST Chemistry WebBook.
+El espectro infrarrojo del CO en fase gas muestra, además de la banda fundamental, una estructura de líneas finas debida al acoplamiento entre vibración y rotación. Midiendo la separación entre líneas adyacentes de las ramas P y R ($\Delta\tilde{\nu} \approx 2B$) podemos determinar el momento de inercia de la molécula y, a partir de él, la distancia de equilibrio C–O con precisión espectroscópica. Los datos de referencia están en el NIST Chemistry WebBook.
 ::::

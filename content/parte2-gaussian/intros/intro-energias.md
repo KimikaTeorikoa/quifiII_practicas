@@ -15,7 +15,7 @@ En mecánica cuántica molecular, el cero de energía se sitúa en el estado de 
 
 ## Unidades: Hartrees, eV y kcal/mol
 
-Gaussian expresa las energías electrónicas en unidades atómicas denominadas hartrees (Ha). Para relacionar estos autovalores teóricos con datos experimentales o termodinámicos se emplean factores de conversión estándar: un hartree equivale a 27.21 electronvoltios, 627.51 kilocalorías por mol o 2625.5 kilojulios por mol. En química, los electronvoltios (eV) se usan habitualmente para potenciales de ionización, afinidades electrónicas y diferencias HOMO–LUMO. Las kilocalorías por mol (kcal/mol) y los kilojulios por mol (kJ/mol) son las unidades de referencia para barreras de activación, calores de reacción y diferencias de energía entre confórmeros.
+Gaussian expresa las energías electrónicas en unidades atómicas denominadas hartrees (Ha). Para relacionar estos valores con datos experimentales o termodinámicos empleamos factores de conversión estándar: un hartree equivale a 27.21 electronvoltios, 627.51 kilocalorías por mol o 2625.5 kilojulios por mol. En química, los electronvoltios (eV) se usan habitualmente para potenciales de ionización, afinidades electrónicas y diferencias HOMO–LUMO. Las kilocalorías por mol (kcal/mol) y los kilojulios por mol (kJ/mol) son las unidades de referencia para barreras de activación, calores de reacción y diferencias de energía entre confórmeros.
 
 | De | A | Factor |
 |----|---|--------|
@@ -29,7 +29,7 @@ Nunca comparar dos energías en unidades distintas. Convertir siempre antes de r
 
 ## Diferencias de energía: lo que realmente importa
 
-La energía absoluta en hartrees depende del convenio de referencia (partículas separadas en el infinito) y no se mide directamente en el laboratorio. Por ello, nunca deben compararse energías absolutas obtenidas con métodos o bases distintas. La magnitud físicamente relevante en química es siempre la diferencia relativa de energía ($\Delta E$) entre dos estados o geometrías del mismo sistema calculadas al mismo nivel de teoría. En estas prácticas, cualquier análisis termodinámico, barrera de rotación o curva de potencial se expresará como un incremento relativo respecto a una estructura de referencia.
+La energía absoluta en hartrees depende del convenio de referencia (partículas separadas en el infinito) y no se mide directamente en el laboratorio. Por ello, nunca deben compararse energías absolutas obtenidas con métodos o bases distintas. La magnitud físicamente relevante en química es siempre la diferencia relativa de energía ($\Delta E$) entre dos estados o geometrías del mismo sistema calculadas al mismo nivel de teoría. En estas prácticas, cualquier análisis termodinámico, barrera de rotación o curva de potencial lo expresamos como un incremento relativo respecto a una estructura de referencia.
 
 ## Energías orbitales: no confundir con la energía total
 
@@ -41,7 +41,7 @@ El cálculo de frecuencias (`freq`) determina los modos normales de vibración m
 
 :::{admonition} Advertencia
 :class: warning
-Si ves frecuencias negativas en el log, la geometría no ha convergido correctamente. Avisar al profesor.
+Si aparecen frecuencias negativas en el log, la geometría no ha convergido a un mínimo real. Hay que reoptimizar antes de continuar.
 :::
 
 ---

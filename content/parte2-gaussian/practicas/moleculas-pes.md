@@ -11,10 +11,6 @@ La estabilidad del enlace químico y las preferencias conformacionales de las mo
 3. Realizar el barrido conformacional del ángulo diedro en dihaloetanos para identificar los confórmeros anti y gauche en la superficie de energía potencial.
 4. Cuantificar las barreras de rotación conformacional evaluando la diferencia de energía frente a las conformaciones eclipsadas.
 
-## ¿Qué software vamos a usar?
-
-En esta práctica empleamos GaussView como interfaz gráfica para la construcción molecular y la definición de coordenadas de barrido geométrico, y {{gaussian_version}} como motor computacional para ejecutar los cálculos de tipo Scan.
-
 ## Conceptos clave
 
 ### ¿Qué es una superficie de energía potencial?
@@ -184,6 +180,6 @@ Se realizará el barrido conformacional para los tres dihaloetanos siguientes: 1
 :color: success
 :icon: rocket
 
-Como actividad de extensión opcional, se propone repetir el barrido del ángulo diedro en la molécula de etano ($\text{CH}_3\text{-CH}_3$) aplicando idéntico nivel de teoría mecanocuántica. La barrera de rotación interna calculada para el etano, próxima a 3 kcal/mol, es notablemente inferior a la determinada en el dihaloetano y permite contrastar el impacto estérico de los enlaces carbono-hidrógeno frente al volumen de los átomos de halógeno. La comparación directa de ambos perfiles conformacionales evidencia cómo el radio atómico, la polaridad de enlace y la electronegatividad de los sustituyentes condicionan las preferencias conformacionales en sistemas orgánicos sencillos.
+Como actividad opcional, repetimos el barrido conformacional del etano ($\text{CH}_3\text{-CH}_3$) con el mismo nivel de teoría. La barrera de rotación calculada, próxima a 3 kcal/mol, es notablemente inferior a la del dihaloetano. La comparación directa de ambos perfiles muestra cómo el volumen del sustituyente, la polaridad del enlace C–X y la electronegatividad del halógeno desplazan los mínimos de energía y elevan la barrera rotacional.
 
 ::::

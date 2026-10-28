@@ -11,10 +11,6 @@ La energía de ionización mide la fuerza de atracción que ejerce el núcleo so
 3. Comparar las energías de ionización calculadas frente a valores experimentales a lo largo del primer y segundo período.
 4. Visualizar la distribución espacial y la simetría de los orbitales atómicos ocupados de mayor energía (HOMO) en GaussView.
 
-## ¿Qué software vamos a usar?
-
-En esta práctica se trabaja con GaussView como entorno gráfico de construcción y visualización, y {{gaussian_version}} como motor de cálculo de estructura electrónica. Antes de comenzar, conviene haber revisado la guía de introducción a GaussView.
-
 ## Conceptos clave
 
 ### ¿Por qué las energías son negativas?
@@ -193,7 +189,7 @@ Tabla de multiplicidades de referencia ($2S+1$):
 
 ## Resultados y análisis
 
-Para cada átomo calculado, se registran las dos energías extraídas del archivo `.log` y se calculan ambas estimaciones de la energía de ionización. La tabla siguiente recoge los valores en Hartrees y los resultados ya convertidos a eV. Los valores experimentales de referencia se incluyen para calcular el error porcentual.
+Para cada átomo calculado, registramos las dos energías extraídas del archivo `.log` y calculamos ambas estimaciones de la energía de ionización. La tabla siguiente recoge los valores en Hartrees y los resultados ya convertidos a eV. Los valores experimentales de referencia se incluyen para calcular el error porcentual.
 
 ---
 
@@ -209,7 +205,7 @@ Para cada átomo calculado, se registran las dos energías extraídas del archiv
 ::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-Esta exploración estudia cómo varía la calidad del resultado al ampliar el conjunto de funciones de base. Se repite el cálculo del átomo de carbono neutro con tres bases de diferente tamaño y se comparan la energía del HOMO y la energía de ionización estimada por Koopmans frente al valor experimental de referencia. El procedimiento es idéntico al de la práctica principal, cambiando únicamente el campo **Basis Set** en la pestaña **Method** de **Gaussian Calculation Setup**.
+Esta exploración estudia cómo varía la calidad del resultado al ampliar el conjunto de funciones de base. Repetimos el cálculo del átomo de carbono neutro con tres bases de diferente tamaño y comparamos la energía del HOMO y la energía de ionización estimada por Koopmans frente al valor experimental. El procedimiento es idéntico al de la práctica principal: cambiamos únicamente el campo **Basis Set** en **Gaussian Calculation Setup → Method**.
 
 | Base | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
 |:---:|:---:|:---:|:---:|:---:|

@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Los orbitales atómicos y moleculares de sistemas polielectrónicos presentan formas espaciales continuas que no admiten soluciones analíticas simples. Para representarlos computacionalmente, se emplean conjuntos de funciones matemáticas conocidas (generalmente combinaciones de gaussianas) denominadas funciones de base. La elección de la base en Gaussian determina la flexibilidad numérica para modelar la nube electrónica e influye directamente tanto en la precisión física del resultado como en el tiempo de cálculo necesario.
+Los orbitales atómicos y moleculares de sistemas polielectrónicos presentan formas espaciales continuas que no admiten soluciones analíticas simples. Para representarlos computacionalmente, empleamos conjuntos de funciones matemáticas conocidas (generalmente combinaciones de gaussianas) denominadas funciones de base. La elección de la base en Gaussian determina la flexibilidad numérica para modelar la nube electrónica e influye directamente tanto en la precisión física del resultado como en el tiempo de cálculo necesario.
 
 ## La idea central: aproximar orbitales con funciones conocidas
 
@@ -16,7 +16,7 @@ En química cuántica computacional, los orbitales moleculares se representan co
 
 ## Precisión vs coste computacional
 
-El tamaño del conjunto de base fija el límite de precisión física que puede alcanzar un cálculo. Al aumentar el número de funciones por átomo se describe con mayor fidelidad la distribución electrónica, pero el tiempo de cálculo y el consumo de memoria crecen sustancialmente. La tabla siguiente ilustra esta tendencia cualitativa mediante dos bases frecuentes: STO-3G (base mínima, rápida pero aproximada) y 6-311G (base extendida, más precisa y costosa). En el guión de cada práctica se indica qué conjunto de base debe seleccionarse en GaussView para cada sistema.
+El tamaño del conjunto de base fija el límite de precisión física que puede alcanzar un cálculo. Al aumentar el número de funciones por átomo se describe con mayor fidelidad la distribución electrónica, pero el tiempo de cálculo y el consumo de memoria crecen sustancialmente. La tabla siguiente ilustra esta tendencia cualitativa mediante dos bases frecuentes: STO-3G (base mínima, rápida pero aproximada) y 6-311G (base extendida, más precisa y costosa). En el guión de cada práctica indicamos qué conjunto de base usar en GaussView.
 
 | Base | Tamaño relativo | Coste relativo |
 |------|----------------|----------------|

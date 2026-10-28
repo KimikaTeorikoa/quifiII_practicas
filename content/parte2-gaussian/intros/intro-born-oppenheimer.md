@@ -10,12 +10,12 @@ La masa de un protón es aproximadamente 1836 veces mayor que la del electrón, 
 
 :::{admonition} Nota
 :class: note
-Al fijar los núcleos en diferentes disposiciones espaciales y calcular la energía electrónica para cada una de ellas, se genera la superficie de energía potencial (PES, *Potential Energy Surface*). Sobre esta superficie hiperdimensional se describe posteriormente la dinámica de los núcleos, la vibración molecular y el avance de las reacciones químicas.
+Al fijar los núcleos en diferentes disposiciones espaciales y calcular la energía electrónica para cada una, generamos la superficie de energía potencial (PES, *Potential Energy Surface*). Sobre esta superficie hiperdimensional se describe la dinámica de los núcleos, la vibración molecular y el avance de las reacciones químicas.
 :::
 
 ## Geometría molecular: distancias, ángulos y diedros
 
-La geometría de una molécula queda definida por tres parámetros geométricos principales: distancias de enlace (en ángstroms, Å), ángulos de enlace (en grados) y ángulos diedros de torsión (en grados). Las distancias y los ángulos determinan la conectividad local entre átomos contiguos, mientras que los diedros describen la rotación espacial entre planos que comparten un enlace central. Estas coordenadas internas constituyen la base con la que Gaussian calcula gradientes y realiza optimizaciones de estructura. En GaussView, estos tres parámetros pueden medirse y visualizarse directamente sobre el modelo molecular.
+La geometría de una molécula queda definida por tres parámetros: distancias de enlace (en ángstroms, Å), ángulos de enlace (en grados) y ángulos diedros de torsión (en grados). Las distancias y los ángulos determinan la conectividad local entre átomos contiguos; los diedros describen la rotación espacial entre planos que comparten un enlace central. Gaussian usa estas coordenadas internas para calcular gradientes y optimizar geometrías. En GaussView podemos medir y visualizar los tres parámetros directamente sobre el modelo.
 
 :::{figure} /_static/figures/geometria_molecular.svg
 :alt: Diagrama de una cadena de cuatro átomos con distancia de enlace, ángulo de enlace y ángulo diedro anotados
@@ -25,11 +25,11 @@ La geometría de una molécula queda definida por tres parámetros geométricos 
 
 ## Energía puntual: calcular sin mover
 
-En un cálculo de energía puntual (*Single Point*), las posiciones nucleares permanecen fijas según las coordenadas del archivo de entrada. Con esa geometría constante, Gaussian resuelve la estructura electrónica sin desplazar ningún átomo. El resultado obtenido es la energía electrónica total (en hartrees) correspondiente a esa conformación específica. En GaussView, este cálculo se selecciona en la pestaña **Job Type → Single Point** (etiquetada habitualmente como *Energy*).
+En un cálculo de energía puntual (*Single Point*), las posiciones nucleares permanecen fijas según las coordenadas del archivo de entrada. Con esa geometría constante, Gaussian resuelve la estructura electrónica sin desplazar ningún átomo. El resultado es la energía electrónica total en hartrees para esa conformación. En GaussView seleccionamos este cálculo en **Job Type → Single Point** (etiquetado habitualmente como *Energy*).
 
 ## Optimización de geometría: encontrar el mínimo
 
-En un cálculo de optimización de geometría, Gaussian calcula la energía sobre la estructura inicial y evalúa sus derivadas respecto a las coordenadas nucleares (el vector gradiente). A partir de las fuerzas resultantes, el programa desplaza los núcleos en la dirección que reduce la energía del sistema. En cada nueva geometría se recalculan la función de onda y el gradiente. Este ciclo se repite hasta que tanto las fuerzas sobre los átomos como los desplazamientos geométricos caen por debajo de los umbrales de convergencia fijados, alcanzando así un mínimo local de energía. En GaussView, este tipo de cálculo se selecciona en **Job Type → Optimization**.
+En una optimización de geometría, Gaussian calcula la energía sobre la estructura inicial y evalúa sus derivadas respecto a las coordenadas nucleares (el vector gradiente). A partir de las fuerzas resultantes, desplaza los núcleos en la dirección que reduce la energía. En cada nueva geometría recalcula la función de onda y el gradiente. El ciclo se repite hasta que las fuerzas y los desplazamientos caen por debajo de los umbrales de convergencia, alcanzando un mínimo local. En GaussView seleccionamos este cálculo en **Job Type → Optimization**.
 
 :::{admonition} Figura
 :class: captura

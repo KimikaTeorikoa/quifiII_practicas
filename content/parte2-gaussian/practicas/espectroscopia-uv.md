@@ -168,5 +168,5 @@ Para cada uno, extraer $\lambda$ y $f$ de `Excited State 1` y comparar el despla
 ::::{dropdown} Para ir más lejos (opcional)
 :color: success
 
-GaussView muestra cada transición calculada como una barra discreta con altura proporcional a $f$. Para obtener un perfil de absorbancia continuo comparable al espectro experimental, se convolucionan esas barras con funciones gaussianas de anchura apropiada. Exportando la lista de estados excitados del `.log` a una hoja de cálculo y aplicando la convolución, se puede reproducir la forma de banda y comparar cuantitativamente la posición de los máximos con los datos del NIST Chemistry WebBook.
+GaussView muestra cada transición calculada como una barra discreta con altura proporcional a $f$. Para obtener un perfil continuo comparable al espectro experimental, convolucionamos esas barras con funciones gaussianas de anchura apropiada. Exportando la lista de estados excitados del `.log` a una hoja de cálculo y aplicando la convolución, podemos reproducir la forma de banda y comparar la posición de los máximos con los datos del NIST Chemistry WebBook.
 ::::
