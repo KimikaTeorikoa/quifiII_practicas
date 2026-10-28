@@ -4,8 +4,6 @@
 
 La energía de ionización mide la fuerza de atracción que ejerce el núcleo sobre los electrones más externos y determina la reactividad química y las tendencias periódicas de los elementos. Mediante cálculos de Hartree-Fock en Gaussian, se aplican dos aproximaciones complementarias para evaluar esta propiedad: la diferencia directa de energía total entre el átomo neutro y su catión ($\Delta E$), y la estimación a partir del orbital ocupado de mayor energía mediante el teorema de Koopmans ($-\varepsilon_{\text{HOMO}}$).
 
----
-
 ## Objetivos
 
 1. Calcular la energía electrónica total de átomos neutros y cationes monocargados mediante el método Hartree-Fock en {{gaussian_version}}.
@@ -13,13 +11,9 @@ La energía de ionización mide la fuerza de atracción que ejerce el núcleo so
 3. Comparar las energías de ionización calculadas frente a valores experimentales a lo largo del primer y segundo período.
 4. Visualizar la distribución espacial y la simetría de los orbitales atómicos ocupados de mayor energía (HOMO) en GaussView.
 
----
-
 ## ¿Qué software vamos a usar?
 
 En esta práctica se trabaja con GaussView como entorno gráfico de construcción y visualización, y {{gaussian_version}} como motor de cálculo de estructura electrónica. Antes de comenzar, conviene haber revisado la guía de introducción a GaussView.
-
----
 
 ## Conceptos clave
 
@@ -59,15 +53,15 @@ El teorema de Koopmans adopta la aproximación de orbitales congelados, asumiend
 
 La multiplicidad de espín indica cuántos estados cuánticos de espín son accesibles para el sistema y se calcula como $2S+1$, donde $S$ es la suma de los espines de los electrones desapareados. Un átomo con todos los electrones apareados tiene $S=0$ y multiplicidad 1 (singlete). Un electrón desapareado da $S=1/2$ y multiplicidad 2 (doblete). Asignar un valor de multiplicidad incorrecto provoca que Gaussian distribuya mal los electrones entre los orbitales $\alpha$ y $\beta$, lo que invalida el resultado o impide la convergencia del ciclo SCF.
 
-:::{warning}
+:::{admonition} Advertencia
+:class: warning
 Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF.
 :::
 
----
-
 ## Procedimiento
 
-:::{danger}
+:::{admonition} Atención
+:class: danger
 Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el editor de texto y confirmar la presencia de la línea final exacta:
 {{termination_ok}}
 :::
@@ -196,8 +190,6 @@ Tabla de multiplicidades de referencia ($2S+1$):
 2. Calcular la estimación del teorema de Koopmans ($\text{IE}_{\text{Koopmans}}$):
    $$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times {{ha_to_ev}} \quad [\text{eV}]$$
 3. Registrar ambos valores en electronvoltios en la tabla de datos y calcular la desviación porcentual respecto al valor experimental de referencia.
-
----
 
 ## Resultados y análisis
 

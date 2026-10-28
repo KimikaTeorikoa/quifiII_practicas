@@ -4,8 +4,6 @@
 
 Determinar cualquier propiedad fisicoquímica en una molécula exige conocer con precisión las coordenadas espaciales de sus átomos. La aproximación de Born-Oppenheimer aprovecha la gran diferencia de masa entre núcleos y electrones para desacoplar sus movimientos, lo que permite resolver la distribución electrónica sobre disposiciones nucleares fijas. Este marco teórico fundamenta la distinción entre cálculos de energía puntual a coordenadas constantes y optimizaciones de geometría orientadas a localizar mínimos energéticos estables.
 
----
-
 ## La aproximación de Born-Oppenheimer
 
 La masa de un protón es aproximadamente 1836 veces mayor que la del electrón, por lo que los núcleos atómicos se mueven con mucha mayor lentitud. La aproximación de Born-Oppenheimer aprovecha esta disparidad temporal tratando a los núcleos como centros de carga estacionarios mientras se resuelve el movimiento electrónico. De este modo, la energía electrónica se obtiene como una magnitud que depende paramétricamente de las posiciones nucleares elegidas. Sin este desacoplamiento, la resolución mecanocuántica de cualquier molécula resultaría computacionalmente inviable.
@@ -14,8 +12,6 @@ La masa de un protón es aproximadamente 1836 veces mayor que la del electrón, 
 :class: note
 Al fijar los núcleos en diferentes disposiciones espaciales y calcular la energía electrónica para cada una de ellas, se genera la superficie de energía potencial (PES, *Potential Energy Surface*). Sobre esta superficie hiperdimensional se describe posteriormente la dinámica de los núcleos, la vibración molecular y el avance de las reacciones químicas.
 :::
-
----
 
 ## Geometría molecular: distancias, ángulos y diedros
 
@@ -27,13 +23,9 @@ La geometría de una molécula queda definida por tres parámetros geométricos 
 :align: center
 :::
 
----
-
 ## Energía puntual: calcular sin mover
 
 En un cálculo de energía puntual (*Single Point*), las posiciones nucleares permanecen fijas según las coordenadas del archivo de entrada. Con esa geometría constante, Gaussian resuelve la estructura electrónica sin desplazar ningún átomo. El resultado obtenido es la energía electrónica total (en hartrees) correspondiente a esa conformación específica. En GaussView, este cálculo se selecciona en la pestaña **Job Type → Single Point** (etiquetada habitualmente como *Energy*).
-
----
 
 ## Optimización de geometría: encontrar el mínimo
 

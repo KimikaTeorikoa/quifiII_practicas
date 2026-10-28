@@ -4,8 +4,6 @@
 
 La absorción de radiación infrarroja surge de la interacción entre el campo electromagnético y las vibraciones nucleares. Para modelar este fenómeno, Gaussian calcula las frecuencias vibracionales diagonalizando la matriz hessiana de la energía potencial, lo que descompone el movimiento molecular en oscilaciones armónicas independientes. El análisis de los modos normales resultantes proporciona las frecuencias teóricas, permite visualizar los desplazamientos atómicos en GaussView y determina su actividad en el espectro infrarrojo según las reglas de simetría molecular.
 
----
-
 ## Objetivos
 
 1. Calcular los grados de libertad vibracionales independientes de moléculas lineales modelo ($\text{CO}$ y $\text{CO}_2$).
@@ -13,8 +11,6 @@ La absorción de radiación infrarroja surge de la interacción entre el campo e
 3. Visualizar y clasificar los desplazamientos atómicos correspondientes a modos de estiramiento y flexión mediante animaciones en GaussView.
 4. Evaluar la actividad espectral en el infrarrojo comprobando la variación del momento dipolar molecular ($\partial \vec{\mu}/\partial Q$) y el valor de intensidad calculada (`IR Inten`).
 5. Comparar las frecuencias armónicas teóricas con las bandas de absorción experimentales para cuantificar el efecto de la anarmonicidad.
-
----
 
 ## Conceptos clave
 
@@ -46,11 +42,10 @@ La absorción de radiación infrarroja requiere que el movimiento vibracional al
 
 El cálculo de frecuencias requiere que la geometría de partida sea un mínimo real de la PES, porque las derivadas segundas solo tienen significado físico en un punto estacionario. Si la geometría no está optimizada, algunos autovalores del hessiano resultan negativos y aparecen frecuencias imaginarias en el `.log`, sin interpretación vibracional válida.
 
-:::{warning}
+:::{admonition} Advertencia
+:class: warning
 Es imprescindible optimizar la geometría antes de calcular frecuencias. El cálculo sobre geometrías no estacionarias genera frecuencias imaginarias carentes de significado físico. En esta práctica se emplea la opción combinada `Opt+Freq` para garantizar que el cálculo vibracional parte del mínimo exacto.
 :::
-
----
 
 ## Procedimiento
 

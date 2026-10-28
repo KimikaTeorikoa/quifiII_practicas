@@ -4,8 +4,6 @@
 
 La ecuación de Schrödinger no admite solución matemática exacta para sistemas con más de un electrón debido al acoplamiento que genera la repulsión electrostática entre ellos. El método de Hartree-Fock aborda este problema mediante la aproximación de campo medio, sustituyendo las interacciones instantáneas individuales por un potencial promediado en el espacio. Esta simplificación permite que programas como Gaussian determinen los orbitales moleculares y la energía electrónica total mediante un procedimiento iterativo autoconsistente.
 
----
-
 ## El problema: electrones que se repelen
 
 El átomo de helio contiene dos electrones y un núcleo. La energía cinética de cada electrón y su atracción hacia el núcleo se describen exactamente mediante operadores monoelectrónicos, pero la repulsión coulómbica entre ambos acopla sus ecuaciones de movimiento. Determinar la distribución espacial de un electrón requiere conocer la del otro y viceversa, por lo que no existe solución analítica exacta para este sistema. Esta dificultad se extiende a cualquier átomo o molécula polielectrónica y constituye el problema central de la química cuántica molecular.
@@ -15,8 +13,6 @@ El átomo de helio contiene dos electrones y un núcleo. La energía cinética d
 El término de repulsión interelectrónica $1/r_{12}$ en el operador hamiltoniano acopla las coordenadas espaciales de ambos electrones. Esta dependencia mutua impide la separación de variables e imposibilita obtener una solución analítica exacta para sistemas con dos o más electrones. Por ello, el cálculo de la estructura electrónica requiere aproximar este potencial de interacción mediante métodos numéricos iterativos.
 :::
 
----
-
 ## La idea de Hartree-Fock: el campo medio
 
 La aproximación de campo medio simplifica el problema polielectrónico al sustituir las repulsiones instantáneas entre pares de electrones por un potencial promedio generado por el conjunto de la nube electrónica. Bajo este tratamiento, las ecuaciones se desacoplan formalmente y permiten calcular cada orbital molecular de manera independiente. El operador de Fock incorpora este potencial promediado para construir los orbitales mediante un procedimiento autoconsistente. Como contrapartida, el método ignora que los electrones se evitan dinámicamente en cada instante, fenómeno denominado correlación electrónica. Esta omisión sitúa la energía total calculada siempre por encima del valor no relativista exacto.
@@ -25,8 +21,6 @@ La aproximación de campo medio simplifica el problema polielectrónico al susti
 :class: note
 Al promediar la repulsión interelectrónica se desprecian las correlaciones instantáneas entre las posiciones de los electrones. De acuerdo con el teorema variacional, cualquier función de onda aproximada proporciona una energía superior a la del estado fundamental exacto. Por tanto, la energía obtenida en el límite Hartree-Fock constituye una cota superior a la energía exacta no relativista del sistema.
 :::
-
----
 
 ## Orbitales: la solución para un electrón
 
@@ -38,8 +32,6 @@ En el formalismo de Hartree-Fock, el estado espacial de cada electrón se descri
 :align: center
 :::
 
----
-
 ## El ciclo SCF: resolver por iteración
 
 El potencial de campo medio depende de los orbitales ocupados, pero estos solo pueden calcularse si se conoce previamente dicho potencial. Esta dependencia circular impide una solución directa. Para resolverla, las ecuaciones se tratan mediante un procedimiento numérico iterativo. El cálculo parte de una estimación inicial de los orbitales (*guess*), con la que se construye un primer operador de Fock. A continuación, se resuelven las ecuaciones matriciales para obtener nuevos coeficientes orbitales y se comprueba si la variación en la energía o en la densidad respecto a la iteración anterior queda por debajo del umbral de tolerancia. Este ciclo se repite hasta alcanzar la convergencia numérica en el denominado método del campo autoconsistente (SCF, *Self-Consistent Field*), cuyo esquema resume el diagrama adjunto.
@@ -50,23 +42,18 @@ El potencial de campo medio depende de los orbitales ocupados, pero estos solo p
 :align: center
 :::
 
----
-
 ## La matriz de Fock: lo que Gaussian resuelve
 
 El ciclo SCF se formula algebraicamente como el problema de autovalores generalizado **FC = SCε**, donde **F** es la matriz de Fock, **C** la matriz de coeficientes orbitales, **S** la matriz de solapamiento y **ε** la matriz diagonal de energías orbitales. Para una base compuesta por dos funciones, **F** y **S** son matrices de dimensión 2×2 con elementos $F_{11}, F_{12}, F_{22}$ y $S_{11}, S_{12}, S_{22}$, que Gaussian evalúa calculando analíticamente las integrales sobre las funciones de base. La diagonalización de este sistema proporciona los coeficientes que definen cada orbital molecular y sus energías orbitales. Al ampliar la base a un mayor número de funciones, la dimensión de las matrices aumenta proporcionalmente, pero la formulación matemática y el procedimiento de resolución se mantienen idénticos.
-
----
 
 ## Energías: orbital vs total
 
 Los autovalores obtenidos al resolver las ecuaciones de Fock corresponden a las energías de cada orbital y no a la energía electrónica total del sistema. Si se sumaran directamente las energías de todos los orbitales ocupados, se sobreestimaría la energía real porque la repulsión coulómbica entre cada par de electrones se contabilizaría dos veces. Por esta razón, la energía total en el método de Hartree-Fock incluye un término corrector que resta exactamente esa interacción duplicada. Gaussian calcula esta energía global y la muestra en hartrees en la línea `SCF Done` del archivo de salida.
 
-:::{warning}
+:::{admonition} Advertencia
+:class: warning
 La energía que aparece en el log de Gaussian es la energía total, no la energía de un orbital individual.
 :::
-
----
 
 ## Limitaciones de HF: la correlación electrónica
 

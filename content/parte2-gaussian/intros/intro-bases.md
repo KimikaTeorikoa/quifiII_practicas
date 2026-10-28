@@ -4,8 +4,6 @@
 
 Los orbitales atómicos y moleculares de sistemas polielectrónicos presentan formas espaciales continuas que no admiten soluciones analíticas simples. Para representarlos computacionalmente, se emplean conjuntos de funciones matemáticas conocidas (generalmente combinaciones de gaussianas) denominadas funciones de base. La elección de la base en Gaussian determina la flexibilidad numérica para modelar la nube electrónica e influye directamente tanto en la precisión física del resultado como en el tiempo de cálculo necesario.
 
----
-
 ## La idea central: aproximar orbitales con funciones conocidas
 
 En química cuántica computacional, los orbitales moleculares se representan como combinaciones lineales de un conjunto finito de funciones conocidas denominadas funciones de base. Las funciones gaussianas constituyen el estándar en programas como Gaussian porque permiten calcular con gran rapidez analítica las integrales de atracción y repulsión. Al aumentar el número de funciones en el conjunto, mejora la capacidad numérica para describir la densidad electrónica con precisión. Por tanto, elegir el conjunto de base exige un equilibrio continuo entre la exactitud física deseada y el coste computacional disponible.
@@ -15,8 +13,6 @@ En química cuántica computacional, los orbitales moleculares se representan co
 :width: 65%
 :align: center
 :::
-
----
 
 ## Precisión vs coste computacional
 

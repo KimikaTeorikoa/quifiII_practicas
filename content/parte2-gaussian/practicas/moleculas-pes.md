@@ -4,8 +4,6 @@
 
 La estabilidad del enlace químico y las preferencias conformacionales de las moléculas dependen de cómo varía la energía electrónica al modificar las posiciones de los núcleos. Gracias a la aproximación de Born-Oppenheimer, estas variaciones pueden representarse como una superficie de energía potencial calculada mediante barridos geométricos sistemáticos en Gaussian. En esta práctica se analiza la curva de disociación de la molécula de hidrógeno para diferentes estados de espín y el perfil energético de rotación del ángulo diedro en derivados halogenados del etano.
 
----
-
 ## Objetivos
 
 1. Construir la curva de energía potencial de la molécula de $\text{H}_2$ mediante un barrido de la distancia internuclear $R(\text{H–H})$ para los estados singlete y triplete con HF/STO-3G.
@@ -13,13 +11,9 @@ La estabilidad del enlace químico y las preferencias conformacionales de las mo
 3. Realizar el barrido conformacional del ángulo diedro en dihaloetanos para identificar los confórmeros anti y gauche en la superficie de energía potencial.
 4. Cuantificar las barreras de rotación conformacional evaluando la diferencia de energía frente a las conformaciones eclipsadas.
 
----
-
 ## ¿Qué software vamos a usar?
 
 En esta práctica empleamos GaussView como interfaz gráfica para la construcción molecular y la definición de coordenadas de barrido geométrico, y {{gaussian_version}} como motor computacional para ejecutar los cálculos de tipo Scan.
-
----
 
 ## Conceptos clave
 
@@ -57,8 +51,6 @@ El ángulo diedro describe la rotación relativa entre dos grupos unidos por un 
 :width: 70%
 :align: center
 :::
-
----
 
 ## Procedimiento
 
@@ -130,8 +122,6 @@ El ángulo diedro describe la rotación relativa entre dos grupos unidos por un 
 3. Aparece una gráfica bidimensional interactiva con la energía frente a la distancia $R(\text{H–H})$.
 4. Abrir simultáneamente el archivo `H2_triplete_scan.log` para superponer la curva del triplete sobre la del singlete en la misma ventana de visualización.
 5. Observar la forma de pozo de potencial en la curva singlete y la ausencia de pozo en la curva triplete.
-
----
 
 ### Parte 2: PES diedro del dihaloetano
 

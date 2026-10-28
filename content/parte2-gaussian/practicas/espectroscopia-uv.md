@@ -4,8 +4,6 @@
 
 La absorción de radiación ultravioleta-visible induce transiciones electrónicas en las moléculas orgánicas al promover electrones desde orbitales ocupados de valencia hacia orbitales virtuales de mayor energía. Mediante la teoría del funcional de la densidad dependiente del tiempo (TD-DFT) en Gaussian, es posible simular estas excitaciones teniendo en cuenta la reorganización de la densidad electrónica. En esta práctica se calculan las longitudes de onda de absorción y las fuerzas de oscilador para las transiciones $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en cetonas, analizando además cómo la polaridad del disolvente desplaza las bandas del espectro.
 
----
-
 ## Objetivos
 
 1. Estimar la longitud de onda de absorción preliminar a partir de la diferencia de energías orbitales ($\Delta E_{\text{gap}}$ HOMO-LUMO).
@@ -13,8 +11,6 @@ La absorción de radiación ultravioleta-visible induce transiciones electrónic
 3. Asignar las transiciones electrónicas $n \rightarrow \pi^*$ y $\pi \rightarrow \pi^*$ en función de su energía y su fuerza del oscilador ($f$).
 4. Cuantificar el desplazamiento solvatocrómico de la acetona en agua mediante el modelo de polarización continua del disolvente (PCM).
 5. Comparar los espectros de absorción calculados frente a valores experimentales en función de la polaridad del medio y los sustituyentes alquílicos.
-
----
 
 ## Conceptos clave
 
@@ -53,8 +49,6 @@ Valores experimentales de referencia para acetona:
 El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \rightarrow \pi^*$ deriva de la diferente polaridad de los estados electrónicos implicados. En el estado fundamental ($S_0$), el grupo carbonilo posee un momento dipolar elevado y los pares solitarios del oxígeno forman enlaces de hidrógeno con disolventes polares próticos como el agua. Durante la transición electrónica, la redistribución de carga hacia el sistema $\pi^*$ disminuye el momento dipolar en el estado excitado ($S_1$), lo que reduce la estabilización por solvatación y aumenta la energía necesaria para la excitación vertical.
 :::
 
----
-
 ## Procedimiento
 
 ### Parte A: Estimación preliminar con el gap HOMO-LUMO
@@ -92,8 +86,6 @@ El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \
 :class: captura
 [CAPTURA: fragmento del archivo .log mostrando las lineas Alpha occ. y Alpha virt. con las energias orbitales de HOMO y LUMO destacadas]
 :::
-
----
 
 ### Parte B: Cálculo TD-DFT del espectro de absorción
 
@@ -134,8 +126,6 @@ El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \
 4. Identificar la banda débil $n \rightarrow \pi^*$ frente a la banda intensa $\pi \rightarrow \pi^*$ a longitudes de onda inferiores a 250 nm.
 
 
----
-
 ### Parte C: Serie de disolventes y solvatocromismo
 
 Repetir el cálculo TD-DFT de la acetona sobre la geometría ya optimizada, cambiando únicamente la palabra clave de disolvente en **Additional Keywords**:
@@ -150,8 +140,6 @@ Repetir el cálculo TD-DFT de la acetona sobre la geometría ya optimizada, camb
 | Agua | `td scrf=(solvent=water)` |
 
 Guardar cada archivo con nombre descriptivo en `{{practicas_folder}}EspectroscopiaUV/` y extraer $\lambda$ y $f$ de `Excited State 1` en cada `.log`.
-
----
 
 ### Parte D: Serie de cetonas sustituidas
 
