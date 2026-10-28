@@ -63,12 +63,6 @@ La multiplicidad de espín indica cuántos estados cuánticos de espín son acce
 Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF.
 :::
 
-### Unidades de energía
-
-Gaussian reporta todas las energías en unidades atómicas (Hartrees, Ha). Para comparar con los datos experimentales, que habitualmente se expresan en electronvoltios (eV), se aplica el factor de conversión siguiente:
-
-$$1\text{ Ha} = {{ha_to_ev}}\text{ eV}$$
-
 ---
 
 ## Procedimiento
@@ -190,20 +184,6 @@ Tabla de multiplicidades de referencia ($2S+1$):
 | Charge | 0 | +1 |
 | Spin | Multiplicidad neutro | Multiplicidad catión |
 
-Tabla de multiplicidades para los cationes ($A^+$):
-
-| Catión | $Z$ | Configuración | Electrones desapareados | Multiplicidad ($2S+1$) |
-|---|:---:|---|:---:|:---:|
-| He⁺ | 2 | 1s¹ | 1 | 2 |
-| Li⁺ | 3 | [He] | 0 | 1 |
-| Be⁺ | 4 | [He] 2s¹ | 1 | 2 |
-| B⁺ | 5 | [He] 2s² | 0 | 1 |
-| C⁺ | 6 | [He] 2s² 2p¹ | 1 | 2 |
-| N⁺ | 7 | [He] 2s² 2p² | 2 | 3 |
-| O⁺ | 8 | [He] 2s² 2p³ | 3 | 4 |
-| F⁺ | 9 | [He] 2s² 2p⁴ | 2 | 3 |
-| Ne⁺ | 10 | [He] 2s² 2p⁵ | 1 | 2 |
-
 :::{admonition} Captura de pantalla
 :class: captura
 [CAPTURA: ventana Calculate → Gaussian Calculation Setup para el cation mostrando la pestana Method con Charge=1 y multiplicidad correspondiente]
@@ -222,32 +202,6 @@ Tabla de multiplicidades para los cationes ($A^+$):
 ## Resultados y análisis
 
 Para cada átomo calculado, se registran las dos energías extraídas del archivo `.log` y se calculan ambas estimaciones de la energía de ionización. La tabla siguiente recoge los valores en Hartrees y los resultados ya convertidos a eV. Los valores experimentales de referencia se incluyen para calcular el error porcentual.
-
-| Átomo | $E(N)$ (Ha) | $E(A^+)$ (Ha) | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\Delta E}$ (eV) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| H | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 13.60 | [TEXTO HUMANO] |
-| He | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 24.59 | [TEXTO HUMANO] |
-| Li | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 5.39 | [TEXTO HUMANO] |
-| Be | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 9.32 | [TEXTO HUMANO] |
-| B | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 8.30 | [TEXTO HUMANO] |
-| C | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
-| N | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 14.53 | [TEXTO HUMANO] |
-| O | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 13.62 | [TEXTO HUMANO] |
-| F | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 17.42 | [TEXTO HUMANO] |
-| Ne | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | 21.56 | [TEXTO HUMANO] |
-
-### Visualización de orbitales
-
-Para visualizar el HOMO de un átomo calculado, se abre el archivo `.log` en GaussView desde **File → Open** y se accede al menú **Results → MOs**. En el panel de orbitales moleculares, se selecciona el orbital de mayor energía marcado como ocupado y se genera la isosuperficie tridimensional ajustando el valor de contorno a 0.04 unidades atómicas. Para orbitales de tipo $s$, la isosuperficie adopta forma esférica sin planos nodales. Para orbitales de tipo $p$, aparecen dos lóbulos separados por un plano nodal perpendicular al eje de simetría.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: isosuperficie tridimensional del orbital HOMO del carbono en GaussView Results → MOs]
-:::
-
-:::{note}
-A lo largo del período Li-Ne, la morfología del HOMO cambia de un orbital 2s esférico (Li, Be) a un orbital 2p con un plano nodal (B hasta Ne). En los átomos con la subcapa 2p semillena (N) o completa (Ne), la distribución de densidad resultante es especialmente compacta. Observar estos cambios de forma en GaussView permite relacionar la geometría del orbital con la energía de ionización calculada.
-:::
 
 ---
 
