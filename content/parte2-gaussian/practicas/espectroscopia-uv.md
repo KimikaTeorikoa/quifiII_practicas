@@ -60,18 +60,13 @@ El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \
 
 | Campo | Valor |
 |---|---|
-| Method | `[MÉTODO]` |
-| Basis Set | `[BASE]` |
+| Method | `B3LYP` |
+| Basis Set | `6-311G` |
 | Charge | **0** |
 | Spin | **1** |
 | Additional Keywords | `scrf=(solvent=acetonitrile)` |
 
 3. Guardar como `acetona_MeCN_opt.gjf` en `{{practicas_folder}}EspectroscopiaUV/` y lanzar.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup con Job Type Optimization y Additional Keywords scrf=(solvent=acetonitrile)]
-:::
 
 #### Paso A2: Extraer autovalores HOMO y LUMO
 
@@ -81,11 +76,6 @@ El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \
 4. Calcular la diferencia energética $\Delta E_{\text{gap}} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times {{ha_to_ev}}$ en eV.
 5. Estimar la longitud de onda de absorción: $\lambda_{\text{estimada}} = 1239.8 / \Delta E_{\text{gap}}\text{ (eV)}$ en nm.
 6. Anotar los valores numéricos obtenidos en la Tabla A de resultados.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: fragmento del archivo .log mostrando las lineas Alpha occ. y Alpha virt. con las energias orbitales de HOMO y LUMO destacadas]
-:::
 
 ### Parte B: Cálculo TD-DFT del espectro de absorción
 

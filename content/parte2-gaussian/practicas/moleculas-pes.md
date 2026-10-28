@@ -59,11 +59,6 @@ El ángulo diedro describe la rotación relativa entre dos grupos unidos por un 
 3. Hacer clic en la ventana central 3D para colocar el primer átomo de hidrógeno.
 4. Hacer un segundo clic sobre el átomo creado para generar la molécula diatómica de $\text{H}_2$ con enlace simple.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana 3D de GaussView con la molécula de H2 recién construida]
-:::
-
 #### Paso 2: Configurar el cálculo de barrido (Scan)
 
 1. En la barra de menús de GaussView, acceder a **Calculate → Gaussian Calculation Setup**.
@@ -106,11 +101,6 @@ El ángulo diedro describe la rotación relativa entre dos grupos unidos por un 
 4. Repetir el proceso modificando la multiplicidad a 3 y guardar como: `H2_triplete_scan.gjf`.
 5. Comprobar que ambos cálculos progresan en la barra de ejecución.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: cuadro de diálogo para guardar H2_singlete_scan.gjf en la carpeta de trabajo]
-:::
-
 #### Paso 4: Visualizar la PES en GaussView
 
 1. En GaussView, abrir el archivo `H2_singlete_scan.log` mediante **File → Open**.
@@ -128,11 +118,6 @@ Se realizará el barrido conformacional para los tres dihaloetanos siguientes: 1
 1. Abrir una nueva ventana en GaussView (**File → New → Molecule Group**).
 2. Construir la molécula de dihaloetano seleccionando la cadena carbonada y sustituyendo dos átomos de hidrógeno por halógenos en carbonos vecinales.
 3. Aplicar una limpieza geométrica preliminar mediante **Edit → Clean**.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: estructura tridimensional del dihaloetano construida y orientada en GaussView]
-:::
 
 #### Paso 2: Configurar el cálculo del barrido diedro
 

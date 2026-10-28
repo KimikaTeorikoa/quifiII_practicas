@@ -8,11 +8,6 @@ Para hacer un cálculo en Gaussian, primero hay que decirle al programa cómo es
 
 GaussView se abre desde el escritorio del ordenador del aula o desde el menú de aplicaciones del sistema. [CONFIRMAR CON PROFESOR: ruta o icono exacto en el equipo del aula]
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: escritorio con GaussView abierto, ventana principal vacía]
-:::
-
 ## La interfaz: qué ves al abrir
 
 La interfaz de GaussView tiene cuatro áreas de trabajo. En la parte superior encontramos la barra de menús, con las herramientas de configuración y visualización. Debajo está la barra de herramientas, con iconos de acceso rápido. El área central es la ventana de visualización tridimensional, donde construimos, desplazamos y rotamos la molécula con el ratón. Un panel inferior muestra información en tiempo real sobre los átomos seleccionados, distancias interatómicas y el estado del cálculo.
@@ -31,11 +26,6 @@ Para construir una molécula en GaussView, seleccionamos el elemento químico en
 No hacer doble clic accidental sobre el fondo: duplica átomos sin avisar.
 :::
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: H₂O construida en la ventana 3D]
-:::
-
 ## Corregir errores y deshacer
 
 Para deshacer la última acción usamos **Edit → Undo** o Ctrl+Z. Si queremos eliminar un átomo o fragmento concreto, lo seleccionamos con el ratón y pulsamos Supr. Para limpiar la ventana por completo podemos usar **Edit → Select All** seguido de Supr, o abrir un área de trabajo nueva desde **File → New**.
@@ -51,11 +41,6 @@ Para inspeccionar la estructura, rotamos la vista manteniendo presionado el bot�
 ## Ver y ajustar geometría
 
 Para medir una distancia de enlace seleccionamos los dos átomos con Ctrl. La distancia en ángstroms aparece de inmediato en la barra de estado inferior. Con tres átomos consecutivos obtenemos el ángulo de enlace en grados, y con cuatro el ángulo diedro. Esta función es de solo lectura: no hace falta modificar los parámetros geométricos a mano.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: dos átomos seleccionados con distancia visible en la barra inferior]
-:::
 
 ## Abrir un archivo existente
 
@@ -80,11 +65,6 @@ Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aqu
 [CONFIRMAR CON PROFESOR: el cálculo se lanza en local o se envía a un servidor?]
 
 Una vez configurados los parámetros, lanzamos el cálculo pulsando **Submit**. GaussView abre una ventana de seguimiento con las líneas de salida en tiempo real. La duración oscila entre unos segundos para moléculas sencillas con bases mínimas y varios minutos para sistemas mayores o métodos con correlación electrónica. No hace falta hacer nada más hasta que el cálculo finalice.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana de output activa con el cálculo corriendo]
-:::
 
 ## Verificar que el cálculo ha terminado bien
 
@@ -118,10 +98,5 @@ El archivo de entrada lo guardamos desde **File → Save** con la extensión `.g
 :icon: gear
 
 El color de fondo lo modificamos desde **View → Display Format → Background Color**. En esa misma ventana podemos personalizar el tamaño de las esferas atómicas en **Atom Size** y su esquema de colores en **Atom Colors**. Estos ajustes no alteran los cálculos, pero usar fondo blanco facilita obtener capturas nítidas para la memoria de prácticas.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: menú de preferencias de color de GaussView]
-:::
 
 ::::

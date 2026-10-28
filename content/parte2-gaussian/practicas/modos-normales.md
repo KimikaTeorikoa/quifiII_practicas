@@ -31,7 +31,7 @@ En cada modo normal, todos los núcleos de la molécula oscilan en fase y a una 
 
 ### Reglas de selección en espectroscopía infrarroja
 
-Un modo de vibración absorbe radiación infrarroja únicamente si el movimiento nuclear produce una variación neta del momento dipolar molecular ($\partial \vec{\mu}/\partial Q \neq 0$). En moléculas simétricas, algunos modos conservan la simetría de inversión durante la vibración y no alteran el dipolo: son modos inactivos en IR. En el archivo `.log`, la actividad de cada modo queda recogida en el campo `IR Inten`: un valor nulo indica inactividad.
+Un modo de vibración absorbe radiación infrarroja únicamente si el movimiento nuclear produce una variación neta del momento dipolar molecular ($\partial \vec{\mu}/\partial Q \neq 0$). En moléculas simétricas, algunos modos conservan la simetría de inversión durante la vibración y no alteran el dipolo: son modos inactivos en IR. En el caso extremo, la molécula de $\text{H}_2$ no tiene ninguna banda IR activa: su dipolo permanente es nulo y la vibración de estiramiento tampoco lo altera, por lo que el espectro infrarrojo es completamente silencioso. En el archivo `.log`, la actividad de cada modo queda recogida en el campo `IR Inten`: un valor nulo indica inactividad.
 
 :::{admonition} Nota
 :class: note
@@ -62,17 +62,12 @@ Construir la molécula de CO y aplicar **Edit → Clean** para obtener una geome
 | Campo | Valor |
 |---|---|
 | Job Type | Opt+Freq |
-| Method | `[MÉTODO]` |
-| Basis Set | `[BASE]` |
+| Method | `B3LYP` |
+| Basis Set | `6-311G` |
 | Charge | **0** |
 | Spin (Multiplicity) | **1** |
 
 4. En la pestaña **Title**, escribir una descripción identificativa.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup con Job Type Opt+Freq y Method B3LYP/6-311G seleccionados]
-:::
 
 ### Paso 3: Guardar y lanzar
 
@@ -83,9 +78,9 @@ Construir la molécula de CO y aplicar **Edit → Clean** para obtener una geome
 1. En GaussView, abrir el `.log` resultante mediante **File → Open** y acceder a **Results → Optimization** para situarse en el último fotograma.
 2. Seleccionar los dos átomos para leer la distancia C–O en la barra inferior, o bien buscar `! R1    R(1,2)` en el `.log` con **Ctrl + F**.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Results → Optimization en GaussView mostrando la estructura optimizada de CO y la distancia de enlace C-O en la barra inferior]
+:::{admonition} Nota
+:class: note
+El cálculo B3LYP/6-311G reproduce la distancia experimental del CO con buena precisión. El valor de referencia calculado es $R(\text{C-O}) = 1.1473$ Å, frente al valor experimental de 1.128 Å; la diferencia refleja la sobreestimación sistemática de las distancias de enlace propia de los funcionales DFT con bases moderadas.
 :::
 
 ### Paso 5: Extraer parámetros vibracionales del .log
@@ -117,7 +112,7 @@ Buscar `Frequencies --` en el `.log` con **Ctrl + F**. Para cada modo, anotar:
 ### Paso 7: Repetir el procedimiento para CO₂
 
 1. Construir CO₂ en GaussView y aplicar **Edit → Clean** para obtener la geometría lineal O=C=O.
-2. Configurar el cálculo con los mismos parámetros (`[MÉTODO]/[BASE]`, Opt+Freq, carga 0, multiplicidad 1). Guardar como `CO2_opt_freq.gjf` y lanzar.
+2. Configurar el cálculo con los mismos parámetros (B3LYP/6-311G, Opt+Freq, carga 0, multiplicidad 1). Guardar como `CO2_opt_freq.gjf` y lanzar.
 3. Una vez completado, abrir el `.log` en GaussView y acceder a **Results → Vibrations**.
 4. Animar cada uno de los cuatro modos normales y anotar sus frecuencias e intensidades. Relacionar la actividad IR de cada modo con la variación del momento dipolar que provoca la vibración.
 

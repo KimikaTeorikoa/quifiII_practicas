@@ -69,11 +69,6 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
 3. Seleccionar el elemento químico que se desea calcular (por ejemplo, carbono, **C**).
 4. Hacer un único clic con el botón izquierdo sobre la ventana central de dibujo. Aparecerá un centro atómico aislado sin enlaces.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana principal de GaussView con la paleta Element Fragments abierta y un unico centro atomico de carbono en la vista 3D]
-:::
-
 ### Paso 2: Configurar el cálculo del átomo neutro
 
 1. Acceder al menú **Calculate → Gaussian Calculation Setup**.
@@ -117,11 +112,6 @@ Tabla de multiplicidades de referencia ($2S+1$):
 3. Confirmar el cuadro de diálogo pulsando **Save** y a continuación **Submit**.
 4. Observar el estado de ejecución en la barra inferior de GaussView hasta que el cálculo finalice (pocos segundos para elementos ligeros).
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: cuadro de dialogo para guardar el archivo .gjf y barra de estado de GaussView indicando la ejecucion del calculo]
-:::
-
 ### Paso 4: Verificar la terminación correcta
 
 1. Abrir el archivo `.log` generado (`C_neutro_HF_STO3G.log`) con el editor de texto del sistema (**File → Open** en el editor o clic derecho en el archivo).
@@ -139,11 +129,6 @@ Tabla de multiplicidades de referencia ($2S+1$):
 2. Escribir el texto de búsqueda: `SCF Done`.
 3. Localizar la energía total en la línea `SCF Done:  E(RHF) = ...` (para sistemas de capa cerrada con multiplicidad 1) o `SCF Done:  E(ROHF) = ...` (para capa abierta con multiplicidad distinta de 1).
 4. Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna $E(N)$ de la tabla de resultados.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: fragmento del archivo .log mostrando el resultado de busqueda de la linea SCF Done con el valor de energia total en Hartrees]
-:::
 
 ### Paso 6: Leer la energía orbital del HOMO
 
@@ -173,11 +158,6 @@ Tabla de multiplicidades de referencia ($2S+1$):
 |---|:---:|:---:|
 | Charge | 0 | +1 |
 | Spin | Multiplicidad neutro | Multiplicidad catión |
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup para el cation mostrando la pestana Method con Charge=1 y multiplicidad correspondiente]
-:::
 
 ### Paso 8: Calcular las energías de ionización
 
