@@ -33,9 +33,10 @@ $$
 
 Los mínimos de esta superficie corresponden a geometrías de equilibrio estables, en las que las fuerzas sobre cada núcleo son nulas y cualquier deformación incrementa la energía. Los puntos de silla de primer orden conectan mínimos contiguos y representan los estados de transición de reacciones químicas o cambios conformacionales. A distancias internucleares grandes, la energía potencial alcanza el límite de disociación, donde los átomos dejan de interaccionar entre sí.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: curva esquemática unidimensional de energía potencial con mínimo, barrera y asíntota de disociación anotados]
+:::{figure} /_static/figures/pes_1d_esquema.svg
+:alt: Curva unidimensional de energía potencial con mínimo de equilibrio, barrera y asíntota de disociación
+:width: 60%
+:align: center
 :::
 
 ### Singlete y triplete: por qué importa el espín
@@ -51,19 +52,15 @@ Desde el punto de vista mecanocuántico, la función de onda espacial del single
 
 El ángulo diedro describe la rotación relativa entre dos grupos unidos por un enlace simple central y se define a través de los cuatro átomos que forman la secuencia X–C–C–X en un rango de 0° a 360°. En una proyección de Newman, cada conformación queda determinada por este ángulo. La conformación *anti* (180°) sitúa los sustituyentes más voluminosos en posiciones opuestas, minimizando las repulsiones estéricas y configurando el mínimo global de energía. Los confórmeros *gauche* (60° y 300°) constituyen mínimos locales con mayor repulsión mutua. Los máximos de la curva corresponden a las conformaciones eclipsadas, cuyo solapamiento determina la barrera de rotación interna.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: proyección de Newman de un dihaloetano identificando los ángulos diedros de confórmeros anti, gauche y eclipsado]
+:::{figure} /_static/figures/newman_dihaloetano.svg
+:alt: Proyección de Newman de un dihaloetano con las conformaciones anti, gauche y eclipsada anotadas
+:width: 70%
+:align: center
 :::
 
 ---
 
 ## Procedimiento
-
-:::{danger}
-Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el editor de texto y confirmar la presencia de la última línea exacta:
-{{termination_ok}}
-:::
 
 ### Parte 1: PES de la molécula de H₂
 
@@ -91,27 +88,22 @@ Verificación obligatoria tras cada cálculo: abrir el archivo `.log` con el edi
      - Paso (Step size): `0.1` Å.
      - Número de pasos: `25` (rango final: `3.0` Å).
 4. En la pestaña **Method**, seleccionar:
-   - Método: **Hartree-Fock** (**HF**).
-   - Conjunto de base: **STO-3G**.
+   - Método: `[MÉTODO]`.
+   - Conjunto de base: `[BASE]`.
    - Carga: `0`.
    - Para el estado singlete: **Spin = Singlet** (Multiplicity = `1`).
    - Para el estado triplete: **Spin = Triplet** (Multiplicity = `3`).
-5. En la pestaña **Title**, escribir: `H2 scan HF STO-3G`.
+5. En la pestaña **Title**, escribir: `H2 scan [MÉTODO] [BASE]`.
 6. En la pestaña **Additional Keywords**, escribir: `scan`.
-
-Tabla de parámetros de cálculo para $\text{H}_2$:
 
 | Parámetro | Estado singlete | Estado triplete |
 |---|:---:|:---:|
-| Job Type | Scan | Scan |
-| Method | HF | HF |
-| Basis Set | STO-3G | STO-3G |
+| Method | [MÉTODO] | [MÉTODO] |
+| Basis Set | [BASE] | [BASE] |
 | Charge | 0 | 0 |
-| Multiplicity | 1 (Singlet) | 3 (Triplet) |
-| Coordenada | Enlace H(1)–H(2) | Enlace H(1)–H(2) |
-| Rango de distancias | 0.5 a 3.0 Å | 0.5 a 3.0 Å |
-| Incremento de paso | 0.1 Å | 0.1 Å |
-| Número de puntos | 26 | 26 |
+| Multiplicity | 1 | 3 |
+| Rango de distancias | [PARÁMETRO] | [PARÁMETRO] |
+| Incremento de paso | [PARÁMETRO] | [PARÁMETRO] |
 
 :::{admonition} Captura de pantalla
 :class: captura
@@ -131,32 +123,7 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 [CAPTURA: cuadro de diálogo para guardar H2_singlete_scan.gjf en la carpeta de trabajo]
 :::
 
-#### Paso 4: Verificar la terminación correcta
-
-1. Abrir con el editor de texto los archivos `H2_singlete_scan.log` y `H2_triplete_scan.log`.
-2. Desplazarse al final de cada archivo (**Ctrl + Fin**).
-3. Confirmar que la última línea es: `{{termination_ok}}`.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: sección final de H2_singlete_scan.log en el editor de texto mostrando la línea Normal termination of Gaussian 16]
-:::
-
-#### Paso 5: Leer la tabla de energías del escaneo en el .log
-
-1. En el archivo `H2_singlete_scan.log` abierto en el editor de texto, buscar con **Ctrl + F** el texto:
-   `Summary of the potential` (o `Summary of Optimized Potential Surface Scan`).
-2. Localizar la tabla de autovalores donde se listan las energías en Hartrees (`Eigenvalues --`) para cada valor de la distancia $R_1$:
-   - Comprobar la indicación de energía base si aparece en la cabecera (por ejemplo, `add -1.0 to energies`).
-   - Identificar el valor de $R$ correspondiente al mínimo de energía de la curva del singlete ($R_{\text{eq}}$).
-3. Repetir la búsqueda en `H2_triplete_scan.log` y observar que las energías descienden monótonamente hacia el límite de disociación sin presentar ningún mínimo de energía.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: bloque Summary of the potential en el archivo .log mostrando la tabla de valores R1 y Eigenvalues]
-:::
-
-#### Paso 6: Visualizar la PES en GaussView
+#### Paso 4: Visualizar la PES en GaussView
 
 1. En GaussView, abrir el archivo `H2_singlete_scan.log` mediante **File → Open**.
 2. Acceder al menú **Results → Scan**.
@@ -164,16 +131,11 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 4. Abrir simultáneamente el archivo `H2_triplete_scan.log` para superponer la curva del triplete sobre la del singlete en la misma ventana de visualización.
 5. Observar la forma de pozo de potencial en la curva singlete y la ausencia de pozo en la curva triplete.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Results → Scan con las dos curvas (singlete y triplete) superpuestas en GaussView]
-:::
-
 ---
 
 ### Parte 2: PES diedro del dihaloetano
 
-[CONFIRMAR CON PROFESOR: qué dihaloetano usar (1,2-dicloroetano, 1,2-difluoroetano u otro)]
+Se realizará el barrido conformacional para los tres dihaloetanos siguientes: 1,2-dicloroetano, 1,2-dibromoetano y 1,2-diyodoetano. El procedimiento es idéntico para los tres; repetirlo cambiando únicamente el halógeno en el paso de construcción molecular.
 
 #### Paso 1: Dibujar el dihaloetano en GaussView
 
@@ -193,9 +155,10 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 3. Definir la coordenada interna de tipo **Dihedral** seleccionando los cuatro átomos enlazados: $\text{X–C–C–X}$.
 4. Especificar los parámetros angulares del barrido:
    - Coordenada: diedro $\text{X–C–C–X}$.
-   - Rango angular: `[CONFIRMAR CON PROFESOR: rango y paso del escaneo diedro (0°–360°, paso 10° o 15°)]`.
+   - Rango angular: `[PARÁMETRO]`.
 5. En la pestaña **Method**, configurar:
-   - Método y base: `[CONFIRMAR CON PROFESOR: método y conjunto de base para el escaneo diedro del dihaloetano]`.
+   - Método: `[MÉTODO]`.
+   - Conjunto de base: `[BASE]`.
    - Carga: `0`.
    - Multiplicidad: `1` (Singlete).
 6. En la pestaña **Title**, escribir: `Dihaloetano diedro scan`.
@@ -209,93 +172,12 @@ Tabla de parámetros de cálculo para $\text{H}_2$:
 
 1. Guardar el archivo como `dihaloetano_scan.gjf` en `{{practicas_folder}}PES/`.
 2. Confirmar el envío del cálculo pulsando **Submit**.
-3. Al finalizar, abrir el archivo `.log` en el editor de texto y confirmar la terminación con: `{{termination_ok}}`.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: editor de texto con la línea final Normal termination of Gaussian 16 del dihaloetano]
-:::
-
-#### Paso 4: Extraer datos y visualizar la curva diedro en GaussView
+#### Paso 4: Visualizar la curva diedro en GaussView
 
 1. En GaussView, abrir el archivo de salida del barrido mediante **File → Open**.
 2. Acceder al menú **Results → Scan**.
 3. Identificar los mínimos locales (confórmero gauche) y el mínimo global (confórmero anti a 180°), así como las barreras rotacionales intermedias.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Results → Scan mostrando la curva de energía potencial en función del ángulo diedro de torsión]
-:::
-
----
-
-## Resultados y análisis
-
-### Tabla 1: Parámetros característicos de la PES de H₂
-
-La siguiente tabla recoge los valores calculados de la distancia de equilibrio ($R_{\text{eq}}$) y la energía de disociación ($D_e$) de $\text{H}_2$ junto a los datos experimentales de referencia: $0.741\text{ \AA}$ y $4.75\text{ eV}$ ($109.5\text{ kcal/mol}$). La comparación permite cuantificar el error introducido por el método Hartree-Fock con base mínima STO-3G.
-
-| Parámetro | Valor calculado (HF/STO-3G) | Valor experimental | Error (%) |
-|---|:---:|:---:|:---:|
-| $R_{\text{eq}}$ (Å) | [TEXTO HUMANO] | 0.741 | [TEXTO HUMANO] |
-| $E(R_{\text{eq}})$ (Ha) | [TEXTO HUMANO] | — | — |
-| $E(R \to \infty)$ (Ha) | [TEXTO HUMANO] | — | — |
-| $D_e$ (eV) | [TEXTO HUMANO] | 4.75 | [TEXTO HUMANO] |
-| $D_e$ (kcal/mol) | [TEXTO HUMANO] | 109.5 | [TEXTO HUMANO] |
-
-La energía de disociación $D_e$ se calcula a partir de la diferencia entre la energía a distancia internuclear infinita (límite asintótico a 3.0 Å) y la energía en el mínimo de equilibrio:
-
-$$D_e = E(R \to \infty) - E(R_{\text{eq}})$$
-
-### Tabla 2: Barrido internuclear de H₂ (singlete y triplete)
-
-La tabla siguiente recoge las energías absolutas en hartrees del estado singlete y del triplete para cada distancia internuclear, junto con las energías relativas en kcal/mol referidas al mínimo del singlete. Estos datos cuantitativos son los que se trasladarán a la gráfica de la sección siguiente.
-
-| Punto | $R$ (Å) | $E$ singlete (Ha) | $E$ triplete (Ha) | $\Delta E$ singlete (kcal/mol) | $\Delta E$ triplete (kcal/mol) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 | 0.5 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| 2 | 0.6 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| 3 | 0.7 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| 4 | 0.8 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| 5 | 0.9 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| 6 | 1.0 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| ... | ... | ... | ... | ... | ... |
-| 26 | 3.0 | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] | [TEXTO HUMANO] |
-
-### Gráfico de la PES de H₂
-
-Los datos de la tabla se trasladan a una hoja de cálculo o entorno gráfico para trazar ambas curvas de energía relativa en función de la distancia internuclear $R$. La energía se expresa en kcal/mol referida al mínimo del singlete, lo que fija el cero en el punto de máxima estabilidad.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: gráfico con las dos curvas superpuestas de H2: singlete con pozo de potencial y triplete repulsivo]
-:::
-
-### Tabla 3: Barreras conformacionales del dihaloetano
-
-:::{note}
-[TEXTO HUMANO: Registro de las energías relativas asociadas a los ángulos diedros característicos del dihaloetano seleccionado para evaluar la estabilidad diferencial de los confórmeros anti y gauche y la magnitud de la barrera rotacional. Longitud: 3-4 frases.]
-:::
-
-| Conformación | Ángulo diedro (°) | $E$ calculada (Ha) | $\Delta E$ (kcal/mol) |
-|---|:---:|:---:|:---:|
-| Eclipsado (sin-periplanar) | 0 | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| Gauche | 60 | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| Eclipsado intermedio | 120 | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| Anti (anti-periplanar) | 180 | [TEXTO HUMANO] | 0.00 (referencia) |
-| Eclipsado intermedio | 240 | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| Gauche | 300 | [TEXTO HUMANO] | [TEXTO HUMANO] |
-| Eclipsado (sin-periplanar) | 360 | [TEXTO HUMANO] | [TEXTO HUMANO] |
-
----
-
-## Preguntas
-
-1. ¿Qué valor de energía en Hartrees aparece en la tabla `Summary of Optimized Potential Surface Scan` del archivo `H2_singlete_scan.log` para el punto de menor energía, y a qué distancia internuclear $R_1$ en Ångstroms corresponde?
-2. A partir de la curva del estado singlete, determinar la energía de disociación teórica $D_e$ en eV restando la energía del mínimo de la energía en el límite asintótico ($R = 3.0\text{ \AA}$). Justificar la presencia del pozo de potencial enlazante en el singlete frente al perfil puramente repulsivo del triplete en función del espín electrónico y la densidad de carga internuclear.
-3. Comparar la distancia de equilibrio calculada para el singlete ($R_{\text{eq}} \approx 0.71\text{ \AA}$) con el valor experimental ($0.741\text{ \AA}$). ¿Por qué el método Hartree-Fock con base mínima STO-3G subestima la distancia de enlace y sobreestima la energía de disociación respecto al experimento?
-4. Comparar las curvas de energía potencial del estado singlete y del estado triplete de $\text{H}_2$ a distancias internucleares cortas ($R = 0.5\text{ \AA}$) y largas ($R = 3.0\text{ \AA}$). ¿A partir de qué distancia la diferencia de energía entre ambos estados se vuelve despreciable y por qué convergen hacia el mismo límite asintótico de dos átomos de hidrógeno neutros aislados?
-5. [PENDIENTE CONFIRMACIÓN PROFESOR: esta pregunta aplica cuando se complete la parte del dihaloetano] A partir de la curva del ángulo diedro en el dihaloetano, contrastar la barrera rotacional calculada con la energía térmica media a temperatura ambiente ($kT \approx 0.6\text{ kcal/mol}$ a 298 K) para deducir si la rotación alrededor del enlace C–C está libre o restringida.
 
 ---
 

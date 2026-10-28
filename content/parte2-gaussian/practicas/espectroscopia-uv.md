@@ -28,9 +28,10 @@ Párrafo muy corto. Referencia al uso combinado de GaussView para la parametriza
 
 Párrafo medio + figura. Promoción de electrones de valencia desde orbitales ocupados a orbitales virtuales desocupados. Distinción entre la transición $n \rightarrow \pi^*$ (electrón no enlazante del oxígeno al orbital antienlazante $\pi^*$ del carbonilo, prohibida por simetría, baja fuerza de oscilador, $\lambda \approx 280-300\text{ nm}$) y la transición $\pi \rightarrow \pi^*$ (orbital enlazante $\pi$ al antienlazante $\pi^*$, permitida, alta fuerza de oscilador, $\lambda < 250\text{ nm}$).
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: diagrama de niveles de orbitales moleculares del grupo carbonilo con flechas de transición n a pi* y pi a pi*]
+:::{figure} /_static/figures/orbitales_carbonilo.svg
+:alt: Diagrama de niveles de energía orbital del grupo carbonilo con las transiciones n→π* y π→π*
+:width: 55%
+:align: center
 :::
 
 ### El gap HOMO-LUMO como estimación preliminar

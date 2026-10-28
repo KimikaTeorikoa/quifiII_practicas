@@ -32,9 +32,10 @@ Al promediar la repulsión interelectrónica se desprecian las correlaciones ins
 
 En el formalismo de Hartree-Fock, el estado espacial de cada electrón se describe mediante un orbital que depende únicamente de las coordenadas espaciales de dicha partícula. En el átomo de helio, los dos electrones ocupan el mismo orbital espacial 1s con espines opuestos ($\alpha$ y $\beta$), cumpliendo el principio de exclusión de Pauli. Para calcular estos estados en sistemas atómicos y moleculares, cada orbital se expande como una combinación lineal de funciones de base predefinidas. La figura muestra el orbital 1s del helio como una superficie de contorno esférica que delimita la región de mayor densidad electrónica.
 
-:::{admonition} Figura
-:class: captura
-[FIGURA: orbital 1s del He, representación de densidad electrónica]
+:::{figure} /_static/figures/orbital_1s_he.svg
+:alt: Representación de la densidad electrónica del orbital 1s del átomo de helio mediante isosuperficies concéntricas
+:width: 50%
+:align: center
 :::
 
 ---
@@ -43,9 +44,10 @@ En el formalismo de Hartree-Fock, el estado espacial de cada electrón se descri
 
 El potencial de campo medio depende de los orbitales ocupados, pero estos solo pueden calcularse si se conoce previamente dicho potencial. Esta dependencia circular impide una solución directa. Para resolverla, las ecuaciones se tratan mediante un procedimiento numérico iterativo. El cálculo parte de una estimación inicial de los orbitales (*guess*), con la que se construye un primer operador de Fock. A continuación, se resuelven las ecuaciones matriciales para obtener nuevos coeficientes orbitales y se comprueba si la variación en la energía o en la densidad respecto a la iteración anterior queda por debajo del umbral de tolerancia. Este ciclo se repite hasta alcanzar la convergencia numérica en el denominado método del campo autoconsistente (SCF, *Self-Consistent Field*), cuyo esquema resume el diagrama adjunto.
 
-:::{admonition} Figura
-:class: captura
-[FIGURA: diagrama de flujo SCF: guess → campo medio → nuevos orbitales → convergencia? → si no, volver al paso 2]
+:::{figure} /_static/figures/scf_flowchart.svg
+:alt: Diagrama de flujo del ciclo SCF desde la estimación inicial hasta la convergencia
+:width: 55%
+:align: center
 :::
 
 ---

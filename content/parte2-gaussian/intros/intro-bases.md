@@ -10,9 +10,10 @@ Los orbitales atómicos y moleculares de sistemas polielectrónicos presentan fo
 
 En química cuántica computacional, los orbitales moleculares se representan como combinaciones lineales de un conjunto finito de funciones conocidas denominadas funciones de base. Las funciones gaussianas constituyen el estándar en programas como Gaussian porque permiten calcular con gran rapidez analítica las integrales de atracción y repulsión. Al aumentar el número de funciones en el conjunto, mejora la capacidad numérica para describir la densidad electrónica con precisión. Por tanto, elegir el conjunto de base exige un equilibrio continuo entre la exactitud física deseada y el coste computacional disponible.
 
-:::{admonition} Figura
-:class: captura
-[FIGURA: orbital 1s exacto vs aproximación con pocas gaussianas vs aproximación con más gaussianas (tres curvas superpuestas)]
+:::{figure} /_static/figures/sto_vs_gaussianas.svg
+:alt: Comparación del orbital 1s exacto con la aproximación STO por una y varias gaussianas
+:width: 65%
+:align: center
 :::
 
 ---
