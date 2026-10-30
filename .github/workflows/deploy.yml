@@ -37,6 +37,15 @@ jobs:
           fi
         done
         cp landing/index.html site/index.html
+        # Pre-languages URLs (/intro.html, /content/...) redirect to es/
+        (cd site/es && find . -name '*.html' -not -path './_*') |
+        while read -r f; do
+          f=${f#./}; up=$(echo "$f" | sed -E 's|[^/]+/|../|g; s|[^/]*$||')
+          [ -e "site/$f" ] && continue
+          mkdir -p "site/$(dirname "$f")"
+          printf '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=%ses/%s"><link rel="canonical" href="%ses/%s">\n' \
+            "$up" "$f" "$up" "$f" > "site/$f"
+        done
 
     - name: Push html to github-pages
       if: github.ref == 'refs/heads/master'
