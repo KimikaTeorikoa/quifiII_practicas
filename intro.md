@@ -44,6 +44,18 @@ más estables de un diedro y qué aspecto tienen los **orbitales moleculares**.
 ## Contributors
 These notes have been written by
 * [David De Sancho](https://github.com/daviddesancho) (UPV-EHU)
+* Xabier López (UPV-EHU)
+* Irene Casademont (DIPC)
+* [Javier Domínguez](https://github.com/javierdomcal) (DIPC)
+
+## License
+[![CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](https://github.com/KimikaTeorikoa/quifiII_practicas/blob/master/LICENSE-CODE)
+
+The text and figures of this book are licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The code is licensed under the
+[MIT License](https://github.com/KimikaTeorikoa/quifiII_practicas/blob/master/LICENSE-CODE).
 
 ## Bibliography
 ```{bibliography}
