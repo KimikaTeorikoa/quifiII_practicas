@@ -1,0 +1,887 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Átomos y el teorema de Koopmans &#8212; Química Física II - Prácticas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/practicas/atomos-koopmans';</script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Geometría molecular y la aproximación de Born-Oppenheimer" href="../intros/intro-born-oppenheimer.html" />
+    <link rel="prev" title="Energías y unidades en Gaussian" href="../intros/intro-energias.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Química Física II - Prácticas</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Bienvenida
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelos sencillos con Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Introducción a la programación en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Resolución numérica de la Ecuación de Schrödinger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Resolviendo la ecuación de Schrödinger con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplicaciones a problemas más complejos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Modelo simplificado de un enlace químico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a la Química Computacional con Gaussian</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-gaussview.html">Introducción a GaussView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-hartree-fock.html">El método de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-bases.html">Funciones de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-energias.html">Energías y unidades en Gaussian</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Átomos y el teorema de Koopmans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-born-oppenheimer.html">Geometría molecular y la aproximación de Born-Oppenheimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-mas-alla-hf.html">Más allá de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moleculas-pes.html">Superficie de energía potencial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modos-normales.html">Modos normales de vibración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espectroscopia-uv.html">Espectroscopía UV-Vis de cetonas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cuestionario</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Cuestionario</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/practicas/atomos-koopmans.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/practicas/atomos-koopmans.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Átomos y el teorema de Koopmans</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-las-energias-son-negativas">¿Por qué las energías son negativas?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-homo-y-el-lumo">El HOMO y el LUMO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-energia-de-ionizacion-y-el-teorema-de-koopmans">La energía de ionización y el Teorema de Koopmans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-multiplicidad-de-espin">La multiplicidad de espín</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedimiento">Procedimiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-abrir-gaussview-y-dibujar-el-atomo">Paso 1: Abrir GaussView y dibujar el átomo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-configurar-el-calculo-del-atomo-neutro">Paso 2: Configurar el cálculo del átomo neutro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-lanzar-el-calculo-y-guardar-el-archivo">Paso 3: Lanzar el cálculo y guardar el archivo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-verificar-la-terminacion-correcta">Paso 4: Verificar la terminación correcta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-leer-la-energia-total-e-n">Paso 5: Leer la energía total E(N)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-leer-la-energia-orbital-del-homo-y-visualizar-el-orbital">Paso 6: Leer la energía orbital del HOMO y visualizar el orbital</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-7-configurar-y-calcular-el-cation-a">Paso 7: Configurar y calcular el catión A⁺</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-8-calcular-las-energias-de-ionizacion">Paso 8: Calcular las energías de ionización</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-y-analisis">Resultados y análisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="atomos-y-el-teorema-de-koopmans">
+<h1>Átomos y el teorema de Koopmans<a class="headerlink" href="#atomos-y-el-teorema-de-koopmans" title="Permalink to this heading">#</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<p>La energía de ionización mide la fuerza de atracción que ejerce el núcleo sobre los electrones más externos y determina la reactividad química y las tendencias periódicas de los elementos. Mediante cálculos de Hartree-Fock en Gaussian, se aplican dos aproximaciones complementarias para evaluar esta propiedad: la diferencia directa de energía total entre el átomo neutro y su catión (<span class="math notranslate nohighlight">\(\Delta E\)</span>), y la estimación a partir del orbital ocupado de mayor energía mediante el teorema de Koopmans (<span class="math notranslate nohighlight">\(-\varepsilon_{\text{HOMO}}\)</span>).</p>
+</section>
+<section id="objetivos">
+<h2>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Calcular la energía electrónica total de átomos neutros y cationes monocargados mediante el método Hartree-Fock en Gaussian 16, Revision A.03.</p></li>
+<li><p>Determinar la energía de ionización por diferencia autoconsistente (<span class="math notranslate nohighlight">\(\Delta E\)</span>) y por estimación orbital mediante el teorema de Koopmans (<span class="math notranslate nohighlight">\(-\varepsilon_{\text{HOMO}}\)</span>).</p></li>
+<li><p>Comparar las energías de ionización calculadas frente a valores experimentales a lo largo del primer y segundo período.</p></li>
+<li><p>Visualizar la distribución espacial y la simetría de los orbitales atómicos ocupados de mayor energía (HOMO) en GaussView.</p></li>
+</ol>
+</section>
+<section id="conceptos-clave">
+<h2>Conceptos clave<a class="headerlink" href="#conceptos-clave" title="Permalink to this heading">#</a></h2>
+<section id="por-que-las-energias-son-negativas">
+<h3>¿Por qué las energías son negativas?<a class="headerlink" href="#por-que-las-energias-son-negativas" title="Permalink to this heading">#</a></h3>
+<p>La energía electrónica de un átomo se mide respecto al estado de referencia en que el núcleo y todos los electrones se encuentran en reposo y separados en el infinito, con interacción nula. Como el átomo ligado es más estable que ese estado de referencia, su energía es siempre negativa. Cuanto más negativo es el valor que aparece en la línea <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code>, mayor es la estabilidad del sistema. Un resultado positivo en la energía total indicaría un error en la configuración del cálculo.</p>
+</section>
+<section id="el-homo-y-el-lumo">
+<h3>El HOMO y el LUMO<a class="headerlink" href="#el-homo-y-el-lumo" title="Permalink to this heading">#</a></h3>
+<p>Los orbitales moleculares se ordenan de menor a mayor energía. El orbital ocupado de mayor energía recibe el nombre de HOMO (del inglés <em>Highest Occupied Molecular Orbital</em>) y contiene los electrones más fáciles de extraer. El primer orbital desocupado, el LUMO (<em>Lowest Unoccupied Molecular Orbital</em>), es el orbital disponible para recibir electrones. La diferencia entre el nivel del HOMO y el nivel de vacío constituye una primera estimación de la energía necesaria para arrancar un electrón del sistema.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>En la salida de Gaussian con <code class="docutils literal notranslate"><span class="pre">pop=full</span></code>, la energía del HOMO corresponde al último valor numérico de la última línea <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">occ.</span> <span class="pre">eigenvalues</span></code>. El primer valor de la línea siguiente <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">virt.</span> <span class="pre">eigenvalues</span></code> corresponde al LUMO.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/homo_lumo_ionizacion.svg"><img alt="Diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha de energía de ionización" src="../../../_images/homo_lumo_ionizacion.svg" width="60%" /></a>
+</figure>
+</section>
+<section id="la-energia-de-ionizacion-y-el-teorema-de-koopmans">
+<h3>La energía de ionización y el Teorema de Koopmans<a class="headerlink" href="#la-energia-de-ionizacion-y-el-teorema-de-koopmans" title="Permalink to this heading">#</a></h3>
+<p>La energía de ionización de un átomo neutro <span class="math notranslate nohighlight">\(A\)</span> en fase gas es la energía mínima necesaria para extraer un electrón y generar el catión <span class="math notranslate nohighlight">\(A^+\)</span> según el proceso <span class="math notranslate nohighlight">\(A \rightarrow A^+ + e^-\)</span>. En esta práctica se calcula por dos vías independientes. La primera es la diferencia directa de energías SCF entre el catión y el átomo neutro, lo que exige dos cálculos separados. La segunda se basa en el teorema de Koopmans, que permite estimar ese valor a partir únicamente de la energía del orbital HOMO del átomo neutro, sin necesidad de calcular el catión.</p>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\Delta E} = E(A^+) - E(A)\]</div>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}\]</div>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>El teorema de Koopmans adopta la aproximación de orbitales congelados, asumiendo que los orbitales del catión <span class="math notranslate nohighlight">\(A^+\)</span> son idénticos a los del átomo neutro <span class="math notranslate nohighlight">\(A\)</span>. En un proceso físico de ionización, la pérdida de un electrón reduce la repulsión interelectrónica global y provoca la contracción de la nube electrónica restante hacia el núcleo (relajación orbital). Como la aproximación de Koopmans ignora tanto esta relajación estabilizadora como las diferencias de energía de correlación, <span class="math notranslate nohighlight">\(-\varepsilon_{\text{HOMO}}\)</span> discrepa ligeramente del valor calculado por diferencia autoconsistente <span class="math notranslate nohighlight">\(\text{IE}_{\Delta E}\)</span>.</p>
+</div>
+</section>
+<section id="la-multiplicidad-de-espin">
+<h3>La multiplicidad de espín<a class="headerlink" href="#la-multiplicidad-de-espin" title="Permalink to this heading">#</a></h3>
+<p>La multiplicidad de espín indica cuántos estados cuánticos de espín son accesibles para el sistema y se calcula como <span class="math notranslate nohighlight">\(2S+1\)</span>, donde <span class="math notranslate nohighlight">\(S\)</span> es la suma de los espines de los electrones desapareados. Un átomo con todos los electrones apareados tiene <span class="math notranslate nohighlight">\(S=0\)</span> y multiplicidad 1 (singlete). Un electrón desapareado da <span class="math notranslate nohighlight">\(S=1/2\)</span> y multiplicidad 2 (doblete). Asignar un valor de multiplicidad incorrecto provoca que Gaussian distribuya mal los electrones entre los orbitales <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span>, lo que invalida el resultado o impide la convergencia del ciclo SCF.</p>
+<div class="warning admonition">
+<p class="admonition-title">Advertencia</p>
+<p>Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF.</p>
+</div>
+</section>
+</section>
+<section id="procedimiento">
+<h2>Procedimiento<a class="headerlink" href="#procedimiento" title="Permalink to this heading">#</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Atención</p>
+<p>Verificación obligatoria tras cada cálculo: abrir el archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code> con el editor de texto y confirmar la presencia de la línea final exacta:
+<code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">termination</span> <span class="pre">of</span> <span class="pre">Gaussian</span> <span class="pre">16</span></code></p>
+</div>
+<section id="paso-1-abrir-gaussview-y-dibujar-el-atomo">
+<h3>Paso 1: Abrir GaussView y dibujar el átomo<a class="headerlink" href="#paso-1-abrir-gaussview-y-dibujar-el-atomo" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Abrir GaussView desde el menú de aplicaciones o lanzador del sistema.</p></li>
+<li><p>Abrir la paleta de fragmentos atómicos mediante <strong>View → Element Fragments</strong> (o pulsando el icono de la tabla periódica en la barra de herramientas superior).</p></li>
+<li><p>Seleccionar el elemento químico que se desea calcular (por ejemplo, carbono, <strong>C</strong>).</p></li>
+<li><p>Hacer un único clic con el botón izquierdo sobre la ventana central de dibujo. Aparecerá un centro atómico aislado sin enlaces.</p></li>
+</ol>
+</section>
+<section id="paso-2-configurar-el-calculo-del-atomo-neutro">
+<h3>Paso 2: Configurar el cálculo del átomo neutro<a class="headerlink" href="#paso-2-configurar-el-calculo-del-atomo-neutro" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Acceder al menú <strong>Calculate → Gaussian Calculation Setup</strong>.</p></li>
+<li><p>En la pestaña <strong>Job Type</strong>, seleccionar <strong>Energy</strong>.</p></li>
+<li><p>En la pestaña <strong>Method</strong>, configurar los parámetros del cálculo:</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Method</p></td>
+<td><p><strong>HF</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Basis Set</p></td>
+<td><p><strong>STO-3G</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Charge</p></td>
+<td><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Spin (Multiplicity)</p></td>
+<td><p>Consultar la tabla de multiplicidades para cada átomo neutro</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li><p>En la pestaña <strong>Title</strong>, escribir una descripción identificativa (por ejemplo, <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">neutro</span> <span class="pre">HF</span> <span class="pre">STO-3G</span></code>).</p></li>
+<li><p>En la pestaña <strong>Additional Keywords</strong>, escribir exactamente: <code class="docutils literal notranslate"><span class="pre">pop=full</span></code>. Esta instrucción incluye las energías de todos los orbitales moleculares en el archivo de salida.</p></li>
+</ol>
+<p>Tabla de multiplicidades de referencia (<span class="math notranslate nohighlight">\(2S+1\)</span>):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Átomo</p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(Z\)</span></p></th>
+<th class="head"><p>Configuración</p></th>
+<th class="text-center head"><p>Multiplicidad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H</p></td>
+<td class="text-center"><p>1</p></td>
+<td><p>1s¹</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>He</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p>1s²</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Li</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p>[He] 2s¹</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Be</p></td>
+<td class="text-center"><p>4</p></td>
+<td><p>[He] 2s²</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td class="text-center"><p>5</p></td>
+<td><p>[He] 2s² 2p¹</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td class="text-center"><p>6</p></td>
+<td><p>[He] 2s² 2p²</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>N</p></td>
+<td class="text-center"><p>7</p></td>
+<td><p>[He] 2s² 2p³</p></td>
+<td class="text-center"><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>O</p></td>
+<td class="text-center"><p>8</p></td>
+<td><p>[He] 2s² 2p⁴</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td class="text-center"><p>9</p></td>
+<td><p>[He] 2s² 2p⁵</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ne</p></td>
+<td class="text-center"><p>10</p></td>
+<td><p>[He] 2s² 2p⁶</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/07_koopmans_setup_c_popfull.png"><img alt="Configuración del cálculo de Hartree-Fock con pop=full para el átomo de carbono" src="../../../_images/07_koopmans_setup_c_popfull.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="paso-3-lanzar-el-calculo-y-guardar-el-archivo">
+<h3>Paso 3: Lanzar el cálculo y guardar el archivo<a class="headerlink" href="#paso-3-lanzar-el-calculo-y-guardar-el-archivo" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Pulsar el botón <strong>Submit</strong> en la parte inferior de la ventana <strong>Gaussian Calculation Setup</strong>.</p></li>
+<li><p>En el cuadro de diálogo para guardar, indicar el nombre del archivo de entrada <code class="docutils literal notranslate"><span class="pre">.gjf</span></code> (por ejemplo, <code class="docutils literal notranslate"><span class="pre">C_neutro_HF_STO3G.gjf</span></code>) y guardarlo en el directorio de trabajo del laboratorio: <code class="docutils literal notranslate"><span class="pre">{{practicas_folder}}</span></code>.</p></li>
+<li><p>Confirmar el cuadro de diálogo pulsando <strong>Save</strong> y a continuación <strong>Submit</strong>.</p></li>
+<li><p>Observar el estado de ejecución en la barra inferior de GaussView hasta que el cálculo finalice (pocos segundos para elementos ligeros).</p></li>
+</ol>
+</section>
+<section id="paso-4-verificar-la-terminacion-correcta">
+<h3>Paso 4: Verificar la terminación correcta<a class="headerlink" href="#paso-4-verificar-la-terminacion-correcta" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Abrir el archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code> generado (<code class="docutils literal notranslate"><span class="pre">C_neutro_HF_STO3G.log</span></code>) con el editor de texto del sistema (<strong>File → Open</strong> en el editor o clic derecho en el archivo).</p></li>
+<li><p>Desplazarse al final del archivo con <strong>Ctrl + Fin</strong>.</p></li>
+<li><p>Confirmar que la última línea del archivo coincide exactamente con: <code class="docutils literal notranslate"><span class="pre">{{termination_ok}}</span></code>. Si no aparece, el cálculo falló y no deben usarse sus datos.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/08_koopmans_log_terminacion_normal.png"><img alt="Terminación normal de Gaussian 16 al final del archivo de salida .log" src="../../../_images/08_koopmans_log_terminacion_normal.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="paso-5-leer-la-energia-total-e-n">
+<h3>Paso 5: Leer la energía total E(N)<a class="headerlink" href="#paso-5-leer-la-energia-total-e-n" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>En el archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code> abierto en el editor de texto, pulsar <strong>Ctrl + F</strong> para activar la búsqueda.</p></li>
+<li><p>Escribir el texto de búsqueda: <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code>.</p></li>
+<li><p>Localizar la energía total en la línea <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done:</span>&#160; <span class="pre">E(RHF)</span> <span class="pre">=</span> <span class="pre">...</span></code> (para sistemas de capa cerrada con multiplicidad 1) o <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done:</span>&#160; <span class="pre">E(ROHF)</span> <span class="pre">=</span> <span class="pre">...</span></code> (para capa abierta con multiplicidad distinta de 1).</p></li>
+<li><p>Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna <span class="math notranslate nohighlight">\(E(N)\)</span> de la tabla de resultados.</p></li>
+</ol>
+</section>
+<section id="paso-6-leer-la-energia-orbital-del-homo-y-visualizar-el-orbital">
+<h3>Paso 6: Leer la energía orbital del HOMO y visualizar el orbital<a class="headerlink" href="#paso-6-leer-la-energia-orbital-del-homo-y-visualizar-el-orbital" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Lectura numérica en el archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code>:</strong></p>
+<ul class="simple">
+<li><p>En el archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code> abierto en el editor, buscar con <strong>Ctrl + F</strong> el texto: <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">occ.</span> <span class="pre">eigenvalues</span></code>.</p></li>
+<li><p>Localizar el último número de la última línea <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">occ.</span> <span class="pre">eigenvalues</span> <span class="pre">--</span></code>. Ese valor numérico corresponde a la energía del orbital ocupado de mayor energía, <span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> (en Hartrees).</p></li>
+<li><p>Localizar el primer número de la línea inmediata siguiente <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">virt.</span> <span class="pre">eigenvalues</span> <span class="pre">--</span></code>, correspondiente al orbital desocupado de menor energía (<span class="math notranslate nohighlight">\(\varepsilon_{\text{LUMO}}\)</span>).</p></li>
+<li><p>Copiar el valor de <span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> (en Hartrees) en la columna correspondiente de la tabla de resultados.</p></li>
+</ul>
+</li>
+<li><p><strong>Comprobación y visualización en GaussView:</strong></p>
+<ul class="simple">
+<li><p>En GaussView, abrimos el archivo <code class="docutils literal notranslate"><span class="pre">.chk</span></code> resultante del cálculo y accedemos al menú <strong>Results → MOs</strong>.</p></li>
+<li><p>En la pestaña <strong>New Gaussian MOs</strong> observamos el diagrama de niveles de energía y la ocupación de los orbitales para los espines <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span>. Para el carbono neutro en estado triplete, el orbital ocupado de mayor energía (<span class="math notranslate nohighlight">\(\alpha\)</span>, orbital 4) tiene una energía de <span class="math notranslate nohighlight">\(-0.32803\text{ Ha}\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/07b_koopmans_gv_orbitales_c.png"><img alt="Diagrama de niveles de energía y ocupación de orbitales Alpha y Beta en Results MOs" src="../../../_images/07b_koopmans_gv_orbitales_c.png" style="width: 85%;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Para generar la distribución tridimensional del orbital, accedemos a la pestaña <strong>Visualize</strong> dentro de esa misma ventana. Seleccionamos el orbital 4 (HOMO), establecemos el campo <strong>Isovalue</strong> en <code class="docutils literal notranslate"><span class="pre">0.01</span></code> y pulsamos <strong>Update</strong>. En la subventana izquierda aparecerán los dos lóbulos del orbital atómico <span class="math notranslate nohighlight">\(2p\)</span>.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/09_koopmans_gv_orbital_homo.png"><img alt="Generación de la isosuperficie 3D del orbital HOMO (2p) con isovalor 0.01 en la pestaña Visualize" src="../../../_images/09_koopmans_gv_orbital_homo.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="paso-7-configurar-y-calcular-el-cation-a">
+<h3>Paso 7: Configurar y calcular el catión A⁺<a class="headerlink" href="#paso-7-configurar-y-calcular-el-cation-a" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Regresar a GaussView con el mismo centro atómico en pantalla.</p></li>
+<li><p>Abrir nuevamente el panel <strong>Calculate → Gaussian Calculation Setup</strong>.</p></li>
+<li><p>En la pestaña <strong>Method</strong>, modificar los siguientes parámetros:</p>
+<ul class="simple">
+<li><p><strong>Charge</strong>: cambiar de <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p><strong>Spin</strong>: ajustar a la multiplicidad correspondiente a la especie catiónica (ver tabla inferior). Al arrancar un electrón del HOMO, el número de electrones desapareados cambia.</p></li>
+</ul>
+</li>
+<li><p>Mantener <strong>Job Type</strong> en <code class="docutils literal notranslate"><span class="pre">Energy</span></code>, <strong>Method</strong> en <code class="docutils literal notranslate"><span class="pre">HF</span></code>, <strong>Basis Set</strong> en <code class="docutils literal notranslate"><span class="pre">STO-3G</span></code> y la palabra clave <code class="docutils literal notranslate"><span class="pre">pop=full</span></code> en <strong>Additional Keywords</strong>.</p></li>
+<li><p>En la pestaña <strong>Title</strong>, escribir: <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">cation</span> <span class="pre">HF</span> <span class="pre">STO-3G</span></code>.</p></li>
+<li><p>Pulsar <strong>Submit</strong>, guardar con nombre representativo (por ejemplo, <code class="docutils literal notranslate"><span class="pre">C_cation_HF_STO3G.gjf</span></code>) en <code class="docutils literal notranslate"><span class="pre">{{practicas_folder}}</span></code> y confirmar el envío.</p></li>
+<li><p>Verificar la terminación correcta en el nuevo <code class="docutils literal notranslate"><span class="pre">.log</span></code> y extraer la energía total <span class="math notranslate nohighlight">\(E(A^+)\)</span> en la línea <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code>.</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="text-center head"><p>Neutro</p></th>
+<th class="text-center head"><p>Catión</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Charge</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>+1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spin</p></td>
+<td class="text-center"><p>Multiplicidad neutro</p></td>
+<td class="text-center"><p>Multiplicidad catión</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="paso-8-calcular-las-energias-de-ionizacion">
+<h3>Paso 8: Calcular las energías de ionización<a class="headerlink" href="#paso-8-calcular-las-energias-de-ionizacion" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Calcular la energía de ionización por diferencia directa (<span class="math notranslate nohighlight">\(\text{IE}_{\Delta E}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times 27.2114 \quad [\text{eV}]\]</div>
+</li>
+<li><p>Calcular la estimación del teorema de Koopmans (<span class="math notranslate nohighlight">\(\text{IE}_{\text{Koopmans}}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times 27.2114 \quad [\text{eV}]\]</div>
+</li>
+<li><p>Registrar ambos valores en electronvoltios en la tabla de datos y calcular la desviación porcentual respecto al valor experimental de referencia.</p></li>
+</ol>
+</section>
+</section>
+<section id="resultados-y-analisis">
+<h2>Resultados y análisis<a class="headerlink" href="#resultados-y-analisis" title="Permalink to this heading">#</a></h2>
+<p>Para cada átomo calculado, registramos las dos energías extraídas del archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code> y calculamos ambas estimaciones de la energía de ionización. La tabla siguiente recoge los valores en Hartrees y los resultados ya convertidos a eV. Los valores experimentales de referencia se incluyen para calcular el error porcentual.</p>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+<li><p>Atkins, P.; De Paula, J. <em>Química Física</em>, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 9 (Estructura electrónica atómica).</p></li>
+<li><p>NIST Chemistry WebBook, https://webbook.nist.gov (datos experimentales de energía de ionización).</p></li>
+<li><p>Szabo, A.; Ostlund, N. S. <em>Modern Quantum Chemistry</em>. Dover, 1996.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Para ir más lejos (opcional)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Esta exploración estudia cómo varía la calidad del resultado al ampliar el conjunto de funciones de base. Repetimos el cálculo del átomo de carbono neutro con tres bases de diferente tamaño y comparamos la energía del HOMO y la energía de ionización estimada por Koopmans frente al valor experimental. El procedimiento es idéntico al de la práctica principal: cambiamos únicamente el campo <strong>Basis Set</strong> en <strong>Gaussian Calculation Setup → Method</strong>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p class="sd-card-text">Base</p></th>
+<th class="text-center head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> (Ha)</p></th>
+<th class="text-center head"><p class="sd-card-text">IE<span class="math notranslate nohighlight">\(_{\text{Koopmans}}\)</span> (eV)</p></th>
+<th class="text-center head"><p class="sd-card-text">IE exp. (eV)</p></th>
+<th class="text-center head"><p class="sd-card-text">Error (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p class="sd-card-text">STO-3G</p></td>
+<td class="text-center"><p class="sd-card-text">−0.328</p></td>
+<td class="text-center"><p class="sd-card-text">8.93</p></td>
+<td class="text-center"><p class="sd-card-text">11.26</p></td>
+<td class="text-center"><p class="sd-card-text">20.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p class="sd-card-text">3-21G</p></td>
+<td class="text-center"><p class="sd-card-text">(a calcular)</p></td>
+<td class="text-center"><p class="sd-card-text">(a calcular)</p></td>
+<td class="text-center"><p class="sd-card-text">11.26</p></td>
+<td class="text-center"><p class="sd-card-text">(a calcular)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p class="sd-card-text">6-311G</p></td>
+<td class="text-center"><p class="sd-card-text">(a calcular)</p></td>
+<td class="text-center"><p class="sd-card-text">(a calcular)</p></td>
+<td class="text-center"><p class="sd-card-text">11.26</p></td>
+<td class="text-center"><p class="sd-card-text">(a calcular)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p class="sd-card-text">¿En qué sentido varía <span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> al aumentar el tamaño de la base? ¿Disminuye el error respecto al valor experimental de forma monótona, o hay algún caso en que una base mayor no mejora el resultado? Relaciona las diferencias con la capacidad de cada base para describir la densidad electrónica en la región de valencia.</p>
+</div>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/practicas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intros/intro-energias.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Energías y unidades en Gaussian</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../intros/intro-born-oppenheimer.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Geometría molecular y la aproximación de Born-Oppenheimer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-las-energias-son-negativas">¿Por qué las energías son negativas?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-homo-y-el-lumo">El HOMO y el LUMO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-energia-de-ionizacion-y-el-teorema-de-koopmans">La energía de ionización y el Teorema de Koopmans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-multiplicidad-de-espin">La multiplicidad de espín</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedimiento">Procedimiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-abrir-gaussview-y-dibujar-el-atomo">Paso 1: Abrir GaussView y dibujar el átomo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-configurar-el-calculo-del-atomo-neutro">Paso 2: Configurar el cálculo del átomo neutro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-lanzar-el-calculo-y-guardar-el-archivo">Paso 3: Lanzar el cálculo y guardar el archivo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-verificar-la-terminacion-correcta">Paso 4: Verificar la terminación correcta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-5-leer-la-energia-total-e-n">Paso 5: Leer la energía total E(N)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-6-leer-la-energia-orbital-del-homo-y-visualizar-el-orbital">Paso 6: Leer la energía orbital del HOMO y visualizar el orbital</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-7-configurar-y-calcular-el-cation-a">Paso 7: Configurar y calcular el catión A⁺</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-8-calcular-las-energias-de-ionizacion">Paso 8: Calcular las energías de ionización</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-y-analisis">Resultados y análisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por David De Sancho
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

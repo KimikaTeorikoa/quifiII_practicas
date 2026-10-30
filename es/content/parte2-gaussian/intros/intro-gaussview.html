@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introducción a GaussView &#8212; Química Física II - Prácticas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/intros/intro-gaussview';</script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="El método de Hartree-Fock" href="intro-hartree-fock.html" />
+    <link rel="prev" title="Modelo simplificado de un enlace químico" href="../../parte1-python/finitebond.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Química Física II - Prácticas</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Bienvenida
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelos sencillos con Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Introducción a la programación en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Resolución numérica de la Ecuación de Schrödinger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Resolviendo la ecuación de Schrödinger con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplicaciones a problemas más complejos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Modelo simplificado de un enlace químico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a la Química Computacional con Gaussian</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a GaussView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-hartree-fock.html">El método de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-bases.html">Funciones de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-energias.html">Energías y unidades en Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/atomos-koopmans.html">Átomos y el teorema de Koopmans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-born-oppenheimer.html">Geometría molecular y la aproximación de Born-Oppenheimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-mas-alla-hf.html">Más allá de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/moleculas-pes.html">Superficie de energía potencial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/modos-normales.html">Modos normales de vibración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/espectroscopia-uv.html">Espectroscopía UV-Vis de cetonas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cuestionario</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Cuestionario</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/intros/intro-gaussview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/intros/intro-gaussview.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a GaussView</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-gaussview">Abrir GaussView</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-interfaz-que-ves-al-abrir">La interfaz: qué ves al abrir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-una-molecula">Construir una molécula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corregir-errores-y-deshacer">Corregir errores y deshacer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-hidrogenos-automaticamente">Añadir hidrógenos automáticamente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moverse-por-la-molecula">Moverse por la molécula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ver-y-ajustar-geometria">Ver y ajustar geometría</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-un-archivo-existente">Abrir un archivo existente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configurar-un-calculo">Configurar un cálculo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lanzar-el-calculo">Lanzar el cálculo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificar-que-el-calculo-ha-terminado-bien">Verificar que el cálculo ha terminado bien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ver-los-resultados">Ver los resultados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guardar-el-trabajo">Guardar el trabajo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-gaussview">
+<h1>Introducción a GaussView<a class="headerlink" href="#introduccion-a-gaussview" title="Permalink to this heading">#</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<p>Para hacer un cálculo en Gaussian, primero hay que decirle al programa cómo está dispuesta la molécula en el espacio. GaussView es la interfaz gráfica que facilita esta tarea: con ella construimos el modelo molecular, configuramos el cálculo y visualizamos los resultados sin necesidad de editar archivos a mano.</p>
+</section>
+<section id="abrir-gaussview">
+<h2>Abrir GaussView<a class="headerlink" href="#abrir-gaussview" title="Permalink to this heading">#</a></h2>
+<p>GaussView se abre desde el escritorio del ordenador del aula o desde el menú de aplicaciones del sistema.</p>
+</section>
+<section id="la-interfaz-que-ves-al-abrir">
+<h2>La interfaz: qué ves al abrir<a class="headerlink" href="#la-interfaz-que-ves-al-abrir" title="Permalink to this heading">#</a></h2>
+<p>La interfaz de GaussView tiene cuatro áreas de trabajo. En la parte superior encontramos la barra de menús, con las herramientas de configuración y visualización. Debajo está la barra de herramientas, con iconos de acceso rápido. El área central es la ventana de visualización tridimensional, donde construimos, desplazamos y rotamos la molécula con el ratón. Un panel inferior muestra información en tiempo real sobre los átomos seleccionados, distancias interatómicas y el estado del cálculo.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/01_gv_interfaz_principal.png"><img alt="Interfaz principal de GaussView" src="../../../_images/01_gv_interfaz_principal.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="construir-una-molecula">
+<h2>Construir una molécula<a class="headerlink" href="#construir-una-molecula" title="Permalink to this heading">#</a></h2>
+<p>Para construir una molécula en GaussView, pulsamos el icono del átomo en la barra de herramientas (<strong>Builder palette</strong>, accesible también desde <strong>View → Builder</strong>) para abrir el panel de fragmentos y elementos químicos. Seleccionamos el elemento deseado y hacemos clic con el botón izquierdo en la ventana central para situar el átomo. Al añadir átomos adicionales cerca de los existentes, el programa genera los enlaces de forma automática a partir de los radios covalentes estándar. Para el agua (<span class="math notranslate nohighlight">\(\text{H}_2\text{O}\)</span>), basta con colocar un átomo de oxígeno central y enlazar dos hidrógenos en posiciones angulares aproximadas. Las distancias exactas se ajustarán durante la optimización de geometría en Gaussian, así que el dibujo inicial solo necesita representar la conectividad química.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/02_gv_construccion_h2o_fragmentos.png"><img alt="Construcción de la molécula de agua y paleta de fragmentos" src="../../../_images/02_gv_construccion_h2o_fragmentos.png" style="width: 85%;" /></a>
+</figure>
+<div class="warning admonition">
+<p class="admonition-title">Advertencia</p>
+<p>No hacer doble clic accidental sobre el fondo: duplica átomos sin avisar.</p>
+</div>
+</section>
+<section id="corregir-errores-y-deshacer">
+<h2>Corregir errores y deshacer<a class="headerlink" href="#corregir-errores-y-deshacer" title="Permalink to this heading">#</a></h2>
+<p>Para deshacer la última acción usamos <strong>Edit → Undo</strong> o Ctrl+Z. Si queremos eliminar un átomo o fragmento concreto, lo seleccionamos con el ratón y pulsamos Supr. Para limpiar la ventana por completo podemos usar <strong>Edit → Select All</strong> seguido de Supr, o abrir un área de trabajo nueva desde <strong>File → New</strong>.</p>
+</section>
+<section id="anadir-hidrogenos-automaticamente">
+<h2>Añadir hidrógenos automáticamente<a class="headerlink" href="#anadir-hidrogenos-automaticamente" title="Permalink to this heading">#</a></h2>
+<p>La opción <strong>Edit → Add Hydrogens</strong> completa automáticamente los hidrógenos implícitos necesarios para saturar la valencia del esqueleto dibujado. Conviene revisar siempre la estructura resultante, ya que la asignación automática puede diferir del estado de protonación deseado.</p>
+</section>
+<section id="moverse-por-la-molecula">
+<h2>Moverse por la molécula<a class="headerlink" href="#moverse-por-la-molecula" title="Permalink to this heading">#</a></h2>
+<p>Para inspeccionar la estructura, rotamos la vista manteniendo presionado el botón izquierdo mientras desplazamos el cursor. El zoom lo ajustamos con la rueda del ratón. Si perdemos de vista la molécula, usamos el botón de centrado de la barra de herramientas. Con estos tres movimientos orientamos la geometría con soltura durante el modelado y la revisión de resultados.</p>
+</section>
+<section id="ver-y-ajustar-geometria">
+<h2>Ver y ajustar geometría<a class="headerlink" href="#ver-y-ajustar-geometria" title="Permalink to this heading">#</a></h2>
+<p>Para consultar o ajustar una distancia de enlace seleccionamos la herramienta de enlace (<strong>Modify Bond</strong>, icono con dos esferas enlazadas en la barra de herramientas) o la herramienta de consulta (<strong>Inquire</strong>, icono con el interrogante <strong><code class="docutils literal notranslate"><span class="pre">?</span></code></strong>) y hacemos clic en los dos átomos en el visor 3D. La ventana emergente muestra la distancia actual en ángstroms y permite verificar la conectividad antes de lanzar el cálculo.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/03_gv_medicion_distancia.png"><img alt="Medición de distancia de enlace en GaussView" src="../../../_images/03_gv_medicion_distancia.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="abrir-un-archivo-existente">
+<h2>Abrir un archivo existente<a class="headerlink" href="#abrir-un-archivo-existente" title="Permalink to this heading">#</a></h2>
+<p>Para abrir un archivo existente accedemos al menú <strong>File → Open</strong>. Los formatos habituales son <code class="docutils literal notranslate"><span class="pre">.gjf</span></code> (archivos de entrada) y <code class="docutils literal notranslate"><span class="pre">.log</span></code> (salidas generadas por Gaussian), lo que nos permite retomar el trabajo entre sesiones o analizar estructuras de referencia.</p>
+</section>
+<section id="configurar-un-calculo">
+<h2>Configurar un cálculo<a class="headerlink" href="#configurar-un-calculo" title="Permalink to this heading">#</a></h2>
+<p>El panel de configuración lo abrimos desde <strong>Calculate → Gaussian Calculation Setup</strong>. En la pestaña <strong>Job Type</strong> seleccionamos la tarea: energía puntual (<em>Energy</em>), optimización de geometría (<em>Optimization</em>) o cálculo de frecuencias (<em>Frequency</em>). La pestaña <strong>Method</strong> nos permite definir el nivel de teoría: el método mecanocuántico (Hartree-Fock, B3LYP…) y la base de funciones indicada en cada práctica. En <strong>Title Card</strong> introducimos una descripción breve sin caracteres especiales. Por último, en <strong>Charge &amp; Multiplicity</strong> establecemos la carga neta y la multiplicidad de espín.</p>
+<div class="warning admonition">
+<p class="admonition-title">Advertencia</p>
+<p>Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aquí invalida todo el cálculo.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/04_gv_setup_method_hf.png"><img alt="Configuración del cálculo en Gaussian Calculation Setup" src="../../../_images/04_gv_setup_method_hf.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="lanzar-el-calculo">
+<h2>Lanzar el cálculo<a class="headerlink" href="#lanzar-el-calculo" title="Permalink to this heading">#</a></h2>
+<p>Una vez configurados los parámetros, lanzamos el cálculo en local pulsando <strong>Submit</strong>. GaussView abre una ventana de seguimiento con las líneas de salida en tiempo real. La duración oscila entre unos segundos para moléculas sencillas con bases mínimas y varios minutos para sistemas mayores o métodos con correlación electrónica. No hace falta hacer nada más hasta que el cálculo finalice.</p>
+</section>
+<section id="verificar-que-el-calculo-ha-terminado-bien">
+<h2>Verificar que el cálculo ha terminado bien<a class="headerlink" href="#verificar-que-el-calculo-ha-terminado-bien" title="Permalink to this heading">#</a></h2>
+<p>Al terminar el cálculo, la última línea del archivo de salida debe contener <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">termination</span> <span class="pre">of</span> <span class="pre">Gaussian</span> <span class="pre">16</span></code>. Si en su lugar aparece <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">termination</span></code>, el cálculo no ha terminado correctamente. Las causas más habituales son una geometría inicial inadecuada, una configuración incompatible o haber superado el límite de memoria asignado.</p>
+<div class="danger admonition">
+<p class="admonition-title">Atención</p>
+<p>Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminado correctamente buscando la línea: <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">termination</span> <span class="pre">of</span> <span class="pre">Gaussian</span> <span class="pre">16</span></code></p>
+</div>
+</section>
+<section id="ver-los-resultados">
+<h2>Ver los resultados<a class="headerlink" href="#ver-los-resultados" title="Permalink to this heading">#</a></h2>
+<p>Los resultados los consultamos por dos vías. Para visualizar la geometría optimizada, la densidad electrónica o los orbitales moleculares, usamos el menú <strong>Results</strong> de GaussView. La opción <strong>Results → Summary</strong> presenta un cuadro resumen con el método, la base, la energía electrónica total calculada y magnitudes como el momento dipolar. Para extraer valores numéricos con todo su detalle, es más directo abrir el archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code> con un editor de texto y buscar las líneas pertinentes. En el guión de cada práctica indicamos qué término buscar y cómo anotar cada valor.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/05_gv_summary_resultados.png"><img alt="Resumen del cálculo en la ventana Gaussian Calculation Summary de GaussView" src="../../../_images/05_gv_summary_resultados.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="guardar-el-trabajo">
+<h2>Guardar el trabajo<a class="headerlink" href="#guardar-el-trabajo" title="Permalink to this heading">#</a></h2>
+<p>El archivo de entrada lo guardamos desde <strong>File → Save</strong> con la extensión <code class="docutils literal notranslate"><span class="pre">.gjf</span></code>. Conviene usar una nomenclatura clara que identifique la molécula y el nivel de teoría (por ejemplo, <code class="docutils literal notranslate"><span class="pre">h2o_b3lyp_6311g.gjf</span></code>), lo que facilita organizar los cálculos durante la sesión.</p>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-gear" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M7.429 1.525a6.593 6.593 0 011.142 0c.036.003.108.036.137.146l.289 1.105c.147.56.55.967.997 1.189.174.086.341.183.501.29.417.278.97.423 1.53.27l1.102-.303c.11-.03.175.016.195.046.219.31.41.641.573.989.014.031.022.11-.059.19l-.815.806c-.411.406-.562.957-.53 1.456a4.588 4.588 0 010 .582c-.032.499.119 1.05.53 1.456l.815.806c.08.08.073.159.059.19a6.494 6.494 0 01-.573.99c-.02.029-.086.074-.195.045l-1.103-.303c-.559-.153-1.112-.008-1.529.27-.16.107-.327.204-.5.29-.449.222-.851.628-.998 1.189l-.289 1.105c-.029.11-.101.143-.137.146a6.613 6.613 0 01-1.142 0c-.036-.003-.108-.037-.137-.146l-.289-1.105c-.147-.56-.55-.967-.997-1.189a4.502 4.502 0 01-.501-.29c-.417-.278-.97-.423-1.53-.27l-1.102.303c-.11.03-.175-.016-.195-.046a6.492 6.492 0 01-.573-.989c-.014-.031-.022-.11.059-.19l.815-.806c.411-.406.562-.957.53-1.456a4.587 4.587 0 010-.582c.032-.499-.119-1.05-.53-1.456l-.815-.806c-.08-.08-.073-.159-.059-.19a6.44 6.44 0 01.573-.99c.02-.029.086-.075.195-.045l1.103.303c.559.153 1.112.008 1.529-.27.16-.107.327-.204.5-.29.449-.222.851-.628.998-1.189l.289-1.105c.029-.11.101-.143.137-.146zM8 0c-.236 0-.47.01-.701.03-.743.065-1.29.615-1.458 1.261l-.29 1.106c-.017.066-.078.158-.211.224a5.994 5.994 0 00-.668.386c-.123.082-.233.09-.3.071L3.27 2.776c-.644-.177-1.392.02-1.82.63a7.977 7.977 0 00-.704 1.217c-.315.675-.111 1.422.363 1.891l.815.806c.05.048.098.147.088.294a6.084 6.084 0 000 .772c.01.147-.038.246-.088.294l-.815.806c-.474.469-.678 1.216-.363 1.891.2.428.436.835.704 1.218.428.609 1.176.806 1.82.63l1.103-.303c.066-.019.176-.011.299.071.213.143.436.272.668.386.133.066.194.158.212.224l.289 1.106c.169.646.715 1.196 1.458 1.26a8.094 8.094 0 001.402 0c.743-.064 1.29-.614 1.458-1.26l.29-1.106c.017-.066.078-.158.211-.224a5.98 5.98 0 00.668-.386c.123-.082.233-.09.3-.071l1.102.302c.644.177 1.392-.02 1.82-.63.268-.382.505-.789.704-1.217.315-.675.111-1.422-.364-1.891l-.814-.806c-.05-.048-.098-.147-.088-.294a6.1 6.1 0 000-.772c-.01-.147.039-.246.088-.294l.814-.806c.475-.469.679-1.216.364-1.891a7.992 7.992 0 00-.704-1.218c-.428-.609-1.176-.806-1.82-.63l-1.103.303c-.066.019-.176.011-.299-.071a5.991 5.991 0 00-.668-.386c-.133-.066-.194-.158-.212-.224L10.16 1.29C9.99.645 9.444.095 8.701.031A8.094 8.094 0 008 0zm1.5 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM11 8a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></span>Personalizar colores y apariencia<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">El color de fondo lo modificamos desde el menú <strong>View → Display Format</strong>. En la pestaña <strong>General</strong>, hacemos clic sobre el recuadro situado junto a <strong>Background Color</strong> y seleccionamos el color blanco. En esa misma ventana podemos personalizar el tamaño de las esferas atómicas en <strong>Atom Size</strong> y su esquema de colores en <strong>Atom Colors</strong>. Estos ajustes no alteran los cálculos, pero usar fondo blanco facilita obtener capturas nítidas para la memoria de prácticas.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/06_gv_display_background_blanco.png"><img alt="Personalización del color de fondo blanco en Display Format" src="../../../_images/06_gv_display_background_blanco.png" style="width: 85%;" /></a>
+</figure>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/intros"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../parte1-python/finitebond.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Modelo simplificado de un enlace químico</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intro-hartree-fock.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">El método de Hartree-Fock</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-gaussview">Abrir GaussView</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-interfaz-que-ves-al-abrir">La interfaz: qué ves al abrir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construir-una-molecula">Construir una molécula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corregir-errores-y-deshacer">Corregir errores y deshacer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-hidrogenos-automaticamente">Añadir hidrógenos automáticamente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moverse-por-la-molecula">Moverse por la molécula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ver-y-ajustar-geometria">Ver y ajustar geometría</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrir-un-archivo-existente">Abrir un archivo existente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configurar-un-calculo">Configurar un cálculo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lanzar-el-calculo">Lanzar el cálculo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verificar-que-el-calculo-ha-terminado-bien">Verificar que el cálculo ha terminado bien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ver-los-resultados">Ver los resultados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guardar-el-trabajo">Guardar el trabajo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por David De Sancho
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

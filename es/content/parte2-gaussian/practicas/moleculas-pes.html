@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Superficie de energía potencial &#8212; Química Física II - Prácticas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/practicas/moleculas-pes';</script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Modos normales de vibración" href="modos-normales.html" />
+    <link rel="prev" title="Más allá de Hartree-Fock" href="../intros/intro-mas-alla-hf.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Química Física II - Prácticas</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Bienvenida
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelos sencillos con Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Introducción a la programación en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Resolución numérica de la Ecuación de Schrödinger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Resolviendo la ecuación de Schrödinger con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplicaciones a problemas más complejos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Modelo simplificado de un enlace químico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a la Química Computacional con Gaussian</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-gaussview.html">Introducción a GaussView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-hartree-fock.html">El método de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-bases.html">Funciones de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-energias.html">Energías y unidades en Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atomos-koopmans.html">Átomos y el teorema de Koopmans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-born-oppenheimer.html">Geometría molecular y la aproximación de Born-Oppenheimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-mas-alla-hf.html">Más allá de Hartree-Fock</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Superficie de energía potencial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modos-normales.html">Modos normales de vibración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espectroscopia-uv.html">Espectroscopía UV-Vis de cetonas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cuestionario</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Cuestionario</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/practicas/moleculas-pes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/practicas/moleculas-pes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Superficie de energía potencial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-superficie-de-energia-potencial">¿Qué es una superficie de energía potencial?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#singlete-y-triplete-por-que-importa-el-espin">Singlete y triplete: por qué importa el espín</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angulo-diedro-y-analisis-conformacional">Ángulo diedro y análisis conformacional</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedimiento">Procedimiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1-pes-de-la-molecula-de-h2">Parte 1: PES de la molécula de H₂</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-dibujar-h2-en-gaussview">Paso 1: Dibujar H₂ en GaussView</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-configurar-el-calculo-de-barrido-scan">Paso 2: Configurar el cálculo de barrido (Scan)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-guardar-y-lanzar-los-calculos">Paso 3: Guardar y lanzar los cálculos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-visualizar-la-pes-en-gaussview">Paso 4: Visualizar la PES en GaussView</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2-pes-diedro-del-dihaloetano">Parte 2: PES diedro del dihaloetano</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-dibujar-el-dihaloetano-en-gaussview">Paso 1: Dibujar el dihaloetano en GaussView</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-configurar-el-calculo-del-barrido-diedro">Paso 2: Configurar el cálculo del barrido diedro</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-guardar-lanzar-y-verificar">Paso 3: Guardar, lanzar y verificar</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-visualizar-la-curva-diedro-en-gaussview">Paso 4: Visualizar la curva diedro en GaussView</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="superficie-de-energia-potencial">
+<h1>Superficie de energía potencial<a class="headerlink" href="#superficie-de-energia-potencial" title="Permalink to this heading">#</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<p>La estabilidad del enlace químico y las preferencias conformacionales de las moléculas dependen de cómo varía la energía electrónica al modificar las posiciones de los núcleos. Gracias a la aproximación de Born-Oppenheimer, estas variaciones pueden representarse como una superficie de energía potencial calculada mediante barridos geométricos sistemáticos en Gaussian. En esta práctica se analiza la curva de disociación de la molécula de hidrógeno para diferentes estados de espín y el perfil energético de rotación del ángulo diedro en derivados halogenados del etano.</p>
+</section>
+<section id="objetivos">
+<h2>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Construir la curva de energía potencial de la molécula de <span class="math notranslate nohighlight">\(\text{H}_2\)</span> mediante un barrido de la distancia internuclear <span class="math notranslate nohighlight">\(R(\text{H–H})\)</span> para los estados singlete y triplete con HF/STO-3G.</p></li>
+<li><p>Determinar la distancia internuclear de equilibrio (<span class="math notranslate nohighlight">\(R_{\text{eq}}\)</span>) y la energía de disociación de <span class="math notranslate nohighlight">\(\text{H}_2\)</span>, contrastando los valores calculados con datos experimentales.</p></li>
+<li><p>Realizar el barrido conformacional del ángulo diedro en dihaloetanos para identificar los confórmeros anti y gauche en la superficie de energía potencial.</p></li>
+<li><p>Cuantificar las barreras de rotación conformacional evaluando la diferencia de energía frente a las conformaciones eclipsadas.</p></li>
+</ol>
+</section>
+<section id="conceptos-clave">
+<h2>Conceptos clave<a class="headerlink" href="#conceptos-clave" title="Permalink to this heading">#</a></h2>
+<section id="que-es-una-superficie-de-energia-potencial">
+<h3>¿Qué es una superficie de energía potencial?<a class="headerlink" href="#que-es-una-superficie-de-energia-potencial" title="Permalink to this heading">#</a></h3>
+<p>Bajo la aproximación de Born-Oppenheimer, la energía electrónica es una función continua de las coordenadas nucleares que define la superficie de energía potencial (SEP) del sistema:</p>
+<div class="math notranslate nohighlight">
+\[
+E = E(\mathbf{R})
+\]</div>
+<p>Los mínimos de esta superficie corresponden a geometrías de equilibrio estables, en las que las fuerzas sobre cada núcleo son nulas y cualquier deformación incrementa la energía. Los puntos de silla de primer orden conectan mínimos contiguos y representan los estados de transición de reacciones químicas o cambios conformacionales. A distancias internucleares grandes, la energía potencial alcanza el límite de disociación, donde los átomos dejan de interaccionar entre sí.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/pes_1d_esquema.svg"><img alt="Curva unidimensional de energía potencial con mínimo de equilibrio, barrera y asíntota de disociación" src="../../../_images/pes_1d_esquema.svg" width="60%" /></a>
+</figure>
+</section>
+<section id="singlete-y-triplete-por-que-importa-el-espin">
+<h3>Singlete y triplete: por qué importa el espín<a class="headerlink" href="#singlete-y-triplete-por-que-importa-el-espin" title="Permalink to this heading">#</a></h3>
+<p>En el estado singlete, los dos electrones de H₂ tienen espines antiparalelos (multiplicidad 1). Esto les permite compartir la misma región del espacio y concentrar densidad electrónica entre los dos núcleos, apantallando su repulsión mutua y estabilizando el enlace covalente en un mínimo de energía a la distancia de equilibrio. En cambio, en el estado triplete los espines son paralelos (multiplicidad 3) y el principio de exclusión de Pauli impide que ambos electrones se sitúen simultáneamente en la región internuclear. Por este motivo, la curva de energía potencial del triplete es puramente repulsiva en todo el recorrido y no presenta ningún mínimo de enlace.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Desde el punto de vista mecanocuántico, la función de onda espacial del singlete (<span class="math notranslate nohighlight">\(^1\Sigma_g^+\)</span>) es simétrica ante la permutación de electrones, lo que favorece la acumulación de carga internuclear. En el triplete (<span class="math notranslate nohighlight">\(^3\Sigma_u^+\)</span>), la función espacial es antisimétrica y presenta un plano nodal internuclear donde la densidad de probabilidad es nula. Al no haber densidad electrónica que apantalle a los protones, la repulsión internuclear domina a cualquier distancia.</p>
+</div>
+</section>
+<section id="angulo-diedro-y-analisis-conformacional">
+<h3>Ángulo diedro y análisis conformacional<a class="headerlink" href="#angulo-diedro-y-analisis-conformacional" title="Permalink to this heading">#</a></h3>
+<p>El ángulo diedro describe la rotación relativa entre dos grupos unidos por un enlace simple central y se define a través de los cuatro átomos que forman la secuencia X–C–C–X en un rango de 0° a 360°. En una proyección de Newman, cada conformación queda determinada por este ángulo. La conformación <em>anti</em> (180°) sitúa los sustituyentes más voluminosos en posiciones opuestas, minimizando las repulsiones estéricas y configurando el mínimo global de energía. Los confórmeros <em>gauche</em> (60° y 300°) constituyen mínimos locales con mayor repulsión mutua. Los máximos de la curva corresponden a las conformaciones eclipsadas, cuyo solapamiento determina la barrera de rotación interna.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/newman_dihaloetano.svg"><img alt="Proyección de Newman de un dihaloetano con las conformaciones anti, gauche y eclipsada anotadas" src="../../../_images/newman_dihaloetano.svg" width="70%" /></a>
+</figure>
+</section>
+</section>
+<section id="procedimiento">
+<h2>Procedimiento<a class="headerlink" href="#procedimiento" title="Permalink to this heading">#</a></h2>
+<section id="parte-1-pes-de-la-molecula-de-h2">
+<h3>Parte 1: PES de la molécula de H₂<a class="headerlink" href="#parte-1-pes-de-la-molecula-de-h2" title="Permalink to this heading">#</a></h3>
+<section id="paso-1-dibujar-h2-en-gaussview">
+<h4>Paso 1: Dibujar H₂ en GaussView<a class="headerlink" href="#paso-1-dibujar-h2-en-gaussview" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abrir GaussView.</p></li>
+<li><p>En la paleta flotante de fragmentos, seleccionar el átomo de hidrógeno (<strong>H</strong>).</p></li>
+<li><p>Hacer clic en la ventana central 3D para colocar el primer átomo de hidrógeno.</p></li>
+<li><p>Hacer un segundo clic sobre el átomo creado para generar la molécula diatómica de <span class="math notranslate nohighlight">\(\text{H}_2\)</span> con enlace simple.</p></li>
+</ol>
+</section>
+<section id="paso-2-configurar-el-calculo-de-barrido-scan">
+<h4>Paso 2: Configurar el cálculo de barrido (Scan)<a class="headerlink" href="#paso-2-configurar-el-calculo-de-barrido-scan" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>En la barra de menús de GaussView, acceder a <strong>Calculate → Gaussian Calculation Setup</strong>.</p></li>
+<li><p>En la pestaña <strong>Job Type</strong>, seleccionar la opción <strong>Scan</strong> y elegir en el desplegable inferior <strong>Relaxed (Redundant Coord)</strong>.</p></li>
+<li><p>Para definir la coordenada de barrido, acceder a <strong>Edit → Redundant Coordinates</strong> (o pulsar el botón de edición de coordenadas redundantes).</p></li>
+<li><p>En el diálogo <strong>Redundant Coordinate Editor</strong>:</p>
+<ul class="simple">
+<li><p>Pulsar el botón <strong>Add</strong>.</p></li>
+<li><p>En el desplegable seleccionar <strong>Bond</strong> e indicar en <strong>Coordinate</strong> los átomos <strong>1</strong> y <strong>2</strong>.</p></li>
+<li><p>Seleccionar <strong>Scan Coordinate</strong> en el tipo de acción y fijar los parámetros del barrido (por ejemplo, 40 pasos de tamaño 0.1 Å).</p></li>
+<li><p>Pulsar <strong>Ok</strong> para validar la coordenada.</p></li>
+</ul>
+</li>
+<li><p>De regreso a la ventana <strong>Gaussian Calculation Setup</strong>, en la pestaña <strong>Method</strong> seleccionar:</p>
+<ul class="simple">
+<li><p>Método: <strong>HF</strong> (Hartree-Fock).</p></li>
+<li><p>Conjunto de base: <strong>STO-3G</strong>.</p></li>
+<li><p>Carga: <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Para el estado singlete: <strong>Spin = Singlet</strong> (Multiplicity = <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
+<li><p>Para el estado triplete: <strong>Spin = Triplet</strong> (Multiplicity = <code class="docutils literal notranslate"><span class="pre">3</span></code>).</p></li>
+</ul>
+</li>
+<li><p>En la pestaña <strong>Title</strong>, escribir: <code class="docutils literal notranslate"><span class="pre">H2</span> <span class="pre">scan</span> <span class="pre">HF</span> <span class="pre">STO-3G</span></code>.</p></li>
+<li><p>En la pestaña <strong>Additional Keywords</strong>, escribir: <code class="docutils literal notranslate"><span class="pre">scan</span></code>.</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parámetro</p></th>
+<th class="text-center head"><p>Estado singlete</p></th>
+<th class="text-center head"><p>Estado triplete</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Method</p></td>
+<td class="text-center"><p>HF</p></td>
+<td class="text-center"><p>HF (ROHF)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Basis Set</p></td>
+<td class="text-center"><p>STO-3G</p></td>
+<td class="text-center"><p>STO-3G</p></td>
+</tr>
+<tr class="row-even"><td><p>Charge</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multiplicity</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>Rango de distancias</p></td>
+<td class="text-center"><p>0.5 a 4.0 Å</p></td>
+<td class="text-center"><p>0.5 a 4.0 Å</p></td>
+</tr>
+<tr class="row-odd"><td><p>Incremento de paso</p></td>
+<td class="text-center"><p>0.1 Å (35–40 pasos)</p></td>
+<td class="text-center"><p>0.1 Å (35–40 pasos)</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/11_pes_setup_scan_h2.png"><img alt="Configuración del barrido de potencial (Scan) para H2 en Gaussian Calculation Setup" src="../../../_images/11_pes_setup_scan_h2.png" style="width: 85%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/11a_pes_redundant_coord_h2.png"><img alt="Definición de la coordenada de enlace y pasos del barrido en el editor de coordenadas redundantes" src="../../../_images/11a_pes_redundant_coord_h2.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="paso-3-guardar-y-lanzar-los-calculos">
+<h4>Paso 3: Guardar y lanzar los cálculos<a class="headerlink" href="#paso-3-guardar-y-lanzar-los-calculos" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>En la ventana <strong>Gaussian Calculation Setup</strong>, pulsar el botón <strong>Submit</strong>.</p></li>
+<li><p>Guardar el archivo del singlete con el nombre: <code class="docutils literal notranslate"><span class="pre">H2_singlete_scan.gjf</span></code> en la carpeta de trabajo <code class="docutils literal notranslate"><span class="pre">{{practicas_folder}}PES/</span></code>.</p></li>
+<li><p>Confirmar el diálogo para iniciar el cálculo.</p></li>
+<li><p>Repetir el proceso modificando la multiplicidad a 3 y guardar como: <code class="docutils literal notranslate"><span class="pre">H2_triplete_scan.gjf</span></code>.</p></li>
+<li><p>Comprobar que ambos cálculos progresan en la barra de ejecución.</p></li>
+</ol>
+</section>
+<section id="paso-4-visualizar-la-pes-en-gaussview">
+<h4>Paso 4: Visualizar la PES en GaussView<a class="headerlink" href="#paso-4-visualizar-la-pes-en-gaussview" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>En GaussView, abrir el archivo <code class="docutils literal notranslate"><span class="pre">H2_singlete_scan.log</span></code> mediante <strong>File → Open</strong>.</p></li>
+<li><p>Acceder al menú <strong>Results → Scan</strong>.</p></li>
+<li><p>Aparece una gráfica bidimensional interactiva con la energía frente a la distancia <span class="math notranslate nohighlight">\(R(\text{H–H})\)</span>.</p></li>
+<li><p>Abrir simultáneamente el archivo <code class="docutils literal notranslate"><span class="pre">H2_triplete_scan.log</span></code> para superponer la curva del triplete sobre la del singlete en la misma ventana de visualización.</p></li>
+<li><p>Observar la forma de pozo de potencial en la curva singlete y la ausencia de pozo en la curva triplete.</p></li>
+</ol>
+</section>
+</section>
+<section id="parte-2-pes-diedro-del-dihaloetano">
+<h3>Parte 2: PES diedro del dihaloetano<a class="headerlink" href="#parte-2-pes-diedro-del-dihaloetano" title="Permalink to this heading">#</a></h3>
+<p>Se realizará el barrido conformacional para los tres dihaloetanos siguientes: 1,2-dicloroetano, 1,2-dibromoetano y 1,2-diyodoetano. El procedimiento es idéntico para los tres; repetirlo cambiando únicamente el halógeno en el paso de construcción molecular.</p>
+<section id="paso-1-dibujar-el-dihaloetano-en-gaussview">
+<h4>Paso 1: Dibujar el dihaloetano en GaussView<a class="headerlink" href="#paso-1-dibujar-el-dihaloetano-en-gaussview" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Abrir una nueva ventana en GaussView (<strong>File → New → Molecule Group</strong>).</p></li>
+<li><p>Construir la molécula de dihaloetano seleccionando la cadena carbonada y sustituyendo dos átomos de hidrógeno por halógenos en carbonos vecinales.</p></li>
+<li><p>Aplicar una limpieza geométrica preliminar mediante <strong>Edit → Clean</strong>.</p></li>
+</ol>
+</section>
+<section id="paso-2-configurar-el-calculo-del-barrido-diedro">
+<h4>Paso 2: Configurar el cálculo del barrido diedro<a class="headerlink" href="#paso-2-configurar-el-calculo-del-barrido-diedro" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Acceder al menú <strong>Calculate → Gaussian Calculation Setup</strong>.</p></li>
+<li><p>En la pestaña <strong>Job Type</strong>, seleccionar <strong>Scan</strong>.</p></li>
+<li><p>Definir la coordenada interna de tipo <strong>Dihedral</strong> seleccionando los cuatro átomos enlazados: <span class="math notranslate nohighlight">\(\text{X–C–C–X}\)</span>.</p></li>
+<li><p>Especificar los parámetros angulares del barrido:</p>
+<ul class="simple">
+<li><p>Coordenada: diedro <span class="math notranslate nohighlight">\(\text{X–C–C–X}\)</span>.</p></li>
+<li><p>Rango angular: 0° a 360° (pasos de 10° o 15°).</p></li>
+</ul>
+</li>
+<li><p>En la pestaña <strong>Method</strong>, configurar:</p>
+<ul class="simple">
+<li><p>Método: <strong>HF</strong>.</p></li>
+<li><p>Conjunto de base: <strong>STO-3G</strong>.</p></li>
+<li><p>Carga: <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Multiplicidad: <code class="docutils literal notranslate"><span class="pre">1</span></code> (Singlete).</p></li>
+</ul>
+</li>
+<li><p>En la pestaña <strong>Title</strong>, escribir: <code class="docutils literal notranslate"><span class="pre">Dihaloetano</span> <span class="pre">diedro</span> <span class="pre">scan</span> <span class="pre">HF</span> <span class="pre">STO-3G</span></code>.</p></li>
+</ol>
+</section>
+<section id="paso-3-guardar-lanzar-y-verificar">
+<h4>Paso 3: Guardar, lanzar y verificar<a class="headerlink" href="#paso-3-guardar-lanzar-y-verificar" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Guardar el archivo como <code class="docutils literal notranslate"><span class="pre">dihaloetano_scan.gjf</span></code> en <code class="docutils literal notranslate"><span class="pre">{{practicas_folder}}PES/</span></code>.</p></li>
+<li><p>Confirmar el envío del cálculo pulsando <strong>Submit</strong>.</p></li>
+</ol>
+</section>
+<section id="paso-4-visualizar-la-curva-diedro-en-gaussview">
+<h4>Paso 4: Visualizar la curva diedro en GaussView<a class="headerlink" href="#paso-4-visualizar-la-curva-diedro-en-gaussview" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>En GaussView, abrir el archivo de salida del barrido mediante <strong>File → Open</strong>.</p></li>
+<li><p>Acceder al menú <strong>Results → Scan</strong>.</p></li>
+<li><p>Identificar los mínimos locales (confórmero gauche) y el mínimo global (confórmero anti a 180°), así como las barreras rotacionales intermedias.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+<li><p>Atkins, P.; De Paula, J. <em>Química Física</em>, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 11 (Estructura molecular y superficies de energía potencial).</p></li>
+<li><p>Clayden, J.; Greeves, N.; Warren, S. <em>Organic Chemistry</em>, 2ª ed.; Oxford University Press, 2012. Cap. 18 (Conformational analysis).</p></li>
+<li><p>Szabo, A.; Ostlund, N. S. <em>Modern Quantum Chemistry</em>. Dover, 1996.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-rocket" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M14.064 0a8.75 8.75 0 00-6.187 2.563l-.459.458c-.314.314-.616.641-.904.979H3.31a1.75 1.75 0 00-1.49.833L.11 7.607a.75.75 0 00.418 1.11l3.102.954c.037.051.079.1.124.145l2.429 2.428c.046.046.094.088.145.125l.954 3.102a.75.75 0 001.11.418l2.774-1.707a1.75 1.75 0 00.833-1.49V9.485c.338-.288.665-.59.979-.904l.458-.459A8.75 8.75 0 0016 1.936V1.75A1.75 1.75 0 0014.25 0h-.186zM10.5 10.625c-.088.06-.177.118-.266.175l-2.35 1.521.548 1.783 1.949-1.2a.25.25 0 00.119-.213v-2.066zM3.678 8.116L5.2 5.766c.058-.09.117-.178.176-.266H3.309a.25.25 0 00-.213.119l-1.2 1.95 1.782.547zm5.26-4.493A7.25 7.25 0 0114.063 1.5h.186a.25.25 0 01.25.25v.186a7.25 7.25 0 01-2.123 5.127l-.459.458a15.21 15.21 0 01-2.499 2.02l-2.317 1.5-2.143-2.143 1.5-2.317a15.25 15.25 0 012.02-2.5l.458-.458h.002zM12 5a1 1 0 11-2 0 1 1 0 012 0zm-8.44 9.56a1.5 1.5 0 10-2.12-2.12c-.734.73-1.047 2.332-1.15 3.003a.23.23 0 00.265.265c.671-.103 2.273-.416 3.005-1.148z"></path></svg></span>Para ir más lejos (opcional)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Como actividad opcional, repetimos el barrido conformacional del etano (<span class="math notranslate nohighlight">\(\text{CH}_3\text{-CH}_3\)</span>) con el mismo nivel de teoría. La barrera de rotación calculada, próxima a 3 kcal/mol, es notablemente inferior a la del dihaloetano. La comparación directa de ambos perfiles muestra cómo el volumen del sustituyente, la polaridad del enlace C–X y la electronegatividad del halógeno desplazan los mínimos de energía y elevan la barrera rotacional.</p>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/practicas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intros/intro-mas-alla-hf.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Más allá de Hartree-Fock</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modos-normales.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Modos normales de vibración</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos">Objetivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptos-clave">Conceptos clave</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-superficie-de-energia-potencial">¿Qué es una superficie de energía potencial?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#singlete-y-triplete-por-que-importa-el-espin">Singlete y triplete: por qué importa el espín</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angulo-diedro-y-analisis-conformacional">Ángulo diedro y análisis conformacional</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedimiento">Procedimiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1-pes-de-la-molecula-de-h2">Parte 1: PES de la molécula de H₂</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-dibujar-h2-en-gaussview">Paso 1: Dibujar H₂ en GaussView</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-configurar-el-calculo-de-barrido-scan">Paso 2: Configurar el cálculo de barrido (Scan)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-guardar-y-lanzar-los-calculos">Paso 3: Guardar y lanzar los cálculos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-visualizar-la-pes-en-gaussview">Paso 4: Visualizar la PES en GaussView</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2-pes-diedro-del-dihaloetano">Parte 2: PES diedro del dihaloetano</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-dibujar-el-dihaloetano-en-gaussview">Paso 1: Dibujar el dihaloetano en GaussView</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-configurar-el-calculo-del-barrido-diedro">Paso 2: Configurar el cálculo del barrido diedro</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-guardar-lanzar-y-verificar">Paso 3: Guardar, lanzar y verificar</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-visualizar-la-curva-diedro-en-gaussview">Paso 4: Visualizar la curva diedro en GaussView</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por David De Sancho
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

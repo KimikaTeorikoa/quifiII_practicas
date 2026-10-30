@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>El método de Hartree-Fock &#8212; Química Física II - Prácticas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/intros/intro-hartree-fock';</script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Funciones de base" href="intro-bases.html" />
+    <link rel="prev" title="Introducción a GaussView" href="intro-gaussview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Química Física II - Prácticas</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Bienvenida
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelos sencillos con Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Introducción a la programación en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Resolución numérica de la Ecuación de Schrödinger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Resolviendo la ecuación de Schrödinger con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplicaciones a problemas más complejos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Modelo simplificado de un enlace químico</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción a la Química Computacional con Gaussian</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro-gaussview.html">Introducción a GaussView</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">El método de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-bases.html">Funciones de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-energias.html">Energías y unidades en Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/atomos-koopmans.html">Átomos y el teorema de Koopmans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-born-oppenheimer.html">Geometría molecular y la aproximación de Born-Oppenheimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-mas-alla-hf.html">Más allá de Hartree-Fock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/moleculas-pes.html">Superficie de energía potencial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/modos-normales.html">Modos normales de vibración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/espectroscopia-uv.html">Espectroscopía UV-Vis de cetonas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cuestionario</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Cuestionario</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/intros/intro-hartree-fock.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/intros/intro-hartree-fock.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>El método de Hartree-Fock</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-electrones-que-se-repelen">El problema: electrones que se repelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-idea-de-hartree-fock-el-campo-medio">La idea de Hartree-Fock: el campo medio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbitales-combinacion-lineal-de-funciones-de-base-lcao">Orbitales: combinación lineal de funciones de base (LCAO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-ecuaciones-de-roothaan-hall-el-ejemplo-del-helio-con-dos-orbitales">Las ecuaciones de Roothaan-Hall: el ejemplo del Helio con dos orbitales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-ciclo-scf-resolver-por-iteracion">El ciclo SCF: resolver por iteración</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energias-orbital-vs-total">Energías: orbital vs total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-de-hf-la-correlacion-electronica">Limitaciones de HF: la correlación electrónica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="el-metodo-de-hartree-fock">
+<h1>El método de Hartree-Fock<a class="headerlink" href="#el-metodo-de-hartree-fock" title="Permalink to this heading">#</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<p>La ecuación de Schrödinger no admite solución matemática exacta para sistemas con más de un electrón debido al acoplamiento que genera la repulsión electrostática entre ellos. El método de Hartree-Fock aborda este problema mediante la aproximación de campo medio, sustituyendo las interacciones instantáneas individuales por un potencial promediado en el espacio. Esta simplificación permite que programas como Gaussian determinen los orbitales moleculares y la energía electrónica total mediante un procedimiento iterativo autoconsistente.</p>
+</section>
+<section id="el-problema-electrones-que-se-repelen">
+<h2>El problema: electrones que se repelen<a class="headerlink" href="#el-problema-electrones-que-se-repelen" title="Permalink to this heading">#</a></h2>
+<p>En un átomo con dos electrones como el helio (<span class="math notranslate nohighlight">\(Z=2\)</span>), el operador hamiltoniano exacto incluye la energía cinética de cada electrón, su atracción hacia el núcleo y la repulsión electrostática entre ambos:</p>
+<div class="math notranslate nohighlight">
+\[\hat{H} = \hat{h}(1) + \hat{h}(2) + \frac{1}{r_{12}}\]</div>
+<p>El operador monoelectrónico <span class="math notranslate nohighlight">\(\hat{h}(i)\)</span> describe el movimiento del electrón <span class="math notranslate nohighlight">\(i\)</span> bajo el potencial atractivo del núcleo, sin considerar al otro electrón:</p>
+<div class="math notranslate nohighlight">
+\[\hat{h}(i) = -\frac{1}{2}\nabla_i^2 - \frac{2}{r_i}\]</div>
+<p>Si el término de repulsión coulómbica <span class="math notranslate nohighlight">\(1/r_{12}\)</span> no existiera, la ecuación se resolvería separando variables exactamente como el producto de dos átomos hidrogenoides. Sin embargo, <span class="math notranslate nohighlight">\(1/r_{12}\)</span> acopla las posiciones instantáneas de ambos electrones: determinar la distribución espacial de uno exige conocer la del otro en cada instante. Esta dificultad se extiende a cualquier sistema polielectrónico y constituye el reto central de la estructura electrónica.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>El término <span class="math notranslate nohighlight">\(1/r_{12}\)</span> acopla las coordenadas espaciales de los electrones e impide resolver analíticamente la ecuación de Schrödinger para cualquier átomo o molécula con dos o más electrones.</p>
+</div>
+</section>
+<section id="la-idea-de-hartree-fock-el-campo-medio">
+<h2>La idea de Hartree-Fock: el campo medio<a class="headerlink" href="#la-idea-de-hartree-fock-el-campo-medio" title="Permalink to this heading">#</a></h2>
+<p>Para desacoplar las ecuaciones, la aproximación de Hartree-Fock sustituye las repulsiones instantáneas entre pares de electrones por un potencial electrostático promedio generado por el conjunto de la nube electrónica. Cada electrón se mueve entonces en el campo creado por el núcleo y por la densidad promediada de los demás electrones.</p>
+<p>Bajo esta simplificación, cada electrón satisface una ecuación de autovalores monoelectrónica gobernada por el operador de Fock <span class="math notranslate nohighlight">\(\hat{f}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f} \phi_i = \varepsilon_i \phi_i\]</div>
+<p>Para el átomo de helio, donde los dos electrones ocupan el mismo orbital espacial <span class="math notranslate nohighlight">\(\phi_1\)</span> con espines opuestos, el operador de Fock adopta la forma:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f} = \hat{h} + \hat{J}_1\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\hat{J}_1\)</span> representa el potencial electrostático promedio generado por la nube del otro electrón:</p>
+<div class="math notranslate nohighlight">
+\[\hat{J}_1 \phi_1(\mathbf{r}_1) = \left[\int \frac{|\phi_1(\mathbf{r}_2)|^2}{r_{12}} d\mathbf{r}_2\right] \phi_1(\mathbf{r}_1)\]</div>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Al promediar la repulsión interelectrónica se desprecian las correlaciones instantáneas entre las posiciones de los electrones (correlación electrónica). De acuerdo con el teorema variacional, la energía calculada en el límite Hartree-Fock es siempre una cota superior a la energía exacta no relativista del sistema.</p>
+</div>
+</section>
+<section id="orbitales-combinacion-lineal-de-funciones-de-base-lcao">
+<h2>Orbitales: combinación lineal de funciones de base (LCAO)<a class="headerlink" href="#orbitales-combinacion-lineal-de-funciones-de-base-lcao" title="Permalink to this heading">#</a></h2>
+<p>El estado espacial de cada electrón se describe mediante un orbital <span class="math notranslate nohighlight">\(\phi_i(\mathbf{r})\)</span>. En el helio en su estado fundamental, ambos electrones ocupan el orbital <span class="math notranslate nohighlight">\(\phi_1\)</span> con espines opuestos (<span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span>).</p>
+<p>Dado que la forma matemática exacta de <span class="math notranslate nohighlight">\(\phi_i(\mathbf{r})\)</span> no se conoce a priori, se expande como una combinación lineal de <span class="math notranslate nohighlight">\(K\)</span> funciones de base predefinidas <span class="math notranslate nohighlight">\(\{\chi_\mu\}\)</span> (habitualmente funciones gaussianas centradas en los núcleos):</p>
+<div class="math notranslate nohighlight">
+\[\phi_i(\mathbf{r}) = \sum_{\mu=1}^{K} C_{\mu i} \chi_\mu(\mathbf{r})\]</div>
+<p>Resolver el problema cuántico equivale a determinar los coeficientes numéricos <span class="math notranslate nohighlight">\(C_{\mu i}\)</span> que minimizan la energía total del sistema. La figura muestra la densidad electrónica del orbital 1s resultante para el átomo de helio.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/orbital_1s_he.svg"><img alt="Representación de la densidad electrónica del orbital 1s del átomo de helio mediante isosuperficies concéntricas" src="../../../_images/orbital_1s_he.svg" width="50%" /></a>
+</figure>
+</section>
+<section id="las-ecuaciones-de-roothaan-hall-el-ejemplo-del-helio-con-dos-orbitales">
+<h2>Las ecuaciones de Roothaan-Hall: el ejemplo del Helio con dos orbitales<a class="headerlink" href="#las-ecuaciones-de-roothaan-hall-el-ejemplo-del-helio-con-dos-orbitales" title="Permalink to this heading">#</a></h2>
+<p>Al sustituir la expansión LCAO en la ecuación de Fock y proyectar sobre cada función de base, las ecuaciones integrodiferenciales se transforman en un problema de autovalores matricial generalizado:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F} \mathbf{C} = \mathbf{S} \mathbf{C} \boldsymbol{\varepsilon}\]</div>
+<p>Consideremos el átomo de helio descrito con una base de dos funciones tipo s (<span class="math notranslate nohighlight">\(\chi_1\)</span> y <span class="math notranslate nohighlight">\(\chi_2\)</span>), por ejemplo dos funciones gaussianas con diferente exponente para permitir que la nube electrónica se expanda o contraiga radialmente. Cada orbital espacial se expresa como:</p>
+<div class="math notranslate nohighlight">
+\[\phi_1 = C_{11}\chi_1 + C_{21}\chi_2 \quad (\text{orbital ocupado, HOMO})\]</div>
+<div class="math notranslate nohighlight">
+\[\phi_2 = C_{12}\chi_1 + C_{22}\chi_2 \quad (\text{orbital virtual, LUMO})\]</div>
+<p>El sistema matricial de dimensión 2×2 adopta la forma explícita:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} F_{11} &amp; F_{12} \\ F_{21} &amp; F_{22} \end{pmatrix} \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix} = \begin{pmatrix} S_{11} &amp; S_{12} \\ S_{21} &amp; S_{22} \end{pmatrix} \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix} \begin{pmatrix} \varepsilon_1 &amp; 0 \\ 0 &amp; \varepsilon_2 \end{pmatrix}\end{split}\]</div>
+<p>Cada matriz tiene un significado físico directo:</p>
+<p><strong>Matriz de solapamiento <span class="math notranslate nohighlight">\(\mathbf{S}\)</span>:</strong> Describe la no ortogonalidad espacial entre las dos funciones de base:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{S} = \begin{pmatrix} 1 &amp; S_{12} \\ S_{12} &amp; 1 \end{pmatrix}\end{split}\]</div>
+<p>Como las funciones están normalizadas, los elementos diagonales valen 1 (<span class="math notranslate nohighlight">\(S_{11} = S_{22} = 1\)</span>). El término cruzado representa la integral de solapamiento entre ambas:</p>
+<div class="math notranslate nohighlight">
+\[S_{12} = \int \chi_1^*(\mathbf{r}) \chi_2(\mathbf{r}) \, d\mathbf{r}\]</div>
+<p><strong>Matriz de Fock <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>:</strong> Contiene la energía efectiva de un electrón en cada función de base (<span class="math notranslate nohighlight">\(F_{11}, F_{22}\)</span>) y el acoplamiento mutuo (<span class="math notranslate nohighlight">\(F_{12} = F_{21}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{F} = \begin{pmatrix} F_{11} &amp; F_{12} \\ F_{21} &amp; F_{22} \end{pmatrix}\end{split}\]</div>
+<p>Sus elementos se obtienen integrando el operador de Fock sobre la base:</p>
+<div class="math notranslate nohighlight">
+\[F_{\mu\nu} = \int \chi_\mu^*(\mathbf{r}) \hat{f} \chi_\nu(\mathbf{r}) \, d\mathbf{r}\]</div>
+<p><strong>Matriz de coeficientes <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>:</strong> Cada columna define uno de los orbitales espaciales:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{C} = \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix}\end{split}\]</div>
+<p>La primera columna <span class="math notranslate nohighlight">\(\begin{pmatrix} C_{11} \\ C_{21} \end{pmatrix}\)</span> contiene los pesos de <span class="math notranslate nohighlight">\(\chi_1\)</span> y <span class="math notranslate nohighlight">\(\chi_2\)</span> en el orbital ocupado <span class="math notranslate nohighlight">\(\phi_1\)</span> (HOMO). La segunda columna <span class="math notranslate nohighlight">\(\begin{pmatrix} C_{12} \\ C_{22} \end{pmatrix}\)</span> contiene los coeficientes del orbital virtual <span class="math notranslate nohighlight">\(\phi_2\)</span> (LUMO).</p>
+<p><strong>Matriz de energías orbitales <span class="math notranslate nohighlight">\(\boldsymbol{\varepsilon}\)</span>:</strong> Es una matriz diagonal que contiene los autovalores energéticos:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boldsymbol{\varepsilon} = \begin{pmatrix} \varepsilon_1 &amp; 0 \\ 0 &amp; \varepsilon_2 \end{pmatrix}\end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\varepsilon_1 = \varepsilon_{\text{HOMO}}\)</span> es la energía del orbital ligado (negativa) y <span class="math notranslate nohighlight">\(\varepsilon_2 = \varepsilon_{\text{LUMO}}\)</span> es la energía del primer orbital desocupado.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>El caso del helio frente a sistemas reales: matrices de dimensión <span class="math notranslate nohighlight">\(K \times K\)</span>
+Conviene no confundir este modelo 2×2 con la dimensión real de los cálculos moleculares:</p>
+<ol class="arabic simple">
+<li><p><strong>¿Por qué 2×2 en este ejemplo?</strong> Porque hemos elegido deliberadamente una base mínima de <span class="math notranslate nohighlight">\(K = 2\)</span> funciones para un átomo con 2 electrones. Al haber dos funciones de base se obtienen exactamente 2 orbitales: 1 orbital ocupado (con los dos electrones apareados) y 1 orbital virtual desocupado.</p></li>
+<li><p><strong>Dimensiones en sistemas reales:</strong> En cualquier cálculo molecular estándar, el número de funciones de base <span class="math notranslate nohighlight">\(K\)</span> es mucho mayor (<span class="math notranslate nohighlight">\(K = 30, 80, 300\dots\)</span>). Las matrices <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> son siempre matrices cuadradas de dimensión <strong><span class="math notranslate nohighlight">\(K \times K\)</span></strong>.</p></li>
+<li><p><strong>Distribución de orbitales ocupados y virtuales:</strong> Para un sistema neutro de capa cerrada con <span class="math notranslate nohighlight">\(N\)</span> electrones y <span class="math notranslate nohighlight">\(K\)</span> funciones de base, el método genera siempre <span class="math notranslate nohighlight">\(K\)</span> orbitales espaciales. Solo las primeras <span class="math notranslate nohighlight">\(N/2\)</span> columnas de la matriz <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> corresponden a orbitales ocupados (hasta el HOMO <span class="math notranslate nohighlight">\(\phi_{N/2}\)</span>); las restantes <span class="math notranslate nohighlight">\(K - N/2\)</span> columnas corresponden a orbitales virtuales desocupados (empezando por el LUMO <span class="math notranslate nohighlight">\(\phi_{N/2 + 1}\)</span>).</p></li>
+</ol>
+</div>
+</section>
+<section id="el-ciclo-scf-resolver-por-iteracion">
+<h2>El ciclo SCF: resolver por iteración<a class="headerlink" href="#el-ciclo-scf-resolver-por-iteracion" title="Permalink to this heading">#</a></h2>
+<p>Existe una dependencia circular: para calcular la matriz de Fock <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> se necesita conocer la densidad electrónica (los coeficientes <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>), pero para obtener <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> se debe diagonalizar el sistema <span class="math notranslate nohighlight">\(\mathbf{F}\mathbf{C} = \mathbf{S}\mathbf{C}\boldsymbol{\varepsilon}\)</span>.</p>
+<p>Esta circularidad se resuelve iterativamente mediante el método del campo autoconsistente (SCF, <em>Self-Consistent Field</em>):</p>
+<ol class="arabic simple">
+<li><p>Se genera una estimación inicial de los coeficientes (<em>guess</em> <span class="math notranslate nohighlight">\(\mathbf{C}^{(0)}\)</span>).</p></li>
+<li><p>Con esos coeficientes se construye la matriz de Fock <span class="math notranslate nohighlight">\(\mathbf{F}^{(k)}\)</span>.</p></li>
+<li><p>Se diagonaliza el sistema <span class="math notranslate nohighlight">\(\mathbf{F}^{(k)}\mathbf{C} = \mathbf{S}\mathbf{C}\boldsymbol{\varepsilon}\)</span> para obtener nuevos coeficientes <span class="math notranslate nohighlight">\(\mathbf{C}^{(k+1)}\)</span> y nuevas energías <span class="math notranslate nohighlight">\(\boldsymbol{\varepsilon}^{(k+1)}\)</span>.</p></li>
+<li><p>Se comprueba si la variación de energía y densidad respecto al paso anterior es menor que la tolerancia fijada (por ejemplo <span class="math notranslate nohighlight">\(10^{-6}\)</span> Ha). Si no ha convergido, se vuelve al paso 2.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/ciclo_scf.svg"><img alt="Diagrama de flujo del ciclo SCF desde la estimación inicial hasta la convergencia" src="../../../_images/ciclo_scf.svg" width="55%" /></a>
+</figure>
+</section>
+<section id="energias-orbital-vs-total">
+<h2>Energías: orbital vs total<a class="headerlink" href="#energias-orbital-vs-total" title="Permalink to this heading">#</a></h2>
+<p>Los autovalores <span class="math notranslate nohighlight">\(\varepsilon_i\)</span> obtenidos al diagonalizar la matriz de Fock corresponden a las energías de cada orbital individual, no a la energía total del sistema.</p>
+<p>Para los dos electrones del helio en el orbital <span class="math notranslate nohighlight">\(\phi_1\)</span>, la energía orbital contiene la energía monoelectrónica <span class="math notranslate nohighlight">\(h_{11}\)</span> y la repulsión electrostática con el otro electrón <span class="math notranslate nohighlight">\(J_{11}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon_1 = h_{11} + J_{11}\]</div>
+<p>Si sumáramos directamente las energías orbitales de ambos electrones:</p>
+<div class="math notranslate nohighlight">
+\[2\varepsilon_1 = 2h_{11} + 2J_{11}\]</div>
+<p>estaríamos contando la repulsión interelectrónica <span class="math notranslate nohighlight">\(J_{11}\)</span> dos veces. Por tanto, la energía electrónica real resta esa interacción duplicada:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{elec}} = 2\varepsilon_1 - J_{11} = 2h_{11} + J_{11}\]</div>
+<p>En una molécula con varios núcleos, la energía total añade además la repulsión coulómbica internuclear <span class="math notranslate nohighlight">\(V_{NN}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{total}} = E_{\text{elec}} + V_{NN}\]</div>
+<p>Este valor es exactamente el que Gaussian imprime en la línea <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code> del archivo <code class="docutils literal notranslate"><span class="pre">.log</span></code>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Advertencia</p>
+<p>La energía que aparece en la línea <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code> del log de Gaussian es la energía total del sistema <span class="math notranslate nohighlight">\(E_{\text{total}}\)</span>, no la energía de un orbital individual <span class="math notranslate nohighlight">\(\varepsilon_i\)</span>.</p>
+</div>
+</section>
+<section id="limitaciones-de-hf-la-correlacion-electronica">
+<h2>Limitaciones de HF: la correlación electrónica<a class="headerlink" href="#limitaciones-de-hf-la-correlacion-electronica" title="Permalink to this heading">#</a></h2>
+<p>Como el método de Hartree-Fock sustituye las interacciones instantáneas por un campo medio, asume que la probabilidad de encontrar un electrón en un punto es independiente de la posición instantánea del otro. La diferencia entre la energía de Hartree-Fock con base infinita (<span class="math notranslate nohighlight">\(E_{\text{HF}}^{\text{limit}}\)</span>) y la energía exacta no relativista (<span class="math notranslate nohighlight">\(E_{\text{exacta}}\)</span>) define la energía de correlación:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{corr}} = E_{\text{exacta}} - E_{\text{HF}}^{\text{limit}}\]</div>
+<p>Dado que <span class="math notranslate nohighlight">\(E_{\text{HF}}^{\text{limit}} \ge E_{\text{exacta}}\)</span> por el principio variacional, la energía de correlación es siempre negativa (<span class="math notranslate nohighlight">\(E_{\text{corr}} \le 0\)</span>). Aunque suele representar menos del 1 % de la energía total, es decisiva para calcular con exactitud energías de enlace, barreras de reacción y transiciones espectroscópicas.</p>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+<li><p>Szabo, A.; Ostlund, N. S. <em>Modern Quantum Chemistry</em>. Dover, 1996.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+La función de onda antisimétrica y el determinante de Slater<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">El principio de exclusión de Pauli exige que la función de onda electrónica sea antisimétrica frente al intercambio de dos electrones cualesquiera:</p>
+<div class="math notranslate nohighlight">
+\[\Psi(\mathbf{x}_1, \mathbf{x}_2) = -\Psi(\mathbf{x}_2, \mathbf{x}_1)\]</div>
+<p class="sd-card-text">Para dos electrones con espines opuestos en el orbital espacial <span class="math notranslate nohighlight">\(\phi_1\)</span>, la función de onda se expresa como un determinante de Slater:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Psi(\mathbf{x}_1, \mathbf{x}_2) = \frac{1}{\sqrt{2}} \begin{vmatrix} \phi_1(\mathbf{r}_1)\alpha(1) &amp; \phi_1(\mathbf{r}_1)\beta(1) \\ \phi_1(\mathbf{r}_2)\alpha(2) &amp; \phi_1(\mathbf{r}_2)\beta(2) \end{vmatrix}\end{split}\]</div>
+<p class="sd-card-text">Intercambiar las coordenadas de los dos electrones equivale a permutar dos filas del determinante, lo que invierte automáticamente su signo y garantiza el principio de Pauli.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Energía de correlación y métodos post-HF<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A partir de la función de onda de Hartree-Fock se han desarrollado diversos métodos para recuperar la correlación electrónica y superar la aproximación de campo medio. La teoría de perturbaciones de Møller-Plesset de segundo orden (MP2) añade correcciones dinámicas a la energía con un coste computacional moderado. Por su parte, métodos como <em>Coupled Cluster</em> con excitaciones simples y dobles (CCSD) ofrecen una precisión muy superior a expensas de un esfuerzo de cálculo elevado. Estos esquemas se analizan con detalle en una sección teórica posterior (Más allá de Hartree-Fock).</p>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/intros"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro-gaussview.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Introducción a GaussView</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intro-bases.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Funciones de base</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-electrones-que-se-repelen">El problema: electrones que se repelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-idea-de-hartree-fock-el-campo-medio">La idea de Hartree-Fock: el campo medio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbitales-combinacion-lineal-de-funciones-de-base-lcao">Orbitales: combinación lineal de funciones de base (LCAO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-ecuaciones-de-roothaan-hall-el-ejemplo-del-helio-con-dos-orbitales">Las ecuaciones de Roothaan-Hall: el ejemplo del Helio con dos orbitales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-ciclo-scf-resolver-por-iteracion">El ciclo SCF: resolver por iteración</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energias-orbital-vs-total">Energías: orbital vs total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-de-hf-la-correlacion-electronica">Limitaciones de HF: la correlación electrónica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografía</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por David De Sancho
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
