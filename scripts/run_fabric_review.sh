@@ -42,12 +42,10 @@ FILES=(
     "content/parte2-gaussian/practicas/espectroscopia-uv.md"
 )
 
-# 4. Lista de patrones de Fabric a ejecutar
+# 4. Lista de patrones de Fabric a ejecutar (solo los esenciales: diagnostico y propuesta academica)
 PATTERNS=(
-    "improve_writing"
     "improve_academic_writing"
     "analyze_prose_pinker"
-    "humanize"
 )
 
 # 5. Inicializar encabezado del documento Markdown de salida

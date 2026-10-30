@@ -29,11 +29,20 @@ En un cálculo de energía puntual (*Single Point*), las posiciones nucleares pe
 
 ## Optimización de geometría: encontrar el mínimo
 
-En una optimización de geometría, Gaussian calcula la energía sobre la estructura inicial y evalúa sus derivadas respecto a las coordenadas nucleares (el vector gradiente). A partir de las fuerzas resultantes, desplaza los núcleos en la dirección que reduce la energía. En cada nueva geometría recalcula la función de onda y el gradiente. El ciclo se repite hasta que las fuerzas y los desplazamientos caen por debajo de los umbrales de convergencia, alcanzando un mínimo local. En GaussView seleccionamos este cálculo en **Job Type → Optimization**.
+En una optimización de geometría, Gaussian calcula la energía sobre la estructura inicial y evalúa sus derivadas respecto a las coordenadas nucleares (el gradiente de la energía). Las fuerzas electrostáticas que actúan sobre cada núcleo $A$ corresponden al gradiente cambiado de signo:
 
-:::{admonition} Figura
-:class: captura
-[FIGURA: curva E vs coordenada con 3-4 pasos de optimización marcados y flecha al mínimo]
+$$\mathbf{F}_A = -\nabla_{\mathbf{R}_A} E(\mathbf{R})$$
+
+A partir de estas fuerzas, el algoritmo desplaza los núcleos en la dirección que reduce la energía hacia el mínimo más cercano. En cada nueva geometría recalcula la función de onda y las fuerzas. El proceso se repite hasta que el gradiente se anula dentro de la tolerancia numérica:
+
+$$\nabla_{\mathbf{R}} E \approx \mathbf{0}$$
+
+En GaussView seleccionamos este cálculo en **Job Type → Optimization**. La figura siguiente ilustra los pasos sucesivos del algoritmo convergiendo al pozo de potencial.
+
+:::{figure} /_static/figures/optimizacion_pasos.svg
+:alt: Pasos sucesivos del algoritmo de optimización de geometría convergiendo al mínimo de energía sobre la curva de energía potencial
+:width: 65%
+:align: center
 :::
 
 ---

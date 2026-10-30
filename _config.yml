@@ -41,6 +41,8 @@ launch_buttons:
 # ----------------------------------------------------------------
 parse:
   myst_enable_extensions:
+    - amsmath
+    - dollarmath
     - substitution
     - colon_fence
   myst_substitutions:

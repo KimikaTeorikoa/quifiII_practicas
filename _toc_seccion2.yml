@@ -1,17 +1,15 @@
 format: jb-book
 root: content/parte2-gaussian/index
 parts:
-  - caption: "Introducción a la Química Computacional"
+  - caption: "Introducción a la Química Computacional con Gaussian"
     chapters:
     - file: content/parte2-gaussian/intros/intro-gaussview
     - file: content/parte2-gaussian/intros/intro-hartree-fock
     - file: content/parte2-gaussian/intros/intro-bases
-  - caption: "Cálculos con GaussView y Gaussian"
-    chapters:
+    - file: content/parte2-gaussian/intros/intro-energias
     - file: content/parte2-gaussian/practicas/atomos-koopmans
     - file: content/parte2-gaussian/intros/intro-born-oppenheimer
     - file: content/parte2-gaussian/intros/intro-mas-alla-hf
-    - file: content/parte2-gaussian/intros/intro-energias
     - file: content/parte2-gaussian/practicas/moleculas-pes
     - file: content/parte2-gaussian/practicas/modos-normales
     - file: content/parte2-gaussian/practicas/espectroscopia-uv

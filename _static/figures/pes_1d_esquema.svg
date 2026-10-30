@@ -1,0 +1,46 @@
+<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Helvetica Neue', Arial, sans-serif" font-size="10">
+  <title>Curva de energía potencial 1D esquemática</title>
+  <desc>Curva de energía potencial con pared repulsiva, mínimo, barrera de activación y asíntota de disociación. Se anota la energía de disociación De.</desc>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L8,4 Z" fill="#4a4a4a"/>
+    </marker>
+    <marker id="arrR" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L8,4 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrL" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto-start-reverse">
+      <path d="M8,0 L8,8 L0,4 Z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <line x1="55" y1="290" x2="55" y2="16" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="55" y1="290" x2="484" y2="290" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="272" y="312" text-anchor="middle" font-size="11" fill="#1a1a1a">Coordenada de reacción</text>
+  <text transform="rotate(-90,16,155)" x="16" y="155" text-anchor="middle" font-size="11" fill="#1a1a1a">Energía potencial E</text>
+
+  <path d="
+    M 70,30
+    C 90,30 105,80 120,130
+    C 132,165 145,200 175,230
+    C 205,258 230,265 248,255
+    C 265,245 270,210 295,155
+    C 318,105 330,130 360,175
+    C 390,205 420,185 480,183
+  " fill="none" stroke="#1a1a2e" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <line x1="360" y1="183" x2="484" y2="183" stroke="#6c757d" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="430" y="174" text-anchor="middle" font-size="9.5" fill="#6c757d">Disociación /</text>
+  <text x="430" y="186" text-anchor="middle" font-size="9.5" fill="#6c757d">reactivos separados</text>
+
+  <line x1="55" y1="230" x2="175" y2="230" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="42" y1="186" x2="42" y2="227" stroke="#c0392b" stroke-width="1.3"
+    marker-end="url(#arrR)" marker-start="url(#arrL)"/>
+  <text x="36" y="212" text-anchor="middle" font-size="9" fill="#c0392b" font-style="italic">De</text>
+
+  <line x1="175" y1="230" x2="210" y2="262" stroke="#4a4a4a" stroke-width="0.9"/>
+  <text x="212" y="266" font-size="9.5" fill="#4a4a4a">mínimo</text>
+
+  <line x1="295" y1="155" x2="332" y2="128" stroke="#4a4a4a" stroke-width="0.9" marker-end="url(#arr)"/>
+  <text x="334" y="125" font-size="9.5" fill="#4a4a4a">barrera de activación</text>
+</svg>

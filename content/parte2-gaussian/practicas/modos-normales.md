@@ -16,9 +16,15 @@ La absorción de radiación infrarroja surge de la interacción entre el campo e
 
 ### Las moléculas vibran: modelo del oscilador armónico
 
-En la aproximación armónica, los núcleos oscilan en torno a la geometría de equilibrio como un oscilador. Cuanto más rígido es el enlace (mayor $k$) y cuanto menor es la masa reducida $\mu$ de los átomos implicados, mayor es la frecuencia de la vibración. Gaussian obtiene las constantes de fuerza calculando las segundas derivadas de la energía respecto a los desplazamientos nucleares en el mínimo de la PES.
+En la aproximación armónica, los núcleos oscilan en torno a la geometría de equilibrio como un oscilador mecánico. Cuanto más rígido es el enlace (mayor constante de fuerza $k$) y cuanto menor es la masa reducida $\mu$ de los átomos implicados, mayor es la frecuencia de la vibración:
 
 $$\tilde{\nu} = \frac{1}{2\pi c}\sqrt{\frac{k}{\mu}}$$
+
+Para una molécula diatómica compuesta por masas $m_1$ y $m_2$, la masa reducida se define como:
+
+$$\mu = \frac{m_1 m_2}{m_1 + m_2}$$
+
+Gaussian obtiene las constantes de fuerza calculando las segundas derivadas de la energía respecto a los desplazamientos nucleares en el mínimo de la PES.
 
 :::{admonition} Nota
 :class: note
@@ -27,11 +33,19 @@ Gaussian calcula las constantes de fuerza mediante las segundas derivadas de la 
 
 ### Modos normales y grados de libertad vibracionales
 
-En cada modo normal, todos los núcleos de la molécula oscilan en fase y a una única frecuencia característica. Una molécula de $N$ átomos tiene $3N-5$ modos vibracionales si es lineal y $3N-6$ si no lo es, una vez descontados los grados de libertad de traslación y rotación del centro de masas. La diagonalización del hessiano en coordenadas de masa ponderada proporciona directamente estas frecuencias y los vectores de desplazamiento nuclear asociados a cada modo.
+En cada modo normal, todos los núcleos de la molécula oscilan en fase y a una única frecuencia característica. Descontados los 3 grados de traslación del centro de masas y los de rotación (2 en moléculas lineales y 3 en no lineales), el número de vibraciones fundamentales posibles para $N$ átomos viene dado por:
+
+$$\text{Modos normales} = \begin{cases} 3N - 5 & (\text{molécula lineal, p. ej. } \text{CO}_2: 3(3)-5 = 4) \\ 3N - 6 & (\text{molécula no lineal, p. ej. } \text{H}_2\text{O}: 3(3)-6 = 3) \end{cases}$$
+
+La diagonalización del hessiano en coordenadas de masa ponderada proporciona directamente estas frecuencias y los vectores de desplazamiento nuclear asociados a cada modo.
 
 ### Reglas de selección en espectroscopía infrarroja
 
-Un modo de vibración absorbe radiación infrarroja únicamente si el movimiento nuclear produce una variación neta del momento dipolar molecular ($\partial \vec{\mu}/\partial Q \neq 0$). En moléculas simétricas, algunos modos conservan la simetría de inversión durante la vibración y no alteran el dipolo: son modos inactivos en IR. En el caso extremo, la molécula de $\text{H}_2$ no tiene ninguna banda IR activa: su dipolo permanente es nulo y la vibración de estiramiento tampoco lo altera, por lo que el espectro infrarrojo es completamente silencioso. En el archivo `.log`, la actividad de cada modo queda recogida en el campo `IR Inten`: un valor nulo indica inactividad.
+Un modo de vibración absorbe radiación infrarroja únicamente si el movimiento nuclear produce una variación neta del momento dipolar molecular en el entorno del equilibrio:
+
+$$\left(\frac{\partial \vec{\mu}}{\partial Q}\right)_0 \neq \mathbf{0}$$
+
+En moléculas simétricas, algunos modos conservan la simetría de inversión durante la vibración y no alteran el dipolo: son modos inactivos en IR. En el caso extremo, la molécula de $\text{H}_2$ no tiene ninguna banda IR activa: su dipolo permanente es nulo y la vibración de estiramiento tampoco lo altera, por lo que el espectro infrarrojo es completamente silencioso. En el archivo `.log`, la actividad de cada modo queda recogida en el campo `IR Inten`: un valor nulo indica inactividad.
 
 :::{admonition} Nota
 :class: note
@@ -91,11 +105,6 @@ Buscar `Frequencies --` en el `.log` con **Ctrl + F**. Para cada modo, anotar:
 - `Frc consts  --`: constante de fuerza en mdyne/Å.
 - `IR Inten    --`: intensidad de absorción en km/mol.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: fragmento del archivo .log mostrando el bloque Frequencies con los valores de frecuencia, masa reducida, constante de fuerza e intensidad IR]
-:::
-
 ### Paso 6: Visualizar la animación del modo normal
 
 1. En GaussView, con el archivo `CO_opt_freq_B3LYP_6311G.log` abierto, acceder al menú **Results → Vibrations**.
@@ -104,17 +113,24 @@ Buscar `Frequencies --` en el `.log` con **Ctrl + F**. Para cada modo, anotar:
 4. Marcar la casilla **Show Vectors** para visualizar las flechas de desplazamiento nuclear y comprobar que los átomos se mueven a lo largo del eje del enlace (modo de estiramiento).
 5. Comprobar la amplitud relativa de las flechas: el átomo de carbono, al ser más ligero, experimenta un desplazamiento mayor que el de oxígeno.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Results → Vibrations en GaussView mostrando el modo de estiramiento de CO con vectores de desplazamiento y frecuencia asociada]
-:::
-
 ### Paso 7: Repetir el procedimiento para CO₂
 
 1. Construir CO₂ en GaussView y aplicar **Edit → Clean** para obtener la geometría lineal O=C=O.
 2. Configurar el cálculo con los mismos parámetros (B3LYP/6-311G, Opt+Freq, carga 0, multiplicidad 1). Guardar como `CO2_opt_freq.gjf` y lanzar.
-3. Una vez completado, abrir el `.log` en GaussView y acceder a **Results → Vibrations**.
+3. Una vez completado, abrir el archivo `.chk` o `.log` en GaussView y acceder al menú **Results → Vibrations**.
 4. Animar cada uno de los cuatro modos normales y anotar sus frecuencias e intensidades. Relacionar la actividad IR de cada modo con la variación del momento dipolar que provoca la vibración.
+
+:::{figure} /_static/capturas/14_vibraciones_gv_modos_co2.png
+:alt: Diálogo Vibrations en GaussView con la lista de los 4 modos normales de CO2 y sus intensidades infrarrojas
+:width: 85%
+:align: center
+:::
+
+:::{figure} /_static/capturas/14b_vibraciones_gv_visor_co2.png
+:alt: Molécula de CO2 en el visor 3D de GaussView
+:width: 65%
+:align: center
+:::
 
 ---
 

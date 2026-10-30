@@ -6,20 +6,27 @@ Para hacer un cálculo en Gaussian, primero hay que decirle al programa cómo es
 
 ## Abrir GaussView
 
-GaussView se abre desde el escritorio del ordenador del aula o desde el menú de aplicaciones del sistema. [CONFIRMAR CON PROFESOR: ruta o icono exacto en el equipo del aula]
+GaussView se abre desde el escritorio del ordenador del aula o desde el menú de aplicaciones del sistema.
 
 ## La interfaz: qué ves al abrir
 
 La interfaz de GaussView tiene cuatro áreas de trabajo. En la parte superior encontramos la barra de menús, con las herramientas de configuración y visualización. Debajo está la barra de herramientas, con iconos de acceso rápido. El área central es la ventana de visualización tridimensional, donde construimos, desplazamos y rotamos la molécula con el ratón. Un panel inferior muestra información en tiempo real sobre los átomos seleccionados, distancias interatómicas y el estado del cálculo.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana principal anotada con flechas numeradas señalando cada zona]
+:::{figure} /_static/capturas/01_gv_interfaz_principal.png
+:alt: Interfaz principal de GaussView
+:width: 85%
+:align: center
 :::
 
 ## Construir una molécula
 
-Para construir una molécula en GaussView, seleccionamos el elemento químico en el panel de fragmentos y hacemos clic con el botón izquierdo en la ventana central para situar el átomo. Al añadir átomos adicionales cerca de los existentes, el programa genera los enlaces de forma automática a partir de los radios covalentes estándar. Para el agua ($\text{H}_2\text{O}$), basta con colocar un átomo de oxígeno central y enlazar dos hidrógenos en posiciones angulares aproximadas. Las distancias exactas se ajustarán durante la optimización de geometría en Gaussian, así que el dibujo inicial solo necesita representar la conectividad química.
+Para construir una molécula en GaussView, pulsamos el icono del átomo en la barra de herramientas (**Builder palette**, accesible también desde **View → Builder**) para abrir el panel de fragmentos y elementos químicos. Seleccionamos el elemento deseado y hacemos clic con el botón izquierdo en la ventana central para situar el átomo. Al añadir átomos adicionales cerca de los existentes, el programa genera los enlaces de forma automática a partir de los radios covalentes estándar. Para el agua ($\text{H}_2\text{O}$), basta con colocar un átomo de oxígeno central y enlazar dos hidrógenos en posiciones angulares aproximadas. Las distancias exactas se ajustarán durante la optimización de geometría en Gaussian, así que el dibujo inicial solo necesita representar la conectividad química.
+
+:::{figure} /_static/capturas/02_gv_construccion_h2o_fragmentos.png
+:alt: Construcción de la molécula de agua y paleta de fragmentos
+:width: 85%
+:align: center
+:::
 
 :::{admonition} Advertencia
 :class: warning
@@ -40,7 +47,13 @@ Para inspeccionar la estructura, rotamos la vista manteniendo presionado el bot�
 
 ## Ver y ajustar geometría
 
-Para medir una distancia de enlace seleccionamos los dos átomos con Ctrl. La distancia en ángstroms aparece de inmediato en la barra de estado inferior. Con tres átomos consecutivos obtenemos el ángulo de enlace en grados, y con cuatro el ángulo diedro. Esta función es de solo lectura: no hace falta modificar los parámetros geométricos a mano.
+Para consultar o ajustar una distancia de enlace seleccionamos la herramienta de enlace (**Modify Bond**, icono con dos esferas enlazadas en la barra de herramientas) o la herramienta de consulta (**Inquire**, icono con el interrogante **`?`**) y hacemos clic en los dos átomos en el visor 3D. La ventana emergente muestra la distancia actual en ángstroms y permite verificar la conectividad antes de lanzar el cálculo.
+
+:::{figure} /_static/capturas/03_gv_medicion_distancia.png
+:alt: Medición de distancia de enlace en GaussView
+:width: 85%
+:align: center
+:::
 
 ## Abrir un archivo existente
 
@@ -55,16 +68,15 @@ El panel de configuración lo abrimos desde **Calculate → Gaussian Calculation
 Revisar siempre la carga y la multiplicidad antes de pulsar Submit. Un error aquí invalida todo el cálculo.
 :::
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Gaussian Calculation Setup, pestaña Method con HF/STO-3G seleccionado]
+:::{figure} /_static/capturas/04_gv_setup_method_hf.png
+:alt: Configuración del cálculo en Gaussian Calculation Setup
+:width: 85%
+:align: center
 :::
 
 ## Lanzar el cálculo
 
-[CONFIRMAR CON PROFESOR: el cálculo se lanza en local o se envía a un servidor?]
-
-Una vez configurados los parámetros, lanzamos el cálculo pulsando **Submit**. GaussView abre una ventana de seguimiento con las líneas de salida en tiempo real. La duración oscila entre unos segundos para moléculas sencillas con bases mínimas y varios minutos para sistemas mayores o métodos con correlación electrónica. No hace falta hacer nada más hasta que el cálculo finalice.
+Una vez configurados los parámetros, lanzamos el cálculo en local pulsando **Submit**. GaussView abre una ventana de seguimiento con las líneas de salida en tiempo real. La duración oscila entre unos segundos para moléculas sencillas con bases mínimas y varios minutos para sistemas mayores o métodos con correlación electrónica. No hace falta hacer nada más hasta que el cálculo finalice.
 
 ## Verificar que el cálculo ha terminado bien
 
@@ -77,9 +89,13 @@ Antes de anotar ningún resultado, comprueba siempre que el cálculo ha terminad
 
 ## Ver los resultados
 
-[CONFIRMAR CON PROFESOR: cómo se llama y dónde aparece el archivo .log en el aula]
+Los resultados los consultamos por dos vías. Para visualizar la geometría optimizada, la densidad electrónica o los orbitales moleculares, usamos el menú **Results** de GaussView. La opción **Results → Summary** presenta un cuadro resumen con el método, la base, la energía electrónica total calculada y magnitudes como el momento dipolar. Para extraer valores numéricos con todo su detalle, es más directo abrir el archivo `.log` con un editor de texto y buscar las líneas pertinentes. En el guión de cada práctica indicamos qué término buscar y cómo anotar cada valor.
 
-Los resultados los consultamos por dos vías. Para visualizar la geometría optimizada, la densidad electrónica o los orbitales moleculares, usamos el menú **Results** de GaussView. Para extraer valores numéricos como la energía total o las frecuencias vibracionales, es más directo abrir el archivo `.log` con un editor de texto y buscar las líneas pertinentes. En el guión de cada práctica indicamos qué término buscar y cómo anotar cada valor.
+:::{figure} /_static/capturas/05_gv_summary_resultados.png
+:alt: Resumen del cálculo en la ventana Gaussian Calculation Summary de GaussView
+:width: 85%
+:align: center
+:::
 
 ## Guardar el trabajo
 
@@ -97,6 +113,12 @@ El archivo de entrada lo guardamos desde **File → Save** con la extensión `.g
 :color: success
 :icon: gear
 
-El color de fondo lo modificamos desde **View → Display Format → Background Color**. En esa misma ventana podemos personalizar el tamaño de las esferas atómicas en **Atom Size** y su esquema de colores en **Atom Colors**. Estos ajustes no alteran los cálculos, pero usar fondo blanco facilita obtener capturas nítidas para la memoria de prácticas.
+El color de fondo lo modificamos desde el menú **View → Display Format**. En la pestaña **General**, hacemos clic sobre el recuadro situado junto a **Background Color** y seleccionamos el color blanco. En esa misma ventana podemos personalizar el tamaño de las esferas atómicas en **Atom Size** y su esquema de colores en **Atom Colors**. Estos ajustes no alteran los cálculos, pero usar fondo blanco facilita obtener capturas nítidas para la memoria de prácticas.
+
+:::{figure} /_static/capturas/06_gv_display_background_blanco.png
+:alt: Personalización del color de fondo blanco en Display Format
+:width: 85%
+:align: center
+:::
 
 ::::

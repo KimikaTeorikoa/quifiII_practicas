@@ -36,12 +36,10 @@ if [[ ! -f "$FULL_TARGET_PATH" ]]; then
     exit 1
 fi
 
-# 3. Lista de patrones de Fabric a ejecutar
+# 3. Lista de patrones de Fabric a ejecutar (solo los esenciales: diagnostico y propuesta academica)
 PATTERNS=(
-    "improve_writing"
     "improve_academic_writing"
     "analyze_prose_pinker"
-    "humanize"
 )
 
 # 4. Inicializar encabezado del documento Markdown de salida

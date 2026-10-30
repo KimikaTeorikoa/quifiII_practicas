@@ -62,35 +62,41 @@ El ángulo diedro describe la rotación relativa entre dos grupos unidos por un 
 #### Paso 2: Configurar el cálculo de barrido (Scan)
 
 1. En la barra de menús de GaussView, acceder a **Calculate → Gaussian Calculation Setup**.
-2. En la pestaña **Job Type**, seleccionar la opción **Scan** (o **Relaxed PES Scan**).
-3. Seleccionar la coordenada de enlace entre los dos átomos de hidrógeno:
-   - Tipo de coordenada: **Bond**.
-   - Átomos: **1** y **2**.
-   - Definir los parámetros de barrido:
-     - Valor inicial: `0.5` Å.
-     - Paso (Step size): `0.1` Å.
-     - Número de pasos: `25` (rango final: `3.0` Å).
-4. En la pestaña **Method**, seleccionar:
-   - Método: `[MÉTODO]`.
-   - Conjunto de base: `[BASE]`.
+2. En la pestaña **Job Type**, seleccionar la opción **Scan** y elegir en el desplegable inferior **Relaxed (Redundant Coord)**.
+3. Para definir la coordenada de barrido, acceder a **Edit → Redundant Coordinates** (o pulsar el botón de edición de coordenadas redundantes).
+4. En el diálogo **Redundant Coordinate Editor**:
+   - Pulsar el botón **Add**.
+   - En el desplegable seleccionar **Bond** e indicar en **Coordinate** los átomos **1** y **2**.
+   - Seleccionar **Scan Coordinate** en el tipo de acción y fijar los parámetros del barrido (por ejemplo, 40 pasos de tamaño 0.1 Å).
+   - Pulsar **Ok** para validar la coordenada.
+5. De regreso a la ventana **Gaussian Calculation Setup**, en la pestaña **Method** seleccionar:
+   - Método: **HF** (Hartree-Fock).
+   - Conjunto de base: **STO-3G**.
    - Carga: `0`.
    - Para el estado singlete: **Spin = Singlet** (Multiplicity = `1`).
    - Para el estado triplete: **Spin = Triplet** (Multiplicity = `3`).
-5. En la pestaña **Title**, escribir: `H2 scan [MÉTODO] [BASE]`.
-6. En la pestaña **Additional Keywords**, escribir: `scan`.
+6. En la pestaña **Title**, escribir: `H2 scan HF STO-3G`.
+7. En la pestaña **Additional Keywords**, escribir: `scan`.
 
 | Parámetro | Estado singlete | Estado triplete |
 |---|:---:|:---:|
-| Method | [MÉTODO] | [MÉTODO] |
-| Basis Set | [BASE] | [BASE] |
+| Method | HF | HF (ROHF) |
+| Basis Set | STO-3G | STO-3G |
 | Charge | 0 | 0 |
 | Multiplicity | 1 | 3 |
-| Rango de distancias | [PARÁMETRO] | [PARÁMETRO] |
-| Incremento de paso | [PARÁMETRO] | [PARÁMETRO] |
+| Rango de distancias | 0.5 a 4.0 Å | 0.5 a 4.0 Å |
+| Incremento de paso | 0.1 Å (35–40 pasos) | 0.1 Å (35–40 pasos) |
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup con Job Type Scan y parámetros del barrido del enlace H-H]
+:::{figure} /_static/capturas/11_pes_setup_scan_h2.png
+:alt: Configuración del barrido de potencial (Scan) para H2 en Gaussian Calculation Setup
+:width: 85%
+:align: center
+:::
+
+:::{figure} /_static/capturas/11a_pes_redundant_coord_h2.png
+:alt: Definición de la coordenada de enlace y pasos del barrido en el editor de coordenadas redundantes
+:width: 85%
+:align: center
 :::
 
 #### Paso 3: Guardar y lanzar los cálculos
@@ -126,18 +132,13 @@ Se realizará el barrido conformacional para los tres dihaloetanos siguientes: 1
 3. Definir la coordenada interna de tipo **Dihedral** seleccionando los cuatro átomos enlazados: $\text{X–C–C–X}$.
 4. Especificar los parámetros angulares del barrido:
    - Coordenada: diedro $\text{X–C–C–X}$.
-   - Rango angular: `[PARÁMETRO]`.
+   - Rango angular: 0° a 360° (pasos de 10° o 15°).
 5. En la pestaña **Method**, configurar:
-   - Método: `[MÉTODO]`.
-   - Conjunto de base: `[BASE]`.
+   - Método: **HF**.
+   - Conjunto de base: **STO-3G**.
    - Carga: `0`.
    - Multiplicidad: `1` (Singlete).
-6. En la pestaña **Title**, escribir: `Dihaloetano diedro scan`.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup con la selección del diedro X-C-C-X y parámetros de escaneo conformacional]
-:::
+6. En la pestaña **Title**, escribir: `Dihaloetano diedro scan HF STO-3G`.
 
 #### Paso 3: Guardar, lanzar y verificar
 

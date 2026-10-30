@@ -100,9 +100,10 @@ Tabla de multiplicidades de referencia ($2S+1$):
 | F | 9 | [He] 2s² 2p⁵ | 2 |
 | Ne | 10 | [He] 2s² 2p⁶ | 1 |
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup con pestana Method, HF/STO-3G configurado y Additional Keywords pop=full]
+:::{figure} /_static/capturas/07_koopmans_setup_c_popfull.png
+:alt: Configuración del cálculo de Hartree-Fock con pop=full para el átomo de carbono
+:width: 85%
+:align: center
 :::
 
 ### Paso 3: Lanzar el cálculo y guardar el archivo
@@ -118,9 +119,10 @@ Tabla de multiplicidades de referencia ($2S+1$):
 2. Desplazarse al final del archivo con **Ctrl + Fin**.
 3. Confirmar que la última línea del archivo coincide exactamente con: `{{termination_ok}}`. Si no aparece, el cálculo falló y no deben usarse sus datos.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: seccion final del archivo .log en el editor de texto mostrando la linea Normal termination of Gaussian 16]
+:::{figure} /_static/capturas/08_koopmans_log_terminacion_normal.png
+:alt: Terminación normal de Gaussian 16 al final del archivo de salida .log
+:width: 85%
+:align: center
 :::
 
 ### Paso 5: Leer la energía total E(N)
@@ -130,16 +132,30 @@ Tabla de multiplicidades de referencia ($2S+1$):
 3. Localizar la energía total en la línea `SCF Done:  E(RHF) = ...` (para sistemas de capa cerrada con multiplicidad 1) o `SCF Done:  E(ROHF) = ...` (para capa abierta con multiplicidad distinta de 1).
 4. Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna $E(N)$ de la tabla de resultados.
 
-### Paso 6: Leer la energía orbital del HOMO
+### Paso 6: Leer la energía orbital del HOMO y visualizar el orbital
 
-1. En el mismo archivo `.log`, buscar con **Ctrl + F** el texto: `Alpha occ. eigenvalues`.
-2. Localizar el último número de la última línea `Alpha occ. eigenvalues --`. Ese valor numérico corresponde a la energía del orbital ocupado de mayor energía, $\varepsilon_{\text{HOMO}}$ (en Hartrees).
-3. Localizar el primer número de la línea inmediata siguiente `Alpha virt. eigenvalues --`, correspondiente al orbital desocupado de menor energía ($\varepsilon_{\text{LUMO}}$).
-4. Copiar el valor de $\varepsilon_{\text{HOMO}}$ (en Hartrees) en la columna correspondiente de la tabla de resultados.
+1. **Lectura numérica en el archivo `.log`:**
+   - En el archivo `.log` abierto en el editor, buscar con **Ctrl + F** el texto: `Alpha occ. eigenvalues`.
+   - Localizar el último número de la última línea `Alpha occ. eigenvalues --`. Ese valor numérico corresponde a la energía del orbital ocupado de mayor energía, $\varepsilon_{\text{HOMO}}$ (en Hartrees).
+   - Localizar el primer número de la línea inmediata siguiente `Alpha virt. eigenvalues --`, correspondiente al orbital desocupado de menor energía ($\varepsilon_{\text{LUMO}}$).
+   - Copiar el valor de $\varepsilon_{\text{HOMO}}$ (en Hartrees) en la columna correspondiente de la tabla de resultados.
 
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: fragmento del archivo .log mostrando las lineas Alpha occ. eigenvalues y Alpha virt. eigenvalues con los autovalores de HOMO y LUMO senalados]
+2. **Comprobación y visualización en GaussView:**
+   - En GaussView, abrimos el archivo `.chk` resultante del cálculo y accedemos al menú **Results → MOs**.
+   - En la pestaña **New Gaussian MOs** observamos el diagrama de niveles de energía y la ocupación de los orbitales para los espines $\alpha$ y $\beta$. Para el carbono neutro en estado triplete, el orbital ocupado de mayor energía ($\alpha$, orbital 4) tiene una energía de $-0.32803\text{ Ha}$.
+
+:::{figure} /_static/capturas/07b_koopmans_gv_orbitales_c.png
+:alt: Diagrama de niveles de energía y ocupación de orbitales Alpha y Beta en Results MOs
+:width: 85%
+:align: center
+:::
+
+   - Para generar la distribución tridimensional del orbital, accedemos a la pestaña **Visualize** dentro de esa misma ventana. Seleccionamos el orbital 4 (HOMO), establecemos el campo **Isovalue** en `0.01` y pulsamos **Update**. En la subventana izquierda aparecerán los dos lóbulos del orbital atómico $2p$.
+
+:::{figure} /_static/capturas/09_koopmans_gv_orbital_homo.png
+:alt: Generación de la isosuperficie 3D del orbital HOMO (2p) con isovalor 0.01 en la pestaña Visualize
+:width: 85%
+:align: center
 :::
 
 ### Paso 7: Configurar y calcular el catión A⁺
@@ -162,9 +178,13 @@ Tabla de multiplicidades de referencia ($2S+1$):
 ### Paso 8: Calcular las energías de ionización
 
 1. Calcular la energía de ionización por diferencia directa ($\text{IE}_{\Delta E}$):
-   $$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times {{ha_to_ev}} \quad [\text{eV}]$$
+
+   $$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times 27.2114 \quad [\text{eV}]$$
+
 2. Calcular la estimación del teorema de Koopmans ($\text{IE}_{\text{Koopmans}}$):
-   $$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times {{ha_to_ev}} \quad [\text{eV}]$$
+
+   $$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times 27.2114 \quad [\text{eV}]$$
+
 3. Registrar ambos valores en electronvoltios en la tabla de datos y calcular la desviación porcentual respecto al valor experimental de referencia.
 
 ## Resultados y análisis
@@ -189,9 +209,9 @@ Esta exploración estudia cómo varía la calidad del resultado al ampliar el co
 
 | Base | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Error (%) |
 |:---:|:---:|:---:|:---:|:---:|
-| STO-3G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
-| 3-21G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
-| 6-311G | [TEXTO HUMANO] | [TEXTO HUMANO] | 11.26 | [TEXTO HUMANO] |
+| STO-3G | −0.328 | 8.93 | 11.26 | 20.7 |
+| 3-21G | (a calcular) | (a calcular) | 11.26 | (a calcular) |
+| 6-311G | (a calcular) | (a calcular) | 11.26 | (a calcular) |
 
 :::{note}
 ¿En qué sentido varía $\varepsilon_{\text{HOMO}}$ al aumentar el tamaño de la base? ¿Disminuye el error respecto al valor experimental de forma monótona, o hay algún caso en que una base mayor no mejora el resultado? Relaciona las diferencias con la capacidad de cada base para describir la densidad electrónica en la región de valencia.

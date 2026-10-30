@@ -28,7 +28,7 @@ En el grupo C=O, las dos transiciones relevantes son la $n \rightarrow \pi^*$, e
 
 La diferencia entre la energía del HOMO y la del LUMO proporciona una estimación directa de la energía mínima de excitación. Convertida a electronvoltios y a longitud de onda, anticipa la región espectral de absorción antes de ejecutar el cálculo completo. Esta estimación sobreestima sistemáticamente la energía de transición porque no tiene en cuenta la relajación del estado excitado.
 
-$$\Delta E_{\text{gap}}\text{ (eV)} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times {{ha_to_ev}}$$
+$$\Delta E_{\text{gap}}\text{ (eV)} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times 27.2114$$
 
 $$\lambda_{\text{estimada}}\text{ (nm)} = \frac{1239.8}{\Delta E_{\text{gap}}\text{ (eV)}}$$
 
@@ -73,7 +73,7 @@ El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \
 1. En el archivo `.log` de la optimización (`acetona_MeCN_opt.log`), buscar con **Ctrl + F** el texto: `Alpha  occ. eigenvalues`.
 2. Identificar el último valor numérico de la última fila `Alpha occ.` correspondiente a la energía del orbital HOMO ($\varepsilon_{\text{HOMO}}$ en hartrees).
 3. Identificar el primer valor numérico de la fila siguiente `Alpha virt. eigenvalues` correspondiente a la energía del orbital LUMO ($\varepsilon_{\text{LUMO}}$ en hartrees).
-4. Calcular la diferencia energética $\Delta E_{\text{gap}} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times {{ha_to_ev}}$ en eV.
+4. Calcular la diferencia energética $\Delta E_{\text{gap}} = (\varepsilon_{\text{LUMO}} - \varepsilon_{\text{HOMO}}) \times 27.2114$ en eV.
 5. Estimar la longitud de onda de absorción: $\lambda_{\text{estimada}} = 1239.8 / \Delta E_{\text{gap}}\text{ (eV)}$ en nm.
 6. Anotar los valores numéricos obtenidos en la Tabla A de resultados.
 
@@ -89,11 +89,6 @@ El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición $n \
 6. En el campo inferior **Additional Keywords**, escribir: `td scrf=(solvent=acetonitrile) geom=connectivity`.
 7. Pulsar **Submit**, guardar como `acetona_MeCN_td.gjf` en `{{practicas_folder}}EspectroscopiaUV/` y confirmar el cálculo con **Save** y **Submit**.
 8. Verificar la presencia de la línea final `{{termination_ok}}` en el archivo `.log`.
-
-:::{admonition} Captura de pantalla
-:class: captura
-[CAPTURA: ventana Calculate → Gaussian Calculation Setup en pestana Additional Keywords con las opciones td y scrf introducidas para TD-DFT]
-:::
 
 #### Paso B2: Extraer datos de los estados excitados del .log
 
