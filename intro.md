@@ -46,6 +46,7 @@ These notes have been written by
 * [David De Sancho](https://github.com/daviddesancho) (UPV-EHU)
 * Xabier López (UPV-EHU), ORCID [0000-0002-2711-3588](https://orcid.org/0000-0002-2711-3588)
 * Jose M. Mercero (UPV-EHU), ORCID [0000-0003-4857-6685](https://orcid.org/0000-0003-4857-6685)
+* Ion Mitxelena (UPV-EHU), ORCID [0000-0003-1064-5139](https://orcid.org/0000-0003-1064-5139)
 * Irene Casademont Reig (DIPC), ORCID [0000-0002-0842-1040](https://orcid.org/0000-0002-0842-1040)
 * [Javier Domínguez Calvo](https://github.com/javierdomcal) (DIPC)
 
