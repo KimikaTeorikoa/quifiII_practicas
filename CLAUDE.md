@@ -18,7 +18,13 @@ este subproyecto bajo la condición de aplicar íntegramente las reglas del §10
 de estilo. Si esas reglas no se cargan, la norma general vuelve a estar en vigor.
 
 ## Build
+One book per language folder (`es/`, later `eu/` and `en/`). Shared assets
+(`_static/`, `images/`, `references.bib`) live at the root and are symlinked
+into each language folder. Local environment: conda env `books`, which matches
+CI (Python 3.8, `requirements.txt`, jupyter-book 0.15.1).
 ```bash
-uv run jupyter-book build .
+conda activate books
+jupyter-book build es
 ```
-Los archivos compilados van a `_build/` (gitignoreado excepto el commit de referencia).
+Los archivos compilados van a `es/_build/` (gitignoreado). El `_build/` de la
+raíz es el commit de referencia antiguo.

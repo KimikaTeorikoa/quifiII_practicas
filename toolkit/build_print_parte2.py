@@ -3,8 +3,8 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-BUILD = Path(__file__).parent.parent / "_build/html"
-OUT   = Path(__file__).parent.parent / "_build/parte2_print.html"
+BUILD = Path(__file__).parent.parent / "es/_build/html"
+OUT   = Path(__file__).parent.parent / "es/_build/parte2_print.html"
 
 PAGES = [
     BUILD / "content/parte2-gaussian/intros/intro-gaussview.html",

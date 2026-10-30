@@ -20,15 +20,25 @@ Versión en línea: <https://kimikateorikoa.github.io/quifiII_practicas/>
    ionización y teorema de Koopmans, superficies de energía potencial,
    modos normales y espectroscopía UV-visible.
 
+## Estructura
+
+Cada idioma es un libro independiente en su carpeta (`es/`, y más
+adelante `eu/` y `en/`), con su `_config.yml`, `_toc.yml` y `content/`.
+Las imágenes (`_static/`, `images/`) y la bibliografía
+(`references.bib`) se comparten: cada libro las enlaza con enlaces
+simbólicos. La página raíz del sitio está en `landing/index.html`.
+
 ## Compilar el libro
 
 ```bash
 pip install -r requirements.txt
-jupyter-book build .
+jupyter-book build es
 ```
 
-El HTML queda en `_build/html/`. Cada envío a `master` compila el libro y
-lo publica en GitHub Pages (`.github/workflows/deploy.yml`).
+El HTML queda en `es/_build/html/`. Cada envío a `master` compila todos
+los idiomas y los publica en GitHub Pages, cada uno en `/<idioma>/`
+(`.github/workflows/deploy.yml`). Los envíos a ramas `feature/*` solo
+compilan, sin publicar.
 
 ## Autores
 

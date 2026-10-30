@@ -22,6 +22,7 @@ bibtex_bibfiles:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/KimikaTeorikoa/quifiII_practicas
+  path_to_book: es
   branch: master
 
 # Add GitHub buttons to your book
@@ -65,4 +66,5 @@ sphinx:
   extra_extensions:
     - sphinx_design
   config:
+    language: es
     html_show_copyright: false

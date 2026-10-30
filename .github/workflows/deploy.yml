@@ -2,9 +2,11 @@ name: my-pages-build-deploy
 
 on:
   # Trigger the deploy on push to main branch
+  # (feature branches are built to check them, but only master is deployed)
   push:
     branches:
       - master
+      - 'feature/**'
   schedule:
     - cron: '0 0 1 * *'
 
@@ -24,13 +26,22 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Build book
+    # One book per language folder (es/, eu/, en/), each published at /<lang>/
+    - name: Build books
       run: |
-        jupyter-book build .
+        mkdir -p site
+        for lang in es eu en; do
+          if [ -f "$lang/_config.yml" ]; then
+            jupyter-book build "$lang" || exit 1
+            cp -r "$lang/_build/html" "site/$lang"
+          fi
+        done
+        cp landing/index.html site/index.html
 
-    - name: Push html to github-pages        
+    - name: Push html to github-pages
+      if: github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3.9.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: ./site
         force_orphan: true
