@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "Si usas este material, cítalo con los datos de este archivo."
+title: "Química Física II: Prácticas de Ordenador"
+abstract: >-
+  Libro de prácticas de ordenador de la asignatura Química Física II
+  (Grado en Química, UPV/EHU). Incluye la resolución numérica de la
+  ecuación de Schrödinger con Python para sistemas modelo y una
+  introducción a la química computacional con Gaussian.
+authors:
+  - given-names: David
+    family-names: De Sancho
+    affiliation: "Universidad del País Vasco / Euskal Herriko Unibertsitatea (UPV/EHU)"
+    orcid: "https://orcid.org/0000-0002-8985-2685"
+  - given-names: Xabier
+    family-names: López
+    affiliation: "Universidad del País Vasco / Euskal Herriko Unibertsitatea (UPV/EHU)"
+    orcid: "https://orcid.org/0000-0002-2711-3588"
+  - given-names: Jose M.
+    family-names: Mercero
+    affiliation: "Universidad del País Vasco / Euskal Herriko Unibertsitatea (UPV/EHU)"
+    orcid: "https://orcid.org/0000-0003-4857-6685"
+  - given-names: Irene
+    family-names: Casademont Reig
+    affiliation: "Donostia International Physics Center (DIPC)"
+    orcid: "https://orcid.org/0000-0002-0842-1040"
+  - given-names: Javier
+    family-names: Domínguez Calvo
+    affiliation: "Donostia International Physics Center (DIPC)"
+license:
+  - CC-BY-4.0
+  - MIT
+url: "https://kimikateorikoa.github.io/quifiII_practicas/"
+repository-code: "https://github.com/KimikaTeorikoa/quifiII_practicas"
+keywords:
+  - química cuántica
+  - química computacional
+  - ecuación de Schrödinger
+  - Python
+  - Gaussian
+  - Jupyter Book
+  - material docente
