@@ -1,0 +1,69 @@
+{
+  "source": "es/content/parte1-python/finitewellho.ipynb",
+  "suffix": ".ipynb",
+  "blocks": {
+    "0": {
+      "type": "cell",
+      "raw": "# Aplicaciones a problemas más complejos\nUna vez hemos usado el método de las diferencias finitas a un problema sencillo como es la partícula en una caja, podemos abordar problemas más complejos.\n\n## Pozo de potencial\nNuestra segunda práctica se va a centrar en otro de los sistemas modelo   que podemos resolver analíticamente, el pozo potencial. En este sistema la partícula objeto de estudio se encuentra sometida a un potencial $V(x)=-D$ si y sólo si $-A<x<A$. Empezamos como en el caso anterior con una serie de definiciones.",
+      "masked": "# Aplicaciones a problemas más complejos\nUna vez hemos usado el método de las diferencias finitas a un problema sencillo como es la partícula en una caja, podemos abordar problemas más complejos.\n\n## Pozo de potencial\nNuestra segunda práctica se va a centrar en otro de los sistemas modelo   que podemos resolver analíticamente, el pozo potencial. En este sistema la partícula objeto de estudio se encuentra sometida a un potencial __PROTECTED_BLOCK_0__ si y sólo si __PROTECTED_BLOCK_1__. Empezamos como en el caso anterior con una serie de definiciones.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$V(x)=-D$",
+        "__PROTECTED_BLOCK_1__": "$-A<x<A$"
+      }
+    },
+    "3": {
+      "type": "cell",
+      "raw": "A continuación definimos la profundidad de nuestro pozo de potenciail y los límites en el eje $x$ para nuestro cálculo.",
+      "masked": "A continuación definimos la profundidad de nuestro pozo de potenciail y los límites en el eje __PROTECTED_BLOCK_0__ para nuestro cálculo.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$x$"
+      }
+    },
+    "6": {
+      "type": "cell",
+      "raw": "En el pozo potencial, dado que $V$ es distinto de cero, el hamiltoniano tiene términos tanto de energía cinética como de energía potencial,\n\n\\begin{equation}\n\\hat{H} = -\\frac{\\hbar^2}{2m} \\nabla^2 + V(x) ,\n\\hspace{0.5cm}\nV(x)=\n\\begin{Bmatrix} \n-D & si\\hspace{0.5cm}-A<x<A \\\\\n0 & \\textrm{en cualquier otro caso}\n\\end{Bmatrix}\n\\end{equation}\n\nEn primer lugar calculamos el potencial",
+      "masked": "En el pozo potencial, dado que __PROTECTED_BLOCK_0__ es distinto de cero, el hamiltoniano tiene términos tanto de energía cinética como de energía potencial,\n\n\\begin{equation}\n\\hat{H} = -\\frac{\\hbar^2}{2m} \\nabla^2 + V(x) ,\n\\hspace{0.5cm}\nV(x)=\n\\begin{Bmatrix} \n-D & si\\hspace{0.5cm}-A<x<A \\\\\n0 & \\textrm{en cualquier otro caso}\n\\end{Bmatrix}\n\\end{equation}\n\nEn primer lugar calculamos el potencial",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$V$"
+      }
+    },
+    "9": {
+      "type": "cell",
+      "raw": "A continuación calculamos una representación matricial de la Laplaciana usando el método de las diferencias finitas:",
+      "masked": "A continuación calculamos una representación matricial de la Laplaciana usando el método de las diferencias finitas:",
+      "placeholders": {}
+    },
+    "12": {
+      "type": "cell",
+      "raw": "Para obtener las funciones propias (eigenvectors) y las energías (eigenvalues) usamos una función eigh de Scipy.",
+      "masked": "Para obtener las funciones propias (eigenvectors) y las energías (eigenvalues) usamos una función eigh de Scipy.",
+      "placeholders": {}
+    },
+    "17": {
+      "type": "cell",
+      "raw": "## Oscilador armónico\nEl siguiente sistema modelo con el que vamos a trabajar es el oscilador armónico. En este sistema la partícula objeto de estudio se encuentra sometida a un potencial \n$$\nV=1/2kx^2\n$$\nPartimos una vez más definiendo una serie de constantes",
+      "masked": "## Oscilador armónico\nEl siguiente sistema modelo con el que vamos a trabajar es el oscilador armónico. En este sistema la partícula objeto de estudio se encuentra sometida a un potencial \n__PROTECTED_BLOCK_0__\nPartimos una vez más definiendo una serie de constantes",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$$\nV=1/2kx^2\n$$"
+      }
+    },
+    "19": {
+      "type": "cell",
+      "raw": "A continuación definimos la constante de muelle de nuestro oscilador armómico y los límites en el eje ",
+      "masked": "A continuación definimos la constante de muelle de nuestro oscilador armómico y los límites en el eje ",
+      "placeholders": {}
+    },
+    "21": {
+      "type": "cell",
+      "raw": "Ahora podemos construir el potencial y sumárselo a la Laplaciana",
+      "masked": "Ahora podemos construir el potencial y sumárselo a la Laplaciana",
+      "placeholders": {}
+    },
+    "25": {
+      "type": "cell",
+      "raw": "De nuevo recurrimos a Scipy para calcular valores y vectores propios",
+      "masked": "De nuevo recurrimos a Scipy para calcular valores y vectores propios",
+      "placeholders": {}
+    }
+  }
+}

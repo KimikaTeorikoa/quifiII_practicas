@@ -89,3 +89,37 @@ table.resultados td {
 table.resultados th {
   text-align: center;
 }
+
+/* ----------------------------------------------------------
+   6. Conmutador de idioma (ES / EU)
+   ---------------------------------------------------------- */
+.lang-switcher-wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  background-color: var(--pst-color-surface, #f8f9fa);
+  border: 1px solid var(--pst-color-border, #dee2e6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lang-switcher-wrapper .lang-btn {
+  padding: 0.2rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--pst-color-text-muted, #6c757d);
+  line-height: 1.2;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang-switcher-wrapper .lang-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--pst-color-primary, #0969da);
+}
+
+.lang-switcher-wrapper .lang-btn.active {
+  background-color: var(--pst-color-primary, #0969da);
+  color: #ffffff !important;
+}
+

@@ -1,0 +1,44 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Argibidea: Kopiatu beheko testua eta itsatsi https://latxa.hitz.eus/ edo https://www.apps.euskadi.eus/latxa/
+# GARRANTZITSUA: Mantendu "=== BLOKEA X ===" eta "__PROTECTED_BLOCK_X__" etiketak bere horretan.
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Schrödinger-en Ekuazioaren Ebazpen Numerikoa
+Gure lehen praktikan, Schrödinger-en ekuazioa ebazteko metodo numeriko batekin lan egingo dugu. Metodo hori diferentzia finituen metodoa da. Metodo numerikoa denez, aldaketarik garrantzitsuena da Schrödinger-en ekuazioaren soluzio analitikoekin lan egin beharrean,
+__PROTECTED_BLOCK_0__
+ekuazio honen bertsio diskretu batekin lan egingo dugula. Dimentsio bakarreko sistema baten kasuan, __PROTECTED_BLOCK_1__ ardatza posizio-serie batean diskretizatuta dago
+__PROTECTED_BLOCK_2__, eta uhin-funtzioak balio-serie bat du
+__PROTECTED_BLOCK_3__.
+
+=== BLOKEA 1 ===
+Hamiltondarren bertsio diskretuari dagozkion adierazpenak eratorzeko, garrantzitsua da lehenik gogoratzea nola hurbiltzen den funtzio baten balioa puntu batean __PROTECTED_BLOCK_3__ Taylor serie bat erabiliz
+__PROTECTED_BLOCK_0__
+Hedapen hau atzerantz egiten badugu __PROTECTED_BLOCK_4__, orduan
+lortuko dugu
+__PROTECTED_BLOCK_1__
+Bi adierazpenak batu eta terminoak berrantolatu ditzakegu bigarren deribatuaren adierazpen trinko bat lortzeko
+__PROTECTED_BLOCK_2__
+
+=== BLOKEA 2 ===
+Jarraian, Schrödinger-en ekuazioan, energia zinetikoaren terminoak, hamiltondar operadorearen barruan, uhin-funtzioaren bigarren deribatua barne hartzen duela ikusiko dugu. Lortu berri dugun adierazpena erabiliz, uhin-funtzioaren bigarren deribatua defini dezakegu __PROTECTED_BLOCK_2__ balio jakin baterako
+__PROTECTED_BLOCK_0__
+Eta __PROTECTED_BLOCK_3__ orain posizio kopuru finitu batean diskretizatuta dagoenez, idatz dezakegu posizio baterako __PROTECTED_BLOCK_4__,
+__PROTECTED_BLOCK_1__
+
+=== BLOKEA 3 ===
+Bigarren deribatuaren adierazpen hau erabiliz, operadorearen forma matrizeala idatz dezakegu, bektore baterako
+__PROTECTED_BLOCK_1__
+bigarren deribatuaren adierazpen hau lortzeko aukera emango diguna
+__PROTECTED_BLOCK_0__
+
+=== BLOKEA 4 ===
+Orain arte, hamiltondarren energia zinetikoaren terminoaz bakarrik arduratu gara. Aztertzen ari garen sistema kanpoko potentzial baten eraginpean badago ere, energia potentzialaren operadorearen bertsio diskretizatua gehitu beharko da
+__PROTECTED_BLOCK_0__
+
+=== BLOKEA 5 ===
+Hamiltondarren soluzioak matrize honen funtzio propioak izango dira, eta autobalioak funtzio propioei lotutako energiak izango dira. Arazo hau guk geuk ebatzi beharrean, praktika hauetan ordenagailuari utziko diogu lan hori egiten.

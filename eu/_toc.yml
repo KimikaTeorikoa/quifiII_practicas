@@ -1,0 +1,28 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: "Eredu sinpleak Python erabiliz"
+    chapters:
+    - file: content/parte1-python/python
+    - file: content/parte1-python/finitedifferences
+    - file: content/parte1-python/finitepython
+    - file: content/parte1-python/finitewellho
+    - file: content/parte1-python/finitebond
+  - caption: "Kimika Konputazionalerako Sarrera Gaussian-ekin"
+    chapters:
+    - file: content/parte2-gaussian/intros/intro-gaussview
+    - file: content/parte2-gaussian/intros/intro-hartree-fock
+    - file: content/parte2-gaussian/intros/intro-bases
+    - file: content/parte2-gaussian/intros/intro-energias
+    - file: content/parte2-gaussian/practicas/atomos-koopmans
+    - file: content/parte2-gaussian/intros/intro-born-oppenheimer
+    - file: content/parte2-gaussian/intros/intro-mas-alla-hf
+    - file: content/parte2-gaussian/practicas/moleculas-pes
+    - file: content/parte2-gaussian/practicas/modos-normales
+    - file: content/parte2-gaussian/practicas/espectroscopia-uv
+  - caption: "Galdetegia"
+    chapters:
+    - file: content/questionaire

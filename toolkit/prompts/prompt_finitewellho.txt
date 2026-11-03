@@ -1,0 +1,54 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Argibidea: Kopiatu beheko testua eta itsatsi https://latxa.hitz.eus/ edo https://www.apps.euskadi.eus/latxa/
+# GARRANTZITSUA: Mantendu "=== BLOKEA X ===" eta "__PROTECTED_BLOCK_X__" etiketak bere horretan.
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Aplikazioak problema konplexuagoetan
+Behin diferentzia finituen metodoa kutxa bateko partikula bezalako problema erraz batean erabili dugunean, problema konplexuagoak landu ditzakegu.
+
+## Potentzial-hobia
+Gure bigarren praktika analitikoki ebatz dezakegun beste sistema eredu batean oinarrituko da, potentzial-hobian. Sistema honetan, aztergai den partikula potentzial baten eraginpean dago __PROTECTED_BLOCK_0__ baldin eta soilik baldin __PROTECTED_BLOCK_1__. Aurreko kasuan bezala, definizio batzuekin hasiko gara.
+
+=== BLOKEA 3 ===
+Ondoren, gure potentzial-hobiaren sakonera eta gure kalkulurako __PROTECTED_BLOCK_0__ ardatzeko mugak definituko ditugu.
+
+=== BLOKEA 6 ===
+Potentzial-hobian, __PROTECTED_BLOCK_0__ zero ez denez, hamiltondarra energia zinetiko eta potentzialaren terminoek osatzen dute,
+
+\begin{equation}
+\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(x) ,
+\hspace{0.5cm}
+V(x)=
+\begin{Bmatrix} 
+-D & \text{baldin eta }-A<x<A \\
+0 & \text{beste edozein kasutan}
+\end{Bmatrix}
+\end{equation}
+
+Lehenik, potentziala kalkulatuko dugu
+
+=== BLOKEA 9 ===
+Ondoren, Laplaziarren matrize-adierazpen bat kalkulatuko dugu diferentzia finituen metodoa erabiliz:
+
+=== BLOKEA 12 ===
+Funtzio propioak (eigenvectors) eta energiak (eigenvalues) lortzeko, Scipy-ren eigh funtzio bat erabiliko dugu.
+
+=== BLOKEA 17 ===
+## Osziladore harmonikoa
+Landuko dugun hurrengo sistema eredua osziladore harmonikoa da. Sistema honetan, aztergai den partikula potentzial baten eraginpean dago 
+__PROTECTED_BLOCK_0__
+Berriro ere, konstante batzuk definituz hasiko gara
+
+=== BLOKEA 19 ===
+Ondoren, gure osziladore harmonikoaren malguki-konstantea eta ardatzeko mugak definituko ditugu
+
+=== BLOKEA 21 ===
+Orain, potentziala eraiki eta Laplaziarrari gehitu diezaiokegu
+
+=== BLOKEA 25 ===
+Berriz ere, Scipy-ra joko dugu balio eta bektore propioak kalkulatzeko

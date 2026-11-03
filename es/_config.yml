@@ -68,3 +68,5 @@ sphinx:
   config:
     language: es
     html_show_copyright: false
+    html_js_files:
+      - language_switcher.js

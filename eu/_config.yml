@@ -1,0 +1,71 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Kimika Fisikoa II - Ordenagailu-praktikak
+author: David De Sancho, Ion Mitxelena
+#logo: logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/KimikaTeorikoa/quifiII_practicas
+  path_to_book: eu
+  branch: master
+
+# Add GitHub buttons to your book
+html:
+  use_issues_button: true
+  use_repository_button: true
+  extra_css:
+    - _static/custom.css
+
+launch_buttons:
+  notebook_interface: "jupyterlab"
+  colab_url: "https://colab.research.google.com"
+
+# ----------------------------------------------------------------
+# MyST substitutions — testu berrerabilgarria praktika guztietan.
+# Erabilera markdown-en: {{sustituzio_izena}}
+# ----------------------------------------------------------------
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - substitution
+    - colon_fence
+  myst_substitutions:
+    gaussian_version: "Gaussian 16, Revision A.03"
+    gaussian_cite: >
+      Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel
+      et al., Gaussian, Inc., Wallingford CT, 2016.
+    ha_to_ev: "27.2114"
+    ha_to_kcal: "627.509"
+    termination_ok: "`Normal termination of Gaussian 16`"
+    practicas_folder: "`/home/ikasle/Documentos/Practicas/`"
+    metodo_base: "HF/STO-3G"
+
+# ----------------------------------------------------------------
+# Sphinx extensions — sphinx-design activa {dropdown}, {card},
+# {badge}, etc.
+# ----------------------------------------------------------------
+sphinx:
+  extra_extensions:
+    - sphinx_design
+  config:
+    language: eu
+    html_show_copyright: false
+    html_js_files:
+      - language_switcher.js
