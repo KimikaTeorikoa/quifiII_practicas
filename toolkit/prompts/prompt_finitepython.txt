@@ -1,0 +1,34 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Argibidea: Kopiatu beheko testua eta itsatsi https://latxa.hitz.eus/ edo https://www.apps.euskadi.eus/latxa/
+# GARRANTZITSUA: Mantendu "=== BLOKEA X ===" eta "__PROTECTED_BLOCK_X__" etiketak bere horretan.
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Schrödinger-en ekuazioa Python-ekin ebazten
+Hurrengo urratsa da diferentzia finituen metodoa kode bihurtzea.
+Lehenik eta behin, gure posizioak __PROTECTED_BLOCK_0__-n dituen bektore bat idazteko gai izan behar dugu. Horretarako, `numpy` liburutegia inportatu behar dugu, Python-en bektoreak maneiatzeko aukera ematen diguna.
+
+=== BLOKEA 2 ===
+## Partikula kutxa batean
+Liburutegia inportatu ondoren, sintaxi sinple batek hasierako balio baten eta amaierako balio baten arteko posizio kopuru bat sortzeko aukera ematen digu.
+Lehenik eta behin, **partikula kutxa batean** landuko dugu, eta 0 eta __PROTECTED_BLOCK_0__ artean definituko dugu.
+
+=== BLOKEA 4 ===
+Erosotasunagatik, gure programan balio numeriko batzuk unitate gisa definituko ditugu, horrela ez baitugu horietaz arduratu beharko ondorengoetan.
+
+=== BLOKEA 6 ===
+Osagai horiekin, Laplaziarraren bertsio matriziala osatzen has gaitezke.
+
+=== BLOKEA 8 ===
+Kasu hain erraz honetan Hamiltondar osoa izateko, ez dugu Laplaziarrari __PROTECTED_BLOCK_0__ biderkatzea besterik behar.
+
+=== BLOKEA 10 ===
+Orain, Hamiltondarraren bektore eta balio propioak lortzea besterik ez zaigu geratzen. Horretarako, `scipy` liburutegi berri bat erabiltzen dugu.
+Erabiliz, nahi dugun eragiketa egin eta emaitzak azter ditzakegu.
+
+=== BLOKEA 13 ===
+Ondoren, `matplotlib` liburutegia erabil dezakegu emaitzak grafikoki irudikatzeko.

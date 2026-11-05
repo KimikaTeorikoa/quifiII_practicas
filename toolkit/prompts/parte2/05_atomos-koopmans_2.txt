@@ -1,0 +1,115 @@
+=== BLOKEA 27 ===
+### 3. urratsa: Kalkulua abiarazi eta fitxategia gorde
+
+=== BLOKEA 28 ===
+1. Sakatu **Bidali** botoia **Gaussian Calculation Setup** leihoaren behealdean.
+2. Gorde fitxategia elkarrizketa-koadroan, adierazi sarrera-fitxategiaren izena __PROTECTED_BLOCK_81__ (adibidez, __PROTECTED_BLOCK_82__) eta gorde laborategiko laneko direktorioan: __PROTECTED_BLOCK_83__.
+3. Berretsi elkarrizketa-koadroa __PROTECTED_BLOCK_29__ sakatuz eta ondoren **Bidali**.
+4. Ikusi exekuzio-egoera GaussView-ren beheko barran, kalkulua amaitu arte (segundo gutxi batzuk elementu arinentzat).
+
+=== BLOKEA 29 ===
+### 4. urratsa: Amaiera zuzena egiaztatu
+
+=== BLOKEA 30 ===
+1. Ireki sortutako __PROTECTED_BLOCK_84__ fitxategia (__PROTECTED_BLOCK_85__) testu-editorearekin (__PROTECTED_BLOCK_22__ editorean edo eskuineko botoiarekin fitxategian klik eginez).
+2. Joan fitxategiaren amaierara **Ctrl + Amaiera** sakatuz.
+3. Egiaztatu fitxategiaren azken lerroa zehazki bat datorrela: __PROTECTED_BLOCK_86__. Ez bada agertzen, kalkulua huts egin du eta ez dira datuak erabili behar.
+
+=== BLOKEA 31 ===
+### 5. urratsa: Irakurri guztizko energia E(N)
+
+=== BLOKEA 32 ===
+1. Testu-editorean irekitako __PROTECTED_BLOCK_87__ fitxategian, sakatu **Ctrl + B** bilaketa aktibatzeko.
+2. Idatzi bilaketa-testua: __PROTECTED_BLOCK_88__.
+3. Aurkitu guztizko energia __PROTECTED_BLOCK_89__ lerroan (geruza itxiko sistema multiplicitate 1ekin) edo __PROTECTED_BLOCK_90__ lerroan (geruza irekiko sistema multiplicitate desberdinarekin).
+4. Kopiatu balio numerikoa unitate atomikoetan (A.U. / Hartree) eta itsatsi emaitzen taulako __PROTECTED_BLOCK_59__ zutabean.
+
+=== BLOKEA 33 ===
+### 6. urratsa: Irakurri HOMO orbitalaren energia eta bistaratu orbitala
+
+=== BLOKEA 34 ===
+1. **Irakurketa numerikoa __PROTECTED_BLOCK_91__ fitxategian:**
+   - Irekitako __PROTECTED_BLOCK_92__ fitxategian, bilatu **Ctrl + B**-rekin testu hau: __PROTECTED_BLOCK_93__.
+   - Aurkitu azken lerroko azken zenbakia __PROTECTED_BLOCK_94__. Balio numeriko hori energia handieneko betetako orbitalari dagokio, __PROTECTED_BLOCK_60__ (Hartree-etan).
+   - Aurkitu hurrengo lerroko lehen zenbakia __PROTECTED_BLOCK_95__, energia txikieneko hutsik dagoen orbitalari dagokiona (__PROTECTED_BLOCK_61__).
+   - Kopiatu __PROTECTED_BLOCK_62__ balioa (Hartree-etan) emaitzen taulako dagokion zutabean.
+
+=== BLOKEA 35 ===
+2. **Egiaztapena eta bistaratzea GaussView-n:**
+   - GaussView-n, ireki kalkuluaren ondoriozko __PROTECTED_BLOCK_96__ fitxategia eta sartu __PROTECTED_BLOCK_23__ menura.
+   - **New Gaussian MOs** fitxan, ikusi energia-mailen diagrama eta spin __PROTECTED_BLOCK_63__ eta __PROTECTED_BLOCK_64__-ren orbitalen okupazioa. Karbono neutroaren triplete egoeran, energia handieneko betetako orbitalak (__PROTECTED_BLOCK_65__, 4. orbitala) __PROTECTED_BLOCK_66__ energia du.
+
+=== BLOKEA 36 ===
+- Orbitalaren hiru dimentsioko banaketa sortzeko, leiho horren barruan **Visualize** fitxa hautatzen dugu. 4. orbitala (HOMO) hautatzen dugu, **Isovalue** eremua __PROTECTED_BLOCK_97__ ezartzen dugu eta **Update** sakatzen dugu. Ezkerreko azpileihoan __PROTECTED_BLOCK_67__ orbital atomikoaren bi lobuluak agertuko dira.
+
+=== BLOKEA 37 ===
+### 7. urratsa: Konfiguratu eta kalkulatu A⁺ katioia
+
+=== BLOKEA 38 ===
+1. Itzuli GaussView-ra pantailan dagoen atomo-zentro berarekin.
+2. Ireki berriro __PROTECTED_BLOCK_24__ panela.
+3. **__PROTECTED_BLOCK_30__** fitxan, aldatu parametro hauek:
+   - **Charge**: aldatu __PROTECTED_BLOCK_98__-tik __PROTECTED_BLOCK_99__-ra.
+   - **Spin**: doitu katioi-espezieari dagokion multiplicitatera (ikusi beheko taula). HOMOtik elektroi bat kenduta, desparekatutako elektroien kopurua aldatu egiten da.
+4. Mantendu __PROTECTED_BLOCK_31__ __PROTECTED_BLOCK_100__-n, __PROTECTED_BLOCK_32__ __PROTECTED_BLOCK_101__-n, **Basis Set** __PROTECTED_BLOCK_102__-n eta **Additional Keywords**-en __PROTECTED_BLOCK_103__ gako-hitza.
+5. **__PROTECTED_BLOCK_33__** fitxan, idatzi: __PROTECTED_BLOCK_104__.
+6. Sakatu **Bidali**, gorde izen adierazgarri batekin (adibidez, __PROTECTED_BLOCK_105__) __PROTECTED_BLOCK_106__-n eta berretsi bidalketa.
+7. Egiaztatu amaiera zuzena __PROTECTED_BLOCK_107__ berrian eta atera guztizko energia __PROTECTED_BLOCK_68__ __PROTECTED_BLOCK_108__ lerroan.
+
+=== BLOKEA 39 ===
+| Eremua | Neutroa | Katioia |
+|---|:---:|:---:|
+| Charge | 0 | +1 |
+| Spin | Multiplicitate neutroa | Multiplicitate katioia |
+
+=== BLOKEA 40 ===
+### 8. urratsa: Kalkulatu ionizazio-energiak
+
+=== BLOKEA 41 ===
+1. Kalkulatu ionizazio-energia zuzeneko diferentziaren bidez (__PROTECTED_BLOCK_69__):
+
+=== BLOKEA 42 ===
+2. Kalkulatu Koopmans-en teoremaren estimazioa (__PROTECTED_BLOCK_70__):
+
+=== BLOKEA 43 ===
+3. Erregistratu bi balioak elektronvoltetan datuen taulan eta kalkulatu desbiderapen portzentuala erreferentziako balio esperimentalarekiko.
+
+=== BLOKEA 44 ===
+## Emaitzak eta analisia
+
+=== BLOKEA 45 ===
+Kalkulatutako atomo bakoitzerako, __PROTECTED_BLOCK_109__ fitxategitik ateratako bi energiak erregistratzen ditugu eta ionizazio-energiaren bi estimazioak kalkulatzen ditugu. Ondorengo taulak Hartree-etan jasotzen ditu balioak eta emaitzak eV-ra bihurtuta. Erreferentziako balio esperimentalak sartzen dira errore portzentuala kalkulatzeko.
+
+=== BLOKEA 46 ===
+---
+
+=== BLOKEA 47 ===
+## Bibliografia
+
+=== BLOKEA 48 ===
+- __PROTECTED_BLOCK_39__
+- Atkins, P.; De Paula, J. *Kimika Fisikoa*, 10. ed.; Editorial Médica Panamericana, 2018. 9. kap. (Egitura elektroniko atomikoa).
+- NIST Chemistry WebBook, https://webbook.nist.gov (ionizazio-energiaren datu esperimentalak).
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
+
+=== BLOKEA 49 ===
+---
+
+=== BLOKEA 50 ===
+### [DROPDOWN_TITLE] Urrutirago joateko (aukerakoa)
+
+=== BLOKEA 51 ===
+Esplorazio honek aztertzen du nola aldatzen den emaitzaren kalitatea oinarri-funtzioen multzoa handitzean. Karbono atomo neutroaren kalkulua errepikatzen dugu hiru oinarri desberdinekin eta HOMOren energia eta Koopmans-en estimatutako ionizazio-energia alderatzen ditugu balio esperimentalarekin. Prozedura praktika nagusiaren berdina da: **Basis Set** eremua bakarrik aldatzen dugu __PROTECTED_BLOCK_25__-en.
+
+=== BLOKEA 52 ===
+| Oinarria | __PROTECTED_BLOCK_71__ (Ha) | IE__PROTECTED_BLOCK_72__ (eV) | IE exp. (eV) | Errorea (%) |
+|:---:|:---:|:---:|:---:|:---:|
+| STO-3G | −0.328 | 8.93 | 11.26 | 20.7 |
+| 3-21G | (kalkulatzeko) | (kalkulatzeko) | 11.26 | (kalkulatzeko) |
+| 6-311G | (kalkulatzeko) | (kalkulatzeko) | 11.26 | (kalkulatzeko) |
+
+=== BLOKEA 53 ===
+### [NOTE_TITLE] Zein zentzutan aldatzen da __PROTECTED_BLOCK_73__ oinarriaren tamaina handitzean? Txikitzen al da errorea balio esperimentalarekiko modu monotonoan, edo ba al dago kasurik oinarri handiago batek emaitza hobetzen ez duena? Lotu desberdintasunak oinarri bakoitzak balentzia-elektroien dentsitatea deskribatzeko duen gaitasunarekin.
+
+=== BLOKEA 54 ===
+::::

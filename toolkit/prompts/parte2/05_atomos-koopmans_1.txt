@@ -1,0 +1,115 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: atomos-koopmans.md (Zatia 1/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Atomoak eta Koopmans-en teorema
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Ionizazio-energiak nukleoak kanpoko elektroiei eragiten dien erakarpen-indarra neurtzen du, eta elementuen erreaktibitate kimikoa eta aldizkako joerak zehazten ditu. Hartree-Fock kalkuluak Gaussian programan eginez, bi hurbilketa osagarri aplikatzen dira propietate hori ebaluatzeko: atomo neutroaren eta bere katioiaren arteko energia osoaren diferentzia zuzena (__PROTECTED_BLOCK_40__), eta energia handieneko orbital okupatutik abiatuta egindako estimazioa, Koopmans-en teorema erabiliz (__PROTECTED_BLOCK_41__).
+
+=== BLOKEA 3 ===
+## Helburuak
+
+=== BLOKEA 4 ===
+1. Atomo neutroen eta katioi monokargatuen energia elektroniko osoa kalkulatu Hartree-Fock metodoa erabiliz __PROTECTED_BLOCK_34__ programan.
+2. Ionizazio-energia kalkulatu diferentzia autoegokituaren bidez (__PROTECTED_BLOCK_42__) eta orbitalen estimazioaren bidez, Koopmans-en teorema erabiliz (__PROTECTED_BLOCK_43__).
+3. Kalkulatutako ionizazio-energiak balio esperimentalekin alderatu lehen eta bigarren periodoko elementuetan.
+4. Energia handieneko orbital okupatuen (HOMO) banaketa espaziala eta simetria bistaratu GaussView programan.
+
+=== BLOKEA 5 ===
+## Kontzeptu gakoak
+
+=== BLOKEA 6 ===
+### Zergatik dira energiak negatiboak?
+
+=== BLOKEA 7 ===
+Atomo baten energia elektronikoa erreferentzia-egoera batekiko neurtzen da, non nukleoa eta elektroi guztiak pausagunean eta infinituan bananduta dauden, elkarrekintzarik gabe. Atomo lotua erreferentzia-egoera hori baino egonkorragoa denez, bere energia beti negatiboa da. __PROTECTED_BLOCK_74__ lerroan agertzen den balioa zenbat eta negatiboagoa izan, orduan eta egonkorragoa da sistema. Energia osoan emaitza positibo batek kalkuluaren konfigurazioan akats bat dagoela adieraziko luke.
+
+=== BLOKEA 8 ===
+### HOMO eta LUMO
+
+=== BLOKEA 9 ===
+Orbital molekularrak energia txikienetik handienera ordenatzen dira. Energia handieneko orbital okupatuari HOMO (ingelesez *Highest Occupied Molecular Orbital*) deritzo, eta elektroiak ateratzeko errazenak ditu. Lehen orbital hutsa, LUMO (*Lowest Unoccupied Molecular Orbital*), elektroiak jasotzeko prest dagoen orbitala da. HOMO mailaren eta hutsune-mailaren arteko aldea sistemak elektroi bat ateratzeko behar den energiaren lehen estimazioa da.
+
+=== BLOKEA 10 ===
+Gaussian irteeran __PROTECTED_BLOCK_75__, HOMOaren energia azken lerroko __PROTECTED_BLOCK_76__ azken balio numerikoari dagokio. Hurrengo lerroko lehen balioa __PROTECTED_BLOCK_77__ LUMOari dagokio.
+
+=== BLOKEA 11 ===
+### Ionizazio-energia eta Koopmans-en teorema
+
+=== BLOKEA 12 ===
+Atomo neutro baten __PROTECTED_BLOCK_44__ ionizazio-energia gas-fasean elektroi bat ateratzeko eta __PROTECTED_BLOCK_45__ katioia sortzeko behar den gutxieneko energia da, __PROTECTED_BLOCK_46__ prozesuaren arabera. Praktika honetan bi modu independentetan kalkulatzen da. Lehenengoa katioiaren eta atomo neutroaren arteko SCF energien diferentzia zuzena da, eta horretarako bi kalkulu bereizi behar dira. Bigarrena Koopmans-en teoreman oinarritzen da, eta balio hori atomo neutroaren HOMO orbitalaren energiatik abiatuta estimatzeko aukera ematen du, katioia kalkulatu beharrik gabe.
+
+=== BLOKEA 13 ===
+Koopmans-en teoremak orbital izoztuen hurbilketa hartzen du, __PROTECTED_BLOCK_47__ katioiaren orbitalak __PROTECTED_BLOCK_48__ atomo neutroaren berdinak direla suposatuz. Ionizazio-prozesu fisiko batean, elektroi baten galerak elektroi arteko aldarapena murrizten du eta geratzen den hodei elektronikoa nukleorantz uzkurtzea eragiten du (orbitalen erlaxazioa). Koopmans-en hurbilketak erlaxazio egonkortzaile hori eta korrelazio-energiaren desberdintasunak alde batera uzten dituenez, __PROTECTED_BLOCK_49__ balioa diferentzia autoegokituan kalkulatutako balioarekin alderatuta __PROTECTED_BLOCK_50__ desberdina da pixka bat.
+
+=== BLOKEA 14 ===
+### Spin-anizkoiztasuna
+
+=== BLOKEA 15 ===
+Spin-anizkoiztasunak sistemarako eskuragarri dauden spin-egoera kuantiko kopurua adierazten du eta __PROTECTED_BLOCK_51__ gisa kalkulatzen da, non __PROTECTED_BLOCK_52__ elektroi desparekatuen spinen batura den. Elektroi guztiak parekatuta dituen atomo batek __PROTECTED_BLOCK_53__ eta anizkoiztasun 1 (singletea) ditu. Elektroi desparekatu batek __PROTECTED_BLOCK_54__ eta anizkoiztasun 2 (dobletea) ematen ditu. Anizkoiztasun-balio oker bat esleitzeak Gaussianek orbitalen artean elektroiak gaizki banatzea eragiten du __PROTECTED_BLOCK_55__ eta __PROTECTED_BLOCK_56__, eta horrek emaitza baliogabetzen du edo SCF zikloaren konbergentzia eragozten du.
+
+=== BLOKEA 16 ===
+Egiaztatu beti spin-anizkoiztasunaren balioa kalkulua bidali aurretik: balio oker batek emaitzak baliogabetzen ditu edo SCF konbergentzia eragozten du.
+
+=== BLOKEA 17 ===
+## Prozedura
+
+=== BLOKEA 18 ===
+Kalkulu bakoitzaren ondorengo nahitaezko egiaztapena: ireki __PROTECTED_BLOCK_78__ fitxategia testu-editorearekin eta egiaztatu azken lerro zehatza dagoela:
+__PROTECTED_BLOCK_35__
+
+=== BLOKEA 19 ===
+### 1. urratsa: GaussView ireki eta atomoa marraztu
+
+=== BLOKEA 20 ===
+1. Ireki GaussView aplikazioen menutik edo sistemaren abiarazletik.
+2. Ireki atomo-zatien paleta __PROTECTED_BLOCK_20__ sakatuz (edo goiko tresna-barrako taula periodikoaren ikonoa sakatuz).
+3. Hautatu kalkulatu nahi den elementu kimikoa (adibidez, karbonoa, **C**).
+4. Egin klik bakarra ezkerreko botoiarekin marrazketa-leiho nagusian. Erdigune atomiko isolatu bat agertuko da, loturarik gabe.
+
+=== BLOKEA 21 ===
+### 2. urratsa: Atomo neutroaren kalkulua konfiguratu
+
+=== BLOKEA 22 ===
+1. Sartu __PROTECTED_BLOCK_21__ menura.
+2. __PROTECTED_BLOCK_26__ fitxan, hautatu **Energy**.
+3. __PROTECTED_BLOCK_27__ fitxan, konfiguratu kalkuluaren parametroak:
+
+=== BLOKEA 23 ===
+| Eremua | Balioa |
+|---|---|
+| Metodoa | **HF** |
+| Oinarri-multzoa | **STO-3G** |
+| Karga | **0** |
+| Spin (Anizkoiztasuna) | Kontsultatu anizkoiztasunen taula atomo neutro bakoitzerako |
+
+=== BLOKEA 24 ===
+4. __PROTECTED_BLOCK_28__ fitxan, idatzi deskribapen identifikatzaile bat (adibidez, __PROTECTED_BLOCK_79__).
+5. **Additional Keywords** fitxan, idatzi zehazki: __PROTECTED_BLOCK_80__. Instrukzio honek orbital molekular guztien energiak irteera-fitxategian sartzen ditu.
+
+=== BLOKEA 25 ===
+Erreferentziako anizkoiztasunen taula (__PROTECTED_BLOCK_57__):
+
+=== BLOKEA 26 ===
+| Atomoa | __PROTECTED_BLOCK_58__ | Konfigurazioa | Anizkoiztasuna |
+|---|:---:|---|:---:|
+| H | 1 | 1s¹ | 2 |
+| He | 2 | 1s² | 1 |
+| Li | 3 | [He] 2s¹ | 2 |
+| Be | 4 | [He] 2s² | 1 |
+| B | 5 | [He] 2s² 2p¹ | 2 |
+| C | 6 | [He] 2s² 2p² | 3 |
+| N | 7 | [He] 2s² 2p³ | 4 |
+| O | 8 | [He] 2s² 2p⁴ | 3 |
+| F | 9 | [He] 2s² 2p⁵ | 2 |
+| Ne | 10 | [He] 2s² 2p⁶ | 1 |
+

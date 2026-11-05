@@ -1,0 +1,356 @@
+{
+  "source": "es/content/parte2-gaussian/practicas/espectroscopia-uv.md",
+  "dest": "eu/content/parte2-gaussian/practicas/espectroscopia-uv.md",
+  "prefix": "10_espectroscopia-uv",
+  "slug": "espectroscopia-uv",
+  "filename": "espectroscopia-uv.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/figures/eu/orbitales_carbonilo.svg\n:alt: Diagrama de niveles de energía orbital del grupo carbonilo con las transiciones n→π* y π→π*\n:width: 55%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": "$$\\Delta E_{\\text{gap}}\\text{ (eV)} = (\\varepsilon_{\\text{LUMO}} - \\varepsilon_{\\text{HOMO}}) \\times 27.2114$$",
+    "__PROTECTED_BLOCK_2__": "$$\\lambda_{\\text{estimada}}\\text{ (nm)} = \\frac{1239.8}{\\Delta E_{\\text{gap}}\\text{ (eV)}}$$",
+    "__PROTECTED_BLOCK_3__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_4__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_5__": ":::",
+    "__PROTECTED_BLOCK_6__": "::::",
+    "__PROTECTED_BLOCK_7__": "**Edit → Clean**",
+    "__PROTECTED_BLOCK_8__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_9__": "**Job Type → Optimization**",
+    "__PROTECTED_BLOCK_10__": "**File → Open**",
+    "__PROTECTED_BLOCK_11__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_12__": "**File → Open**",
+    "__PROTECTED_BLOCK_13__": "**Job Type**",
+    "__PROTECTED_BLOCK_14__": "**Method**",
+    "__PROTECTED_BLOCK_15__": "**Title**",
+    "__PROTECTED_BLOCK_16__": "**Save**",
+    "__PROTECTED_BLOCK_17__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_18__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_19__": "{{termination_ok}}",
+    "__PROTECTED_BLOCK_20__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_21__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_22__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_23__": "$\\pi \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_24__": "$\\Delta E_{\\text{gap}}$",
+    "__PROTECTED_BLOCK_25__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_26__": "$\\pi \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_27__": "$f$",
+    "__PROTECTED_BLOCK_28__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_29__": "$\\pi^*$",
+    "__PROTECTED_BLOCK_30__": "$\\pi \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_31__": "$\\pi$",
+    "__PROTECTED_BLOCK_32__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_33__": "$\\pi \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_34__": "$f$",
+    "__PROTECTED_BLOCK_35__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_36__": "$\\pi \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_37__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_38__": "$\\lambda\\ (n \\rightarrow \\pi^*)$",
+    "__PROTECTED_BLOCK_39__": "$\\Delta \\lambda$",
+    "__PROTECTED_BLOCK_40__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_41__": "$S_0$",
+    "__PROTECTED_BLOCK_42__": "$\\pi^*$",
+    "__PROTECTED_BLOCK_43__": "$S_1$",
+    "__PROTECTED_BLOCK_44__": "$\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_45__": "$\\varepsilon_{\\text{LUMO}}$",
+    "__PROTECTED_BLOCK_46__": "$\\Delta E_{\\text{gap}} = (\\varepsilon_{\\text{LUMO}} - \\varepsilon_{\\text{HOMO}}) \\times 27.2114$",
+    "__PROTECTED_BLOCK_47__": "$\\lambda_{\\text{estimada}} = 1239.8 / \\Delta E_{\\text{gap}}\\text{ (eV)}$",
+    "__PROTECTED_BLOCK_48__": "$\\lambda$",
+    "__PROTECTED_BLOCK_49__": "$f$",
+    "__PROTECTED_BLOCK_50__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_51__": "$f$",
+    "__PROTECTED_BLOCK_52__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_53__": "$\\pi \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_54__": "$\\lambda$",
+    "__PROTECTED_BLOCK_55__": "$f$",
+    "__PROTECTED_BLOCK_56__": "$\\lambda$",
+    "__PROTECTED_BLOCK_57__": "$f$",
+    "__PROTECTED_BLOCK_58__": "$n \\rightarrow \\pi^*$",
+    "__PROTECTED_BLOCK_59__": "$f$",
+    "__PROTECTED_BLOCK_60__": "`scrf=(solvent=nombre)`",
+    "__PROTECTED_BLOCK_61__": "`B3LYP`",
+    "__PROTECTED_BLOCK_62__": "`6-311G`",
+    "__PROTECTED_BLOCK_63__": "`scrf=(solvent=acetonitrile)`",
+    "__PROTECTED_BLOCK_64__": "`acetona_MeCN_opt.gjf`",
+    "__PROTECTED_BLOCK_65__": "`__PROTECTED_BLOCK_17__EspectroscopiaUV/`",
+    "__PROTECTED_BLOCK_66__": "`.log`",
+    "__PROTECTED_BLOCK_67__": "`acetona_MeCN_opt.log`",
+    "__PROTECTED_BLOCK_68__": "`Alpha  occ. eigenvalues`",
+    "__PROTECTED_BLOCK_69__": "`Alpha occ.`",
+    "__PROTECTED_BLOCK_70__": "`Alpha virt. eigenvalues`",
+    "__PROTECTED_BLOCK_71__": "`acetona_MeCN_opt.log`",
+    "__PROTECTED_BLOCK_72__": "`.chk`",
+    "__PROTECTED_BLOCK_73__": "`Acetona TD-DFT B3LYP 6-311G MeCN`",
+    "__PROTECTED_BLOCK_74__": "`td scrf=(solvent=acetonitrile) geom=connectivity`",
+    "__PROTECTED_BLOCK_75__": "`acetona_MeCN_td.gjf`",
+    "__PROTECTED_BLOCK_76__": "`__PROTECTED_BLOCK_18__EspectroscopiaUV/`",
+    "__PROTECTED_BLOCK_77__": "`__PROTECTED_BLOCK_19__`",
+    "__PROTECTED_BLOCK_78__": "`.log`",
+    "__PROTECTED_BLOCK_79__": "`.log`",
+    "__PROTECTED_BLOCK_80__": "`acetona_MeCN_td.log`",
+    "__PROTECTED_BLOCK_81__": "`Excited State   1`",
+    "__PROTECTED_BLOCK_82__": "`acetona_MeCN_td.log`",
+    "__PROTECTED_BLOCK_83__": "`td`",
+    "__PROTECTED_BLOCK_84__": "`td scrf=(solvent=cyclohexane)`",
+    "__PROTECTED_BLOCK_85__": "`td scrf=(solvent=chloroform)`",
+    "__PROTECTED_BLOCK_86__": "`td scrf=(solvent=ethanol)`",
+    "__PROTECTED_BLOCK_87__": "`td scrf=(solvent=acetonitrile)`",
+    "__PROTECTED_BLOCK_88__": "`td scrf=(solvent=water)`",
+    "__PROTECTED_BLOCK_89__": "`__PROTECTED_BLOCK_20__EspectroscopiaUV/`",
+    "__PROTECTED_BLOCK_90__": "`Excited State 1`",
+    "__PROTECTED_BLOCK_91__": "`.log`",
+    "__PROTECTED_BLOCK_92__": "`Excited State 1`",
+    "__PROTECTED_BLOCK_93__": "`.log`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Espectroscopía UV-Vis de cetonas"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "La absorción de radiación ultravioleta-visible induce transiciones electrónicas en las moléculas orgánicas al promover electrones desde orbitales ocupados de valencia hacia orbitales virtuales de mayor energía. Mediante la teoría del funcional de la densidad dependiente del tiempo (TD-DFT) en Gaussian, es posible simular estas excitaciones teniendo en cuenta la reorganización de la densidad electrónica. En esta práctica se calculan las longitudes de onda de absorción y las fuerzas de oscilador para las transiciones __PROTECTED_BLOCK_22__ y __PROTECTED_BLOCK_23__ en cetonas, analizando además cómo la polaridad del disolvente desplaza las bandas del espectro."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## Objetivos"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "1. Estimar la longitud de onda de absorción preliminar a partir de la diferencia de energías orbitales (__PROTECTED_BLOCK_24__ HOMO-LUMO).\n2. Calcular las energías de excitación vertical hacia estados singlete empleando la metodología TD-DFT con B3LYP/6-311G.\n3. Asignar las transiciones electrónicas __PROTECTED_BLOCK_25__ y __PROTECTED_BLOCK_26__ en función de su energía y su fuerza del oscilador (__PROTECTED_BLOCK_27__).\n4. Cuantificar el desplazamiento solvatocrómico de la acetona en agua mediante el modelo de polarización continua del disolvente (PCM).\n5. Comparar los espectros de absorción calculados frente a valores experimentales en función de la polaridad del medio y los sustituyentes alquílicos."
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "## Conceptos clave"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "### Transiciones electrónicas en compuestos carbonílicos"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "En el grupo C=O, las dos transiciones relevantes son la __PROTECTED_BLOCK_28__, en la que un electrón del par solitario no enlazante del oxígeno pasa al orbital antienlazante __PROTECTED_BLOCK_29__ del carbonilo, y la __PROTECTED_BLOCK_30__, en la que el electrón parte del orbital enlazante __PROTECTED_BLOCK_31__ del doble enlace. La transición __PROTECTED_BLOCK_32__ aparece en torno a 280–300 nm y tiene intensidad baja; la __PROTECTED_BLOCK_33__ se sitúa por debajo de 250 nm y es mucho más intensa. Esta diferencia de intensidad se refleja en la fuerza del oscilador __PROTECTED_BLOCK_34__: valores próximos a cero para la __PROTECTED_BLOCK_35__ y del orden de 0.1–1 para la __PROTECTED_BLOCK_36__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "### El gap HOMO-LUMO como estimación preliminar"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "La diferencia entre la energía del HOMO y la del LUMO proporciona una estimación directa de la energía mínima de excitación. Convertida a electronvoltios y a longitud de onda, anticipa la región espectral de absorción antes de ejecutar el cálculo completo. Esta estimación sobreestima sistemáticamente la energía de transición porque no tiene en cuenta la relajación del estado excitado."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "### Efecto del disolvente: solvatocromismo"
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "En la transición __PROTECTED_BLOCK_37__, el estado fundamental del carbonilo es más polar que el estado excitado. Un disolvente polar estabiliza preferentemente el estado fundamental, amplía la diferencia de energía entre los dos estados y desplaza la banda hacia longitudes de onda menores (efecto hipsocrómico o desplazamiento al azul). Gaussian modela este efecto mediante el modelo de polarización continua PCM, que representa el disolvente como un medio dieléctrico homogéneo caracterizado por su constante dieléctrica. Para especificarlo se añade la palabra clave __PROTECTED_BLOCK_60__ en el campo **Additional Keywords**."
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "Valores experimentales de referencia para acetona:"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "| Disolvente | __PROTECTED_BLOCK_38__ experimental (nm) |\n|---|:---:|\n| Ciclohexano (apolar) | 279 |\n| Agua (muy polar) | 264 |\n| Variación (__PROTECTED_BLOCK_39__) | −15 nm (desplazamiento al azul) |"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_3__"
+    },
+    {
+      "type": "block",
+      "bid": 14,
+      "text": "El desplazamiento solvatocrómico al azul (hipsocrómico) en la transición __PROTECTED_BLOCK_40__ deriva de la diferente polaridad de los estados electrónicos implicados. En el estado fundamental (__PROTECTED_BLOCK_41__), el grupo carbonilo posee un momento dipolar elevado y los pares solitarios del oxígeno forman enlaces de hidrógeno con disolventes polares próticos como el agua. Durante la transición electrónica, la redistribución de carga hacia el sistema __PROTECTED_BLOCK_42__ disminuye el momento dipolar en el estado excitado (__PROTECTED_BLOCK_43__), lo que reduce la estabilización por solvatación y aumenta la energía necesaria para la excitación vertical."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_5__"
+    },
+    {
+      "type": "block",
+      "bid": 15,
+      "text": "## Procedimiento"
+    },
+    {
+      "type": "block",
+      "bid": 16,
+      "text": "### Parte A: Estimación preliminar con el gap HOMO-LUMO"
+    },
+    {
+      "type": "block",
+      "bid": 17,
+      "text": "#### Paso A1: Optimizar la geometría en disolvente"
+    },
+    {
+      "type": "block",
+      "bid": 18,
+      "text": "1. Construir la acetona en GaussView y aplicar __PROTECTED_BLOCK_7__.\n2. Abrir __PROTECTED_BLOCK_8__, seleccionar __PROTECTED_BLOCK_9__ e introducir los parámetros:"
+    },
+    {
+      "type": "block",
+      "bid": 19,
+      "text": "| Campo | Valor |\n|---|---|\n| Method | __PROTECTED_BLOCK_61__ |\n| Basis Set | __PROTECTED_BLOCK_62__ |\n| Charge | **0** |\n| Spin | **1** |\n| Additional Keywords | __PROTECTED_BLOCK_63__ |"
+    },
+    {
+      "type": "block",
+      "bid": 20,
+      "text": "3. Guardar como __PROTECTED_BLOCK_64__ en __PROTECTED_BLOCK_65__ y lanzar."
+    },
+    {
+      "type": "block",
+      "bid": 21,
+      "text": "#### Paso A2: Extraer autovalores HOMO y LUMO"
+    },
+    {
+      "type": "block",
+      "bid": 22,
+      "text": "1. En el archivo __PROTECTED_BLOCK_66__ de la optimización (__PROTECTED_BLOCK_67__), buscar con **Ctrl + F** el texto: __PROTECTED_BLOCK_68__.\n2. Identificar el último valor numérico de la última fila __PROTECTED_BLOCK_69__ correspondiente a la energía del orbital HOMO (__PROTECTED_BLOCK_44__ en hartrees).\n3. Identificar el primer valor numérico de la fila siguiente __PROTECTED_BLOCK_70__ correspondiente a la energía del orbital LUMO (__PROTECTED_BLOCK_45__ en hartrees).\n4. Calcular la diferencia energética __PROTECTED_BLOCK_46__ en eV.\n5. Estimar la longitud de onda de absorción: __PROTECTED_BLOCK_47__ en nm.\n6. Anotar los valores numéricos obtenidos en la Tabla A de resultados."
+    },
+    {
+      "type": "block",
+      "bid": 23,
+      "text": "### Parte B: Cálculo TD-DFT del espectro de absorción"
+    },
+    {
+      "type": "block",
+      "bid": 24,
+      "text": "#### Paso B1: Configurar el cálculo TD-DFT"
+    },
+    {
+      "type": "block",
+      "bid": 25,
+      "text": "1. En GaussView, abrir el archivo de geometría optimizada anterior (__PROTECTED_BLOCK_71__ o el correspondiente __PROTECTED_BLOCK_72__) mediante __PROTECTED_BLOCK_10__.\n2. Acceder al menú __PROTECTED_BLOCK_11__.\n3. En la pestaña __PROTECTED_BLOCK_13__, seleccionar **Energy** (cálculo de punto único sobre la estructura de equilibrio).\n4. En la pestaña __PROTECTED_BLOCK_14__, mantener Method **B3LYP**, Basis Set **6-311G**, Charge **0**, Spin **1**.\n5. En la pestaña __PROTECTED_BLOCK_15__, escribir: __PROTECTED_BLOCK_73__.\n6. En el campo inferior **Additional Keywords**, escribir: __PROTECTED_BLOCK_74__.\n7. Pulsar **Submit**, guardar como __PROTECTED_BLOCK_75__ en __PROTECTED_BLOCK_76__ y confirmar el cálculo con __PROTECTED_BLOCK_16__ y **Submit**.\n8. Verificar la presencia de la línea final __PROTECTED_BLOCK_77__ en el archivo __PROTECTED_BLOCK_78__."
+    },
+    {
+      "type": "block",
+      "bid": 26,
+      "text": "#### Paso B2: Extraer datos de los estados excitados del .log"
+    },
+    {
+      "type": "block",
+      "bid": 27,
+      "text": "1. Abrir el archivo __PROTECTED_BLOCK_79__ (__PROTECTED_BLOCK_80__) en el editor de texto.\n2. Buscar con **Ctrl + F** la cadena: __PROTECTED_BLOCK_81__.\n3. Extraer los datos cuantitativos del primer estado excitado singlete:\n   - Longitud de onda calculada (__PROTECTED_BLOCK_48__) en nanómetros (nm).\n   - Energía de excitación en electronvoltios (eV).\n   - Fuerza del oscilador (__PROTECTED_BLOCK_49__).\n4. Observar las líneas de orbitales asociadas a la transición (origen y destino) para confirmar el tipo de excitación.\n5. Identificar la banda de menor fuerza de oscilador en torno a 270–300 nm como la transición __PROTECTED_BLOCK_50__."
+    },
+    {
+      "type": "block",
+      "bid": 28,
+      "text": "#### Paso B3: Visualizar el espectro en GaussView"
+    },
+    {
+      "type": "block",
+      "bid": 29,
+      "text": "1. En GaussView, abrir el archivo __PROTECTED_BLOCK_82__ mediante __PROTECTED_BLOCK_12__.\n2. Acceder al menú **Results → UV-Vis**.\n3. Examinar el espectro electrónico sintético generado:\n   - Las barras verticales indican las transiciones discretas, con altura proporcional a la fuerza del oscilador __PROTECTED_BLOCK_51__.\n   - La curva continua muestra el perfil convolucionado.\n4. Identificar la banda débil __PROTECTED_BLOCK_52__ frente a la banda intensa __PROTECTED_BLOCK_53__ a longitudes de onda inferiores a 250 nm."
+    },
+    {
+      "type": "block",
+      "bid": 30,
+      "text": "### Parte C: Serie de disolventes y solvatocromismo"
+    },
+    {
+      "type": "block",
+      "bid": 31,
+      "text": "Repetir el cálculo TD-DFT de la acetona sobre la geometría ya optimizada, cambiando únicamente la palabra clave de disolvente en **Additional Keywords**:"
+    },
+    {
+      "type": "block",
+      "bid": 32,
+      "text": "| Disolvente | Additional Keywords |\n|---|---|\n| Vacío (gas) | __PROTECTED_BLOCK_83__ |\n| Ciclohexano | __PROTECTED_BLOCK_84__ |\n| Cloroformo | __PROTECTED_BLOCK_85__ |\n| Etanol | __PROTECTED_BLOCK_86__ |\n| Acetonitrilo | __PROTECTED_BLOCK_87__ |\n| Agua | __PROTECTED_BLOCK_88__ |"
+    },
+    {
+      "type": "block",
+      "bid": 33,
+      "text": "Guardar cada archivo con nombre descriptivo en __PROTECTED_BLOCK_89__ y extraer __PROTECTED_BLOCK_54__ y __PROTECTED_BLOCK_55__ de __PROTECTED_BLOCK_90__ en cada __PROTECTED_BLOCK_91__."
+    },
+    {
+      "type": "block",
+      "bid": 34,
+      "text": "### Parte D: Serie de cetonas sustituidas"
+    },
+    {
+      "type": "block",
+      "bid": 35,
+      "text": "Repetir el procedimiento completo (optimización + TD-DFT en acetonitrilo) para los cuatro compuestos siguientes:"
+    },
+    {
+      "type": "block",
+      "bid": 36,
+      "text": "| Compuesto | Estructura |\n|---|---|\n| Cloruro de acetilo | CH₃–CO–Cl |\n| Acetofenona | CH₃–CO–C₆H₅ |\n| Ácido acético | CH₃–CO–OH |\n| Metil-etil-cetona | CH₃–CO–CH₂CH₃ |"
+    },
+    {
+      "type": "block",
+      "bid": 37,
+      "text": "Para cada uno, extraer __PROTECTED_BLOCK_56__ y __PROTECTED_BLOCK_57__ de __PROTECTED_BLOCK_92__ y comparar el desplazamiento de la banda __PROTECTED_BLOCK_58__ respecto a la acetona."
+    },
+    {
+      "type": "block",
+      "bid": 38,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 39,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 40,
+      "text": "- __PROTECTED_BLOCK_21__\n- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 13 (Espectroscopía electrónica).\n- Casida, M. E. *Time-Dependent Density Functional Theory for Molecules*. In *Recent Advances in Density Functional Methods*; World Scientific, 1995.\n- NIST Chemistry WebBook, https://webbook.nist.gov (espectros de absorción ultravioleta-visible de referencia)."
+    },
+    {
+      "type": "block",
+      "bid": 41,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_4__"
+    },
+    {
+      "type": "block",
+      "bid": 42,
+      "text": "### [DROPDOWN_TITLE] Para ir más lejos (opcional)"
+    },
+    {
+      "type": "block",
+      "bid": 43,
+      "text": "GaussView muestra cada transición calculada como una barra discreta con altura proporcional a __PROTECTED_BLOCK_59__. Para obtener un perfil continuo comparable al espectro experimental, convolucionamos esas barras con funciones gaussianas de anchura apropiada. Exportando la lista de estados excitados del __PROTECTED_BLOCK_93__ a una hoja de cálculo y aplicando la convolución, podemos reproducir la forma de banda y comparar la posición de los máximos con los datos del NIST Chemistry WebBook."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_6__"
+    }
+  ],
+  "total_chunks": 2,
+  "total_blocks": 44
+}

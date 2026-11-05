@@ -1,0 +1,32 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-born-oppenheimer.md (Zatia 2/2)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 9 ===
+Puntu bakarreko energia-kalkulu batean (*Single Point*), nukleoen posizioak finko mantentzen dira sarrera-fitxategiko koordenatuen arabera. Geometria konstante horrekin, Gaussianek egitura elektronikoa ebazten du atomo bakar bat ere mugitu gabe. Emaitza hartree-tan adierazitako energia elektroniko osoa da konformazio horretarako. GaussView-n, kalkulu hau __PROTECTED_BLOCK_10__ (normalean *Energy* gisa etiketatua) hautatzen dugu.
+
+=== BLOKEA 11 ===
+Geometria-optimizazio batean, Gaussianek hasierako egituraren gaineko energia kalkulatzen du eta nukleoen koordenatuekiko deribatuak ebaluatzen ditu (energiaren gradienteak). Nukleo bakoitzaren gainean eragiten duten indar elektrostatikoak __PROTECTED_BLOCK_13__ zeinu-aldaketarekin bat datoz:
+
+=== BLOKEA 12 ===
+Indar horietatik abiatuta, algoritmoak nukleoak energia minimora murrizten duen norabidean mugitzen ditu. Geometria berri bakoitzean, uhin-funtzioa eta indarrak birkalkulatzen ditu. Prozesua errepikatzen da gradienteak tolerantzia numerikoaren barruan anulatzen den arte:
+
+=== BLOKEA 13 ===
+GaussView-n, kalkulu hau __PROTECTED_BLOCK_11__ hautatzen dugu. Hurrengo irudiak algoritmoaren urratsak ilustratzen ditu, potentzial-putzura konbergituz.
+
+=== BLOKEA 16 ===
+- __PROTECTED_BLOCK_12__
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
+
+=== BLOKEA 19 ===
+Hasierako geometria oreka-egituratik oso urrun badago, algoritmoak urrats gehiegi behar izan ditzake, minimo lokal batean harrapatuta gera daiteke edo ez konbergitu. __PROTECTED_BLOCK_14__ fitxategian, egoera hori identifikatzen da optimizazio-zikloen muga lortzen denean konbergentzia-irizpideak bete gabe. Hori saihesteko, komeni da molekulak GaussView-ren fragmentu estandarrak erabiliz eraikitzea, hasierako distantzia eta angelu kimikoki arrazoizkoak ematen baitituzte.
+
+=== BLOKEA 20 ===
+### [DROPDOWN_TITLE] Gradiente eta optimizazio-algoritmoei buruz gehiago
+
+=== BLOKEA 21 ===
+Gaussianen lehenetsitako optimizazio-algoritmoek (Berny metodoa, adibidez) quasi-Newton motako teknikak erabiltzen dituzte, hessianoaren hurbilketa (bigarren deribatuen matrizea) iteratiboki eguneratzen dutenak, minimoaren norabidean desplazamendua proiektatzeko. Ziklo bakoitzak uhin-funtzioa eta gradiente osoa kalkulatzea eskatzen duenez, molekula handiak edo konformazionalki malguak optimizatzeak kostu konputazional handia eta optimizazio-urrats ugari eskatu ditzake.

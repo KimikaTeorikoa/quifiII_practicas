@@ -1,0 +1,102 @@
+{
+  "source": "es/content/parte2-gaussian/intros/intro-bases.md",
+  "dest": "eu/content/parte2-gaussian/intros/intro-bases.md",
+  "prefix": "03_intro-bases",
+  "slug": "intro-bases",
+  "filename": "intro-bases.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/figures/eu/sto_vs_gaussianas.svg\n:alt: Comparación del orbital 1s exacto con la aproximación STO por una y varias gaussianas\n:width: 65%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_2__": "::::",
+    "__PROTECTED_BLOCK_3__": "**Method**",
+    "__PROTECTED_BLOCK_4__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_5__": "`*`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Funciones de base"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "Los orbitales atómicos y moleculares de sistemas polielectrónicos presentan formas espaciales continuas que no admiten soluciones analíticas simples. Para representarlos computacionalmente, empleamos conjuntos de funciones matemáticas conocidas (generalmente combinaciones de gaussianas) denominadas funciones de base. La elección de la base en Gaussian determina la flexibilidad numérica para modelar la nube electrónica e influye directamente tanto en la precisión física del resultado como en el tiempo de cálculo necesario."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## La idea central: aproximar orbitales con funciones conocidas"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "En química cuántica computacional, los orbitales moleculares se representan como combinaciones lineales de un conjunto finito de funciones conocidas denominadas funciones de base. Las funciones gaussianas constituyen el estándar en programas como Gaussian porque permiten calcular con gran rapidez analítica las integrales de atracción y repulsión. Al aumentar el número de funciones en el conjunto, mejora la capacidad numérica para describir la densidad electrónica con precisión. Por tanto, elegir el conjunto de base exige un equilibrio continuo entre la exactitud física deseada y el coste computacional disponible."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "## Precisión vs coste computacional"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "El tamaño del conjunto de base fija el límite de precisión física que puede alcanzar un cálculo. Al aumentar el número de funciones por átomo se describe con mayor fidelidad la distribución electrónica, pero el tiempo de cálculo y el consumo de memoria crecen sustancialmente. La tabla siguiente ilustra esta tendencia cualitativa mediante dos bases frecuentes: STO-3G (base mínima, rápida pero aproximada) y 6-311G (base extendida, más precisa y costosa). En el guión de cada práctica indicamos qué conjunto de base usar en GaussView."
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "| Base | Tamaño relativo | Coste relativo |\n|------|----------------|----------------|\n| STO-3G | Pequeña | Bajo |\n| 6-311G | Mayor | Mayor |"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "- __PROTECTED_BLOCK_4__\n- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996."
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "### [DROPDOWN_TITLE] Qué significa la notación: 6-31G, 6-311G y funciones de polarización"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "En la notación de bases de valencia dividida de Pople, los dígitos indican cuántas funciones gaussianas primitivas componen cada orbital interno y de valencia. Por ejemplo, en la base 6-311G se contraen seis gaussianas para cada orbital de las capas internas, mientras que la capa de valencia se divide en tres funciones formadas por contracciones de tres, una y una gaussiana. El asterisco o sufijo __PROTECTED_BLOCK_5__ denota la adición de funciones de polarización (de tipo d sobre átomos distintos del hidrógeno), que aportan flexibilidad angular para describir las deformaciones de la densidad electrónica al formarse el enlace químico. En GaussView, el conjunto completo se selecciona en el menú desplegable de la pestaña __PROTECTED_BLOCK_3__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    }
+  ],
+  "total_chunks": 1,
+  "total_blocks": 14
+}

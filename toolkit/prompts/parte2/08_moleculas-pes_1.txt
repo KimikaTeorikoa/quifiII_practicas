@@ -1,0 +1,97 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: moleculas-pes.md (Zatia 1/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Energia potentzialaren gainazala
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Lotura kimikoaren egonkortasuna eta molekulen lehentasun konformazionalak nukleoen posizioak aldatzean energia elektronikoa nola aldatzen denaren araberakoak dira. Born-Oppenheimerren hurbilketari esker, aldaketa horiek energia potentzialaren gainazal gisa irudika daitezke, Gaussianen bidez kalkulatutako miaketa geometriko sistematikoen bidez. Praktika honetan, hidrogeno-molekularen disoziazio-kurba aztertzen da, spin-egoera desberdinetarako, eta etanoaren deribatu halogenatuen angelu diedroaren errotazio-profila.
+
+=== BLOKEA 3 ===
+## Helburuak
+
+=== BLOKEA 4 ===
+1. __PROTECTED_BLOCK_27__ molekularen energia potentzialaren kurba eraiki, HF/STO-3G-rekin kalkulatutako nukleoarteko distantziaren (__PROTECTED_BLOCK_28__) miaketa baten bidez, singlete eta triplete egoeretarako.
+2. Oreka nuklearreko distantzia (__PROTECTED_BLOCK_29__) eta __PROTECTED_BLOCK_30__-ren disoziazio-energia zehaztu, kalkulatutako balioak datu esperimentalekin alderatuz.
+3. Dihaloetanoen angelu diedroaren miaketa konformazionala egin, anti eta gauche konformeroak identifikatzeko energia potentzialaren gainazalean.
+4. Errotazio konformazionalaren oztopoak kuantifikatu, konformazio eklipsatuekiko energia-diferentzia ebaluatuz.
+
+=== BLOKEA 5 ===
+## Kontzeptu gakoak
+
+=== BLOKEA 6 ===
+### Zer da energia potentzialaren gainazal bat?
+
+=== BLOKEA 7 ===
+Born-Oppenheimerren hurbilketaren arabera, energia elektronikoa koordenatu nuklearren funtzio jarraitua da, sistema baten energia potentzialaren gainazala (EPG) definitzen duena:
+
+=== BLOKEA 8 ===
+Gainazal honen minimoak oreka geometrietako egonkorrei dagozkie, non nukleo bakoitzaren gaineko indarrak nuluak diren eta edozein deformaziok energia handitzen duen. Lehen mailako zela-puntuek ondoko minimoak lotzen dituzte eta erreakzio kimikoen edo aldaketa konformazionalen trantsizio-egoerak adierazten dituzte. Nukleoarteko distantzia handietan, energia potentzialak disoziazio-muga lortzen du, non atomoek elkarri eragiteari uzten dioten.
+
+=== BLOKEA 9 ===
+### Singletea eta tripletea: zergatik da garrantzitsua spina
+
+=== BLOKEA 10 ===
+Singlete egoeran, H₂-ren bi elektroiek spin antiparaleloak dituzte (multiplicitatea 1). Horri esker, espazioaren eskualde bera partekatu eta dentsitate elektronikoa bi nukleoen artean kontzentratu dezakete, elkarren arteko aldarapena pantailatuz eta lotura kobalentea egonkortuz energia-minimo batean oreka-distantzian. Triplete egoeran, berriz, spinak paraleloak dira (multiplicitatea 3) eta Pauliren bazterketa-printzipioak eragozten du bi elektroiak aldi berean nukleoarteko eskualdean egotea. Horregatik, tripletearen energia potentzialaren kurba erabat aldaragarria da ibilbide osoan, eta ez du lotura-minimorik aurkezten.
+
+=== BLOKEA 11 ===
+Ikuspegi mekanokuantikotik, singletearen uhin-funtzio espaziala (__PROTECTED_BLOCK_31__) simetrikoa da elektroien permutazioarekiko, eta horrek nukleoarteko karga pilatzea bultzatzen du. Tripletean (__PROTECTED_BLOCK_32__), funtzio espaziala antisimetrikoa da eta nukleoarteko plano nodal bat aurkezten du, non probabilitate-dentsitatea nulua den. Elektroi-dentsitaterik ez dagoenez protoiak pantailatzeko, nukleoarteko aldarapenak distantzia orotan nagusitzen da.
+
+=== BLOKEA 12 ===
+### Angelu diedroa eta analisi konformazionala
+
+=== BLOKEA 13 ===
+Angelu diedroak lotura sinple zentral baten bidez lotutako bi talderen errotazio erlatiboa deskribatzen du, eta X–C–C–X sekuentzia osatzen duten lau atomoen bidez definitzen da, 0° eta 360° arteko tartean. Newmanen proiekzio batean, konformazio bakoitza angelu horrek zehazten du. Anti konformazioak (180°) ordezkatzaile bolumentsuenak posizio kontrajarrietan jartzen ditu, aldarapen esterikoak minimizatuz eta energia-minimo globala konfiguratuz. Gauche konformeroek (60° eta 300°) minimo lokalak osatzen dituzte, elkarrekiko aldarapen handiagoarekin. Kurban maximoak konformazio eklipsatuei dagozkie, eta horien gainjartzeak barne-errotazioko oztopoa zehazten du.
+
+=== BLOKEA 14 ===
+## Prozedura
+
+=== BLOKEA 15 ===
+### 1. zatia: H₂ molekularen EPG
+
+=== BLOKEA 16 ===
+#### 1. urratsa: H₂ GaussView-n marraztu
+
+=== BLOKEA 17 ===
+1. GaussView ireki.
+2. Zatiki-paleta flotagarrian, hidrogeno-atomoa (H) hautatu.
+3. Erdiko 3D leihoan klik egin, lehen hidrogeno-atomoa jartzeko.
+4. Sortutako atomoaren gainean bigarren klik bat egin, __PROTECTED_BLOCK_33__ molekula diatomikoa sortzeko, lotura sinplearekin.
+
+=== BLOKEA 18 ===
+#### 2. urratsa: Miaketa-kalkulua konfiguratu (Scan)
+
+=== BLOKEA 20 ===
+| Parametroa | Singlete egoera | Triplete egoera |
+|---|:---:|:---:|
+| Metodoa | HF | HF (ROHF) |
+| Oinarri-multzoa | STO-3G | STO-3G |
+| Karga | 0 | 0 |
+| Multiplicitatea | 1 | 3 |
+| Distantzien tartea | 0,5 Å-tik 4,0 Å-ra | 0,5 Å-tik 4,0 Å-ra |
+| Urratsaren gehikuntza | 0,1 Å (35-40 urrats) | 0,1 Å (35-40 urrats) |
+
+=== BLOKEA 21 ===
+#### 3. urratsa: Kalkuluak gorde eta abiarazi
+
+=== BLOKEA 23 ===
+#### 4. urratsa: EPG GaussView-n bistaratu
+
+=== BLOKEA 25 ===
+### 2. zatia: Dihaloetanoaren angelu diedroaren EPG
+
+=== BLOKEA 35 ===
+---
+
+=== BLOKEA 36 ===
+## Bibliografia
+
+=== BLOKEA 38 ===

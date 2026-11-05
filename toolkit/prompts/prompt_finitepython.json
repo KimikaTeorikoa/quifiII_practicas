@@ -1,0 +1,54 @@
+{
+  "source": "es/content/parte1-python/finitepython.ipynb",
+  "suffix": ".ipynb",
+  "blocks": {
+    "0": {
+      "type": "cell",
+      "raw": "# Resolviendo la ecuación de Schrödinger con Python \nEl siguiente paso es convertir el método de diferencias finitas \nen código. Lo primero que tenemos que hacer es ser capaces de \nescribir un vector con nuestras posiciones en $x$. Para ello, tenemos\nque importar la librería `numpy` que nos permite manejar vectores \nen Python.",
+      "masked": "# Resolviendo la ecuación de Schrödinger con Python \nEl siguiente paso es convertir el método de diferencias finitas \nen código. Lo primero que tenemos que hacer es ser capaces de \nescribir un vector con nuestras posiciones en __PROTECTED_BLOCK_0__. Para ello, tenemos\nque importar la librería `numpy` que nos permite manejar vectores \nen Python.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$x$"
+      }
+    },
+    "2": {
+      "type": "cell",
+      "raw": "## Partícula en una caja \nUna vez importada la librería, una sintáxis sencilla nos permite \ngenerar un número de posiciones entre un valor inicial y un valor final.\nEn primer lugar, trabajaremos con la **partícula en una caja** y la \ndefiniremos entre 0 y $L=1$.",
+      "masked": "## Partícula en una caja \nUna vez importada la librería, una sintáxis sencilla nos permite \ngenerar un número de posiciones entre un valor inicial y un valor final.\nEn primer lugar, trabajaremos con la **partícula en una caja** y la \ndefiniremos entre 0 y __PROTECTED_BLOCK_0__.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$L=1$"
+      }
+    },
+    "4": {
+      "type": "cell",
+      "raw": "Por conveniencia, en nuestro programa definiremos una serie de valores numéricos como la unidad,\npara así no tener que preocuparnos por ellos en lo que sigue.",
+      "masked": "Por conveniencia, en nuestro programa definiremos una serie de valores numéricos como la unidad,\npara así no tener que preocuparnos por ellos en lo que sigue.",
+      "placeholders": {}
+    },
+    "6": {
+      "type": "cell",
+      "raw": "Con estos ingredientes, ya podemos empezar a dar forma a nuestra versión matricial de la Laplaciana",
+      "masked": "Con estos ingredientes, ya podemos empezar a dar forma a nuestra versión matricial de la Laplaciana",
+      "placeholders": {}
+    },
+    "8": {
+      "type": "cell",
+      "raw": "Para tener el Hamiltoniano completo en un caso tan sencillo como este no nos hace falta nada másq\nque multiplicar la Laplaciana por $-\\hbar^2/2m$.",
+      "masked": "Para tener el Hamiltoniano completo en un caso tan sencillo como este no nos hace falta nada másq\nque multiplicar la Laplaciana por __PROTECTED_BLOCK_0__.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$-\\hbar^2/2m$"
+      }
+    },
+    "10": {
+      "type": "cell",
+      "raw": "Ya sólo nos queda obtener los vectores propios y valores propios del Hamiltniano. Para ello usamos una nueva librería, `scipy`.\nUsándola podemos realizar la operación deseada y examinar los resultados.",
+      "masked": "Ya sólo nos queda obtener los vectores propios y valores propios del Hamiltniano. Para ello usamos una nueva librería, `scipy`.\nUsándola podemos realizar la operación deseada y examinar los resultados.",
+      "placeholders": {}
+    },
+    "13": {
+      "type": "cell",
+      "raw": "A continuación, podemos usar la librería `matplotlib` para representar gráficamente los resultados. ",
+      "masked": "A continuación, podemos usar la librería `matplotlib` para representar gráficamente los resultados. ",
+      "placeholders": {}
+    }
+  }
+}

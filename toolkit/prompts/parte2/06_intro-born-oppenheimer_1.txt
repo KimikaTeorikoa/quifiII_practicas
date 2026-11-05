@@ -1,0 +1,49 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-born-oppenheimer.md (Zatia 1/2)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Geometria molekularra eta Born-Oppenheimer hurbilketa
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Edozein propietate fisiko-kimiko zehazteko molekula batean, beharrezkoa da atomoen koordenatu espazialak zehaztasunez ezagutzea. Born-Oppenheimer hurbilketak nukleoen eta elektroien arteko masa-desberdintasun handia aprobetxatzen du haien mugimenduak deskonektatzeko, eta horrek aukera ematen du banaketa elektronikoa nukleo-disposizio finkoen gainean ebazteko. Esparru teoriko honek oinarritzen du energia-kalkulu puntualen eta koordenatu konstanteen arteko bereizketa, baita geometria-optimizazioen artekoa ere, energia-minimo egonkorrak aurkitzera bideratuta daudenak.
+
+=== BLOKEA 3 ===
+## Born-Oppenheimer hurbilketa
+
+=== BLOKEA 4 ===
+Protoi baten masa elektroiarena baino 1836 aldiz handiagoa da gutxi gorabehera; beraz, nukleo atomikoak askoz ere motelago mugitzen dira. Born-Oppenheimer hurbilketak denbora-desberdintasun hori aprobetxatzen du nukleoak karga-zentro estazionariotzat hartuz, elektroi-mugimendua ebazten den bitartean. Horrela, energia elektronikoa nukleo-posizio hautatuen araberako magnitude parametriko gisa lortzen da. Deskonexio hori gabe, edozein molekularen ebazpen mekanokuantikoa konputazionalki bideraezina izango litzateke.
+
+=== BLOKEA 5 ===
+Nukleoak espazio-disposizio desberdinetan finkatuz eta energia elektronikoa bakoitzerako kalkulatuz, energia potentzialaren gainazala sortzen dugu (PES, *Potential Energy Surface*). Gainazal hiperdimensional honetan, nukleoen dinamika, bibrazio molekularra eta erreakzio kimikoen aurrerapena deskribatzen dira.
+
+=== BLOKEA 6 ===
+## Geometria molekularra: distantziak, angeluak eta diedroak
+
+=== BLOKEA 7 ===
+Molekula baten geometria hiru parametrok definitzen dute: lotura-distantziak (angstrometan, Å), lotura-angeluak (gradutan) eta tortsio-angelu diedrikoak (gradutan). Distantziek eta angeluek atomo mugakideen arteko konektibitate lokala zehazten dute; diedroek lotura zentral bat partekatzen duten planoen arteko biraketa espaziala deskribatzen dute. Gaussianek koordenatu interno horiek erabiltzen ditu gradientea kalkulatzeko eta geometriak optimizatzeko. GaussView-n, hiru parametroak zuzenean neur eta bistara ditzakegu ereduaren gainean.
+
+=== BLOKEA 8 ===
+## Energia puntuala: kalkulatzea mugitu gabe
+
+=== BLOKEA 10 ===
+## Geometria-optimizazioa: minimoa aurkitzea
+
+=== BLOKEA 14 ===
+---
+
+=== BLOKEA 15 ===
+## Bibliografia
+
+=== BLOKEA 17 ===
+---
+
+=== BLOKEA 18 ===
+### [DROPDOWN_TITLE] Zer gertatzen da hasierako geometria oso txarra bada?

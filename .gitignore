@@ -5,3 +5,5 @@ book/_build/
 _build/
 *.chk
 *.fchk
+.env
+__pycache__/

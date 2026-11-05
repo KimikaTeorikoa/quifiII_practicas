@@ -1,0 +1,97 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: moleculas-pes.md (Zatia 2/2)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 19 ===
+1. GaussView-ko menu-barran, sartu __PROTECTED_BLOCK_9__.
+2. __PROTECTED_BLOCK_18__ fitxan, hautatu **Scan** aukera eta beheko goitibeherako menuan hautatu **Relaxed (Redundant Coord)**.
+3. Eskaneatze-koordenatua definitzeko, sartu __PROTECTED_BLOCK_10__ (edo sakatu koordenatu erredundanteen edizio-botoia).
+4. **Redundant Coordinate Editor** elkarrizketa-koadroan:
+   - Sakatu **Add** botoia.
+   - Goitibeherako menuan hautatu **Bond** eta adierazi **Coordinate** atalean 1 eta 2 atomoak.
+   - Hautatu **Scan Coordinate** ekintza motan eta finkatu eskaneatze-parametroak (adibidez, 40 urrats 0.1 Å-ko tamainakoak).
+   - Sakatu **Ok** koordenatua baliozkotzeko.
+5. **Gaussian Calculation Setup** leihora itzulita, __PROTECTED_BLOCK_19__ fitxan hautatu:
+   - Metodoa: **HF** (Hartree-Fock).
+   - Oinarri-multzoa: **STO-3G**.
+   - Karga: __PROTECTED_BLOCK_38__.
+   - Singlete egoerarako: **Spin = Singlet** (Multiplicity = __PROTECTED_BLOCK_39__).
+   - Triplete egoerarako: **Spin = Triplet** (Multiplicity = __PROTECTED_BLOCK_40__).
+6. __PROTECTED_BLOCK_20__ fitxan, idatzi: __PROTECTED_BLOCK_41__.
+7. **Additional Keywords** fitxan, idatzi: __PROTECTED_BLOCK_42__.
+
+=== BLOKEA 22 ===
+1. **Gaussian Calculation Setup** leihoan, sakatu **Submit** botoia.
+2. Gorde singletearen fitxategia izen honekin: __PROTECTED_BLOCK_43__ __PROTECTED_BLOCK_44__ karpetan.
+3. Berretsi kalkulua hasteko elkarrizketa-koadroa.
+4. Errepikatu prozesua multiplicitatea 3ra aldatuz eta gorde izen honekin: __PROTECTED_BLOCK_45__.
+5. Egiaztatu bi kalkuluak aurrera doazela exekuzio-barran.
+
+=== BLOKEA 24 ===
+1. GaussView-n, ireki __PROTECTED_BLOCK_46__ fitxategia __PROTECTED_BLOCK_11__ bidez.
+2. Sartu __PROTECTED_BLOCK_12__ menuan.
+3. Bi dimentsioko grafiko interaktibo bat agertuko da, energia __PROTECTED_BLOCK_34__ distantziaren aurka erakusten duena.
+4. Ireki aldi berean __PROTECTED_BLOCK_47__ fitxategia, tripletearen kurba singletearen kurbaren gainean jartzeko ikusteko leiho berean.
+5. Behatu singletearen kurbako potentzial-zuloaren forma eta tripletearen kurbako zulo eza.
+
+=== BLOKEA 26 ===
+Konformazio-eskaneatzea egingo da ondorengo hiru dihaloetanoentzat: 1,2-dikloroetanoa, 1,2-dibromoetanoa eta 1,2-diiodoetanoa. Prozedura berdina da hirurentzat; errepikatu, molekula eraikitzeko urratsean halogenoa bakarrik aldatuz.
+
+=== BLOKEA 27 ===
+#### 1. urratsa: Dihaloetanoa marraztu GaussView-n
+
+=== BLOKEA 28 ===
+1. Ireki leiho berri bat GaussView-n (__PROTECTED_BLOCK_13__).
+2. Eraiki dihaloetanoaren molekula, karbono-katea hautatuz eta bi hidrogeno atomo halogenoz ordezkatuz alboko karbonoetan.
+3. Aplikatu aurreko garbiketa geometrikoa __PROTECTED_BLOCK_14__ bidez.
+
+=== BLOKEA 29 ===
+#### 2. urratsa: Eskaneatze diedroaren kalkulua konfiguratu
+
+=== BLOKEA 30 ===
+1. Sartu __PROTECTED_BLOCK_15__ menuan.
+2. __PROTECTED_BLOCK_21__ fitxan, hautatu **Scan**.
+3. Definitu barne-koordenatua **Dihedral** motakoa, lotutako lau atomoak hautatuz: __PROTECTED_BLOCK_35__.
+4. Zehaztu eskaneatzearen angelu-parametroak:
+   - Koordenatua: diedro __PROTECTED_BLOCK_36__.
+   - Angelu-tartea: 0°-tik 360°-ra (10° edo 15°-ko urratsetan).
+5. __PROTECTED_BLOCK_22__ fitxan, konfiguratu:
+   - Metodoa: **HF**.
+   - Oinarri-multzoa: **STO-3G**.
+   - Karga: __PROTECTED_BLOCK_48__.
+   - Multiplicitatea: __PROTECTED_BLOCK_49__ (Singlete).
+6. __PROTECTED_BLOCK_23__ fitxan, idatzi: __PROTECTED_BLOCK_50__.
+
+=== BLOKEA 31 ===
+#### 3. urratsa: Gorde, abiarazi eta egiaztatu
+
+=== BLOKEA 32 ===
+1. Gorde fitxategia izen honekin: __PROTECTED_BLOCK_51__ __PROTECTED_BLOCK_52__ karpetan.
+2. Berretsi kalkulua bidaltzeko **Submit** botoia sakatuz.
+
+=== BLOKEA 33 ===
+#### 4. urratsa: Diedro-kurba ikusi GaussView-n
+
+=== BLOKEA 34 ===
+1. GaussView-n, ireki eskaneatzearen irteera-fitxategia __PROTECTED_BLOCK_16__ bidez.
+2. Sartu __PROTECTED_BLOCK_17__ menuan.
+3. Identifikatu gutxieneko lokalak (gauche konformeroa) eta gutxieneko globala (anti konformeroa 180°-tan), baita tarteko errotazio-hesiak ere.
+
+=== BLOKEA 37 ===
+- __PROTECTED_BLOCK_26__
+- Atkins, P.; De Paula, J. *Química Física*, 10. ed.; Editorial Médica Panamericana, 2018. 11. kap. (Egitura molekularra eta energia potentzialaren gainazalak).
+- Clayden, J.; Greeves, N.; Warren, S. *Organic Chemistry*, 2. ed.; Oxford University Press, 2012. 18. kap. (Konformazio-analisia).
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
+
+=== BLOKEA 39 ===
+### [DROPDOWN_TITLE] Urrunago joateko (aukerakoa)
+
+=== BLOKEA 40 ===
+:icon: rocket
+
+=== BLOKEA 41 ===
+Aukerako jarduera gisa, errepikatu etanoaren konformazio-eskaneatzea (__PROTECTED_BLOCK_37__) teoria-maila berarekin. Kalkulatutako errotazio-hesia, 3 kcal/mol ingurukoa, nabarmen txikiagoa da dihaloetanoarena baino. Bi profilen konparazio zuzenak erakusten du nola ordezkatzailearen bolumenak, C–X loturaren polaritateak eta halogenoaren elektronegatibotasunak energia-minimoak desplazatzen dituzten eta errotazio-hesia igotzen duten.

@@ -1,0 +1,14 @@
+=== BLOKEA 17 ===
+## Osziiladore harmonikoa
+Landuko dugun hurrengo sistema eredua osziladore harmonikoa da. Sistema honetan, aztergai den partikula potentzial baten eraginpean dago 
+__PROTECTED_BLOCK_0__
+Berriro ere, konstante batzuk definituz hasiko gara
+
+=== BLOKEA 19 ===
+Ondoren, gure osziladore harmonikoaren malguki-konstantea eta ardatzeko mugak definituko ditugu
+
+=== BLOKEA 21 ===
+Orain, potentziala eraiki eta Laplaziarrari gehitu diezaiokegu
+
+=== BLOKEA 25 ===
+Berriz ere, Scipy-ra joko dugu balio eta bektore propioak kalkulatzeko

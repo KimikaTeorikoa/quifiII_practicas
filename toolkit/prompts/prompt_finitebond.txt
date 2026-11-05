@@ -1,0 +1,21 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Argibidea: Kopiatu beheko testua eta itsatsi https://latxa.hitz.eus/ edo https://www.apps.euskadi.eus/latxa/
+# GARRANTZITSUA: Mantendu "=== BLOKEA X ===" eta "__PROTECTED_BLOCK_X__" etiketak bere horretan.
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Lotura kimikoaren eredu sinplifikatua
+Orain arte, hainbat potentzialek uhin-funtzioetan eta horiei lotutako energia-mailetan duten eragina aztertu dugu. Amaitzeko, potentzial-hobiaren kasuan ikasi duguna erabiliko dugu lotura kimikoaren eredu minimalista bat egiteko. Eredu honetan, gure koordenatuan definitutako bi hobi konbinatzen ditugu eta Schrödingerren ekuazioa zenbakiz ebazten dugu.
+
+=== BLOKEA 3 ===
+Ondoren, gure potentzial-hobiaren sakonera eta gure kalkulurako __PROTECTED_BLOCK_0__ ardatzeko mugak definitzen ditugu.
+
+=== BLOKEA 8 ===
+Ondoren, Laplaziarren matrize-adierazpen bat kalkulatzen dugu, diferentzia finituen metodoa erabiliz:
+
+=== BLOKEA 11 ===
+Funtzio propioak (eigenvectors) eta energiak (eigenvalues) lortzeko, Scipy-ren eigh funtzio bat erabiltzen dugu.

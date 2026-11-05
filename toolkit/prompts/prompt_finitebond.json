@@ -1,0 +1,32 @@
+{
+  "source": "es/content/parte1-python/finitebond.ipynb",
+  "suffix": ".ipynb",
+  "blocks": {
+    "0": {
+      "type": "cell",
+      "raw": "# Modelo simplificado de un enlace químico\nHasta ahora hemos explorado el efecto que diferentes potenciales tienen \nsobre las funciones de onda y los niveles de energía asociados. Para concluir, \nvamos a utilizar lo que hemos aprendido en el caso del pozo de potencial para\nhacer un modelo minimalista de un enlace químico. En este modelo, combinamos \ndos pozos definidos en nuestra coordenada y resolvemos numéricamente la ecuación\nde Schrödinger. ",
+      "masked": "# Modelo simplificado de un enlace químico\nHasta ahora hemos explorado el efecto que diferentes potenciales tienen \nsobre las funciones de onda y los niveles de energía asociados. Para concluir, \nvamos a utilizar lo que hemos aprendido en el caso del pozo de potencial para\nhacer un modelo minimalista de un enlace químico. En este modelo, combinamos \ndos pozos definidos en nuestra coordenada y resolvemos numéricamente la ecuación\nde Schrödinger. ",
+      "placeholders": {}
+    },
+    "3": {
+      "type": "cell",
+      "raw": "A continuación definimos la profundidad de nuestro pozo de potenciail y los límites en el eje $x$ para nuestro cálculo.",
+      "masked": "A continuación definimos la profundidad de nuestro pozo de potenciail y los límites en el eje __PROTECTED_BLOCK_0__ para nuestro cálculo.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "$x$"
+      }
+    },
+    "8": {
+      "type": "cell",
+      "raw": "A continuación calculamos una representación matricial de la Laplaciana usando el método de las diferencias finitas:",
+      "masked": "A continuación calculamos una representación matricial de la Laplaciana usando el método de las diferencias finitas:",
+      "placeholders": {}
+    },
+    "11": {
+      "type": "cell",
+      "raw": "Para obtener las funciones propias (eigenvectors) y las energías (eigenvalues) usamos una función eigh de Scipy.",
+      "masked": "Para obtener las funciones propias (eigenvectors) y las energías (eigenvalues) usamos una función eigh de Scipy.",
+      "placeholders": {}
+    }
+  }
+}

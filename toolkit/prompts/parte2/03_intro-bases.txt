@@ -1,0 +1,53 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-bases.md (Zatia 1/1)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Oinarri-funtzioak
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Sistema polielektronikoen orbital atomiko eta molekularrak forma espazial jarraituak dituzte, eta ez dute soluzio analitiko sinplerik onartzen. Horiek konputazionalki irudikatzeko, funtzio matematiko ezagunen multzoak erabiltzen ditugu (normalean gaussiarren konbinazioak), oinarri-funtzioak deiturikoak. Gaussianen oinarria aukeratzeak eragin zuzena du elektroi-hodeia modelizatzeko malgutasun numerikoan, baita emaitzaren zehaztasun fisikoan eta beharrezko kalkulu-denboran ere.
+
+=== BLOKEA 3 ===
+## Ideia nagusia: orbitalak funtzio ezagunekin hurbiltzea
+
+=== BLOKEA 4 ===
+Kimika kuantiko konputazionalean, orbital molekularrak oinarri-funtzioen konbinazio lineal gisa irudikatzen dira. Funtzio gaussiarrak estandarra dira Gaussian bezalako programetan, erakarpen- eta aldarapen-integralak azkar kalkulatzeko aukera ematen baitute. Multzoko funtzio kopurua handitzean, elektroi-dentsitatea zehaztasunez deskribatzeko gaitasun numerikoa hobetzen da. Beraz, oinarri-multzoa aukeratzeak oreka etengabea eskatzen du nahi den zehaztasun fisikoaren eta eskuragarri dagoen kostu konputazionalaren artean.
+
+=== BLOKEA 5 ===
+## Zehaztasuna vs kostu konputazionala
+
+=== BLOKEA 6 ===
+Oinarri-multzoaren tamainak kalkulu batek lor dezakeen zehaztasun fisikoaren muga finkatzen du. Atomo bakoitzeko funtzio kopurua handitzean, elektroi-banaketa fideltasun handiagoz deskribatzen da, baina kalkulu-denbora eta memoria-kontsumoa nabarmen handitzen dira. Ondorengo taulak joera kualitatibo hau ilustratzen du bi oinarri ohikoren bidez: STO-3G (oinarri minimoa, azkarra baina hurbildua) eta 6-311G (oinarri hedatua, zehatzagoa eta garestiagoa). Praktika bakoitzaren gidoian adierazten dugu zein oinarri-multzo erabili GaussView-n.
+
+=== BLOKEA 7 ===
+| Oinarria | Tamaina erlatiboa | Kostu erlatiboa |
+|----------|------------------|----------------|
+| STO-3G   | Txikia           | Baxua          |
+| 6-311G   | Handiagoa        | Handiagoa      |
+
+=== BLOKEA 8 ===
+---
+
+=== BLOKEA 9 ===
+## Bibliografia
+
+=== BLOKEA 10 ===
+- __PROTECTED_BLOCK_4__
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
+
+=== BLOKEA 11 ===
+---
+
+=== BLOKEA 12 ===
+### [DROPDOWN_TITLE] Zer esan nahi du notazioak: 6-31G, 6-311G eta polarizazio-funtzioak
+
+=== BLOKEA 13 ===
+Pople-ren balentzia banatuko oinarrien notazioan, zenbakiek adierazten dute zenbat funtzio gaussiar primitibok osatzen duten barne-orbital eta balentzia-orbital bakoitza. Adibidez, 6-311G oinarrian, sei gaussiar kontrajartzen dira barne-geruza bakoitzerako, eta balentzia-geruza hiru funtziotan banatzen da, hiru, bat eta gaussiar baten kontrakzioz osatuak. Izartxoak edo __PROTECTED_BLOCK_5__ atzizkiak polarizazio-funtzioen gehikuntza adierazten du (d motakoak hidrogenoa ez diren atomoetan), angelu-malgutasuna ematen dutenak elektroi-dentsitatearen deformazioak deskribatzeko lotura kimikoa eratzean. GaussView-n, multzo osoa __PROTECTED_BLOCK_3__ fitxako goitibeherako menuan hautatzen da.

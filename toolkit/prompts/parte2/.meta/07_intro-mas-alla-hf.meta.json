@@ -1,0 +1,84 @@
+{
+  "source": "es/content/parte2-gaussian/intros/intro-mas-alla-hf.md",
+  "dest": "eu/content/parte2-gaussian/intros/intro-mas-alla-hf.md",
+  "prefix": "07_intro-mas-alla-hf",
+  "slug": "intro-mas-alla-hf",
+  "filename": "intro-mas-alla-hf.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_1__": ":::",
+    "__PROTECTED_BLOCK_2__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_3__": "$N$",
+    "__PROTECTED_BLOCK_4__": "$3N$",
+    "__PROTECTED_BLOCK_5__": "$\\rho(\\mathbf{r})$",
+    "__PROTECTED_BLOCK_6__": "$(x, y, z)$"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Más allá de Hartree-Fock"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "El tratamiento de campo medio de Hartree-Fock no considera que los electrones se repelen instantáneamente debido a su interacción coulómbica, omitiendo la energía de correlación electrónica. Para superar esta limitación, la química computacional recurre a métodos post-Hartree-Fock y a la teoría del funcional de la densidad (DFT). Ambos enfoques permiten calcular energías moleculares y propiedades químicas con mayor precisión: los primeros incorporan múltiples configuraciones electrónicas a partir de una función de onda de referencia, mientras que DFT modela la correlación mediante funcionales de intercambio y correlación como B3LYP."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## Más allá del campo medio: añadir configuraciones"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "La aproximación de Hartree-Fock describe el estado electrónico mediante una única configuración, es decir, una asignación fija de electrones a orbitales ocupados. Los métodos de interacción de configuraciones mejoran esta descripción incorporando combinaciones lineales de configuraciones donde uno o más electrones se promueven a orbitales virtuales. En particular, el método CISD incluye todas las excitaciones simples y dobles a partir del determinante de referencia. Este enfoque recupera una parte sustancial de la correlación electrónica, aunque con un coste computacional y de memoria muy superior al de Hartree-Fock."
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "## DFT: un enfoque diferente"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "La teoría del funcional de la densidad (DFT) aborda el problema de la estructura electrónica desde una perspectiva distinta: sustituye la función de onda multielectrónica por la densidad electrónica espacial. Según los teoremas de Hohenberg y Kohn, la energía del estado fundamental queda determinada de forma exacta por esta densidad tridimensional. La pieza central del método es el funcional de intercambio y correlación, responsable de modelar los efectos electrónicos que Hartree-Fock omite o aproxima de forma incompleta. Entre las diversas opciones disponibles, los funcionales híbridos como B3LYP combinan una fracción del intercambio exacto de Hartree-Fock con términos de correlación propios de DFT. Para moléculas orgánicas de tamaño medio, B3LYP reproduce geometrías y frecuencias con errores típicos por debajo del 3% a un coste computacional comparable al de HF."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "Mientras que la función de onda de un sistema de __PROTECTED_BLOCK_3__ electrones depende de __PROTECTED_BLOCK_4__ coordenadas espaciales (lo que hace inviable su cálculo exacto para moléculas medianas o grandes), la densidad electrónica __PROTECTED_BLOCK_5__ es una magnitud observable que solo depende de tres variables espaciales __PROTECTED_BLOCK_6__. Esta drástica reducción dimensional permite a DFT incluir efectos de correlación electrónica con un coste computacional comparable al del método Hartree-Fock."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "- __PROTECTED_BLOCK_2__\n- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996."
+    }
+  ],
+  "total_chunks": 1,
+  "total_blocks": 11
+}

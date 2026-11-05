@@ -1,0 +1,94 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-hartree-fock.md (Zatia 2/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 30 ===
+non __PROTECTED_BLOCK_70__ orbital lotuaren energia den (negatiboa) eta __PROTECTED_BLOCK_71__ lehen orbital hutsaren energia den.
+
+=== BLOKEA 32 ===
+Komeni da ez nahastea 2×2 eredu hau kalkulu molekularren benetako dimentsioarekin:
+
+=== BLOKEA 33 ===
+1. **Zergatik 2×2 adibide honetan?** Nahita aukeratu dugulako oinarri minimo bat __PROTECTED_BLOCK_73__ funtzioena bi elektroi dituen atomo baterako. Bi oinarri-funtzio daudenez, zehazki 2 orbital lortzen dira: orbital okupatu bat (bi elektroi parekatuekin) eta orbital birtual huts bat.
+2. **Dimentsioak sistema errealetan:** Edozein kalkulu molekular estandarretan, oinarri-funtzioen kopurua __PROTECTED_BLOCK_74__ askoz handiagoa da (__PROTECTED_BLOCK_75__). __PROTECTED_BLOCK_76__, __PROTECTED_BLOCK_77__ eta __PROTECTED_BLOCK_78__ matrizeak beti dira **__PROTECTED_BLOCK_79__** dimentsioko matrize karratuak.
+3. **Orbital okupatu eta birtualen banaketa:** Geruza itxiko sistema neutro batean, __PROTECTED_BLOCK_80__ elektroi eta __PROTECTED_BLOCK_81__ oinarri-funtziorekin, metodoak beti sortzen ditu __PROTECTED_BLOCK_82__ orbital espazial. __PROTECTED_BLOCK_84__ matrizearen lehen __PROTECTED_BLOCK_83__ zutabeek soilik dagozkien orbital okupatuei (HOMO __PROTECTED_BLOCK_85__ arte); gainerako __PROTECTED_BLOCK_86__ zutabeek orbital birtual hutsei dagozkie (LUMO __PROTECTED_BLOCK_87__ hasita).
+
+=== BLOKEA 34 ===
+## SCF zikloa: iterazio bidez ebaztea
+
+=== BLOKEA 35 ===
+Mendekotasun zirkular bat dago: Fock matrizea __PROTECTED_BLOCK_88__ kalkulatzeko, dentsitate elektronikoa ezagutu behar da (koefizienteak __PROTECTED_BLOCK_89__), baina __PROTECTED_BLOCK_90__ lortzeko, sistema __PROTECTED_BLOCK_91__ diagonalizatu behar da.
+
+=== BLOKEA 36 ===
+Zirkulartasun hau iteratiboki ebazten da eremu auto-konsistentearen metodoaren bidez (SCF, *Self-Consistent Field*):
+
+=== BLOKEA 37 ===
+1. Koefizienteen hasierako estimazio bat sortzen da (*guess* __PROTECTED_BLOCK_92__).
+2. Koefiziente horiekin Fock matrizea __PROTECTED_BLOCK_93__ eraikitzen da.
+3. Sistema __PROTECTED_BLOCK_94__ diagonalizatzen da koefiziente berriak __PROTECTED_BLOCK_95__ eta energia berriak __PROTECTED_BLOCK_96__ lortzeko.
+4. Egiaztatzen da energia- eta dentsitate-aldaketa aurreko urratsean finkatutako tolerantzia baino txikiagoa den (adibidez __PROTECTED_BLOCK_97__ Ha). Konbergitu ez bada, 2. urratsera itzultzen da.
+
+=== BLOKEA 38 ===
+## Energia: orbitala vs totala
+
+=== BLOKEA 39 ===
+Fock matrizea diagonalizatzean lortutako autobalioak __PROTECTED_BLOCK_98__ orbital bakoitzaren energiei dagozkie, ez sistemaren energia totalari.
+
+=== BLOKEA 40 ===
+Helioaren bi elektroientzat __PROTECTED_BLOCK_99__ orbitalean, orbitalaren energiak elektroi bakarreko energia __PROTECTED_BLOCK_100__ eta beste elektroiarekiko aldarapen elektrostatikoa __PROTECTED_BLOCK_101__ barne hartzen ditu:
+
+=== BLOKEA 41 ===
+Bi elektroien orbital-energiak zuzenean batuko bagenitu:
+
+=== BLOKEA 42 ===
+elektroi arteko aldarapena __PROTECTED_BLOCK_102__ bi aldiz kontatzen arituko ginateke. Beraz, benetako energia elektronikoak interakzio bikoiztu hori kentzen du:
+
+=== BLOKEA 43 ===
+Nukleo anitzeko molekula batean, energia totalak, gainera, nukleo arteko aldarapen coulombiarra __PROTECTED_BLOCK_103__ gehitzen du:
+
+=== BLOKEA 44 ===
+Balio hori zehazki Gaussian-ek __PROTECTED_BLOCK_111__ lerroan inprimatzen du __PROTECTED_BLOCK_112__ fitxategian.
+
+=== BLOKEA 45 ===
+Gaussian-en log-aren __PROTECTED_BLOCK_113__ lerroan agertzen den energia sistemaren energia totala da __PROTECTED_BLOCK_104__, ez orbital indibidual baten energia __PROTECTED_BLOCK_105__.
+
+=== BLOKEA 46 ===
+## HFren mugak: korrelazio elektronikoa
+
+=== BLOKEA 47 ===
+Hartree-Fock metodoak interakzio instantaneoak batez besteko eremu batekin ordezten dituenez, elektroi bat puntu batean aurkitzeko probabilitatea bestearen posizio instantaneotik independentea dela suposatzen du. Hartree-Fock-en energia oinarri infinituarekin (__PROTECTED_BLOCK_106__) eta energia zehatz ez-erlatibistaren (__PROTECTED_BLOCK_107__) arteko aldeak korrelazio-energia definitzen du:
+
+=== BLOKEA 48 ===
+__PROTECTED_BLOCK_108__ printzipio bariazionalagatik, korrelazio-energia beti negatiboa da (__PROTECTED_BLOCK_109__). Nahiz eta energia totalaren % 1 baino gutxiago izan ohi den, erabakigarria da lotura-energiak, erreakzio-hesiak eta trantsizio espektroskopikoak zehaztasunez kalkulatzeko.
+
+=== BLOKEA 50 ===
+## Bibliografia
+
+=== BLOKEA 51 ===
+- __PROTECTED_BLOCK_37__
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
+
+=== BLOKEA 52 ===
+---
+
+=== BLOKEA 53 ===
+### [DROPDOWN_TITLE] Uhin-funtzio antisimetrikoa eta Slater-en determinantea
+
+=== BLOKEA 54 ===
+Pauliren bazterketa-printzipioak eskatzen du uhin-funtzio elektronikoa antisimetrikoa izatea bi elektroi edozeinen trukearen aurrean:
+
+=== BLOKEA 55 ===
+Kontrako spinak dituzten bi elektroirentzat __PROTECTED_BLOCK_110__ orbital espazialean, uhin-funtzioa Slater-en determinante gisa adierazten da:
+
+=== BLOKEA 56 ===
+Bi elektroien koordenatuak trukatzea determinantearen bi errenkada permutatzearen baliokidea da, eta horrek automatikoki zeinu negatiboa ematen dio eta Pauliren printzipioa bermatzen du.
+
+=== BLOKEA 57 ===
+### [DROPDOWN_TITLE] Korrelazio-energia eta HF osteko metodoak
+
+=== BLOKEA 58 ===
+Hartree-Fock-en uhin-funtziotik abiatuta, hainbat metodo garatu dira korrelazio elektronikoa berreskuratzeko eta batez besteko eremuaren hurbilketa gainditzeko. Bigarren ordenako Møller-Plesset-en perturbazioaren teoriak (MP2) zuzenketa dinamikoak gehitzen dizkio energiari, kostu konputazional moderatuarekin. Bestalde, *Coupled Cluster* bezalako metodoek, kitzikapen sinple eta bikoitzekin (CCSD), zehaztasun askoz handiagoa eskaintzen dute, kalkulu-ahalegin handiagoaren truke. Eskema hauek xehetasunez aztertzen dira ondorengo atal teoriko batean (Hartree-Focketik haratago).

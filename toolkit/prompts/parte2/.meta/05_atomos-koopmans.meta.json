@@ -1,0 +1,479 @@
+{
+  "source": "es/content/parte2-gaussian/practicas/atomos-koopmans.md",
+  "dest": "eu/content/parte2-gaussian/practicas/atomos-koopmans.md",
+  "prefix": "05_atomos-koopmans",
+  "slug": "atomos-koopmans",
+  "filename": "atomos-koopmans.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/figures/eu/homo_lumo_ionizacion.svg\n:alt: Diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha de energía de ionización\n:width: 60%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": ":::{figure} /_static/capturas/07_koopmans_setup_c_popfull.png\n:alt: Configuración del cálculo de Hartree-Fock con pop=full para el átomo de carbono\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_2__": ":::{figure} /_static/capturas/08_koopmans_log_terminacion_normal.png\n:alt: Terminación normal de Gaussian 16 al final del archivo de salida .log\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_3__": ":::{figure} /_static/capturas/07b_koopmans_gv_orbitales_c.png\n:alt: Diagrama de niveles de energía y ocupación de orbitales Alpha y Beta en Results MOs\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_4__": ":::{figure} /_static/capturas/09_koopmans_gv_orbital_homo.png\n:alt: Generación de la isosuperficie 3D del orbital HOMO (2p) con isovalor 0.01 en la pestaña Visualize\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_5__": "$$\\text{IE}_{\\Delta E} = E(A^+) - E(A)$$",
+    "__PROTECTED_BLOCK_6__": "$$\\text{IE}_{\\text{Koopmans}} \\approx -\\varepsilon_{\\text{HOMO}}$$",
+    "__PROTECTED_BLOCK_7__": "$$\\text{IE}_{\\Delta E} = \\bigl[E(A^+) - E(A)\\bigr] \\times 27.2114 \\quad [\\text{eV}]$$",
+    "__PROTECTED_BLOCK_8__": "$$\\text{IE}_{\\text{Koopmans}} = -\\varepsilon_{\\text{HOMO}} \\times 27.2114 \\quad [\\text{eV}]$$",
+    "__PROTECTED_BLOCK_9__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_10__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_11__": ":::{admonition} Abisua\n:class: warning",
+    "__PROTECTED_BLOCK_12__": ":::{admonition} Adi\n:class: danger",
+    "__PROTECTED_BLOCK_13__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_14__": ":::{note} __NOTE_TITLE_PLACEHOLDER__",
+    "__PROTECTED_BLOCK_15__": ":::",
+    "__PROTECTED_BLOCK_16__": ":::",
+    "__PROTECTED_BLOCK_17__": ":::",
+    "__PROTECTED_BLOCK_18__": ":::",
+    "__PROTECTED_BLOCK_19__": ":::",
+    "__PROTECTED_BLOCK_20__": "**View → Element Fragments**",
+    "__PROTECTED_BLOCK_21__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_22__": "**File → Open**",
+    "__PROTECTED_BLOCK_23__": "**Results → MOs**",
+    "__PROTECTED_BLOCK_24__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_25__": "**Gaussian Calculation Setup → Method**",
+    "__PROTECTED_BLOCK_26__": "**Job Type**",
+    "__PROTECTED_BLOCK_27__": "**Method**",
+    "__PROTECTED_BLOCK_28__": "**Title**",
+    "__PROTECTED_BLOCK_29__": "**Save**",
+    "__PROTECTED_BLOCK_30__": "**Method**",
+    "__PROTECTED_BLOCK_31__": "**Job Type**",
+    "__PROTECTED_BLOCK_32__": "**Method**",
+    "__PROTECTED_BLOCK_33__": "**Title**",
+    "__PROTECTED_BLOCK_34__": "{{gaussian_version}}",
+    "__PROTECTED_BLOCK_35__": "{{termination_ok}}",
+    "__PROTECTED_BLOCK_36__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_37__": "{{termination_ok}}",
+    "__PROTECTED_BLOCK_38__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_39__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_40__": "$\\Delta E$",
+    "__PROTECTED_BLOCK_41__": "$-\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_42__": "$\\Delta E$",
+    "__PROTECTED_BLOCK_43__": "$-\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_44__": "$A$",
+    "__PROTECTED_BLOCK_45__": "$A^+$",
+    "__PROTECTED_BLOCK_46__": "$A \\rightarrow A^+ + e^-$",
+    "__PROTECTED_BLOCK_47__": "$A^+$",
+    "__PROTECTED_BLOCK_48__": "$A$",
+    "__PROTECTED_BLOCK_49__": "$-\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_50__": "$\\text{IE}_{\\Delta E}$",
+    "__PROTECTED_BLOCK_51__": "$2S+1$",
+    "__PROTECTED_BLOCK_52__": "$S$",
+    "__PROTECTED_BLOCK_53__": "$S=0$",
+    "__PROTECTED_BLOCK_54__": "$S=1/2$",
+    "__PROTECTED_BLOCK_55__": "$\\alpha$",
+    "__PROTECTED_BLOCK_56__": "$\\beta$",
+    "__PROTECTED_BLOCK_57__": "$2S+1$",
+    "__PROTECTED_BLOCK_58__": "$Z$",
+    "__PROTECTED_BLOCK_59__": "$E(N)$",
+    "__PROTECTED_BLOCK_60__": "$\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_61__": "$\\varepsilon_{\\text{LUMO}}$",
+    "__PROTECTED_BLOCK_62__": "$\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_63__": "$\\alpha$",
+    "__PROTECTED_BLOCK_64__": "$\\beta$",
+    "__PROTECTED_BLOCK_65__": "$\\alpha$",
+    "__PROTECTED_BLOCK_66__": "$-0.32803\\text{ Ha}$",
+    "__PROTECTED_BLOCK_67__": "$2p$",
+    "__PROTECTED_BLOCK_68__": "$E(A^+)$",
+    "__PROTECTED_BLOCK_69__": "$\\text{IE}_{\\Delta E}$",
+    "__PROTECTED_BLOCK_70__": "$\\text{IE}_{\\text{Koopmans}}$",
+    "__PROTECTED_BLOCK_71__": "$\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_72__": "$_{\\text{Koopmans}}$",
+    "__PROTECTED_BLOCK_73__": "$\\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_74__": "`SCF Done`",
+    "__PROTECTED_BLOCK_75__": "`pop=full`",
+    "__PROTECTED_BLOCK_76__": "`Alpha occ. eigenvalues`",
+    "__PROTECTED_BLOCK_77__": "`Alpha virt. eigenvalues`",
+    "__PROTECTED_BLOCK_78__": "`.log`",
+    "__PROTECTED_BLOCK_79__": "`C neutro HF STO-3G`",
+    "__PROTECTED_BLOCK_80__": "`pop=full`",
+    "__PROTECTED_BLOCK_81__": "`.gjf`",
+    "__PROTECTED_BLOCK_82__": "`C_neutro_HF_STO3G.gjf`",
+    "__PROTECTED_BLOCK_83__": "`__PROTECTED_BLOCK_36__`",
+    "__PROTECTED_BLOCK_84__": "`.log`",
+    "__PROTECTED_BLOCK_85__": "`C_neutro_HF_STO3G.log`",
+    "__PROTECTED_BLOCK_86__": "`__PROTECTED_BLOCK_37__`",
+    "__PROTECTED_BLOCK_87__": "`.log`",
+    "__PROTECTED_BLOCK_88__": "`SCF Done`",
+    "__PROTECTED_BLOCK_89__": "`SCF Done:  E(RHF) = ...`",
+    "__PROTECTED_BLOCK_90__": "`SCF Done:  E(ROHF) = ...`",
+    "__PROTECTED_BLOCK_91__": "`.log`",
+    "__PROTECTED_BLOCK_92__": "`.log`",
+    "__PROTECTED_BLOCK_93__": "`Alpha occ. eigenvalues`",
+    "__PROTECTED_BLOCK_94__": "`Alpha occ. eigenvalues --`",
+    "__PROTECTED_BLOCK_95__": "`Alpha virt. eigenvalues --`",
+    "__PROTECTED_BLOCK_96__": "`.chk`",
+    "__PROTECTED_BLOCK_97__": "`0.01`",
+    "__PROTECTED_BLOCK_98__": "`0`",
+    "__PROTECTED_BLOCK_99__": "`1`",
+    "__PROTECTED_BLOCK_100__": "`Energy`",
+    "__PROTECTED_BLOCK_101__": "`HF`",
+    "__PROTECTED_BLOCK_102__": "`STO-3G`",
+    "__PROTECTED_BLOCK_103__": "`pop=full`",
+    "__PROTECTED_BLOCK_104__": "`C cation HF STO-3G`",
+    "__PROTECTED_BLOCK_105__": "`C_cation_HF_STO3G.gjf`",
+    "__PROTECTED_BLOCK_106__": "`__PROTECTED_BLOCK_38__`",
+    "__PROTECTED_BLOCK_107__": "`.log`",
+    "__PROTECTED_BLOCK_108__": "`SCF Done`",
+    "__PROTECTED_BLOCK_109__": "`.log`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Átomos y el teorema de Koopmans"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "La energía de ionización mide la fuerza de atracción que ejerce el núcleo sobre los electrones más externos y determina la reactividad química y las tendencias periódicas de los elementos. Mediante cálculos de Hartree-Fock en Gaussian, se aplican dos aproximaciones complementarias para evaluar esta propiedad: la diferencia directa de energía total entre el átomo neutro y su catión (__PROTECTED_BLOCK_40__), y la estimación a partir del orbital ocupado de mayor energía mediante el teorema de Koopmans (__PROTECTED_BLOCK_41__)."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## Objetivos"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "1. Calcular la energía electrónica total de átomos neutros y cationes monocargados mediante el método Hartree-Fock en __PROTECTED_BLOCK_34__.\n2. Determinar la energía de ionización por diferencia autoconsistente (__PROTECTED_BLOCK_42__) y por estimación orbital mediante el teorema de Koopmans (__PROTECTED_BLOCK_43__).\n3. Comparar las energías de ionización calculadas frente a valores experimentales a lo largo del primer y segundo período.\n4. Visualizar la distribución espacial y la simetría de los orbitales atómicos ocupados de mayor energía (HOMO) en GaussView."
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "## Conceptos clave"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "### ¿Por qué las energías son negativas?"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "La energía electrónica de un átomo se mide respecto al estado de referencia en que el núcleo y todos los electrones se encuentran en reposo y separados en el infinito, con interacción nula. Como el átomo ligado es más estable que ese estado de referencia, su energía es siempre negativa. Cuanto más negativo es el valor que aparece en la línea __PROTECTED_BLOCK_74__, mayor es la estabilidad del sistema. Un resultado positivo en la energía total indicaría un error en la configuración del cálculo."
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "### El HOMO y el LUMO"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "Los orbitales moleculares se ordenan de menor a mayor energía. El orbital ocupado de mayor energía recibe el nombre de HOMO (del inglés *Highest Occupied Molecular Orbital*) y contiene los electrones más fáciles de extraer. El primer orbital desocupado, el LUMO (*Lowest Unoccupied Molecular Orbital*), es el orbital disponible para recibir electrones. La diferencia entre el nivel del HOMO y el nivel de vacío constituye una primera estimación de la energía necesaria para arrancar un electrón del sistema."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_9__"
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "En la salida de Gaussian con __PROTECTED_BLOCK_75__, la energía del HOMO corresponde al último valor numérico de la última línea __PROTECTED_BLOCK_76__. El primer valor de la línea siguiente __PROTECTED_BLOCK_77__ corresponde al LUMO."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_15__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "### La energía de ionización y el Teorema de Koopmans"
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "La energía de ionización de un átomo neutro __PROTECTED_BLOCK_44__ en fase gas es la energía mínima necesaria para extraer un electrón y generar el catión __PROTECTED_BLOCK_45__ según el proceso __PROTECTED_BLOCK_46__. En esta práctica se calcula por dos vías independientes. La primera es la diferencia directa de energías SCF entre el catión y el átomo neutro, lo que exige dos cálculos separados. La segunda se basa en el teorema de Koopmans, que permite estimar ese valor a partir únicamente de la energía del orbital HOMO del átomo neutro, sin necesidad de calcular el catión."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_5__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_6__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_10__"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "El teorema de Koopmans adopta la aproximación de orbitales congelados, asumiendo que los orbitales del catión __PROTECTED_BLOCK_47__ son idénticos a los del átomo neutro __PROTECTED_BLOCK_48__. En un proceso físico de ionización, la pérdida de un electrón reduce la repulsión interelectrónica global y provoca la contracción de la nube electrónica restante hacia el núcleo (relajación orbital). Como la aproximación de Koopmans ignora tanto esta relajación estabilizadora como las diferencias de energía de correlación, __PROTECTED_BLOCK_49__ discrepa ligeramente del valor calculado por diferencia autoconsistente __PROTECTED_BLOCK_50__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_16__"
+    },
+    {
+      "type": "block",
+      "bid": 14,
+      "text": "### La multiplicidad de espín"
+    },
+    {
+      "type": "block",
+      "bid": 15,
+      "text": "La multiplicidad de espín indica cuántos estados cuánticos de espín son accesibles para el sistema y se calcula como __PROTECTED_BLOCK_51__, donde __PROTECTED_BLOCK_52__ es la suma de los espines de los electrones desapareados. Un átomo con todos los electrones apareados tiene __PROTECTED_BLOCK_53__ y multiplicidad 1 (singlete). Un electrón desapareado da __PROTECTED_BLOCK_54__ y multiplicidad 2 (doblete). Asignar un valor de multiplicidad incorrecto provoca que Gaussian distribuya mal los electrones entre los orbitales __PROTECTED_BLOCK_55__ y __PROTECTED_BLOCK_56__, lo que invalida el resultado o impide la convergencia del ciclo SCF."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_11__"
+    },
+    {
+      "type": "block",
+      "bid": 16,
+      "text": "Verificar siempre el valor de multiplicidad de espín antes de enviar el cálculo: un valor incorrecto invalida los resultados o impide la convergencia SCF."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_17__"
+    },
+    {
+      "type": "block",
+      "bid": 17,
+      "text": "## Procedimiento"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_12__"
+    },
+    {
+      "type": "block",
+      "bid": 18,
+      "text": "Verificación obligatoria tras cada cálculo: abrir el archivo __PROTECTED_BLOCK_78__ con el editor de texto y confirmar la presencia de la línea final exacta:\n__PROTECTED_BLOCK_35__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_18__"
+    },
+    {
+      "type": "block",
+      "bid": 19,
+      "text": "### Paso 1: Abrir GaussView y dibujar el átomo"
+    },
+    {
+      "type": "block",
+      "bid": 20,
+      "text": "1. Abrir GaussView desde el menú de aplicaciones o lanzador del sistema.\n2. Abrir la paleta de fragmentos atómicos mediante __PROTECTED_BLOCK_20__ (o pulsando el icono de la tabla periódica en la barra de herramientas superior).\n3. Seleccionar el elemento químico que se desea calcular (por ejemplo, carbono, **C**).\n4. Hacer un único clic con el botón izquierdo sobre la ventana central de dibujo. Aparecerá un centro atómico aislado sin enlaces."
+    },
+    {
+      "type": "block",
+      "bid": 21,
+      "text": "### Paso 2: Configurar el cálculo del átomo neutro"
+    },
+    {
+      "type": "block",
+      "bid": 22,
+      "text": "1. Acceder al menú __PROTECTED_BLOCK_21__.\n2. En la pestaña __PROTECTED_BLOCK_26__, seleccionar **Energy**.\n3. En la pestaña __PROTECTED_BLOCK_27__, configurar los parámetros del cálculo:"
+    },
+    {
+      "type": "block",
+      "bid": 23,
+      "text": "| Campo | Valor |\n|---|---|\n| Method | **HF** |\n| Basis Set | **STO-3G** |\n| Charge | **0** |\n| Spin (Multiplicity) | Consultar la tabla de multiplicidades para cada átomo neutro |"
+    },
+    {
+      "type": "block",
+      "bid": 24,
+      "text": "4. En la pestaña __PROTECTED_BLOCK_28__, escribir una descripción identificativa (por ejemplo, __PROTECTED_BLOCK_79__).\n5. En la pestaña **Additional Keywords**, escribir exactamente: __PROTECTED_BLOCK_80__. Esta instrucción incluye las energías de todos los orbitales moleculares en el archivo de salida."
+    },
+    {
+      "type": "block",
+      "bid": 25,
+      "text": "Tabla de multiplicidades de referencia (__PROTECTED_BLOCK_57__):"
+    },
+    {
+      "type": "block",
+      "bid": 26,
+      "text": "| Átomo | __PROTECTED_BLOCK_58__ | Configuración | Multiplicidad |\n|---|:---:|---|:---:|\n| H | 1 | 1s¹ | 2 |\n| He | 2 | 1s² | 1 |\n| Li | 3 | [He] 2s¹ | 2 |\n| Be | 4 | [He] 2s² | 1 |\n| B | 5 | [He] 2s² 2p¹ | 2 |\n| C | 6 | [He] 2s² 2p² | 3 |\n| N | 7 | [He] 2s² 2p³ | 4 |\n| O | 8 | [He] 2s² 2p⁴ | 3 |\n| F | 9 | [He] 2s² 2p⁵ | 2 |\n| Ne | 10 | [He] 2s² 2p⁶ | 1 |"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 27,
+      "text": "### Paso 3: Lanzar el cálculo y guardar el archivo"
+    },
+    {
+      "type": "block",
+      "bid": 28,
+      "text": "1. Pulsar el botón **Submit** en la parte inferior de la ventana **Gaussian Calculation Setup**.\n2. En el cuadro de diálogo para guardar, indicar el nombre del archivo de entrada __PROTECTED_BLOCK_81__ (por ejemplo, __PROTECTED_BLOCK_82__) y guardarlo en el directorio de trabajo del laboratorio: __PROTECTED_BLOCK_83__.\n3. Confirmar el cuadro de diálogo pulsando __PROTECTED_BLOCK_29__ y a continuación **Submit**.\n4. Observar el estado de ejecución en la barra inferior de GaussView hasta que el cálculo finalice (pocos segundos para elementos ligeros)."
+    },
+    {
+      "type": "block",
+      "bid": 29,
+      "text": "### Paso 4: Verificar la terminación correcta"
+    },
+    {
+      "type": "block",
+      "bid": 30,
+      "text": "1. Abrir el archivo __PROTECTED_BLOCK_84__ generado (__PROTECTED_BLOCK_85__) con el editor de texto del sistema (__PROTECTED_BLOCK_22__ en el editor o clic derecho en el archivo).\n2. Desplazarse al final del archivo con **Ctrl + Fin**.\n3. Confirmar que la última línea del archivo coincide exactamente con: __PROTECTED_BLOCK_86__. Si no aparece, el cálculo falló y no deben usarse sus datos."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    },
+    {
+      "type": "block",
+      "bid": 31,
+      "text": "### Paso 5: Leer la energía total E(N)"
+    },
+    {
+      "type": "block",
+      "bid": 32,
+      "text": "1. En el archivo __PROTECTED_BLOCK_87__ abierto en el editor de texto, pulsar **Ctrl + F** para activar la búsqueda.\n2. Escribir el texto de búsqueda: __PROTECTED_BLOCK_88__.\n3. Localizar la energía total en la línea __PROTECTED_BLOCK_89__ (para sistemas de capa cerrada con multiplicidad 1) o __PROTECTED_BLOCK_90__ (para capa abierta con multiplicidad distinta de 1).\n4. Copiar el valor numérico en unidades atómicas (A.U. / Hartrees) y pegarlo en la columna __PROTECTED_BLOCK_59__ de la tabla de resultados."
+    },
+    {
+      "type": "block",
+      "bid": 33,
+      "text": "### Paso 6: Leer la energía orbital del HOMO y visualizar el orbital"
+    },
+    {
+      "type": "block",
+      "bid": 34,
+      "text": "1. **Lectura numérica en el archivo __PROTECTED_BLOCK_91__:**\n   - En el archivo __PROTECTED_BLOCK_92__ abierto en el editor, buscar con **Ctrl + F** el texto: __PROTECTED_BLOCK_93__.\n   - Localizar el último número de la última línea __PROTECTED_BLOCK_94__. Ese valor numérico corresponde a la energía del orbital ocupado de mayor energía, __PROTECTED_BLOCK_60__ (en Hartrees).\n   - Localizar el primer número de la línea inmediata siguiente __PROTECTED_BLOCK_95__, correspondiente al orbital desocupado de menor energía (__PROTECTED_BLOCK_61__).\n   - Copiar el valor de __PROTECTED_BLOCK_62__ (en Hartrees) en la columna correspondiente de la tabla de resultados."
+    },
+    {
+      "type": "block",
+      "bid": 35,
+      "text": "2. **Comprobación y visualización en GaussView:**\n   - En GaussView, abrimos el archivo __PROTECTED_BLOCK_96__ resultante del cálculo y accedemos al menú __PROTECTED_BLOCK_23__.\n   - En la pestaña **New Gaussian MOs** observamos el diagrama de niveles de energía y la ocupación de los orbitales para los espines __PROTECTED_BLOCK_63__ y __PROTECTED_BLOCK_64__. Para el carbono neutro en estado triplete, el orbital ocupado de mayor energía (__PROTECTED_BLOCK_65__, orbital 4) tiene una energía de __PROTECTED_BLOCK_66__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_3__"
+    },
+    {
+      "type": "block",
+      "bid": 36,
+      "text": "- Para generar la distribución tridimensional del orbital, accedemos a la pestaña **Visualize** dentro de esa misma ventana. Seleccionamos el orbital 4 (HOMO), establecemos el campo **Isovalue** en __PROTECTED_BLOCK_97__ y pulsamos **Update**. En la subventana izquierda aparecerán los dos lóbulos del orbital atómico __PROTECTED_BLOCK_67__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_4__"
+    },
+    {
+      "type": "block",
+      "bid": 37,
+      "text": "### Paso 7: Configurar y calcular el catión A⁺"
+    },
+    {
+      "type": "block",
+      "bid": 38,
+      "text": "1. Regresar a GaussView con el mismo centro atómico en pantalla.\n2. Abrir nuevamente el panel __PROTECTED_BLOCK_24__.\n3. En la pestaña __PROTECTED_BLOCK_30__, modificar los siguientes parámetros:\n   - **Charge**: cambiar de __PROTECTED_BLOCK_98__ a __PROTECTED_BLOCK_99__.\n   - **Spin**: ajustar a la multiplicidad correspondiente a la especie catiónica (ver tabla inferior). Al arrancar un electrón del HOMO, el número de electrones desapareados cambia.\n4. Mantener __PROTECTED_BLOCK_31__ en __PROTECTED_BLOCK_100__, __PROTECTED_BLOCK_32__ en __PROTECTED_BLOCK_101__, **Basis Set** en __PROTECTED_BLOCK_102__ y la palabra clave __PROTECTED_BLOCK_103__ en **Additional Keywords**.\n5. En la pestaña __PROTECTED_BLOCK_33__, escribir: __PROTECTED_BLOCK_104__.\n6. Pulsar **Submit**, guardar con nombre representativo (por ejemplo, __PROTECTED_BLOCK_105__) en __PROTECTED_BLOCK_106__ y confirmar el envío.\n7. Verificar la terminación correcta en el nuevo __PROTECTED_BLOCK_107__ y extraer la energía total __PROTECTED_BLOCK_68__ en la línea __PROTECTED_BLOCK_108__."
+    },
+    {
+      "type": "block",
+      "bid": 39,
+      "text": "| Campo | Neutro | Catión |\n|---|:---:|:---:|\n| Charge | 0 | +1 |\n| Spin | Multiplicidad neutro | Multiplicidad catión |"
+    },
+    {
+      "type": "block",
+      "bid": 40,
+      "text": "### Paso 8: Calcular las energías de ionización"
+    },
+    {
+      "type": "block",
+      "bid": 41,
+      "text": "1. Calcular la energía de ionización por diferencia directa (__PROTECTED_BLOCK_69__):"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_7__"
+    },
+    {
+      "type": "block",
+      "bid": 42,
+      "text": "2. Calcular la estimación del teorema de Koopmans (__PROTECTED_BLOCK_70__):"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_8__"
+    },
+    {
+      "type": "block",
+      "bid": 43,
+      "text": "3. Registrar ambos valores en electronvoltios en la tabla de datos y calcular la desviación porcentual respecto al valor experimental de referencia."
+    },
+    {
+      "type": "block",
+      "bid": 44,
+      "text": "## Resultados y análisis"
+    },
+    {
+      "type": "block",
+      "bid": 45,
+      "text": "Para cada átomo calculado, registramos las dos energías extraídas del archivo __PROTECTED_BLOCK_109__ y calculamos ambas estimaciones de la energía de ionización. La tabla siguiente recoge los valores en Hartrees y los resultados ya convertidos a eV. Los valores experimentales de referencia se incluyen para calcular el error porcentual."
+    },
+    {
+      "type": "block",
+      "bid": 46,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 47,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 48,
+      "text": "- __PROTECTED_BLOCK_39__\n- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 9 (Estructura electrónica atómica).\n- NIST Chemistry WebBook, https://webbook.nist.gov (datos experimentales de energía de ionización).\n- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996."
+    },
+    {
+      "type": "block",
+      "bid": 49,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_13__"
+    },
+    {
+      "type": "block",
+      "bid": 50,
+      "text": "### [DROPDOWN_TITLE] Para ir más lejos (opcional)"
+    },
+    {
+      "type": "block",
+      "bid": 51,
+      "text": "Esta exploración estudia cómo varía la calidad del resultado al ampliar el conjunto de funciones de base. Repetimos el cálculo del átomo de carbono neutro con tres bases de diferente tamaño y comparamos la energía del HOMO y la energía de ionización estimada por Koopmans frente al valor experimental. El procedimiento es idéntico al de la práctica principal: cambiamos únicamente el campo **Basis Set** en __PROTECTED_BLOCK_25__."
+    },
+    {
+      "type": "block",
+      "bid": 52,
+      "text": "| Base | __PROTECTED_BLOCK_71__ (Ha) | IE__PROTECTED_BLOCK_72__ (eV) | IE exp. (eV) | Error (%) |\n|:---:|:---:|:---:|:---:|:---:|\n| STO-3G | −0.328 | 8.93 | 11.26 | 20.7 |\n| 3-21G | (a calcular) | (a calcular) | 11.26 | (a calcular) |\n| 6-311G | (a calcular) | (a calcular) | 11.26 | (a calcular) |"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_14__"
+    },
+    {
+      "type": "block",
+      "bid": 53,
+      "text": "### [NOTE_TITLE] ¿En qué sentido varía __PROTECTED_BLOCK_73__ al aumentar el tamaño de la base? ¿Disminuye el error respecto al valor experimental de forma monótona, o hay algún caso en que una base mayor no mejora el resultado? Relaciona las diferencias con la capacidad de cada base para describir la densidad electrónica en la región de valencia."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_19__"
+    },
+    {
+      "type": "block",
+      "bid": 54,
+      "text": "::::"
+    }
+  ],
+  "total_chunks": 2,
+  "total_blocks": 55
+}

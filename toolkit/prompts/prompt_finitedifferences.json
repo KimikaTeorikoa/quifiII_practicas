@@ -1,0 +1,70 @@
+{
+  "source": "es/content/parte1-python/finitedifferences.md",
+  "suffix": ".md",
+  "blocks": {
+    "0": {
+      "type": "para",
+      "raw": "# Resolución numérica de la Ecuación de Schrödinger\nEn nuestra primera práctica vamos a trabajar con un método\nnumérico para resolver la ecuación de Schrödinger. Se \ntrata de el método de diferencias finitas. Tratándose de un\nmétodo numérico, el cambio más importante es que en lugar\nde trabajar con soluciones analíticas de la Ecuación\nde Schrödinger,\n```{math}\n\\hat{H}\\Psi(\\mathbf{r})=E\\Psi(\\mathbf{r})\n```\nvamos a trabajar con una versión discreta de esta ecuación. \nEn el caso de un sistema en una sola dimensión, el eje $x$\npasa a estar discretizado en una serie de posiciones \n$\\mathbf{x}=\\{x_1, x_2, x_3, ..., x_n\\}$ y la función de onda pasa a tener\nuna serie de valores\n$\\boldsymbol{\\psi}=\\{\\psi_1, \\psi_2, \\psi_3,..., \\psi_n\\}$.",
+      "masked": "# Resolución numérica de la Ecuación de Schrödinger\nEn nuestra primera práctica vamos a trabajar con un método\nnumérico para resolver la ecuación de Schrödinger. Se \ntrata de el método de diferencias finitas. Tratándose de un\nmétodo numérico, el cambio más importante es que en lugar\nde trabajar con soluciones analíticas de la Ecuación\nde Schrödinger,\n__PROTECTED_BLOCK_0__\nvamos a trabajar con una versión discreta de esta ecuación. \nEn el caso de un sistema en una sola dimensión, el eje __PROTECTED_BLOCK_1__\npasa a estar discretizado en una serie de posiciones \n__PROTECTED_BLOCK_2__ y la función de onda pasa a tener\nuna serie de valores\n__PROTECTED_BLOCK_3__.",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "```{math}\n\\hat{H}\\Psi(\\mathbf{r})=E\\Psi(\\mathbf{r})\n```",
+        "__PROTECTED_BLOCK_1__": "$x$",
+        "__PROTECTED_BLOCK_2__": "$\\mathbf{x}=\\{x_1, x_2, x_3, ..., x_n\\}$",
+        "__PROTECTED_BLOCK_3__": "$\\boldsymbol{\\psi}=\\{\\psi_1, \\psi_2, \\psi_3,..., \\psi_n\\}$"
+      },
+      "frontmatter": "---\njupytext:\n  text_representation:\n    extension: .md\n    format_name: myst\nkernelspec:\n  display_name: Python 3\n  language: python\n  name: python3\n---\n"
+    },
+    "1": {
+      "type": "para",
+      "raw": "Para derivar las expresiones correspondientes a la versión\ndiscreta del hamiltoniano, es importante que recordemos primero\n cómo se aproxima el valor de una función en un punto $x+h$ usando \n una serie de Taylor\n```{math}\nf(x+h) = f(x) + h\\cdot f'(x) + \\frac{1}{2}h^2\\cdot f''(x)\n```\nSi esta expansión la realizamos tanto hacia atrás en $x$, entonces\nobtendremos\n```{math}\nf(x-h) = f(x) - h\\cdot f'(x) + \\frac{1}{2}h^2\\cdot f''(x)\n```\nPodemos sumar ambas expresiones  y reorganizar términos para \nobtener una expresión compacta para la segunda derivada \n```{math}\nf''(x) = \\frac{f(x+h) + f(x-h) - 2f(x)}{h^2}\n```",
+      "masked": "Para derivar las expresiones correspondientes a la versión\ndiscreta del hamiltoniano, es importante que recordemos primero\n cómo se aproxima el valor de una función en un punto __PROTECTED_BLOCK_3__ usando \n una serie de Taylor\n__PROTECTED_BLOCK_0__\nSi esta expansión la realizamos tanto hacia atrás en __PROTECTED_BLOCK_4__, entonces\nobtendremos\n__PROTECTED_BLOCK_1__\nPodemos sumar ambas expresiones  y reorganizar términos para \nobtener una expresión compacta para la segunda derivada \n__PROTECTED_BLOCK_2__",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "```{math}\nf(x+h) = f(x) + h\\cdot f'(x) + \\frac{1}{2}h^2\\cdot f''(x)\n```",
+        "__PROTECTED_BLOCK_1__": "```{math}\nf(x-h) = f(x) - h\\cdot f'(x) + \\frac{1}{2}h^2\\cdot f''(x)\n```",
+        "__PROTECTED_BLOCK_2__": "```{math}\nf''(x) = \\frac{f(x+h) + f(x-h) - 2f(x)}{h^2}\n```",
+        "__PROTECTED_BLOCK_3__": "$x+h$",
+        "__PROTECTED_BLOCK_4__": "$x$"
+      },
+      "frontmatter": ""
+    },
+    "2": {
+      "type": "para",
+      "raw": "A continuación, repararemos en que en la ecuación de Schrödinger,\nel término de energía cinética del operador hamiltoniano \nincorpora precisamente una segunda derivada de la función de\nonda. Usando la expresión que acabamos de obtener, podemos definir\nla segunda derivada de la función de onda para un determinado valor\nde $x$ como \n```{math}\n\\psi''(x) = \\frac{\\psi(x+h) + \\psi(x-h) - 2\\psi(x)}{h^2}\n```\nY dado que $x$ está ahora discretizado en un número finito de posiciones,\npodemos escribir que para una posición $i$,\n```{math}\n\\psi''(x_i) = \\frac{\\psi(x_{i+1}) + \\psi(x_{i-1}) - 2\\psi(x_i)}{\\Delta x^2}\n```",
+      "masked": "A continuación, repararemos en que en la ecuación de Schrödinger,\nel término de energía cinética del operador hamiltoniano \nincorpora precisamente una segunda derivada de la función de\nonda. Usando la expresión que acabamos de obtener, podemos definir\nla segunda derivada de la función de onda para un determinado valor\nde __PROTECTED_BLOCK_2__ como \n__PROTECTED_BLOCK_0__\nY dado que __PROTECTED_BLOCK_3__ está ahora discretizado en un número finito de posiciones,\npodemos escribir que para una posición __PROTECTED_BLOCK_4__,\n__PROTECTED_BLOCK_1__",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "```{math}\n\\psi''(x) = \\frac{\\psi(x+h) + \\psi(x-h) - 2\\psi(x)}{h^2}\n```",
+        "__PROTECTED_BLOCK_1__": "```{math}\n\\psi''(x_i) = \\frac{\\psi(x_{i+1}) + \\psi(x_{i-1}) - 2\\psi(x_i)}{\\Delta x^2}\n```",
+        "__PROTECTED_BLOCK_2__": "$x$",
+        "__PROTECTED_BLOCK_3__": "$x$",
+        "__PROTECTED_BLOCK_4__": "$i$"
+      },
+      "frontmatter": ""
+    },
+    "3": {
+      "type": "para",
+      "raw": "Usando esta expresión para la segunda derivada, podemos escribir la \nforma matricial del operador que, para un vector \n$\\boldsymbol{\\psi}=\\{\\psi_1, \\psi_2, \\psi_3,..., \\psi_n\\}$\nnos permitirá obtener exactamente esta expresión para la segunda\nderivada\n```{math}\n\\frac{-\\hbar^2}{2m}\n\\frac{1}{\\Delta x^2 }\n\\begin{bmatrix}\n-2 & 1&  0  & 0  &\\cdots &\\cdots & \\cdots & \\cdots & 0\\\\\n1  & -2  & 1  & 0  & &  &  & & 0\\\\\n0  & 1  &  -2 & 1 &  &  &  & & 0\\\\\n\\vdots & \\vdots & \\vdots  & & & &  & & \\vdots\\\\\n0  &   &   &  & -2 &1 & 0 & \\cdots & 0\\\\\n0  &   &    &  &1 & -2  & 1 &\\cdots  & 0\\\\\n0  &   &    &  &0 & 1 & -2 & \\cdots & 0\\\\\n\\vdots  &  &  &   & &  &  & & \\vdots\\\\\n0  & 0  & 0 & \\cdots  & & & &  1 & -2 \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}= \nE\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}\n```",
+      "masked": "Usando esta expresión para la segunda derivada, podemos escribir la \nforma matricial del operador que, para un vector \n__PROTECTED_BLOCK_1__\nnos permitirá obtener exactamente esta expresión para la segunda\nderivada\n__PROTECTED_BLOCK_0__",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "```{math}\n\\frac{-\\hbar^2}{2m}\n\\frac{1}{\\Delta x^2 }\n\\begin{bmatrix}\n-2 & 1&  0  & 0  &\\cdots &\\cdots & \\cdots & \\cdots & 0\\\\\n1  & -2  & 1  & 0  & &  &  & & 0\\\\\n0  & 1  &  -2 & 1 &  &  &  & & 0\\\\\n\\vdots & \\vdots & \\vdots  & & & &  & & \\vdots\\\\\n0  &   &   &  & -2 &1 & 0 & \\cdots & 0\\\\\n0  &   &    &  &1 & -2  & 1 &\\cdots  & 0\\\\\n0  &   &    &  &0 & 1 & -2 & \\cdots & 0\\\\\n\\vdots  &  &  &   & &  &  & & \\vdots\\\\\n0  & 0  & 0 & \\cdots  & & & &  1 & -2 \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}= \nE\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}\n```",
+        "__PROTECTED_BLOCK_1__": "$\\boldsymbol{\\psi}=\\{\\psi_1, \\psi_2, \\psi_3,..., \\psi_n\\}$"
+      },
+      "frontmatter": ""
+    },
+    "4": {
+      "type": "para",
+      "raw": "Hasta ahora sólo nos hemos ocupado del término de energía cinética del\nhamiltoniano. En el caso de que el sistema que nos concierna también\nesté sometido a un potencial externo, habrá que añadir la correspondiente\nversión discretizada del operador energía potencial\n```{math}\n\\frac{-\\hbar^2}{2m}\n\\frac{1}{\\Delta x^2 }\n\\begin{bmatrix}\n-2 & 1&  0  & 0  &\\cdots &\\cdots & \\cdots & \\cdots & 0\\\\\n1  & -2  & 1  & 0  & &  &  & & 0\\\\\n0  & 1  &  -2 & 1 &  &  &  & & 0\\\\\n\\vdots & \\vdots & \\vdots  & & & &  & & \\vdots\\\\\n0  &   &   &  & -2 &1 & 0 & \\cdots & 0\\\\\n0  &   &    &  &1 & -2  & 1 &\\cdots  & 0\\\\\n0  &   &    &  &0 & 1 & -2 & \\cdots & 0\\\\\n\\vdots  &  &  &   & &  &  & & \\vdots\\\\\n0  & 0  & 0 & \\cdots  & & & &  1 & -2 \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}\n+  \\\\\n\\begin{bmatrix}\nV_1 & 0 &  0  & 0  &\\cdots &\\cdots & \\cdots & \\cdots & 0\\\\\n0  & V_2  & 0 & 0  & &  &  & & 0\\\\\n0  & 0 &  V_3 & 0 &  &  &  & & 0\\\\\n\\vdots & \\vdots & \\vdots  & & & &  & & \\vdots\\\\\n0  &   &   &  & V_{n-1} & 0 & 0 & \\cdots & 0\\\\\n0  &   &    &  & 0 & V_n & 0 &\\cdots  & 0\\\\\n0  &   &    &  &0 & 0 & V_{n+1} & \\cdots & 0\\\\\n\\vdots  &  &  &   & &  &  & & \\vdots\\\\\n0  & 0  & 0 & \\cdots  & & & & 0 & V_L \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}= \nE\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}\n```",
+      "masked": "Hasta ahora sólo nos hemos ocupado del término de energía cinética del\nhamiltoniano. En el caso de que el sistema que nos concierna también\nesté sometido a un potencial externo, habrá que añadir la correspondiente\nversión discretizada del operador energía potencial\n__PROTECTED_BLOCK_0__",
+      "placeholders": {
+        "__PROTECTED_BLOCK_0__": "```{math}\n\\frac{-\\hbar^2}{2m}\n\\frac{1}{\\Delta x^2 }\n\\begin{bmatrix}\n-2 & 1&  0  & 0  &\\cdots &\\cdots & \\cdots & \\cdots & 0\\\\\n1  & -2  & 1  & 0  & &  &  & & 0\\\\\n0  & 1  &  -2 & 1 &  &  &  & & 0\\\\\n\\vdots & \\vdots & \\vdots  & & & &  & & \\vdots\\\\\n0  &   &   &  & -2 &1 & 0 & \\cdots & 0\\\\\n0  &   &    &  &1 & -2  & 1 &\\cdots  & 0\\\\\n0  &   &    &  &0 & 1 & -2 & \\cdots & 0\\\\\n\\vdots  &  &  &   & &  &  & & \\vdots\\\\\n0  & 0  & 0 & \\cdots  & & & &  1 & -2 \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}\n+  \\\\\n\\begin{bmatrix}\nV_1 & 0 &  0  & 0  &\\cdots &\\cdots & \\cdots & \\cdots & 0\\\\\n0  & V_2  & 0 & 0  & &  &  & & 0\\\\\n0  & 0 &  V_3 & 0 &  &  &  & & 0\\\\\n\\vdots & \\vdots & \\vdots  & & & &  & & \\vdots\\\\\n0  &   &   &  & V_{n-1} & 0 & 0 & \\cdots & 0\\\\\n0  &   &    &  & 0 & V_n & 0 &\\cdots  & 0\\\\\n0  &   &    &  &0 & 0 & V_{n+1} & \\cdots & 0\\\\\n\\vdots  &  &  &   & &  &  & & \\vdots\\\\\n0  & 0  & 0 & \\cdots  & & & & 0 & V_L \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}= \nE\n\\begin{bmatrix}\n\\psi_1\\\\\n\\psi_2\\\\\n\\psi_3\\\\\n\\vdots\\\\\n\\psi_{n-1}\\\\\n\\psi_n \\\\\n\\psi_{n+1} \\\\\n\\vdots\\\\\n\\psi_L\n\\end{bmatrix}\n```"
+      },
+      "frontmatter": ""
+    },
+    "5": {
+      "type": "para",
+      "raw": "Las soluciones del hamiltoniano serán las funciones propias de \nesta matriz y sus autovalores serán las energías asociadas a\nlas funciones propias. En lugar de resolver nosotros mismos\neste problema, en estas prácticas dejaremos que el ordenador\nhaga este trabajo por nosotros.",
+      "masked": "Las soluciones del hamiltoniano serán las funciones propias de \nesta matriz y sus autovalores serán las energías asociadas a\nlas funciones propias. En lugar de resolver nosotros mismos\neste problema, en estas prácticas dejaremos que el ordenador\nhaga este trabajo por nosotros.",
+      "placeholders": {},
+      "frontmatter": ""
+    }
+  }
+}
