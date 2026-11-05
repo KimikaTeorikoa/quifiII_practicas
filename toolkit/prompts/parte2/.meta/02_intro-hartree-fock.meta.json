@@ -1,0 +1,571 @@
+{
+  "source": "es/content/parte2-gaussian/intros/intro-hartree-fock.md",
+  "dest": "eu/content/parte2-gaussian/intros/intro-hartree-fock.md",
+  "prefix": "02_intro-hartree-fock",
+  "slug": "intro-hartree-fock",
+  "filename": "intro-hartree-fock.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/figures/eu/orbital_1s_he.svg\n:alt: Representación de la densidad electrónica del orbital 1s del átomo de helio mediante isosuperficies concéntricas\n:width: 50%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": ":::{figure} /_static/figures/eu/ciclo_scf.svg\n:alt: Diagrama de flujo del ciclo SCF desde la estimación inicial hasta la convergencia\n:width: 55%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_2__": "$$\\hat{H} = \\hat{h}(1) + \\hat{h}(2) + \\frac{1}{r_{12}}$$",
+    "__PROTECTED_BLOCK_3__": "$$\\hat{h}(i) = -\\frac{1}{2}\\nabla_i^2 - \\frac{2}{r_i}$$",
+    "__PROTECTED_BLOCK_4__": "$$\\hat{f} \\phi_i = \\varepsilon_i \\phi_i$$",
+    "__PROTECTED_BLOCK_5__": "$$\\hat{f} = \\hat{h} + \\hat{J}_1$$",
+    "__PROTECTED_BLOCK_6__": "$$\\hat{J}_1 \\phi_1(\\mathbf{r}_1) = \\left[\\int \\frac{|\\phi_1(\\mathbf{r}_2)|^2}{r_{12}} d\\mathbf{r}_2\\right] \\phi_1(\\mathbf{r}_1)$$",
+    "__PROTECTED_BLOCK_7__": "$$\\phi_i(\\mathbf{r}) = \\sum_{\\mu=1}^{K} C_{\\mu i} \\chi_\\mu(\\mathbf{r})$$",
+    "__PROTECTED_BLOCK_8__": "$$\\mathbf{F} \\mathbf{C} = \\mathbf{S} \\mathbf{C} \\boldsymbol{\\varepsilon}$$",
+    "__PROTECTED_BLOCK_9__": "$$\\phi_1 = C_{11}\\chi_1 + C_{21}\\chi_2 \\quad (\\text{orbital ocupado, HOMO})$$",
+    "__PROTECTED_BLOCK_10__": "$$\\phi_2 = C_{12}\\chi_1 + C_{22}\\chi_2 \\quad (\\text{orbital virtual, LUMO})$$",
+    "__PROTECTED_BLOCK_11__": "$$\\begin{pmatrix} F_{11} & F_{12} \\\\ F_{21} & F_{22} \\end{pmatrix} \\begin{pmatrix} C_{11} & C_{12} \\\\ C_{21} & C_{22} \\end{pmatrix} = \\begin{pmatrix} S_{11} & S_{12} \\\\ S_{21} & S_{22} \\end{pmatrix} \\begin{pmatrix} C_{11} & C_{12} \\\\ C_{21} & C_{22} \\end{pmatrix} \\begin{pmatrix} \\varepsilon_1 & 0 \\\\ 0 & \\varepsilon_2 \\end{pmatrix}$$",
+    "__PROTECTED_BLOCK_12__": "$$\\mathbf{S} = \\begin{pmatrix} 1 & S_{12} \\\\ S_{12} & 1 \\end{pmatrix}$$",
+    "__PROTECTED_BLOCK_13__": "$$S_{12} = \\int \\chi_1^*(\\mathbf{r}) \\chi_2(\\mathbf{r}) \\, d\\mathbf{r}$$",
+    "__PROTECTED_BLOCK_14__": "$$\\mathbf{F} = \\begin{pmatrix} F_{11} & F_{12} \\\\ F_{21} & F_{22} \\end{pmatrix}$$",
+    "__PROTECTED_BLOCK_15__": "$$F_{\\mu\\nu} = \\int \\chi_\\mu^*(\\mathbf{r}) \\hat{f} \\chi_\\nu(\\mathbf{r}) \\, d\\mathbf{r}$$",
+    "__PROTECTED_BLOCK_16__": "$$\\mathbf{C} = \\begin{pmatrix} C_{11} & C_{12} \\\\ C_{21} & C_{22} \\end{pmatrix}$$",
+    "__PROTECTED_BLOCK_17__": "$$\\boldsymbol{\\varepsilon} = \\begin{pmatrix} \\varepsilon_1 & 0 \\\\ 0 & \\varepsilon_2 \\end{pmatrix}$$",
+    "__PROTECTED_BLOCK_18__": "$$\\varepsilon_1 = h_{11} + J_{11}$$",
+    "__PROTECTED_BLOCK_19__": "$$2\\varepsilon_1 = 2h_{11} + 2J_{11}$$",
+    "__PROTECTED_BLOCK_20__": "$$E_{\\text{elec}} = 2\\varepsilon_1 - J_{11} = 2h_{11} + J_{11}$$",
+    "__PROTECTED_BLOCK_21__": "$$E_{\\text{total}} = E_{\\text{elec}} + V_{NN}$$",
+    "__PROTECTED_BLOCK_22__": "$$E_{\\text{corr}} = E_{\\text{exacta}} - E_{\\text{HF}}^{\\text{limit}}$$",
+    "__PROTECTED_BLOCK_23__": "$$\\Psi(\\mathbf{x}_1, \\mathbf{x}_2) = -\\Psi(\\mathbf{x}_2, \\mathbf{x}_1)$$",
+    "__PROTECTED_BLOCK_24__": "$$\\Psi(\\mathbf{x}_1, \\mathbf{x}_2) = \\frac{1}{\\sqrt{2}} \\begin{vmatrix} \\phi_1(\\mathbf{r}_1)\\alpha(1) & \\phi_1(\\mathbf{r}_1)\\beta(1) \\\\ \\phi_1(\\mathbf{r}_2)\\alpha(2) & \\phi_1(\\mathbf{r}_2)\\beta(2) \\end{vmatrix}$$",
+    "__PROTECTED_BLOCK_25__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_26__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_27__": ":::{admonition} Abisua\n:class: warning",
+    "__PROTECTED_BLOCK_28__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_29__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_30__": ":::{note} __NOTE_TITLE_PLACEHOLDER__",
+    "__PROTECTED_BLOCK_31__": ":::",
+    "__PROTECTED_BLOCK_32__": ":::",
+    "__PROTECTED_BLOCK_33__": ":::",
+    "__PROTECTED_BLOCK_34__": ":::",
+    "__PROTECTED_BLOCK_35__": "::::",
+    "__PROTECTED_BLOCK_36__": "::::",
+    "__PROTECTED_BLOCK_37__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_38__": "$Z=2$",
+    "__PROTECTED_BLOCK_39__": "$\\hat{h}(i)$",
+    "__PROTECTED_BLOCK_40__": "$i$",
+    "__PROTECTED_BLOCK_41__": "$1/r_{12}$",
+    "__PROTECTED_BLOCK_42__": "$1/r_{12}$",
+    "__PROTECTED_BLOCK_43__": "$1/r_{12}$",
+    "__PROTECTED_BLOCK_44__": "$\\hat{f}$",
+    "__PROTECTED_BLOCK_45__": "$\\phi_1$",
+    "__PROTECTED_BLOCK_46__": "$\\hat{J}_1$",
+    "__PROTECTED_BLOCK_47__": "$\\phi_i(\\mathbf{r})$",
+    "__PROTECTED_BLOCK_48__": "$\\phi_1$",
+    "__PROTECTED_BLOCK_49__": "$\\alpha$",
+    "__PROTECTED_BLOCK_50__": "$\\beta$",
+    "__PROTECTED_BLOCK_51__": "$\\phi_i(\\mathbf{r})$",
+    "__PROTECTED_BLOCK_52__": "$K$",
+    "__PROTECTED_BLOCK_53__": "$\\{\\chi_\\mu\\}$",
+    "__PROTECTED_BLOCK_54__": "$C_{\\mu i}$",
+    "__PROTECTED_BLOCK_55__": "$\\chi_1$",
+    "__PROTECTED_BLOCK_56__": "$\\chi_2$",
+    "__PROTECTED_BLOCK_57__": "$\\mathbf{S}$",
+    "__PROTECTED_BLOCK_58__": "$S_{11} = S_{22} = 1$",
+    "__PROTECTED_BLOCK_59__": "$\\mathbf{F}$",
+    "__PROTECTED_BLOCK_60__": "$F_{11}, F_{22}$",
+    "__PROTECTED_BLOCK_61__": "$F_{12} = F_{21}$",
+    "__PROTECTED_BLOCK_62__": "$\\mathbf{C}$",
+    "__PROTECTED_BLOCK_63__": "$\\begin{pmatrix} C_{11} \\\\ C_{21} \\end{pmatrix}$",
+    "__PROTECTED_BLOCK_64__": "$\\chi_1$",
+    "__PROTECTED_BLOCK_65__": "$\\chi_2$",
+    "__PROTECTED_BLOCK_66__": "$\\phi_1$",
+    "__PROTECTED_BLOCK_67__": "$\\begin{pmatrix} C_{12} \\\\ C_{22} \\end{pmatrix}$",
+    "__PROTECTED_BLOCK_68__": "$\\phi_2$",
+    "__PROTECTED_BLOCK_69__": "$\\boldsymbol{\\varepsilon}$",
+    "__PROTECTED_BLOCK_70__": "$\\varepsilon_1 = \\varepsilon_{\\text{HOMO}}$",
+    "__PROTECTED_BLOCK_71__": "$\\varepsilon_2 = \\varepsilon_{\\text{LUMO}}$",
+    "__PROTECTED_BLOCK_72__": "$K \\times K$",
+    "__PROTECTED_BLOCK_73__": "$K = 2$",
+    "__PROTECTED_BLOCK_74__": "$K$",
+    "__PROTECTED_BLOCK_75__": "$K = 30, 80, 300\\dots$",
+    "__PROTECTED_BLOCK_76__": "$\\mathbf{F}$",
+    "__PROTECTED_BLOCK_77__": "$\\mathbf{S}$",
+    "__PROTECTED_BLOCK_78__": "$\\mathbf{C}$",
+    "__PROTECTED_BLOCK_79__": "$K \\times K$",
+    "__PROTECTED_BLOCK_80__": "$N$",
+    "__PROTECTED_BLOCK_81__": "$K$",
+    "__PROTECTED_BLOCK_82__": "$K$",
+    "__PROTECTED_BLOCK_83__": "$N/2$",
+    "__PROTECTED_BLOCK_84__": "$\\mathbf{C}$",
+    "__PROTECTED_BLOCK_85__": "$\\phi_{N/2}$",
+    "__PROTECTED_BLOCK_86__": "$K - N/2$",
+    "__PROTECTED_BLOCK_87__": "$\\phi_{N/2 + 1}$",
+    "__PROTECTED_BLOCK_88__": "$\\mathbf{F}$",
+    "__PROTECTED_BLOCK_89__": "$\\mathbf{C}$",
+    "__PROTECTED_BLOCK_90__": "$\\mathbf{C}$",
+    "__PROTECTED_BLOCK_91__": "$\\mathbf{F}\\mathbf{C} = \\mathbf{S}\\mathbf{C}\\boldsymbol{\\varepsilon}$",
+    "__PROTECTED_BLOCK_92__": "$\\mathbf{C}^{(0)}$",
+    "__PROTECTED_BLOCK_93__": "$\\mathbf{F}^{(k)}$",
+    "__PROTECTED_BLOCK_94__": "$\\mathbf{F}^{(k)}\\mathbf{C} = \\mathbf{S}\\mathbf{C}\\boldsymbol{\\varepsilon}$",
+    "__PROTECTED_BLOCK_95__": "$\\mathbf{C}^{(k+1)}$",
+    "__PROTECTED_BLOCK_96__": "$\\boldsymbol{\\varepsilon}^{(k+1)}$",
+    "__PROTECTED_BLOCK_97__": "$10^{-6}$",
+    "__PROTECTED_BLOCK_98__": "$\\varepsilon_i$",
+    "__PROTECTED_BLOCK_99__": "$\\phi_1$",
+    "__PROTECTED_BLOCK_100__": "$h_{11}$",
+    "__PROTECTED_BLOCK_101__": "$J_{11}$",
+    "__PROTECTED_BLOCK_102__": "$J_{11}$",
+    "__PROTECTED_BLOCK_103__": "$V_{NN}$",
+    "__PROTECTED_BLOCK_104__": "$E_{\\text{total}}$",
+    "__PROTECTED_BLOCK_105__": "$\\varepsilon_i$",
+    "__PROTECTED_BLOCK_106__": "$E_{\\text{HF}}^{\\text{limit}}$",
+    "__PROTECTED_BLOCK_107__": "$E_{\\text{exacta}}$",
+    "__PROTECTED_BLOCK_108__": "$E_{\\text{HF}}^{\\text{limit}} \\ge E_{\\text{exacta}}$",
+    "__PROTECTED_BLOCK_109__": "$E_{\\text{corr}} \\le 0$",
+    "__PROTECTED_BLOCK_110__": "$\\phi_1$",
+    "__PROTECTED_BLOCK_111__": "`SCF Done`",
+    "__PROTECTED_BLOCK_112__": "`.log`",
+    "__PROTECTED_BLOCK_113__": "`SCF Done`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# El método de Hartree-Fock"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "La ecuación de Schrödinger no admite solución matemática exacta para sistemas con más de un electrón debido al acoplamiento que genera la repulsión electrostática entre ellos. El método de Hartree-Fock aborda este problema mediante la aproximación de campo medio, sustituyendo las interacciones instantáneas individuales por un potencial promediado en el espacio. Esta simplificación permite que programas como Gaussian determinen los orbitales moleculares y la energía electrónica total mediante un procedimiento iterativo autoconsistente."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## El problema: electrones que se repelen"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "En un átomo con dos electrones como el helio (__PROTECTED_BLOCK_38__), el operador hamiltoniano exacto incluye la energía cinética de cada electrón, su atracción hacia el núcleo y la repulsión electrostática entre ambos:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "El operador monoelectrónico __PROTECTED_BLOCK_39__ describe el movimiento del electrón __PROTECTED_BLOCK_40__ bajo el potencial atractivo del núcleo, sin considerar al otro electrón:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_3__"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "Si el término de repulsión coulómbica __PROTECTED_BLOCK_41__ no existiera, la ecuación se resolvería separando variables exactamente como el producto de dos átomos hidrogenoides. Sin embargo, __PROTECTED_BLOCK_42__ acopla las posiciones instantáneas de ambos electrones: determinar la distribución espacial de uno exige conocer la del otro en cada instante. Esta dificultad se extiende a cualquier sistema polielectrónico y constituye el reto central de la estructura electrónica."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_25__"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "El término __PROTECTED_BLOCK_43__ acopla las coordenadas espaciales de los electrones e impide resolver analíticamente la ecuación de Schrödinger para cualquier átomo o molécula con dos o más electrones."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_31__"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "## La idea de Hartree-Fock: el campo medio"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "Para desacoplar las ecuaciones, la aproximación de Hartree-Fock sustituye las repulsiones instantáneas entre pares de electrones por un potencial electrostático promedio generado por el conjunto de la nube electrónica. Cada electrón se mueve entonces en el campo creado por el núcleo y por la densidad promediada de los demás electrones."
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "Bajo esta simplificación, cada electrón satisface una ecuación de autovalores monoelectrónica gobernada por el operador de Fock __PROTECTED_BLOCK_44__:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_4__"
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "Para el átomo de helio, donde los dos electrones ocupan el mismo orbital espacial __PROTECTED_BLOCK_45__ con espines opuestos, el operador de Fock adopta la forma:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_5__"
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "donde __PROTECTED_BLOCK_46__ representa el potencial electrostático promedio generado por la nube del otro electrón:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_6__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_26__"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "Al promediar la repulsión interelectrónica se desprecian las correlaciones instantáneas entre las posiciones de los electrones (correlación electrónica). De acuerdo con el teorema variacional, la energía calculada en el límite Hartree-Fock es siempre una cota superior a la energía exacta no relativista del sistema."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_32__"
+    },
+    {
+      "type": "block",
+      "bid": 14,
+      "text": "## Orbitales: combinación lineal de funciones de base (LCAO)"
+    },
+    {
+      "type": "block",
+      "bid": 15,
+      "text": "El estado espacial de cada electrón se describe mediante un orbital __PROTECTED_BLOCK_47__. En el helio en su estado fundamental, ambos electrones ocupan el orbital __PROTECTED_BLOCK_48__ con espines opuestos (__PROTECTED_BLOCK_49__ y __PROTECTED_BLOCK_50__)."
+    },
+    {
+      "type": "block",
+      "bid": 16,
+      "text": "Dado que la forma matemática exacta de __PROTECTED_BLOCK_51__ no se conoce a priori, se expande como una combinación lineal de __PROTECTED_BLOCK_52__ funciones de base predefinidas __PROTECTED_BLOCK_53__ (habitualmente funciones gaussianas centradas en los núcleos):"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_7__"
+    },
+    {
+      "type": "block",
+      "bid": 17,
+      "text": "Resolver el problema cuántico equivale a determinar los coeficientes numéricos __PROTECTED_BLOCK_54__ que minimizan la energía total del sistema. La figura muestra la densidad electrónica del orbital 1s resultante para el átomo de helio."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 18,
+      "text": "## Las ecuaciones de Roothaan-Hall: el ejemplo del Helio con dos orbitales"
+    },
+    {
+      "type": "block",
+      "bid": 19,
+      "text": "Al sustituir la expansión LCAO en la ecuación de Fock y proyectar sobre cada función de base, las ecuaciones integrodiferenciales se transforman en un problema de autovalores matricial generalizado:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_8__"
+    },
+    {
+      "type": "block",
+      "bid": 20,
+      "text": "Consideremos el átomo de helio descrito con una base de dos funciones tipo s (__PROTECTED_BLOCK_55__ y __PROTECTED_BLOCK_56__), por ejemplo dos funciones gaussianas con diferente exponente para permitir que la nube electrónica se expanda o contraiga radialmente. Cada orbital espacial se expresa como:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_9__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_10__"
+    },
+    {
+      "type": "block",
+      "bid": 21,
+      "text": "El sistema matricial de dimensión 2×2 adopta la forma explícita:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_11__"
+    },
+    {
+      "type": "block",
+      "bid": 22,
+      "text": "Cada matriz tiene un significado físico directo:"
+    },
+    {
+      "type": "block",
+      "bid": 23,
+      "text": "**Matriz de solapamiento __PROTECTED_BLOCK_57__:** Describe la no ortogonalidad espacial entre las dos funciones de base:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_12__"
+    },
+    {
+      "type": "block",
+      "bid": 24,
+      "text": "Como las funciones están normalizadas, los elementos diagonales valen 1 (__PROTECTED_BLOCK_58__). El término cruzado representa la integral de solapamiento entre ambas:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_13__"
+    },
+    {
+      "type": "block",
+      "bid": 25,
+      "text": "**Matriz de Fock __PROTECTED_BLOCK_59__:** Contiene la energía efectiva de un electrón en cada función de base (__PROTECTED_BLOCK_60__) y el acoplamiento mutuo (__PROTECTED_BLOCK_61__):"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_14__"
+    },
+    {
+      "type": "block",
+      "bid": 26,
+      "text": "Sus elementos se obtienen integrando el operador de Fock sobre la base:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_15__"
+    },
+    {
+      "type": "block",
+      "bid": 27,
+      "text": "**Matriz de coeficientes __PROTECTED_BLOCK_62__:** Cada columna define uno de los orbitales espaciales:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_16__"
+    },
+    {
+      "type": "block",
+      "bid": 28,
+      "text": "La primera columna __PROTECTED_BLOCK_63__ contiene los pesos de __PROTECTED_BLOCK_64__ y __PROTECTED_BLOCK_65__ en el orbital ocupado __PROTECTED_BLOCK_66__ (HOMO). La segunda columna __PROTECTED_BLOCK_67__ contiene los coeficientes del orbital virtual __PROTECTED_BLOCK_68__ (LUMO)."
+    },
+    {
+      "type": "block",
+      "bid": 29,
+      "text": "**Matriz de energías orbitales __PROTECTED_BLOCK_69__:** Es una matriz diagonal que contiene los autovalores energéticos:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_17__"
+    },
+    {
+      "type": "block",
+      "bid": 30,
+      "text": "donde __PROTECTED_BLOCK_70__ es la energía del orbital ligado (negativa) y __PROTECTED_BLOCK_71__ es la energía del primer orbital desocupado."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_30__"
+    },
+    {
+      "type": "block",
+      "bid": 31,
+      "text": "### [NOTE_TITLE] El caso del helio frente a sistemas reales: matrices de dimensión __PROTECTED_BLOCK_72__"
+    },
+    {
+      "type": "block",
+      "bid": 32,
+      "text": "Conviene no confundir este modelo 2×2 con la dimensión real de los cálculos moleculares:"
+    },
+    {
+      "type": "block",
+      "bid": 33,
+      "text": "1. **¿Por qué 2×2 en este ejemplo?** Porque hemos elegido deliberadamente una base mínima de __PROTECTED_BLOCK_73__ funciones para un átomo con 2 electrones. Al haber dos funciones de base se obtienen exactamente 2 orbitales: 1 orbital ocupado (con los dos electrones apareados) y 1 orbital virtual desocupado.\n2. **Dimensiones en sistemas reales:** En cualquier cálculo molecular estándar, el número de funciones de base __PROTECTED_BLOCK_74__ es mucho mayor (__PROTECTED_BLOCK_75__). Las matrices __PROTECTED_BLOCK_76__, __PROTECTED_BLOCK_77__ y __PROTECTED_BLOCK_78__ son siempre matrices cuadradas de dimensión **__PROTECTED_BLOCK_79__**.\n3. **Distribución de orbitales ocupados y virtuales:** Para un sistema neutro de capa cerrada con __PROTECTED_BLOCK_80__ electrones y __PROTECTED_BLOCK_81__ funciones de base, el método genera siempre __PROTECTED_BLOCK_82__ orbitales espaciales. Solo las primeras __PROTECTED_BLOCK_83__ columnas de la matriz __PROTECTED_BLOCK_84__ corresponden a orbitales ocupados (hasta el HOMO __PROTECTED_BLOCK_85__); las restantes __PROTECTED_BLOCK_86__ columnas corresponden a orbitales virtuales desocupados (empezando por el LUMO __PROTECTED_BLOCK_87__)."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_33__"
+    },
+    {
+      "type": "block",
+      "bid": 34,
+      "text": "## El ciclo SCF: resolver por iteración"
+    },
+    {
+      "type": "block",
+      "bid": 35,
+      "text": "Existe una dependencia circular: para calcular la matriz de Fock __PROTECTED_BLOCK_88__ se necesita conocer la densidad electrónica (los coeficientes __PROTECTED_BLOCK_89__), pero para obtener __PROTECTED_BLOCK_90__ se debe diagonalizar el sistema __PROTECTED_BLOCK_91__."
+    },
+    {
+      "type": "block",
+      "bid": 36,
+      "text": "Esta circularidad se resuelve iterativamente mediante el método del campo autoconsistente (SCF, *Self-Consistent Field*):"
+    },
+    {
+      "type": "block",
+      "bid": 37,
+      "text": "1. Se genera una estimación inicial de los coeficientes (*guess* __PROTECTED_BLOCK_92__).\n2. Con esos coeficientes se construye la matriz de Fock __PROTECTED_BLOCK_93__.\n3. Se diagonaliza el sistema __PROTECTED_BLOCK_94__ para obtener nuevos coeficientes __PROTECTED_BLOCK_95__ y nuevas energías __PROTECTED_BLOCK_96__.\n4. Se comprueba si la variación de energía y densidad respecto al paso anterior es menor que la tolerancia fijada (por ejemplo __PROTECTED_BLOCK_97__ Ha). Si no ha convergido, se vuelve al paso 2."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 38,
+      "text": "## Energías: orbital vs total"
+    },
+    {
+      "type": "block",
+      "bid": 39,
+      "text": "Los autovalores __PROTECTED_BLOCK_98__ obtenidos al diagonalizar la matriz de Fock corresponden a las energías de cada orbital individual, no a la energía total del sistema."
+    },
+    {
+      "type": "block",
+      "bid": 40,
+      "text": "Para los dos electrones del helio en el orbital __PROTECTED_BLOCK_99__, la energía orbital contiene la energía monoelectrónica __PROTECTED_BLOCK_100__ y la repulsión electrostática con el otro electrón __PROTECTED_BLOCK_101__:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_18__"
+    },
+    {
+      "type": "block",
+      "bid": 41,
+      "text": "Si sumáramos directamente las energías orbitales de ambos electrones:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_19__"
+    },
+    {
+      "type": "block",
+      "bid": 42,
+      "text": "estaríamos contando la repulsión interelectrónica __PROTECTED_BLOCK_102__ dos veces. Por tanto, la energía electrónica real resta esa interacción duplicada:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_20__"
+    },
+    {
+      "type": "block",
+      "bid": 43,
+      "text": "En una molécula con varios núcleos, la energía total añade además la repulsión coulómbica internuclear __PROTECTED_BLOCK_103__:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_21__"
+    },
+    {
+      "type": "block",
+      "bid": 44,
+      "text": "Este valor es exactamente el que Gaussian imprime en la línea __PROTECTED_BLOCK_111__ del archivo __PROTECTED_BLOCK_112__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_27__"
+    },
+    {
+      "type": "block",
+      "bid": 45,
+      "text": "La energía que aparece en la línea __PROTECTED_BLOCK_113__ del log de Gaussian es la energía total del sistema __PROTECTED_BLOCK_104__, no la energía de un orbital individual __PROTECTED_BLOCK_105__."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_34__"
+    },
+    {
+      "type": "block",
+      "bid": 46,
+      "text": "## Limitaciones de HF: la correlación electrónica"
+    },
+    {
+      "type": "block",
+      "bid": 47,
+      "text": "Como el método de Hartree-Fock sustituye las interacciones instantáneas por un campo medio, asume que la probabilidad de encontrar un electrón en un punto es independiente de la posición instantánea del otro. La diferencia entre la energía de Hartree-Fock con base infinita (__PROTECTED_BLOCK_106__) y la energía exacta no relativista (__PROTECTED_BLOCK_107__) define la energía de correlación:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_22__"
+    },
+    {
+      "type": "block",
+      "bid": 48,
+      "text": "Dado que __PROTECTED_BLOCK_108__ por el principio variacional, la energía de correlación es siempre negativa (__PROTECTED_BLOCK_109__). Aunque suele representar menos del 1 % de la energía total, es decisiva para calcular con exactitud energías de enlace, barreras de reacción y transiciones espectroscópicas."
+    },
+    {
+      "type": "block",
+      "bid": 49,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 50,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 51,
+      "text": "- __PROTECTED_BLOCK_37__\n- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996."
+    },
+    {
+      "type": "block",
+      "bid": 52,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_28__"
+    },
+    {
+      "type": "block",
+      "bid": 53,
+      "text": "### [DROPDOWN_TITLE] La función de onda antisimétrica y el determinante de Slater"
+    },
+    {
+      "type": "block",
+      "bid": 54,
+      "text": "El principio de exclusión de Pauli exige que la función de onda electrónica sea antisimétrica frente al intercambio de dos electrones cualesquiera:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_23__"
+    },
+    {
+      "type": "block",
+      "bid": 55,
+      "text": "Para dos electrones con espines opuestos en el orbital espacial __PROTECTED_BLOCK_110__, la función de onda se expresa como un determinante de Slater:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_24__"
+    },
+    {
+      "type": "block",
+      "bid": 56,
+      "text": "Intercambiar las coordenadas de los dos electrones equivale a permutar dos filas del determinante, lo que invierte automáticamente su signo y garantiza el principio de Pauli."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_35__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_29__"
+    },
+    {
+      "type": "block",
+      "bid": 57,
+      "text": "### [DROPDOWN_TITLE] Energía de correlación y métodos post-HF"
+    },
+    {
+      "type": "block",
+      "bid": 58,
+      "text": "A partir de la función de onda de Hartree-Fock se han desarrollado diversos métodos para recuperar la correlación electrónica y superar la aproximación de campo medio. La teoría de perturbaciones de Møller-Plesset de segundo orden (MP2) añade correcciones dinámicas a la energía con un coste computacional moderado. Por su parte, métodos como *Coupled Cluster* con excitaciones simples y dobles (CCSD) ofrecen una precisión muy superior a expensas de un esfuerzo de cálculo elevado. Estos esquemas se analizan con detalle en una sección teórica posterior (Más allá de Hartree-Fock)."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_36__"
+    }
+  ],
+  "total_chunks": 2,
+  "total_blocks": 59
+}

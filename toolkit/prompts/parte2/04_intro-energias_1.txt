@@ -1,0 +1,40 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-energias.md (Zatia 1/2)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Energia eta unitateak Gaussianen
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Egitura elektronikoaren kalkuluek hainbat magnitude numeriko ematen dituzte, molekulen egonkortasunari, erreaktibotasunari eta bibrazioei buruzkoak. Gaussianen irteera-fitxategiak datu horiek biltzen ditu mekanika kuantikoaren berezko hitzarmen eta unitate atomikoak erabiliz. Emaitza horiek behar bezala interpretatzeko, beharrezkoa da energia totala, orbital indibidualen energiak eta bibrazio-maiztasunak bereiztea, eta beharrezko bihurketak aplikatzea elektroi-voltera edo unitate termodinamikoetara.
+
+=== BLOKEA 3 ===
+## Energia totala: zer den eta zergatik den negatiboa
+
+=== BLOKEA 4 ===
+Gaussianek kalkulatutako energia totalak lau ekarpen fisiko hartzen ditu barne: elektroien energia zinetikoa, elektroi eta nukleoen arteko erakarpen elektrostatikoa, elektroien arteko aldarapen coulombiarra eta nukleoen arteko aldarapen elektrostatikoa. Sistema atomiko eta molekular egonkorretan, indar erakargarriak nagusitzen dira aldarapenen gainetik; beraz, energia totala negatiboa da partikula isolatu eta geldikorren egoerarekiko. Balio hori __PROTECTED_BLOCK_13__ lerroan agertzen da __PROTECTED_BLOCK_14__ fitxategian (edo metodo korrelazionatuaren goiburuan), eta beti unitate atomikoetan (hartree) adierazten da.
+
+=== BLOKEA 5 ===
+Mekanika kuantiko molekularrean, energiaren zeroa nukleo eta elektroi infinituki banandu eta geldikorren egoeran kokatzen da (__PROTECTED_BLOCK_9__ denean __PROTECTED_BLOCK_10__). Lotura edo atomo lotu bat eratzean, energia askatzen da, eta horrek __PROTECTED_BLOCK_15__ balioa zenbaki negatiboetan kokatzen du. Zenbat eta negatiboagoa izan balio hori, orduan eta egonkorragoa da sistema osagai isolatuekiko.
+
+=== BLOKEA 6 ===
+## Unitateak: Hartree, eV eta kcal/mol
+
+=== BLOKEA 7 ===
+Gaussianek energia elektronikoak unitate atomikoetan adierazten ditu, hartree (Ha) izenekoetan. Balio horiek datu esperimental edo termodinamikoekin erlazionatzeko, bihurketa-faktore estandarrak erabiltzen ditugu: hartree bat 27,21 elektroi-volt, 627,51 kilokaloria mol-ko edo 2625,5 kilojulio mol-ko da. Kimikan, elektroi-voltak (eV) erabili ohi dira ionizazio-potentzialak, elektroi-afinitateak eta HOMO-LUMO desberdintasunak adierazteko. Kilokaloriak mol-ko (kcal/mol) eta kilojulioak mol-ko (kJ/mol) erreferentziazko unitateak dira aktibazio-oztopoak, erreakzio-beroak eta konformeroen arteko energia-desberdintasunak adierazteko.
+
+=== BLOKEA 9 ===
+Inoiz ez alderatu bi energia unitate desberdinetan. Bihurtu beti kendu aurretik.
+
+=== BLOKEA 17 ===
+---
+
+=== BLOKEA 18 ===
+## Bibliografia

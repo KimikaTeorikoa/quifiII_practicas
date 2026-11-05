@@ -1,0 +1,95 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: modos-normales.md (Zatia 2/2)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 19 ===
+Maiztasunen kalkuluak eskatzen du hasierako geometria PESaren benetako minimoa izatea, deribatu partzialak puntu egonkor batean bakarrik baitute esanahi fisikoa. Geometria optimizatuta ez badago, hessianaren autobalio batzuk negatiboak dira eta maiztasun irudikariak agertzen dira __PROTECTED_BLOCK_49__ atalean, bibrazio-interpretagarritasun baliodunik gabe.
+
+=== BLOKEA 20 ===
+Ezinbestekoa da geometria optimizatzea maiztasunak kalkulatu aurretik. Estazioarioak ez diren geometrien gaineko kalkuluak esanahi fisikorik gabeko maiztasun irudikariak sortzen ditu. Praktika honetan, __PROTECTED_BLOCK_50__ aukera konbinatua erabiltzen da bibrazio-kalkulua minimo zehatzetik abiatzen dela bermatzeko.
+
+=== BLOKEA 25 ===
+1. Sartu __PROTECTED_BLOCK_17__ menura.
+2. __PROTECTED_BLOCK_23__ fitxan, hautatu **Opt+Freq** aukera. Egiaztatu beheko aldean geometria optimizatzeko eta indar-konstante harmonikoak kalkulatzeko zereginak aldi berean aktibatuta geratzen direla.
+3. __PROTECTED_BLOCK_24__ fitxan, konfiguratu kalkulu-parametroak:
+
+=== BLOKEA 26 ===
+| Eremua | Balioa |
+|---|---|
+| Lan mota | Opt+Freq |
+| Metodoa | __PROTECTED_BLOCK_51__ |
+| Oinarri-multzoa | __PROTECTED_BLOCK_52__ |
+| Karga | **0** |
+| Spin (anizkoiztasuna) | **1** |
+
+=== BLOKEA 27 ===
+4. __PROTECTED_BLOCK_25__ fitxan, idatzi deskribapen identifikatzaile bat.
+
+=== BLOKEA 28 ===
+### 3. urratsa: Gorde eta bidali
+
+=== BLOKEA 29 ===
+1. Sakatu **Submit**, gorde fitxategia __PROTECTED_BLOCK_53__ gisa __PROTECTED_BLOCK_54__ karpetan eta berretsi bidalketa.
+
+=== BLOKEA 30 ===
+### 4. urratsa: Irakurri lotura-distantzia optimizatua
+
+=== BLOKEA 31 ===
+1. GaussView-n, ireki __PROTECTED_BLOCK_55__ emaitza-fitxategia __PROTECTED_BLOCK_18__ bidez eta sartu __PROTECTED_BLOCK_19__ atalean azken fotograman kokatzeko.
+2. Hautatu bi atomoak C-O distantzia beheko barran irakurtzeko, edo bilatu __PROTECTED_BLOCK_56__ __PROTECTED_BLOCK_57__ fitxategian **Ctrl + F** erabiliz.
+
+=== BLOKEA 32 ===
+B3LYP/6-311G kalkuluak CO-ren distantzia esperimentala zehaztasun onarekin erreproduzitzen du. Erreferentzia-balio kalkulatua __PROTECTED_BLOCK_39__ Å da, balio esperimentalaren aurrean 1.128 Å; aldeak DFT funtzionalek oinarri moderatuekin duten lotura-distantzien gainestimazio sistematikoa islatzen du.
+
+=== BLOKEA 33 ===
+### 5. urratsa: Atera parametro bibrazionalak .log fitxategitik
+
+=== BLOKEA 34 ===
+Bilatu __PROTECTED_BLOCK_58__ __PROTECTED_BLOCK_59__ fitxategian **Ctrl + F** erabiliz. Modu bakoitzerako, idatzi:
+- __PROTECTED_BLOCK_60__: bibrazio-maiztasuna __PROTECTED_BLOCK_40__-tan.
+- __PROTECTED_BLOCK_61__: masa murriztua uma-tan.
+- __PROTECTED_BLOCK_62__: indar-konstantea mdyne/Å-tan.
+- __PROTECTED_BLOCK_63__: xurgapen-intentsitatea km/mol-tan.
+
+=== BLOKEA 35 ===
+### 6. urratsa: Ikusi modu normalaren animazioa
+
+=== BLOKEA 36 ===
+1. GaussView-n, __PROTECTED_BLOCK_64__ fitxategia irekita dagoela, sartu __PROTECTED_BLOCK_20__ menura.
+2. Modu normalen zerrendan, hautatu kalkulatutako maiztasunari dagokion lerroa (2063 __PROTECTED_BLOCK_41__).
+3. Aktibatu **Start Animation** laukitxoa nukleoen mugimendu oszilatorioa ikusteko.
+4. Markatu **Show Vectors** laukitxoa desplazamendu nuklearraren geziak ikusteko eta egiaztatu atomoak lotura-ardatzaren arabera mugitzen direla (luzapen-modua).
+5. Egiaztatu gezien anplitude erlatiboa: karbono-atomoa, arinagoa denez, oxigenoarena baino desplazamendu handiagoa jasaten du.
+
+=== BLOKEA 37 ===
+### 7. urratsa: Errepikatu prozedura CO₂-rako
+
+=== BLOKEA 38 ===
+1. Eraiki CO₂ GaussView-n eta aplikatu __PROTECTED_BLOCK_21__ O=C=O geometria lineala lortzeko.
+2. Konfiguratu kalkulua parametro berberekin (B3LYP/6-311G, Opt+Freq, karga 0, anizkoiztasuna 1). Gorde __PROTECTED_BLOCK_65__ gisa eta bidali.
+3. Amaitutakoan, ireki __PROTECTED_BLOCK_66__ edo __PROTECTED_BLOCK_67__ fitxategia GaussView-n eta sartu __PROTECTED_BLOCK_22__ menura.
+4. Animatu lau modu normal bakoitza eta idatzi haien maiztasunak eta intentsitateak. Erlazionatu IR jarduera bibrazioak eragindako momentu dipolarraren aldaketarekin.
+
+=== BLOKEA 39 ===
+---
+
+=== BLOKEA 40 ===
+## Bibliografia
+
+=== BLOKEA 41 ===
+- __PROTECTED_BLOCK_27__
+- Atkins, P.; De Paula, J. *Kimika Fisikoa*, 10. ed.; Editorial Médica Panamericana, 2018. 12. kapitulua (Bibrazio-espektroskopia).
+- NIST Chemistry WebBook, https://webbook.nist.gov (CO eta CO₂-ren bibrazio-maiztasunen datu esperimentalak).
+
+=== BLOKEA 42 ===
+---
+
+=== BLOKEA 43 ===
+### [DROPDOWN_TITLE] Urrunago joateko (aukerakoa)
+
+=== BLOKEA 44 ===
+CO-ren gas-faseko espektro infragorriak, oinarrizko bandaz gain, bibrazioaren eta errotazioaren arteko akoplamenduaren ondoriozko lerro finen egitura erakusten du. P eta R (__PROTECTED_BLOCK_42__) adarretako ondoko lerroen arteko tartea neurtuz, molekularen inertzia-momentua zehaztu dezakegu, eta, horretatik abiatuta, C-O oreka-distantzia zehaztasun espektroskopikoarekin. Erreferentzia-datuak NIST Chemistry WebBook-en daude.

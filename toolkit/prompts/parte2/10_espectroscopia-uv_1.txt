@@ -1,0 +1,97 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: espectroscopia-uv.md (Zatia 1/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# UV-Vis espektroskopia zetonetan
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Erradiazio ultramore-ikusgaiaren xurgapenak trantsizio elektronikoak eragiten ditu molekula organikoetan, balentzia-orbitaletako elektroiak energia handiagoko orbitaletara igaroz. Dentsitatearen funtzionalaren teoria denboraren mendekoa (TD-DFT) erabiliz Gaussian programan, kitzikapen horiek simula daitezke, dentsitate elektronikoaren berrantolaketa kontuan hartuta. Praktika honetan, xurgapen-uhin-luzerak eta osziladore-indarrak kalkulatzen dira __PROTECTED_BLOCK_22__ eta __PROTECTED_BLOCK_23__ trantsizioetarako zetonetan, disolbatzailearen polaritateak espektroko bandak nola desplazatzen dituen aztertuz.
+
+=== BLOKEA 3 ===
+## Helburuak
+
+=== BLOKEA 4 ===
+1. Aurretiazko xurgapen-uhin-luzera zenbatestea orbital-energien diferentziatik abiatuta (__PROTECTED_BLOCK_24__ HOMO-LUMO).
+2. Kitzikapen bertikalen energiak kalkulatzea singlete egoeretara TD-DFT metodologia erabiliz B3LYP/6-311G-rekin.
+3. Trantsizio elektronikoak __PROTECTED_BLOCK_25__ eta __PROTECTED_BLOCK_26__ esleitzea, beren energia eta osziladore-indarraren arabera (__PROTECTED_BLOCK_27__).
+4. Azetonaren desplazamendu solbatokromikoa uretan kuantifikatzea, disolbatzailearen polarizazio jarraituaren ereduaren bidez (PCM).
+5. Kalkulatutako xurgapen-espektroak balio esperimentalekin alderatzea, ingurunearen polaritatearen eta ordezkatzaile alkilikoaren arabera.
+
+=== BLOKEA 5 ===
+## Kontzeptu gakoak
+
+=== BLOKEA 6 ===
+### Trantsizio elektronikoak konposatu karbonilikotan
+
+=== BLOKEA 7 ===
+C=O taldean, bi trantsizio garrantzitsu daude: __PROTECTED_BLOCK_28__, non oxigenoaren bikote bakarti ez-lotzaileko elektroi bat karboniloaren __PROTECTED_BLOCK_29__ orbital antilotzailea igarotzen den, eta __PROTECTED_BLOCK_30__, non elektroia lotura bikoitzaren __PROTECTED_BLOCK_31__ orbital lotzailetik abiatzen den. __PROTECTED_BLOCK_32__ trantsizioa 280-300 nm inguruan agertzen da eta intentsitate txikia du; __PROTECTED_BLOCK_33__ 250 nm-tik behera dago eta askoz intentsuagoa da. Intentsitate-diferentzia hori osziladore-indarrean islatzen da (__PROTECTED_BLOCK_34__): zero inguruko balioak __PROTECTED_BLOCK_35__-rentzat eta 0.1-1 ordenakoak __PROTECTED_BLOCK_36__-rentzat.
+
+=== BLOKEA 8 ===
+### HOMO-LUMO tartea aurretiazko zenbatespen gisa
+
+=== BLOKEA 9 ===
+HOMO eta LUMO orbitalen arteko energia-diferentziak kitzikapen minimoaren energia zenbatesten du zuzenean. Elektronvoltetan eta uhin-luzeran bihurtuta, xurgapen-espektroaren eremua aurreikusten du kalkulu osoa egin aurretik. Zenbatespen honek sistematikoki gainestimatzen du trantsizio-energia, ez baitu kontuan hartzen egoera kitzikatuaren erlaxazioa.
+
+=== BLOKEA 10 ===
+### Disolbatzailearen efektua: solbatokromismoa
+
+=== BLOKEA 11 ===
+__PROTECTED_BLOCK_37__ trantsizioan, karboniloaren oinarrizko egoera kitzikatua baino polaragoa da. Disolbatzaile polar batek oinarrizko egoera egonkortzen du nagusiki, bi egoeren arteko energia-diferentzia handitzen du eta banda uhin-luzera txikiagoetara desplazatzen du (efektu hipsokromikoa edo urdineranzko desplazamendua). Gaussianek efektu hau PCM polarizazio jarraituaren ereduaren bidez modelizatzen du, disolbatzailea ingurune dielektriko homogeneo gisa irudikatzen duena, bere konstante dielektrikoak karakterizatuta. Zehazteko, __PROTECTED_BLOCK_60__ gakoa gehitzen da **Additional Keywords** eremuan.
+
+=== BLOKEA 12 ===
+Azetonarentzako erreferentziazko balio esperimentalak:
+
+=== BLOKEA 13 ===
+| Disolbatzailea | __PROTECTED_BLOCK_38__ esperimentala (nm) |
+|---|---|
+| Ziklohexanoa (apolarra) | 279 |
+| Ura (oso polarra) | 264 |
+| Aldaketa (__PROTECTED_BLOCK_39__) | -15 nm (urdineranzko desplazamendua) |
+
+=== BLOKEA 14 ===
+__PROTECTED_BLOCK_40__ trantsizioko urdineranzko desplazamendu solbatokromikoa (hipsokromikoa) inplikatutako egoera elektronikoen polaritate ezberdinaren ondorio da. Oinarrizko egoeran (__PROTECTED_BLOCK_41__), karbonilo taldeak momentu dipolar handia du eta oxigenoaren bikote bakartiek hidrogeno-loturak eratzen dituzte disolbatzaile polar protikoekin, hala nola urarekin. Trantsizio elektronikoan zehar, karga __PROTECTED_BLOCK_42__ sistemara birbanatzeak momentu dipolarra murrizten du egoera kitzikatuan (__PROTECTED_BLOCK_43__), eta horrek solbatazioaren egonkortzea murrizten du eta kitzikapen bertikalerako beharrezko energia handitzen du.
+
+=== BLOKEA 15 ===
+## Prozedura
+
+=== BLOKEA 16 ===
+### A atala: Aurretiazko zenbatespena HOMO-LUMO tartearekin
+
+=== BLOKEA 17 ===
+#### A1 urratsa: Geometria optimizatzea disolbatzailean
+
+=== BLOKEA 18 ===
+1. Azetona GaussView-n eraiki eta __PROTECTED_BLOCK_7__ aplikatu.
+2. Ireki __PROTECTED_BLOCK_8__, hautatu __PROTECTED_BLOCK_9__ eta sartu parametro hauek:
+
+=== BLOKEA 19 ===
+| Eremua | Balioa |
+|---|---|
+| Metodoa | __PROTECTED_BLOCK_61__ |
+| Oinarri-multzoa | __PROTECTED_BLOCK_62__ |
+| Karga | **0** |
+| Spin | **1** |
+| Gako-hitz gehigarriak | __PROTECTED_BLOCK_63__ |
+
+=== BLOKEA 20 ===
+3. Gorde __PROTECTED_BLOCK_64__ gisa __PROTECTED_BLOCK_65__ karpetan eta abiarazi.
+
+=== BLOKEA 21 ===
+#### A2 urratsa: HOMO eta LUMO autobalioak ateratzea
+
+=== BLOKEA 23 ===
+### B atala: Xurgapen-espektroaren TD-DFT kalkulua
+
+=== BLOKEA 24 ===
+#### B1 urratsa: TD-DFT kalkulua konfiguratzea
+
+=== BLOKEA 38 ===
+---

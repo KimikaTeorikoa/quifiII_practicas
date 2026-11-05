@@ -1,46 +1,48 @@
-# Geometria molekularra eta Born-Oppenheimer-en hurbilketa
+# Geometria molekularra eta Born-Oppenheimer hurbilketa
 
 ## Sarrera
 
-Molekula baten edozein propietate fisikokimiko zehazteko beharrezkoa da bere atomoen koordenatu espazialak zehaztasunez ezagutzea. Born-Oppenheimer-en hurbilketak nukleoen eta elektroien masen arteko alde handia aprobetxatzen du haien mugimenduak banantzeko; horri esker, banaketa elektronikoa nukleo finkoen gainean ebatzi daiteke. Esparru teoriko honek oinarritzen du koordenatu konstanteetan egindako energia puntualeko kalkuluen eta energia-minimo egonkorrak bilatzera bideratutako geometria-optimizazioen arteko bereizketa.
+Edozein propietate fisiko-kimiko zehazteko molekula batean, beharrezkoa da atomoen koordenatu espazialak zehaztasunez ezagutzea. Born-Oppenheimer hurbilketak nukleoen eta elektroien arteko masa-desberdintasun handia aprobetxatzen du haien mugimenduak deskonektatzeko, eta horrek aukera ematen du banaketa elektronikoa nukleo-disposizio finkoen gainean ebazteko. Esparru teoriko honek oinarritzen du energia-kalkulu puntualen eta koordenatu konstanteen arteko bereizketa, baita geometria-optimizazioen artekoa ere, energia-minimo egonkorrak aurkitzera bideratuta daudenak.
 
-## Born-Oppenheimer-en hurbilketa
+## Born-Oppenheimer hurbilketa
 
-Protoi baten masa elektroiarena baino 1836 aldiz handiagoa da gutxi gorabehera; horregatik, atomoen nukleoak askoz motelago mugitzen dira. Born-Oppenheimer-en hurbilketak denbora-desberdintasun hori baliatzen du nukleoak karga-zentro gelditzat hartuz mugimendu elektronikoa ebazten den bitartean. Horrela, energia elektronikoa aukeratutako nukleo-posizioen menpe parametrikoki dagoen magnitude gisa lortzen da. Banantze hori gabe, edozein molekularen ebazpen mekanokuantikoa konputazionalki bideraezina litzateke.
+Protoi baten masa elektroiarena baino 1836 aldiz handiagoa da gutxi gorabehera; beraz, nukleo atomikoak askoz ere motelago mugitzen dira. Born-Oppenheimer hurbilketak denbora-desberdintasun hori aprobetxatzen du nukleoak karga-zentro estazionariotzat hartuz, elektroi-mugimendua ebazten den bitartean. Horrela, energia elektronikoa nukleo-posizio hautatuen araberako magnitude parametriko gisa lortzen da. Deskonexio hori gabe, edozein molekularen ebazpen mekanokuantikoa konputazionalki bideraezina izango litzateke.
 
 :::{admonition} Oharra
 :class: note
-Nukleoak espazio-antolamendu desberdinetan finkatuz eta bakoitzarentzat energia elektronikoa kalkulatuz, potentzial-energiaren gainazala lortzen dugu (PEG, *Potential Energy Surface*). Gainazal hiperdimentsional horren gainean deskribatzen dira nukleoen dinamika, bibrazio molekularra eta erreakzio kimikoen garapena.
+
+Nukleoak espazio-disposizio desberdinetan finkatuz eta energia elektronikoa bakoitzerako kalkulatuz, energia potentzialaren gainazala sortzen dugu (PES, *Potential Energy Surface*). Gainazal hiperdimensional honetan, nukleoen dinamika, bibrazio molekularra eta erreakzio kimikoen aurrerapena deskribatzen dira.
+
 :::
 
 ## Geometria molekularra: distantziak, angeluak eta diedroak
 
-Molekula baten geometria hiru parametrok definitzen dute: lotura-distantziek (angstrometan, Å), lotura-angeluek (gradutan) eta bihurdura-angelu diedroek (gradutan). Distantziek eta angeluek ondoko atomoen arteko tokiko konektibitatea finkatzen dute; diedroek, berriz, erdiko lotura partekatzen duten planoen arteko errotazio espaziala deskribatzen dute. Gaussian-ek barne-koordenatu hauek erabiltzen ditu gradienteak kalkulatzeko eta geometriak optimizatzeko. GaussView-n hiru parametroak zuzenean neurtu eta bistara ditzakegu ereduaren gainean.
+Molekula baten geometria hiru parametrok definitzen dute: lotura-distantziak (angstrometan, Å), lotura-angeluak (gradutan) eta tortsio-angelu diedrikoak (gradutan). Distantziek eta angeluek atomo mugakideen arteko konektibitate lokala zehazten dute; diedroek lotura zentral bat partekatzen duten planoen arteko biraketa espaziala deskribatzen dute. Gaussianek koordenatu interno horiek erabiltzen ditu gradientea kalkulatzeko eta geometriak optimizatzeko. GaussView-n, hiru parametroak zuzenean neur eta bistara ditzakegu ereduaren gainean.
 
 :::{figure} /_static/figures/eu/geometria_molecular.svg
-:alt: Lau atomoko kate baten diagrama, lotura-distantzia, lotura-angelua eta angelu diedroa adierazita
+:alt: Diagrama de una cadena de cuatro átomos con distancia de enlace, ángulo de enlace y ángulo diedro anotados
 :width: 70%
 :align: center
 :::
 
-## Energia puntuala: mugitu gabe kalkulatzea
+## Energia puntuala: kalkulatzea mugitu gabe
 
-Energia puntualeko kalkulu batean (*Single Point*), nukleoen posizioak finko mantentzen dira sarrera-fitxategiko koordenatuen arabera. Geometria konstante horrekin, Gaussian-ek egitura elektronikoa ebazten du atomorik mugitu gabe. Emaitza konformazio horren energia elektroniko osoa da hartree-tan. GaussView-n kalkulu hau **Job Type → Single Point** bidez hautatzen dugu (normalean *Energy* etiketatua).
+Puntu bakarreko energia-kalkulu batean (*Single Point*), nukleoen posizioak finko mantentzen dira sarrera-fitxategiko koordenatuen arabera. Geometria konstante horrekin, Gaussianek egitura elektronikoa ebazten du atomo bakar bat ere mugitu gabe. Emaitza hartree-tan adierazitako energia elektroniko osoa da konformazio horretarako. GaussView-n, kalkulu hau **Job Type → Single Point** (normalean *Energy* gisa etiketatua) hautatzen dugu.
 
 ## Geometria-optimizazioa: minimoa aurkitzea
 
-Geometria-optimizazio batean, Gaussian-ek hasierako egituraren energia kalkulatzen du eta bere deribatuak ebaluatzen ditu nukleo-koordenatuekiko (energiaren gradientea). $A$ nukleo bakoitzaren gainean eragiten duten indar elektrostatikoak kontrako zeinua duen gradienteari dagozkio:
+Geometria-optimizazio batean, Gaussianek hasierako egituraren gaineko energia kalkulatzen du eta nukleoen koordenatuekiko deribatuak ebaluatzen ditu (energiaren gradienteak). Nukleo bakoitzaren gainean eragiten duten indar elektrostatikoak $A$ zeinu-aldaketarekin bat datoz:
 
 $$\mathbf{F}_A = -\nabla_{\mathbf{R}_A} E(\mathbf{R})$$
 
-Indar horietatik abiatuta, algoritmoak nukleoak desplazatzen ditu energia murrizten den norabidean gertueneko minimorantz. Geometria berri bakoitzean uhin-funtzioa eta indarrak birkalkulatzen ditu. Prozesua errepikatzen da gradientea zero bihurtzen den arte tolerantzia numerikoaren barruan:
+Indar horietatik abiatuta, algoritmoak nukleoak energia minimora murrizten duen norabidean mugitzen ditu. Geometria berri bakoitzean, uhin-funtzioa eta indarrak birkalkulatzen ditu. Prozesua errepikatzen da gradienteak tolerantzia numerikoaren barruan anulatzen den arte:
 
 $$\nabla_{\mathbf{R}} E \approx \mathbf{0}$$
 
-GaussView-n kalkulu hau **Job Type → Optimization** bidez hautatzen dugu. Ondorengo irudiak potentzial-putzura konbergitzen duen algoritmoaren urratsak erakusten ditu.
+GaussView-n, kalkulu hau **Job Type → Optimization** hautatzen dugu. Hurrengo irudiak algoritmoaren urratsak ilustratzen ditu, potentzial-putzura konbergituz.
 
 :::{figure} /_static/figures/eu/optimizacion_pasos.svg
-:alt: Geometria-optimizazioko algoritmoaren segidako urratsak potentzial-energiaren kurbako energia-minimorantz konbergituz
+:alt: Pasos sucesivos del algoritmo de optimización de geometría convergiendo al mínimo de energía sobre la curva de energía potencial
 :width: 65%
 :align: center
 :::
@@ -54,18 +56,16 @@ GaussView-n kalkulu hau **Job Type → Optimization** bidez hautatzen dugu. Ondo
 
 ---
 
-::::{dropdown} 🚀 Zer gertatzen da hasierako geometria oso txarra bada?
+::::{dropdown} Zer gertatzen da hasierako geometria oso txarra bada?
 :color: success
-:icon: rocket
 
-Hasierako geometria oreka-egituratik oso urrun badago, algoritmoak urrats gehiegi beharko ditu agian, minimo lokal batean harrapatuta gera daiteke edo ez du konbergituko. `.log` fitxategian egoera hau identifikatzen da optimizazio-zikloen mugara iristen denean konbergentzia-irizpideak bete gabe. Hori saihesteko, komeni da molekulak GaussView-ren fragmentu estandarrak erabiliz eraikitzea, kimikoki arrazoizkoak diren hasierako distantziak eta angeluak ematen baitituzte.
+Hasierako geometria oreka-egituratik oso urrun badago, algoritmoak urrats gehiegi behar izan ditzake, minimo lokal batean harrapatuta gera daiteke edo ez konbergitu. `.log` fitxategian, egoera hori identifikatzen da optimizazio-zikloen muga lortzen denean konbergentzia-irizpideak bete gabe. Hori saihesteko, komeni da molekulak GaussView-ren fragmentu estandarrak erabiliz eraikitzea, hasierako distantzia eta angelu kimikoki arrazoizkoak ematen baitituzte.
 
 ::::
 
-::::{dropdown} 🚀 Gehiago gradienteei eta optimizazio-algoritmoei buruz
+::::{dropdown} Gradiente eta optimizazio-algoritmoei buruz gehiago
 :color: success
-:icon: rocket
 
-Gaussian-en optimizazio-algoritmo lehenetsiek (hala nola Berny metodoak) quasi-Newton motako teknikak erabiltzen dituzte, hessiarraren (bigarren deribatuen matrizearen) hurbilketa iteratiboki eguneratzen dutenak minimorantz egin beharreko desplazamendua proiektatzeko. Ziklo bakoitzak uhin-funtzioa eta gradiente osoa kalkulatzea eskatzen duenez, molekula handiak edo konformazionalki malguak optimizatzeak kalkulu-kostu handia eta dozenaka optimizazio-urrats eska ditzake.
+Gaussianen lehenetsitako optimizazio-algoritmoek (Berny metodoa, adibidez) quasi-Newton motako teknikak erabiltzen dituzte, hessianoaren hurbilketa (bigarren deribatuen matrizea) iteratiboki eguneratzen dutenak, minimoaren norabidean desplazamendua proiektatzeko. Ziklo bakoitzak uhin-funtzioa eta gradiente osoa kalkulatzea eskatzen duenez, molekula handiak edo konformazionalki malguak optimizatzeak kostu konputazional handia eta optimizazio-urrats ugari eskatu ditzake.
 
 ::::

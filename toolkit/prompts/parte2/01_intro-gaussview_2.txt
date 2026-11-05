@@ -1,0 +1,64 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-gaussview.md (Zatia 2/2)
+# ==============================================================
+
+Ondorengo testu zientifikoak euskaratu, mesedez, estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 18 ===
+## Fitxategi bat ireki
+
+=== BLOKEA 19 ===
+Fitxategi bat irekitzeko, __PROTECTED_BLOCK_19__ menura jo behar dugu. Formatu ohikoenak __PROTECTED_BLOCK_36__ (sarrerako fitxategiak) eta __PROTECTED_BLOCK_37__ (Gaussianek sortutako irteerak) dira. Horri esker, saioen artean lanarekin jarraitu edo erreferentziazko egiturak aztertu ditzakegu.
+
+=== BLOKEA 20 ===
+## Kalkulu bat konfiguratu
+
+=== BLOKEA 21 ===
+Konfigurazio-panela __PROTECTED_BLOCK_20__ tik irekitzen dugu. __PROTECTED_BLOCK_27__ fitxan, ataza hautatzen dugu: energia puntuala (*Energy*), geometriaren optimizazioa (*Optimization*) edo maiztasunen kalkulua (*Frequency*). __PROTECTED_BLOCK_28__ fitxan, teoria-maila definitu dezakegu: metodo mekanokuantikoa (Hartree-Fock, B3LYP...) eta praktika bakoitzean adierazitako funtzio-basea. **Title Card** atalean, deskribapen labur bat sartzen dugu karaktere berezirik gabe. Azkenik, **Charge & Multiplicity** atalean, karga garbia eta spin-anizkoiztasuna ezartzen ditugu.
+
+=== BLOKEA 22 ===
+Karga eta anizkoiztasuna beti berrikusi Submit sakatu aurretik. Akats batek kalkulu osoa baliogabetzen du.
+
+=== BLOKEA 23 ===
+## Kalkulua abiarazi
+
+=== BLOKEA 24 ===
+Parametroak konfiguratu ondoren, kalkulua lokalean abiarazten dugu **Submit** sakatuz. GaussViewek jarraipen-leiho bat irekitzen du denbora errealeko irteera-lerroekin. Iraupena segundo batzuetatik (molekula sinpleak eta gutxieneko baseak) minutu batzuetara (sistema handiagoak edo elektroi-korrelazioko metodoak) alda daiteke. Ez dago ezer gehiago egin beharrik kalkulua amaitu arte.
+
+=== BLOKEA 25 ===
+## Kalkulua ondo amaitu dela egiaztatu
+
+=== BLOKEA 26 ===
+Kalkulua amaitzean, irteera-fitxategiko azken lerroak __PROTECTED_BLOCK_31__ eduki behar du. Horren ordez __PROTECTED_BLOCK_38__ agertzen bada, kalkulua ez da behar bezala amaitu. Arrazoi ohikoenak hasierako geometria desegokia, konfigurazio bateraezina edo esleitutako memoria-muga gainditzea dira.
+
+=== BLOKEA 27 ===
+Emaitzarik idatzi aurretik, beti egiaztatu kalkulua behar bezala amaitu dela, lerro hau bilatuz: __PROTECTED_BLOCK_32__
+
+=== BLOKEA 28 ===
+## Emaitzak ikusi
+
+=== BLOKEA 29 ===
+Emaitzak bi modutan kontsultatzen ditugu. Geometria optimizatua, dentsitate elektronikoa edo orbital molekularrak ikusteko, GaussViewen __PROTECTED_BLOCK_29__ menua erabiltzen dugu. __PROTECTED_BLOCK_21__ aukerak laburpen-koadro bat aurkezten du, metodoa, basea, kalkulatutako energia elektroniko osoa eta momentu dipolarra bezalako magnitudeekin. Balio numerikoak xehetasun guztiekin ateratzeko, zuzenagoa da __PROTECTED_BLOCK_39__ fitxategia testu-editore batekin irekitzea eta dagozkion lerroak bilatzea. Praktika bakoitzaren gidoian adierazten dugu zein termino bilatu eta nola idatzi balio bakoitza.
+
+=== BLOKEA 30 ===
+## Lana gorde
+
+=== BLOKEA 31 ===
+Sarrerako fitxategia __PROTECTED_BLOCK_22__ tik gordetzen dugu __PROTECTED_BLOCK_40__ luzapenarekin. Komeni da nomenklatura argia erabiltzea, molekula eta teoria-maila identifikatzeko (adibidez, __PROTECTED_BLOCK_41__), horrek saioan zehar kalkuluak antolatzea errazten baitu.
+
+=== BLOKEA 33 ===
+## Bibliografia
+
+=== BLOKEA 34 ===
+- __PROTECTED_BLOCK_33__
+
+=== BLOKEA 36 ===
+### [DROPDOWN_TITLE] Koloreak eta itxura pertsonalizatu
+
+=== BLOKEA 37 ===
+:icon: gear
+
+=== BLOKEA 38 ===
+Atzeko kolorea __PROTECTED_BLOCK_23__ menutik aldatzen dugu. __PROTECTED_BLOCK_30__ fitxan, **Background Color** ondoan dagoen laukian klik egiten dugu eta kolore zuria hautatzen dugu. Leiho horretan bertan, atomo-esferen tamaina pertsonaliza dezakegu **Atom Size** atalean, eta haien kolore-eskema **Atom Colors** atalean. Doikuntza horiek ez dituzte kalkuluak aldatzen, baina atzeko plano zuria erabiltzeak praktiken memoriarentzako kaptura garbiak lortzea errazten du.

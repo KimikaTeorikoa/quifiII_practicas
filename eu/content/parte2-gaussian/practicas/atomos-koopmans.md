@@ -2,39 +2,41 @@
 
 ## Sarrera
 
-Ionizazio-energiak neurtzen du nukleoak kanpokoeneko elektroien gainean eragiten duen erakarpen-indarra, eta elementuen erreaktibotasun kimikoa zein joera periodikoak finkatzen ditu. Gaussian-en egindako Hartree-Fock kalkuluen bidez, bi hurbilketa osagarri aplikatuko ditugu propietate hau ebaluatzeko: atomo neutroaren eta bere katioiaren arteko energia osoaren kendura zuzena ($\Delta E$), eta energia goreneko orbital okupatutik abiatutako zenbatespena Koopmans-en teoremaren bidez ($-\varepsilon_{\text{HOMO}}$).
+Ionizazio-energiak nukleoak kanpoko elektroiei eragiten dien erakarpen-indarra neurtzen du, eta elementuen erreaktibitate kimikoa eta aldizkako joerak zehazten ditu. Hartree-Fock kalkuluak Gaussian programan eginez, bi hurbilketa osagarri aplikatzen dira propietate hori ebaluatzeko: atomo neutroaren eta bere katioiaren arteko energia osoaren diferentzia zuzena ($\Delta E$), eta energia handieneko orbital okupatutik abiatuta egindako estimazioa, Koopmans-en teorema erabiliz ($-\varepsilon_{\text{HOMO}}$).
 
 ## Helburuak
 
-1. Atomo neutroen eta katioi monokargatuen energia elektroniko osoa kalkulatzea Hartree-Fock metodoaren bidez {{gaussian_version}} erabiliz.
-2. Ionizazio-energia zehaztea diferentzia autokonsistentearen bidez ($\Delta E$) eta orbital-zenbatespenaren bidez Koopmans-en teoremari jarraituz ($-\varepsilon_{\text{HOMO}}$).
-3. Kalkulatutako ionizazio-energiak lehen eta bigarren periodoko balio esperimentalekin alderatzea.
-4. Energia goreneko orbital atomiko okupatuen (HOMO) banaketa espaziala eta simetria bistaratzea GaussView-n.
+1. Atomo neutroen eta katioi monokargatuen energia elektroniko osoa kalkulatu Hartree-Fock metodoa erabiliz {{gaussian_version}} programan.
+2. Ionizazio-energia kalkulatu diferentzia autoegokituaren bidez ($\Delta E$) eta orbitalen estimazioaren bidez, Koopmans-en teorema erabiliz ($-\varepsilon_{\text{HOMO}}$).
+3. Kalkulatutako ionizazio-energiak balio esperimentalekin alderatu lehen eta bigarren periodoko elementuetan.
+4. Energia handieneko orbital okupatuen (HOMO) banaketa espaziala eta simetria bistaratu GaussView programan.
 
-## Kontzeptu nagusiak
+## Kontzeptu gakoak
 
 ### Zergatik dira energiak negatiboak?
 
-Atomo baten energia elektronikoa erreferentzia-egoera batekiko neurtzen da: nukleoa eta elektroi guztiak pausagunean eta infinituan bananduta daudenean, elkarrekintzarik gabe. Atomo lotua erreferentzia-egoera hori baino egonkorragoa denez, bere energia beti da negatiboa. `SCF Done` lerroan agertzen den balioa zenbat eta negatiboagoa izan, orduan eta handiagoa da sistemaren egonkortasuna. Energia osoan emaitza positibo bat lortzeak kalkuluaren konfigurazioan errore bat dagoela adieraziko luke.
+Atomo baten energia elektronikoa erreferentzia-egoera batekiko neurtzen da, non nukleoa eta elektroi guztiak pausagunean eta infinituan bananduta dauden, elkarrekintzarik gabe. Atomo lotua erreferentzia-egoera hori baino egonkorragoa denez, bere energia beti negatiboa da. `SCF Done` lerroan agertzen den balioa zenbat eta negatiboagoa izan, orduan eta egonkorragoa da sistema. Energia osoan emaitza positibo batek kalkuluaren konfigurazioan akats bat dagoela adieraziko luke.
 
 ### HOMO eta LUMO
 
-Orbital molekularrak energiarik txikienetik handienera ordenatzen dira. Energia goreneko orbital okupatuak HOMO izena jasotzen du (ingelesezko *Highest Occupied Molecular Orbital*) eta erauzteko errazenak diren elektroiak ditu. Lehen orbital hutsak, LUMO izenekoak (*Lowest Unoccupied Molecular Orbital*), elektroiak jasotzeko prest dagoen orbitala adierazten du. HOMO mailaren eta hutsaren mailaren arteko aldeak sistematik elektroi bat erauzteko behar den energiaren lehen zenbatespena ematen du.
+Orbital molekularrak energia txikienetik handienera ordenatzen dira. Energia handieneko orbital okupatuari HOMO (ingelesez *Highest Occupied Molecular Orbital*) deritzo, eta elektroiak ateratzeko errazenak ditu. Lehen orbital hutsa, LUMO (*Lowest Unoccupied Molecular Orbital*), elektroiak jasotzeko prest dagoen orbitala da. HOMO mailaren eta hutsune-mailaren arteko aldea sistemak elektroi bat ateratzeko behar den energiaren lehen estimazioa da.
 
 :::{admonition} Oharra
 :class: note
-`pop=full` aukera duen Gaussian-en irteeran, HOMOaren energia `Alpha occ. eigenvalues` lerroko azken zenbakizko balioari dagokio. Hurrengo `Alpha virt. eigenvalues` lerroko lehen balioa LUMOari dagokio.
+
+Gaussian irteeran `pop=full`, HOMOaren energia azken lerroko `Alpha occ. eigenvalues` azken balio numerikoari dagokio. Hurrengo lerroko lehen balioa `Alpha virt. eigenvalues` LUMOari dagokio.
+
 :::
 
 :::{figure} /_static/figures/eu/homo_lumo_ionizacion.svg
-:alt: Orbital-mailen diagrama HOMO eta LUMO orbitalak adierazita eta ionizazio-energiaren geziarekin
+:alt: Diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha de energía de ionización
 :width: 60%
 :align: center
 :::
 
 ### Ionizazio-energia eta Koopmans-en teorema
 
-Gas-fasean dagoen $A$ atomo neutro baten ionizazio-energia elektroi bat erauzi eta $A^+$ katioia sortzeko behar den gutxieneko energia da, $A \rightarrow A^+ + e^-$ prozesuaren arabera. Praktika honetan bi bide independentetatik kalkulatzen dugu. Lehena katioiaren eta atomo neutroaren arteko SCF energien kendura zuzena da, eta bi kalkulu bereizi eskatzen ditu. Bigarrena Koopmans-en teoreman oinarritzen da; horri esker, balio hori atomo neutroaren HOMO orbitalaren energiatik soilik zenbatets daiteke, katioia kalkulatu beharrik gabe.
+Atomo neutro baten $A$ ionizazio-energia gas-fasean elektroi bat ateratzeko eta $A^+$ katioia sortzeko behar den gutxieneko energia da, $A \rightarrow A^+ + e^-$ prozesuaren arabera. Praktika honetan bi modu independentetan kalkulatzen da. Lehenengoa katioiaren eta atomo neutroaren arteko SCF energien diferentzia zuzena da, eta horretarako bi kalkulu bereizi behar dira. Bigarrena Koopmans-en teoreman oinarritzen da, eta balio hori atomo neutroaren HOMO orbitalaren energiatik abiatuta estimatzeko aukera ematen du, katioia kalkulatu beharrik gabe.
 
 $$\text{IE}_{\Delta E} = E(A^+) - E(A)$$
 
@@ -42,50 +44,56 @@ $$\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}$$
 
 :::{admonition} Oharra
 :class: note
-Koopmans-en teoremak orbital izoztuen hurbilketa onartzen du, $A^+$ katioiaren orbitalak $A$ atomo neutroaren orbitalen berdinak direla suposatuz. Benetako ionizazio-prozesu fisiko batean, elektroi bat galtzeak elektroien arteko aldarapen orokorra murrizten du eta geratzen den hodei elektronikoa nukleorantz uzkurtzea eragiten du (orbital-erlaxazioa). Koopmans-en hurbilketak ez dituenez kontuan hartzen ez erlaxazio egonkortzaile hori ezta korrelazio-energiaren aldeak ere, $-\varepsilon_{\text{HOMO}}$ apur bat aldentzen da $\text{IE}_{\Delta E}$ kendura autokonsistentearen bidez kalkulatutako baliotik.
+
+Koopmans-en teoremak orbital izoztuen hurbilketa hartzen du, $A^+$ katioiaren orbitalak $A$ atomo neutroaren berdinak direla suposatuz. Ionizazio-prozesu fisiko batean, elektroi baten galerak elektroi arteko aldarapena murrizten du eta geratzen den hodei elektronikoa nukleorantz uzkurtzea eragiten du (orbitalen erlaxazioa). Koopmans-en hurbilketak erlaxazio egonkortzaile hori eta korrelazio-energiaren desberdintasunak alde batera uzten dituenez, $-\varepsilon_{\text{HOMO}}$ balioa diferentzia autoegokituan kalkulatutako balioarekin alderatuta $\text{IE}_{\Delta E}$ desberdina da pixka bat.
+
 :::
 
 ### Spin-anizkoiztasuna
 
-Spin-anizkoiztasunak sistemarentzat eskuragarri dauden spin-egoera kuantikoen kopurua adierazten du, eta $2S+1$ gisa kalkulatzen da, non $S$ elektroi parekatu gabeen spinen batura den. Elektroi guztiak parekatuta dituen atomo batek $S=0$ du eta 1eko anizkoiztasuna (singletea). Parekatu gabeko elektroi bakar batek $S=1/2$ eta 2ko anizkoiztasuna ematen du (bikoiztea edo dobletea). Anizkoiztasun-balio oker bat esleitzeak Gaussian-ek elektroiak $\alpha$ eta $\beta$ orbitalen artean gaizki banatzea eragiten du; horrek emaitza baliogabetzen du edo SCF zikloaren konbergentzia eragozten du.
+Spin-anizkoiztasunak sistemarako eskuragarri dauden spin-egoera kuantiko kopurua adierazten du eta $2S+1$ gisa kalkulatzen da, non $S$ elektroi desparekatuen spinen batura den. Elektroi guztiak parekatuta dituen atomo batek $S=0$ eta anizkoiztasun 1 (singletea) ditu. Elektroi desparekatu batek $S=1/2$ eta anizkoiztasun 2 (dobletea) ematen ditu. Anizkoiztasun-balio oker bat esleitzeak Gaussianek orbitalen artean elektroiak gaizki banatzea eragiten du $\alpha$ eta $\beta$, eta horrek emaitza baliogabetzen du edo SCF zikloaren konbergentzia eragozten du.
 
 :::{admonition} Abisua
 :class: warning
+
 Egiaztatu beti spin-anizkoiztasunaren balioa kalkulua bidali aurretik: balio oker batek emaitzak baliogabetzen ditu edo SCF konbergentzia eragozten du.
+
 :::
 
 ## Prozedura
 
 :::{admonition} Adi
 :class: danger
-Derrigorrezko egiaztapena kalkulu bakoitzaren ondoren: ireki `.log` fitxategia testu-editorearekin eta ziurtatu amaierako lerro zehatz hau agertzen dela:
+
+Kalkulu bakoitzaren ondorengo nahitaezko egiaztapena: ireki `.log` fitxategia testu-editorearekin eta egiaztatu azken lerro zehatza dagoela:
 {{termination_ok}}
+
 :::
 
 ### 1. urratsa: GaussView ireki eta atomoa marraztu
 
 1. Ireki GaussView aplikazioen menutik edo sistemaren abiarazletik.
-2. Ireki elementuen zatien paleta **View → Element Fragments** bidez (edo goiko tresna-barrako taula periodikoaren ikonoa sakatuz).
+2. Ireki atomo-zatien paleta **View → Element Fragments** sakatuz (edo goiko tresna-barrako taula periodikoaren ikonoa sakatuz).
 3. Hautatu kalkulatu nahi den elementu kimikoa (adibidez, karbonoa, **C**).
-4. Egin klik bakar bat ezkerreko botoiarekin erdiko marrazketa-leihoan. Loturarik gabeko zentro atomiko isolatu bat agertuko da.
+4. Egin klik bakarra ezkerreko botoiarekin marrazketa-leiho nagusian. Erdigune atomiko isolatu bat agertuko da, loturarik gabe.
 
 ### 2. urratsa: Atomo neutroaren kalkulua konfiguratu
 
-1. Joan **Calculate → Gaussian Calculation Setup** menura.
+1. Sartu **Calculate → Gaussian Calculation Setup** menura.
 2. **Job Type** fitxan, hautatu **Energy**.
 3. **Method** fitxan, konfiguratu kalkuluaren parametroak:
 
 | Eremua | Balioa |
 |---|---|
-| Method | **HF** |
-| Basis Set | **STO-3G** |
-| Charge | **0** |
-| Spin (Multiplicity) | Kontsultatu atomo neutro bakoitzaren anizkoiztasun-taula |
+| Metodoa | **HF** |
+| Oinarri-multzoa | **STO-3G** |
+| Karga | **0** |
+| Spin (Anizkoiztasuna) | Kontsultatu anizkoiztasunen taula atomo neutro bakoitzerako |
 
 4. **Title** fitxan, idatzi deskribapen identifikatzaile bat (adibidez, `C neutro HF STO-3G`).
-5. **Additional Keywords** fitxan, idatzi zehatz-mehatz: `pop=full`. Argibide honek orbital molekular guztien energiak sartzen ditu irteera-fitxategian.
+5. **Additional Keywords** fitxan, idatzi zehazki: `pop=full`. Instrukzio honek orbital molekular guztien energiak irteera-fitxategian sartzen ditu.
 
-Erreferentziazko anizkoiztasun-taula ($2S+1$):
+Erreferentziako anizkoiztasunen taula ($2S+1$):
 
 | Atomoa | $Z$ | Konfigurazioa | Anizkoiztasuna |
 |---|:---:|---|:---:|
@@ -101,120 +109,120 @@ Erreferentziazko anizkoiztasun-taula ($2S+1$):
 | Ne | 10 | [He] 2s² 2p⁶ | 1 |
 
 :::{figure} /_static/capturas/07_koopmans_setup_c_popfull.png
-:alt: Hartree-Fock kalkuluaren konfigurazioa pop=full aukerarekin karbono-atomoarentzat
+:alt: Configuración del cálculo de Hartree-Fock con pop=full para el átomo de carbono
 :width: 85%
 :align: center
 :::
 
 ### 3. urratsa: Kalkulua abiarazi eta fitxategia gorde
 
-1. Sakatu **Submit** botoia **Gaussian Calculation Setup** leihoaren behealdean.
-2. Gordetzeko elkarrizketa-koadroan, zehaztu `.gjf` sarrera-fitxategiaren izena (adibidez, `C_neutro_HF_STO3G.gjf`) eta gorde laborategiko lan-direktorioan: `{{practicas_folder}}`.
-3. Berretsi elkarrizketa-koadroa lehenik **Save** eta ondoren **Submit** sakatuz.
-4. Begiratu exekuzio-egoera GaussView-ren beheko barran kalkulua amaitu arte (segundo gutxi batzuk elementu arinentzat).
+1. Sakatu **Bidali** botoia **Gaussian Calculation Setup** leihoaren behealdean.
+2. Gorde fitxategia elkarrizketa-koadroan, adierazi sarrera-fitxategiaren izena `.gjf` (adibidez, `C_neutro_HF_STO3G.gjf`) eta gorde laborategiko laneko direktorioan: `__PROTECTED_BLOCK_36__`.
+3. Berretsi elkarrizketa-koadroa **Save** sakatuz eta ondoren **Bidali**.
+4. Ikusi exekuzio-egoera GaussView-ren beheko barran, kalkulua amaitu arte (segundo gutxi batzuk elementu arinentzat).
 
 ### 4. urratsa: Amaiera zuzena egiaztatu
 
-1. Ireki sortutako `.log` fitxategia (`C_neutro_HF_STO3G.log`) sistemako testu-editorearekin (**File → Open** editorean edo eskuineko klik fitxategiaren gainean).
-2. Joan fitxategiaren amaierara **Ctrl + Fin** (edo Ctrl + End) sakatuz.
-3. Egiaztatu fitxategiaren azken lerroa zehazki bat datorrela honekin: `{{termination_ok}}`. Agertzen ez bada, kalkuluak huts egin du eta haren datuak ezin dira erabili.
+1. Ireki sortutako `.log` fitxategia (`C_neutro_HF_STO3G.log`) testu-editorearekin (**File → Open** editorean edo eskuineko botoiarekin fitxategian klik eginez).
+2. Joan fitxategiaren amaierara **Ctrl + Amaiera** sakatuz.
+3. Egiaztatu fitxategiaren azken lerroa zehazki bat datorrela: `__PROTECTED_BLOCK_37__`. Ez bada agertzen, kalkulua huts egin du eta ez dira datuak erabili behar.
 
 :::{figure} /_static/capturas/08_koopmans_log_terminacion_normal.png
-:alt: Gaussian 16-ren amaiera normala .log irteera-fitxategiaren amaieran
+:alt: Terminación normal de Gaussian 16 al final del archivo de salida .log
 :width: 85%
 :align: center
 :::
 
-### 5. urratsa: E(N) energia osoa irakurri
+### 5. urratsa: Irakurri guztizko energia E(N)
 
-1. Testu-editorean irekitako `.log` fitxategian, sakatu **Ctrl + F** bilaketa aktibatzeko.
+1. Testu-editorean irekitako `.log` fitxategian, sakatu **Ctrl + B** bilaketa aktibatzeko.
 2. Idatzi bilaketa-testua: `SCF Done`.
-3. Kokatu energia osoa `SCF Done:  E(RHF) = ...` lerroan (1eko anizkoiztasuna duten geruza itxiko sistemetan) edo `SCF Done:  E(ROHF) = ...` lerroan (1 ez den anizkoiztasuna duten geruza irekikoetan).
-4. Kopiatu zenbakizko balioa unitate atomikoetan (A.U. / Hartrees) eta itsatsi emaitzen taulako $E(N)$ zutabean.
+3. Aurkitu guztizko energia `SCF Done:  E(RHF) = ...` lerroan (geruza itxiko sistema multiplicitate 1ekin) edo `SCF Done:  E(ROHF) = ...` lerroan (geruza irekiko sistema multiplicitate desberdinarekin).
+4. Kopiatu balio numerikoa unitate atomikoetan (A.U. / Hartree) eta itsatsi emaitzen taulako $E(N)$ zutabean.
 
-### 6. urratsa: HOMOaren orbital-energia irakurri eta orbitala bistaratu
+### 6. urratsa: Irakurri HOMO orbitalaren energia eta bistaratu orbitala
 
-1. **Zenbakizko irakurketa `.log` fitxategian:**
-   - Editorean irekitako `.log` fitxategian, bilatu **Ctrl + F** bidez testu hau: `Alpha occ. eigenvalues`.
-   - Kokatu `Alpha occ. eigenvalues --` azken lerroko azken zenbakia. Zenbakizko balio hori energia goreneko orbital okupatuaren energiari dagokio, $\varepsilon_{\text{HOMO}}$ (Hartree-tan).
-   - Kokatu berehalako hurrengo `Alpha virt. eigenvalues --` lerroko lehen zenbakia, energia baxueneko orbital hutsari dagokiona ($\varepsilon_{\text{LUMO}}$).
-   - Kopiatu $\varepsilon_{\text{HOMO}}$ balioa (Hartree-tan) emaitzen taulako dagokion zutabean.
+1. **Irakurketa numerikoa `.log` fitxategian:**
+   - Irekitako `.log` fitxategian, bilatu **Ctrl + B**-rekin testu hau: `Alpha occ. eigenvalues`.
+   - Aurkitu azken lerroko azken zenbakia `Alpha occ. eigenvalues --`. Balio numeriko hori energia handieneko betetako orbitalari dagokio, $\varepsilon_{\text{HOMO}}$ (Hartree-etan).
+   - Aurkitu hurrengo lerroko lehen zenbakia `Alpha virt. eigenvalues --`, energia txikieneko hutsik dagoen orbitalari dagokiona ($\varepsilon_{\text{LUMO}}$).
+   - Kopiatu $\varepsilon_{\text{HOMO}}$ balioa (Hartree-etan) emaitzen taulako dagokion zutabean.
 
 2. **Egiaztapena eta bistaratzea GaussView-n:**
-   - GaussView-n, kalkulutik sortutako `.chk` fitxategia ireki eta **Results → MOs** menura joko dugu.
-   - **New Gaussian MOs** fitxan energia-mailen diagrama eta orbitalen okupazioa ikusiko ditugu $\alpha$ eta $\beta$ spinetarako. Karbono neutroaren kasuan (triplete egoeran), energia goreneko orbital okupatuak ($\alpha$, 4. orbitala) $-0.32803\text{ Ha}$-ko energia du.
+   - GaussView-n, ireki kalkuluaren ondoriozko `.chk` fitxategia eta sartu **Results → MOs** menura.
+   - **New Gaussian MOs** fitxan, ikusi energia-mailen diagrama eta spin $\alpha$ eta $\beta$-ren orbitalen okupazioa. Karbono neutroaren triplete egoeran, energia handieneko betetako orbitalak ($\alpha$, 4. orbitala) $-0.32803\text{ Ha}$ energia du.
 
 :::{figure} /_static/capturas/07b_koopmans_gv_orbitales_c.png
-:alt: Energia-mailen diagrama eta Alpha zein Beta orbitalen okupazioa Results MOs leihoan
+:alt: Diagrama de niveles de energía y ocupación de orbitales Alpha y Beta en Results MOs
 :width: 85%
 :align: center
 :::
 
-   - Orbitalaren hiru dimentsioko banaketa sortzeko, leiho horren barruko **Visualize** fitxara joko dugu. 4. orbitala (HOMO) hautatuko dugu, **Isovalue** eremuan `0.01` ezarri eta **Update** sakatuko dugu. Ezkerreko azpileihoan $2p$ orbital atomikoaren bi lobuluak agertuko dira.
+- Orbitalaren hiru dimentsioko banaketa sortzeko, leiho horren barruan **Visualize** fitxa hautatzen dugu. 4. orbitala (HOMO) hautatzen dugu, **Isovalue** eremua `0.01` ezartzen dugu eta **Update** sakatzen dugu. Ezkerreko azpileihoan $2p$ orbital atomikoaren bi lobuluak agertuko dira.
 
 :::{figure} /_static/capturas/09_koopmans_gv_orbital_homo.png
-:alt: HOMO orbitalaren (2p) 3D gainazala sortzea 0.01 isobalioarekin Visualize fitxan
+:alt: Generación de la isosuperficie 3D del orbital HOMO (2p) con isovalor 0.01 en la pestaña Visualize
 :width: 85%
 :align: center
 :::
 
-### 7. urratsa: A⁺ katioia konfiguratu eta kalkulatu
+### 7. urratsa: Konfiguratu eta kalkulatu A⁺ katioia
 
-1. Itzuli GaussView-ra zentro atomiko bera pantailan duzula.
+1. Itzuli GaussView-ra pantailan dagoen atomo-zentro berarekin.
 2. Ireki berriro **Calculate → Gaussian Calculation Setup** panela.
-3. **Method** fitxan, aldatu ondorengo parametroak:
-   - **Charge**: aldatu `0`tik `1`era.
-   - **Spin**: egokitu espezie kationikoari dagokion anizkoiztasunera (ikus beheko taula). HOMO orbitalean elektroi bat erauztean, parekatu gabeko elektroien kopurua aldatu egiten da.
-4. Mantendu **Job Type** `Energy` moduan, **Method** `HF` moduan, **Basis Set** `STO-3G` moduan eta `pop=full` gako-hitza **Additional Keywords** eremuan.
-5. **Title** fitxan, idatzi: `C cation HF STO-3G`.
-6. Sakatu **Submit**, gorde izen adierazgarri batekin (adibidez, `C_cation_HF_STO3G.gjf`) `{{practicas_folder}}` karpetan eta berretsi bidalketa.
-7. Egiaztatu amaiera zuzena `.log` berrian eta atera $E(A^+)$ energia osoa `SCF Done` lerrotik.
+3. ****Method**** fitxan, aldatu parametro hauek:
+   - **Charge**: aldatu `0`-tik `1`-ra.
+   - **Spin**: doitu katioi-espezieari dagokion multiplicitatera (ikusi beheko taula). HOMOtik elektroi bat kenduta, desparekatutako elektroien kopurua aldatu egiten da.
+4. Mantendu **Job Type** `Energy`-n, **Method** `HF`-n, **Basis Set** `STO-3G`-n eta **Additional Keywords**-en `pop=full` gako-hitza.
+5. ****Title**** fitxan, idatzi: `C cation HF STO-3G`.
+6. Sakatu **Bidali**, gorde izen adierazgarri batekin (adibidez, `C_cation_HF_STO3G.gjf`) `{{practicas_folder}}`-n eta berretsi bidalketa.
+7. Egiaztatu amaiera zuzena `.log` berrian eta atera guztizko energia $E(A^+)$ `SCF Done` lerroan.
 
 | Eremua | Neutroa | Katioia |
 |---|:---:|:---:|
 | Charge | 0 | +1 |
-| Spin | Neutroaren anizkoiztasuna | Katioiaren anizkoiztasuna |
+| Spin | Multiplicitate neutroa | Multiplicitate katioia |
 
-### 8. urratsa: Ionizazio-energiak kalkulatu
+### 8. urratsa: Kalkulatu ionizazio-energiak
 
-1. Kalkulatu ionizazio-energia diferentzia zuzenaren bidez ($\text{IE}_{\Delta E}$):
+1. Kalkulatu ionizazio-energia zuzeneko diferentziaren bidez ($\text{IE}_{\Delta E}$):
 
-   $$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times 27.2114 \quad [\text{eV}]$$
+$$\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times 27.2114 \quad [\text{eV}]$$
 
-2. Kalkulatu Koopmans-en teoremaren zenbatespena ($\text{IE}_{\text{Koopmans}}$):
+2. Kalkulatu Koopmans-en teoremaren estimazioa ($\text{IE}_{\text{Koopmans}}$):
 
-   $$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times 27.2114 \quad [\text{eV}]$$
+$$\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times 27.2114 \quad [\text{eV}]$$
 
-3. Erregistratu bi balioak elektroi-voltetan datu-taulan eta kalkulatu ehuneko desbiderapena erreferentziazko balio esperimentalarekiko.
+3. Erregistratu bi balioak elektronvoltetan datuen taulan eta kalkulatu desbiderapen portzentuala erreferentziako balio esperimentalarekiko.
 
 ## Emaitzak eta analisia
 
-Kalkulatutako atomo bakoitzeko, `.log` fitxategitik ateratako bi energiak erregistratuko ditugu eta ionizazio-energiaren bi zenbatespenak kalkulatuko ditugu. Ondorengo taulak balioak Hartree-tan eta dagoeneko eV-etara bihurtutako emaitzak biltzen ditu. Erreferentziako balio esperimentalak ere sartzen dira ehuneko errorea kalkulatzeko.
+Kalkulatutako atomo bakoitzerako, `.log` fitxategitik ateratako bi energiak erregistratzen ditugu eta ionizazio-energiaren bi estimazioak kalkulatzen ditugu. Ondorengo taulak Hartree-etan jasotzen ditu balioak eta emaitzak eV-ra bihurtuta. Erreferentziako balio esperimentalak sartzen dira errore portzentuala kalkulatzeko.
 
 ---
 
 ## Bibliografia
 
 - {{gaussian_cite}}
-- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. 9. kap. (Egitura elektroniko atomikoa).
-- NIST Chemistry WebBook, https://webbook.nist.gov (ionizazio-energien datu esperimentalak).
+- Atkins, P.; De Paula, J. *Kimika Fisikoa*, 10. ed.; Editorial Médica Panamericana, 2018. 9. kap. (Egitura elektroniko atomikoa).
+- NIST Chemistry WebBook, https://webbook.nist.gov (ionizazio-energiaren datu esperimentalak).
 - Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.
 
 ---
 
-::::{dropdown} 🚀 Aurrerago joateko (hautazkoa)
+::::{dropdown} Urrutirago joateko (aukerakoa)
 :color: success
-:icon: rocket
 
-Esplorazio honek oinarri-funtzioen multzoa zabaltzean emaitzaren kalitatea nola aldatzen den aztertzen du. Karbono-atomo neutroaren kalkulua tamaina desberdineko hiru oinarrirekin errepikatuko dugu, eta HOMOaren energia zein Koopmans-ek zenbatetsitako ionizazio-energia balio esperimentalarekin alderatuko ditugu. Prozedura praktika nagusiaren berdina da: **Gaussian Calculation Setup → Method** leihoan **Basis Set** eremua bakarrik aldatuko dugu.
+Esplorazio honek aztertzen du nola aldatzen den emaitzaren kalitatea oinarri-funtzioen multzoa handitzean. Karbono atomo neutroaren kalkulua errepikatzen dugu hiru oinarri desberdinekin eta HOMOren energia eta Koopmans-en estimatutako ionizazio-energia alderatzen ditugu balio esperimentalarekin. Prozedura praktika nagusiaren berdina da: **Basis Set** eremua bakarrik aldatzen dugu **Gaussian Calculation Setup → Method**-en.
 
 | Oinarria | $\varepsilon_{\text{HOMO}}$ (Ha) | IE$_{\text{Koopmans}}$ (eV) | IE exp. (eV) | Errorea (%) |
 |:---:|:---:|:---:|:---:|:---:|
 | STO-3G | −0.328 | 8.93 | 11.26 | 20.7 |
-| 3-21G | (kalkulatzeke) | (kalkulatzeke) | 11.26 | (kalkulatzeke) |
-| 6-311G | (kalkulatzeke) | (kalkulatzeke) | 11.26 | (kalkulatzeke) |
+| 3-21G | (kalkulatzeko) | (kalkulatzeko) | 11.26 | (kalkulatzeko) |
+| 6-311G | (kalkulatzeko) | (kalkulatzeko) | 11.26 | (kalkulatzeko) |
 
-:::{note}
-Zer zentzutan aldatzen da $\varepsilon_{\text{HOMO}}$ oinarriaren tamaina handitzean? Gutxitzen al da balio esperimentalarekiko errorea modu monotonoan, ala ba al dago kasurik non oinarri handiago batek ez duen emaitza hobetzen? Erlazionatu desberdintasunak oinarri bakoitzak balentzia-eskualdean dentsitate elektronikoa deskribatzeko duen ahalmenarekin.
+:::{note} Zein zentzutan aldatzen da __PROTECTED_BLOCK_73__ oinarriaren tamaina handitzean? Txikitzen al da errorea balio esperimentalarekiko modu monotonoan, edo ba al dago kasurik oinarri handiago batek emaitza hobetzen ez duena? Lotu desberdintasunak oinarri bakoitzak balentzia-elektroien dentsitatea deskribatzeko duen gaitasunarekin.
+
 :::
+
 ::::

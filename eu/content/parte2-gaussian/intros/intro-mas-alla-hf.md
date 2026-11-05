@@ -1,20 +1,22 @@
-# Hartree-Fock-etik haratago
+# Hartree-Focketik haratago
 
 ## Sarrera
 
-Hartree-Fock-en batez besteko eremuaren tratamenduak ez du kontuan hartzen elektroiek elkar aldarazten dutela unean bertan elkarrekintza coulombiarraren ondorioz, korrelazio elektronikoaren energia baztertuz. Muga hori gainditzeko, kimika konputazionalak post-Hartree-Fock metodoetara eta dentsitatearen funtzionalaren teoriara (DFT) jotzen du. Bi ikuspegi hauek energia molekularrak eta propietate kimikoak zehaztasun handiagoz kalkulatzea ahalbidetzen dute: lehenengoek konfigurazio elektroniko anitzak txertatzen dituzte erreferentziako uhin-funtzio batetik abiatuta; DFT-k, berriz, korrelazioa modelatzen du truke- eta korrelazio-funtzionalen bidez, adibidez B3LYP erabiliz.
+Hartree-Focken batez besteko eremuaren tratamenduak ez du kontuan hartzen elektroiek berehalako aldaratze-indarra dutela elkarren artean, elkarreragin coulombiarraren ondorioz, eta horrek elektroi-korrelazioaren energia alde batera uzten du. Muga hori gainditzeko, kimika konputazionalak Hartree-Focken ondorengo metodoak eta dentsitatearen funtzionalaren teoria (DFT) erabiltzen ditu. Bi ikuspegi horiek molekula-energiak eta propietate kimikoak zehaztasun handiagoz kalkulatzeko aukera ematen dute: lehenengoek konfigurazio elektroniko anitz gehitzen dituzte erreferentziazko uhin-funtzio batetik abiatuta, eta DFTk, berriz, truke- eta korrelazio-funtzionalen bidez modelatzen du korrelazioa, hala nola B3LYP.
 
 ## Batez besteko eremutik haratago: konfigurazioak gehitzea
 
-Hartree-Fock hurbilketak konfigurazio bakar baten bidez deskribatzen du egoera elektronikoa, hau da, elektroien esleipen finko bat orbital okupatuetara. Konfigurazio-elkarrekintzako metodoek (CI) deskribapen hori hobetzen dute konfigurazioen konbinazio linealak txertatuz, non elektroi bat edo gehiago orbital birtualetara sustatzen diren. Bereziki, CISD metodoak kitzikapen sinple eta bikoitz guztiak barne hartzen ditu erreferentziako determinatzailetik abiatuta. Ikuspegi honek korrelazio elektronikoaren zati handi bat berreskuratzen du, nahiz eta Hartree-Fock-ena baino kalkulu- eta memoria-kostu askoz handiagoa izan.
+Hartree-Focken hurbilketak egoera elektronikoa konfigurazio bakar baten bidez deskribatzen du, hau da, elektroiak orbital okupatuetara esleitzea. Konfigurazioen arteko elkarreraginaren metodoek deskribapen hori hobetzen dute, konfigurazioen konbinazio linealak gehituz, non elektroi bat edo gehiago orbital birtualetara igotzen diren. Zehazki, CISD metodoak erreferentziazko determinatzailetik abiatuta kitzikapen sinple eta bikoitz guztiak barne hartzen ditu. Ikuspegi honek elektroi-korrelazioaren zati handi bat berreskuratzen du, baina Hartree-Focken kostu konputazional eta memoria-kostu askoz handiagoarekin.
 
-## DFT: ikuspegi desberdin bat
+## DFT: beste ikuspegi bat
 
-Dentsitatearen funtzionalaren teoriak (DFT) beste ikuspegi batetik heltzen dio egitura elektronikoaren arazoari: elektroi anitzeko uhin-funtzioaren ordez dentsitate elektroniko espaziala erabiltzen du. Hohenberg eta Kohn-en teoremen arabera, oinarrizko egoeraren energia era zehatzean finkatzen da hiru dimentsioko dentsitate honen bidez. Metodoaren gune nagusia truke- eta korrelazio-funtzionala da, Hartree-Fock-ek alde batera uzten edo era osatugabean hurbiltzen dituen efektu elektronikoak modelatzeaz arduratzen dena. Aukera ugarien artean, B3LYP bezalako funtzional hibridoek Hartree-Fock-en truke zehatzaren zati bat DFT-ren berezko korrelazio-terminoekin konbinatzen dute. Tamaina ertaineko molekula organikoentzat, B3LYP-k % 3tik beherako ohiko errorearekin erreproduzitzen ditu geometriak eta maiztasunak, HF-ren pareko kalkulu-kostuarekin.
+Dentsitatearen funtzionalaren teoriak (DFT) egitura elektronikoaren arazoa beste ikuspegi batetik jorratzen du: uhin-funtzio elektroi anitzekoa espazio-dentsitate elektronikoarekin ordezkatzen du. Hohenberg eta Kohnen teoremen arabera, oinarrizko egoeraren energia zehaztasunez zehazten da hiru dimentsioko dentsitate horren bidez. Metodoaren funtsezko pieza truke- eta korrelazio-funtzionala da, Hartree-Fockek alde batera uzten edo modu osatugabean hurbiltzen dituen efektu elektronikoak modelatzeko ardura duena. Eskuragarri dauden aukeren artean, B3LYP bezalako funtzional hibridoek Hartree-Focken truke zehatzaren zati bat konbinatzen dute DFTren korrelazio-termino propioekin. Tamaina ertaineko molekula organikoentzat, B3LYPk geometriak eta maiztasunak erreproduzitzen ditu, % 3tik beherako errore tipikoekin, HFren antzeko kostu konputazionalarekin.
 
 :::{admonition} Oharra
 :class: note
-$N$ elektroiko sistema baten uhin-funtzioa $3N$ koordenatu espazialen menpekoa den bitartean (molekula ertain edo handientzat kalkulu zehatza bideraezina eginez), $\rho(\mathbf{r})$ dentsitate elektronikoa hiru aldagai espazialen $(x, y, z)$ menpeko magnitude behagarria da soilik. Dimentsio-murrizketa nabarmen horri esker, DFT-k korrelazio elektronikoaren efektuak barne har ditzake Hartree-Fock metodoaren pareko kalkulu-kostuarekin.
+
+$N$ elektroiko sistema baten uhin-funtzioak $3N$ koordenatu espazialen araberakoa da (horrek ezinezko egiten du kalkulu zehatza molekula ertain edo handientzat), baina dentsitate elektronikoa $\rho(\mathbf{r})$ magnitude behagarria da, hiru aldagai espazialen araberakoa soilik $(x, y, z)$. Murrizketa dimentsional zorrotz horri esker, DFTk elektroi-korrelazioaren efektuak barne har ditzake, Hartree-Fock metodoaren antzeko kostu konputazionalarekin.
+
 :::
 
 ---

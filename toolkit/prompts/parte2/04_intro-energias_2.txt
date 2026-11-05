@@ -1,0 +1,38 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-energias.md (Zatia 2/2)
+# ==============================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 8 ===
+| De | A | Faktorea |
+|----|---|----------|
+| Ha | eV | × __PROTECTED_BLOCK_6__ |
+| Ha | kcal/mol | × __PROTECTED_BLOCK_7__ |
+
+=== BLOKEA 10 ===
+## Energia-desberdintasunak: benetan axola duena
+
+=== BLOKEA 11 ===
+Hartree-tan adierazitako energia absolutua erreferentzia-hitzarmenaren araberakoa da (partikula bereiziak infinituan) eta ez da zuzenean neurtzen laborategian. Horregatik, inoiz ez dira alderatu behar metodo edo oinarri desberdinekin lortutako energia absolutuak. Kimikan garrantzia duen magnitude fisikoa beti da bi egoera edo geometriaren arteko energia erlatiboaren desberdintasuna (__PROTECTED_BLOCK_11__), teoria-maila berean kalkulatuta. Praktika hauetan, edozein analisi termodinamiko, errotazio-hesia edo potentzial-kurba erreferentziazko egitura batekiko igoera erlatibo gisa adierazten dugu.
+
+=== BLOKEA 12 ===
+## Orbitalen energiak: ez nahastu energia totalarekin
+
+=== BLOKEA 13 ===
+Fock matrizea diagonalizatzean lortutako autobalioak orbital indibidualen energiei dagozkie, __PROTECTED_BLOCK_16__ fitxategian zerrendatuta __PROTECTED_BLOCK_17__ (orbital okupatuak) eta __PROTECTED_BLOCK_18__ (orbital birtualak edo desokupatuak) etiketekin. Balio horiek ez dute sistemaren energia totala adierazten. Orbital okupatu guztien energiak batuz gero, energia errealaren gainestimazio fisiko larria sortuko litzateke, elektroien arteko aldarapena bi aldiz kontabilizatuko bailitzateke. Hori dela eta, energia totala adierazpen independente baten bidez kalkulatzen da eta bereizita erakusten da __PROTECTED_BLOCK_19__ lerroan.
+
+=== BLOKEA 14 ===
+## Bibrazio-maiztasunak: emaitza desberdina
+
+=== BLOKEA 15 ===
+Maiztasunen kalkuluak (__PROTECTED_BLOCK_20__) bibrazio-modu normal molekularrak zehazten ditu, alderantzizko zentimetroetan adierazita (__PROTECTED_BLOCK_12__), dimentsio desberdinak dituen magnitude fisikoa, energia totalaren hartree-ekin alderatuta. Balio horiek __PROTECTED_BLOCK_21__ fitxategian agertzen dira __PROTECTED_BLOCK_22__ lerroetan. Maiztasun irudikari bat agertzeak (Gaussianek zenbaki negatibo gisa erakusten duena) adierazten du optimizatutako egitura ez dagokiola energia potentzialaren gainazaleko minimo erreal bati, baizik eta trantsizio-egoera edo zela-puntu bati. Kasu horretan, geometria zuzendu eta berriz optimizatu behar da beste edozein propietate fisiko-kimiko aztertu aurretik.
+
+=== BLOKEA 16 ===
+Log-ean maiztasun negatiboak agertzen badira, geometria ez da minimo erreal batera konbergitu. Berriz optimizatu behar da jarraitu aurretik.
+
+=== BLOKEA 19 ===
+- __PROTECTED_BLOCK_8__
+- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996.

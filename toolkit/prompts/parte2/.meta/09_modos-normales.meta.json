@@ -1,0 +1,371 @@
+{
+  "source": "es/content/parte2-gaussian/practicas/modos-normales.md",
+  "dest": "eu/content/parte2-gaussian/practicas/modos-normales.md",
+  "prefix": "09_modos-normales",
+  "slug": "modos-normales",
+  "filename": "modos-normales.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/capturas/14_vibraciones_gv_modos_co2.png\n:alt: Diálogo Vibrations en GaussView con la lista de los 4 modos normales de CO2 y sus intensidades infrarrojas\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": ":::{figure} /_static/capturas/14b_vibraciones_gv_visor_co2.png\n:alt: Molécula de CO2 en el visor 3D de GaussView\n:width: 65%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_2__": "$$\\tilde{\\nu} = \\frac{1}{2\\pi c}\\sqrt{\\frac{k}{\\mu}}$$",
+    "__PROTECTED_BLOCK_3__": "$$\\mu = \\frac{m_1 m_2}{m_1 + m_2}$$",
+    "__PROTECTED_BLOCK_4__": "$$\\text{Modos normales} = \\begin{cases} 3N - 5 & (\\text{molécula lineal, p. ej. } \\text{CO}_2: 3(3)-5 = 4) \\\\ 3N - 6 & (\\text{molécula no lineal, p. ej. } \\text{H}_2\\text{O}: 3(3)-6 = 3) \\end{cases}$$",
+    "__PROTECTED_BLOCK_5__": "$$\\left(\\frac{\\partial \\vec{\\mu}}{\\partial Q}\\right)_0 \\neq \\mathbf{0}$$",
+    "__PROTECTED_BLOCK_6__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_7__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_8__": ":::{admonition} Abisua\n:class: warning",
+    "__PROTECTED_BLOCK_9__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_10__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_11__": ":::",
+    "__PROTECTED_BLOCK_12__": ":::",
+    "__PROTECTED_BLOCK_13__": ":::",
+    "__PROTECTED_BLOCK_14__": ":::",
+    "__PROTECTED_BLOCK_15__": "::::",
+    "__PROTECTED_BLOCK_16__": "**Edit → Clean**",
+    "__PROTECTED_BLOCK_17__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_18__": "**File → Open**",
+    "__PROTECTED_BLOCK_19__": "**Results → Optimization**",
+    "__PROTECTED_BLOCK_20__": "**Results → Vibrations**",
+    "__PROTECTED_BLOCK_21__": "**Edit → Clean**",
+    "__PROTECTED_BLOCK_22__": "**Results → Vibrations**",
+    "__PROTECTED_BLOCK_23__": "**Job Type**",
+    "__PROTECTED_BLOCK_24__": "**Method**",
+    "__PROTECTED_BLOCK_25__": "**Title**",
+    "__PROTECTED_BLOCK_26__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_27__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_28__": "$\\text{CO}$",
+    "__PROTECTED_BLOCK_29__": "$\\text{CO}_2$",
+    "__PROTECTED_BLOCK_30__": "$\\partial \\vec{\\mu}/\\partial Q$",
+    "__PROTECTED_BLOCK_31__": "$k$",
+    "__PROTECTED_BLOCK_32__": "$\\mu$",
+    "__PROTECTED_BLOCK_33__": "$m_1$",
+    "__PROTECTED_BLOCK_34__": "$m_2$",
+    "__PROTECTED_BLOCK_35__": "$N$",
+    "__PROTECTED_BLOCK_36__": "$\\text{H}_2$",
+    "__PROTECTED_BLOCK_37__": "$\\partial \\vec{\\mu}/\\partial Q \\neq 0$",
+    "__PROTECTED_BLOCK_38__": "$\\text{CO}_2$",
+    "__PROTECTED_BLOCK_39__": "$R(\\text{C-O}) = 1.1473$",
+    "__PROTECTED_BLOCK_40__": "$\\text{cm}^{-1}$",
+    "__PROTECTED_BLOCK_41__": "$\\text{cm}^{-1}$",
+    "__PROTECTED_BLOCK_42__": "$\\Delta\\tilde{\\nu} \\approx 2B$",
+    "__PROTECTED_BLOCK_43__": "`Opt+Freq`",
+    "__PROTECTED_BLOCK_44__": "`IR Inten`",
+    "__PROTECTED_BLOCK_45__": "`.log`",
+    "__PROTECTED_BLOCK_46__": "`IR Inten`",
+    "__PROTECTED_BLOCK_47__": "`.log`",
+    "__PROTECTED_BLOCK_48__": "`IR Inten`",
+    "__PROTECTED_BLOCK_49__": "`.log`",
+    "__PROTECTED_BLOCK_50__": "`Opt+Freq`",
+    "__PROTECTED_BLOCK_51__": "`B3LYP`",
+    "__PROTECTED_BLOCK_52__": "`6-311G`",
+    "__PROTECTED_BLOCK_53__": "`CO_opt_freq.gjf`",
+    "__PROTECTED_BLOCK_54__": "`__PROTECTED_BLOCK_26__ModoNormales/`",
+    "__PROTECTED_BLOCK_55__": "`.log`",
+    "__PROTECTED_BLOCK_56__": "`! R1    R(1,2)`",
+    "__PROTECTED_BLOCK_57__": "`.log`",
+    "__PROTECTED_BLOCK_58__": "`Frequencies --`",
+    "__PROTECTED_BLOCK_59__": "`.log`",
+    "__PROTECTED_BLOCK_60__": "`Frequencies --`",
+    "__PROTECTED_BLOCK_61__": "`Red. masses --`",
+    "__PROTECTED_BLOCK_62__": "`Frc consts  --`",
+    "__PROTECTED_BLOCK_63__": "`IR Inten    --`",
+    "__PROTECTED_BLOCK_64__": "`CO_opt_freq_B3LYP_6311G.log`",
+    "__PROTECTED_BLOCK_65__": "`CO2_opt_freq.gjf`",
+    "__PROTECTED_BLOCK_66__": "`.chk`",
+    "__PROTECTED_BLOCK_67__": "`.log`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Modos normales de vibración"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "La absorción de radiación infrarroja surge de la interacción entre el campo electromagnético y las vibraciones nucleares. Para modelar este fenómeno, Gaussian calcula las frecuencias vibracionales diagonalizando la matriz hessiana de la energía potencial, lo que descompone el movimiento molecular en oscilaciones armónicas independientes. El análisis de los modos normales resultantes proporciona las frecuencias teóricas, permite visualizar los desplazamientos atómicos en GaussView y determina su actividad en el espectro infrarrojo según las reglas de simetría molecular."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## Objetivos"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "1. Calcular los grados de libertad vibracionales independientes de moléculas lineales modelo (__PROTECTED_BLOCK_28__ y __PROTECTED_BLOCK_29__).\n2. Optimizar la geometría molecular y calcular las frecuencias armónicas mediante el método combinado __PROTECTED_BLOCK_43__ con B3LYP/6-311G.\n3. Visualizar y clasificar los desplazamientos atómicos correspondientes a modos de estiramiento y flexión mediante animaciones en GaussView.\n4. Evaluar la actividad espectral en el infrarrojo comprobando la variación del momento dipolar molecular (__PROTECTED_BLOCK_30__) y el valor de intensidad calculada (__PROTECTED_BLOCK_44__).\n5. Comparar las frecuencias armónicas teóricas con las bandas de absorción experimentales para cuantificar el efecto de la anarmonicidad."
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "## Conceptos clave"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "### Las moléculas vibran: modelo del oscilador armónico"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "En la aproximación armónica, los núcleos oscilan en torno a la geometría de equilibrio como un oscilador mecánico. Cuanto más rígido es el enlace (mayor constante de fuerza __PROTECTED_BLOCK_31__) y cuanto menor es la masa reducida __PROTECTED_BLOCK_32__ de los átomos implicados, mayor es la frecuencia de la vibración:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "Para una molécula diatómica compuesta por masas __PROTECTED_BLOCK_33__ y __PROTECTED_BLOCK_34__, la masa reducida se define como:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_3__"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "Gaussian obtiene las constantes de fuerza calculando las segundas derivadas de la energía respecto a los desplazamientos nucleares en el mínimo de la PES."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_6__"
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "Gaussian calcula las constantes de fuerza mediante las segundas derivadas de la energía potencial respecto a los desplazamientos nucleares (matriz hessiana) en la geometría optimizada. Esta aproximación trunca el desarrollo en serie de Taylor en el término cuadrático y asume un potencial armónico ideal. Como los enlaces moleculares reales presentan anarmonicidad a mayores distancias internucleares, las frecuencias calculadas suelen sobreestimar de forma sistemática los valores experimentales obtenidos por espectroscopía infrarroja."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_11__"
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "### Modos normales y grados de libertad vibracionales"
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "En cada modo normal, todos los núcleos de la molécula oscilan en fase y a una única frecuencia característica. Descontados los 3 grados de traslación del centro de masas y los de rotación (2 en moléculas lineales y 3 en no lineales), el número de vibraciones fundamentales posibles para __PROTECTED_BLOCK_35__ átomos viene dado por:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_4__"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "La diagonalización del hessiano en coordenadas de masa ponderada proporciona directamente estas frecuencias y los vectores de desplazamiento nuclear asociados a cada modo."
+    },
+    {
+      "type": "block",
+      "bid": 14,
+      "text": "### Reglas de selección en espectroscopía infrarroja"
+    },
+    {
+      "type": "block",
+      "bid": 15,
+      "text": "Un modo de vibración absorbe radiación infrarroja únicamente si el movimiento nuclear produce una variación neta del momento dipolar molecular en el entorno del equilibrio:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_5__"
+    },
+    {
+      "type": "block",
+      "bid": 16,
+      "text": "En moléculas simétricas, algunos modos conservan la simetría de inversión durante la vibración y no alteran el dipolo: son modos inactivos en IR. En el caso extremo, la molécula de __PROTECTED_BLOCK_36__ no tiene ninguna banda IR activa: su dipolo permanente es nulo y la vibración de estiramiento tampoco lo altera, por lo que el espectro infrarrojo es completamente silencioso. En el archivo __PROTECTED_BLOCK_45__, la actividad de cada modo queda recogida en el campo __PROTECTED_BLOCK_46__: un valor nulo indica inactividad."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_7__"
+    },
+    {
+      "type": "block",
+      "bid": 17,
+      "text": "La absorción de radiación infrarroja requiere que el movimiento vibracional altere el momento dipolar molecular (__PROTECTED_BLOCK_37__). En el estiramiento simétrico del __PROTECTED_BLOCK_38__, la simetría de inversión se conserva y la variación neta del dipolo es nula, por lo que el modo no se acopla con el campo electromagnético incidente. En el archivo __PROTECTED_BLOCK_47__, esta inactividad se manifiesta con un valor de intensidad infrarroja (__PROTECTED_BLOCK_48__) de 0.0000."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_12__"
+    },
+    {
+      "type": "block",
+      "bid": 18,
+      "text": "### Requisito operativo: optimización previa de geometría"
+    },
+    {
+      "type": "block",
+      "bid": 19,
+      "text": "El cálculo de frecuencias requiere que la geometría de partida sea un mínimo real de la PES, porque las derivadas segundas solo tienen significado físico en un punto estacionario. Si la geometría no está optimizada, algunos autovalores del hessiano resultan negativos y aparecen frecuencias imaginarias en el __PROTECTED_BLOCK_49__, sin interpretación vibracional válida."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_8__"
+    },
+    {
+      "type": "block",
+      "bid": 20,
+      "text": "Es imprescindible optimizar la geometría antes de calcular frecuencias. El cálculo sobre geometrías no estacionarias genera frecuencias imaginarias carentes de significado físico. En esta práctica se emplea la opción combinada __PROTECTED_BLOCK_50__ para garantizar que el cálculo vibracional parte del mínimo exacto."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_13__"
+    },
+    {
+      "type": "block",
+      "bid": 21,
+      "text": "## Procedimiento"
+    },
+    {
+      "type": "block",
+      "bid": 22,
+      "text": "### Paso 1: Construir CO en GaussView"
+    },
+    {
+      "type": "block",
+      "bid": 23,
+      "text": "Construir la molécula de CO y aplicar __PROTECTED_BLOCK_16__ para obtener una geometría inicial razonable."
+    },
+    {
+      "type": "block",
+      "bid": 24,
+      "text": "### Paso 2: Configurar el cálculo combinado Opt+Freq"
+    },
+    {
+      "type": "block",
+      "bid": 25,
+      "text": "1. Acceder al menú __PROTECTED_BLOCK_17__.\n2. En la pestaña __PROTECTED_BLOCK_23__, seleccionar la opción **Opt+Freq**. Comprobar que en la parte inferior quedan activadas simultáneamente las tareas de optimización de geometría y cálculo de constantes de fuerza armónicas.\n3. En la pestaña __PROTECTED_BLOCK_24__, configurar los parámetros de cálculo:"
+    },
+    {
+      "type": "block",
+      "bid": 26,
+      "text": "| Campo | Valor |\n|---|---|\n| Job Type | Opt+Freq |\n| Method | __PROTECTED_BLOCK_51__ |\n| Basis Set | __PROTECTED_BLOCK_52__ |\n| Charge | **0** |\n| Spin (Multiplicity) | **1** |"
+    },
+    {
+      "type": "block",
+      "bid": 27,
+      "text": "4. En la pestaña __PROTECTED_BLOCK_25__, escribir una descripción identificativa."
+    },
+    {
+      "type": "block",
+      "bid": 28,
+      "text": "### Paso 3: Guardar y lanzar"
+    },
+    {
+      "type": "block",
+      "bid": 29,
+      "text": "1. Pulsar **Submit**, guardar el archivo como __PROTECTED_BLOCK_53__ en __PROTECTED_BLOCK_54__ y confirmar el envío."
+    },
+    {
+      "type": "block",
+      "bid": 30,
+      "text": "### Paso 4: Leer la distancia de enlace optimizada"
+    },
+    {
+      "type": "block",
+      "bid": 31,
+      "text": "1. En GaussView, abrir el __PROTECTED_BLOCK_55__ resultante mediante __PROTECTED_BLOCK_18__ y acceder a __PROTECTED_BLOCK_19__ para situarse en el último fotograma.\n2. Seleccionar los dos átomos para leer la distancia C–O en la barra inferior, o bien buscar __PROTECTED_BLOCK_56__ en el __PROTECTED_BLOCK_57__ con **Ctrl + F**."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_9__"
+    },
+    {
+      "type": "block",
+      "bid": 32,
+      "text": "El cálculo B3LYP/6-311G reproduce la distancia experimental del CO con buena precisión. El valor de referencia calculado es __PROTECTED_BLOCK_39__ Å, frente al valor experimental de 1.128 Å; la diferencia refleja la sobreestimación sistemática de las distancias de enlace propia de los funcionales DFT con bases moderadas."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_14__"
+    },
+    {
+      "type": "block",
+      "bid": 33,
+      "text": "### Paso 5: Extraer parámetros vibracionales del .log"
+    },
+    {
+      "type": "block",
+      "bid": 34,
+      "text": "Buscar __PROTECTED_BLOCK_58__ en el __PROTECTED_BLOCK_59__ con **Ctrl + F**. Para cada modo, anotar:\n- __PROTECTED_BLOCK_60__: frecuencia vibracional en __PROTECTED_BLOCK_40__.\n- __PROTECTED_BLOCK_61__: masa reducida en uma.\n- __PROTECTED_BLOCK_62__: constante de fuerza en mdyne/Å.\n- __PROTECTED_BLOCK_63__: intensidad de absorción en km/mol."
+    },
+    {
+      "type": "block",
+      "bid": 35,
+      "text": "### Paso 6: Visualizar la animación del modo normal"
+    },
+    {
+      "type": "block",
+      "bid": 36,
+      "text": "1. En GaussView, con el archivo __PROTECTED_BLOCK_64__ abierto, acceder al menú __PROTECTED_BLOCK_20__.\n2. En la lista de modos normales, seleccionar la fila correspondiente a la frecuencia calculada (2063 __PROTECTED_BLOCK_41__).\n3. Activar la casilla **Start Animation** para observar el movimiento oscilatorio de los núcleos.\n4. Marcar la casilla **Show Vectors** para visualizar las flechas de desplazamiento nuclear y comprobar que los átomos se mueven a lo largo del eje del enlace (modo de estiramiento).\n5. Comprobar la amplitud relativa de las flechas: el átomo de carbono, al ser más ligero, experimenta un desplazamiento mayor que el de oxígeno."
+    },
+    {
+      "type": "block",
+      "bid": 37,
+      "text": "### Paso 7: Repetir el procedimiento para CO₂"
+    },
+    {
+      "type": "block",
+      "bid": 38,
+      "text": "1. Construir CO₂ en GaussView y aplicar __PROTECTED_BLOCK_21__ para obtener la geometría lineal O=C=O.\n2. Configurar el cálculo con los mismos parámetros (B3LYP/6-311G, Opt+Freq, carga 0, multiplicidad 1). Guardar como __PROTECTED_BLOCK_65__ y lanzar.\n3. Una vez completado, abrir el archivo __PROTECTED_BLOCK_66__ o __PROTECTED_BLOCK_67__ en GaussView y acceder al menú __PROTECTED_BLOCK_22__.\n4. Animar cada uno de los cuatro modos normales y anotar sus frecuencias e intensidades. Relacionar la actividad IR de cada modo con la variación del momento dipolar que provoca la vibración."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 39,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 40,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 41,
+      "text": "- __PROTECTED_BLOCK_27__\n- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 12 (Espectroscopía vibracional).\n- NIST Chemistry WebBook, https://webbook.nist.gov (datos experimentales de frecuencias vibracionales para CO y CO₂)."
+    },
+    {
+      "type": "block",
+      "bid": 42,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_10__"
+    },
+    {
+      "type": "block",
+      "bid": 43,
+      "text": "### [DROPDOWN_TITLE] Para ir más lejos (opcional)"
+    },
+    {
+      "type": "block",
+      "bid": 44,
+      "text": "El espectro infrarrojo del CO en fase gas muestra, además de la banda fundamental, una estructura de líneas finas debida al acoplamiento entre vibración y rotación. Midiendo la separación entre líneas adyacentes de las ramas P y R (__PROTECTED_BLOCK_42__) podemos determinar el momento de inercia de la molécula y, a partir de él, la distancia de equilibrio C–O con precisión espectroscópica. Los datos de referencia están en el NIST Chemistry WebBook."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_15__"
+    }
+  ],
+  "total_chunks": 2,
+  "total_blocks": 45
+}

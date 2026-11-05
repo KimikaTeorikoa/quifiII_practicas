@@ -6,3 +6,4 @@ _build/
 *.chk
 *.fchk
 .env
+__pycache__/

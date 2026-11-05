@@ -1,0 +1,80 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: modos-normales.md (Zatia 1/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Bibrazio-modu normalak
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Infragorri erradiazioaren xurgapena eremu elektromagnetikoaren eta bibrazio nuklearren arteko elkarrekintzaren ondorioz sortzen da. Fenomeno hau modelizatzeko, Gaussianek energia potentzialaren hessiar matrizea diagonalizatzen du, eta horrek mugimendu molekularra oszilazio harmoniko independenteetan deskonposatzen du. Ondoriozko modu normalen analisiak maiztasun teorikoak ematen ditu, atomoen desplazamenduak GaussView-n bistaratzeko aukera ematen du eta infragorri espektroan duten jarduera zehazten du, simetria molekularraren arauen arabera.
+
+=== BLOKEA 3 ===
+## Helburuak
+
+=== BLOKEA 4 ===
+1. Molekula linealen bibrazio-askatasun maila independenteak kalkulatu (__PROTECTED_BLOCK_28__ eta __PROTECTED_BLOCK_29__).
+2. Molekula-geometria optimizatu eta maiztasun harmonikoak kalkulatu __PROTECTED_BLOCK_43__ metodo konbinatua erabiliz B3LYP/6-311G-rekin.
+3. Luzatze- eta toleste-moduei dagozkien atomoen desplazamenduak bistaratu eta sailkatu GaussView-ko animazioen bidez.
+4. Infragorri espektroko jarduera ebaluatu, dipolo molekularraren aldaketa (__PROTECTED_BLOCK_30__) eta kalkulatutako intentsitatearen balioa (__PROTECTED_BLOCK_44__) egiaztatuz.
+5. Maiztasun harmoniko teorikoak esperimentalki neurtutako xurgapen-bandekin alderatu, anharmonizitatearen eragina kuantifikatzeko.
+
+=== BLOKEA 5 ===
+## Kontzeptu gakoak
+
+=== BLOKEA 6 ===
+### Molekulek bibratzen dute: osziladore harmonikoaren eredua
+
+=== BLOKEA 7 ===
+Hurbilketa harmonikoan, nukleoak oreka-geometriaren inguruan oszilatzen dute, osziladore mekaniko baten antzera. Zenbat eta lotura zurrunagoa izan (indar-konstante handiagoa __PROTECTED_BLOCK_31__) eta zenbat eta masa txikiagoa izan (__PROTECTED_BLOCK_32__), orduan eta handiagoa da bibrazioaren maiztasuna:
+
+=== BLOKEA 8 ===
+Bi atomoz osatutako molekula baterako, __PROTECTED_BLOCK_33__ eta __PROTECTED_BLOCK_34__ masak dituena, masa txikitua honela definitzen da:
+
+=== BLOKEA 9 ===
+Gaussianek indar-konstanteak kalkulatzen ditu energia nuklearren desplazamenduekiko bigarren deribatuak kalkulatuz PESaren minimoan.
+
+=== BLOKEA 10 ===
+Gaussianek indar-konstanteak kalkulatzen ditu energia potentzialaren bigarren deribatuak kalkulatuz nuklearren desplazamenduekiko (hessiar matrizea) geometria optimizatuan. Hurbilketa honek Taylorren seriearen garapena termino koadratikoan mozten du eta potentzial harmoniko ideal bat suposatzen du. Lotura molekular errealak anharmonizitatea aurkezten dutenez nukleoarteko distantzia handiagoetan, kalkulatutako maiztasunak esperimentalki neurtutakoak baino handiagoak izan ohi dira.
+
+=== BLOKEA 11 ===
+### Modu normalak eta bibrazio-askatasun mailak
+
+=== BLOKEA 12 ===
+Modu normal bakoitzean, molekularen nukleo guztiak fasean eta maiztasun berezi batean oszilatzen dute. Masen zentroaren translazio-askatasun mailak (3) eta errotazio-askatasun mailak (2 molekula linealen kasuan eta 3 ez-linealen kasuan) kenduta, __PROTECTED_BLOCK_35__ atomoentzako bibrazio oinarrizko posibleen kopurua honela ematen da:
+
+=== BLOKEA 13 ===
+Hessiarren diagonalizazioak masa haztatuko koordenatuetan zuzenean ematen ditu maiztasun hauek eta modu bakoitzari lotutako nukleo-desplazamendu bektoreak.
+
+=== BLOKEA 14 ===
+### Hautapen-arauak infragorri espektroskopian
+
+=== BLOKEA 15 ===
+Bibrazio-modu batek infragorri erradiazioa xurgatzen du soilik nukleo-mugimenduak dipolo molekularraren aldaketa garbi bat eragiten badu orekaren inguruan:
+
+=== BLOKEA 16 ===
+Molekula simetrikoetan, modu batzuek inbertsio-simetria mantentzen dute bibrazioan zehar eta ez dute dipoloa aldatzen: IRn aktibo ez diren moduak dira. Muturreko kasuan, __PROTECTED_BLOCK_36__ molekulak ez du IR banda aktiborik: bere dipolo iraunkorra nulua da eta luzatze-bibrazioak ez du aldatzen, beraz, infragorri espektroa guztiz isila da. __PROTECTED_BLOCK_45__ fitxategian, modu bakoitzaren jarduera __PROTECTED_BLOCK_46__ eremuan jasotzen da: balio nulu batek ez-aktibitatea adierazten du.
+
+=== BLOKEA 17 ===
+Infragorri erradiazioaren xurgapenak bibrazio-mugimenduak dipolo molekularra aldatzea eskatzen du (__PROTECTED_BLOCK_37__). __PROTECTED_BLOCK_38__-ren luzatze simetrikoan, inbertsio-simetria mantentzen da eta dipoloaren aldaketa garbia nulua da, beraz, modua ez da akoplatzen eremu elektromagnetiko intzidentearekin. __PROTECTED_BLOCK_47__ fitxategian, ez-aktibitate hau infragorri intentsitatearen balioarekin (__PROTECTED_BLOCK_48__) 0.0000 adierazten da.
+
+=== BLOKEA 18 ===
+### Baldintza operatiboa: aurretiko geometria optimizazioa
+
+=== BLOKEA 21 ===
+## Prozedura
+
+=== BLOKEA 22 ===
+### 1. urratsa: CO eraiki GaussView-n
+
+=== BLOKEA 23 ===
+CO molekula eraiki eta __PROTECTED_BLOCK_16__ aplikatu hasierako geometria egoki bat lortzeko.
+
+=== BLOKEA 24 ===
+### 2. urratsa: kalkulu konbinatua konfiguratu Opt+Freq

@@ -1,47 +1,53 @@
-# Energiak eta unitateak Gaussian-en
+# Energia eta unitateak Gaussianen
 
 ## Sarrera
 
-Egitura elektronikoaren kalkuluek zenbakizko hainbat magnitude ematen dituzte egonkortasunari, erreaktibotasunari eta bibrazio molekularrei lotuta. Gaussian-en irteera-fitxategiak datu hauek mekanika kuantikoaren berezko hitzarmen eta unitate atomikoak erabiliz biltzen ditu. Emaitza hauek behar bezala interpretatzeko, ezinbestekoa da energia osoa, orbital indibidualen energiak eta bibrazio-maiztasunak elkarrengandik bereiztea, eta beharrezko bihurketak egitea elektroi-voltetara edo unitate termodinamikoetara.
+Egitura elektronikoaren kalkuluek hainbat magnitude numeriko ematen dituzte, molekulen egonkortasunari, erreaktibotasunari eta bibrazioei buruzkoak. Gaussianen irteera-fitxategiak datu horiek biltzen ditu mekanika kuantikoaren berezko hitzarmen eta unitate atomikoak erabiliz. Emaitza horiek behar bezala interpretatzeko, beharrezkoa da energia totala, orbital indibidualen energiak eta bibrazio-maiztasunak bereiztea, eta beharrezko bihurketak aplikatzea elektroi-voltera edo unitate termodinamikoetara.
 
-## Energia osoa: zer den eta zergatik den negatiboa
+## Energia totala: zer den eta zergatik den negatiboa
 
-Gaussian-ek kalkulatutako energia osoak lau ekarpen fisiko biltzen ditu: elektroien energia zinetikoa, elektroien eta nukleoen arteko erakarpen elektrostatikoa, elektroien arteko aldarapen coulombiarra eta nukleoen arteko aldarapen elektrostatikoa. Sistema atomiko eta molekular egonkorretan, erakarpen-indarrak nagusitzen zaizkie aldarapen-indarrei; horregatik, energia osoa negatiboa da infinituan pausagunean dauden partikula isolatuen egoerarekiko. Balio hori `.log` fitxategiaren `SCF Done` lerroan ageri da (edo dagokion metodo korrelazionatuaren goiburuan), eta beti unitate atomikoetan (hartree-tan) adierazten da.
+Gaussianek kalkulatutako energia totalak lau ekarpen fisiko hartzen ditu barne: elektroien energia zinetikoa, elektroi eta nukleoen arteko erakarpen elektrostatikoa, elektroien arteko aldarapen coulombiarra eta nukleoen arteko aldarapen elektrostatikoa. Sistema atomiko eta molekular egonkorretan, indar erakargarriak nagusitzen dira aldarapenen gainetik; beraz, energia totala negatiboa da partikula isolatu eta geldikorren egoerarekiko. Balio hori `SCF Done` lerroan agertzen da `.log` fitxategian (edo metodo korrelazionatuaren goiburuan), eta beti unitate atomikoetan (hartree) adierazten da.
 
 :::{admonition} Oharra
 :class: note
-Mekanika kuantiko molekularrean, energiaren zeroa infinituki bananduta eta pausagunean dauden nukleo eta elektroien egoeran kokatzen da ($V = 0$ balioa $r \rightarrow \infty$ denean). Lotura bat edo atomo lotu bat eratzeak energia askatzen du; horrek `SCF Done` lerroko balioa zenbaki negatiboetan kokatzen du. Balio hori zenbat eta negatiboagoa izan, orduan eta handiagoa da sistemaren egonkortasuna bere osagai isolatuekin alderatuta.
+
+Mekanika kuantiko molekularrean, energiaren zeroa nukleo eta elektroi infinituki banandu eta geldikorren egoeran kokatzen da ($V = 0$ denean $r \rightarrow \infty$). Lotura edo atomo lotu bat eratzean, energia askatzen da, eta horrek `SCF Done` balioa zenbaki negatiboetan kokatzen du. Zenbat eta negatiboagoa izan balio hori, orduan eta egonkorragoa da sistema osagai isolatuekiko.
+
 :::
 
 ## Unitateak: Hartree, eV eta kcal/mol
 
-Gaussian-ek energia elektronikoak hartree (Ha) izeneko unitate atomikoetan adierazten ditu. Balio hauek datu esperimentalekin edo termodinamikoekin erlazionatzeko, bihurketa-faktore estandarrak erabiltzen ditugu: hartree batek 27.21 elektroi-volt, 627.51 kilokaloria moleko edo 2625.5 kilojoule moleko balio du. Kimikan, elektroi-voltak (eV) erabili ohi dira ionizazio-potentzialetarako, afinitate elektronikoetarako eta HOMO–LUMO diferentzietarako. Kilokaloria moleko (kcal/mol) eta kilojoule moleko (kJ/mol) unitateak erreferentziazkoak dira aktibazio-hesietarako, erreakzio-beroetarako eta konformeroen arteko energia-diferentzietarako.
+Gaussianek energia elektronikoak unitate atomikoetan adierazten ditu, hartree (Ha) izenekoetan. Balio horiek datu esperimental edo termodinamikoekin erlazionatzeko, bihurketa-faktore estandarrak erabiltzen ditugu: hartree bat 27,21 elektroi-volt, 627,51 kilokaloria mol-ko edo 2625,5 kilojulio mol-ko da. Kimikan, elektroi-voltak (eV) erabili ohi dira ionizazio-potentzialak, elektroi-afinitateak eta HOMO-LUMO desberdintasunak adierazteko. Kilokaloriak mol-ko (kcal/mol) eta kilojulioak mol-ko (kJ/mol) erreferentziazko unitateak dira aktibazio-oztopoak, erreakzio-beroak eta konformeroen arteko energia-desberdintasunak adierazteko.
 
-| Hemendik | Hona | Faktorea |
-|----------|------|----------|
-| Ha       | eV   | × {{ha_to_ev}} |
-| Ha       | kcal/mol | × {{ha_to_kcal}} |
+| De | A | Faktorea |
+|----|---|----------|
+| Ha | eV | × {{ha_to_ev}} |
+| Ha | kcal/mol | × {{ha_to_kcal}} |
 
 :::{admonition} Abisua
 :class: warning
-Ez alderatu inoiz bi energia unitate desberdinetan daudenean. Bihurtu beti kendu aurretik.
+
+Inoiz ez alderatu bi energia unitate desberdinetan. Bihurtu beti kendu aurretik.
+
 :::
 
-## Energia-diferentziak: benetan axola duena
+## Energia-desberdintasunak: benetan axola duena
 
-Hartree-tan neurtutako energia absolutua erreferentzia-hitzarmenaren menpekoa da (infinituan banandutako partikulak) eta ez da zuzenean neurtzen laborategian. Hori dela eta, metodo edo oinarri desberdinekin lortutako energia absolutuak ez dira inoiz alderatu behar. Kimikan fisikoki esanguratsua den magnitudea beti teoria-maila berean kalkulatutako sistema beraren bi egoera edo geometriaren arteko energia-diferentzia erlatiboa da ($\Delta E$). Praktika hauetan, edozein analisi termodinamiko, errotazio-hesi edo potentzial-kurba erreferentziazko egitura batekiko hazkunde erlatibo gisa adierazten dugu.
+Hartree-tan adierazitako energia absolutua erreferentzia-hitzarmenaren araberakoa da (partikula bereiziak infinituan) eta ez da zuzenean neurtzen laborategian. Horregatik, inoiz ez dira alderatu behar metodo edo oinarri desberdinekin lortutako energia absolutuak. Kimikan garrantzia duen magnitude fisikoa beti da bi egoera edo geometriaren arteko energia erlatiboaren desberdintasuna ($\Delta E$), teoria-maila berean kalkulatuta. Praktika hauetan, edozein analisi termodinamiko, errotazio-hesia edo potentzial-kurba erreferentziazko egitura batekiko igoera erlatibo gisa adierazten dugu.
 
-## Orbital-energiak: ez nahastu energia osoarekin
+## Orbitalen energiak: ez nahastu energia totalarekin
 
-Fock-en matrizea diagonalizatzean lortutako autobalioak orbital indibidualen energiei dagozkie, eta `.log` fitxategian agertzen dira `Alpha occ. eigenvalues` (orbital okupatuak) eta `Alpha virt. eigenvalues` (orbital birtualak edo hutsak) etiketen azpian. Balio hauek ez dute sistemaren energia osoa adierazten. Orbital okupatu guztien energiak batzeak benetako energiaren gainestimazio fisiko larria ekarriko luke, elektroien arteko aldarapena bi aldiz kontabilizatuko bailitzateke. Hori dela eta, energia osoa adierazpen independente baten bidez kalkulatzen da eta bereizita erakusten da `SCF Done` lerroan.
+Fock matrizea diagonalizatzean lortutako autobalioak orbital indibidualen energiei dagozkie, `.log` fitxategian zerrendatuta `Alpha occ. eigenvalues` (orbital okupatuak) eta `Alpha virt. eigenvalues` (orbital birtualak edo desokupatuak) etiketekin. Balio horiek ez dute sistemaren energia totala adierazten. Orbital okupatu guztien energiak batuz gero, energia errealaren gainestimazio fisiko larria sortuko litzateke, elektroien arteko aldarapena bi aldiz kontabilizatuko bailitzateke. Hori dela eta, energia totala adierazpen independente baten bidez kalkulatzen da eta bereizita erakusten da `SCF Done` lerroan.
 
-## Bibrazio-maiztasunak: emaitza desberdin bat
+## Bibrazio-maiztasunak: emaitza desberdina
 
-Maiztasunen kalkuluak (`freq`) molekularen bibrazio-modu normalak zehazten ditu zentimetro alderantzizkotan adierazita ($\text{cm}^{-1}$), energia osoaren hartree-ekin alderatuta dimentsio fisiko desberdinak dituen magnitudea izanik. Balio hauek `.log` fitxategian ageri dira `Frequencies --` lerroetan. Maiztasun irudikari bat agertzeak (Gaussian-ek zenbaki negatibo gisa erakusten duena) adierazten du optimizatutako egitura ez dagokiola potentzial-energiaren gainazaleko benetako minimo bati, baizik eta trantsizio-egoera edo zela-puntu bati. Kasu horretan, geometria zuzendu eta berriro optimizatu behar da beste edozein propietate fisikokimiko aztertu aurretik.
+Maiztasunen kalkuluak (`freq`) bibrazio-modu normal molekularrak zehazten ditu, alderantzizko zentimetroetan adierazita ($\text{cm}^{-1}$), dimentsio desberdinak dituen magnitude fisikoa, energia totalaren hartree-ekin alderatuta. Balio horiek `.log` fitxategian agertzen dira `Frequencies --` lerroetan. Maiztasun irudikari bat agertzeak (Gaussianek zenbaki negatibo gisa erakusten duena) adierazten du optimizatutako egitura ez dagokiola energia potentzialaren gainazaleko minimo erreal bati, baizik eta trantsizio-egoera edo zela-puntu bati. Kasu horretan, geometria zuzendu eta berriz optimizatu behar da beste edozein propietate fisiko-kimiko aztertu aurretik.
 
 :::{admonition} Abisua
 :class: warning
-Log fitxategian maiztasun negatiboak agertzen badira, geometriari ez dio benetako minimo batera konbergitu. Berriro optimizatu behar da aurrera egin aurretik.
+
+Log-ean maiztasun negatiboak agertzen badira, geometria ez da minimo erreal batera konbergitu. Berriz optimizatu behar da jarraitu aurretik.
+
 :::
 
 ---

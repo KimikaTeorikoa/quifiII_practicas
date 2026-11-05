@@ -1,0 +1,103 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: espectroscopia-uv.md (Zatia 2/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 22 ===
+1. Optimizazioaren __PROTECTED_BLOCK_66__ fitxategian (__PROTECTED_BLOCK_67__), bilatu **Ctrl + F** bidez testu hau: __PROTECTED_BLOCK_68__.
+2. Identifikatu azken errenkadako azken balio numerikoa, HOMO orbitalaren energiari dagokiona (__PROTECTED_BLOCK_44__ hartree-tan).
+3. Identifikatu hurrengo errenkadako lehen balio numerikoa, LUMO orbitalaren energiari dagokiona (__PROTECTED_BLOCK_45__ hartree-tan).
+4. Kalkulatu energia-diferentzia __PROTECTED_BLOCK_46__ eV-tan.
+5. Estimatu xurgapen-uhin luzera: __PROTECTED_BLOCK_47__ nm-tan.
+6. Idatzi lortutako balio numerikoak A taulan.
+
+=== BLOKEA 25 ===
+1. GaussView-n, ireki aurrez optimizatutako geometriaren fitxategia (__PROTECTED_BLOCK_71__ edo dagokion __PROTECTED_BLOCK_72__) __PROTECTED_BLOCK_10__ bidez.
+2. Sartu __PROTECTED_BLOCK_11__ menura.
+3. __PROTECTED_BLOCK_13__ fitxan, hautatu **Energy** (puntu bakarreko kalkulua oreka-egituran).
+4. __PROTECTED_BLOCK_14__ fitxan, mantendu Method **B3LYP**, Basis Set **6-311G**, Charge **0**, Spin **1**.
+5. __PROTECTED_BLOCK_15__ fitxan, idatzi: __PROTECTED_BLOCK_73__.
+6. Beheko **Additional Keywords** eremuan, idatzi: __PROTECTED_BLOCK_74__.
+7. Sakatu **Submit**, gorde __PROTECTED_BLOCK_75__ gisa __PROTECTED_BLOCK_76__ karpetan eta berretsi kalkulua __PROTECTED_BLOCK_16__ eta **Submit** bidez.
+8. Egiaztatu __PROTECTED_BLOCK_77__ lerroaren presentzia __PROTECTED_BLOCK_78__ fitxategian.
+
+=== BLOKEA 26 ===
+#### B2 urratsa: Kitzikatutako egoeren datuak .log fitxategitik ateratzea
+
+=== BLOKEA 27 ===
+1. Ireki __PROTECTED_BLOCK_79__ fitxategia (__PROTECTED_BLOCK_80__) testu-editorean.
+2. Bilatu **Ctrl + F** bidez kate hau: __PROTECTED_BLOCK_81__.
+3. Atera lehen egoera kitzikatu singletearen datu kuantitatiboak:
+   - Kalkulatutako uhin-luzera (__PROTECTED_BLOCK_48__) nanometrotan (nm).
+   - Kitzikapen-energia elektronvoltetan (eV).
+   - Osiladorearen indarra (__PROTECTED_BLOCK_49__).
+4. Behatu trantsizioari lotutako orbitalen lerroak (jatorria eta helmuga) kitzikapen mota baieztatzeko.
+5. Identifikatu osiladore-indar txikieneko banda 270-300 nm inguruan __PROTECTED_BLOCK_50__ trantsizio gisa.
+
+=== BLOKEA 28 ===
+#### B3 urratsa: Espektroa GaussView-n bistaratzea
+
+=== BLOKEA 29 ===
+1. GaussView-n, ireki __PROTECTED_BLOCK_82__ fitxategia __PROTECTED_BLOCK_12__ bidez.
+2. Sartu **Results → UV-Vis** menura.
+3. Aztertu sortutako espektro elektroniko sintetikoa:
+   - Barra bertikalek trantsizio diskretuak adierazten dituzte, altuera __PROTECTED_BLOCK_51__ osiladore-indarrarekiko proportzionala delarik.
+   - Kurba jarraituak profil konboluzionatua erakusten du.
+4. Identifikatu banda ahula __PROTECTED_BLOCK_52__ banda intentsuaren __PROTECTED_BLOCK_53__ aurrean, 250 nm-tik beherako uhin-luzeretan.
+
+=== BLOKEA 30 ===
+### C atala: Disolbatzaile-seriea eta solbatokromismoa
+
+=== BLOKEA 31 ===
+Errepikatu TD-DFT kalkulua azetona gainean, jada optimizatutako geometrian, disolbatzailearen gako-hitza bakarrik aldatuz **Additional Keywords** atalean:
+
+=== BLOKEA 32 ===
+| Disolbatzailea | Additional Keywords |
+|---|---|
+| Hutsa (gas) | __PROTECTED_BLOCK_83__ |
+| Ziklohexanoa | __PROTECTED_BLOCK_84__ |
+| Kloroformoa | __PROTECTED_BLOCK_85__ |
+| Etanola | __PROTECTED_BLOCK_86__ |
+| Azetonitriloa | __PROTECTED_BLOCK_87__ |
+| Ura | __PROTECTED_BLOCK_88__ |
+
+=== BLOKEA 33 ===
+Gorde fitxategi bakoitza izen deskribatzailearekin __PROTECTED_BLOCK_89__ karpetan eta atera __PROTECTED_BLOCK_54__ eta __PROTECTED_BLOCK_55__ __PROTECTED_BLOCK_90__ fitxategi bakoitzetik.
+
+=== BLOKEA 34 ===
+### D atala: Zetona ordezkatuen seriea
+
+=== BLOKEA 35 ===
+Errepikatu prozedura osoa (optimizazioa + TD-DFT azetonitriloan) ondorengo lau konposatuentzat:
+
+=== BLOKEA 36 ===
+| Konposatua | Egitura |
+|---|---|
+| Azetil kloruroa | CH₃–CO–Cl |
+| Azetofenona | CH₃–CO–C₆H₅ |
+| Azido azetikoa | CH₃–CO–OH |
+| Metil-etil-zetona | CH₃–CO–CH₂CH₃ |
+
+=== BLOKEA 37 ===
+Horietako bakoitzarentzat, atera __PROTECTED_BLOCK_56__ eta __PROTECTED_BLOCK_57__ __PROTECTED_BLOCK_92__ fitxategitik eta konparatu __PROTECTED_BLOCK_58__ bandaren desplazamendua azetonarekiko.
+
+=== BLOKEA 39 ===
+## Bibliografia
+
+=== BLOKEA 40 ===
+- __PROTECTED_BLOCK_21__
+- Atkins, P.; De Paula, J. *Química Física*, 10. ed.; Editorial Médica Panamericana, 2018. 13. kapitulua (Espektroskopia elektronikoa).
+- Casida, M. E. *Time-Dependent Density Functional Theory for Molecules*. In *Recent Advances in Density Functional Methods*; World Scientific, 1995.
+- NIST Chemistry WebBook, https://webbook.nist.gov (ultramore-ikusgai xurgapen-espektroen erreferentzia).
+
+=== BLOKEA 41 ===
+---
+
+=== BLOKEA 42 ===
+### [DROPDOWN_TITLE] Urrunago joateko (aukerakoa)
+
+=== BLOKEA 43 ===
+GaussView-k trantsizio kalkulatu bakoitza barra diskretu gisa erakusten du, altuera __PROTECTED_BLOCK_59__ osiladore-indarrarekiko proportzionala delarik. Profil jarraitu bat lortzeko, espektro esperimentalarekin konparagarria, barra horiek funtzio gausstarrekin konboluzionatzen ditugu, zabalera egokia erabiliz. __PROTECTED_BLOCK_93__ fitxategiko egoera kitzikatuen zerrenda kalkulu-orri batera esportatuz eta konboluzioa aplikatuz, banda-forma erreproduzitu dezakegu eta maximoen posizioa NIST Chemistry WebBook-eko datuekin konparatu.

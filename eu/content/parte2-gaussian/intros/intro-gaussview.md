@@ -1,105 +1,111 @@
-# GaussView-rako sarrera
+# GaussView-ren sarrera
 
 ## Sarrera
 
-Gaussian-en kalkulu bat egiteko, lehenik eta behin molekula espazioan nola kokatuta dagoen adierazi behar zaio programari. GaussView zeregin hori errazten duen interfaze grafikoa da: haren bidez eredu molekularra eraikitzen dugu, kalkulua konfiguratzen dugu eta emaitzak bistaratzen ditugu, fitxategiak eskuz editatu beharrik gabe.
+Gaussian-en kalkulu bat egiteko, lehenik eta behin, programari esan behar zaio molekula nola dagoen espazioan kokatuta. GaussView zeregin hori errazten duen interfaze grafikoa da: molekula-eredua eraikitzen dugu, kalkulua konfiguratzen dugu eta emaitzak bistaratzen ditugu eskuz fitxategiak editatu beharrik gabe.
 
-## GaussView ireki
+## GaussView irekitzea
 
-GaussView gelako ordenagailuaren mahaigainetik edo sistemako aplikazioen menutik irekitzen da.
+GaussView ikasgelako ordenagailuaren mahaigainetik edo sistemaren aplikazioen menutik irekitzen da.
 
-## Interfazea: zer ikusten den irekitzean
+## Interfazea: zer ikusten duzu irekitzean
 
-GaussView-ren interfazeak lau lan-eremu nagusi ditu. Goialdean menu-barra aurkituko dugu, konfigurazio- eta bistaratze-tresnekin. Azpian tresna-barra dago, sarbide azkarreko ikonoekin. Erdiko eremua hiru dimentsioko bistaratze-leihoa da; bertan molekula eraiki, desplazatu eta biratzen dugu saguarekin. Beheko panel batek hautatutako atomoei, atomo arteko distantziei eta kalkuluaren egoerari buruzko denbora errealeko informazioa erakusten du.
+GaussView-ren interfazeak lau lan-eremu ditu. Goiko aldean menu-barra dago, konfigurazio- eta bistaratze-tresnekin. Azpian tresna-barra dago, sarbide azkarreko ikonoekin. Erdiko eremua hiru dimentsioko bistaratze-leihoa da, non molekula eraiki, mugitu eta biratzen dugun saguarekin. Beheko panel batek denbora errealean hautatutako atomoen, atomoen arteko distantzien eta kalkuluaren egoerari buruzko informazioa erakusten du.
 
 :::{figure} /_static/capturas/01_gv_interfaz_principal.png
-:alt: GaussView-ren interfaze nagusia
+:alt: Interfaz principal de GaussView
 :width: 85%
 :align: center
 :::
 
-## Molekula bat eraiki
+## Molekula bat eraikitzea
 
-GaussView-n molekula bat eraikitzeko, tresna-barran atomoaren ikonoa sakatuko dugu (**Builder palette**, **View → Builder** bidetik ere eskura daitekeena) elementu kimikoen eta zatien panela irekitzeko. Nahi dugun elementua hautatu eta saguaren ezkerreko botoiarekin klik egingo dugu erdiko leihoan atomoa kokatzeko. Dauden atomoen ondoan atomo gehigarriak gehitzean, programak loturak automatikoki sortzen ditu erradio kobalente estandarretatik abiatuta. Uraren kasuan ($\text{H}_2\text{O}$), nahikoa da erdiko oxigeno-atomo bat jartzea eta bi hidrogeno lotzea gutxi gorabeherako posizio angeluarretan. Distantzia zehatzak Gaussian-en geometria-optimizazioan zehar doituko dira; beraz, hasierako marrazkiak konektibitate kimikoa adieraztea besterik ez du behar.
+GaussView-n molekula bat eraikitzeko, tresna-barrako atomoaren ikonoa sakatzen dugu (**Builder palette**, **View → Builder**-tik ere eskuragarri) zatiak eta elementu kimikoak dituen panela irekitzeko. Nahi dugun elementua hautatzen dugu eta ezkerreko botoiarekin klik egiten dugu erdiko leihoan atomoa kokatzeko. Atomo gehigarriak lehendik dauden atomoetatik gertu gehitzean, programak loturak automatikoki sortzen ditu erradio kobalente estandarretatik abiatuta. Urarentzat ($\text{H}_2\text{O}$), oxigeno-atomo zentral bat jartzea eta bi hidrogeno angelu-posizioetan lotzea nahikoa da. Distantzia zehatzak Gaussian-en geometria optimizatzean doituko dira; beraz, hasierako marrazkiak konektibitate kimikoa soilik irudikatu behar du.
 
 :::{figure} /_static/capturas/02_gv_construccion_h2o_fragmentos.png
-:alt: Ur-molekularen eraikuntza eta zatien paleta
+:alt: Construcción de la molécula de agua y paleta de fragmentos
 :width: 85%
 :align: center
 :::
 
 :::{admonition} Abisua
 :class: warning
-Ez egin ustekabeko klik bikoitzik atzeko planoaren gainean: atomoak bikoizten ditu ohartarazi gabe.
+
+Ez egin klik bikoitza ustekabean atzeko planoan: atomoak bikoizten ditu abisatu gabe.
+
 :::
 
-## Erroreak zuzendu eta desegin
+## Akatsak zuzentzea eta desegitea
 
-Azken ekintza desegiteko **Edit → Undo** edo Ctrl+Z erabiliko dugu. Atomo edo zati zehatz bat ezabatu nahi badugu, saguarekin hautatu eta Ezabatu (Supr) tekla sakatuko dugu. Leihoa erabat garbitzeko **Edit → Select All** eta ondoren Ezabatu erabil ditzakegu, edo lan-eremu berri bat ireki **File → New** menutik.
+Azken ekintza desegiteko, **Edit → Undo** edo Ctrl+Z erabiltzen dugu. Atomo edo zati zehatz bat ezabatu nahi badugu, saguarekin hautatzen dugu eta Supr sakatzen dugu. Leihoa guztiz garbitzeko, **Edit → Select All** erabil dezakegu Supr sakatuta, edo lan-eremu berri bat ireki dezakegu **File → New**-tik.
 
-## Hidrogenoak automatikoki gehitu
+## Hidrogenoak automatikoki gehitzea
 
-**Edit → Add Hydrogens** aukerak automatikoki osatzen ditu marraztutako hezurduraren balentzia asetzeko beharrezkoak diren hidrogeno inplizituak. Emaitza beti berrikustea komeni da, esleipen automatikoa nahi den protonazio-egoeratik desberdina izan baitaiteke.
+**Edit → Add Hydrogens** aukerak marraztutako eskeletoa asetzeko beharrezkoak diren hidrogeno inplizituak automatikoki osatzen ditu. Emaaitzazko egitura beti berrikustea komeni da, esleipen automatikoa nahi den protonazio-egoerarekin bat ez etortzea gerta baitaiteke.
 
-## Molekulan zehar mugitu
+## Molekularen inguruan mugitzea
 
-Egitura ikuskatzeko, bista biratuko dugu ezkerreko botoia sakatuta mantenduz kurtsorea mugitzen dugun bitartean. Zooma saguaren gurpiltxoarekin doitzen dugu. Molekula bistatik galtzen badugu, tresna-barrako zentratze-botoia erabiliko dugu. Hiru mugimendu hauekin geometria erraz bideratzen dugu modelatzean eta emaitzen berrikuspenean.
+Egitura ikuskatzeko, bista biratzen dugu ezkerreko botoia sakatuta mantenduz eta kurtsorea mugituz. Zooma saguaren gurpilarekin doitzen dugu. Molekula bistatik galtzen badugu, tresna-barrako zentratze-botoia erabiltzen dugu. Hiru mugimendu horiekin, geometria erraz orientatzen dugu modelatzean eta emaitzak berrikustean.
 
-## Geometria ikusi eta doitu
+## Geometria ikustea eta doitzea
 
-Lotura-distantzia bat kontsultatzeko edo doitzeko, lotura-tresna (**Modify Bond**, tresna-barran bi esfera lotuta dituen ikonoa) edo kontsulta-tresna (**Inquire**, galdera-ikurra **`?`** duen ikonoa) hautatuko dugu eta 3D ikuspegian bi atomoen gainean klik egingo dugu. Leiho gainerakorrak uneko distantzia erakusten du angstrometan eta konektibitatea egiaztatzeko aukera ematen du kalkulua abiarazi aurretik.
+Lotura-distantzia bat kontsultatzeko edo doitzeko, lotura-tresna (**Modify Bond**, bi esfera lotuta dituen ikonoa tresna-barran) edo kontsulta-tresna (**Inquire**, **`?`** galdera-ikurra duen ikonoa) hautatzen dugu eta 3D ikuspegian bi atomoetan klik egiten dugu. Agertzen den leihoak uneko distantzia angstrometan erakusten du eta konektibitatea egiaztatzeko aukera ematen du kalkulua abiarazi aurretik.
 
 :::{figure} /_static/capturas/03_gv_medicion_distancia.png
-:alt: Lotura-distantziaren neurketa GaussView-n
+:alt: Medición de distancia de enlace en GaussView
 :width: 85%
 :align: center
 :::
 
-## Lehendik dagoen fitxategi bat ireki
+## Fitxategi bat ireki
 
-Lehendik dagoen fitxategi bat irekitzeko **File → Open** menura joko dugu. Ohiko formatuak `.gjf` (sarrera-fitxategiak) eta `.log` (Gaussian-ek sortutako irteerak) dira; horri esker, saio batetik bestera lana berreskura dezakegu edo erreferentziazko egiturak azter ditzakegu.
+Fitxategi bat irekitzeko, **File → Open** menura jo behar dugu. Formatu ohikoenak `.gjf` (sarrerako fitxategiak) eta `.log` (Gaussianek sortutako irteerak) dira. Horri esker, saioen artean lanarekin jarraitu edo erreferentziazko egiturak aztertu ditzakegu.
 
 ## Kalkulu bat konfiguratu
 
-Konfigurazio-panela **Calculate → Gaussian Calculation Setup** menutik irekiko dugu. **Job Type** fitxan kalkulu-mota hautatuko dugu: energia puntuala (*Energy*), geometria-optimizazioa (*Optimization*) edo maiztasunen kalkulua (*Frequency*). **Method** fitxak teoria-maila definitzeko aukera ematen digu: metodo mekanokuantikoa (Hartree-Fock, B3LYP...) eta praktika bakoitzean adierazitako oinarri-funtzioak. **Title Card** atalean deskribapen labur bat sartuko dugu karaktere berezirik gabe. Azkenik, **Charge & Multiplicity** atalean karga garbia eta spin-anizkoiztasuna ezarriko ditugu.
+Konfigurazio-panela **Calculate → Gaussian Calculation Setup** tik irekitzen dugu. **Job Type** fitxan, ataza hautatzen dugu: energia puntuala (*Energy*), geometriaren optimizazioa (*Optimization*) edo maiztasunen kalkulua (*Frequency*). **Method** fitxan, teoria-maila definitu dezakegu: metodo mekanokuantikoa (Hartree-Fock, B3LYP...) eta praktika bakoitzean adierazitako funtzio-basea. **Title Card** atalean, deskribapen labur bat sartzen dugu karaktere berezirik gabe. Azkenik, **Charge & Multiplicity** atalean, karga garbia eta spin-anizkoiztasuna ezartzen ditugu.
 
 :::{admonition} Abisua
 :class: warning
-Egiaztatu beti karga eta anizkoiztasuna Submit sakatu aurretik. Hemen egindako errore batek kalkulu osoa baliogabetzen du.
+
+Karga eta anizkoiztasuna beti berrikusi Submit sakatu aurretik. Akats batek kalkulu osoa baliogabetzen du.
+
 :::
 
 :::{figure} /_static/capturas/04_gv_setup_method_hf.png
-:alt: Kalkuluaren konfigurazioa Gaussian Calculation Setup leihoan
+:alt: Configuración del cálculo en Gaussian Calculation Setup
 :width: 85%
 :align: center
 :::
 
 ## Kalkulua abiarazi
 
-Parametroak konfiguratu ondoren, kalkulua lokalean abiaraziko dugu **Submit** sakatuz. GaussView-k jarraipen-leiho bat irekitzen du denbora errealeko irteera-lerroekin. Iraupena oinarri minimoak dituzten molekula sinpleen kasuan segundo gutxi batzuetakoa da, eta molekula handiagoen edo korrelazio elektronikoko metodoen kasuan minutu batzuetakoa. Ez dago beste ezer egin beharrik kalkulua amaitu arte.
+Parametroak konfiguratu ondoren, kalkulua lokalean abiarazten dugu **Submit** sakatuz. GaussViewek jarraipen-leiho bat irekitzen du denbora errealeko irteera-lerroekin. Iraupena segundo batzuetatik (molekula sinpleak eta gutxieneko baseak) minutu batzuetara (sistema handiagoak edo elektroi-korrelazioko metodoak) alda daiteke. Ez dago ezer gehiago egin beharrik kalkulua amaitu arte.
 
 ## Kalkulua ondo amaitu dela egiaztatu
 
-Kalkulua amaitzean, irteera-fitxategiaren azken lerroak {{termination_ok}} eduki behar du. Horren ordez `Error termination` agertzen bada, kalkulua ez da behar bezala amaitu. Arrazoi ohikoenak hasierako geometria desegokia, konfigurazio bateraezina edo esleitutako memoria-muga gainditu izana dira.
+Kalkulua amaitzean, irteera-fitxategiko azken lerroak {{termination_ok}} eduki behar du. Horren ordez `Error termination` agertzen bada, kalkulua ez da behar bezala amaitu. Arrazoi ohikoenak hasierako geometria desegokia, konfigurazio bateraezina edo esleitutako memoria-muga gainditzea dira.
 
 :::{admonition} Adi
 :class: danger
-Emaitzarik idatzi aurretik, egiaztatu beti kalkulua ondo amaitu dela lerro hau bilatuz: {{termination_ok}}
+
+Emaitzarik idatzi aurretik, beti egiaztatu kalkulua behar bezala amaitu dela, lerro hau bilatuz: {{termination_ok}}
+
 :::
 
 ## Emaitzak ikusi
 
-Emaitzak bi bidetatik kontsultatzen ditugu. Optimizatutako geometria, dentsitate elektronikoa edo orbital molekularrak bistaratzeko, GaussView-ren **Results** menua erabiliko dugu. **Results → Summary** aukerak laburpen-taula bat aurkezten du metodoarekin, oinarriarekin, kalkulatutako energia elektroniko osoarekin eta une dipolarra bezalako magnitudeekin. Zenbakizko balioak xehetasun osoz ateratzeko, zuzenagoa da `.log` fitxategia testu-editore batekin irekitzea eta lerro garrantzitsuak bilatzea. Praktika bakoitzaren gidoian adierazten dugu zein termino bilatu eta nola erregistratu balio bakoitza.
+Emaitzak bi modutan kontsultatzen ditugu. Geometria optimizatua, dentsitate elektronikoa edo orbital molekularrak ikusteko, GaussViewen **Results** menua erabiltzen dugu. **Results → Summary** aukerak laburpen-koadro bat aurkezten du, metodoa, basea, kalkulatutako energia elektroniko osoa eta momentu dipolarra bezalako magnitudeekin. Balio numerikoak xehetasun guztiekin ateratzeko, zuzenagoa da `.log` fitxategia testu-editore batekin irekitzea eta dagozkion lerroak bilatzea. Praktika bakoitzaren gidoian adierazten dugu zein termino bilatu eta nola idatzi balio bakoitza.
 
 :::{figure} /_static/capturas/05_gv_summary_resultados.png
-:alt: Kalkuluaren laburpena GaussView-ren Gaussian Calculation Summary leihoan
+:alt: Resumen del cálculo en la ventana Gaussian Calculation Summary de GaussView
 :width: 85%
 :align: center
 :::
 
 ## Lana gorde
 
-Sarrera-fitxategia **File → Save** bidez gordetzen dugu `.gjf` luzapenarekin. Komeni da molekula eta teoria-maila argi identifikatzen dituen nomenklatura erabiltzea (adibidez, `h2o_b3lyp_6311g.gjf`); horrek kalkuluak antolatzea errazten du saioan zehar.
+Sarrerako fitxategia **File → Save** tik gordetzen dugu `.gjf` luzapenarekin. Komeni da nomenklatura argia erabiltzea, molekula eta teoria-maila identifikatzeko (adibidez, `h2o_b3lyp_6311g.gjf`), horrek saioan zehar kalkuluak antolatzea errazten baitu.
 
 ---
 
@@ -109,14 +115,15 @@ Sarrera-fitxategia **File → Save** bidez gordetzen dugu `.gjf` luzapenarekin. 
 
 ---
 
-::::{dropdown} 🚀 Koloreak eta itxura pertsonalizatu
+::::{dropdown} Koloreak eta itxura pertsonalizatu
 :color: success
+
 :icon: gear
 
-Atzeko planoaren kolorea **View → Display Format** menutik aldatzen dugu. **General** fitxan, klik egingo dugu **Background Color** ondoan dagoen laukitxoan eta kolore zuria hautatuko dugu. Leiho berean atomo-esferen tamaina pertsonaliza dezakegu **Atom Size** atalean eta haien kolore-eskema **Atom Colors** atalean. Doikuntza hauek ez dituzte kalkuluak aldatzen, baina atzeko plano zuria erabiltzeak praktika-txostenerako irudi garbiak lortzea errazten du.
+Atzeko kolorea **View → Display Format** menutik aldatzen dugu. **General** fitxan, **Background Color** ondoan dagoen laukian klik egiten dugu eta kolore zuria hautatzen dugu. Leiho horretan bertan, atomo-esferen tamaina pertsonaliza dezakegu **Atom Size** atalean, eta haien kolore-eskema **Atom Colors** atalean. Doikuntza horiek ez dituzte kalkuluak aldatzen, baina atzeko plano zuria erabiltzeak praktiken memoriarentzako kaptura garbiak lortzea errazten du.
 
 :::{figure} /_static/capturas/06_gv_display_background_blanco.png
-:alt: Atzeko plano zuriari dagozkion doikuntzak Display Format atalean
+:alt: Personalización del color de fondo blanco en Display Format
 :width: 85%
 :align: center
 :::

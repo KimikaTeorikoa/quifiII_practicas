@@ -1,0 +1,67 @@
+# ================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-gaussview.md (Zatia 1/2)
+# ==============================================================
+
+Ondorengo testu zientifikoak euskaratu, mesedez, estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# GaussView-ren sarrera
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Gaussian-en kalkulu bat egiteko, lehenik eta behin, programari esan behar zaio molekula nola dagoen espazioan kokatuta. GaussView zeregin hori errazten duen interfaze grafikoa da: molekula-eredua eraikitzen dugu, kalkulua konfiguratzen dugu eta emaitzak bistaratzen ditugu eskuz fitxategiak editatu beharrik gabe.
+
+=== BLOKEA 3 ===
+## GaussView irekitzea
+
+=== BLOKEA 4 ===
+GaussView ikasgelako ordenagailuaren mahaigainetik edo sistemaren aplikazioen menutik irekitzen da.
+
+=== BLOKEA 5 ===
+## Interfazea: zer ikusten duzu irekitzean
+
+=== BLOKEA 6 ===
+GaussView-ren interfazeak lau lan-eremu ditu. Goiko aldean menu-barra dago, konfigurazio- eta bistaratze-tresnekin. Azpian tresna-barra dago, sarbide azkarreko ikonoekin. Erdiko eremua hiru dimentsioko bistaratze-leihoa da, non molekula eraiki, mugitu eta biratzen dugun saguarekin. Beheko panel batek denbora errealean hautatutako atomoen, atomoen arteko distantzien eta kalkuluaren egoerari buruzko informazioa erakusten du.
+
+=== BLOKEA 7 ===
+## Molekula bat eraikitzea
+
+=== BLOKEA 8 ===
+GaussView-n molekula bat eraikitzeko, tresna-barrako atomoaren ikonoa sakatzen dugu (__PROTECTED_BLOCK_24__, __PROTECTED_BLOCK_14__-tik ere eskuragarri) zatiak eta elementu kimikoak dituen panela irekitzeko. Nahi dugun elementua hautatzen dugu eta ezkerreko botoiarekin klik egiten dugu erdiko leihoan atomoa kokatzeko. Atomo gehigarriak lehendik dauden atomoetatik gertu gehitzean, programak loturak automatikoki sortzen ditu erradio kobalente estandarretatik abiatuta. Urarentzat (__PROTECTED_BLOCK_34__), oxigeno-atomo zentral bat jartzea eta bi hidrogeno angelu-posizioetan lotzea nahikoa da. Distantzia zehatzak Gaussian-en geometria optimizatzean doituko dira; beraz, hasierako marrazkiak konektibitate kimikoa soilik irudikatu behar du.
+
+=== BLOKEA 9 ===
+Ez egin klik bikoitza ustekabean atzeko planoan: atomoak bikoizten ditu abisatu gabe.
+
+=== BLOKEA 10 ===
+## Akatsak zuzentzea eta desegitea
+
+=== BLOKEA 11 ===
+Azken ekintza desegiteko, __PROTECTED_BLOCK_15__ edo Ctrl+Z erabiltzen dugu. Atomo edo zati zehatz bat ezabatu nahi badugu, saguarekin hautatzen dugu eta Supr sakatzen dugu. Leihoa guztiz garbitzeko, __PROTECTED_BLOCK_16__ erabil dezakegu Supr sakatuta, edo lan-eremu berri bat ireki dezakegu __PROTECTED_BLOCK_17__-tik.
+
+=== BLOKEA 12 ===
+## Hidrogenoak automatikoki gehitzea
+
+=== BLOKEA 13 ===
+__PROTECTED_BLOCK_18__ aukerak marraztutako eskeletoa asetzeko beharrezkoak diren hidrogeno inplizituak automatikoki osatzen ditu. Emaaitzazko egitura beti berrikustea komeni da, esleipen automatikoa nahi den protonazio-egoerarekin bat ez etortzea gerta baitaiteke.
+
+=== BLOKEA 14 ===
+## Molekularen inguruan mugitzea
+
+=== BLOKEA 15 ===
+Egitura ikuskatzeko, bista biratzen dugu ezkerreko botoia sakatuta mantenduz eta kurtsorea mugituz. Zooma saguaren gurpilarekin doitzen dugu. Molekula bistatik galtzen badugu, tresna-barrako zentratze-botoia erabiltzen dugu. Hiru mugimendu horiekin, geometria erraz orientatzen dugu modelatzean eta emaitzak berrikustean.
+
+=== BLOKEA 16 ===
+## Geometria ikustea eta doitzea
+
+=== BLOKEA 17 ===
+Lotura-distantzia bat kontsultatzeko edo doitzeko, lotura-tresna (__PROTECTED_BLOCK_25__, bi esfera lotuta dituen ikonoa tresna-barran) edo kontsulta-tresna (__PROTECTED_BLOCK_26__, **__PROTECTED_BLOCK_35__** galdera-ikurra duen ikonoa) hautatzen dugu eta 3D ikuspegian bi atomoetan klik egiten dugu. Agertzen den leihoak uneko distantzia angstrometan erakusten du eta konektibitatea egiaztatzeko aukera ematen du kalkulua abiarazi aurretik.
+
+=== BLOKEA 32 ===
+---
+
+=== BLOKEA 35 ===
+---

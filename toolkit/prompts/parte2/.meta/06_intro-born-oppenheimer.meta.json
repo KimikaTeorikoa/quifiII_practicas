@@ -1,0 +1,179 @@
+{
+  "source": "es/content/parte2-gaussian/intros/intro-born-oppenheimer.md",
+  "dest": "eu/content/parte2-gaussian/intros/intro-born-oppenheimer.md",
+  "prefix": "06_intro-born-oppenheimer",
+  "slug": "intro-born-oppenheimer",
+  "filename": "intro-born-oppenheimer.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/figures/eu/geometria_molecular.svg\n:alt: Diagrama de una cadena de cuatro átomos con distancia de enlace, ángulo de enlace y ángulo diedro anotados\n:width: 70%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": ":::{figure} /_static/figures/eu/optimizacion_pasos.svg\n:alt: Pasos sucesivos del algoritmo de optimización de geometría convergiendo al mínimo de energía sobre la curva de energía potencial\n:width: 65%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_2__": "$$\\mathbf{F}_A = -\\nabla_{\\mathbf{R}_A} E(\\mathbf{R})$$",
+    "__PROTECTED_BLOCK_3__": "$$\\nabla_{\\mathbf{R}} E \\approx \\mathbf{0}$$",
+    "__PROTECTED_BLOCK_4__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_5__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_6__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_7__": ":::",
+    "__PROTECTED_BLOCK_8__": "::::",
+    "__PROTECTED_BLOCK_9__": "::::",
+    "__PROTECTED_BLOCK_10__": "**Job Type → Single Point**",
+    "__PROTECTED_BLOCK_11__": "**Job Type → Optimization**",
+    "__PROTECTED_BLOCK_12__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_13__": "$A$",
+    "__PROTECTED_BLOCK_14__": "`.log`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Geometría molecular y la aproximación de Born-Oppenheimer"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "Determinar cualquier propiedad fisicoquímica en una molécula exige conocer con precisión las coordenadas espaciales de sus átomos. La aproximación de Born-Oppenheimer aprovecha la gran diferencia de masa entre núcleos y electrones para desacoplar sus movimientos, lo que permite resolver la distribución electrónica sobre disposiciones nucleares fijas. Este marco teórico fundamenta la distinción entre cálculos de energía puntual a coordenadas constantes y optimizaciones de geometría orientadas a localizar mínimos energéticos estables."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## La aproximación de Born-Oppenheimer"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "La masa de un protón es aproximadamente 1836 veces mayor que la del electrón, por lo que los núcleos atómicos se mueven con mucha mayor lentitud. La aproximación de Born-Oppenheimer aprovecha esta disparidad temporal tratando a los núcleos como centros de carga estacionarios mientras se resuelve el movimiento electrónico. De este modo, la energía electrónica se obtiene como una magnitud que depende paramétricamente de las posiciones nucleares elegidas. Sin este desacoplamiento, la resolución mecanocuántica de cualquier molécula resultaría computacionalmente inviable."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_4__"
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "Al fijar los núcleos en diferentes disposiciones espaciales y calcular la energía electrónica para cada una, generamos la superficie de energía potencial (PES, *Potential Energy Surface*). Sobre esta superficie hiperdimensional se describe la dinámica de los núcleos, la vibración molecular y el avance de las reacciones químicas."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_7__"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "## Geometría molecular: distancias, ángulos y diedros"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "La geometría de una molécula queda definida por tres parámetros: distancias de enlace (en ángstroms, Å), ángulos de enlace (en grados) y ángulos diedros de torsión (en grados). Las distancias y los ángulos determinan la conectividad local entre átomos contiguos; los diedros describen la rotación espacial entre planos que comparten un enlace central. Gaussian usa estas coordenadas internas para calcular gradientes y optimizar geometrías. En GaussView podemos medir y visualizar los tres parámetros directamente sobre el modelo."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "## Energía puntual: calcular sin mover"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "En un cálculo de energía puntual (*Single Point*), las posiciones nucleares permanecen fijas según las coordenadas del archivo de entrada. Con esa geometría constante, Gaussian resuelve la estructura electrónica sin desplazar ningún átomo. El resultado es la energía electrónica total en hartrees para esa conformación. En GaussView seleccionamos este cálculo en __PROTECTED_BLOCK_10__ (etiquetado habitualmente como *Energy*)."
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "## Optimización de geometría: encontrar el mínimo"
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "En una optimización de geometría, Gaussian calcula la energía sobre la estructura inicial y evalúa sus derivadas respecto a las coordenadas nucleares (el gradiente de la energía). Las fuerzas electrostáticas que actúan sobre cada núcleo __PROTECTED_BLOCK_13__ corresponden al gradiente cambiado de signo:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "A partir de estas fuerzas, el algoritmo desplaza los núcleos en la dirección que reduce la energía hacia el mínimo más cercano. En cada nueva geometría recalcula la función de onda y las fuerzas. El proceso se repite hasta que el gradiente se anula dentro de la tolerancia numérica:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_3__"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "En GaussView seleccionamos este cálculo en __PROTECTED_BLOCK_11__. La figura siguiente ilustra los pasos sucesivos del algoritmo convergiendo al pozo de potencial."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 14,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 15,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 16,
+      "text": "- __PROTECTED_BLOCK_12__\n- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996."
+    },
+    {
+      "type": "block",
+      "bid": 17,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_5__"
+    },
+    {
+      "type": "block",
+      "bid": 18,
+      "text": "### [DROPDOWN_TITLE] ¿Qué pasa si la geometría inicial es muy mala?"
+    },
+    {
+      "type": "block",
+      "bid": 19,
+      "text": "Si la geometría inicial está muy alejada de la estructura de equilibrio, el algoritmo puede necesitar un número excesivo de pasos, quedar atrapado en un mínimo local o no converger. En el archivo __PROTECTED_BLOCK_14__, esta situación se identifica cuando se alcanza el límite de ciclos de optimización sin satisfacer los criterios de convergencia. Para evitarlo, conviene construir las moléculas empleando los fragmentos estándar de GaussView, que proporcionan distancias y ángulos iniciales químicamente razonables."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_8__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_6__"
+    },
+    {
+      "type": "block",
+      "bid": 20,
+      "text": "### [DROPDOWN_TITLE] Más sobre gradientes y algoritmos de optimización"
+    },
+    {
+      "type": "block",
+      "bid": 21,
+      "text": "Los algoritmos de optimización por defecto en Gaussian (como el método Berny) emplean técnicas de tipo cuasi-Newton, que actualizan iterativamente una aproximación del hessiano (la matriz de segundas derivadas) para proyectar el desplazamiento hacia el mínimo. Como cada ciclo exige calcular la función de onda y el gradiente completo, optimizar moléculas grandes o conformacionalmente flexibles puede requerir un coste computacional elevado y decenas de pasos de optimización."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_9__"
+    }
+  ],
+  "total_chunks": 2,
+  "total_blocks": 22
+}

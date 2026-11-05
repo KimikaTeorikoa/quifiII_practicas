@@ -1,0 +1,103 @@
+# ===============================================================================
+# UPV/EHU Kimika Fisikoa II — Latxa Itzulpen Prompta
+# Fitxategia: intro-hartree-fock.md (Zatia 1/2)
+# ===============================================================================
+
+Itzuli ondorengo testu zientifikoak euskarara estilo akademikoan (UPV/EHUko Kimika Fisikoa II mailan).
+Mesedez, mantendu "=== BLOKEA X ===" banatzaileak eta "__PROTECTED_BLOCK_X__" formulen etiketak aldatu gabe:
+
+=== BLOKEA 0 ===
+# Hartree-Fock metodoa
+
+=== BLOKEA 1 ===
+## Sarrera
+
+=== BLOKEA 2 ===
+Schrodingerren ekuazioak ez du soluzio matematiko zehatzik onartzen elektroi bat baino gehiagoko sistemetarako, elektroien arteko aldarapen elektrostatikoak sortzen duen akoplamendua dela eta. Hartree-Fock metodoak arazo hau eremu ertainaren hurbilketaren bidez jorratzen du, banakako elkarrekintza instantaneoak espazioan batez besteko potentzial batekin ordezkatuz. Sinplifikazio honek Gaussian bezalako programei aukera ematen die orbital molekularrak eta energia elektroniko osoa zehazteko, prozedura iteratibo auto-konsistente baten bidez.
+
+=== BLOKEA 3 ===
+## Arazoa: aldaratzen diren elektroiak
+
+=== BLOKEA 4 ===
+Bi elektroi dituen atomo batean, hala nola helioan (__PROTECTED_BLOCK_38__), operadore hamiltondar zehatzak elektroi bakoitzaren energia zinetikoa, nukleoarekiko erakarpena eta bien arteko aldarapen elektrostatikoa barne hartzen ditu:
+
+=== BLOKEA 5 ===
+__PROTECTED_BLOCK_39__ operadore monoelektronikoak __PROTECTED_BLOCK_40__ elektroiaren mugimendua deskribatzen du, nukleoaren potentzial erakargarriaren pean, beste elektroia kontuan hartu gabe:
+
+=== BLOKEA 6 ===
+__PROTECTED_BLOCK_41__ aldarapen coulombiarreko terminoa ez balego, ekuazioa aldagaiak bananduz ebatziko litzateke, bi atomo hidrogenoideen produktu gisa. Hala ere, __PROTECTED_BLOCK_42__ bi elektroien posizio instantaneoak akoplatzen ditu: baten banaketa espaziala zehazteak bestearena une bakoitzean ezagutzea eskatzen du. Zailtasun hau edozein sistema polielektronikotara hedatzen da eta egitura elektronikoaren erronka nagusia da.
+
+=== BLOKEA 7 ===
+__PROTECTED_BLOCK_43__ terminoak elektroien koordenatu espazialak akoplatzen ditu eta Schrodingerren ekuazioa analitikoki ebaztea eragozten du bi elektroi edo gehiago dituen edozein atomo edo molekulatarako.
+
+=== BLOKEA 8 ===
+## Hartree-Fock-en ideia: eremu ertaina
+
+=== BLOKEA 9 ===
+Ekuazioak desakoplatzeko, Hartree-Fock-en hurbilketak elektroi bikoteen arteko aldarapen instantaneoak hodei elektroniko osoak sortutako batez besteko potentzial elektrostatiko batekin ordezkatzen ditu. Elektroi bakoitza, orduan, nukleoak eta gainerako elektroien batez besteko dentsitateak sortutako eremuan mugitzen da.
+
+=== BLOKEA 10 ===
+Sinplifikazio honen pean, elektroi bakoitzak balio propioen ekuazio monoelektroniko bat betetzen du, Fock operadoreak gobernatuta __PROTECTED_BLOCK_44__:
+
+=== BLOKEA 11 ===
+Helio atomoaren kasuan, non bi elektroiek espazio-orbital bera okupatzen duten __PROTECTED_BLOCK_45__ kontrako spinekin, Fock operadoreak forma hau hartzen du:
+
+=== BLOKEA 12 ===
+non __PROTECTED_BLOCK_46__ beste elektroiaren hodeiak sortutako batez besteko potentzial elektrostatikoa adierazten duen:
+
+=== BLOKEA 13 ===
+Elektroi arteko aldarapena batezbestekoa egitean, elektroien posizioen arteko korrelazio instantaneoak baztertzen dira (korrelazio elektronikoa). Teorema bariazionalaren arabera, Hartree-Fock mugan kalkulatutako energia sistemaren energia zehatz ez-erlatibistaren goiko muga bat da beti.
+
+=== BLOKEA 14 ===
+## Orbitalak: oinarri-funtzioen konbinazio lineala (LCAO)
+
+=== BLOKEA 15 ===
+Elektroi bakoitzaren egoera espaziala __PROTECTED_BLOCK_47__ orbital baten bidez deskribatzen da. Helioaren oinarrizko egoeran, bi elektroiek __PROTECTED_BLOCK_48__ orbitala okupatzen dute kontrako spinekin (__PROTECTED_BLOCK_49__ eta __PROTECTED_BLOCK_50__).
+
+=== BLOKEA 16 ===
+__PROTECTED_BLOCK_51__ren forma matematiko zehatza a priori ezagutzen ez denez, aldez aurretik definitutako __PROTECTED_BLOCK_52__ oinarri-funtzioen konbinazio lineal gisa hedatzen da (__PROTECTED_BLOCK_53__) (normalean nukleoetan zentratutako funtzio gausiarrak):
+
+=== BLOKEA 17 ===
+Arazo kuantikoa ebaztea sistemaren energia osoa minimizatzen duten __PROTECTED_BLOCK_54__ koefiziente numerikoak zehaztea da. Irudiak helio atomoaren 1s orbitalaren dentsitate elektronikoa erakusten du.
+
+=== BLOKEA 18 ===
+## Roothaan-Hall ekuazioak: Helioaren adibidea bi orbitalekin
+
+=== BLOKEA 19 ===
+LCAO hedapena Fock ekuazioan ordezkatu eta oinarri-funtzio bakoitzera proiektatzean, ekuazio integrodiferentzialak matrize-balio propioen problema orokor batean eraldatzen dira:
+
+=== BLOKEA 20 ===
+Demagun helio atomoa bi s motako funtzioz (__PROTECTED_BLOCK_55__ eta __PROTECTED_BLOCK_56__) osatutako oinarri batekin deskribatuta dagoela, adibidez, bi funtzio gausiar desberdin exponenterekin, hodei elektronikoa erradialki hedatu edo uzkurtu ahal izateko. Espazio-orbital bakoitza honela adierazten da:
+
+=== BLOKEA 21 ===
+2x2 dimentsioko sistema matrizeala forma esplizitu hau hartzen du:
+
+=== BLOKEA 22 ===
+Matrize bakoitzak esanahi fisiko zuzena du:
+
+=== BLOKEA 23 ===
+**Gainjartze-matrizea __PROTECTED_BLOCK_57__:** Bi oinarri-funtzioen arteko ez-ortogonalitate espaziala deskribatzen du:
+
+=== BLOKEA 24 ===
+Funtzioak normalizatuta daudenez, diagonal-elementuek 1 balio dute (__PROTECTED_BLOCK_58__). Gurutzatutako terminoak bi funtzioen arteko gainjartze-integrala adierazten du:
+
+=== BLOKEA 25 ===
+**Fock matrizea __PROTECTED_BLOCK_59__:** Oinarri-funtzio bakoitzean elektroi baten energia eraginkorra (__PROTECTED_BLOCK_60__) eta elkarren arteko akoplamendua (__PROTECTED_BLOCK_61__) ditu:
+
+=== BLOKEA 26 ===
+Bere elementuak Fock operadorea oinarrian integratuz lortzen dira:
+
+=== BLOKEA 27 ===
+**Koefiziente-matrizea __PROTECTED_BLOCK_62__:** Zutabe bakoitzak espazio-orbital bat definitzen du:
+
+=== BLOKEA 28 ===
+Lehen zutabeak __PROTECTED_BLOCK_63__ __PROTECTED_BLOCK_64__ eta __PROTECTED_BLOCK_65__ okupatutako orbitalean __PROTECTED_BLOCK_66__ (HOMO) dituen pisuak ditu. Bigarren zutabeak __PROTECTED_BLOCK_67__ orbital birtualeko __PROTECTED_BLOCK_68__ (LUMO) koefizienteak ditu.
+
+=== BLOKEA 29 ===
+**Orbitalen energia-matrizea __PROTECTED_BLOCK_69__:** Matrize diagonal bat da, auto-balio energetikoak dituena:
+
+=== BLOKEA 31 ===
+### [OHARRA] Helioaren kasua sistema errealen aurrean: __PROTECTED_BLOCK_72__ dimentsioko matrizeak
+
+=== BLOKEA 49 ===
+---

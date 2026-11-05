@@ -1,0 +1,313 @@
+{
+  "source": "es/content/parte2-gaussian/practicas/moleculas-pes.md",
+  "dest": "eu/content/parte2-gaussian/practicas/moleculas-pes.md",
+  "prefix": "08_moleculas-pes",
+  "slug": "moleculas-pes",
+  "filename": "moleculas-pes.md",
+  "frontmatter": "",
+  "placeholders": {
+    "__PROTECTED_BLOCK_0__": ":::{figure} /_static/figures/eu/pes_1d_esquema.svg\n:alt: Curva unidimensional de energía potencial con mínimo de equilibrio, barrera y asíntota de disociación\n:width: 60%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_1__": ":::{figure} /_static/figures/eu/newman_dihaloetano.svg\n:alt: Proyección de Newman de un dihaloetano con las conformaciones anti, gauche y eclipsada anotadas\n:width: 70%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_2__": ":::{figure} /_static/capturas/11_pes_setup_scan_h2.png\n:alt: Configuración del barrido de potencial (Scan) para H2 en Gaussian Calculation Setup\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_3__": ":::{figure} /_static/capturas/11a_pes_redundant_coord_h2.png\n:alt: Definición de la coordenada de enlace y pasos del barrido en el editor de coordenadas redundantes\n:width: 85%\n:align: center\n:::",
+    "__PROTECTED_BLOCK_4__": "$$\nE = E(\\mathbf{R})\n$$",
+    "__PROTECTED_BLOCK_5__": ":::{admonition} Oharra\n:class: note",
+    "__PROTECTED_BLOCK_6__": "::::{dropdown} __DROPDOWN_TITLE_PLACEHOLDER__\n:color: success",
+    "__PROTECTED_BLOCK_7__": ":::",
+    "__PROTECTED_BLOCK_8__": "::::",
+    "__PROTECTED_BLOCK_9__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_10__": "**Edit → Redundant Coordinates**",
+    "__PROTECTED_BLOCK_11__": "**File → Open**",
+    "__PROTECTED_BLOCK_12__": "**Results → Scan**",
+    "__PROTECTED_BLOCK_13__": "**File → New → Molecule Group**",
+    "__PROTECTED_BLOCK_14__": "**Edit → Clean**",
+    "__PROTECTED_BLOCK_15__": "**Calculate → Gaussian Calculation Setup**",
+    "__PROTECTED_BLOCK_16__": "**File → Open**",
+    "__PROTECTED_BLOCK_17__": "**Results → Scan**",
+    "__PROTECTED_BLOCK_18__": "**Job Type**",
+    "__PROTECTED_BLOCK_19__": "**Method**",
+    "__PROTECTED_BLOCK_20__": "**Title**",
+    "__PROTECTED_BLOCK_21__": "**Job Type**",
+    "__PROTECTED_BLOCK_22__": "**Method**",
+    "__PROTECTED_BLOCK_23__": "**Title**",
+    "__PROTECTED_BLOCK_24__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_25__": "{{practicas_folder}}",
+    "__PROTECTED_BLOCK_26__": "{{gaussian_cite}}",
+    "__PROTECTED_BLOCK_27__": "$\\text{H}_2$",
+    "__PROTECTED_BLOCK_28__": "$R(\\text{H–H})$",
+    "__PROTECTED_BLOCK_29__": "$R_{\\text{eq}}$",
+    "__PROTECTED_BLOCK_30__": "$\\text{H}_2$",
+    "__PROTECTED_BLOCK_31__": "$^1\\Sigma_g^+$",
+    "__PROTECTED_BLOCK_32__": "$^3\\Sigma_u^+$",
+    "__PROTECTED_BLOCK_33__": "$\\text{H}_2$",
+    "__PROTECTED_BLOCK_34__": "$R(\\text{H–H})$",
+    "__PROTECTED_BLOCK_35__": "$\\text{X–C–C–X}$",
+    "__PROTECTED_BLOCK_36__": "$\\text{X–C–C–X}$",
+    "__PROTECTED_BLOCK_37__": "$\\text{CH}_3\\text{-CH}_3$",
+    "__PROTECTED_BLOCK_38__": "`0`",
+    "__PROTECTED_BLOCK_39__": "`1`",
+    "__PROTECTED_BLOCK_40__": "`3`",
+    "__PROTECTED_BLOCK_41__": "`H2 scan HF STO-3G`",
+    "__PROTECTED_BLOCK_42__": "`scan`",
+    "__PROTECTED_BLOCK_43__": "`H2_singlete_scan.gjf`",
+    "__PROTECTED_BLOCK_44__": "`__PROTECTED_BLOCK_24__PES/`",
+    "__PROTECTED_BLOCK_45__": "`H2_triplete_scan.gjf`",
+    "__PROTECTED_BLOCK_46__": "`H2_singlete_scan.log`",
+    "__PROTECTED_BLOCK_47__": "`H2_triplete_scan.log`",
+    "__PROTECTED_BLOCK_48__": "`0`",
+    "__PROTECTED_BLOCK_49__": "`1`",
+    "__PROTECTED_BLOCK_50__": "`Dihaloetano diedro scan HF STO-3G`",
+    "__PROTECTED_BLOCK_51__": "`dihaloetano_scan.gjf`",
+    "__PROTECTED_BLOCK_52__": "`__PROTECTED_BLOCK_25__PES/`"
+  },
+  "template": [
+    {
+      "type": "block",
+      "bid": 0,
+      "text": "# Superficie de energía potencial"
+    },
+    {
+      "type": "block",
+      "bid": 1,
+      "text": "## Introducción"
+    },
+    {
+      "type": "block",
+      "bid": 2,
+      "text": "La estabilidad del enlace químico y las preferencias conformacionales de las moléculas dependen de cómo varía la energía electrónica al modificar las posiciones de los núcleos. Gracias a la aproximación de Born-Oppenheimer, estas variaciones pueden representarse como una superficie de energía potencial calculada mediante barridos geométricos sistemáticos en Gaussian. En esta práctica se analiza la curva de disociación de la molécula de hidrógeno para diferentes estados de espín y el perfil energético de rotación del ángulo diedro en derivados halogenados del etano."
+    },
+    {
+      "type": "block",
+      "bid": 3,
+      "text": "## Objetivos"
+    },
+    {
+      "type": "block",
+      "bid": 4,
+      "text": "1. Construir la curva de energía potencial de la molécula de __PROTECTED_BLOCK_27__ mediante un barrido de la distancia internuclear __PROTECTED_BLOCK_28__ para los estados singlete y triplete con HF/STO-3G.\n2. Determinar la distancia internuclear de equilibrio (__PROTECTED_BLOCK_29__) y la energía de disociación de __PROTECTED_BLOCK_30__, contrastando los valores calculados con datos experimentales.\n3. Realizar el barrido conformacional del ángulo diedro en dihaloetanos para identificar los confórmeros anti y gauche en la superficie de energía potencial.\n4. Cuantificar las barreras de rotación conformacional evaluando la diferencia de energía frente a las conformaciones eclipsadas."
+    },
+    {
+      "type": "block",
+      "bid": 5,
+      "text": "## Conceptos clave"
+    },
+    {
+      "type": "block",
+      "bid": 6,
+      "text": "### ¿Qué es una superficie de energía potencial?"
+    },
+    {
+      "type": "block",
+      "bid": 7,
+      "text": "Bajo la aproximación de Born-Oppenheimer, la energía electrónica es una función continua de las coordenadas nucleares que define la superficie de energía potencial (SEP) del sistema:"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_4__"
+    },
+    {
+      "type": "block",
+      "bid": 8,
+      "text": "Los mínimos de esta superficie corresponden a geometrías de equilibrio estables, en las que las fuerzas sobre cada núcleo son nulas y cualquier deformación incrementa la energía. Los puntos de silla de primer orden conectan mínimos contiguos y representan los estados de transición de reacciones químicas o cambios conformacionales. A distancias internucleares grandes, la energía potencial alcanza el límite de disociación, donde los átomos dejan de interaccionar entre sí."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_0__"
+    },
+    {
+      "type": "block",
+      "bid": 9,
+      "text": "### Singlete y triplete: por qué importa el espín"
+    },
+    {
+      "type": "block",
+      "bid": 10,
+      "text": "En el estado singlete, los dos electrones de H₂ tienen espines antiparalelos (multiplicidad 1). Esto les permite compartir la misma región del espacio y concentrar densidad electrónica entre los dos núcleos, apantallando su repulsión mutua y estabilizando el enlace covalente en un mínimo de energía a la distancia de equilibrio. En cambio, en el estado triplete los espines son paralelos (multiplicidad 3) y el principio de exclusión de Pauli impide que ambos electrones se sitúen simultáneamente en la región internuclear. Por este motivo, la curva de energía potencial del triplete es puramente repulsiva en todo el recorrido y no presenta ningún mínimo de enlace."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_5__"
+    },
+    {
+      "type": "block",
+      "bid": 11,
+      "text": "Desde el punto de vista mecanocuántico, la función de onda espacial del singlete (__PROTECTED_BLOCK_31__) es simétrica ante la permutación de electrones, lo que favorece la acumulación de carga internuclear. En el triplete (__PROTECTED_BLOCK_32__), la función espacial es antisimétrica y presenta un plano nodal internuclear donde la densidad de probabilidad es nula. Al no haber densidad electrónica que apantalle a los protones, la repulsión internuclear domina a cualquier distancia."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_7__"
+    },
+    {
+      "type": "block",
+      "bid": 12,
+      "text": "### Ángulo diedro y análisis conformacional"
+    },
+    {
+      "type": "block",
+      "bid": 13,
+      "text": "El ángulo diedro describe la rotación relativa entre dos grupos unidos por un enlace simple central y se define a través de los cuatro átomos que forman la secuencia X–C–C–X en un rango de 0° a 360°. En una proyección de Newman, cada conformación queda determinada por este ángulo. La conformación *anti* (180°) sitúa los sustituyentes más voluminosos en posiciones opuestas, minimizando las repulsiones estéricas y configurando el mínimo global de energía. Los confórmeros *gauche* (60° y 300°) constituyen mínimos locales con mayor repulsión mutua. Los máximos de la curva corresponden a las conformaciones eclipsadas, cuyo solapamiento determina la barrera de rotación interna."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_1__"
+    },
+    {
+      "type": "block",
+      "bid": 14,
+      "text": "## Procedimiento"
+    },
+    {
+      "type": "block",
+      "bid": 15,
+      "text": "### Parte 1: PES de la molécula de H₂"
+    },
+    {
+      "type": "block",
+      "bid": 16,
+      "text": "#### Paso 1: Dibujar H₂ en GaussView"
+    },
+    {
+      "type": "block",
+      "bid": 17,
+      "text": "1. Abrir GaussView.\n2. En la paleta flotante de fragmentos, seleccionar el átomo de hidrógeno (**H**).\n3. Hacer clic en la ventana central 3D para colocar el primer átomo de hidrógeno.\n4. Hacer un segundo clic sobre el átomo creado para generar la molécula diatómica de __PROTECTED_BLOCK_33__ con enlace simple."
+    },
+    {
+      "type": "block",
+      "bid": 18,
+      "text": "#### Paso 2: Configurar el cálculo de barrido (Scan)"
+    },
+    {
+      "type": "block",
+      "bid": 19,
+      "text": "1. En la barra de menús de GaussView, acceder a __PROTECTED_BLOCK_9__.\n2. En la pestaña __PROTECTED_BLOCK_18__, seleccionar la opción **Scan** y elegir en el desplegable inferior **Relaxed (Redundant Coord)**.\n3. Para definir la coordenada de barrido, acceder a __PROTECTED_BLOCK_10__ (o pulsar el botón de edición de coordenadas redundantes).\n4. En el diálogo **Redundant Coordinate Editor**:\n   - Pulsar el botón **Add**.\n   - En el desplegable seleccionar **Bond** e indicar en **Coordinate** los átomos **1** y **2**.\n   - Seleccionar **Scan Coordinate** en el tipo de acción y fijar los parámetros del barrido (por ejemplo, 40 pasos de tamaño 0.1 Å).\n   - Pulsar **Ok** para validar la coordenada.\n5. De regreso a la ventana **Gaussian Calculation Setup**, en la pestaña __PROTECTED_BLOCK_19__ seleccionar:\n   - Método: **HF** (Hartree-Fock).\n   - Conjunto de base: **STO-3G**.\n   - Carga: __PROTECTED_BLOCK_38__.\n   - Para el estado singlete: **Spin = Singlet** (Multiplicity = __PROTECTED_BLOCK_39__).\n   - Para el estado triplete: **Spin = Triplet** (Multiplicity = __PROTECTED_BLOCK_40__).\n6. En la pestaña __PROTECTED_BLOCK_20__, escribir: __PROTECTED_BLOCK_41__.\n7. En la pestaña **Additional Keywords**, escribir: __PROTECTED_BLOCK_42__."
+    },
+    {
+      "type": "block",
+      "bid": 20,
+      "text": "| Parámetro | Estado singlete | Estado triplete |\n|---|:---:|:---:|\n| Method | HF | HF (ROHF) |\n| Basis Set | STO-3G | STO-3G |\n| Charge | 0 | 0 |\n| Multiplicity | 1 | 3 |\n| Rango de distancias | 0.5 a 4.0 Å | 0.5 a 4.0 Å |\n| Incremento de paso | 0.1 Å (35–40 pasos) | 0.1 Å (35–40 pasos) |"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_2__"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_3__"
+    },
+    {
+      "type": "block",
+      "bid": 21,
+      "text": "#### Paso 3: Guardar y lanzar los cálculos"
+    },
+    {
+      "type": "block",
+      "bid": 22,
+      "text": "1. En la ventana **Gaussian Calculation Setup**, pulsar el botón **Submit**.\n2. Guardar el archivo del singlete con el nombre: __PROTECTED_BLOCK_43__ en la carpeta de trabajo __PROTECTED_BLOCK_44__.\n3. Confirmar el diálogo para iniciar el cálculo.\n4. Repetir el proceso modificando la multiplicidad a 3 y guardar como: __PROTECTED_BLOCK_45__.\n5. Comprobar que ambos cálculos progresan en la barra de ejecución."
+    },
+    {
+      "type": "block",
+      "bid": 23,
+      "text": "#### Paso 4: Visualizar la PES en GaussView"
+    },
+    {
+      "type": "block",
+      "bid": 24,
+      "text": "1. En GaussView, abrir el archivo __PROTECTED_BLOCK_46__ mediante __PROTECTED_BLOCK_11__.\n2. Acceder al menú __PROTECTED_BLOCK_12__.\n3. Aparece una gráfica bidimensional interactiva con la energía frente a la distancia __PROTECTED_BLOCK_34__.\n4. Abrir simultáneamente el archivo __PROTECTED_BLOCK_47__ para superponer la curva del triplete sobre la del singlete en la misma ventana de visualización.\n5. Observar la forma de pozo de potencial en la curva singlete y la ausencia de pozo en la curva triplete."
+    },
+    {
+      "type": "block",
+      "bid": 25,
+      "text": "### Parte 2: PES diedro del dihaloetano"
+    },
+    {
+      "type": "block",
+      "bid": 26,
+      "text": "Se realizará el barrido conformacional para los tres dihaloetanos siguientes: 1,2-dicloroetano, 1,2-dibromoetano y 1,2-diyodoetano. El procedimiento es idéntico para los tres; repetirlo cambiando únicamente el halógeno en el paso de construcción molecular."
+    },
+    {
+      "type": "block",
+      "bid": 27,
+      "text": "#### Paso 1: Dibujar el dihaloetano en GaussView"
+    },
+    {
+      "type": "block",
+      "bid": 28,
+      "text": "1. Abrir una nueva ventana en GaussView (__PROTECTED_BLOCK_13__).\n2. Construir la molécula de dihaloetano seleccionando la cadena carbonada y sustituyendo dos átomos de hidrógeno por halógenos en carbonos vecinales.\n3. Aplicar una limpieza geométrica preliminar mediante __PROTECTED_BLOCK_14__."
+    },
+    {
+      "type": "block",
+      "bid": 29,
+      "text": "#### Paso 2: Configurar el cálculo del barrido diedro"
+    },
+    {
+      "type": "block",
+      "bid": 30,
+      "text": "1. Acceder al menú __PROTECTED_BLOCK_15__.\n2. En la pestaña __PROTECTED_BLOCK_21__, seleccionar **Scan**.\n3. Definir la coordenada interna de tipo **Dihedral** seleccionando los cuatro átomos enlazados: __PROTECTED_BLOCK_35__.\n4. Especificar los parámetros angulares del barrido:\n   - Coordenada: diedro __PROTECTED_BLOCK_36__.\n   - Rango angular: 0° a 360° (pasos de 10° o 15°).\n5. En la pestaña __PROTECTED_BLOCK_22__, configurar:\n   - Método: **HF**.\n   - Conjunto de base: **STO-3G**.\n   - Carga: __PROTECTED_BLOCK_48__.\n   - Multiplicidad: __PROTECTED_BLOCK_49__ (Singlete).\n6. En la pestaña __PROTECTED_BLOCK_23__, escribir: __PROTECTED_BLOCK_50__."
+    },
+    {
+      "type": "block",
+      "bid": 31,
+      "text": "#### Paso 3: Guardar, lanzar y verificar"
+    },
+    {
+      "type": "block",
+      "bid": 32,
+      "text": "1. Guardar el archivo como __PROTECTED_BLOCK_51__ en __PROTECTED_BLOCK_52__.\n2. Confirmar el envío del cálculo pulsando **Submit**."
+    },
+    {
+      "type": "block",
+      "bid": 33,
+      "text": "#### Paso 4: Visualizar la curva diedro en GaussView"
+    },
+    {
+      "type": "block",
+      "bid": 34,
+      "text": "1. En GaussView, abrir el archivo de salida del barrido mediante __PROTECTED_BLOCK_16__.\n2. Acceder al menú __PROTECTED_BLOCK_17__.\n3. Identificar los mínimos locales (confórmero gauche) y el mínimo global (confórmero anti a 180°), así como las barreras rotacionales intermedias."
+    },
+    {
+      "type": "block",
+      "bid": 35,
+      "text": "---"
+    },
+    {
+      "type": "block",
+      "bid": 36,
+      "text": "## Bibliografía"
+    },
+    {
+      "type": "block",
+      "bid": 37,
+      "text": "- __PROTECTED_BLOCK_26__\n- Atkins, P.; De Paula, J. *Química Física*, 10ª ed.; Editorial Médica Panamericana, 2018. Cap. 11 (Estructura molecular y superficies de energía potencial).\n- Clayden, J.; Greeves, N.; Warren, S. *Organic Chemistry*, 2ª ed.; Oxford University Press, 2012. Cap. 18 (Conformational analysis).\n- Szabo, A.; Ostlund, N. S. *Modern Quantum Chemistry*. Dover, 1996."
+    },
+    {
+      "type": "block",
+      "bid": 38,
+      "text": "---"
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_6__"
+    },
+    {
+      "type": "block",
+      "bid": 39,
+      "text": "### [DROPDOWN_TITLE] Para ir más lejos (opcional)"
+    },
+    {
+      "type": "block",
+      "bid": 40,
+      "text": ":icon: rocket"
+    },
+    {
+      "type": "block",
+      "bid": 41,
+      "text": "Como actividad opcional, repetimos el barrido conformacional del etano (__PROTECTED_BLOCK_37__) con el mismo nivel de teoría. La barrera de rotación calculada, próxima a 3 kcal/mol, es notablemente inferior a la del dihaloetano. La comparación directa de ambos perfiles muestra cómo el volumen del sustituyente, la polaridad del enlace C–X y la electronegatividad del halógeno desplazan los mínimos de energía y elevan la barrera rotacional."
+    },
+    {
+      "type": "placeholder",
+      "pid": "__PROTECTED_BLOCK_8__"
+    }
+  ],
+  "total_chunks": 2,
+  "total_blocks": 42
+}

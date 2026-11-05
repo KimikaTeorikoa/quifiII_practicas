@@ -1,5 +1,5 @@
-# Kimika konputazionalerako sarrera Gaussian-ekin
+# Gaussian-ekin egindako kimika konputazionalaren sarrera
 
-Praktiken bigarren zati honetan Gaussian 16 programa erabiliko dugu atomo eta molekula sinpleen propietate elektronikoak eta espektroskopikoak kalkulatzeko. GaussView interfaze grafikoari esker, geometria molekularrak eraiki, kalkuluak konfiguratu eta emaitzak bistaratu ahal izango ditugu, testu-fitxategiak eskuz editatu beharrik gabe.
+Praktiken bigarren zati honetan, Gaussian 16 programa erabiliko dugu atomo eta molekula sinpleen propietate elektronikoak eta espektroskopikoak kalkulatzeko. GaussView interfaze grafikoak molekula-geometriak eraikitzea, kalkuluak konfiguratzea eta emaitzak bistaratzea ahalbidetuko digu, eskuz testu-fitxategiak editatu beharrik gabe.
 
-Praktiketan hasi aurretik, sarrera teoriko labur batzuk daude, programak egiten duena interpretatzeko beharrezkoak diren kontzeptuak azaltzen dituztenak. Ez da beharrezkoa denak batera irakurtzea: praktika bakoitzak adierazten du zein atal diren garrantzitsuak saio bakoitzerako.
+Praktikekin hasi aurretik, sarrera teoriko labur batzuk daude, programak egiten duena interpretatzeko beharrezko kontzeptuak azaltzen dituztenak. Ez da beharrezkoa guztiak batera irakurtzea: praktika bakoitzak adierazten du zein atal diren garrantzitsuak egun horretarako.
