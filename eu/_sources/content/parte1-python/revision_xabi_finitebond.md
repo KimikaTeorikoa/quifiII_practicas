@@ -1,0 +1,10 @@
+# Berrikuspen Fitxa Bilingüea: finitebond.ipynb
+> **Norentzat**: Xabi / Irakasle arduraduna
+> **Argibidea**: Egiaztatu termino zientifikoak eta esaldien naturaltasuna.
+
+| Jatorrizkoa (Gaztelaniaz) | Proposamena (Euskaraz - Latxa) | Oharrak / Zuzenketak |
+|---|---|---|
+| # Modelo simplificado de un enlace químico Hasta ahora hemos explorado el efecto que diferentes potenciales tienen  sobre las funciones de onda y los niveles de energía asociados. Para concluir,  vamos a utilizar lo que hemos aprendido en el caso del pozo de potencial para hacer un modelo minimalista de un enlace químico. En este modelo, combinamos  dos pozos definidos en nuestra coordenada y resolvemos numéricamente la ecuación de Schrödinger.  | # Lotura kimikoaren eredu sinplifikatua Orain arte, hainbat potentzialek uhin-funtzioetan eta horiei lotutako energia-mailetan duten eragina aztertu dugu. Amaitzeko, potentzial-hobiaren kasuan ikasi duguna erabiliko dugu lotura kimikoaren eredu minimalista bat egiteko. Eredu honetan, gure koordenatuan definitutako bi hobi konbinatzen ditugu eta Schrödingerren ekuazioa zenbakiz ebazten dugu. | |
+| A continuación definimos la profundidad de nuestro pozo de potenciail y los límites en el eje $x$ para nuestro cálculo. | Ondoren, gure potentzial-hobiaren sakonera eta gure kalkulurako $x$ ardatzeko mugak definitzen ditugu. | |
+| A continuación calculamos una representación matricial de la Laplaciana usando el método de las diferencias finitas: | Ondoren, Laplaziarren matrize-adierazpen bat kalkulatzen dugu, diferentzia finituen metodoa erabiliz: | |
+| Para obtener las funciones propias (eigenvectors) y las energías (eigenvalues) usamos una función eigh de Scipy. | Funtzio propioak (eigenvectors) eta energiak (eigenvalues) lortzeko, Scipy-ren eigh funtzio bat erabiltzen dugu. | |

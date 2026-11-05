@@ -1,0 +1,695 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="eu" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python programaziorako sarrera &#8212; Kimika Fisikoa II - Ordenagailu-praktikak</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/language_switcher.js"></script>
+    <script src="../../_static/language_switcher.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte1-python/python';</script>
+    <link rel="index" title="Indizea" href="../../genindex.html" />
+    <link rel="search" title="Bilatu" href="../../search.html" />
+    <link rel="next" title="Schrödinger-en Ekuazioaren Ebazpen Numerikoa" href="finitedifferences.html" />
+    <link rel="prev" title="Ongi etorri" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="eu"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kimika Fisikoa II - Ordenagailu-praktikak</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Ongi etorri
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eredu sinpleak Python erabiliz</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python programaziorako sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitedifferences.html">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitepython.html">Schrödinger-en ekuazioa Python-ekin ebazten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitewellho.html">Aplikazioak problema konplexuagoetan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitebond.html">Lotura kimikoaren eredu sinplifikatua</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kimika Konputazionalerako Sarrera Gaussian-ekin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-gaussview.html">GaussView-ren sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-hartree-fock.html">Hartree-Fock metodoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-bases.html">Oinarri-funtzioak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-energias.html">Energia eta unitateak Gaussianen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/atomos-koopmans.html">Atomoak eta Koopmans-en teorema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-born-oppenheimer.html">Geometria molekularra eta Born-Oppenheimer hurbilketa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-mas-alla-hf.html">Hartree-Focketik haratago</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/moleculas-pes.html">Energia potentzialaren gainazala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/modos-normales.html">Bibrazio-modu normalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/espectroscopia-uv.html">UV-Vis espektroskopia zetonetan</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Galdetegia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../questionaire.html">Galdetegia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/KimikaTeorikoa/quifiII_practicas/blob/master/eu/content/parte1-python/python.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte1-python/python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/parte1-python/python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/content/parte1-python/python.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Bilatu" aria-label="Bilatu" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python programaziorako sarrera</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-sistema-eragilearekin-lan-egiten">Linux sistema eragilearekin lan egiten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminala">Terminala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-kalkulagailu-gisa">Python kalkulagailu gisa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-programak-exekutatzen">Python programak exekutatzen</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-programaziorako-sarrera">
+<h1>Python programaziorako sarrera<a class="headerlink" href="#python-programaziorako-sarrera" title="Permalink to this heading">#</a></h1>
+<p>Praktika hauen lehen zatian <a class="reference external" href="https://www.python.org/">Python</a> programazio-lengoaia
+erabiliko dugu. Horretarako, ingurune oso erraz bat baliatuko dugu: <em>Python
+Notebook-ak</em>, zeinek <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> bezalako
+lankidetza-inguruneetan linean programatzea ahalbidetzen baitute. Baina horietan
+sakondu aurretik, laburki bada ere Linux sistema eragilearen lan-ingurunea aipatu
+behar dugu, bertan erraztasunez moldatzeko gai izan behar baitugu.</p>
+<section id="linux-sistema-eragilearekin-lan-egiten">
+<h2>Linux sistema eragilearekin lan egiten<a class="headerlink" href="#linux-sistema-eragilearekin-lan-egiten" title="Permalink to this heading">#</a></h2>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/6/69/Linus_Torvalds.jpeg"><img alt="linus" class="bg-primary mb-1 align-left" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Linus_Torvalds.jpeg" style="width: 220px;" /></a>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg"><img alt="tux" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" width="220px" /></a>
+<p>Linux munduko superordenagailuen % 94k, interneteko zerbitzari gehienek,
+finantza-merkataritza gehienak eta Android erabiltzen duten mila milioi
+gailuk erabiltzen duten sistema eragilea da.
+Sistema eragile hau <a class="reference external" href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>-ek
+sortu zuen, Helsinkiko ikasle batek.
+1991n, Torvalds-ek sistema eragile baten nukleoa (<em>kernel</em>) idazteko proiektu
+bat abiarazi zuen. Produktuari <a class="reference external" href="https://en.wikipedia.org/wiki/Linux_kernel">Linux kernel</a> deitu zion.
+1992an, <a class="reference external" href="https://en.wikipedia.org/wiki/GNU_Project">GNU</a> proiektuak (Software Librearen
+Aldeko Fundazioak) Linux lizentziatu zuen lizentzia publiko orokorra (GPL)
+erabiliz; horrek mundu osoan garatzaileen komunitate bat sortzea erraztu zuen.
+90eko hamarkadaren erdialdean garatzaile ezberdinek Linux-en «banaketak» sortu zituzten.
+Linux-ek asko hartu zuen Unix sistema eragiletik, baina kode irekiko eta doako
+sistema eragile gisa sortu zen.</p>
+</section>
+<section id="terminala">
+<h2>Terminala<a class="headerlink" href="#terminala" title="Permalink to this heading">#</a></h2>
+<p>Python programazio-lengoaia erabiltzeko hainbat aukera ditugu.
+Horietako bat <strong>Linux</strong>eko <strong>terminal</strong> batean <strong>komando-lerroa</strong> erabiltzea da.
+Terminala gure ordenagailuarekin elkareragiteko aukera ematen digun programa bat da,
+eta beheko irudiaren antzeko itxura du.</p>
+<p><img alt="terminal" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Linux_command-line._Bash._GNOME_Terminal._screenshot.png" /></p>
+<p>Hainbat «shell» mota daude, baina gu ohikoenean zentratuko gara: Bash edo
+<a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bourne Again Shell</a>.
+Garrantzitsua da komando batzuk ezagutzea gure sistema eragilean nabigatzeko,
+direktorio baten edukia zerrendatzeko edo fitxategiak kopiatu zein ezabatzeko.
+Jarraian horietako batzuk erakusten ditugu:</p>
+<ul class="simple">
+<li><p>Nabigazio- eta Esplorazio-komandoak:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code>: Uneko direktorioa erakusten du (Print Working Directory).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code>: Uneko direktorioko fitxategiak eta direktorioak zerrendatzen ditu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>: Xehetasun osagarriekin zerrendatzen du (baimenak, jabea, tamaina, etab.).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">[direktorioa]</span></code>: Zehaztutako direktoriora aldatzen da.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>: Maila bat igotzen da direktorio-zuhaitzean.</p></li>
+</ul>
+</li>
+<li><p>Fitxategi eta Direktorioen Kudeaketa:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">[fitxategia]</span></code>: Fitxategi huts bat sortzen du.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">[direktorioa]</span></code>: Direktorio berri bat sortzen du.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">[iturburua]</span> <span class="pre">[helmuga]</span></code>: Fitxategiak edo direktorioak kopiatzen ditu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">[iturburua]</span> <span class="pre">[helmuga]</span></code>: Fitxategiak edo direktorioak mugitzen edo berrizendatzen ditu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">[fitxategia]</span></code>: Fitxategi bat ezabatzen du.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">[direktorioa]</span></code>: Direktorio bat ezabatzen du modu errekurtsiboan.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">locate</span> <span class="pre">[fitxategia]</span></code>: Fitxategi bat bilatzen du sisteman.</p></li>
+</ul>
+</li>
+<li><p>Fitxategiak Ikusi eta Editatu:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">[fitxategia]</span></code>: Fitxategi baten edukia erakusten du.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">more</span> <span class="pre">[fitxategia]</span></code>: Fitxategi bat orrialdeka ikusteko aukera ematen du.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-n</span> <span class="pre">[zenbakia]</span> <span class="pre">[fitxategia]</span></code>: Lehenengo n lerroak erakusten ditu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">[fitxategia]</span></code>: Fitxategi baten azken lerroak erakusten ditu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">[fitxategia]</span></code>: Testu-editore sinple bat irekitzen du.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">[fitxategia]</span></code>: Testu-editore aurreratu bat irekitzen du.</p></li>
+</ul>
+</li>
+</ul>
+<p>Komando hauek guztiak oso baliagarriak dira gure <strong>fitxategi-sisteman</strong> (<em>filesystem</em>)
+mugitu ahal izateko, direktorio eta fitxategien zuhaitz bat dena, ondorengo diagraman
+erakusten den bezalakoa:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/swcarpentry/shell-novice/refs/heads/main/episodes/fig/filesystem.svg"><img alt="filesystem" class="align-center" src="https://raw.githubusercontent.com/swcarpentry/shell-novice/refs/heads/main/episodes/fig/filesystem.svg" width="400px" /></a>
+</section>
+<section id="python-kalkulagailu-gisa">
+<h2>Python kalkulagailu gisa<a class="headerlink" href="#python-kalkulagailu-gisa" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.python.org/">Python</a> programazio-lengoaia zein <em>scripting</em>-lengoaia bat da.
+Beste programazio-lengoaia askotan ez bezala, agindu batzuk exekutatzeko nahikoa da
+Python-en interprete batean idaztea. Adibidez, Python erabil dezakegu gure
+kalkulagailua ordezkatzeko:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="python-programak-exekutatzen">
+<h2>Python programak exekutatzen<a class="headerlink" href="#python-programak-exekutatzen" title="Permalink to this heading">#</a></h2>
+<p>Python kodea exekutatzeko, aukera ugari ditugu. Lehenik eta behin, programa bat
+idatz dezakegu testu-editore batean eta terminaletik exekutatu.
+Programa hau (<code class="docutils literal notranslate"><span class="pre">kaixo_mundua.py</span></code> izenekoa) honelako sinplea izan liteke:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># Gure lehenengo Python programa</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Kaixo mundua!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Gure terminalean, ondoren honako hau idatzi beharko genuke:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>foo@bar:~$<span class="w"> </span>python<span class="w"> </span>kaixo_mundua.py
+</pre></div>
+</div>
+<p>Programa Python terminal batean ere exekuta dezakegu, <code class="docutils literal notranslate"><span class="pre">python</span></code> edo <code class="docutils literal notranslate"><span class="pre">ipython</span></code>
+tekleatuz gure terminalean.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>foo@bar:~$<span class="w"> </span>python
+Python<span class="w"> </span><span class="m">3</span>.9.16<span class="w"> </span><span class="p">|</span><span class="w"> </span>packaged<span class="w"> </span>by<span class="w"> </span>conda-forge<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>main,<span class="w"> </span>Feb<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">2023</span>,<span class="w"> </span><span class="m">21</span>:42:20<span class="o">)</span>
+<span class="o">[</span>Clang<span class="w"> </span><span class="m">14</span>.0.6<span class="w"> </span><span class="o">]</span><span class="w"> </span>on<span class="w"> </span>darwin
+Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class="w"> </span><span class="s2">&quot;copyright&quot;</span>,<span class="w"> </span><span class="s2">&quot;credits&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Azkenik, praktika hauetan egingo dugun moduan, <em>Jupyter Notebook</em> bat erabil genezake.
+Notebook-ak IPython-erako interfaze grafikoak dira, kode- eta testu-gelaxkak
+konbinatzea ahalbidetzen dutenak.</p>
+<p><img alt="jupyter" src="https://jupyter-notebook.readthedocs.io/en/latest/_images/notebook-running-code.png" /></p>
+<p>Python oso programazio-lengoaia boteretsua da: ordenagailu-programak idatzi,
+datuen analisi interaktiboa egin, web-orriak eraiki edo gure sistema eragilea
+kontrola dezakegu berarekin.
+Bere potentzial handia eta kodea ulergarria izateari ematen dion garrantzia
+kontuan hartuta, Python aproposa da programazioaren munduan hasteko.</p>
+<p><img alt="python-flying" src="https://imgs.xkcd.com/comics/python.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte1-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">aurrekoa</p>
+        <p class="prev-next-title">Ongi etorri</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="finitedifferences.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">hurrengoa</p>
+        <p class="prev-next-title">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-sistema-eragilearekin-lan-egiten">Linux sistema eragilearekin lan egiten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminala">Terminala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-kalkulagailu-gisa">Python kalkulagailu gisa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-programak-exekutatzen">Python programak exekutatzen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David De Sancho, Ion Mitxelena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

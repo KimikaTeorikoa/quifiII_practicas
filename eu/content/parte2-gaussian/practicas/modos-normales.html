@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="eu" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bibrazio-modu normalak &#8212; Kimika Fisikoa II - Ordenagailu-praktikak</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/practicas/modos-normales';</script>
+    <link rel="index" title="Indizea" href="../../../genindex.html" />
+    <link rel="search" title="Bilatu" href="../../../search.html" />
+    <link rel="next" title="UV-Vis espektroskopia zetonetan" href="espectroscopia-uv.html" />
+    <link rel="prev" title="Energia potentzialaren gainazala" href="moleculas-pes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="eu"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kimika Fisikoa II - Ordenagailu-praktikak</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Ongi etorri
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eredu sinpleak Python erabiliz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Python programaziorako sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Schrödinger-en ekuazioa Python-ekin ebazten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplikazioak problema konplexuagoetan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Lotura kimikoaren eredu sinplifikatua</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kimika Konputazionalerako Sarrera Gaussian-ekin</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-gaussview.html">GaussView-ren sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-hartree-fock.html">Hartree-Fock metodoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-bases.html">Oinarri-funtzioak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-energias.html">Energia eta unitateak Gaussianen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atomos-koopmans.html">Atomoak eta Koopmans-en teorema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-born-oppenheimer.html">Geometria molekularra eta Born-Oppenheimer hurbilketa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-mas-alla-hf.html">Hartree-Focketik haratago</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moleculas-pes.html">Energia potentzialaren gainazala</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bibrazio-modu normalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espectroscopia-uv.html">UV-Vis espektroskopia zetonetan</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Galdetegia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Galdetegia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/practicas/modos-normales.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/practicas/modos-normales.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Bilatu" aria-label="Bilatu" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bibrazio-modu normalak</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helburuak">Helburuak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kontzeptu-gakoak">Kontzeptu gakoak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molekulek-bibratzen-dute-osziladore-harmonikoaren-eredua">Molekulek bibratzen dute: osziladore harmonikoaren eredua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modu-normalak-eta-bibrazio-askatasun-mailak">Modu normalak eta bibrazio-askatasun mailak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hautapen-arauak-infragorri-espektroskopian">Hautapen-arauak infragorri espektroskopian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baldintza-operatiboa-aurretiko-geometria-optimizazioa">Baldintza operatiboa: aurretiko geometria optimizazioa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prozedura">Prozedura</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-co-eraiki-gaussview-n">1. urratsa: CO eraiki GaussView-n</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-kalkulu-konbinatua-konfiguratu-opt-freq">2. urratsa: kalkulu konbinatua konfiguratu Opt+Freq</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-gorde-eta-bidali">3. urratsa: Gorde eta bidali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-irakurri-lotura-distantzia-optimizatua">4. urratsa: Irakurri lotura-distantzia optimizatua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-atera-parametro-bibrazionalak-log-fitxategitik">5. urratsa: Atera parametro bibrazionalak .log fitxategitik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-ikusi-modu-normalaren-animazioa">6. urratsa: Ikusi modu normalaren animazioa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-errepikatu-prozedura-co2-rako">7. urratsa: Errepikatu prozedura CO₂-rako</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bibrazio-modu-normalak">
+<h1>Bibrazio-modu normalak<a class="headerlink" href="#bibrazio-modu-normalak" title="Permalink to this heading">#</a></h1>
+<section id="sarrera">
+<h2>Sarrera<a class="headerlink" href="#sarrera" title="Permalink to this heading">#</a></h2>
+<p>Infragorri erradiazioaren xurgapena eremu elektromagnetikoaren eta bibrazio nuklearren arteko elkarrekintzaren ondorioz sortzen da. Fenomeno hau modelizatzeko, Gaussianek energia potentzialaren hessiar matrizea diagonalizatzen du, eta horrek mugimendu molekularra oszilazio harmoniko independenteetan deskonposatzen du. Ondoriozko modu normalen analisiak maiztasun teorikoak ematen ditu, atomoen desplazamenduak GaussView-n bistaratzeko aukera ematen du eta infragorri espektroan duten jarduera zehazten du, simetria molekularraren arauen arabera.</p>
+</section>
+<section id="helburuak">
+<h2>Helburuak<a class="headerlink" href="#helburuak" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Molekula linealen bibrazio-askatasun maila independenteak kalkulatu (<span class="math notranslate nohighlight">\(\text{CO}\)</span> eta <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>).</p></li>
+<li><p>Molekula-geometria optimizatu eta maiztasun harmonikoak kalkulatu <code class="docutils literal notranslate"><span class="pre">Opt+Freq</span></code> metodo konbinatua erabiliz B3LYP/6-311G-rekin.</p></li>
+<li><p>Luzatze- eta toleste-moduei dagozkien atomoen desplazamenduak bistaratu eta sailkatu GaussView-ko animazioen bidez.</p></li>
+<li><p>Infragorri espektroko jarduera ebaluatu, dipolo molekularraren aldaketa (<span class="math notranslate nohighlight">\(\partial \vec{\mu}/\partial Q\)</span>) eta kalkulatutako intentsitatearen balioa (<code class="docutils literal notranslate"><span class="pre">IR</span> <span class="pre">Inten</span></code>) egiaztatuz.</p></li>
+<li><p>Maiztasun harmoniko teorikoak esperimentalki neurtutako xurgapen-bandekin alderatu, anharmonizitatearen eragina kuantifikatzeko.</p></li>
+</ol>
+</section>
+<section id="kontzeptu-gakoak">
+<h2>Kontzeptu gakoak<a class="headerlink" href="#kontzeptu-gakoak" title="Permalink to this heading">#</a></h2>
+<section id="molekulek-bibratzen-dute-osziladore-harmonikoaren-eredua">
+<h3>Molekulek bibratzen dute: osziladore harmonikoaren eredua<a class="headerlink" href="#molekulek-bibratzen-dute-osziladore-harmonikoaren-eredua" title="Permalink to this heading">#</a></h3>
+<p>Hurbilketa harmonikoan, nukleoak oreka-geometriaren inguruan oszilatzen dute, osziladore mekaniko baten antzera. Zenbat eta lotura zurrunagoa izan (indar-konstante handiagoa <span class="math notranslate nohighlight">\(k\)</span>) eta zenbat eta masa txikiagoa izan (<span class="math notranslate nohighlight">\(\mu\)</span>), orduan eta handiagoa da bibrazioaren maiztasuna:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\nu} = \frac{1}{2\pi c}\sqrt{\frac{k}{\mu}}\]</div>
+<p>Bi atomoz osatutako molekula baterako, <span class="math notranslate nohighlight">\(m_1\)</span> eta <span class="math notranslate nohighlight">\(m_2\)</span> masak dituena, masa txikitua honela definitzen da:</p>
+<div class="math notranslate nohighlight">
+\[\mu = \frac{m_1 m_2}{m_1 + m_2}\]</div>
+<p>Gaussianek indar-konstanteak kalkulatzen ditu energia nuklearren desplazamenduekiko bigarren deribatuak kalkulatuz PESaren minimoan.</p>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p>Gaussianek indar-konstanteak kalkulatzen ditu energia potentzialaren bigarren deribatuak kalkulatuz nuklearren desplazamenduekiko (hessiar matrizea) geometria optimizatuan. Hurbilketa honek Taylorren seriearen garapena termino koadratikoan mozten du eta potentzial harmoniko ideal bat suposatzen du. Lotura molekular errealak anharmonizitatea aurkezten dutenez nukleoarteko distantzia handiagoetan, kalkulatutako maiztasunak esperimentalki neurtutakoak baino handiagoak izan ohi dira.</p>
+</div>
+</section>
+<section id="modu-normalak-eta-bibrazio-askatasun-mailak">
+<h3>Modu normalak eta bibrazio-askatasun mailak<a class="headerlink" href="#modu-normalak-eta-bibrazio-askatasun-mailak" title="Permalink to this heading">#</a></h3>
+<p>Modu normal bakoitzean, molekularen nukleo guztiak fasean eta maiztasun berezi batean oszilatzen dute. Masen zentroaren translazio-askatasun mailak (3) eta errotazio-askatasun mailak (2 molekula linealen kasuan eta 3 ez-linealen kasuan) kenduta, <span class="math notranslate nohighlight">\(N\)</span> atomoentzako bibrazio oinarrizko posibleen kopurua honela ematen da:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Modos normales} = \begin{cases} 3N - 5 &amp; (\text{molécula lineal, p. ej. } \text{CO}_2: 3(3)-5 = 4) \\ 3N - 6 &amp; (\text{molécula no lineal, p. ej. } \text{H}_2\text{O}: 3(3)-6 = 3) \end{cases}\end{split}\]</div>
+<p>Hessiarren diagonalizazioak masa haztatuko koordenatuetan zuzenean ematen ditu maiztasun hauek eta modu bakoitzari lotutako nukleo-desplazamendu bektoreak.</p>
+</section>
+<section id="hautapen-arauak-infragorri-espektroskopian">
+<h3>Hautapen-arauak infragorri espektroskopian<a class="headerlink" href="#hautapen-arauak-infragorri-espektroskopian" title="Permalink to this heading">#</a></h3>
+<p>Bibrazio-modu batek infragorri erradiazioa xurgatzen du soilik nukleo-mugimenduak dipolo molekularraren aldaketa garbi bat eragiten badu orekaren inguruan:</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{\partial \vec{\mu}}{\partial Q}\right)_0 \neq \mathbf{0}\]</div>
+<p>Molekula simetrikoetan, modu batzuek inbertsio-simetria mantentzen dute bibrazioan zehar eta ez dute dipoloa aldatzen: IRn aktibo ez diren moduak dira. Muturreko kasuan, <span class="math notranslate nohighlight">\(\text{H}_2\)</span> molekulak ez du IR banda aktiborik: bere dipolo iraunkorra nulua da eta luzatze-bibrazioak ez du aldatzen, beraz, infragorri espektroa guztiz isila da. <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian, modu bakoitzaren jarduera <code class="docutils literal notranslate"><span class="pre">IR</span> <span class="pre">Inten</span></code> eremuan jasotzen da: balio nulu batek ez-aktibitatea adierazten du.</p>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p>Infragorri erradiazioaren xurgapenak bibrazio-mugimenduak dipolo molekularra aldatzea eskatzen du (<span class="math notranslate nohighlight">\(\partial \vec{\mu}/\partial Q \neq 0\)</span>). <span class="math notranslate nohighlight">\(\text{CO}_2\)</span>-ren luzatze simetrikoan, inbertsio-simetria mantentzen da eta dipoloaren aldaketa garbia nulua da, beraz, modua ez da akoplatzen eremu elektromagnetiko intzidentearekin. <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian, ez-aktibitate hau infragorri intentsitatearen balioarekin (<code class="docutils literal notranslate"><span class="pre">IR</span> <span class="pre">Inten</span></code>) 0.0000 adierazten da.</p>
+</div>
+</section>
+<section id="baldintza-operatiboa-aurretiko-geometria-optimizazioa">
+<h3>Baldintza operatiboa: aurretiko geometria optimizazioa<a class="headerlink" href="#baldintza-operatiboa-aurretiko-geometria-optimizazioa" title="Permalink to this heading">#</a></h3>
+<p>Maiztasunen kalkuluak eskatzen du hasierako geometria PESaren benetako minimoa izatea, deribatu partzialak puntu egonkor batean bakarrik baitute esanahi fisikoa. Geometria optimizatuta ez badago, hessianaren autobalio batzuk negatiboak dira eta maiztasun irudikariak agertzen dira <code class="docutils literal notranslate"><span class="pre">.log</span></code> atalean, bibrazio-interpretagarritasun baliodunik gabe.</p>
+<div class="warning admonition">
+<p class="admonition-title">Abisua</p>
+<p>Ezinbestekoa da geometria optimizatzea maiztasunak kalkulatu aurretik. Estazioarioak ez diren geometrien gaineko kalkuluak esanahi fisikorik gabeko maiztasun irudikariak sortzen ditu. Praktika honetan, <code class="docutils literal notranslate"><span class="pre">Opt+Freq</span></code> aukera konbinatua erabiltzen da bibrazio-kalkulua minimo zehatzetik abiatzen dela bermatzeko.</p>
+</div>
+</section>
+</section>
+<section id="prozedura">
+<h2>Prozedura<a class="headerlink" href="#prozedura" title="Permalink to this heading">#</a></h2>
+<section id="urratsa-co-eraiki-gaussview-n">
+<h3>1. urratsa: CO eraiki GaussView-n<a class="headerlink" href="#urratsa-co-eraiki-gaussview-n" title="Permalink to this heading">#</a></h3>
+<p>CO molekula eraiki eta <strong>Edit → Clean</strong> aplikatu hasierako geometria egoki bat lortzeko.</p>
+</section>
+<section id="urratsa-kalkulu-konbinatua-konfiguratu-opt-freq">
+<h3>2. urratsa: kalkulu konbinatua konfiguratu Opt+Freq<a class="headerlink" href="#urratsa-kalkulu-konbinatua-konfiguratu-opt-freq" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Sartu <strong>Calculate → Gaussian Calculation Setup</strong> menura.</p></li>
+<li><p><strong>Job Type</strong> fitxan, hautatu <strong>Opt+Freq</strong> aukera. Egiaztatu beheko aldean geometria optimizatzeko eta indar-konstante harmonikoak kalkulatzeko zereginak aldi berean aktibatuta geratzen direla.</p></li>
+<li><p><strong>Method</strong> fitxan, konfiguratu kalkulu-parametroak:</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eremua</p></th>
+<th class="head"><p>Balioa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lan mota</p></td>
+<td><p>Opt+Freq</p></td>
+</tr>
+<tr class="row-odd"><td><p>Metodoa</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">B3LYP</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Oinarri-multzoa</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">6-311G</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Karga</p></td>
+<td><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Spin (anizkoiztasuna)</p></td>
+<td><p><strong>1</strong></p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li><p><strong>Title</strong> fitxan, idatzi deskribapen identifikatzaile bat.</p></li>
+</ol>
+</section>
+<section id="urratsa-gorde-eta-bidali">
+<h3>3. urratsa: Gorde eta bidali<a class="headerlink" href="#urratsa-gorde-eta-bidali" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Sakatu <strong>Submit</strong>, gorde fitxategia <code class="docutils literal notranslate"><span class="pre">CO_opt_freq.gjf</span></code> gisa <code class="docutils literal notranslate"><span class="pre">__PROTECTED_BLOCK_26__ModoNormales/</span></code> karpetan eta berretsi bidalketa.</p></li>
+</ol>
+</section>
+<section id="urratsa-irakurri-lotura-distantzia-optimizatua">
+<h3>4. urratsa: Irakurri lotura-distantzia optimizatua<a class="headerlink" href="#urratsa-irakurri-lotura-distantzia-optimizatua" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>GaussView-n, ireki <code class="docutils literal notranslate"><span class="pre">.log</span></code> emaitza-fitxategia <strong>File → Open</strong> bidez eta sartu <strong>Results → Optimization</strong> atalean azken fotograman kokatzeko.</p></li>
+<li><p>Hautatu bi atomoak C-O distantzia beheko barran irakurtzeko, edo bilatu <code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">R1</span>&#160;&#160;&#160; <span class="pre">R(1,2)</span></code> <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian <strong>Ctrl + F</strong> erabiliz.</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p>B3LYP/6-311G kalkuluak CO-ren distantzia esperimentala zehaztasun onarekin erreproduzitzen du. Erreferentzia-balio kalkulatua <span class="math notranslate nohighlight">\(R(\text{C-O}) = 1.1473\)</span> Å da, balio esperimentalaren aurrean 1.128 Å; aldeak DFT funtzionalek oinarri moderatuekin duten lotura-distantzien gainestimazio sistematikoa islatzen du.</p>
+</div>
+</section>
+<section id="urratsa-atera-parametro-bibrazionalak-log-fitxategitik">
+<h3>5. urratsa: Atera parametro bibrazionalak .log fitxategitik<a class="headerlink" href="#urratsa-atera-parametro-bibrazionalak-log-fitxategitik" title="Permalink to this heading">#</a></h3>
+<p>Bilatu <code class="docutils literal notranslate"><span class="pre">Frequencies</span> <span class="pre">--</span></code> <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian <strong>Ctrl + F</strong> erabiliz. Modu bakoitzerako, idatzi:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Frequencies</span> <span class="pre">--</span></code>: bibrazio-maiztasuna <span class="math notranslate nohighlight">\(\text{cm}^{-1}\)</span>-tan.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Red.</span> <span class="pre">masses</span> <span class="pre">--</span></code>: masa murriztua uma-tan.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Frc</span> <span class="pre">consts</span>&#160; <span class="pre">--</span></code>: indar-konstantea mdyne/Å-tan.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IR</span> <span class="pre">Inten</span>&#160;&#160;&#160; <span class="pre">--</span></code>: xurgapen-intentsitatea km/mol-tan.</p></li>
+</ul>
+</section>
+<section id="urratsa-ikusi-modu-normalaren-animazioa">
+<h3>6. urratsa: Ikusi modu normalaren animazioa<a class="headerlink" href="#urratsa-ikusi-modu-normalaren-animazioa" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>GaussView-n, <code class="docutils literal notranslate"><span class="pre">CO_opt_freq_B3LYP_6311G.log</span></code> fitxategia irekita dagoela, sartu <strong>Results → Vibrations</strong> menura.</p></li>
+<li><p>Modu normalen zerrendan, hautatu kalkulatutako maiztasunari dagokion lerroa (2063 <span class="math notranslate nohighlight">\(\text{cm}^{-1}\)</span>).</p></li>
+<li><p>Aktibatu <strong>Start Animation</strong> laukitxoa nukleoen mugimendu oszilatorioa ikusteko.</p></li>
+<li><p>Markatu <strong>Show Vectors</strong> laukitxoa desplazamendu nuklearraren geziak ikusteko eta egiaztatu atomoak lotura-ardatzaren arabera mugitzen direla (luzapen-modua).</p></li>
+<li><p>Egiaztatu gezien anplitude erlatiboa: karbono-atomoa, arinagoa denez, oxigenoarena baino desplazamendu handiagoa jasaten du.</p></li>
+</ol>
+</section>
+<section id="urratsa-errepikatu-prozedura-co2-rako">
+<h3>7. urratsa: Errepikatu prozedura CO₂-rako<a class="headerlink" href="#urratsa-errepikatu-prozedura-co2-rako" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Eraiki CO₂ GaussView-n eta aplikatu <strong>Edit → Clean</strong> O=C=O geometria lineala lortzeko.</p></li>
+<li><p>Konfiguratu kalkulua parametro berberekin (B3LYP/6-311G, Opt+Freq, karga 0, anizkoiztasuna 1). Gorde <code class="docutils literal notranslate"><span class="pre">CO2_opt_freq.gjf</span></code> gisa eta bidali.</p></li>
+<li><p>Amaitutakoan, ireki <code class="docutils literal notranslate"><span class="pre">.chk</span></code> edo <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategia GaussView-n eta sartu <strong>Results → Vibrations</strong> menura.</p></li>
+<li><p>Animatu lau modu normal bakoitza eta idatzi haien maiztasunak eta intentsitateak. Erlazionatu IR jarduera bibrazioak eragindako momentu dipolarraren aldaketarekin.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/14_vibraciones_gv_modos_co2.png"><img alt="Diálogo Vibrations en GaussView con la lista de los 4 modos normales de CO2 y sus intensidades infrarrojas" src="../../../_images/14_vibraciones_gv_modos_co2.png" style="width: 85%;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/14b_vibraciones_gv_visor_co2.png"><img alt="Molécula de CO2 en el visor 3D de GaussView" src="../../../_images/14b_vibraciones_gv_visor_co2.png" style="width: 65%;" /></a>
+</figure>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografia<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+<li><p>Atkins, P.; De Paula, J. <em>Kimika Fisikoa</em>, 10. ed.; Editorial Médica Panamericana, 2018. 12. kapitulua (Bibrazio-espektroskopia).</p></li>
+<li><p>NIST Chemistry WebBook, https://webbook.nist.gov (CO eta CO₂-ren bibrazio-maiztasunen datu esperimentalak).</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Urrunago joateko (aukerakoa)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">CO-ren gas-faseko espektro infragorriak, oinarrizko bandaz gain, bibrazioaren eta errotazioaren arteko akoplamenduaren ondoriozko lerro finen egitura erakusten du. P eta R (<span class="math notranslate nohighlight">\(\Delta\tilde{\nu} \approx 2B\)</span>) adarretako ondoko lerroen arteko tartea neurtuz, molekularen inertzia-momentua zehaztu dezakegu, eta, horretatik abiatuta, C-O oreka-distantzia zehaztasun espektroskopikoarekin. Erreferentzia-datuak NIST Chemistry WebBook-en daude.</p>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/practicas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="moleculas-pes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">aurrekoa</p>
+        <p class="prev-next-title">Energia potentzialaren gainazala</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="espectroscopia-uv.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">hurrengoa</p>
+        <p class="prev-next-title">UV-Vis espektroskopia zetonetan</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helburuak">Helburuak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kontzeptu-gakoak">Kontzeptu gakoak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molekulek-bibratzen-dute-osziladore-harmonikoaren-eredua">Molekulek bibratzen dute: osziladore harmonikoaren eredua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modu-normalak-eta-bibrazio-askatasun-mailak">Modu normalak eta bibrazio-askatasun mailak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hautapen-arauak-infragorri-espektroskopian">Hautapen-arauak infragorri espektroskopian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baldintza-operatiboa-aurretiko-geometria-optimizazioa">Baldintza operatiboa: aurretiko geometria optimizazioa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prozedura">Prozedura</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-co-eraiki-gaussview-n">1. urratsa: CO eraiki GaussView-n</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-kalkulu-konbinatua-konfiguratu-opt-freq">2. urratsa: kalkulu konbinatua konfiguratu Opt+Freq</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-gorde-eta-bidali">3. urratsa: Gorde eta bidali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-irakurri-lotura-distantzia-optimizatua">4. urratsa: Irakurri lotura-distantzia optimizatua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-atera-parametro-bibrazionalak-log-fitxategitik">5. urratsa: Atera parametro bibrazionalak .log fitxategitik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-ikusi-modu-normalaren-animazioa">6. urratsa: Ikusi modu normalaren animazioa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-errepikatu-prozedura-co2-rako">7. urratsa: Errepikatu prozedura CO₂-rako</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David De Sancho, Ion Mitxelena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

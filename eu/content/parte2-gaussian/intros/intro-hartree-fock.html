@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="eu" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Hartree-Fock metodoa &#8212; Kimika Fisikoa II - Ordenagailu-praktikak</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/intros/intro-hartree-fock';</script>
+    <link rel="index" title="Indizea" href="../../../genindex.html" />
+    <link rel="search" title="Bilatu" href="../../../search.html" />
+    <link rel="next" title="Oinarri-funtzioak" href="intro-bases.html" />
+    <link rel="prev" title="GaussView-ren sarrera" href="intro-gaussview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="eu"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kimika Fisikoa II - Ordenagailu-praktikak</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Ongi etorri
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eredu sinpleak Python erabiliz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Python programaziorako sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Schrödinger-en ekuazioa Python-ekin ebazten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplikazioak problema konplexuagoetan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Lotura kimikoaren eredu sinplifikatua</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kimika Konputazionalerako Sarrera Gaussian-ekin</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro-gaussview.html">GaussView-ren sarrera</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hartree-Fock metodoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-bases.html">Oinarri-funtzioak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-energias.html">Energia eta unitateak Gaussianen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/atomos-koopmans.html">Atomoak eta Koopmans-en teorema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-born-oppenheimer.html">Geometria molekularra eta Born-Oppenheimer hurbilketa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-mas-alla-hf.html">Hartree-Focketik haratago</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/moleculas-pes.html">Energia potentzialaren gainazala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/modos-normales.html">Bibrazio-modu normalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/espectroscopia-uv.html">UV-Vis espektroskopia zetonetan</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Galdetegia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Galdetegia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/intros/intro-hartree-fock.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/intros/intro-hartree-fock.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Bilatu" aria-label="Bilatu" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hartree-Fock metodoa</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arazoa-aldaratzen-diren-elektroiak">Arazoa: aldaratzen diren elektroiak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hartree-fock-en-ideia-eremu-ertaina">Hartree-Fock-en ideia: eremu ertaina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbitalak-oinarri-funtzioen-konbinazio-lineala-lcao">Orbitalak: oinarri-funtzioen konbinazio lineala (LCAO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roothaan-hall-ekuazioak-helioaren-adibidea-bi-orbitalekin">Roothaan-Hall ekuazioak: Helioaren adibidea bi orbitalekin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scf-zikloa-iterazio-bidez-ebaztea">SCF zikloa: iterazio bidez ebaztea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-orbitala-vs-totala">Energia: orbitala vs totala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hfren-mugak-korrelazio-elektronikoa">HFren mugak: korrelazio elektronikoa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hartree-fock-metodoa">
+<h1>Hartree-Fock metodoa<a class="headerlink" href="#hartree-fock-metodoa" title="Permalink to this heading">#</a></h1>
+<section id="sarrera">
+<h2>Sarrera<a class="headerlink" href="#sarrera" title="Permalink to this heading">#</a></h2>
+<p>Schrodingerren ekuazioak ez du soluzio matematiko zehatzik onartzen elektroi bat baino gehiagoko sistemetarako, elektroien arteko aldarapen elektrostatikoak sortzen duen akoplamendua dela eta. Hartree-Fock metodoak arazo hau eremu ertainaren hurbilketaren bidez jorratzen du, banakako elkarrekintza instantaneoak espazioan batez besteko potentzial batekin ordezkatuz. Sinplifikazio honek Gaussian bezalako programei aukera ematen die orbital molekularrak eta energia elektroniko osoa zehazteko, prozedura iteratibo auto-konsistente baten bidez.</p>
+</section>
+<section id="arazoa-aldaratzen-diren-elektroiak">
+<h2>Arazoa: aldaratzen diren elektroiak<a class="headerlink" href="#arazoa-aldaratzen-diren-elektroiak" title="Permalink to this heading">#</a></h2>
+<p>Bi elektroi dituen atomo batean, hala nola helioan (<span class="math notranslate nohighlight">\(Z=2\)</span>), operadore hamiltondar zehatzak elektroi bakoitzaren energia zinetikoa, nukleoarekiko erakarpena eta bien arteko aldarapen elektrostatikoa barne hartzen ditu:</p>
+<div class="math notranslate nohighlight">
+\[\hat{H} = \hat{h}(1) + \hat{h}(2) + \frac{1}{r_{12}}\]</div>
+<p><span class="math notranslate nohighlight">\(\hat{h}(i)\)</span> operadore monoelektronikoak <span class="math notranslate nohighlight">\(i\)</span> elektroiaren mugimendua deskribatzen du, nukleoaren potentzial erakargarriaren pean, beste elektroia kontuan hartu gabe:</p>
+<div class="math notranslate nohighlight">
+\[\hat{h}(i) = -\frac{1}{2}\nabla_i^2 - \frac{2}{r_i}\]</div>
+<p><span class="math notranslate nohighlight">\(1/r_{12}\)</span> aldarapen coulombiarreko terminoa ez balego, ekuazioa aldagaiak bananduz ebatziko litzateke, bi atomo hidrogenoideen produktu gisa. Hala ere, <span class="math notranslate nohighlight">\(1/r_{12}\)</span> bi elektroien posizio instantaneoak akoplatzen ditu: baten banaketa espaziala zehazteak bestearena une bakoitzean ezagutzea eskatzen du. Zailtasun hau edozein sistema polielektronikotara hedatzen da eta egitura elektronikoaren erronka nagusia da.</p>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p><span class="math notranslate nohighlight">\(1/r_{12}\)</span> terminoak elektroien koordenatu espazialak akoplatzen ditu eta Schrodingerren ekuazioa analitikoki ebaztea eragozten du bi elektroi edo gehiago dituen edozein atomo edo molekulatarako.</p>
+</div>
+</section>
+<section id="hartree-fock-en-ideia-eremu-ertaina">
+<h2>Hartree-Fock-en ideia: eremu ertaina<a class="headerlink" href="#hartree-fock-en-ideia-eremu-ertaina" title="Permalink to this heading">#</a></h2>
+<p>Ekuazioak desakoplatzeko, Hartree-Fock-en hurbilketak elektroi bikoteen arteko aldarapen instantaneoak hodei elektroniko osoak sortutako batez besteko potentzial elektrostatiko batekin ordezkatzen ditu. Elektroi bakoitza, orduan, nukleoak eta gainerako elektroien batez besteko dentsitateak sortutako eremuan mugitzen da.</p>
+<p>Sinplifikazio honen pean, elektroi bakoitzak balio propioen ekuazio monoelektroniko bat betetzen du, Fock operadoreak gobernatuta <span class="math notranslate nohighlight">\(\hat{f}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f} \phi_i = \varepsilon_i \phi_i\]</div>
+<p>Helio atomoaren kasuan, non bi elektroiek espazio-orbital bera okupatzen duten <span class="math notranslate nohighlight">\(\phi_1\)</span> kontrako spinekin, Fock operadoreak forma hau hartzen du:</p>
+<div class="math notranslate nohighlight">
+\[\hat{f} = \hat{h} + \hat{J}_1\]</div>
+<p>non <span class="math notranslate nohighlight">\(\hat{J}_1\)</span> beste elektroiaren hodeiak sortutako batez besteko potentzial elektrostatikoa adierazten duen:</p>
+<div class="math notranslate nohighlight">
+\[\hat{J}_1 \phi_1(\mathbf{r}_1) = \left[\int \frac{|\phi_1(\mathbf{r}_2)|^2}{r_{12}} d\mathbf{r}_2\right] \phi_1(\mathbf{r}_1)\]</div>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p>Elektroi arteko aldarapena batezbestekoa egitean, elektroien posizioen arteko korrelazio instantaneoak baztertzen dira (korrelazio elektronikoa). Teorema bariazionalaren arabera, Hartree-Fock mugan kalkulatutako energia sistemaren energia zehatz ez-erlatibistaren goiko muga bat da beti.</p>
+</div>
+</section>
+<section id="orbitalak-oinarri-funtzioen-konbinazio-lineala-lcao">
+<h2>Orbitalak: oinarri-funtzioen konbinazio lineala (LCAO)<a class="headerlink" href="#orbitalak-oinarri-funtzioen-konbinazio-lineala-lcao" title="Permalink to this heading">#</a></h2>
+<p>Elektroi bakoitzaren egoera espaziala <span class="math notranslate nohighlight">\(\phi_i(\mathbf{r})\)</span> orbital baten bidez deskribatzen da. Helioaren oinarrizko egoeran, bi elektroiek <span class="math notranslate nohighlight">\(\phi_1\)</span> orbitala okupatzen dute kontrako spinekin (<span class="math notranslate nohighlight">\(\alpha\)</span> eta <span class="math notranslate nohighlight">\(\beta\)</span>).</p>
+<p><span class="math notranslate nohighlight">\(\phi_i(\mathbf{r})\)</span>ren forma matematiko zehatza a priori ezagutzen ez denez, aldez aurretik definitutako <span class="math notranslate nohighlight">\(K\)</span> oinarri-funtzioen konbinazio lineal gisa hedatzen da (<span class="math notranslate nohighlight">\(\{\chi_\mu\}\)</span>) (normalean nukleoetan zentratutako funtzio gausiarrak):</p>
+<div class="math notranslate nohighlight">
+\[\phi_i(\mathbf{r}) = \sum_{\mu=1}^{K} C_{\mu i} \chi_\mu(\mathbf{r})\]</div>
+<p>Arazo kuantikoa ebaztea sistemaren energia osoa minimizatzen duten <span class="math notranslate nohighlight">\(C_{\mu i}\)</span> koefiziente numerikoak zehaztea da. Irudiak helio atomoaren 1s orbitalaren dentsitate elektronikoa erakusten du.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/orbital_1s_he.svg"><img alt="Representación de la densidad electrónica del orbital 1s del átomo de helio mediante isosuperficies concéntricas" src="../../../_images/orbital_1s_he.svg" width="50%" /></a>
+</figure>
+</section>
+<section id="roothaan-hall-ekuazioak-helioaren-adibidea-bi-orbitalekin">
+<h2>Roothaan-Hall ekuazioak: Helioaren adibidea bi orbitalekin<a class="headerlink" href="#roothaan-hall-ekuazioak-helioaren-adibidea-bi-orbitalekin" title="Permalink to this heading">#</a></h2>
+<p>LCAO hedapena Fock ekuazioan ordezkatu eta oinarri-funtzio bakoitzera proiektatzean, ekuazio integrodiferentzialak matrize-balio propioen problema orokor batean eraldatzen dira:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F} \mathbf{C} = \mathbf{S} \mathbf{C} \boldsymbol{\varepsilon}\]</div>
+<p>Demagun helio atomoa bi s motako funtzioz (<span class="math notranslate nohighlight">\(\chi_1\)</span> eta <span class="math notranslate nohighlight">\(\chi_2\)</span>) osatutako oinarri batekin deskribatuta dagoela, adibidez, bi funtzio gausiar desberdin exponenterekin, hodei elektronikoa erradialki hedatu edo uzkurtu ahal izateko. Espazio-orbital bakoitza honela adierazten da:</p>
+<div class="math notranslate nohighlight">
+\[\phi_1 = C_{11}\chi_1 + C_{21}\chi_2 \quad (\text{orbital ocupado, HOMO})\]</div>
+<div class="math notranslate nohighlight">
+\[\phi_2 = C_{12}\chi_1 + C_{22}\chi_2 \quad (\text{orbital virtual, LUMO})\]</div>
+<p>2x2 dimentsioko sistema matrizeala forma esplizitu hau hartzen du:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} F_{11} &amp; F_{12} \\ F_{21} &amp; F_{22} \end{pmatrix} \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix} = \begin{pmatrix} S_{11} &amp; S_{12} \\ S_{21} &amp; S_{22} \end{pmatrix} \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix} \begin{pmatrix} \varepsilon_1 &amp; 0 \\ 0 &amp; \varepsilon_2 \end{pmatrix}\end{split}\]</div>
+<p>Matrize bakoitzak esanahi fisiko zuzena du:</p>
+<p><strong>Gainjartze-matrizea <span class="math notranslate nohighlight">\(\mathbf{S}\)</span>:</strong> Bi oinarri-funtzioen arteko ez-ortogonalitate espaziala deskribatzen du:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{S} = \begin{pmatrix} 1 &amp; S_{12} \\ S_{12} &amp; 1 \end{pmatrix}\end{split}\]</div>
+<p>Funtzioak normalizatuta daudenez, diagonal-elementuek 1 balio dute (<span class="math notranslate nohighlight">\(S_{11} = S_{22} = 1\)</span>). Gurutzatutako terminoak bi funtzioen arteko gainjartze-integrala adierazten du:</p>
+<div class="math notranslate nohighlight">
+\[S_{12} = \int \chi_1^*(\mathbf{r}) \chi_2(\mathbf{r}) \, d\mathbf{r}\]</div>
+<p><strong>Fock matrizea <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>:</strong> Oinarri-funtzio bakoitzean elektroi baten energia eraginkorra (<span class="math notranslate nohighlight">\(F_{11}, F_{22}\)</span>) eta elkarren arteko akoplamendua (<span class="math notranslate nohighlight">\(F_{12} = F_{21}\)</span>) ditu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{F} = \begin{pmatrix} F_{11} &amp; F_{12} \\ F_{21} &amp; F_{22} \end{pmatrix}\end{split}\]</div>
+<p>Bere elementuak Fock operadorea oinarrian integratuz lortzen dira:</p>
+<div class="math notranslate nohighlight">
+\[F_{\mu\nu} = \int \chi_\mu^*(\mathbf{r}) \hat{f} \chi_\nu(\mathbf{r}) \, d\mathbf{r}\]</div>
+<p><strong>Koefiziente-matrizea <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>:</strong> Zutabe bakoitzak espazio-orbital bat definitzen du:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{C} = \begin{pmatrix} C_{11} &amp; C_{12} \\ C_{21} &amp; C_{22} \end{pmatrix}\end{split}\]</div>
+<p>Lehen zutabeak <span class="math notranslate nohighlight">\(\begin{pmatrix} C_{11} \\ C_{21} \end{pmatrix}\)</span> <span class="math notranslate nohighlight">\(\chi_1\)</span> eta <span class="math notranslate nohighlight">\(\chi_2\)</span> okupatutako orbitalean <span class="math notranslate nohighlight">\(\phi_1\)</span> (HOMO) dituen pisuak ditu. Bigarren zutabeak <span class="math notranslate nohighlight">\(\begin{pmatrix} C_{12} \\ C_{22} \end{pmatrix}\)</span> orbital birtualeko <span class="math notranslate nohighlight">\(\phi_2\)</span> (LUMO) koefizienteak ditu.</p>
+<p><strong>Orbitalen energia-matrizea <span class="math notranslate nohighlight">\(\boldsymbol{\varepsilon}\)</span>:</strong> Matrize diagonal bat da, auto-balio energetikoak dituena:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boldsymbol{\varepsilon} = \begin{pmatrix} \varepsilon_1 &amp; 0 \\ 0 &amp; \varepsilon_2 \end{pmatrix}\end{split}\]</div>
+<p>non <span class="math notranslate nohighlight">\(\varepsilon_1 = \varepsilon_{\text{HOMO}}\)</span> orbital lotuaren energia den (negatiboa) eta <span class="math notranslate nohighlight">\(\varepsilon_2 = \varepsilon_{\text{LUMO}}\)</span> lehen orbital hutsaren energia den.</p>
+<div class="admonition note">
+<p class="admonition-title">Oharra</p>
+<p>[OHARRA] Helioaren kasua sistema errealen aurrean: <strong>PROTECTED_BLOCK_72</strong> dimentsioko matrizeak</p>
+<p>Komeni da ez nahastea 2×2 eredu hau kalkulu molekularren benetako dimentsioarekin:</p>
+<ol class="arabic simple">
+<li><p><strong>Zergatik 2×2 adibide honetan?</strong> Nahita aukeratu dugulako oinarri minimo bat <span class="math notranslate nohighlight">\(K = 2\)</span> funtzioena bi elektroi dituen atomo baterako. Bi oinarri-funtzio daudenez, zehazki 2 orbital lortzen dira: orbital okupatu bat (bi elektroi parekatuekin) eta orbital birtual huts bat.</p></li>
+<li><p><strong>Dimentsioak sistema errealetan:</strong> Edozein kalkulu molekular estandarretan, oinarri-funtzioen kopurua <span class="math notranslate nohighlight">\(K\)</span> askoz handiagoa da (<span class="math notranslate nohighlight">\(K = 30, 80, 300\dots\)</span>). <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{S}\)</span> eta <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> matrizeak beti dira <strong><span class="math notranslate nohighlight">\(K \times K\)</span></strong> dimentsioko matrize karratuak.</p></li>
+<li><p><strong>Orbital okupatu eta birtualen banaketa:</strong> Geruza itxiko sistema neutro batean, <span class="math notranslate nohighlight">\(N\)</span> elektroi eta <span class="math notranslate nohighlight">\(K\)</span> oinarri-funtziorekin, metodoak beti sortzen ditu <span class="math notranslate nohighlight">\(K\)</span> orbital espazial. <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> matrizearen lehen <span class="math notranslate nohighlight">\(N/2\)</span> zutabeek soilik dagozkien orbital okupatuei (HOMO <span class="math notranslate nohighlight">\(\phi_{N/2}\)</span> arte); gainerako <span class="math notranslate nohighlight">\(K - N/2\)</span> zutabeek orbital birtual hutsei dagozkie (LUMO <span class="math notranslate nohighlight">\(\phi_{N/2 + 1}\)</span> hasita).</p></li>
+</ol>
+</div>
+</section>
+<section id="scf-zikloa-iterazio-bidez-ebaztea">
+<h2>SCF zikloa: iterazio bidez ebaztea<a class="headerlink" href="#scf-zikloa-iterazio-bidez-ebaztea" title="Permalink to this heading">#</a></h2>
+<p>Mendekotasun zirkular bat dago: Fock matrizea <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> kalkulatzeko, dentsitate elektronikoa ezagutu behar da (koefizienteak <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>), baina <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> lortzeko, sistema <span class="math notranslate nohighlight">\(\mathbf{F}\mathbf{C} = \mathbf{S}\mathbf{C}\boldsymbol{\varepsilon}\)</span> diagonalizatu behar da.</p>
+<p>Zirkulartasun hau iteratiboki ebazten da eremu auto-konsistentearen metodoaren bidez (SCF, <em>Self-Consistent Field</em>):</p>
+<ol class="arabic simple">
+<li><p>Koefizienteen hasierako estimazio bat sortzen da (<em>guess</em> <span class="math notranslate nohighlight">\(\mathbf{C}^{(0)}\)</span>).</p></li>
+<li><p>Koefiziente horiekin Fock matrizea <span class="math notranslate nohighlight">\(\mathbf{F}^{(k)}\)</span> eraikitzen da.</p></li>
+<li><p>Sistema <span class="math notranslate nohighlight">\(\mathbf{F}^{(k)}\mathbf{C} = \mathbf{S}\mathbf{C}\boldsymbol{\varepsilon}\)</span> diagonalizatzen da koefiziente berriak <span class="math notranslate nohighlight">\(\mathbf{C}^{(k+1)}\)</span> eta energia berriak <span class="math notranslate nohighlight">\(\boldsymbol{\varepsilon}^{(k+1)}\)</span> lortzeko.</p></li>
+<li><p>Egiaztatzen da energia- eta dentsitate-aldaketa aurreko urratsean finkatutako tolerantzia baino txikiagoa den (adibidez <span class="math notranslate nohighlight">\(10^{-6}\)</span> Ha). Konbergitu ez bada, 2. urratsera itzultzen da.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/ciclo_scf.svg"><img alt="Diagrama de flujo del ciclo SCF desde la estimación inicial hasta la convergencia" src="../../../_images/ciclo_scf.svg" width="55%" /></a>
+</figure>
+</section>
+<section id="energia-orbitala-vs-totala">
+<h2>Energia: orbitala vs totala<a class="headerlink" href="#energia-orbitala-vs-totala" title="Permalink to this heading">#</a></h2>
+<p>Fock matrizea diagonalizatzean lortutako autobalioak <span class="math notranslate nohighlight">\(\varepsilon_i\)</span> orbital bakoitzaren energiei dagozkie, ez sistemaren energia totalari.</p>
+<p>Helioaren bi elektroientzat <span class="math notranslate nohighlight">\(\phi_1\)</span> orbitalean, orbitalaren energiak elektroi bakarreko energia <span class="math notranslate nohighlight">\(h_{11}\)</span> eta beste elektroiarekiko aldarapen elektrostatikoa <span class="math notranslate nohighlight">\(J_{11}\)</span> barne hartzen ditu:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon_1 = h_{11} + J_{11}\]</div>
+<p>Bi elektroien orbital-energiak zuzenean batuko bagenitu:</p>
+<div class="math notranslate nohighlight">
+\[2\varepsilon_1 = 2h_{11} + 2J_{11}\]</div>
+<p>elektroi arteko aldarapena <span class="math notranslate nohighlight">\(J_{11}\)</span> bi aldiz kontatzen arituko ginateke. Beraz, benetako energia elektronikoak interakzio bikoiztu hori kentzen du:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{elec}} = 2\varepsilon_1 - J_{11} = 2h_{11} + J_{11}\]</div>
+<p>Nukleo anitzeko molekula batean, energia totalak, gainera, nukleo arteko aldarapen coulombiarra <span class="math notranslate nohighlight">\(V_{NN}\)</span> gehitzen du:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{total}} = E_{\text{elec}} + V_{NN}\]</div>
+<p>Balio hori zehazki Gaussian-ek <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code> lerroan inprimatzen du <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian.</p>
+<div class="warning admonition">
+<p class="admonition-title">Abisua</p>
+<p>Gaussian-en log-aren <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code> lerroan agertzen den energia sistemaren energia totala da <span class="math notranslate nohighlight">\(E_{\text{total}}\)</span>, ez orbital indibidual baten energia <span class="math notranslate nohighlight">\(\varepsilon_i\)</span>.</p>
+</div>
+</section>
+<section id="hfren-mugak-korrelazio-elektronikoa">
+<h2>HFren mugak: korrelazio elektronikoa<a class="headerlink" href="#hfren-mugak-korrelazio-elektronikoa" title="Permalink to this heading">#</a></h2>
+<p>Hartree-Fock metodoak interakzio instantaneoak batez besteko eremu batekin ordezten dituenez, elektroi bat puntu batean aurkitzeko probabilitatea bestearen posizio instantaneotik independentea dela suposatzen du. Hartree-Fock-en energia oinarri infinituarekin (<span class="math notranslate nohighlight">\(E_{\text{HF}}^{\text{limit}}\)</span>) eta energia zehatz ez-erlatibistaren (<span class="math notranslate nohighlight">\(E_{\text{exacta}}\)</span>) arteko aldeak korrelazio-energia definitzen du:</p>
+<div class="math notranslate nohighlight">
+\[E_{\text{corr}} = E_{\text{exacta}} - E_{\text{HF}}^{\text{limit}}\]</div>
+<p><span class="math notranslate nohighlight">\(E_{\text{HF}}^{\text{limit}} \ge E_{\text{exacta}}\)</span> printzipio bariazionalagatik, korrelazio-energia beti negatiboa da (<span class="math notranslate nohighlight">\(E_{\text{corr}} \le 0\)</span>). Nahiz eta energia totalaren % 1 baino gutxiago izan ohi den, erabakigarria da lotura-energiak, erreakzio-hesiak eta trantsizio espektroskopikoak zehaztasunez kalkulatzeko.</p>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografia<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+<li><p>Szabo, A.; Ostlund, N. S. <em>Modern Quantum Chemistry</em>. Dover, 1996.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Uhin-funtzio antisimetrikoa eta Slater-en determinantea<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Pauliren bazterketa-printzipioak eskatzen du uhin-funtzio elektronikoa antisimetrikoa izatea bi elektroi edozeinen trukearen aurrean:</p>
+<div class="math notranslate nohighlight">
+\[\Psi(\mathbf{x}_1, \mathbf{x}_2) = -\Psi(\mathbf{x}_2, \mathbf{x}_1)\]</div>
+<p class="sd-card-text">Kontrako spinak dituzten bi elektroirentzat <span class="math notranslate nohighlight">\(\phi_1\)</span> orbital espazialean, uhin-funtzioa Slater-en determinante gisa adierazten da:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Psi(\mathbf{x}_1, \mathbf{x}_2) = \frac{1}{\sqrt{2}} \begin{vmatrix} \phi_1(\mathbf{r}_1)\alpha(1) &amp; \phi_1(\mathbf{r}_1)\beta(1) \\ \phi_1(\mathbf{r}_2)\alpha(2) &amp; \phi_1(\mathbf{r}_2)\beta(2) \end{vmatrix}\end{split}\]</div>
+<p class="sd-card-text">Bi elektroien koordenatuak trukatzea determinantearen bi errenkada permutatzearen baliokidea da, eta horrek automatikoki zeinu negatiboa ematen dio eta Pauliren printzipioa bermatzen du.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Korrelazio-energia eta HF osteko metodoak<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Hartree-Fock-en uhin-funtziotik abiatuta, hainbat metodo garatu dira korrelazio elektronikoa berreskuratzeko eta batez besteko eremuaren hurbilketa gainditzeko. Bigarren ordenako Møller-Plesset-en perturbazioaren teoriak (MP2) zuzenketa dinamikoak gehitzen dizkio energiari, kostu konputazional moderatuarekin. Bestalde, <em>Coupled Cluster</em> bezalako metodoek, kitzikapen sinple eta bikoitzekin (CCSD), zehaztasun askoz handiagoa eskaintzen dute, kalkulu-ahalegin handiagoaren truke. Eskema hauek xehetasunez aztertzen dira ondorengo atal teoriko batean (Hartree-Focketik haratago).</p>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/intros"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro-gaussview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">aurrekoa</p>
+        <p class="prev-next-title">GaussView-ren sarrera</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intro-bases.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">hurrengoa</p>
+        <p class="prev-next-title">Oinarri-funtzioak</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arazoa-aldaratzen-diren-elektroiak">Arazoa: aldaratzen diren elektroiak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hartree-fock-en-ideia-eremu-ertaina">Hartree-Fock-en ideia: eremu ertaina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbitalak-oinarri-funtzioen-konbinazio-lineala-lcao">Orbitalak: oinarri-funtzioen konbinazio lineala (LCAO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roothaan-hall-ekuazioak-helioaren-adibidea-bi-orbitalekin">Roothaan-Hall ekuazioak: Helioaren adibidea bi orbitalekin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scf-zikloa-iterazio-bidez-ebaztea">SCF zikloa: iterazio bidez ebaztea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-orbitala-vs-totala">Energia: orbitala vs totala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hfren-mugak-korrelazio-elektronikoa">HFren mugak: korrelazio elektronikoa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David De Sancho, Ion Mitxelena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

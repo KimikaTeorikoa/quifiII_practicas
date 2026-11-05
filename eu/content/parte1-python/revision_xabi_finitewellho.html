@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="eu" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Berrikuspen Fitxa Bilingüea: finitewellho.ipynb &#8212; Kimika Fisikoa II - Ordenagailu-praktikak</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/language_switcher.js"></script>
+    <script src="../../_static/language_switcher.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte1-python/revision_xabi_finitewellho';</script>
+    <link rel="index" title="Indizea" href="../../genindex.html" />
+    <link rel="search" title="Bilatu" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="eu"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kimika Fisikoa II - Ordenagailu-praktikak</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Ongi etorri
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eredu sinpleak Python erabiliz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python programaziorako sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitedifferences.html">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitepython.html">Schrödinger-en ekuazioa Python-ekin ebazten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitewellho.html">Aplikazioak problema konplexuagoetan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finitebond.html">Lotura kimikoaren eredu sinplifikatua</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kimika Konputazionalerako Sarrera Gaussian-ekin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-gaussview.html">GaussView-ren sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-hartree-fock.html">Hartree-Fock metodoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-bases.html">Oinarri-funtzioak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-energias.html">Energia eta unitateak Gaussianen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/atomos-koopmans.html">Atomoak eta Koopmans-en teorema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-born-oppenheimer.html">Geometria molekularra eta Born-Oppenheimer hurbilketa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/intros/intro-mas-alla-hf.html">Hartree-Focketik haratago</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/moleculas-pes.html">Energia potentzialaren gainazala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/modos-normales.html">Bibrazio-modu normalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parte2-gaussian/practicas/espectroscopia-uv.html">UV-Vis espektroskopia zetonetan</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Galdetegia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../questionaire.html">Galdetegia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte1-python/revision_xabi_finitewellho.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/parte1-python/revision_xabi_finitewellho.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Bilatu" aria-label="Bilatu" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Berrikuspen Fitxa Bilingüea: finitewellho.ipynb</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="berrikuspen-fitxa-bilinguea-finitewellho-ipynb">
+<h1>Berrikuspen Fitxa Bilingüea: finitewellho.ipynb<a class="headerlink" href="#berrikuspen-fitxa-bilinguea-finitewellho-ipynb" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p><strong>Norentzat</strong>: Xabi / Irakasle arduraduna
+<strong>Argibidea</strong>: Egiaztatu termino zientifikoak eta esaldien naturaltasuna.</p>
+</div></blockquote>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jatorrizkoa (Gaztelaniaz)</p></th>
+<th class="head"><p>Proposamena (Euskaraz - Latxa)</p></th>
+<th class="head"><p>Oharrak / Zuzenketak</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p># Aplicaciones a problemas más complejos Una vez hemos usado el método de las diferencias finitas a un problema sencillo como es la partícula en una caja, podemos abordar problemas más complejos.  ## Pozo de potencial Nuestra segunda práctica se va a centrar en otro de los sistemas modelo   que podemos resolver analíticamente, el pozo potencial. En este sistema la partícula objeto de estudio se encuentra sometida a un potencial <span class="math notranslate nohighlight">\(V(x)=-D\)</span> si y sólo si <span class="math notranslate nohighlight">\(-A&lt;x&lt;A\)</span>. Empezamos como en el caso anterior con una serie de definiciones.</p></td>
+<td><p># Aplikazioak problema konplexuagoetan Behin diferentzia finituen metodoa kutxa bateko partikula bezalako problema erraz batean erabili dugunean, problema konplexuagoak landu ditzakegu.  ## Potentzial-hobia Gure bigarren praktika analitikoki ebatz dezakegun beste sistema eredu batean oinarrituko da, potentzial-hobian. Sistema honetan, aztergai den partikula potentzial baten eraginpean dago <span class="math notranslate nohighlight">\(V(x)=-D\)</span> baldin eta soilik baldin <span class="math notranslate nohighlight">\(-A&lt;x&lt;A\)</span>. Aurreko kasuan bezala, definizio batzuekin hasiko gara.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>A continuación definimos la profundidad de nuestro pozo de potenciail y los límites en el eje <span class="math notranslate nohighlight">\(x\)</span> para nuestro cálculo.</p></td>
+<td><p>Ondoren, gure potentzial-hobiaren sakonera eta gure kalkulurako <span class="math notranslate nohighlight">\(x\)</span> ardatzeko mugak definituko ditugu.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>En el pozo potencial, dado que <span class="math notranslate nohighlight">\(V\)</span> es distinto de cero, el hamiltoniano tiene términos tanto de energía cinética como de energía potencial,  \begin{equation} \hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(x) , \hspace{0.5cm} V(x)= \begin{Bmatrix}  -D &amp; si\hspace{0.5cm}-A&lt;x&lt;A \ 0 &amp; \textrm{en cualquier otro caso} \end{Bmatrix} \end{equation}  En primer lugar calculamos el potencial</p></td>
+<td><p>Potentzial-hobian, <span class="math notranslate nohighlight">\(V\)</span> zero ez denez, hamiltondarra energia zinetiko eta potentzialaren terminoek osatzen dute,  \begin{equation} \hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(x) , \hspace{0.5cm} V(x)= \begin{Bmatrix}  -D &amp; \text{baldin eta }-A&lt;x&lt;A \ 0 &amp; \text{beste edozein kasutan} \end{Bmatrix} \end{equation}  Lehenik, potentziala kalkulatuko dugu</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>A continuación calculamos una representación matricial de la Laplaciana usando el método de las diferencias finitas:</p></td>
+<td><p>Ondoren, Laplaziarren matrize-adierazpen bat kalkulatuko dugu diferentzia finituen metodoa erabiliz:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Para obtener las funciones propias (eigenvectors) y las energías (eigenvalues) usamos una función eigh de Scipy.</p></td>
+<td><p>Funtzio propioak (eigenvectors) eta energiak (eigenvalues) lortzeko, Scipy-ren eigh funtzio bat erabiliko dugu.</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>## Oscilador armónico El siguiente sistema modelo con el que vamos a trabajar es el oscilador armónico. En este sistema la partícula objeto de estudio se encuentra sometida a un potencial  $<span class="math notranslate nohighlight">\( V=1/2kx^2 \)</span>$ Partimos una vez más definiendo una serie de constantes</p></td>
+<td><p>## Osziladore harmonikoa Landuko dugun hurrengo sistema eredua osziladore harmonikoa da. Sistema honetan, aztergai den partikula potentzial baten eraginpean dago  $<span class="math notranslate nohighlight">\( V=1/2kx^2 \)</span>$ Berriro ere, konstante batzuk definituz hasiko gara</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>A continuación definimos la constante de muelle de nuestro oscilador armómico y los límites en el eje</p></td>
+<td><p>Ondoren, gure osziladore harmonikoaren malguki-konstantea eta ardatzeko mugak definituko ditugu</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ahora podemos construir el potencial y sumárselo a la Laplaciana</p></td>
+<td><p>Orain, potentziala eraiki eta Laplaziarrari gehitu diezaiokegu</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>De nuevo recurrimos a Scipy para calcular valores y vectores propios</p></td>
+<td><p>Berriz ere, Scipy-ra joko dugu balio eta bektore propioak kalkulatzeko</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte1-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David De Sancho, Ion Mitxelena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

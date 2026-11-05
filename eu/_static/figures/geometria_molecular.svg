@@ -1,0 +1,65 @@
+<svg viewBox="0 0 500 290" xmlns="http://www.w3.org/2000/svg" role="img"
+     font-family="'Helvetica Neue', Arial, sans-serif">
+  <title>Parámetros geométricos moleculares: distancia, ángulo y diedro</title>
+  <desc>Cadena de cuatro átomos A–B–C–D con anotaciones de los tres parámetros geométricos: distancia de enlace d(A–B), ángulo de enlace θ(ABC) y ángulo diedro φ(ABCD).</desc>
+
+  <defs>
+    <marker id="dArr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 Z" fill="#2471a3"/>
+    </marker>
+    <marker id="dArrR" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto-start-reverse">
+      <path d="M6,0 L6,6 L0,3 Z" fill="#2471a3"/>
+    </marker>
+    <marker id="tArr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 Z" fill="#29a745"/>
+    </marker>
+    <marker id="phiArr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 Z" fill="#e07b39"/>
+    </marker>
+  </defs>
+
+  <!-- Bonds -->
+  <line x1="68"  y1="200" x2="182" y2="110" stroke="#4a4a4a" stroke-width="2"/>
+  <line x1="182" y1="110" x2="318" y2="132" stroke="#4a4a4a" stroke-width="2"/>
+  <line x1="318" y1="132" x2="428" y2="52"  stroke="#4a4a4a" stroke-width="2"/>
+
+  <!-- Átomos -->
+  <circle cx="68"  cy="200" r="16" fill="#e9ecef" stroke="#6c757d" stroke-width="1.5"/>
+  <text   x="68"  y="204"  text-anchor="middle" font-size="12" fill="#1a1a1a" font-weight="bold">A</text>
+  <circle cx="182" cy="110" r="16" fill="#e9ecef" stroke="#6c757d" stroke-width="1.5"/>
+  <text   x="182" y="114"  text-anchor="middle" font-size="12" fill="#1a1a1a" font-weight="bold">B</text>
+  <circle cx="318" cy="132" r="16" fill="#e9ecef" stroke="#6c757d" stroke-width="1.5"/>
+  <text   x="318" y="136"  text-anchor="middle" font-size="12" fill="#1a1a1a" font-weight="bold">C</text>
+  <circle cx="428" cy="52"  r="16" fill="#e9ecef" stroke="#6c757d" stroke-width="1.5"/>
+  <text   x="428" y="56"   text-anchor="middle" font-size="12" fill="#1a1a1a" font-weight="bold">D</text>
+
+  <!-- d(A-B): flecha doble paralela al enlace, offset perpendicular inferior -->
+  <line x1="85.5" y1="214.2" x2="191.7" y2="130.4"
+        stroke="#2471a3" stroke-width="1.3"
+        marker-start="url(#dArrR)" marker-end="url(#dArr)"/>
+  <text x="130" y="196" font-size="10.5" fill="#2471a3" font-style="italic">d</text>
+  <text x="140" y="196" font-size="10"   fill="#2471a3">(A−B)</text>
+
+  <!-- θ(ABC): arco en B entre enlaces BA y BC -->
+  <!-- BA: ángulo=atan2(90,-114)≈141.7°; BC: ángulo=atan2(22,136)≈9.2° -->
+  <!-- Arco r=30 de 9.2° a 141.7°, sweep=0 (antihorario en SVG) -->
+  <path d="M 211.6,114.8 A 30,30 0 0,0 158.5,128.7"
+        fill="none" stroke="#29a745" stroke-width="1.4"/>
+  <text x="162" y="152" font-size="10.5" fill="#29a745" font-style="italic">θ</text>
+  <text x="171" y="152" font-size="10"   fill="#29a745">(A−B−C)</text>
+
+  <!-- φ(ABCD): arco elíptico alrededor del enlace B–C (centro en punto medio (250,121)) -->
+  <!-- Parte trasera discontinua -->
+  <path d="M 261,102 A 22,22 0 0,1 261,140"
+        fill="none" stroke="#e07b39" stroke-width="1.3" stroke-dasharray="3 3"/>
+  <!-- Parte frontal con punta de flecha -->
+  <path d="M 261,140 A 22,22 0 1,1 261,102"
+        fill="none" stroke="#e07b39" stroke-width="1.3"
+        marker-end="url(#phiArr)"/>
+  <text x="228" y="175" font-size="10.5" fill="#e07b39" font-style="italic">φ</text>
+  <text x="237" y="175" font-size="10"   fill="#e07b39">(A−B−C−D)</text>
+
+  <!-- Unidades -->
+  <text x="490" y="250" text-anchor="end" font-size="9" fill="#6c757d">d : Å</text>
+  <text x="490" y="262" text-anchor="end" font-size="9" fill="#6c757d">θ, φ : grados</text>
+</svg>

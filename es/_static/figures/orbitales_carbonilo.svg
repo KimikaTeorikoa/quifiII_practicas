@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" role="img"
+     font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">
+  <title>Diagrama de niveles orbitales del grupo carbonilo C=O</title>
+  <desc>Niveles de energía orbital del carbonilo: σ, π, n (par solitario del O, HOMO), π* (LUMO) y σ*. Flechas de transición n→π* (prohibida, ~280–300 nm) y π→π* (permitida, menor de 250 nm).</desc>
+
+  <defs>
+    <marker id="axArr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 Z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="npiArr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="ppiArr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 Z" fill="#2471a3"/>
+    </marker>
+  </defs>
+
+  <line x1="44" y1="420" x2="44" y2="28" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#axArr)"/>
+  <text x="40" y="24" font-size="13" font-style="italic" fill="#1a1a1a" text-anchor="middle">E</text>
+
+  <line x1="70" y1="80"  x2="205" y2="80"  stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="211" y="84"  font-size="10.5" fill="#adb5bd">σ* (C−O)</text>
+
+  <line x1="70" y1="148" x2="205" y2="148" stroke="#e07b39" stroke-width="2" stroke-dasharray="7 3"/>
+  <text x="211" y="152" font-size="10.5" fill="#e07b39" font-weight="bold">π* (C=O)</text>
+  <text x="211" y="164" font-size="9"    fill="#e07b39">LUMO</text>
+
+  <line x1="70" y1="235" x2="205" y2="235" stroke="#29a745" stroke-width="2.5"/>
+  <text x="211" y="239" font-size="10.5" fill="#29a745" font-weight="bold">n (O)</text>
+  <text x="211" y="251" font-size="9"    fill="#29a745">HOMO  (par solitario)</text>
+  <text x="125" y="229" text-anchor="middle" font-size="13" fill="#29a745">↑</text>
+  <text x="141" y="229" text-anchor="middle" font-size="13" fill="#29a745">↓</text>
+
+  <line x1="70" y1="308" x2="205" y2="308" stroke="#2471a3" stroke-width="2"/>
+  <text x="211" y="312" font-size="10.5" fill="#2471a3">π (C=O)</text>
+  <text x="125" y="302" text-anchor="middle" font-size="13" fill="#2471a3">↑</text>
+  <text x="141" y="302" text-anchor="middle" font-size="13" fill="#2471a3">↓</text>
+
+  <line x1="70" y1="385" x2="205" y2="385" stroke="#888" stroke-width="1.5"/>
+  <text x="211" y="389" font-size="10.5" fill="#888">σ (C−O)</text>
+  <text x="125" y="379" text-anchor="middle" font-size="13" fill="#888">↑</text>
+  <text x="141" y="379" text-anchor="middle" font-size="13" fill="#888">↓</text>
+
+  <line x1="54" y1="235" x2="60" y2="235" stroke="#6c757d" stroke-width="1.2"/>
+  <line x1="57" y1="235" x2="57" y2="148" stroke="#6c757d" stroke-width="1.2"/>
+  <line x1="54" y1="148" x2="60" y2="148" stroke="#6c757d" stroke-width="1.2"/>
+  <text x="42" y="196" text-anchor="middle" font-size="8" fill="#6c757d" transform="rotate(-90,42,196)">gap HOMO-LUMO</text>
+
+  <line x1="118" y1="232" x2="118" y2="151"
+        stroke="#c0392b" stroke-width="1.5" marker-end="url(#npiArr)"/>
+  <text x="110" y="200" text-anchor="end" font-size="10" fill="#c0392b" font-weight="bold">n → π*</text>
+  <text x="110" y="212" text-anchor="end" font-size="9"  fill="#c0392b">~280–300 nm</text>
+  <text x="110" y="223" text-anchor="end" font-size="8.5" fill="#c0392b" font-style="italic">(prohibida)</text>
+
+  <line x1="155" y1="305" x2="155" y2="151"
+        stroke="#2471a3" stroke-width="2.5" marker-end="url(#ppiArr)"/>
+  <text x="163" y="240" font-size="10" fill="#2471a3" font-weight="bold">π → π*</text>
+  <text x="163" y="252" font-size="9"  fill="#2471a3">&lt; 250 nm</text>
+  <text x="163" y="263" font-size="8.5" fill="#2471a3" font-style="italic">(permitida)</text>
+</svg>

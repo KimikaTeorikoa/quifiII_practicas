@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="eu" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>GaussView-ren sarrera &#8212; Kimika Fisikoa II - Ordenagailu-praktikak</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/intros/intro-gaussview';</script>
+    <link rel="index" title="Indizea" href="../../../genindex.html" />
+    <link rel="search" title="Bilatu" href="../../../search.html" />
+    <link rel="next" title="Hartree-Fock metodoa" href="intro-hartree-fock.html" />
+    <link rel="prev" title="Lotura kimikoaren eredu sinplifikatua" href="../../parte1-python/finitebond.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="eu"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kimika Fisikoa II - Ordenagailu-praktikak</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Ongi etorri
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eredu sinpleak Python erabiliz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Python programaziorako sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Schrödinger-en ekuazioa Python-ekin ebazten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplikazioak problema konplexuagoetan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Lotura kimikoaren eredu sinplifikatua</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kimika Konputazionalerako Sarrera Gaussian-ekin</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">GaussView-ren sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-hartree-fock.html">Hartree-Fock metodoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-bases.html">Oinarri-funtzioak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-energias.html">Energia eta unitateak Gaussianen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/atomos-koopmans.html">Atomoak eta Koopmans-en teorema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-born-oppenheimer.html">Geometria molekularra eta Born-Oppenheimer hurbilketa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-mas-alla-hf.html">Hartree-Focketik haratago</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/moleculas-pes.html">Energia potentzialaren gainazala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/modos-normales.html">Bibrazio-modu normalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicas/espectroscopia-uv.html">UV-Vis espektroskopia zetonetan</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Galdetegia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Galdetegia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/intros/intro-gaussview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/intros/intro-gaussview.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Bilatu" aria-label="Bilatu" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GaussView-ren sarrera</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussview-irekitzea">GaussView irekitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfazea-zer-ikusten-duzu-irekitzean">Interfazea: zer ikusten duzu irekitzean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molekula-bat-eraikitzea">Molekula bat eraikitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#akatsak-zuzentzea-eta-desegitea">Akatsak zuzentzea eta desegitea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidrogenoak-automatikoki-gehitzea">Hidrogenoak automatikoki gehitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molekularen-inguruan-mugitzea">Molekularen inguruan mugitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometria-ikustea-eta-doitzea">Geometria ikustea eta doitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitxategi-bat-ireki">Fitxategi bat ireki</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulu-bat-konfiguratu">Kalkulu bat konfiguratu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulua-abiarazi">Kalkulua abiarazi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulua-ondo-amaitu-dela-egiaztatu">Kalkulua ondo amaitu dela egiaztatu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emaitzak-ikusi">Emaitzak ikusi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lana-gorde">Lana gorde</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gaussview-ren-sarrera">
+<h1>GaussView-ren sarrera<a class="headerlink" href="#gaussview-ren-sarrera" title="Permalink to this heading">#</a></h1>
+<section id="sarrera">
+<h2>Sarrera<a class="headerlink" href="#sarrera" title="Permalink to this heading">#</a></h2>
+<p>Gaussian-en kalkulu bat egiteko, lehenik eta behin, programari esan behar zaio molekula nola dagoen espazioan kokatuta. GaussView zeregin hori errazten duen interfaze grafikoa da: molekula-eredua eraikitzen dugu, kalkulua konfiguratzen dugu eta emaitzak bistaratzen ditugu eskuz fitxategiak editatu beharrik gabe.</p>
+</section>
+<section id="gaussview-irekitzea">
+<h2>GaussView irekitzea<a class="headerlink" href="#gaussview-irekitzea" title="Permalink to this heading">#</a></h2>
+<p>GaussView ikasgelako ordenagailuaren mahaigainetik edo sistemaren aplikazioen menutik irekitzen da.</p>
+</section>
+<section id="interfazea-zer-ikusten-duzu-irekitzean">
+<h2>Interfazea: zer ikusten duzu irekitzean<a class="headerlink" href="#interfazea-zer-ikusten-duzu-irekitzean" title="Permalink to this heading">#</a></h2>
+<p>GaussView-ren interfazeak lau lan-eremu ditu. Goiko aldean menu-barra dago, konfigurazio- eta bistaratze-tresnekin. Azpian tresna-barra dago, sarbide azkarreko ikonoekin. Erdiko eremua hiru dimentsioko bistaratze-leihoa da, non molekula eraiki, mugitu eta biratzen dugun saguarekin. Beheko panel batek denbora errealean hautatutako atomoen, atomoen arteko distantzien eta kalkuluaren egoerari buruzko informazioa erakusten du.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/01_gv_interfaz_principal.png"><img alt="Interfaz principal de GaussView" src="../../../_images/01_gv_interfaz_principal.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="molekula-bat-eraikitzea">
+<h2>Molekula bat eraikitzea<a class="headerlink" href="#molekula-bat-eraikitzea" title="Permalink to this heading">#</a></h2>
+<p>GaussView-n molekula bat eraikitzeko, tresna-barrako atomoaren ikonoa sakatzen dugu (<strong>Builder palette</strong>, <strong>View → Builder</strong>-tik ere eskuragarri) zatiak eta elementu kimikoak dituen panela irekitzeko. Nahi dugun elementua hautatzen dugu eta ezkerreko botoiarekin klik egiten dugu erdiko leihoan atomoa kokatzeko. Atomo gehigarriak lehendik dauden atomoetatik gertu gehitzean, programak loturak automatikoki sortzen ditu erradio kobalente estandarretatik abiatuta. Urarentzat (<span class="math notranslate nohighlight">\(\text{H}_2\text{O}\)</span>), oxigeno-atomo zentral bat jartzea eta bi hidrogeno angelu-posizioetan lotzea nahikoa da. Distantzia zehatzak Gaussian-en geometria optimizatzean doituko dira; beraz, hasierako marrazkiak konektibitate kimikoa soilik irudikatu behar du.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/02_gv_construccion_h2o_fragmentos.png"><img alt="Construcción de la molécula de agua y paleta de fragmentos" src="../../../_images/02_gv_construccion_h2o_fragmentos.png" style="width: 85%;" /></a>
+</figure>
+<div class="warning admonition">
+<p class="admonition-title">Abisua</p>
+<p>Ez egin klik bikoitza ustekabean atzeko planoan: atomoak bikoizten ditu abisatu gabe.</p>
+</div>
+</section>
+<section id="akatsak-zuzentzea-eta-desegitea">
+<h2>Akatsak zuzentzea eta desegitea<a class="headerlink" href="#akatsak-zuzentzea-eta-desegitea" title="Permalink to this heading">#</a></h2>
+<p>Azken ekintza desegiteko, <strong>Edit → Undo</strong> edo Ctrl+Z erabiltzen dugu. Atomo edo zati zehatz bat ezabatu nahi badugu, saguarekin hautatzen dugu eta Supr sakatzen dugu. Leihoa guztiz garbitzeko, <strong>Edit → Select All</strong> erabil dezakegu Supr sakatuta, edo lan-eremu berri bat ireki dezakegu <strong>File → New</strong>-tik.</p>
+</section>
+<section id="hidrogenoak-automatikoki-gehitzea">
+<h2>Hidrogenoak automatikoki gehitzea<a class="headerlink" href="#hidrogenoak-automatikoki-gehitzea" title="Permalink to this heading">#</a></h2>
+<p><strong>Edit → Add Hydrogens</strong> aukerak marraztutako eskeletoa asetzeko beharrezkoak diren hidrogeno inplizituak automatikoki osatzen ditu. Emaaitzazko egitura beti berrikustea komeni da, esleipen automatikoa nahi den protonazio-egoerarekin bat ez etortzea gerta baitaiteke.</p>
+</section>
+<section id="molekularen-inguruan-mugitzea">
+<h2>Molekularen inguruan mugitzea<a class="headerlink" href="#molekularen-inguruan-mugitzea" title="Permalink to this heading">#</a></h2>
+<p>Egitura ikuskatzeko, bista biratzen dugu ezkerreko botoia sakatuta mantenduz eta kurtsorea mugituz. Zooma saguaren gurpilarekin doitzen dugu. Molekula bistatik galtzen badugu, tresna-barrako zentratze-botoia erabiltzen dugu. Hiru mugimendu horiekin, geometria erraz orientatzen dugu modelatzean eta emaitzak berrikustean.</p>
+</section>
+<section id="geometria-ikustea-eta-doitzea">
+<h2>Geometria ikustea eta doitzea<a class="headerlink" href="#geometria-ikustea-eta-doitzea" title="Permalink to this heading">#</a></h2>
+<p>Lotura-distantzia bat kontsultatzeko edo doitzeko, lotura-tresna (<strong>Modify Bond</strong>, bi esfera lotuta dituen ikonoa tresna-barran) edo kontsulta-tresna (<strong>Inquire</strong>, <strong><code class="docutils literal notranslate"><span class="pre">?</span></code></strong> galdera-ikurra duen ikonoa) hautatzen dugu eta 3D ikuspegian bi atomoetan klik egiten dugu. Agertzen den leihoak uneko distantzia angstrometan erakusten du eta konektibitatea egiaztatzeko aukera ematen du kalkulua abiarazi aurretik.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/03_gv_medicion_distancia.png"><img alt="Medición de distancia de enlace en GaussView" src="../../../_images/03_gv_medicion_distancia.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="fitxategi-bat-ireki">
+<h2>Fitxategi bat ireki<a class="headerlink" href="#fitxategi-bat-ireki" title="Permalink to this heading">#</a></h2>
+<p>Fitxategi bat irekitzeko, <strong>File → Open</strong> menura jo behar dugu. Formatu ohikoenak <code class="docutils literal notranslate"><span class="pre">.gjf</span></code> (sarrerako fitxategiak) eta <code class="docutils literal notranslate"><span class="pre">.log</span></code> (Gaussianek sortutako irteerak) dira. Horri esker, saioen artean lanarekin jarraitu edo erreferentziazko egiturak aztertu ditzakegu.</p>
+</section>
+<section id="kalkulu-bat-konfiguratu">
+<h2>Kalkulu bat konfiguratu<a class="headerlink" href="#kalkulu-bat-konfiguratu" title="Permalink to this heading">#</a></h2>
+<p>Konfigurazio-panela <strong>Calculate → Gaussian Calculation Setup</strong> tik irekitzen dugu. <strong>Job Type</strong> fitxan, ataza hautatzen dugu: energia puntuala (<em>Energy</em>), geometriaren optimizazioa (<em>Optimization</em>) edo maiztasunen kalkulua (<em>Frequency</em>). <strong>Method</strong> fitxan, teoria-maila definitu dezakegu: metodo mekanokuantikoa (Hartree-Fock, B3LYP…) eta praktika bakoitzean adierazitako funtzio-basea. <strong>Title Card</strong> atalean, deskribapen labur bat sartzen dugu karaktere berezirik gabe. Azkenik, <strong>Charge &amp; Multiplicity</strong> atalean, karga garbia eta spin-anizkoiztasuna ezartzen ditugu.</p>
+<div class="warning admonition">
+<p class="admonition-title">Abisua</p>
+<p>Karga eta anizkoiztasuna beti berrikusi Submit sakatu aurretik. Akats batek kalkulu osoa baliogabetzen du.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/04_gv_setup_method_hf.png"><img alt="Configuración del cálculo en Gaussian Calculation Setup" src="../../../_images/04_gv_setup_method_hf.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="kalkulua-abiarazi">
+<h2>Kalkulua abiarazi<a class="headerlink" href="#kalkulua-abiarazi" title="Permalink to this heading">#</a></h2>
+<p>Parametroak konfiguratu ondoren, kalkulua lokalean abiarazten dugu <strong>Submit</strong> sakatuz. GaussViewek jarraipen-leiho bat irekitzen du denbora errealeko irteera-lerroekin. Iraupena segundo batzuetatik (molekula sinpleak eta gutxieneko baseak) minutu batzuetara (sistema handiagoak edo elektroi-korrelazioko metodoak) alda daiteke. Ez dago ezer gehiago egin beharrik kalkulua amaitu arte.</p>
+</section>
+<section id="kalkulua-ondo-amaitu-dela-egiaztatu">
+<h2>Kalkulua ondo amaitu dela egiaztatu<a class="headerlink" href="#kalkulua-ondo-amaitu-dela-egiaztatu" title="Permalink to this heading">#</a></h2>
+<p>Kalkulua amaitzean, irteera-fitxategiko azken lerroak <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">termination</span> <span class="pre">of</span> <span class="pre">Gaussian</span> <span class="pre">16</span></code> eduki behar du. Horren ordez <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">termination</span></code> agertzen bada, kalkulua ez da behar bezala amaitu. Arrazoi ohikoenak hasierako geometria desegokia, konfigurazio bateraezina edo esleitutako memoria-muga gainditzea dira.</p>
+<div class="danger admonition">
+<p class="admonition-title">Adi</p>
+<p>Emaitzarik idatzi aurretik, beti egiaztatu kalkulua behar bezala amaitu dela, lerro hau bilatuz: <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">termination</span> <span class="pre">of</span> <span class="pre">Gaussian</span> <span class="pre">16</span></code></p>
+</div>
+</section>
+<section id="emaitzak-ikusi">
+<h2>Emaitzak ikusi<a class="headerlink" href="#emaitzak-ikusi" title="Permalink to this heading">#</a></h2>
+<p>Emaitzak bi modutan kontsultatzen ditugu. Geometria optimizatua, dentsitate elektronikoa edo orbital molekularrak ikusteko, GaussViewen <strong>Results</strong> menua erabiltzen dugu. <strong>Results → Summary</strong> aukerak laburpen-koadro bat aurkezten du, metodoa, basea, kalkulatutako energia elektroniko osoa eta momentu dipolarra bezalako magnitudeekin. Balio numerikoak xehetasun guztiekin ateratzeko, zuzenagoa da <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategia testu-editore batekin irekitzea eta dagozkion lerroak bilatzea. Praktika bakoitzaren gidoian adierazten dugu zein termino bilatu eta nola idatzi balio bakoitza.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/05_gv_summary_resultados.png"><img alt="Resumen del cálculo en la ventana Gaussian Calculation Summary de GaussView" src="../../../_images/05_gv_summary_resultados.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="lana-gorde">
+<h2>Lana gorde<a class="headerlink" href="#lana-gorde" title="Permalink to this heading">#</a></h2>
+<p>Sarrerako fitxategia <strong>File → Save</strong> tik gordetzen dugu <code class="docutils literal notranslate"><span class="pre">.gjf</span></code> luzapenarekin. Komeni da nomenklatura argia erabiltzea, molekula eta teoria-maila identifikatzeko (adibidez, <code class="docutils literal notranslate"><span class="pre">h2o_b3lyp_6311g.gjf</span></code>), horrek saioan zehar kalkuluak antolatzea errazten baitu.</p>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografia<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Koloreak eta itxura pertsonalizatu<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">:icon: gear</p>
+<p class="sd-card-text">Atzeko kolorea <strong>View → Display Format</strong> menutik aldatzen dugu. <strong>General</strong> fitxan, <strong>Background Color</strong> ondoan dagoen laukian klik egiten dugu eta kolore zuria hautatzen dugu. Leiho horretan bertan, atomo-esferen tamaina pertsonaliza dezakegu <strong>Atom Size</strong> atalean, eta haien kolore-eskema <strong>Atom Colors</strong> atalean. Doikuntza horiek ez dituzte kalkuluak aldatzen, baina atzeko plano zuria erabiltzeak praktiken memoriarentzako kaptura garbiak lortzea errazten du.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/06_gv_display_background_blanco.png"><img alt="Personalización del color de fondo blanco en Display Format" src="../../../_images/06_gv_display_background_blanco.png" style="width: 85%;" /></a>
+</figure>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/intros"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../parte1-python/finitebond.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">aurrekoa</p>
+        <p class="prev-next-title">Lotura kimikoaren eredu sinplifikatua</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intro-hartree-fock.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">hurrengoa</p>
+        <p class="prev-next-title">Hartree-Fock metodoa</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussview-irekitzea">GaussView irekitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfazea-zer-ikusten-duzu-irekitzean">Interfazea: zer ikusten duzu irekitzean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molekula-bat-eraikitzea">Molekula bat eraikitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#akatsak-zuzentzea-eta-desegitea">Akatsak zuzentzea eta desegitea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hidrogenoak-automatikoki-gehitzea">Hidrogenoak automatikoki gehitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molekularen-inguruan-mugitzea">Molekularen inguruan mugitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometria-ikustea-eta-doitzea">Geometria ikustea eta doitzea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitxategi-bat-ireki">Fitxategi bat ireki</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulu-bat-konfiguratu">Kalkulu bat konfiguratu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulua-abiarazi">Kalkulua abiarazi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kalkulua-ondo-amaitu-dela-egiaztatu">Kalkulua ondo amaitu dela egiaztatu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emaitzak-ikusi">Emaitzak ikusi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lana-gorde">Lana gorde</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David De Sancho, Ion Mitxelena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

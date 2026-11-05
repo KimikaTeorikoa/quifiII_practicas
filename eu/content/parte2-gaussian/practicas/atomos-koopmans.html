@@ -1,0 +1,891 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="eu" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Atomoak eta Koopmans-en teorema &#8212; Kimika Fisikoa II - Ordenagailu-praktikak</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/language_switcher.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/parte2-gaussian/practicas/atomos-koopmans';</script>
+    <link rel="index" title="Indizea" href="../../../genindex.html" />
+    <link rel="search" title="Bilatu" href="../../../search.html" />
+    <link rel="next" title="Geometria molekularra eta Born-Oppenheimer hurbilketa" href="../intros/intro-born-oppenheimer.html" />
+    <link rel="prev" title="Energia eta unitateak Gaussianen" href="../intros/intro-energias.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="eu"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Kimika Fisikoa II - Ordenagailu-praktikak</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Ongi etorri
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eredu sinpleak Python erabiliz</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/python.html">Python programaziorako sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitedifferences.html">Schrödinger-en Ekuazioaren Ebazpen Numerikoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitepython.html">Schrödinger-en ekuazioa Python-ekin ebazten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitewellho.html">Aplikazioak problema konplexuagoetan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parte1-python/finitebond.html">Lotura kimikoaren eredu sinplifikatua</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kimika Konputazionalerako Sarrera Gaussian-ekin</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-gaussview.html">GaussView-ren sarrera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-hartree-fock.html">Hartree-Fock metodoa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-bases.html">Oinarri-funtzioak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-energias.html">Energia eta unitateak Gaussianen</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Atomoak eta Koopmans-en teorema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-born-oppenheimer.html">Geometria molekularra eta Born-Oppenheimer hurbilketa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intros/intro-mas-alla-hf.html">Hartree-Focketik haratago</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moleculas-pes.html">Energia potentzialaren gainazala</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modos-normales.html">Bibrazio-modu normalak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="espectroscopia-uv.html">UV-Vis espektroskopia zetonetan</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Galdetegia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../questionaire.html">Galdetegia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KimikaTeorikoa/quifiII_practicas/issues/new?title=Issue%20on%20page%20%2Fcontent/parte2-gaussian/practicas/atomos-koopmans.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/parte2-gaussian/practicas/atomos-koopmans.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Bilatu" aria-label="Bilatu" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Atomoak eta Koopmans-en teorema</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helburuak">Helburuak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kontzeptu-gakoak">Kontzeptu gakoak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zergatik-dira-energiak-negatiboak">Zergatik dira energiak negatiboak?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homo-eta-lumo">HOMO eta LUMO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionizazio-energia-eta-koopmans-en-teorema">Ionizazio-energia eta Koopmans-en teorema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-anizkoiztasuna">Spin-anizkoiztasuna</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prozedura">Prozedura</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-gaussview-ireki-eta-atomoa-marraztu">1. urratsa: GaussView ireki eta atomoa marraztu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-atomo-neutroaren-kalkulua-konfiguratu">2. urratsa: Atomo neutroaren kalkulua konfiguratu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-kalkulua-abiarazi-eta-fitxategia-gorde">3. urratsa: Kalkulua abiarazi eta fitxategia gorde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-amaiera-zuzena-egiaztatu">4. urratsa: Amaiera zuzena egiaztatu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-irakurri-guztizko-energia-e-n">5. urratsa: Irakurri guztizko energia E(N)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-irakurri-homo-orbitalaren-energia-eta-bistaratu-orbitala">6. urratsa: Irakurri HOMO orbitalaren energia eta bistaratu orbitala</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-konfiguratu-eta-kalkulatu-a-katioia">7. urratsa: Konfiguratu eta kalkulatu A⁺ katioia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-kalkulatu-ionizazio-energiak">8. urratsa: Kalkulatu ionizazio-energiak</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emaitzak-eta-analisia">Emaitzak eta analisia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="atomoak-eta-koopmans-en-teorema">
+<h1>Atomoak eta Koopmans-en teorema<a class="headerlink" href="#atomoak-eta-koopmans-en-teorema" title="Permalink to this heading">#</a></h1>
+<section id="sarrera">
+<h2>Sarrera<a class="headerlink" href="#sarrera" title="Permalink to this heading">#</a></h2>
+<p>Ionizazio-energiak nukleoak kanpoko elektroiei eragiten dien erakarpen-indarra neurtzen du, eta elementuen erreaktibitate kimikoa eta aldizkako joerak zehazten ditu. Hartree-Fock kalkuluak Gaussian programan eginez, bi hurbilketa osagarri aplikatzen dira propietate hori ebaluatzeko: atomo neutroaren eta bere katioiaren arteko energia osoaren diferentzia zuzena (<span class="math notranslate nohighlight">\(\Delta E\)</span>), eta energia handieneko orbital okupatutik abiatuta egindako estimazioa, Koopmans-en teorema erabiliz (<span class="math notranslate nohighlight">\(-\varepsilon_{\text{HOMO}}\)</span>).</p>
+</section>
+<section id="helburuak">
+<h2>Helburuak<a class="headerlink" href="#helburuak" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Atomo neutroen eta katioi monokargatuen energia elektroniko osoa kalkulatu Hartree-Fock metodoa erabiliz Gaussian 16, Revision A.03 programan.</p></li>
+<li><p>Ionizazio-energia kalkulatu diferentzia autoegokituaren bidez (<span class="math notranslate nohighlight">\(\Delta E\)</span>) eta orbitalen estimazioaren bidez, Koopmans-en teorema erabiliz (<span class="math notranslate nohighlight">\(-\varepsilon_{\text{HOMO}}\)</span>).</p></li>
+<li><p>Kalkulatutako ionizazio-energiak balio esperimentalekin alderatu lehen eta bigarren periodoko elementuetan.</p></li>
+<li><p>Energia handieneko orbital okupatuen (HOMO) banaketa espaziala eta simetria bistaratu GaussView programan.</p></li>
+</ol>
+</section>
+<section id="kontzeptu-gakoak">
+<h2>Kontzeptu gakoak<a class="headerlink" href="#kontzeptu-gakoak" title="Permalink to this heading">#</a></h2>
+<section id="zergatik-dira-energiak-negatiboak">
+<h3>Zergatik dira energiak negatiboak?<a class="headerlink" href="#zergatik-dira-energiak-negatiboak" title="Permalink to this heading">#</a></h3>
+<p>Atomo baten energia elektronikoa erreferentzia-egoera batekiko neurtzen da, non nukleoa eta elektroi guztiak pausagunean eta infinituan bananduta dauden, elkarrekintzarik gabe. Atomo lotua erreferentzia-egoera hori baino egonkorragoa denez, bere energia beti negatiboa da. <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code> lerroan agertzen den balioa zenbat eta negatiboagoa izan, orduan eta egonkorragoa da sistema. Energia osoan emaitza positibo batek kalkuluaren konfigurazioan akats bat dagoela adieraziko luke.</p>
+</section>
+<section id="homo-eta-lumo">
+<h3>HOMO eta LUMO<a class="headerlink" href="#homo-eta-lumo" title="Permalink to this heading">#</a></h3>
+<p>Orbital molekularrak energia txikienetik handienera ordenatzen dira. Energia handieneko orbital okupatuari HOMO (ingelesez <em>Highest Occupied Molecular Orbital</em>) deritzo, eta elektroiak ateratzeko errazenak ditu. Lehen orbital hutsa, LUMO (<em>Lowest Unoccupied Molecular Orbital</em>), elektroiak jasotzeko prest dagoen orbitala da. HOMO mailaren eta hutsune-mailaren arteko aldea sistemak elektroi bat ateratzeko behar den energiaren lehen estimazioa da.</p>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p>Gaussian irteeran <code class="docutils literal notranslate"><span class="pre">pop=full</span></code>, HOMOaren energia azken lerroko <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">occ.</span> <span class="pre">eigenvalues</span></code> azken balio numerikoari dagokio. Hurrengo lerroko lehen balioa <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">virt.</span> <span class="pre">eigenvalues</span></code> LUMOari dagokio.</p>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/homo_lumo_ionizacion.svg"><img alt="Diagrama de niveles de orbitales con HOMO y LUMO señalados y flecha de energía de ionización" src="../../../_images/homo_lumo_ionizacion.svg" width="60%" /></a>
+</figure>
+</section>
+<section id="ionizazio-energia-eta-koopmans-en-teorema">
+<h3>Ionizazio-energia eta Koopmans-en teorema<a class="headerlink" href="#ionizazio-energia-eta-koopmans-en-teorema" title="Permalink to this heading">#</a></h3>
+<p>Atomo neutro baten <span class="math notranslate nohighlight">\(A\)</span> ionizazio-energia gas-fasean elektroi bat ateratzeko eta <span class="math notranslate nohighlight">\(A^+\)</span> katioia sortzeko behar den gutxieneko energia da, <span class="math notranslate nohighlight">\(A \rightarrow A^+ + e^-\)</span> prozesuaren arabera. Praktika honetan bi modu independentetan kalkulatzen da. Lehenengoa katioiaren eta atomo neutroaren arteko SCF energien diferentzia zuzena da, eta horretarako bi kalkulu bereizi behar dira. Bigarrena Koopmans-en teoreman oinarritzen da, eta balio hori atomo neutroaren HOMO orbitalaren energiatik abiatuta estimatzeko aukera ematen du, katioia kalkulatu beharrik gabe.</p>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\Delta E} = E(A^+) - E(A)\]</div>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\text{Koopmans}} \approx -\varepsilon_{\text{HOMO}}\]</div>
+<div class="note admonition">
+<p class="admonition-title">Oharra</p>
+<p>Koopmans-en teoremak orbital izoztuen hurbilketa hartzen du, <span class="math notranslate nohighlight">\(A^+\)</span> katioiaren orbitalak <span class="math notranslate nohighlight">\(A\)</span> atomo neutroaren berdinak direla suposatuz. Ionizazio-prozesu fisiko batean, elektroi baten galerak elektroi arteko aldarapena murrizten du eta geratzen den hodei elektronikoa nukleorantz uzkurtzea eragiten du (orbitalen erlaxazioa). Koopmans-en hurbilketak erlaxazio egonkortzaile hori eta korrelazio-energiaren desberdintasunak alde batera uzten dituenez, <span class="math notranslate nohighlight">\(-\varepsilon_{\text{HOMO}}\)</span> balioa diferentzia autoegokituan kalkulatutako balioarekin alderatuta <span class="math notranslate nohighlight">\(\text{IE}_{\Delta E}\)</span> desberdina da pixka bat.</p>
+</div>
+</section>
+<section id="spin-anizkoiztasuna">
+<h3>Spin-anizkoiztasuna<a class="headerlink" href="#spin-anizkoiztasuna" title="Permalink to this heading">#</a></h3>
+<p>Spin-anizkoiztasunak sistemarako eskuragarri dauden spin-egoera kuantiko kopurua adierazten du eta <span class="math notranslate nohighlight">\(2S+1\)</span> gisa kalkulatzen da, non <span class="math notranslate nohighlight">\(S\)</span> elektroi desparekatuen spinen batura den. Elektroi guztiak parekatuta dituen atomo batek <span class="math notranslate nohighlight">\(S=0\)</span> eta anizkoiztasun 1 (singletea) ditu. Elektroi desparekatu batek <span class="math notranslate nohighlight">\(S=1/2\)</span> eta anizkoiztasun 2 (dobletea) ematen ditu. Anizkoiztasun-balio oker bat esleitzeak Gaussianek orbitalen artean elektroiak gaizki banatzea eragiten du <span class="math notranslate nohighlight">\(\alpha\)</span> eta <span class="math notranslate nohighlight">\(\beta\)</span>, eta horrek emaitza baliogabetzen du edo SCF zikloaren konbergentzia eragozten du.</p>
+<div class="warning admonition">
+<p class="admonition-title">Abisua</p>
+<p>Egiaztatu beti spin-anizkoiztasunaren balioa kalkulua bidali aurretik: balio oker batek emaitzak baliogabetzen ditu edo SCF konbergentzia eragozten du.</p>
+</div>
+</section>
+</section>
+<section id="prozedura">
+<h2>Prozedura<a class="headerlink" href="#prozedura" title="Permalink to this heading">#</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Adi</p>
+<p>Kalkulu bakoitzaren ondorengo nahitaezko egiaztapena: ireki <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategia testu-editorearekin eta egiaztatu azken lerro zehatza dagoela:
+<code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">termination</span> <span class="pre">of</span> <span class="pre">Gaussian</span> <span class="pre">16</span></code></p>
+</div>
+<section id="urratsa-gaussview-ireki-eta-atomoa-marraztu">
+<h3>1. urratsa: GaussView ireki eta atomoa marraztu<a class="headerlink" href="#urratsa-gaussview-ireki-eta-atomoa-marraztu" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Ireki GaussView aplikazioen menutik edo sistemaren abiarazletik.</p></li>
+<li><p>Ireki atomo-zatien paleta <strong>View → Element Fragments</strong> sakatuz (edo goiko tresna-barrako taula periodikoaren ikonoa sakatuz).</p></li>
+<li><p>Hautatu kalkulatu nahi den elementu kimikoa (adibidez, karbonoa, <strong>C</strong>).</p></li>
+<li><p>Egin klik bakarra ezkerreko botoiarekin marrazketa-leiho nagusian. Erdigune atomiko isolatu bat agertuko da, loturarik gabe.</p></li>
+</ol>
+</section>
+<section id="urratsa-atomo-neutroaren-kalkulua-konfiguratu">
+<h3>2. urratsa: Atomo neutroaren kalkulua konfiguratu<a class="headerlink" href="#urratsa-atomo-neutroaren-kalkulua-konfiguratu" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Sartu <strong>Calculate → Gaussian Calculation Setup</strong> menura.</p></li>
+<li><p><strong>Job Type</strong> fitxan, hautatu <strong>Energy</strong>.</p></li>
+<li><p><strong>Method</strong> fitxan, konfiguratu kalkuluaren parametroak:</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eremua</p></th>
+<th class="head"><p>Balioa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Metodoa</p></td>
+<td><p><strong>HF</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Oinarri-multzoa</p></td>
+<td><p><strong>STO-3G</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Karga</p></td>
+<td><p><strong>0</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Spin (Anizkoiztasuna)</p></td>
+<td><p>Kontsultatu anizkoiztasunen taula atomo neutro bakoitzerako</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li><p><strong>Title</strong> fitxan, idatzi deskribapen identifikatzaile bat (adibidez, <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">neutro</span> <span class="pre">HF</span> <span class="pre">STO-3G</span></code>).</p></li>
+<li><p><strong>Additional Keywords</strong> fitxan, idatzi zehazki: <code class="docutils literal notranslate"><span class="pre">pop=full</span></code>. Instrukzio honek orbital molekular guztien energiak irteera-fitxategian sartzen ditu.</p></li>
+</ol>
+<p>Erreferentziako anizkoiztasunen taula (<span class="math notranslate nohighlight">\(2S+1\)</span>):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atomoa</p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(Z\)</span></p></th>
+<th class="head"><p>Konfigurazioa</p></th>
+<th class="text-center head"><p>Anizkoiztasuna</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H</p></td>
+<td class="text-center"><p>1</p></td>
+<td><p>1s¹</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>He</p></td>
+<td class="text-center"><p>2</p></td>
+<td><p>1s²</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Li</p></td>
+<td class="text-center"><p>3</p></td>
+<td><p>[He] 2s¹</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Be</p></td>
+<td class="text-center"><p>4</p></td>
+<td><p>[He] 2s²</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td class="text-center"><p>5</p></td>
+<td><p>[He] 2s² 2p¹</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td class="text-center"><p>6</p></td>
+<td><p>[He] 2s² 2p²</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>N</p></td>
+<td class="text-center"><p>7</p></td>
+<td><p>[He] 2s² 2p³</p></td>
+<td class="text-center"><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>O</p></td>
+<td class="text-center"><p>8</p></td>
+<td><p>[He] 2s² 2p⁴</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td class="text-center"><p>9</p></td>
+<td><p>[He] 2s² 2p⁵</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ne</p></td>
+<td class="text-center"><p>10</p></td>
+<td><p>[He] 2s² 2p⁶</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/07_koopmans_setup_c_popfull.png"><img alt="Configuración del cálculo de Hartree-Fock con pop=full para el átomo de carbono" src="../../../_images/07_koopmans_setup_c_popfull.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="urratsa-kalkulua-abiarazi-eta-fitxategia-gorde">
+<h3>3. urratsa: Kalkulua abiarazi eta fitxategia gorde<a class="headerlink" href="#urratsa-kalkulua-abiarazi-eta-fitxategia-gorde" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Sakatu <strong>Bidali</strong> botoia <strong>Gaussian Calculation Setup</strong> leihoaren behealdean.</p></li>
+<li><p>Gorde fitxategia elkarrizketa-koadroan, adierazi sarrera-fitxategiaren izena <code class="docutils literal notranslate"><span class="pre">.gjf</span></code> (adibidez, <code class="docutils literal notranslate"><span class="pre">C_neutro_HF_STO3G.gjf</span></code>) eta gorde laborategiko laneko direktorioan: <code class="docutils literal notranslate"><span class="pre">__PROTECTED_BLOCK_36__</span></code>.</p></li>
+<li><p>Berretsi elkarrizketa-koadroa <strong>Save</strong> sakatuz eta ondoren <strong>Bidali</strong>.</p></li>
+<li><p>Ikusi exekuzio-egoera GaussView-ren beheko barran, kalkulua amaitu arte (segundo gutxi batzuk elementu arinentzat).</p></li>
+</ol>
+</section>
+<section id="urratsa-amaiera-zuzena-egiaztatu">
+<h3>4. urratsa: Amaiera zuzena egiaztatu<a class="headerlink" href="#urratsa-amaiera-zuzena-egiaztatu" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Ireki sortutako <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategia (<code class="docutils literal notranslate"><span class="pre">C_neutro_HF_STO3G.log</span></code>) testu-editorearekin (<strong>File → Open</strong> editorean edo eskuineko botoiarekin fitxategian klik eginez).</p></li>
+<li><p>Joan fitxategiaren amaierara <strong>Ctrl + Amaiera</strong> sakatuz.</p></li>
+<li><p>Egiaztatu fitxategiaren azken lerroa zehazki bat datorrela: <code class="docutils literal notranslate"><span class="pre">__PROTECTED_BLOCK_37__</span></code>. Ez bada agertzen, kalkulua huts egin du eta ez dira datuak erabili behar.</p></li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/08_koopmans_log_terminacion_normal.png"><img alt="Terminación normal de Gaussian 16 al final del archivo de salida .log" src="../../../_images/08_koopmans_log_terminacion_normal.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="urratsa-irakurri-guztizko-energia-e-n">
+<h3>5. urratsa: Irakurri guztizko energia E(N)<a class="headerlink" href="#urratsa-irakurri-guztizko-energia-e-n" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Testu-editorean irekitako <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian, sakatu <strong>Ctrl + B</strong> bilaketa aktibatzeko.</p></li>
+<li><p>Idatzi bilaketa-testua: <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code>.</p></li>
+<li><p>Aurkitu guztizko energia <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done:</span>&#160; <span class="pre">E(RHF)</span> <span class="pre">=</span> <span class="pre">...</span></code> lerroan (geruza itxiko sistema multiplicitate 1ekin) edo <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done:</span>&#160; <span class="pre">E(ROHF)</span> <span class="pre">=</span> <span class="pre">...</span></code> lerroan (geruza irekiko sistema multiplicitate desberdinarekin).</p></li>
+<li><p>Kopiatu balio numerikoa unitate atomikoetan (A.U. / Hartree) eta itsatsi emaitzen taulako <span class="math notranslate nohighlight">\(E(N)\)</span> zutabean.</p></li>
+</ol>
+</section>
+<section id="urratsa-irakurri-homo-orbitalaren-energia-eta-bistaratu-orbitala">
+<h3>6. urratsa: Irakurri HOMO orbitalaren energia eta bistaratu orbitala<a class="headerlink" href="#urratsa-irakurri-homo-orbitalaren-energia-eta-bistaratu-orbitala" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Irakurketa numerikoa <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian:</strong></p>
+<ul class="simple">
+<li><p>Irekitako <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategian, bilatu <strong>Ctrl + B</strong>-rekin testu hau: <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">occ.</span> <span class="pre">eigenvalues</span></code>.</p></li>
+<li><p>Aurkitu azken lerroko azken zenbakia <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">occ.</span> <span class="pre">eigenvalues</span> <span class="pre">--</span></code>. Balio numeriko hori energia handieneko betetako orbitalari dagokio, <span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> (Hartree-etan).</p></li>
+<li><p>Aurkitu hurrengo lerroko lehen zenbakia <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">virt.</span> <span class="pre">eigenvalues</span> <span class="pre">--</span></code>, energia txikieneko hutsik dagoen orbitalari dagokiona (<span class="math notranslate nohighlight">\(\varepsilon_{\text{LUMO}}\)</span>).</p></li>
+<li><p>Kopiatu <span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> balioa (Hartree-etan) emaitzen taulako dagokion zutabean.</p></li>
+</ul>
+</li>
+<li><p><strong>Egiaztapena eta bistaratzea GaussView-n:</strong></p>
+<ul class="simple">
+<li><p>GaussView-n, ireki kalkuluaren ondoriozko <code class="docutils literal notranslate"><span class="pre">.chk</span></code> fitxategia eta sartu <strong>Results → MOs</strong> menura.</p></li>
+<li><p><strong>New Gaussian MOs</strong> fitxan, ikusi energia-mailen diagrama eta spin <span class="math notranslate nohighlight">\(\alpha\)</span> eta <span class="math notranslate nohighlight">\(\beta\)</span>-ren orbitalen okupazioa. Karbono neutroaren triplete egoeran, energia handieneko betetako orbitalak (<span class="math notranslate nohighlight">\(\alpha\)</span>, 4. orbitala) <span class="math notranslate nohighlight">\(-0.32803\text{ Ha}\)</span> energia du.</p></li>
+</ul>
+</li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/07b_koopmans_gv_orbitales_c.png"><img alt="Diagrama de niveles de energía y ocupación de orbitales Alpha y Beta en Results MOs" src="../../../_images/07b_koopmans_gv_orbitales_c.png" style="width: 85%;" /></a>
+</figure>
+<ul class="simple">
+<li><p>Orbitalaren hiru dimentsioko banaketa sortzeko, leiho horren barruan <strong>Visualize</strong> fitxa hautatzen dugu. 4. orbitala (HOMO) hautatzen dugu, <strong>Isovalue</strong> eremua <code class="docutils literal notranslate"><span class="pre">0.01</span></code> ezartzen dugu eta <strong>Update</strong> sakatzen dugu. Ezkerreko azpileihoan <span class="math notranslate nohighlight">\(2p\)</span> orbital atomikoaren bi lobuluak agertuko dira.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/09_koopmans_gv_orbital_homo.png"><img alt="Generación de la isosuperficie 3D del orbital HOMO (2p) con isovalor 0.01 en la pestaña Visualize" src="../../../_images/09_koopmans_gv_orbital_homo.png" style="width: 85%;" /></a>
+</figure>
+</section>
+<section id="urratsa-konfiguratu-eta-kalkulatu-a-katioia">
+<h3>7. urratsa: Konfiguratu eta kalkulatu A⁺ katioia<a class="headerlink" href="#urratsa-konfiguratu-eta-kalkulatu-a-katioia" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Itzuli GaussView-ra pantailan dagoen atomo-zentro berarekin.</p></li>
+<li><p>Ireki berriro <strong>Calculate → Gaussian Calculation Setup</strong> panela.</p></li>
+<li><p><strong><strong>Method</strong></strong> fitxan, aldatu parametro hauek:</p>
+<ul class="simple">
+<li><p><strong>Charge</strong>: aldatu <code class="docutils literal notranslate"><span class="pre">0</span></code>-tik <code class="docutils literal notranslate"><span class="pre">1</span></code>-ra.</p></li>
+<li><p><strong>Spin</strong>: doitu katioi-espezieari dagokion multiplicitatera (ikusi beheko taula). HOMOtik elektroi bat kenduta, desparekatutako elektroien kopurua aldatu egiten da.</p></li>
+</ul>
+</li>
+<li><p>Mantendu <strong>Job Type</strong> <code class="docutils literal notranslate"><span class="pre">Energy</span></code>-n, <strong>Method</strong> <code class="docutils literal notranslate"><span class="pre">HF</span></code>-n, <strong>Basis Set</strong> <code class="docutils literal notranslate"><span class="pre">STO-3G</span></code>-n eta <strong>Additional Keywords</strong>-en <code class="docutils literal notranslate"><span class="pre">pop=full</span></code> gako-hitza.</p></li>
+<li><p><strong><strong>Title</strong></strong> fitxan, idatzi: <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">cation</span> <span class="pre">HF</span> <span class="pre">STO-3G</span></code>.</p></li>
+<li><p>Sakatu <strong>Bidali</strong>, gorde izen adierazgarri batekin (adibidez, <code class="docutils literal notranslate"><span class="pre">C_cation_HF_STO3G.gjf</span></code>) <code class="docutils literal notranslate"><span class="pre">{{practicas_folder}}</span></code>-n eta berretsi bidalketa.</p></li>
+<li><p>Egiaztatu amaiera zuzena <code class="docutils literal notranslate"><span class="pre">.log</span></code> berrian eta atera guztizko energia <span class="math notranslate nohighlight">\(E(A^+)\)</span> <code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Done</span></code> lerroan.</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eremua</p></th>
+<th class="text-center head"><p>Neutroa</p></th>
+<th class="text-center head"><p>Katioia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Charge</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>+1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spin</p></td>
+<td class="text-center"><p>Multiplicitate neutroa</p></td>
+<td class="text-center"><p>Multiplicitate katioia</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="urratsa-kalkulatu-ionizazio-energiak">
+<h3>8. urratsa: Kalkulatu ionizazio-energiak<a class="headerlink" href="#urratsa-kalkulatu-ionizazio-energiak" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Kalkulatu ionizazio-energia zuzeneko diferentziaren bidez (<span class="math notranslate nohighlight">\(\text{IE}_{\Delta E}\)</span>):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\Delta E} = \bigl[E(A^+) - E(A)\bigr] \times 27.2114 \quad [\text{eV}]\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Kalkulatu Koopmans-en teoremaren estimazioa (<span class="math notranslate nohighlight">\(\text{IE}_{\text{Koopmans}}\)</span>):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{IE}_{\text{Koopmans}} = -\varepsilon_{\text{HOMO}} \times 27.2114 \quad [\text{eV}]\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Erregistratu bi balioak elektronvoltetan datuen taulan eta kalkulatu desbiderapen portzentuala erreferentziako balio esperimentalarekiko.</p></li>
+</ol>
+</section>
+</section>
+<section id="emaitzak-eta-analisia">
+<h2>Emaitzak eta analisia<a class="headerlink" href="#emaitzak-eta-analisia" title="Permalink to this heading">#</a></h2>
+<p>Kalkulatutako atomo bakoitzerako, <code class="docutils literal notranslate"><span class="pre">.log</span></code> fitxategitik ateratako bi energiak erregistratzen ditugu eta ionizazio-energiaren bi estimazioak kalkulatzen ditugu. Ondorengo taulak Hartree-etan jasotzen ditu balioak eta emaitzak eV-ra bihurtuta. Erreferentziako balio esperimentalak sartzen dira errore portzentuala kalkulatzeko.</p>
+</section>
+<hr class="docutils" />
+<section id="bibliografia">
+<h2>Bibliografia<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian 16, Revision A.03, M. J. Frisch, G. W. Trucks, H. B. Schlegel et al., Gaussian, Inc., Wallingford CT, 2016.</p></li>
+<li><p>Atkins, P.; De Paula, J. <em>Kimika Fisikoa</em>, 10. ed.; Editorial Médica Panamericana, 2018. 9. kap. (Egitura elektroniko atomikoa).</p></li>
+<li><p>NIST Chemistry WebBook, https://webbook.nist.gov (ionizazio-energiaren datu esperimentalak).</p></li>
+<li><p>Szabo, A.; Ostlund, N. S. <em>Modern Quantum Chemistry</em>. Dover, 1996.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+Urrutirago joateko (aukerakoa)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Esplorazio honek aztertzen du nola aldatzen den emaitzaren kalitatea oinarri-funtzioen multzoa handitzean. Karbono atomo neutroaren kalkulua errepikatzen dugu hiru oinarri desberdinekin eta HOMOren energia eta Koopmans-en estimatutako ionizazio-energia alderatzen ditugu balio esperimentalarekin. Prozedura praktika nagusiaren berdina da: <strong>Basis Set</strong> eremua bakarrik aldatzen dugu <strong>Gaussian Calculation Setup → Method</strong>-en.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p class="sd-card-text">Oinarria</p></th>
+<th class="text-center head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\varepsilon_{\text{HOMO}}\)</span> (Ha)</p></th>
+<th class="text-center head"><p class="sd-card-text">IE<span class="math notranslate nohighlight">\(_{\text{Koopmans}}\)</span> (eV)</p></th>
+<th class="text-center head"><p class="sd-card-text">IE exp. (eV)</p></th>
+<th class="text-center head"><p class="sd-card-text">Errorea (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p class="sd-card-text">STO-3G</p></td>
+<td class="text-center"><p class="sd-card-text">−0.328</p></td>
+<td class="text-center"><p class="sd-card-text">8.93</p></td>
+<td class="text-center"><p class="sd-card-text">11.26</p></td>
+<td class="text-center"><p class="sd-card-text">20.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p class="sd-card-text">3-21G</p></td>
+<td class="text-center"><p class="sd-card-text">(kalkulatzeko)</p></td>
+<td class="text-center"><p class="sd-card-text">(kalkulatzeko)</p></td>
+<td class="text-center"><p class="sd-card-text">11.26</p></td>
+<td class="text-center"><p class="sd-card-text">(kalkulatzeko)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p class="sd-card-text">6-311G</p></td>
+<td class="text-center"><p class="sd-card-text">(kalkulatzeko)</p></td>
+<td class="text-center"><p class="sd-card-text">(kalkulatzeko)</p></td>
+<td class="text-center"><p class="sd-card-text">11.26</p></td>
+<td class="text-center"><p class="sd-card-text">(kalkulatzeko)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Oharra</p>
+<p class="sd-card-text">Zein zentzutan aldatzen da <strong>PROTECTED_BLOCK_73</strong> oinarriaren tamaina handitzean? Txikitzen al da errorea balio esperimentalarekiko modu monotonoan, edo ba al dago kasurik oinarri handiago batek emaitza hobetzen ez duena? Lotu desberdintasunak oinarri bakoitzak balentzia-elektroien dentsitatea deskribatzeko duen gaitasunarekin.</p>
+</div>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/parte2-gaussian/practicas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intros/intro-energias.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">aurrekoa</p>
+        <p class="prev-next-title">Energia eta unitateak Gaussianen</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../intros/intro-born-oppenheimer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">hurrengoa</p>
+        <p class="prev-next-title">Geometria molekularra eta Born-Oppenheimer hurbilketa</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sarrera">Sarrera</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helburuak">Helburuak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kontzeptu-gakoak">Kontzeptu gakoak</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zergatik-dira-energiak-negatiboak">Zergatik dira energiak negatiboak?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homo-eta-lumo">HOMO eta LUMO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionizazio-energia-eta-koopmans-en-teorema">Ionizazio-energia eta Koopmans-en teorema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-anizkoiztasuna">Spin-anizkoiztasuna</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prozedura">Prozedura</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-gaussview-ireki-eta-atomoa-marraztu">1. urratsa: GaussView ireki eta atomoa marraztu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-atomo-neutroaren-kalkulua-konfiguratu">2. urratsa: Atomo neutroaren kalkulua konfiguratu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-kalkulua-abiarazi-eta-fitxategia-gorde">3. urratsa: Kalkulua abiarazi eta fitxategia gorde</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-amaiera-zuzena-egiaztatu">4. urratsa: Amaiera zuzena egiaztatu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-irakurri-guztizko-energia-e-n">5. urratsa: Irakurri guztizko energia E(N)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-irakurri-homo-orbitalaren-energia-eta-bistaratu-orbitala">6. urratsa: Irakurri HOMO orbitalaren energia eta bistaratu orbitala</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-konfiguratu-eta-kalkulatu-a-katioia">7. urratsa: Konfiguratu eta kalkulatu A⁺ katioia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#urratsa-kalkulatu-ionizazio-energiak">8. urratsa: Kalkulatu ionizazio-energiak</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#emaitzak-eta-analisia">Emaitzak eta analisia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia">Bibliografia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David De Sancho, Ion Mitxelena
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

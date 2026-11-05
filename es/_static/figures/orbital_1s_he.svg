@@ -1,0 +1,28 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Helvetica Neue', Arial, sans-serif">
+  <title>Densidad electrónica del orbital 1s del helio</title>
+  <desc>Diagrama científico mostrando círculos concéntricos con opacidad decreciente que representan isosuperficies de densidad electrónica del orbital 1s del átomo de helio, con el núcleo en el centro y una flecha radial indicando la distancia r.</desc>
+
+  <!-- Isosuperficies de densidad electrónica: opacidad decreciente hacia el exterior -->
+  <circle cx="200" cy="195" r="22"  fill="none" stroke="#4a6fa5" stroke-width="2.2" opacity="0.90"/>
+  <circle cx="200" cy="195" r="44"  fill="none" stroke="#4a6fa5" stroke-width="2.0" opacity="0.75"/>
+  <circle cx="200" cy="195" r="68"  fill="none" stroke="#4a6fa5" stroke-width="1.8" opacity="0.58"/>
+  <circle cx="200" cy="195" r="94"  fill="none" stroke="#4a6fa5" stroke-width="1.6" opacity="0.40"/>
+  <circle cx="200" cy="195" r="122" fill="none" stroke="#4a6fa5" stroke-width="1.4" opacity="0.25"/>
+  <circle cx="200" cy="195" r="152" fill="none" stroke="#4a6fa5" stroke-width="1.2" opacity="0.14"/>
+  <circle cx="200" cy="195" r="182" fill="none" stroke="#4a6fa5" stroke-width="1.0" opacity="0.07"/>
+
+  <!-- Núcleo -->
+  <circle cx="200" cy="195" r="6" fill="#2c3e6b"/>
+  <!-- Etiqueta núcleo -->
+  <text x="212" y="191" font-size="12" fill="#2c3e6b" font-weight="bold">He</text>
+
+  <!-- Flecha radial r -->
+  <line x1="204" y1="199" x2="326" y2="321" stroke="#4a4a4a" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <!-- Punta de flecha -->
+  <polygon points="326,321 314,315 320,309" fill="#4a4a4a"/>
+  <!-- Etiqueta r -->
+  <text x="284" y="284" font-size="12" fill="#4a4a4a" font-style="italic">r</text>
+
+  <!-- Título de la figura -->
+  <text x="200" y="390" font-size="11" fill="#4a4a4a" text-anchor="middle">Densidad electrónica del orbital 1s</text>
+</svg>
