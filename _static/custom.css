@@ -123,3 +123,71 @@ table.resultados th {
   color: #ffffff !important;
 }
 
+
+/* ----------------------------------------------------------
+   6b. Conmutador de idioma en la barra lateral
+   ---------------------------------------------------------- */
+.sidebar-lang-switcher {
+  margin: 0.75rem 0.5rem 1rem 0.5rem;
+  padding: 0.35rem;
+  background-color: var(--pst-color-surface, #f1f3f5);
+  border: 1px solid var(--pst-color-border, #dee2e6);
+  border-radius: 6px;
+}
+
+.sidebar-lang-group {
+  display: flex;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.sidebar-lang-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.35rem 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border-radius: 4px;
+  color: var(--pst-color-text-muted, #495057);
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  white-space: nowrap;
+}
+
+.sidebar-lang-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: var(--pst-color-primary, #0969da);
+}
+
+.sidebar-lang-btn.active {
+  background-color: var(--pst-color-primary, #0969da);
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Conmutador superior (header) */
+.header-lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  background-color: var(--pst-color-surface, #f8f9fa);
+  border: 1px solid var(--pst-color-border, #dee2e6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.header-lang-switcher .lang-btn {
+  padding: 0.2rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--pst-color-text-muted, #6c757d);
+  line-height: 1.2;
+}
+
+.header-lang-switcher .lang-btn.active {
+  background-color: var(--pst-color-primary, #0969da);
+  color: #ffffff !important;
+}
